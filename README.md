@@ -25,7 +25,7 @@ An open source interface for Uniswap -- a protocol for decentralized exchange of
 Step 1: Clone this repository:
 
 ```
-git clone git@github.com:HDauven/uniswap-interface.git
+git clone git@github.com:NiiFi/uinterface.git
 ```
 
 Step 2: Install dependencies:
