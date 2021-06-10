@@ -20,6 +20,35 @@ An open source interface for Uniswap -- a protocol for decentralized exchange of
   - [V2](https://uniswap.org/whitepaper.pdf)
   - [V3](https://uniswap.org/whitepaper-v3.pdf)
 
+## How to run the Uniswap Interface locally
+
+Step 1: Clone this repository:
+
+```
+git clone git@github.com:HDauven/uniswap-interface.git
+```
+
+Step 2: Install dependencies:
+
+```
+npm i
+```
+
+Step 3: Build the i18n files:
+
+```
+npm run i18n:extract
+npm run i18n:compile
+```
+
+Step 4: Run the development server:
+
+```
+npm run start
+```
+
+Note: This step might take a couple of minutes.
+
 ## Accessing the Uniswap Interface
 
 To access the Uniswap Interface, use an IPFS gateway link from the
@@ -32,7 +61,7 @@ See [CONTRIBUTING](./CONTRIBUTING.md).
 
 ## Accessing Uniswap V2
 
-The Uniswap Interface supports swapping, adding liquidity, removing liquidity and migrating liquidity for 
+The Uniswap Interface supports swapping, adding liquidity, removing liquidity and migrating liquidity for
 Uniswap protocol V2.
 
 - Swap on Uniswap V2: https://app.uniswap.org/#/swap?use=v2
@@ -41,6 +70,6 @@ Uniswap protocol V2.
 - Migrate V2 liquidity to V3: https://app.uniswap.org/#/migrate/v2
 
 ## Accessing Uniswap V1
- 
-The Uniswap V1 interface for mainnet and testnets is accessible via IPFS gateways 
+
+The Uniswap V1 interface for mainnet and testnets is accessible via IPFS gateways
 linked from the [v1.0.0 release](https://github.com/Uniswap/uniswap-interface/releases/tag/v1.0.0).
