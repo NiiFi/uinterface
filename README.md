@@ -31,20 +31,20 @@ git clone git@github.com:HDauven/uniswap-interface.git
 Step 2: Install dependencies:
 
 ```
-npm i
+yarn install
 ```
 
 Step 3: Build the i18n files:
 
 ```
-npm run i18n:extract
-npm run i18n:compile
+yarn i18n:extract
+yarn i18n:compile
 ```
 
 Step 4: Run the development server:
 
 ```
-npm run start
+yarn start
 ```
 
 Note: This step might take a couple of minutes.
