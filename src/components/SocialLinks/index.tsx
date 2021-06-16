@@ -1,0 +1,65 @@
+import React from 'react'
+import { Twitter, Facebook, Instagram, Icon } from 'react-feather'
+import styled from 'styled-components/macro'
+
+type TSocialLink = {
+  Icon: Icon
+  name: string
+  link: string
+}
+const SupportedSocialLinks: Array<TSocialLink> = [
+  {
+    Icon: Facebook,
+    link: 'https://example.com',
+    name: 'facebook',
+  },
+  {
+    Icon: Twitter,
+    link: 'https://example.com',
+    name: 'facebook',
+  },
+  {
+    Icon: Instagram,
+    link: 'https://example.com',
+    name: 'facebook',
+  },
+]
+const StyledSocialLink = styled.a`
+  padding: 0.5rem;
+  background-color: ${({ theme }) => theme.bg4};
+  border-radius: 50%;
+  color: ${({ theme }) => theme.white};
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  justify-content: center;
+  margin: 0px 10px;
+
+  &:first-child {
+    margin-left: 0px;
+  }
+  &:last-child {
+    margin-right: 0px;
+  }
+`
+const StyledSocialLinkWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+function SocialLink({ name, Icon, link }: TSocialLink) {
+  return (
+    <StyledSocialLink href={link} target="_blank" id={name}>
+      <Icon size={'1.25rem'} />
+    </StyledSocialLink>
+  )
+}
+export default function SocialLinks() {
+  return (
+    <StyledSocialLinkWrapper>
+      {SupportedSocialLinks.map((socialLink, socialLinkIdx) => (
+        <SocialLink key={socialLinkIdx} {...socialLink} />
+      ))}
+    </StyledSocialLinkWrapper>
+  )
+}

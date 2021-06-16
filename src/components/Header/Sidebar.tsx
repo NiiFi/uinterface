@@ -4,15 +4,15 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Trans } from '@lingui/macro'
 import styled from 'styled-components/macro'
-import { Box, RefreshCw, Airplay, Aperture, Compass, Feather } from 'react-feather'
+import { Box, RefreshCw, Airplay, Aperture, Compass, Feather, Globe, ChevronUp } from 'react-feather'
+import { useAppDispatch } from 'state/hooks'
+import { useActiveLocale } from 'hooks/useActiveLocale'
 
 import Logo from '../../assets/images/niifi-logo.png'
 
 import { useActiveWeb3React } from '../../hooks/web3'
 import { CardNoise } from '../earn/styled'
 import { TYPE } from '../../theme'
-
-import Menu from '../Menu'
 
 import Row, { RowFixed } from '../Row'
 import Web3Status from '../Web3Status/CustomIndex'
@@ -21,8 +21,10 @@ import { useToggleSelfClaimModal, useShowClaimPopup } from '../../state/applicat
 import { useUserHasAvailableClaim } from '../../state/claim/hooks'
 import { useUserHasSubmittedClaim } from '../../state/transactions/hooks'
 import { Dots } from '../swap/styleds'
+import SocialLinks from '../SocialLinks'
 import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
+import { updateUserLocale } from 'state/user/actions'
 
 const HeaderFrame = styled.div<{ showBackground: boolean }>`
   display: flex;
@@ -88,6 +90,8 @@ const HeaderElement = styled.div`
 const HeaderElementWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `
 
 const HeaderRow = styled(RowFixed)`
@@ -241,7 +245,7 @@ export const StyledMenuButton = styled.button`
   }
 `
 
-const MenuItems: Array<{ title: string; id: string; Icon: any; link: string }> = [
+const SidebarLinks: Array<{ title: string; id: string; Icon: any; link: string }> = [
   {
     id: 'discover',
     title: 'Discover',
@@ -279,9 +283,23 @@ const MenuItems: Array<{ title: string; id: string; Icon: any; link: string }> =
     Icon: Aperture,
   },
 ]
-
+type LanguageControlProps = {
+  onClick: () => any
+}
+function LanguageControl({ onClick }: LanguageControlProps) {
+  const locale = useActiveLocale()
+  return (
+    <div onClick={onClick} style={{ display: 'flex', alignItems: 'center', flex: '1' }}>
+      <Globe />
+      <Trans>{locale.split('-')[0].toUpperCase()}</Trans>
+      <ChevronUp />
+    </div>
+  )
+}
 export default function Header() {
   const { account } = useActiveWeb3React()
+  const dispatch = useAppDispatch()
+  const locale = useActiveLocale()
 
   const toggleClaimModal = useToggleSelfClaimModal()
 
@@ -291,6 +309,10 @@ export default function Header() {
 
   const [showUniBalanceModal, setShowUniBalanceModal] = useState(false)
   const showClaimPopup = useShowClaimPopup()
+  function changeLocal() {
+    const nextLocal = locale === 'en-US' ? 'da-DK' : 'en-US'
+    dispatch(updateUserLocale({ userLocale: nextLocal }))
+  }
 
   const scrollY = useScrollPosition()
 
@@ -315,7 +337,7 @@ export default function Header() {
             </AccountElement>
           </HeaderRow>
           <HeaderLinks>
-            {MenuItems.map(({ Icon, link, id, title }, index) => (
+            {SidebarLinks.map(({ Icon, link, id, title }, index) => (
               <StyledNavLink id={`${id}-nav-link`} to={link} key={index}>
                 <Icon />
                 <Trans>{title}</Trans>
@@ -343,7 +365,8 @@ export default function Header() {
             )}
           </HeaderElement>
           <HeaderElementWrap>
-            <Menu />
+            <LanguageControl onClick={changeLocal} />
+            <SocialLinks />
           </HeaderElementWrap>
         </HeaderControls>
       </HeaderContainer>
