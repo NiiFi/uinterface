@@ -310,7 +310,7 @@ export default function Header() {
   const [showUniBalanceModal, setShowUniBalanceModal] = useState(false)
   const showClaimPopup = useShowClaimPopup()
   function changeLocal() {
-    const nextLocal = locale === 'en-US' ? 'da-DK' : 'en-US'
+    const nextLocal = locale === 'en-US' ? 'ar-SA' : 'en-US'
     dispatch(updateUserLocale({ userLocale: nextLocal }))
   }
 
