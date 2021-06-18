@@ -1,7 +1,7 @@
 import React from 'react'
 import { withStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Tab from '@material-ui/core/Tab'
-
+import { colors } from '../../../theme'
 export default withStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -9,12 +9,26 @@ export default withStyles((theme: Theme) =>
       minWidth: 72,
       fontWeight: 500,
       marginRight: theme.spacing(4),
-      color: 'black',
+      color: colors(false).bg4,
+      '& > .MuiTab-wrapper': {
+        padding: '0.5rem 1rem',
+      },
       '&:hover': {
         opacity: 1,
+        fontWeight: 700,
+        color: colors(false).primary1,
+        '& > .MuiTab-wrapper': {
+          backgroundColor: colors(false).bg5,
+          borderRadius: '8px',
+        },
       },
       '&$selected': {
         fontWeight: 700,
+        color: colors(false).primary1,
+        '& > .MuiTab-wrapper': {
+          backgroundColor: colors(false).bg5,
+          borderRadius: '8px',
+        },
       },
     },
     selected: {},

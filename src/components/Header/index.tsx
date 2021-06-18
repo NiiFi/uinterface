@@ -21,7 +21,7 @@ import { YellowCard } from '../Card'
 import Menu from '../Menu'
 
 import Row, { RowFixed } from '../Row'
-import Web3Status from '../Web3Status'
+import Web3Status from '../Web3Status/indexOld'
 import ClaimModal from '../claim/ClaimModal'
 import { useToggleSelfClaimModal, useShowClaimPopup } from '../../state/application/hooks'
 import { useUserHasAvailableClaim } from '../../state/claim/hooks'

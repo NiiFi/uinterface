@@ -1,27 +1,27 @@
 import React from 'react'
-import { Twitter, Facebook, Instagram, Icon } from 'react-feather'
+import { DiscordIcon, TwitterIcon, TelegramIcon } from '../Icons'
 import styled from 'styled-components/macro'
 
 type TSocialLink = {
-  Icon: Icon
+  Icon: any
   name: string
   link: string
 }
 const SupportedSocialLinks: Array<TSocialLink> = [
   {
-    Icon: Facebook,
+    Icon: TelegramIcon,
     link: 'https://example.com',
-    name: 'facebook',
+    name: 'Telegram',
   },
   {
-    Icon: Twitter,
+    Icon: TwitterIcon,
     link: 'https://example.com',
-    name: 'facebook',
+    name: 'Twitter',
   },
   {
-    Icon: Instagram,
+    Icon: DiscordIcon,
     link: 'https://example.com',
-    name: 'facebook',
+    name: 'Discord',
   },
 ]
 const StyledSocialLink = styled.a`

@@ -17,7 +17,7 @@ import { Link, RouteComponentProps } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled, { ThemeContext } from 'styled-components'
 import AddressInputPanel from '../../components/AddressInputPanel'
-import { ButtonConfirmed, ButtonError, ButtonGray, ButtonLight, ButtonPrimary } from '../../components/Button'
+import { ButtonConfirmed, ButtonError, ButtonGray, ButtonPrimary } from '../../components/Button'
 import { GreyCard } from '../../components/Card'
 import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
@@ -551,9 +551,9 @@ export default function Swap({ history }: RouteComponentProps) {
                     </TYPE.main>
                   </ButtonPrimary>
                 ) : !account ? (
-                  <ButtonLight onClick={toggleWalletModal}>
+                  <ButtonPrimary onClick={toggleWalletModal}>
                     <Trans>Connect Wallet</Trans>
-                  </ButtonLight>
+                  </ButtonPrimary>
                 ) : showWrap ? (
                   <ButtonPrimary disabled={Boolean(wrapInputError)} onClick={onWrap}>
                     {wrapInputError ??

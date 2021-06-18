@@ -15,7 +15,7 @@ import { CardNoise } from '../earn/styled'
 import { TYPE } from '../../theme'
 
 import Row, { RowFixed } from '../Row'
-import Web3Status from '../Web3Status/CustomIndex'
+import Web3Status from '../Web3Status'
 import ClaimModal from '../claim/ClaimModal'
 import { useToggleSelfClaimModal, useShowClaimPopup } from '../../state/application/hooks'
 import { useUserHasAvailableClaim } from '../../state/claim/hooks'
@@ -53,7 +53,7 @@ const HeaderControls = styled.div`
   align-items: center;
   justify-self: flex-end;
   padding: 1rem;
-  border-top: 2px solid ${({ theme }) => theme.bg3}
+  border-top: 1px solid ${({ theme }) => theme.bg3}
     ${({ theme }) => theme.mediaWidth.upToMedium`
     flex-direction: row;
     justify-content: space-between;
@@ -129,7 +129,7 @@ const HeaderContent = styled.div`
 const HeaderContainer = styled(HeaderContent)`
   height: 100%;
   padding: 0px;
-  border-right: 2px solid ${({ theme }) => theme.bg3};
+  border-right: 1px solid ${({ theme }) => theme.bg3};
 `
 const AccountElement = styled.div<{ active: boolean }>`
   display: flex;
@@ -195,7 +195,7 @@ const StyledNavLink = styled(NavLink).attrs({
   outline: none;
   cursor: pointer;
   text-decoration: none;
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.bg4};
   font-size: 1rem;
   width: 100%;
   font-weight: 500;
@@ -206,8 +206,12 @@ const StyledNavLink = styled(NavLink).attrs({
   svg {
     margin-right: 5px;
   }
-  &.${activeClassName} {
+  &.${activeClassName}, :hover,
+  :focus {
     font-weight: 700;
+    background-color: ${({ theme }) => theme.bg5};
+    border-radius: 8px;
+    color: ${({ theme }) => theme.primary1};
   }
 
   :hover,
@@ -310,7 +314,7 @@ export default function Header() {
   const [showUniBalanceModal, setShowUniBalanceModal] = useState(false)
   const showClaimPopup = useShowClaimPopup()
   function changeLocal() {
-    const nextLocal = locale === 'en-US' ? 'ar-SA' : 'en-US'
+    const nextLocal = locale === 'en-US' ? 'de-DE' : 'en-US'
     dispatch(updateUserLocale({ userLocale: nextLocal }))
   }
 
