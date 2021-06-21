@@ -196,17 +196,17 @@ const StyledNavLink = styled(NavLink).attrs({
   color: ${({ theme }) => theme.bg4};
   font-size: 1rem;
   width: 100%;
-  font-weight: 500;
+  font-weight: 400;
   padding: 12px 12px;
   word-break: break-word;
 
   > i,
   svg {
-    margin-right: 5px;
+    margin-right: 18px;
   }
   &.${activeClassName}, :hover,
   :focus {
-    font-weight: 700;
+    font-weight: 400;
     background-color: ${({ theme }) => theme.bg5};
     border-radius: 8px;
     color: ${({ theme }) => theme.primary1};
@@ -214,7 +214,7 @@ const StyledNavLink = styled(NavLink).attrs({
 
   :hover,
   :focus {
-    font-weight: 700;
+    font-weight: 400;
   }
 `
 

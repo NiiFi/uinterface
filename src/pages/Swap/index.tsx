@@ -11,7 +11,7 @@ import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter
 import { MouseoverTooltip, MouseoverTooltipContent } from 'components/Tooltip'
 import JSBI from 'jsbi'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
-import { ArrowDown, ArrowLeft, CheckCircle, HelpCircle, Info } from 'react-feather'
+import { ChevronDown, ChevronUp, ArrowLeft, CheckCircle, HelpCircle, Info } from 'react-feather'
 import ReactGA from 'react-ga'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { Text } from 'rebass'
@@ -72,6 +72,13 @@ const StyledInfo = styled(Info)`
   :hover {
     opacity: 0.8;
   }
+`
+const ArrowContainer = styled.div`
+  width: calc(100% - 4rem);
+  height: 1px;
+  margin: 0px 2rem;
+  position: relative;
+  background-color: ${({ theme }) => theme.bg5};
 `
 
 export default function Swap({ history }: RouteComponentProps) {
@@ -236,7 +243,7 @@ export default function Swap({ history }: RouteComponentProps) {
   }, [approvalState, approvalSubmitted])
 
   const maxInputAmount: CurrencyAmount<Currency> | undefined = maxAmountSpend(currencyBalances[Field.INPUT])
-  const showMaxButton = Boolean(maxInputAmount?.greaterThan(0) && !parsedAmounts[Field.INPUT]?.equalTo(maxInputAmount))
+  // const showMaxButton = Boolean(maxInputAmount?.greaterThan(0) && !parsedAmounts[Field.INPUT]?.equalTo(maxInputAmount))
 
   // the callback to execute the swap
   const { callback: swapCallback, error: swapCallbackError } = useSwapCallback(
@@ -416,7 +423,8 @@ export default function Swap({ history }: RouteComponentProps) {
                     independentField === Field.OUTPUT && !showWrap ? <Trans>From (at most)</Trans> : <Trans>From</Trans>
                   }
                   value={formattedAmounts[Field.INPUT]}
-                  showMaxButton={showMaxButton}
+                  showMaxButton={false}
+                  labelText="From"
                   currency={currencies[Field.INPUT]}
                   onUserInput={handleTypeInput}
                   onMax={handleMaxInput}
@@ -426,19 +434,21 @@ export default function Swap({ history }: RouteComponentProps) {
                   showCommonBases={true}
                   id="swap-currency-input"
                 />
-                <ArrowWrapper clickable>
-                  <ArrowDown
-                    size="16"
-                    onClick={() => {
-                      setApprovalSubmitted(false) // reset 2 step UI for approvals
-                      onSwitchTokens()
-                    }}
-                    color={currencies[Field.INPUT] && currencies[Field.OUTPUT] ? theme.text1 : theme.text3}
-                  />
-                </ArrowWrapper>
+                <ArrowContainer
+                  onClick={() => {
+                    setApprovalSubmitted(false) // reset 2 step UI for approvals
+                    onSwitchTokens()
+                  }}
+                >
+                  <ArrowWrapper clickable>
+                    <ChevronUp size="16" color={theme.white} />
+                    <ChevronDown size="16" color={theme.white} />
+                  </ArrowWrapper>
+                </ArrowContainer>
                 <CurrencyInputPanel
                   value={formattedAmounts[Field.OUTPUT]}
                   onUserInput={handleTypeOutput}
+                  labelText="To"
                   label={
                     independentField === Field.INPUT && !showWrap ? <Trans>To (at least)</Trans> : <Trans>To</Trans>
                   }
@@ -458,7 +468,7 @@ export default function Swap({ history }: RouteComponentProps) {
                 <>
                   <AutoRow justify="space-between" style={{ padding: '0 1rem' }}>
                     <ArrowWrapper clickable={false}>
-                      <ArrowDown size="16" color={theme.text2} />
+                      <ChevronDown size="16" color={theme.text2} />
                     </ArrowWrapper>
                     <LinkStyledButton id="remove-recipient-button" onClick={() => onChangeRecipient(null)}>
                       <Trans>- Remove send</Trans>
