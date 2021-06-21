@@ -33,6 +33,7 @@ import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 const AppWrapper = styled.div`
   display: flex;
   align-items: flex-start;
+  background-color: ${({ theme }) => theme.white};
 `
 
 const BodyWrapper = styled.div`
