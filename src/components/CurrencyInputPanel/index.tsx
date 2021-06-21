@@ -7,7 +7,7 @@ import { useCurrencyBalance } from '../../state/wallet/hooks'
 import CurrencySearchModal from '../SearchModal/CurrencySearchModal'
 import CurrencyLogo from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
-import { ButtonGray } from '../Button'
+import { ButtonEmpty } from '../Button'
 import { RowBetween, RowFixed } from '../Row'
 import { TYPE } from '../../theme'
 import { Input as NumericalInput } from '../NumericalInput'
@@ -53,15 +53,11 @@ const Container = styled.div<{ hideInput: boolean }>`
   }
 `
 
-const CurrencySelect = styled(ButtonGray)<{ selected: boolean; hideInput?: boolean }>`
+const CurrencySelect = styled(ButtonEmpty)<{ selected: boolean; hideInput?: boolean }>`
   align-items: center;
   font-size: 24px;
   font-weight: 500;
-  background-color: ${({ selected, theme }) => (selected ? theme.bg0 : theme.primary1)};
-  color: ${({ selected, theme }) => (selected ? theme.text1 : theme.white)};
-  border-radius: 16px;
-  box-shadow: ${({ selected }) => (selected ? 'none' : '0px 6px 10px rgba(0, 0, 0, 0.075)')};
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.075);
+  color: ${({ theme }) => theme.text1};
   outline: none;
   cursor: pointer;
   user-select: none;
@@ -73,7 +69,7 @@ const CurrencySelect = styled(ButtonGray)<{ selected: boolean; hideInput?: boole
   margin-right: ${({ hideInput }) => (hideInput ? '0' : '12px')};
   :focus,
   :hover {
-    background-color: ${({ selected, theme }) => (selected ? theme.bg2 : darken(0.05, theme.primary1))};
+    background-color: none !important;
   }
 `
 
@@ -112,7 +108,7 @@ const StyledDropDown = styled(DropDown)<{ selected: boolean }>`
   height: 35%;
 
   path {
-    stroke: ${({ selected, theme }) => (selected ? theme.text1 : theme.white)};
+    stroke: ${({ theme }) => theme.text1};
     stroke-width: 1.5px;
   }
 `
@@ -193,7 +189,7 @@ export default function CurrencyInputPanel({
   }, [setModalOpen])
 
   return (
-    <InputPanel id={id} hideInput={hideInput} {...rest}>
+    <InputPanel key={id} id={id} hideInput={hideInput} {...rest}>
       {locked && (
         <FixedContainer>
           <AutoColumn gap="sm" justify="center">

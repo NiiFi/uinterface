@@ -1,24 +1,41 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
+import styled from 'styled-components/macro'
+import { Globe } from 'react-feather'
 import { useAppDispatch } from 'state/hooks'
 import { updateUserLocale } from 'state/user/actions'
 import { useActiveLocale } from 'hooks/useActiveLocale'
-import { SUPPORTED_LOCALES, LOCALE_LABEL } from '../../constants/locales'
+import { SUPPORTED_LOCALES } from '../../constants/locales'
 
+const LanguageWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: ${({ theme }) => theme.bg4};
+  & svg {
+    margin-right: 2px;
+  }
+`
 export default function LanguageSelect() {
   const currentLocale = useActiveLocale()
   const dispatch = useAppDispatch()
-  const handleChange = (e: any) => {
-    dispatch(updateUserLocale(e.target.value))
-  }
+  const handleChange = useCallback(
+    (event: any) => {
+      dispatch(updateUserLocale({ userLocale: event.target.value }))
+    },
+    [dispatch]
+  )
   return (
-    <Select labelId="demo-simple-select-label" id="demo-simple-select" value={currentLocale} onChange={handleChange}>
-      {SUPPORTED_LOCALES.map((locale, localeIdx) => (
-        <MenuItem key={localeIdx} value={locale}>
-          {LOCALE_LABEL[locale]}
-        </MenuItem>
-      ))}
-    </Select>
+    <LanguageWrapper>
+      <Globe />
+      <Select labelId="language-select" id="lang-select" value={currentLocale} onChange={handleChange}>
+        {SUPPORTED_LOCALES.map((locale, localeIdx) => (
+          <MenuItem key={localeIdx} value={locale}>
+            {locale.split('-')[0].toUpperCase()}
+          </MenuItem>
+        ))}
+      </Select>
+    </LanguageWrapper>
   )
 }

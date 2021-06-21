@@ -2,11 +2,10 @@ import useScrollPosition from '@react-hook/window-scroll'
 import React, { useState } from 'react'
 
 import { NavLink } from 'react-router-dom'
-import { Trans } from '@lingui/macro'
+import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components/macro'
-import { Box, RefreshCw, Airplay, Aperture, Compass, Feather, Globe, ChevronUp } from 'react-feather'
-import { useAppDispatch } from 'state/hooks'
-import { useActiveLocale } from 'hooks/useActiveLocale'
+import { Box, RefreshCw, Airplay, Aperture, Compass, Feather } from 'react-feather'
+import LanguageSelect from '../LanguageSelect'
 
 import Logo from '../../assets/images/niifi-logo.png'
 
@@ -24,7 +23,6 @@ import { Dots } from '../swap/styleds'
 import SocialLinks from '../SocialLinks'
 import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
-import { updateUserLocale } from 'state/user/actions'
 
 const HeaderFrame = styled.div<{ showBackground: boolean }>`
   display: flex;
@@ -252,58 +250,44 @@ export const StyledMenuButton = styled.button`
 const SidebarLinks: Array<{ title: string; id: string; Icon: any; link: string }> = [
   {
     id: 'discover',
-    title: 'Discover',
+    title: t`Discover`,
     Icon: Compass,
     link: '/discover',
   },
   {
     id: 'dashboard',
     link: '/dashboard',
-    title: 'Dashboard',
+    title: t`Dashboard`,
     Icon: Airplay,
   },
   {
     id: 'swap',
     link: '/swap',
-    title: 'Swap',
+    title: t`Swap`,
     Icon: RefreshCw,
   },
   {
     id: 'pool',
     link: '/pool',
-    title: 'Pool',
+    title: t`Pool`,
     Icon: Box,
   },
   {
     id: 'farm',
     link: '/farm',
-    title: 'Farm',
+    title: t`Farm`,
     Icon: Feather,
   },
   {
     id: 'lend',
     link: '/lend',
-    title: 'Lend',
+    title: t`Lend`,
     Icon: Aperture,
   },
 ]
-type LanguageControlProps = {
-  onClick: () => any
-}
-function LanguageControl({ onClick }: LanguageControlProps) {
-  const locale = useActiveLocale()
-  return (
-    <div onClick={onClick} style={{ display: 'flex', alignItems: 'center', flex: '1' }}>
-      <Globe />
-      <Trans>{locale.split('-')[0].toUpperCase()}</Trans>
-      <ChevronUp />
-    </div>
-  )
-}
+
 export default function Header() {
   const { account } = useActiveWeb3React()
-  const dispatch = useAppDispatch()
-  const locale = useActiveLocale()
 
   const toggleClaimModal = useToggleSelfClaimModal()
 
@@ -313,11 +297,6 @@ export default function Header() {
 
   const [showUniBalanceModal, setShowUniBalanceModal] = useState(false)
   const showClaimPopup = useShowClaimPopup()
-  function changeLocal() {
-    const nextLocal = locale === 'en-US' ? 'de-DE' : 'en-US'
-    dispatch(updateUserLocale({ userLocale: nextLocal }))
-  }
-
   const scrollY = useScrollPosition()
 
   return (
@@ -369,7 +348,7 @@ export default function Header() {
             )}
           </HeaderElement>
           <HeaderElementWrap>
-            <LanguageControl onClick={changeLocal} />
+            <LanguageSelect />
             <SocialLinks />
           </HeaderElementWrap>
         </HeaderControls>

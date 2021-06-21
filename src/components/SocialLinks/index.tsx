@@ -25,7 +25,7 @@ const SupportedSocialLinks: Array<TSocialLink> = [
   },
 ]
 const StyledSocialLink = styled.a`
-  padding: 0.5rem;
+  padding: 0.25rem;
   background-color: ${({ theme }) => theme.bg4};
   border-radius: 50%;
   color: ${({ theme }) => theme.white};
@@ -33,7 +33,7 @@ const StyledSocialLink = styled.a`
   align-items: center;
   font-size: 0.75rem;
   justify-content: center;
-  margin: 0px 10px;
+  margin: 0px 5px;
 
   &:first-child {
     margin-left: 0px;

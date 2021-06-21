@@ -1,14 +1,14 @@
 import React from 'react'
-import { withStyles, Theme, createStyles } from '@material-ui/core/styles'
+import { withStyles, createStyles } from '@material-ui/core/styles'
 import Tab from '@material-ui/core/Tab'
 import { colors } from '../../../theme'
-export default withStyles((theme: Theme) =>
+export default withStyles(() =>
   createStyles({
     root: {
       textTransform: 'none',
       minWidth: 72,
       fontWeight: 500,
-      marginRight: theme.spacing(4),
+      marginRight: '0px',
       color: colors(false).bg4,
       '& > .MuiTab-wrapper': {
         padding: '0.5rem 1rem',

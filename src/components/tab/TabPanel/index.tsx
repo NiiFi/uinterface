@@ -7,14 +7,22 @@ type TabPanelProps = {
   children: any
 }
 
+export const TabPanelHeading = styled.p`
+  width: 100%;
+  margin: 0px 0px 1rem 0px;
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.text1};
+  font-weight: 400;
+`
+const Wrapper = styled.div`
+  padding: 1rem 2rem;
+  width: 100%;
+`
+
 export default function TabPanel({ activeIndex, index, children }: TabPanelProps) {
-  const Wrapper = styled.div`
-    padding: 2rem;
-    width: 100%;
-  `
   return (
-    <Wrapper id={`tab-panel-${index}`} hidden={activeIndex !== index}>
-      {activeIndex === index && children}
+    <Wrapper key={`tab-panel-${index}`} id={`tab-panel-${index}`} hidden={activeIndex !== index}>
+      {children}
     </Wrapper>
   )
 }

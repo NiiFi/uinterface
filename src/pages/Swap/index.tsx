@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro'
+import { Trans, t } from '@lingui/macro'
 import AppBar from '@material-ui/core/AppBar'
 import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
@@ -21,7 +21,7 @@ import { ButtonConfirmed, ButtonError, ButtonGray, ButtonPrimary } from '../../c
 import { GreyCard } from '../../components/Card'
 import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
-import TabPanel from '../../components/tab/TabPanel'
+import TabPanel, { TabPanelHeading } from '../../components/tab/TabPanel'
 import { AutoColumn } from '../../components/Column'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import CurrencyLogo from '../../components/CurrencyLogo'
@@ -32,7 +32,6 @@ import confirmPriceImpactWithoutFee from '../../components/swap/confirmPriceImpa
 import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
 
 import { ArrowWrapper, BottomGrouping, Dots, SwapCallbackError, Wrapper } from '../../components/swap/styleds'
-import SwapHeader from '../../components/swap/SwapHeader'
 import TradePrice from '../../components/swap/TradePrice'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
 import TokenWarningModal from '../../components/TokenWarningModal'
@@ -376,13 +375,9 @@ export default function Swap({ history }: RouteComponentProps) {
           justifyContent: 'space-between',
         }}
       >
-        <Tabs
-          value={activeTab}
-          onChange={(e, newValue: number) => setActiveTab(newValue)}
-          aria-label="simple tabs example"
-        >
-          <Tab label="Swap" />
-          <Tab label="Overview" />
+        <Tabs value={activeTab} onChange={(e, newValue: number) => setActiveTab(newValue)}>
+          <Tab key={`tab-0`} label={t`Swap`} />
+          <Tab key={`tab-1`} label={t`Overview`} />
         </Tabs>
         <Select
           labelId="demo-simple-select-label"
@@ -394,9 +389,11 @@ export default function Swap({ history }: RouteComponentProps) {
           <MenuItem value={'euro'}>EURO</MenuItem>
         </Select>
       </AppBar>
-      <TabPanel activeIndex={activeTab} index={0}>
+      <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
+        <TabPanelHeading>
+          <Trans>Swap</Trans>
+        </TabPanelHeading>
         <AppBody>
-          <SwapHeader allowedSlippage={allowedSlippage} />
           <Wrapper id="swap-page">
             <ConfirmSwapModal
               isOpen={showConfirm}
@@ -705,8 +702,10 @@ export default function Swap({ history }: RouteComponentProps) {
           <UnsupportedCurrencyFooter show={swapIsUnsupported} currencies={[currencies.INPUT, currencies.OUTPUT]} />
         )}
       </TabPanel>
-      <TabPanel activeIndex={activeTab} index={1}>
-        OverView
+      <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
+        <TabPanelHeading>
+          <Trans>Overview</Trans>
+        </TabPanelHeading>
       </TabPanel>
     </>
   )
