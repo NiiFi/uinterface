@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
 import styled from 'styled-components/macro'
-import { Globe } from 'react-feather'
+import { LanguageIcon } from '../Icons'
 import { useAppDispatch } from 'state/hooks'
 import { updateUserLocale } from 'state/user/actions'
 import { useActiveLocale } from 'hooks/useActiveLocale'
@@ -28,7 +28,7 @@ export default function LanguageSelect() {
   )
   return (
     <LanguageWrapper>
-      <Globe />
+      <LanguageIcon />
       <Select labelId="language-select" id="lang-select" value={currentLocale} onChange={handleChange}>
         {SUPPORTED_LOCALES.map((locale, localeIdx) => (
           <MenuItem key={localeIdx} value={locale}>

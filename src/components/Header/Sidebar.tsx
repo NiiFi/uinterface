@@ -4,11 +4,11 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components/macro'
-import { Box, RefreshCw, Airplay, Aperture, Compass, Feather } from 'react-feather'
 import LanguageSelect from '../LanguageSelect'
 
 import Logo from '../../assets/images/niifi-logo.png'
 
+import { DashboardIcon, PoolIcon, SwapIcon, LendIcon, DiscoverIcon, FarmIcon } from '../Icons'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { CardNoise } from '../earn/styled'
 import { TYPE } from '../../theme'
@@ -188,17 +188,18 @@ const activeClassName = 'ACTIVE'
 
 const StyledNavLink = styled(NavLink).attrs({
   activeClassName,
-})`
+})<{ disable?: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
   outline: none;
-  cursor: pointer;
+  cursor: ${({ disable }) => (disable ? 'not-allowed' : 'pointer')};
   text-decoration: none;
-  color: ${({ theme }) => theme.bg4};
+  color: ${({ theme, disable }) => (disable ? theme.text4 : theme.bg4)};
   font-size: 1rem;
   width: 100%;
   font-weight: 400;
   padding: 12px 12px;
   word-break: break-word;
+  pointer-event: ${({ disable }) => (disable ? 'none' : 'auto')};
 
   > i,
   svg {
@@ -207,9 +208,9 @@ const StyledNavLink = styled(NavLink).attrs({
   &.${activeClassName}, :hover,
   :focus {
     font-weight: 400;
-    background-color: ${({ theme }) => theme.bg5};
+    background-color: ${({ theme, disable }) => (disable ? 'none' : theme.bg5)};
     border-radius: 8px;
-    color: ${({ theme }) => theme.primary1};
+    color: ${({ theme, disable }) => (disable ? theme.text4 : theme.primary1)};
   }
 
   :hover,
@@ -247,46 +248,51 @@ export const StyledMenuButton = styled.button`
   }
 `
 
-const SidebarLinks: Array<{ title: string; id: string; Icon: any; link: string }> = [
-  {
-    id: 'discover',
-    title: t`Discover`,
-    Icon: Compass,
-    link: '/discover',
-  },
-  {
-    id: 'dashboard',
-    link: '/dashboard',
-    title: t`Dashboard`,
-    Icon: Airplay,
-  },
-  {
-    id: 'swap',
-    link: '/swap',
-    title: t`Swap`,
-    Icon: RefreshCw,
-  },
-  {
-    id: 'pool',
-    link: '/pool',
-    title: t`Pool`,
-    Icon: Box,
-  },
-  {
-    id: 'farm',
-    link: '/farm',
-    title: t`Farm`,
-    Icon: Feather,
-  },
-  {
-    id: 'lend',
-    link: '/lend',
-    title: t`Lend`,
-    Icon: Aperture,
-  },
-]
-
 export default function Header() {
+  const SidebarLinks: Array<{ title: string; id: string; Icon: any; link: string; disable: boolean }> = [
+    {
+      id: 'discover',
+      title: t`Discover`,
+      Icon: DiscoverIcon,
+      link: '/discover',
+      disable: true,
+    },
+    {
+      id: 'dashboard',
+      link: '/dashboard',
+      title: t`Dashboard`,
+      Icon: DashboardIcon,
+      disable: true,
+    },
+    {
+      id: 'swap',
+      link: '/swap',
+      title: t`Swap`,
+      Icon: SwapIcon,
+      disable: false,
+    },
+    {
+      id: 'pool',
+      link: '/pool',
+      title: t`Pool`,
+      Icon: PoolIcon,
+      disable: true,
+    },
+    {
+      id: 'farm',
+      link: '/farm',
+      title: t`Farm`,
+      Icon: FarmIcon,
+      disable: true,
+    },
+    {
+      id: 'lend',
+      link: '/lend',
+      title: t`Lend`,
+      Icon: LendIcon,
+      disable: true,
+    },
+  ]
   const { account } = useActiveWeb3React()
 
   const toggleClaimModal = useToggleSelfClaimModal()
@@ -320,8 +326,8 @@ export default function Header() {
             </AccountElement>
           </HeaderRow>
           <HeaderLinks>
-            {SidebarLinks.map(({ Icon, link, id, title }, index) => (
-              <StyledNavLink id={`${id}-nav-link`} to={link} key={index}>
+            {SidebarLinks.map(({ Icon, link, id, title, disable }, index) => (
+              <StyledNavLink id={`${id}-nav-link`} disable={disable} to={link} key={index}>
                 <Icon />
                 <Trans>{title}</Trans>
               </StyledNavLink>

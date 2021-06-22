@@ -720,7 +720,7 @@ export default function Swap({ history }: RouteComponentProps) {
               </AutoColumn>
             </Wrapper>
           </AppBody>
-          <AppBody size="lg" margin="2rem" padding="2rem">
+          <AppBody size="lg" margin="2rem" padding="1rem 2rem">
             <Table />
           </AppBody>
           <SwitchLocaleLink />
