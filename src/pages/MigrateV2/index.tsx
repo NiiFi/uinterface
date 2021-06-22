@@ -48,7 +48,7 @@ function toSushiLiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
   return new Token(tokenA.chainId, computeSushiPairAddress({ tokenA, tokenB }), 18, 'SLP', 'SushiSwap LP Token')
 }
 
-export default function MigrateV2() {
+function MigrateV2() {
   const theme = useContext(ThemeContext)
   const { account, chainId } = useActiveWeb3React()
 
