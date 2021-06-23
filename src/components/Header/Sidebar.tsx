@@ -182,8 +182,16 @@ const Title = styled.a`
   }
 `
 
-const UniIcon = styled.div``
-
+const UniIcon = styled.div`
+  > div {
+    width: 35%;
+    height: auto;
+  }
+  > div > img {
+    width: 100%;
+    height: auto;
+  }
+`
 const activeClassName = 'ACTIVE'
 
 const StyledNavLink = styled(NavLink).attrs({
@@ -316,7 +324,9 @@ export default function Header() {
           <HeaderRow>
             <Title href=".">
               <UniIcon>
-                <img width={'100%'} src={Logo} alt="logo" />
+                <div>
+                  <img src={Logo} alt="logo" />
+                </div>
               </UniIcon>
             </Title>
           </HeaderRow>

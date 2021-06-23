@@ -47,7 +47,7 @@ export default function TableToolBar({ title, currentPage, totalPages, onNext, o
       <TitleWrapper>{title}</TitleWrapper>
       <PagerWrapper currentPage={currentPage} totalPages={totalPages}>
         <ArrowLeft onClick={() => onBack(currentPage)} />
-        <p>{t`Page ${currentPage} of ${totalPages}`}</p>
+        <p>{t`Page ${totalPages === 0 ? 0 : currentPage} of ${totalPages}`}</p>
         <ArrowRight onClick={() => onNext(currentPage)} />
       </PagerWrapper>
     </Wrapper>

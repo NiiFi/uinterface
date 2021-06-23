@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { t, Trans } from '@lingui/macro'
+import { useQuery } from '@apollo/client'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -13,6 +14,10 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
 
 import TableToolBar from './TableToolbar'
+import { shortenAddress, shortenDecimalValues } from '../../utils'
+import { TRANSACTION_QUERY_GQL } from './TransactionQuery'
+import { TransactionListQuery, TransactionTableData, Swap, Burn, Mint, TransactionTypes } from './types'
+import { SampleResponse } from './sample-response'
 interface Data {
   totalValue: number
   tokenAmountOne: number
@@ -21,75 +26,54 @@ interface Data {
   time: string
 }
 
-function createData(
-  totalValue: number,
-  tokenAmountOne: number,
-  tokenAmountTwo: number,
-  walletAddress: string,
-  time: string
-): Data {
-  return { totalValue, tokenAmountOne, tokenAmountTwo, walletAddress, time }
-}
-
-const rows = [
-  createData(1, 3.7, 67, '0x12313', '2020-05-31T13:42:47Z'),
-  createData(2, 25.0, 51, '0x45453453', '2020-04-04T23:26:17Z'),
-  createData(3, 16.0, 24, '0x9909098', '2019-02-09T23:57:40Z'),
-  createData(4, 6.0, 24, '0x9878343', '2019-09-14T03:36:28Z'),
-  createData(5, 16.0, 49, '0x098911234177', '2019-10-07T11:00:50Z'),
-  createData(6, 3.2, 87, '0x1234567890', '12:00 AM'),
-  // createData(7, 9.0, 37, '0x1234567890', '12:00 AM'),
-  // createData(8, 0.0, 94, '0x1234567890', '12:00 AM'),
-  // createData(9, 26.0, 65, '0x1234567890', '12:00 AM'),
-  // createData(10, 0.2, 98, '0x1234567890', '12:00 AM'),
-  // createData(318, 0, 81, '0x1234567890', '12:00 AM'),
-  // createData(360, 19.0, 9, '0x1234567890', '12:00 AM'),
-  // createData(437, 18.0, 63, '0x1234567890', '12:00 AM'),
-  // createData(305, 3.7, 67, '0x1234567890', '12:00 AM'),
-  // createData(452, 25.0, 51, '0x1234567890', '12:00 AM'),
-  // createData(262, 16.0, 24, '0x1234567890', '12:00 AM'),
-  // createData(159, 6.0, 24, '0x1234567890', '12:00 AM'),
-  // createData(356, 16.0, 49, '0x1234567890', '12:00 AM'),
-  // createData(408, 3.2, 87, '0x1234567890', '12:00 AM'),
-  // createData(237, 9.0, 37, '0x1234567890', '12:00 AM'),
-  // createData(375, 0.0, 94, '0x1234567890', '12:00 AM'),
-  // createData(518, 26.0, 65, '0x1234567890', '12:00 AM'),
-  // createData(392, 0.2, 98, '0x1234567890', '12:00 AM'),
-  // createData(318, 0, 81, '0x1234567890', '12:00 AM'),
-  // createData(360, 19.0, 9, '0x1234567890', '12:00 AM'),
-  // createData(437, 18.0, 63, '0x1234567890', '12:00 AM'),
-]
-
-function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
-  if (b[orderBy] < a[orderBy]) {
-    return -1
-  }
-  if (b[orderBy] > a[orderBy]) {
-    return 1
-  }
-  return 0
-}
-
-type Order = 'asc' | 'desc'
-
-function getComparator<Key extends keyof any>(
-  order: Order,
-  orderBy: Key
-): (a: { [key in Key]: number | string }, b: { [key in Key]: number | string }) => number {
-  return order === 'desc'
-    ? (a, b) => descendingComparator(a, b, orderBy)
-    : (a, b) => -descendingComparator(a, b, orderBy)
-}
-
-function stableSort<T>(array: T[], comparator: (a: T, b: T) => number) {
-  const stabilizedThis = array.map((el, index) => [el, index] as [T, number])
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0])
-    if (order !== 0) return order
-    return a[1] - b[1]
+function mapSwapResponseToTableData(swaps: Array<Swap>): Array<TransactionTableData> {
+  return swaps.map(({ amount0Out, amount1In, amount1Out, amount0In, to, ...rest }, _) => {
+    const amount0 = amount0In
+    const amount1 = amount1In
+    return {
+      ...rest,
+      amount0: amount0 === '0' ? amount0Out : amount0,
+      address: to,
+      amount1: amount1 === '0' ? amount1Out : amount1,
+    }
   })
-  return stabilizedThis.map((el) => el[0])
 }
+function mapBurnResponseToTableData(burns: Array<Burn>): Array<TransactionTableData> {
+  return burns.map(({ liquidity, sender, ...rest }, _) => {
+    return {
+      ...rest,
+      address: sender,
+    }
+  })
+}
+function mapMintResponseToTableData(mints: Array<Mint>): Array<TransactionTableData> {
+  return mints.map(({ liquidity, to, ...rest }, _) => {
+    return {
+      ...rest,
+      address: to,
+    }
+  })
+}
+function mapTransactionListDataToTableData(data: TransactionListQuery): Array<TransactionTableData> {
+  const tableData: Array<TransactionTableData> = []
+  data.transactions.reduce((acc: Array<TransactionTableData>, { swaps, mints, burns }, _) => {
+    const mappedSwaps = mapSwapResponseToTableData(swaps)
+    const mappedMints = mapMintResponseToTableData(mints)
+    const mappedBurns = mapBurnResponseToTableData(burns)
+    tableData.push(...mappedSwaps, ...mappedMints, ...mappedBurns)
+    return tableData
+  }, tableData)
+  return tableData
+}
+
+function mapTransactionTypeToWords(type: string) {
+  return {
+    Swap: 'Swap',
+    Mint: 'Add',
+    Burn: 'Remove',
+  }[type]
+}
+type Order = 'asc' | 'desc'
 
 interface HeadCell {
   disablePadding: boolean
@@ -105,6 +89,8 @@ interface EnhancedTableProps {
   order: Order
   orderBy: string
   rowCount: number
+  onTransactionTypeChange: (type: any) => void
+  transactionType: string
 }
 
 function EnhancedTableHead(props: EnhancedTableProps) {
@@ -115,11 +101,10 @@ function EnhancedTableHead(props: EnhancedTableProps) {
     { id: 'walletAddress', numeric: false, disablePadding: false, label: t`Account` },
     { id: 'time', numeric: false, disablePadding: false, label: t`Time` },
   ]
-  const { classes, order, orderBy, onRequestSort } = props
+  const { classes, order, orderBy, onRequestSort, onTransactionTypeChange, transactionType } = props
   const createSortHandler = (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
     onRequestSort(event, property)
   }
-
   return (
     <TableHead>
       <TableRow>
@@ -127,22 +112,21 @@ function EnhancedTableHead(props: EnhancedTableProps) {
           <Select
             labelId="transaction-typeSelect"
             id="transaction-typeSelect"
-            value={'all'}
-            onChange={() => console.log('this is running')}
+            value={transactionType}
+            onChange={(e: any) => {
+              onTransactionTypeChange(e.target.value)
+            }}
           >
-            <MenuItem value={'all'}>
+            <MenuItem value={'All'}>
               <Trans>All</Trans>
             </MenuItem>
-            <MenuItem value={'swap'}>
+            <MenuItem value={'Swap'}>
               <Trans>Swap</Trans>
             </MenuItem>
-            <MenuItem value={'add'}>
+            <MenuItem value={'Mint'}>
               <Trans>Add</Trans>
             </MenuItem>
-            <MenuItem value={'Add'}>
-              <Trans>Add</Trans>
-            </MenuItem>
-            <MenuItem value={'remove'}>
+            <MenuItem value={'Burn'}>
               <Trans>Remove</Trans>
             </MenuItem>
           </Select>
@@ -201,11 +185,22 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function EnhancedTable() {
   const classes = useStyles()
+  const [tableData, setTableData] = React.useState<Array<TransactionTableData>>([])
+  const [transactionType, setTransactionType] = React.useState<TransactionTypes>('All')
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<keyof Data>('totalValue')
   const [selected, setSelected] = React.useState<string[]>([])
   const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(3)
+  const [rowsPerPage, setRowsPerPage] = React.useState(25)
+  const { loading, error, data } = useQuery<TransactionListQuery>(TRANSACTION_QUERY_GQL)
+  useEffect(() => {
+    if (error) {
+      setTableData(mapTransactionListDataToTableData(SampleResponse.data))
+    }
+    if (data && data.transactions) {
+      setTableData(mapTransactionListDataToTableData(data))
+    }
+  }, [error, data, setTableData])
 
   const handleRequestSort = (event: React.MouseEvent<unknown>, property: keyof Data) => {
     const isAsc = orderBy === property && order === 'asc'
@@ -240,13 +235,13 @@ export default function EnhancedTable() {
     setPage(0)
   }
 
-  const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage)
-  const totalPages = Math.ceil(rows.length / rowsPerPage)
+  const emptyRows = rowsPerPage - Math.min(rowsPerPage, tableData.length - page * rowsPerPage)
+  const totalPages = Math.ceil(tableData.length / rowsPerPage)
   return (
     <div className={classes.root}>
       <TablePagination
-        rowsPerPageOptions={[rows.length]}
-        count={rows.length}
+        rowsPerPageOptions={[1000]}
+        count={1000}
         rowsPerPage={rowsPerPage}
         page={page}
         component={() => (
@@ -277,33 +272,50 @@ export default function EnhancedTable() {
             order={order}
             orderBy={orderBy}
             onRequestSort={handleRequestSort}
-            rowCount={rows.length}
+            onTransactionTypeChange={setTransactionType}
+            transactionType={transactionType}
+            rowCount={tableData.length}
           />
           <TableBody>
-            {stableSort(rows, getComparator(order, orderBy))
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow
-                    hover
-                    onClick={(event) => handleClick(event, row.walletAddress)}
-                    role="checkbox"
-                    aria-checked={false}
-                    tabIndex={-1}
-                    key={row.tokenAmountOne}
-                    selected={false}
-                  >
-                    <TableCell align="left">
-                      <Trans>Swap ETH for NII</Trans>
-                    </TableCell>
-                    <TableCell align="center">{row.totalValue}</TableCell>
-                    <TableCell align="center">{row.tokenAmountOne}</TableCell>
-                    <TableCell align="center">{row.tokenAmountOne}</TableCell>
-                    <TableCell align="center">{row.walletAddress}</TableCell>
-                    <TableCell align="center">{row.time}</TableCell>
-                  </TableRow>
-                )
-              })}
+            {loading && (
+              <TableRow>
+                <TableCell>Loading</TableCell>
+              </TableRow>
+            )}
+            {!loading &&
+              tableData &&
+              tableData
+                .filter((row) => (transactionType === 'All' ? true : transactionType === row.__typename))
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row, index) => {
+                  return (
+                    <TableRow
+                      hover
+                      onClick={(event) => handleClick(event, row.transaction.id)}
+                      role="checkbox"
+                      aria-checked={false}
+                      tabIndex={-1}
+                      key={index}
+                      selected={false}
+                    >
+                      <TableCell align="left">
+                        <Trans>
+                          {mapTransactionTypeToWords(row.__typename)} {row.pair.token0.symbol} for{' '}
+                          {row.pair.token1.symbol}
+                        </Trans>
+                      </TableCell>
+                      <TableCell align="center">{shortenDecimalValues(row.amountUSD)} US$</TableCell>
+                      <TableCell align="center">
+                        {shortenDecimalValues(row.amount0)} {row.pair.token0.symbol}
+                      </TableCell>
+                      <TableCell align="center">
+                        {shortenDecimalValues(row.amount1)} {row.pair.token1.symbol}
+                      </TableCell>
+                      <TableCell align="center">{shortenAddress(row.address)}</TableCell>
+                      <TableCell align="center">{row.transaction.timestamp}</TableCell>
+                    </TableRow>
+                  )
+                })}
             {emptyRows > 0 && (
               <TableRow style={{ height: 53 * emptyRows }}>
                 <TableCell colSpan={6} />

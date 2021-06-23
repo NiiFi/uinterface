@@ -24,6 +24,9 @@ export function shortenAddress(address: string, chars = 4): string {
   return `${parsed.substring(0, chars + 2)}...${parsed.substring(42 - chars)}`
 }
 
+export function shortenDecimalValues(value: string): string {
+  return Number(value).toFixed(3)
+}
 // account is not optional
 export function getSigner(library: Web3Provider, account: string): JsonRpcSigner {
   return library.getSigner(account).connectUnchecked()
