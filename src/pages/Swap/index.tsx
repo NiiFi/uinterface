@@ -429,8 +429,7 @@ export default function Swap({ history }: RouteComponentProps) {
 
             {showWrap ? null : (
               <Row style={{ justifyContent: !trade ? 'center' : 'space-between' }}>
-                <RowFixed>
-                </RowFixed>
+                <RowFixed></RowFixed>
                 {trade ? (
                   <RowFixed>
                     <TradePrice

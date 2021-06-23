@@ -11,7 +11,6 @@ import ErrorBoundary from '../components/ErrorBoundary'
 import { ApplicationModal } from '../state/application/actions'
 import { useModalOpen, useToggleModal } from '../state/application/hooks'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
-import { RedirectDuplicateTokenIds } from './AddLiquidity/redirects'
 import Earn from './Earn'
 import Manage from './Earn/Manage'
 import Pool from './Pool/v2'
@@ -97,12 +96,6 @@ export default function App() {
               <Route exact strict path="/pool/:tokenId" component={PositionPage} />
 
               <Route exact strict path="/add/v2/:currencyIdA?/:currencyIdB?" component={RedirectDuplicateTokenIdsV2} />
-              <Route
-                exact
-                strict
-                path="/add/:currencyIdA?/:currencyIdB?/:feeAmount?"
-                component={RedirectDuplicateTokenIds}
-              />
 
               <Route
                 exact

@@ -15,11 +15,7 @@ function LabeledArrow({}: { fee: FeeAmount }) {
   return <ChevronRight size={14} color={theme.text2} />
 }
 
-export default memo(function SwapRoute({
-  trade,
-}: {
-  trade: V2Trade<Currency, Currency, TradeType>
-}) {
+export default memo(function SwapRoute({ trade }: { trade: V2Trade<Currency, Currency, TradeType> }) {
   const tokenPath = trade.route.path
   const theme = useContext(ThemeContext)
   return (
