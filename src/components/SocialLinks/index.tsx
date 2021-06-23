@@ -10,17 +10,17 @@ type TSocialLink = {
 const SupportedSocialLinks: Array<TSocialLink> = [
   {
     Icon: TelegramIcon,
-    link: 'https://example.com',
+    link: 'https://t.me/NiiFiDAO',
     name: 'Telegram',
   },
   {
     Icon: TwitterIcon,
-    link: 'https://example.com',
+    link: 'https://twitter.com/NiiFiDAO',
     name: 'Twitter',
   },
   {
     Icon: DiscordIcon,
-    link: 'https://example.com',
+    link: 'https://discord.gg/ssjzvjZX89',
     name: 'Discord',
   },
 ]
