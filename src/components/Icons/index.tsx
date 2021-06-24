@@ -135,3 +135,19 @@ export function LanguageIcon({ width = 24, height = 24, color = 'currentColor', 
     </svg>
   )
 }
+
+export function ArrowDownIcon({ width = 24, height = 24, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path
+        d="M7 1L7 12.4035M7 12.4035L12 7.66667M7 12.4035L2 7.66667"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="square"
+      />
+    </svg>
+  )
+}
+export function ArrowUpIcon(props: IconProps) {
+  return <ArrowDownIcon {...props} style={{ transform: 'rotate(180deg)' }} />
+}

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { t, Trans } from '@lingui/macro'
+import { orderBy as lodashOrderBy, get } from 'lodash'
 import { useQuery } from '@apollo/client'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -12,19 +13,17 @@ import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
-
+import Loader from '../Loader'
+import useTheme from 'hooks/useTheme'
+import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
+import { ExternalLink } from '../../theme'
 import TableToolBar from './TableToolbar'
-import { shortenAddress, shortenDecimalValues } from '../../utils'
+import { shortenAddress, shortenDecimalValues, formatTimeStamp } from '../../utils'
 import { TRANSACTION_QUERY_GQL } from './TransactionQuery'
 import { TransactionListQuery, TransactionTableData, Swap, Burn, Mint, TransactionTypes } from './types'
 import { SampleResponse } from './sample-response'
-interface Data {
-  totalValue: number
-  tokenAmountOne: number
-  tokenAmountTwo: number
-  walletAddress: string
-  time: string
-}
+
+const BASE_URL = 'https://etherscan.io'
 
 function mapSwapResponseToTableData(swaps: Array<Swap>): Array<TransactionTableData> {
   return swaps.map(({ amount0Out, amount1In, amount1Out, amount0In, to, ...rest }, _) => {
@@ -77,7 +76,7 @@ type Order = 'asc' | 'desc'
 
 interface HeadCell {
   disablePadding: boolean
-  id: keyof Data
+  id: string
   label: string
   numeric: boolean
 }
@@ -85,7 +84,7 @@ interface HeadCell {
 interface EnhancedTableProps {
   classes: ReturnType<typeof useStyles>
   numSelected: number
-  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof Data) => void
+  onRequestSort: (event: React.MouseEvent<unknown>, property: string) => void
   order: Order
   orderBy: string
   rowCount: number
@@ -94,15 +93,16 @@ interface EnhancedTableProps {
 }
 
 function EnhancedTableHead(props: EnhancedTableProps) {
+  const theme = useTheme()
   const headCells: HeadCell[] = [
-    { id: 'totalValue', numeric: true, disablePadding: false, label: t`Total Value` },
-    { id: 'tokenAmountOne', numeric: true, disablePadding: false, label: t`Token Amount` },
-    { id: 'tokenAmountTwo', numeric: true, disablePadding: false, label: t`Token Amount` },
-    { id: 'walletAddress', numeric: false, disablePadding: false, label: t`Account` },
-    { id: 'time', numeric: false, disablePadding: false, label: t`Time` },
+    { id: 'amountUSD', numeric: true, disablePadding: false, label: t`Total Value` },
+    { id: 'amount0', numeric: true, disablePadding: false, label: t`Token Amount` },
+    { id: 'amount1', numeric: true, disablePadding: false, label: t`Token Amount` },
+    { id: 'address', numeric: false, disablePadding: false, label: t`Account` },
+    { id: 'transaction.timestamp', numeric: false, disablePadding: false, label: t`Time` },
   ]
   const { classes, order, orderBy, onRequestSort, onTransactionTypeChange, transactionType } = props
-  const createSortHandler = (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
+  const createSortHandler = (property: string) => (event: React.MouseEvent<unknown>) => {
     onRequestSort(event, property)
   }
   return (
@@ -140,15 +140,18 @@ function EnhancedTableHead(props: EnhancedTableProps) {
           >
             <TableSortLabel
               active={orderBy === headCell.id}
+              style={{ color: orderBy === headCell.id ? theme.primary1 : '' }}
               direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
+              IconComponent={() =>
+                order === 'desc' ? (
+                  <ArrowDownIcon width="14px" height="14px" color={orderBy === headCell.id ? theme.primary1 : ''} />
+                ) : (
+                  <ArrowUpIcon width="14px" height="14px" color={orderBy === headCell.id ? theme.primary1 : ''} />
+                )
+              }
             >
               {headCell.label}
-              {orderBy === headCell.id ? (
-                <span className={classes.visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                </span>
-              ) : null}
             </TableSortLabel>
           </TableCell>
         ))}
@@ -188,7 +191,7 @@ export default function EnhancedTable() {
   const [tableData, setTableData] = React.useState<Array<TransactionTableData>>([])
   const [transactionType, setTransactionType] = React.useState<TransactionTypes>('All')
   const [order, setOrder] = React.useState<Order>('asc')
-  const [orderBy, setOrderBy] = React.useState<keyof Data>('totalValue')
+  const [orderBy, setOrderBy] = React.useState<string>('amountUSD')
   const [selected, setSelected] = React.useState<string[]>([])
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(25)
@@ -202,7 +205,7 @@ export default function EnhancedTable() {
     }
   }, [error, data, setTableData])
 
-  const handleRequestSort = (event: React.MouseEvent<unknown>, property: keyof Data) => {
+  const handleRequestSort = (event: React.MouseEvent<unknown>, property: string) => {
     const isAsc = orderBy === property && order === 'asc'
     setOrder(isAsc ? 'desc' : 'asc')
     setOrderBy(property)
@@ -235,7 +238,6 @@ export default function EnhancedTable() {
     setPage(0)
   }
 
-  const emptyRows = rowsPerPage - Math.min(rowsPerPage, tableData.length - page * rowsPerPage)
   const totalPages = Math.ceil(tableData.length / rowsPerPage)
   return (
     <div className={classes.root}>
@@ -279,12 +281,22 @@ export default function EnhancedTable() {
           <TableBody>
             {loading && (
               <TableRow>
-                <TableCell>Loading</TableCell>
+                <TableCell colSpan={6} rowSpan={1} align="center">
+                  <Loader size="2rem" />
+                </TableCell>
               </TableRow>
             )}
             {!loading &&
               tableData &&
-              tableData
+              lodashOrderBy(
+                tableData,
+                function (o) {
+                  const dataPoint = get(o, orderBy)
+                  if (orderBy === 'address') return dataPoint
+                  return Number(dataPoint)
+                },
+                [order]
+              )
                 .filter((row) => (transactionType === 'All' ? true : transactionType === row.__typename))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
@@ -299,10 +311,12 @@ export default function EnhancedTable() {
                       selected={false}
                     >
                       <TableCell align="left">
-                        <Trans>
-                          {mapTransactionTypeToWords(row.__typename)} {row.pair.token0.symbol} for{' '}
-                          {row.pair.token1.symbol}
-                        </Trans>
+                        <ExternalLink href={`${BASE_URL}/tx/${row.transaction.id}`}>
+                          <Trans>
+                            {mapTransactionTypeToWords(row.__typename)} {row.pair.token0.symbol} for{' '}
+                            {row.pair.token1.symbol}
+                          </Trans>
+                        </ExternalLink>
                       </TableCell>
                       <TableCell align="center">{shortenDecimalValues(row.amountUSD)} US$</TableCell>
                       <TableCell align="center">
@@ -311,16 +325,17 @@ export default function EnhancedTable() {
                       <TableCell align="center">
                         {shortenDecimalValues(row.amount1)} {row.pair.token1.symbol}
                       </TableCell>
-                      <TableCell align="center">{shortenAddress(row.address)}</TableCell>
-                      <TableCell align="center">{row.transaction.timestamp}</TableCell>
+                      <TableCell align="center">
+                        <ExternalLink href={`${BASE_URL}/address/${row.address}`}>
+                          {shortenAddress(row.address)}
+                        </ExternalLink>
+                      </TableCell>
+                      <TableCell align="center">
+                        {formatTimeStamp(`${Number(row.transaction.timestamp) * 1000}`)}
+                      </TableCell>
                     </TableRow>
                   )
                 })}
-            {emptyRows > 0 && (
-              <TableRow style={{ height: 53 * emptyRows }}>
-                <TableCell colSpan={6} />
-              </TableRow>
-            )}
           </TableBody>
         </Table>
       </TableContainer>
