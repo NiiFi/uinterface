@@ -28,6 +28,7 @@ import VotePage from './Vote/VotePage'
 import { RedirectDuplicateTokenIdsV2 } from './AddLiquidityV2/redirects'
 import { PositionPage } from './Pool/PositionPage'
 import AddLiquidity from './AddLiquidity'
+import { useToggleDrawer } from 'state/application/hooks'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 
 const AppWrapper = styled.div`
@@ -45,9 +46,9 @@ const BodyWrapper = styled.div`
   overflow: scroll;
   flex: 1;
 
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 16px;
-    padding-top: 6rem;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    padding: 5px;
+    width: 100vw;
   `};
 `
 
@@ -56,10 +57,23 @@ const HeaderWrapper = styled.div`
   width: 360px;
   justify-content: space-between;
   overflow: hidden;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    width: 0px;
+    left: -300px;
+    &.active {
+      position: fixed;
+      z-index: 21000;
+      left: 0px;
+      width: 300px;
+    }
+  `}
 `
 
 const Marginer = styled.div`
   margin-top: 5rem;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    margin-top: 0.5rem;
+  `}
 `
 
 function TopLevelModals() {
@@ -69,13 +83,14 @@ function TopLevelModals() {
 }
 
 export default function App() {
+  const { showDrawer } = useToggleDrawer()
   return (
     <ErrorBoundary>
       <Route component={GoogleAnalyticsReporter} />
       <Route component={DarkModeQueryParamReader} />
       <Route component={ApeModeQueryParamReader} />
       <AppWrapper>
-        <HeaderWrapper>
+        <HeaderWrapper className={showDrawer ? 'active' : ''}>
           <Header />
         </HeaderWrapper>
         <BodyWrapper>

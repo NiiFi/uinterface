@@ -31,6 +31,7 @@ import Row, { AutoRow, RowFixed } from '../../components/Row'
 import BetterTradeLink from '../../components/swap/BetterTradeLink'
 import confirmPriceImpactWithoutFee from '../../components/swap/confirmPriceImpactWithoutFee'
 import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
+import ToggleDrawer from '../../components/Header/ToggleDrawer'
 
 import {
   ArrowWrapper,
@@ -88,7 +89,12 @@ const ArrowContainer = styled.div`
   position: relative;
   background-color: ${({ theme }) => theme.bg5};
 `
-
+const CurrencySelectWrapper = styled.div`
+  display: flex;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+  display: none
+  `}
+`
 export default function Swap({ history }: RouteComponentProps) {
   const [activeTab, setActiveTab] = useState<number>(0)
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -390,19 +396,22 @@ export default function Swap({ history }: RouteComponentProps) {
           justifyContent: 'space-between',
         }}
       >
+        <ToggleDrawer />
         <Tabs value={activeTab} onChange={(e, newValue: number) => setActiveTab(newValue)}>
           <Tab key={`tab-0`} label={t`Swap`} />
           <Tab key={`tab-1`} label={t`Overview`} />
         </Tabs>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={'usd'}
-          onChange={() => console.log('running')}
-        >
-          <MenuItem value={'usd'}>$US</MenuItem>
-          <MenuItem value={'euro'}>EURO</MenuItem>
-        </Select>
+        <CurrencySelectWrapper>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={'usd'}
+            onChange={() => console.log('running')}
+          >
+            <MenuItem value={'usd'}>$US</MenuItem>
+            <MenuItem value={'euro'}>EURO</MenuItem>
+          </Select>
+        </CurrencySelectWrapper>
       </AppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>

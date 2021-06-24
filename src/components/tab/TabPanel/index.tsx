@@ -17,6 +17,24 @@ export const TabPanelHeading = styled.p`
 const Wrapper = styled.div`
   padding: 1rem 2rem;
   width: 100%;
+
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    max-width: 750px;
+    padding: 8px;
+    box-sizing: border-box;
+  `}
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    max-width: 415px;
+    padding: 8px;
+    box-sizing: border-box;
+  `}
+
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    max-width: 300px;
+    padding: 8px;
+    box-sizing: border-box;
+  `}
 `
 
 export default function TabPanel({ activeIndex, index, children }: TabPanelProps) {
