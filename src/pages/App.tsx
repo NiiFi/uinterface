@@ -21,7 +21,6 @@ import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, Redirec
 import Vote from './Vote'
 import VotePage from './Vote/VotePage'
 import { RedirectDuplicateTokenIdsV2 } from './AddLiquidityV2/redirects'
-import { PositionPage } from './Pool/PositionPage'
 import AddLiquidity from './AddLiquidityV2'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 
@@ -93,7 +92,6 @@ export default function App() {
 
               <Route exact strict path="/pool/v2/find" component={PoolFinder} />
               <Route exact strict path="/pool" component={Pool} />
-              <Route exact strict path="/pool/:tokenId" component={PositionPage} />
 
               <Route exact strict path="/add/v2/:currencyIdA?/:currencyIdB?" component={RedirectDuplicateTokenIdsV2} />
 

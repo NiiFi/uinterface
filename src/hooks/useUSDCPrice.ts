@@ -3,7 +3,6 @@ import { useMemo } from 'react'
 import { SupportedChainId } from '../constants/chains'
 import { USDC } from '../constants/tokens'
 import { useV2TradeExactOut } from './useV2Trade'
-import { useBestV3TradeExactOut } from './useBestV3Trade'
 import { useActiveWeb3React } from './web3'
 
 // Stablecoin amounts used when calculating spot price for a given currency.
@@ -25,7 +24,6 @@ export default function useUSDCPrice(currency?: Currency): Price<Currency, Token
   const v2USDCTrade = useV2TradeExactOut(currency, amountOut, {
     maxHops: 2,
   })
-  const v3USDCTrade = useBestV3TradeExactOut(currency, amountOut)
 
   return useMemo(() => {
     if (!currency || !stablecoin) {
@@ -41,13 +39,10 @@ export default function useUSDCPrice(currency?: Currency): Price<Currency, Token
     if (v2USDCTrade) {
       const { numerator, denominator } = v2USDCTrade.route.midPrice
       return new Price(currency, stablecoin, denominator, numerator)
-    } else if (v3USDCTrade.trade) {
-      const { numerator, denominator } = v3USDCTrade.trade.route.midPrice
-      return new Price(currency, stablecoin, denominator, numerator)
     }
 
     return undefined
-  }, [currency, stablecoin, v2USDCTrade, v3USDCTrade.trade])
+  }, [currency, stablecoin, v2USDCTrade]) // , v3USDCTrade.trade
 }
 
 export function useUSDCValue(currencyAmount: CurrencyAmount<Currency> | undefined | null) {
