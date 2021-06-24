@@ -145,9 +145,19 @@ function EnhancedTableHead(props: EnhancedTableProps) {
               onClick={createSortHandler(headCell.id)}
               IconComponent={() =>
                 order === 'desc' ? (
-                  <ArrowDownIcon width="14px" height="14px" color={orderBy === headCell.id ? theme.primary1 : ''} />
+                  <ArrowDownIcon
+                    style={{ marginLeft: '4px' }}
+                    width="12px"
+                    height="12px"
+                    color={orderBy === headCell.id ? theme.primary1 : ''}
+                  />
                 ) : (
-                  <ArrowUpIcon width="14px" height="14px" color={orderBy === headCell.id ? theme.primary1 : ''} />
+                  <ArrowUpIcon
+                    style={{ marginLeft: '4px' }}
+                    width="12px"
+                    height="12px"
+                    color={orderBy === headCell.id ? theme.primary1 : ''}
+                  />
                 )
               }
             >
@@ -267,7 +277,7 @@ export default function EnhancedTable() {
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
       <TableContainer>
-        <Table className={classes.table} size={'medium'}>
+        <Table className={classes.table} size={'medium'} style={{ width: 'auto', tableLayout: 'auto' }}>
           <EnhancedTableHead
             classes={classes}
             numSelected={selected.length}

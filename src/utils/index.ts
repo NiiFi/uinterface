@@ -3,6 +3,7 @@ import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import { Token } from '@uniswap/sdk-core'
+import numeral from 'numeral'
 import { formatDistance } from 'date-fns'
 import { FeeAmount } from '@uniswap/v3-sdk/dist/'
 import { TokenAddressMap } from '../state/lists/hooks'
@@ -26,7 +27,7 @@ export function shortenAddress(address: string, chars = 4): string {
 }
 
 export function shortenDecimalValues(value: string): string {
-  return Number(value).toFixed(3)
+  return numeral(Number(value)).format('0.[000]a')
 }
 
 export function formatTimeStamp(value: string): string {
