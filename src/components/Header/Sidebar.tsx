@@ -115,6 +115,9 @@ const HeaderContainer = styled(HeaderContent)`
   height: 100%;
   padding: 0px;
   border-right: 1px solid ${({ theme }) => theme.bg3};
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    border-right: 0px;
+  `}
 `
 const AccountElement = styled.div<{ active: boolean }>`
   display: flex;

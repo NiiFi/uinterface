@@ -19,6 +19,9 @@ const TitleWrapper = styled.div`
   font-weight: 500;
   color: ${({ theme }) => theme.text1};
   font-size: 1.25rem;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    font-size: 1rem;
+  `}
 `
 const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
   display: flex;
@@ -40,6 +43,14 @@ const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
     margin-right: 0;
     color: ${({ currentPage, totalPages, theme }) => (currentPage !== totalPages ? theme.text1 : theme.text2)};
   }
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    > p {
+      font-size: 1rem
+    }
+    > svg {
+      margin: 0px 3px;
+    }
+  `}
 `
 export default function TableToolBar({ title, currentPage, totalPages, onNext, onBack }: TableToolBarProps) {
   return (

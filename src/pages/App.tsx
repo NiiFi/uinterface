@@ -60,15 +60,31 @@ const HeaderWrapper = styled.div`
   ${({ theme }) => theme.mediaWidth.upToMedium`
     width: 0px;
     left: -300px;
+    transition: width .3s cubic-bezier(0.25, 0.1, 0.25, 1);
     &.active {
-      position: fixed;
-      z-index: 21000;
+      position: relative;
+      z-index: 21001;
       left: 0px;
       width: 300px;
+      transition: width .5s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
   `}
 `
-
+const HeaderWrapperBackDrop = styled.div`
+  width: 360px;
+  height: auto;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    width: 0px;
+    left: -300px;
+    background-color: rgba(0, 0, 0, 0.3);
+    &.active {
+      position: absolute;
+      z-index: 21000;
+      left: 0px;
+      width: 100vw;
+    }
+  `}
+`
 const Marginer = styled.div`
   margin-top: 5rem;
   ${({ theme }) => theme.mediaWidth.upToMedium`
@@ -83,16 +99,18 @@ function TopLevelModals() {
 }
 
 export default function App() {
-  const { showDrawer } = useToggleDrawer()
+  const { showDrawer, setDrawerToggle } = useToggleDrawer()
   return (
     <ErrorBoundary>
       <Route component={GoogleAnalyticsReporter} />
       <Route component={DarkModeQueryParamReader} />
       <Route component={ApeModeQueryParamReader} />
       <AppWrapper>
-        <HeaderWrapper className={showDrawer ? 'active' : ''}>
-          <Header />
-        </HeaderWrapper>
+        <HeaderWrapperBackDrop className={showDrawer ? 'active' : ''} onClick={() => setDrawerToggle(false)}>
+          <HeaderWrapper className={showDrawer ? 'active' : ''}>
+            <Header />
+          </HeaderWrapper>
+        </HeaderWrapperBackDrop>
         <BodyWrapper>
           <Popups />
           <Polling />

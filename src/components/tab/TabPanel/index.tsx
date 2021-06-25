@@ -30,7 +30,13 @@ const Wrapper = styled.div`
     box-sizing: border-box;
   `}
 
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall1`
+    max-width: 365px;
+    padding: 8px;
+    box-sizing: border-box;
+  `}
+
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall2`
     max-width: 300px;
     padding: 8px;
     box-sizing: border-box;
