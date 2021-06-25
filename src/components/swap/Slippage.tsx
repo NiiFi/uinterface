@@ -41,6 +41,13 @@ const SlippageOption = styled.div`
       outline: none;
     }
   }
+
+  &.has-error > input{
+    color: red;
+  }
+  &.has-error {
+    border: 1px solid red;
+  }
 `
 const OptionWrapper = styled.div`
   display: flex;
@@ -88,29 +95,52 @@ const ControlButton = styled.div`
   color: ${({ theme }) => theme.text5};
   cursor: pointer;
 `
+
+const TWO_PERCENT = `2.00`
+const THREE_PERCENT = `3.00`
+const DEFAULT_PERCENT = TWO_PERCENT
 export default function Slippage() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const userSlippageTolerance = useUserSlippageTolerance()
   const setUserSlippageTolerance = useSetUserSlippageTolerance()
 
+  const currentSlippageValue =
+    userSlippageTolerance instanceof Percent ? userSlippageTolerance.toFixed(2) : DEFAULT_PERCENT
+  const [slippageInput, setSlippageInput] = React.useState(currentSlippageValue)
+  const [slippageError, setSlippageError] = React.useState(false)
   const onOptionChange = (value: string) => {
+    setSlippageError(false)
     const parsed = Math.floor(Number.parseFloat(value) * 100)
 
     if (!Number.isInteger(parsed) || parsed < 0 || parsed > 5000) {
-      setUserSlippageTolerance('auto')
+      setUserSlippageTolerance(new Percent(2, 10_000))
     } else {
-      setUserSlippageTolerance(new Percent(parsed, 10_000))
+      const newSlippageValue = new Percent(parsed, 10_000)
+      setUserSlippageTolerance(newSlippageValue)
+      setSlippageInput(newSlippageValue.toFixed(2))
     }
-    handleClose()
+  }
+  const handleCustomSlippageChange = (value: string) => {
+    setSlippageInput(value)
+    setSlippageError(false)
+    const parsed = Math.floor(Number.parseFloat(value) * 100)
+    if (isNaN(parsed) || value === '.') {
+      setSlippageError(true)
+      return
+    }
   }
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     setAnchorEl(event.currentTarget)
   }
 
+  const handelCustomSlippageOnBlur = () => {
+    onOptionChange(slippageError ? DEFAULT_PERCENT : slippageInput)
+  }
+
   const handleClose = () => {
     setAnchorEl(null)
   }
-  const currentSlippageValue = userSlippageTolerance instanceof Percent ? userSlippageTolerance.toFixed(0) : '10'
+
   return (
     <ControlWrapper>
       <ControlLabel>
@@ -118,7 +148,7 @@ export default function Slippage() {
       </ControlLabel>
       <ControlBody>
         <ControlButton onClick={handleClick}>
-          {currentSlippageValue}% <ChevronDown />
+          {Number(slippageInput).toFixed(2).replace('.00', '')}% <ChevronDown />
         </ControlButton>
         <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
           <MenuWrapper>
@@ -127,19 +157,41 @@ export default function Slippage() {
             </MenuTitle>
             <OptionWrapper>
               <SlippageOption
-                onClick={() => onOptionChange('2')}
-                className={currentSlippageValue === '2' ? 'active' : ''}
+                onClick={() => {
+                  onOptionChange(TWO_PERCENT)
+                  handleClose()
+                }}
+                className={slippageInput === TWO_PERCENT ? 'active' : ''}
               >
                 <Trans>2%</Trans>
               </SlippageOption>
               <SlippageOption
-                onClick={() => onOptionChange('3')}
-                className={currentSlippageValue === '3' ? 'active' : ''}
+                onClick={() => {
+                  onOptionChange(THREE_PERCENT)
+                  handleClose()
+                }}
+                className={slippageInput === THREE_PERCENT ? 'active' : ''}
               >
                 <Trans>3%</Trans>
               </SlippageOption>
-              <SlippageOption style={{ width: '120px' }}>
-                <input placeholder={'Custom'} type={'text'} name="customSlippage" />
+              <SlippageOption
+                style={{ width: '120px' }}
+                className={
+                  slippageError
+                    ? 'has-error'
+                    : slippageInput !== THREE_PERCENT && slippageInput !== TWO_PERCENT
+                    ? 'active'
+                    : ''
+                }
+              >
+                <input
+                  placeholder={'Custom'}
+                  onBlur={() => handelCustomSlippageOnBlur()}
+                  onChange={(e) => handleCustomSlippageChange(e.target.value)}
+                  type={'text'}
+                  value={slippageInput !== THREE_PERCENT && slippageInput !== TWO_PERCENT ? slippageInput : ''}
+                  name="customSlippage"
+                />
               </SlippageOption>
             </OptionWrapper>
           </MenuWrapper>
