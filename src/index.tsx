@@ -2,6 +2,7 @@ import 'inter-ui'
 import '@reach/dialog/styles.css'
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core'
 import React, { StrictMode } from 'react'
+import { hotjar } from 'react-hotjar'
 import { isMobile } from 'react-device-detect'
 import ReactDOM from 'react-dom'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
@@ -51,6 +52,15 @@ if (typeof GOOGLE_ANALYTICS_ID === 'string') {
   })
 } else {
   ReactGA.initialize('test', { testMode: true, debug: true })
+}
+const hotJarId = Number(process.env.REACT_APP_HOTJAR_KEY)
+const hotJarVersion = Number(process.env.REACT_APP_HOTJAR_VERSION)
+
+if (hotJarId && hotJarVersion && !isNaN(hotJarId) && !isNaN(hotJarVersion)) {
+  console.log('initialize the hotjar')
+  hotjar.initialize(hotJarId, hotJarVersion)
+} else {
+  console.error('HotJAR Id is not valid')
 }
 
 function Updaters() {
