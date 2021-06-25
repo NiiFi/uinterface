@@ -32,6 +32,7 @@ import BetterTradeLink from '../../components/swap/BetterTradeLink'
 import confirmPriceImpactWithoutFee from '../../components/swap/confirmPriceImpactWithoutFee'
 import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
+import Slippage from '../../components/swap/Slippage'
 
 import {
   ArrowWrapper,
@@ -485,7 +486,7 @@ export default function Swap({ history }: RouteComponentProps) {
                     id="swap-currency-output"
                   />
                 </div>
-
+                <Slippage />
                 {recipient !== null && !showWrap ? (
                   <>
                     <AutoRow justify="space-between" style={{ padding: '0 1rem' }}>
@@ -499,7 +500,6 @@ export default function Swap({ history }: RouteComponentProps) {
                     <AddressInputPanel id="recipient" value={recipient} onChange={onChangeRecipient} />
                   </>
                 ) : null}
-
                 {showWrap ? null : (
                   <Row style={{ justifyContent: !trade ? 'center' : 'space-between' }}>
                     <RowFixed>
@@ -571,7 +571,6 @@ export default function Swap({ history }: RouteComponentProps) {
                     ) : null}
                   </Row>
                 )}
-
                 <BottomGrouping>
                   {swapIsUnsupported ? (
                     <ButtonPrimary disabled={true}>
