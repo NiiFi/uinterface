@@ -19,12 +19,27 @@ const SlippageOption = styled.div`
   &.active {
     color: ${({ theme }) => theme.primary1}
     border: 1px solid ${({ theme }) => theme.primary1}
+    > input {
+      color: ${({ theme }) => theme.primary1}
+    }
   }
   &:first-child {
     margin-left: 0px
   }
   &:last-child {
     margin-right: 0px
+  }
+
+  > input {
+    text-align: right;
+    width: 100%
+    border: none;
+    color: ${({ theme }) => theme.bg4};
+    font-size: 1rem;
+    &:focus{
+      outline-width: 0 !important;
+      outline: none;
+    }
   }
 `
 const OptionWrapper = styled.div`
@@ -50,7 +65,7 @@ const ControlWrapper = styled.div`
   align-items: center;
   border-top: 1px solid ${({ theme }) => theme.bg5}
   border-bottom: 1px solid ${({ theme }) => theme.bg5}
-  padding: 1rem 0px;
+  padding: 0.5rem 0px;
   justify-content: space-between;
   box-sizing: border-box;
   margin: 0px 2rem;
@@ -112,16 +127,19 @@ export default function Slippage() {
             </MenuTitle>
             <OptionWrapper>
               <SlippageOption
-                onClick={() => onOptionChange('2%')}
+                onClick={() => onOptionChange('2')}
                 className={currentSlippageValue === '2' ? 'active' : ''}
               >
                 <Trans>2%</Trans>
               </SlippageOption>
               <SlippageOption
-                onClick={() => onOptionChange('3%')}
+                onClick={() => onOptionChange('3')}
                 className={currentSlippageValue === '3' ? 'active' : ''}
               >
                 <Trans>3%</Trans>
+              </SlippageOption>
+              <SlippageOption style={{ width: '120px' }}>
+                <input placeholder={'Custom'} type={'text'} name="customSlippage" />
               </SlippageOption>
             </OptionWrapper>
           </MenuWrapper>
