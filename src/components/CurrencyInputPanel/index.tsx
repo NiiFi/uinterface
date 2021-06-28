@@ -67,8 +67,6 @@ const CurrencySelect = styled(ButtonEmpty)<{ selected: boolean; hideInput?: bool
 const InputRow = styled.div<{ selected: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
   padding-bottom: 0.75rem;
 `
 
@@ -79,7 +77,7 @@ const LabelRow = styled.div`
   font-size: 0.75rem;
   line-height: 1rem;
   display: flex;
-  padding: 1rem 2rem 0.5rem 2rem;
+  padding: 1rem 0 0.5rem 0;
   span:hover {
     cursor: pointer;
     color: ${({ theme }) => darken(0.2, theme.text2)};

@@ -9,7 +9,11 @@ import { AutoColumn } from '../Column'
 
 export const Wrapper = styled.div`
   position: relative;
-  padding: 8px;
+  padding: 1rem 2rem;
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding: 1rem;
+  `}
 `
 export const BodyScroller = styled.div`
   height: calc(100vh - 53px);

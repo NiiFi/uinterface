@@ -84,9 +84,9 @@ const StyledInfo = styled(Info)`
   }
 `
 const ArrowContainer = styled.div`
-  width: calc(100% - 4rem);
+  width: 100%;
   height: 1px;
-  margin: 0px 2rem;
+  margin: 0px 0px;
   position: relative;
   background-color: ${({ theme }) => theme.bg5};
 `

@@ -9,6 +9,10 @@ export const BodyWrapper = styled.div<{ margin?: string; padding?: string }>`
   border: 1px solid ${({ theme }) => theme.bg3};
   width: 100%;
   background: ${({ theme }) => theme.bg0};
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding: 1rem;
+  `}
 `
 export const BodyWrapperSm = styled(BodyWrapper)`
   max-width: 480px;

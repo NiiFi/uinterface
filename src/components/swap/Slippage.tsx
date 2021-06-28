@@ -1,7 +1,7 @@
 import React from 'react'
 import { Trans } from '@lingui/macro'
 import Menu from '@material-ui/core/Menu'
-import { ChevronDown } from 'react-feather'
+import { ChevronDown, X } from 'react-feather'
 import { Percent } from '@uniswap/sdk-core'
 import styled from 'styled-components'
 import { useSetUserSlippageTolerance, useUserSlippageTolerance } from 'state/user/hooks'
@@ -66,6 +66,23 @@ const MenuTitle = styled.h3`
   margin-top: 0px;
   width: 100%;
 `
+const MenuTitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 100%;
+`
+
+const MenuClose = styled.div`
+  padding: 0.5rem;
+  cursor: pointer;
+  > svg {
+    color: ${({ theme }) => theme.text5};
+  }
+`
+
 const ControlWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -75,7 +92,7 @@ const ControlWrapper = styled.div`
   padding: 0.5rem 0px;
   justify-content: space-between;
   box-sizing: border-box;
-  margin: 0px 2rem;
+  margin: 0px 0px;
 `
 const ControlLabel = styled.h3`
   font-size: 1rem;
@@ -146,15 +163,21 @@ export default function Slippage() {
       <ControlLabel>
         <Trans>Slippage Tolerance</Trans>
       </ControlLabel>
+
       <ControlBody>
         <ControlButton onClick={handleClick}>
           {Number(slippageInput).toFixed(2).replace('.00', '')}% <ChevronDown />
         </ControlButton>
         <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
           <MenuWrapper>
-            <MenuTitle>
-              <Trans>Slippage Tolerance</Trans>
-            </MenuTitle>
+            <MenuTitleWrapper>
+              <MenuTitle>
+                <Trans>Slippage Tolerance</Trans>
+              </MenuTitle>
+              <MenuClose onClick={handleClose}>
+                <X size={'1rem'} />
+              </MenuClose>
+            </MenuTitleWrapper>
             <OptionWrapper>
               <SlippageOption
                 onClick={() => {
