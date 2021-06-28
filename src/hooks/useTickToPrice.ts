@@ -1,5 +1,5 @@
 import { Token, Price } from '@uniswap/sdk-core'
-import { tickToPrice } from '@uniswap/v3-sdk'
+import { tickToPrice } from '../utils/priceTickConversions'
 
 export function getTickToPrice(
   baseToken: Token | undefined,

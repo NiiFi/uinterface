@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useContext, ReactNode } from 'react'
-import { Position } from '@uniswap/v3-sdk'
+import { Position } from '../../utils/position'
 import { LightCard } from 'components/Card'
 import { AutoColumn } from 'components/Column'
 import { TYPE } from 'theme'
@@ -13,7 +13,7 @@ import RateToggle from 'components/RateToggle'
 import DoubleCurrencyLogo from 'components/DoubleLogo'
 import RangeBadge from 'components/Badge/RangeBadge'
 import { ThemeContext } from 'styled-components'
-import JSBI from 'jsbi'
+import JSBI from '../../utils/jsbi'
 
 export const PositionPreview = ({
   position,

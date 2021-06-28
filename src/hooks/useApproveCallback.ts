@@ -2,7 +2,6 @@ import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
 import { CurrencyAmount, Percent, Currency, TradeType } from '@uniswap/sdk-core'
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
-import { Trade as V3Trade } from '@uniswap/v3-sdk'
 import { useCallback, useMemo } from 'react'
 import { SWAP_ROUTER_ADDRESSES, V2_ROUTER_ADDRESS } from '../constants/addresses'
 import { useTransactionAdder, useHasPendingApproval } from '../state/transactions/hooks'
@@ -99,7 +98,7 @@ export function useApproveCallback(
 
 // wraps useApproveCallback in the context of a swap
 export function useApproveCallbackFromTrade(
-  trade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType> | undefined,
+  trade: V2Trade<Currency, Currency, TradeType> | undefined,
   allowedSlippage: Percent
 ) {
   const { chainId } = useActiveWeb3React()
@@ -110,12 +109,6 @@ export function useApproveCallbackFromTrade(
   )
   return useApproveCallback(
     amountToApprove,
-    chainId
-      ? trade instanceof V2Trade
-        ? V2_ROUTER_ADDRESS[chainId]
-        : trade instanceof V3Trade
-        ? v3SwapRouterAddress
-        : undefined
-      : undefined
+    chainId ? (trade instanceof V2Trade ? V2_ROUTER_ADDRESS[chainId] : undefined) : undefined
   )
 }

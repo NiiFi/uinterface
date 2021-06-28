@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import JSBI from 'jsbi'
-import { Trade as V3Trade } from '@uniswap/v3-sdk'
 import useENS from '../../hooks/useENS'
 import { parseUnits } from '@ethersproject/units'
 import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
@@ -99,11 +98,8 @@ const BAD_RECIPIENT_ADDRESSES: { [address: string]: true } = {
  * @param trade to check for the given address
  * @param checksummedAddress address to check in the pairs and tokens
  */
-function involvesAddress(
-  trade: V2Trade<Currency, Currency, TradeType> | V3Trade<Currency, Currency, TradeType>,
-  checksummedAddress: string
-): boolean {
-  const path = trade instanceof V2Trade ? trade.route.path : trade.route.tokenPath
+function involvesAddress(trade: V2Trade<Currency, Currency, TradeType>, checksummedAddress: string): boolean {
+  const path = trade.route.path
   return (
     path.some((token) => token.address === checksummedAddress) ||
     (trade instanceof V2Trade
