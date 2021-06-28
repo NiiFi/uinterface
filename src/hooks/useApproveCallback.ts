@@ -102,7 +102,7 @@ export function useApproveCallbackFromTrade(
   allowedSlippage: Percent
 ) {
   const { chainId } = useActiveWeb3React()
-  const v3SwapRouterAddress = chainId ? SWAP_ROUTER_ADDRESSES[chainId] : undefined
+
   const amountToApprove = useMemo(
     () => (trade && trade.inputAmount.currency.isToken ? trade.maximumAmountIn(allowedSlippage) : undefined),
     [trade, allowedSlippage]

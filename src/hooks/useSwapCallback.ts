@@ -3,7 +3,6 @@ import { t } from '@lingui/macro'
 import { Router, Trade as V2Trade } from '@uniswap/v2-sdk'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { useMemo } from 'react'
-import { SWAP_ROUTER_ADDRESSES } from '../constants/addresses'
 import { calculateGasMargin } from '../utils/calculateGasMargin'
 import approveAmountCalldata from '../utils/approveAmountCalldata'
 import { getTradeVersion } from '../utils/getTradeVersion'
@@ -156,18 +155,11 @@ export function swapErrorToUserReadableMessage(error: any): string {
       return t`The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer.`
     case 'Too little received':
     case 'Too much requested':
-    case 'STF':
-      return t`This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3.`
-    case 'TF':
-      return t`The output token cannot be transferred. There may be an issue with the output token. Note fee on transfer and rebase tokens are incompatible with Uniswap V3.`
     default:
       if (reason?.indexOf('undefined is not an object') !== -1) {
         console.error(error, reason)
-        return t`An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3.`
       }
-      return t`Unknown error${
-        reason ? `: "${reason}"` : ''
-      }. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3.`
+      return t`Unknown error${reason ? `: "${reason}"` : ''}.`
   }
 }
 
@@ -289,12 +281,8 @@ export function useSwapCallback(
                       : recipientAddressOrName
                   }`
 
-            const tradeVersion = getTradeVersion(trade)
-
-            const withVersion = tradeVersion === Version.v3 ? withRecipient : `${withRecipient} on ${tradeVersion}`
-
             addTransaction(response, {
-              summary: withVersion,
+              summary: withRecipient,
             })
 
             return response.hash
