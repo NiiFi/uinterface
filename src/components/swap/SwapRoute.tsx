@@ -12,8 +12,7 @@ export default memo(function SwapRoute({ trade }: { trade: V2Trade<Currency, Cur
   const theme = useContext(ThemeContext)
   return (
     <Flex flexWrap="wrap" width="100%" justifyContent="flex-start" alignItems="center">
-      {tokenPath.map((token, i, path) => {
-        const isLastItem: boolean = i === path.length - 1
+      {tokenPath.map((token, i) => {
         const currency = unwrappedToken(token)
         return (
           <Fragment key={i}>

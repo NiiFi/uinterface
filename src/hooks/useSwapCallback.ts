@@ -5,17 +5,14 @@ import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { useMemo } from 'react'
 import { calculateGasMargin } from '../utils/calculateGasMargin'
 import approveAmountCalldata from '../utils/approveAmountCalldata'
-import { getTradeVersion } from '../utils/getTradeVersion'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { isAddress, shortenAddress } from '../utils'
 import isZero from '../utils/isZero'
 import { useActiveWeb3React } from './web3'
 import { useArgentWalletContract } from './useArgentWalletContract'
 import { useV2RouterContract } from './useContract'
-import { SignatureData } from './useERC20Permit'
 import useTransactionDeadline from './useTransactionDeadline'
 import useENS from './useENS'
-import { Version } from './useToggledVersion'
 
 export enum SwapCallbackState {
   INVALID,
@@ -53,8 +50,7 @@ interface FailedCall extends SwapCallEstimate {
 function useSwapCallArguments(
   trade: V2Trade<Currency, Currency, TradeType> | undefined, // trade to execute, required
   allowedSlippage: Percent, // in bips
-  recipientAddressOrName: string | null, // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
-  signatureData: SignatureData | null | undefined
+  recipientAddressOrName: string | null // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
 ): SwapCall[] {
   const { account, chainId, library } = useActiveWeb3React()
 
@@ -113,18 +109,7 @@ function useSwapCallArguments(
         }
       }
     })
-  }, [
-    account,
-    allowedSlippage,
-    argentWalletContract,
-    chainId,
-    deadline,
-    library,
-    recipient,
-    routerContract,
-    signatureData,
-    trade,
-  ])
+  }, [account, allowedSlippage, argentWalletContract, chainId, deadline, library, recipient, routerContract, trade])
 }
 
 /**
@@ -168,12 +153,11 @@ export function swapErrorToUserReadableMessage(error: any): string {
 export function useSwapCallback(
   trade: V2Trade<Currency, Currency, TradeType> | undefined, // trade to execute, required
   allowedSlippage: Percent, // in bips
-  recipientAddressOrName: string | null, // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
-  signatureData: SignatureData | undefined | null
+  recipientAddressOrName: string | null // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
 ): { state: SwapCallbackState; callback: null | (() => Promise<string>); error: string | null } {
   const { account, chainId, library } = useActiveWeb3React()
 
-  const swapCalls = useSwapCallArguments(trade, allowedSlippage, recipientAddressOrName, signatureData)
+  const swapCalls = useSwapCallArguments(trade, allowedSlippage, recipientAddressOrName)
 
   const addTransaction = useTransactionAdder()
 

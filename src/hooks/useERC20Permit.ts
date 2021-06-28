@@ -3,7 +3,6 @@ import { Percent, CurrencyAmount, Currency, TradeType, Token } from '@uniswap/sd
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import { splitSignature } from 'ethers/lib/utils'
 import { useMemo, useState } from 'react'
-import { SWAP_ROUTER_ADDRESSES } from '../constants/addresses'
 import { DAI, UNI, USDC } from '../constants/tokens'
 import { useSingleCallResult } from '../state/multicall/hooks'
 import { useActiveWeb3React } from './web3'
@@ -273,8 +272,6 @@ export function useERC20PermitFromTrade(
   trade: V2Trade<Currency, Currency, TradeType> | undefined,
   allowedSlippage: Percent
 ) {
-  const { chainId } = useActiveWeb3React()
-  const swapRouterAddress = chainId ? SWAP_ROUTER_ADDRESSES[chainId] : undefined
   const amountToApprove = useMemo(
     () => (trade ? trade.maximumAmountIn(allowedSlippage) : undefined),
     [trade, allowedSlippage]
