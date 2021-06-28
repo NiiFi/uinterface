@@ -9,22 +9,34 @@ import { AutoColumn } from '../Column'
 
 export const Wrapper = styled.div`
   position: relative;
-  padding: 8px;
-`
+  padding: 1rem 2rem;
 
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding: 1rem;
+  `}
+`
+export const BodyScroller = styled.div`
+  height: calc(100vh - 53px);
+  overflow-y: scroll;
+`
 export const ArrowWrapper = styled.div<{ clickable: boolean }>`
-  padding: 4px;
-  border-radius: 12px;
-  height: 32px;
-  width: 32px;
-  position: relative;
+  padding: 2px 4px;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
   margin-top: -14px;
   margin-bottom: -14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   left: calc(50% - 16px);
   /* transform: rotate(90deg); */
-  background-color: ${({ theme }) => theme.bg1};
+  background-color: ${({ theme }) => theme.primary1};
   border: 4px solid ${({ theme }) => theme.bg0};
   z-index: 2;
+  top: -10px;
   ${({ clickable }) =>
     clickable
       ? css`
