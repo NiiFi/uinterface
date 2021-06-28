@@ -3,6 +3,8 @@ import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import { Token } from '@uniswap/sdk-core'
+import numeral from 'numeral'
+import { formatDistance } from 'date-fns'
 import { TokenAddressMap } from '../state/lists/hooks'
 
 // returns the checksummed address if the address is valid, otherwise returns false
@@ -23,6 +25,14 @@ export function shortenAddress(address: string, chars = 4): string {
   return `${parsed.substring(0, chars + 2)}...${parsed.substring(42 - chars)}`
 }
 
+export function shortenDecimalValues(value: string): string {
+  return numeral(Number(value)).format('0.[000]a')
+}
+
+export function formatTimeStamp(value: string): string {
+  const timeStampNumber = Number(value)
+  return formatDistance(new Date(timeStampNumber), new Date(), { addSuffix: true })
+}
 // account is not optional
 export function getSigner(library: Web3Provider, account: string): JsonRpcSigner {
   return library.getSigner(account).connectUnchecked()

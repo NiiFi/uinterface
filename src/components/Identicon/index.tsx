@@ -5,10 +5,13 @@ import styled from 'styled-components/macro'
 import { useActiveWeb3React } from '../../hooks/web3'
 import Jazzicon from '@metamask/jazzicon'
 
+const ImageSize = 40
+const ImageIconContainerSize = (ImageSize / 16).toFixed(3)
+
 const StyledIdenticonContainer = styled.div`
-  height: 1rem;
-  width: 1rem;
-  border-radius: 1.125rem;
+  height: ${ImageIconContainerSize}rem;
+  width: ${ImageIconContainerSize}rem;
+  border-radius: ${Number(ImageIconContainerSize) + 0.125}rem;
   background-color: ${({ theme }) => theme.bg4};
 `
 
@@ -20,7 +23,7 @@ export default function Identicon() {
   useEffect(() => {
     if (account && ref.current) {
       ref.current.innerHTML = ''
-      ref.current.appendChild(Jazzicon(16, parseInt(account.slice(2, 10), 16)))
+      ref.current.appendChild(Jazzicon(ImageSize, parseInt(account.slice(2, 10), 16)))
     }
   }, [account])
 

@@ -1,21 +1,39 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export const BodyWrapper = styled.div<{ margin?: string }>`
+export const BodyWrapper = styled.div<{ margin?: string; padding?: string }>`
   position: relative;
   margin-top: ${({ margin }) => margin ?? '0px'};
-  max-width: 480px;
+  padding: ${({ padding }) => padding ?? '0px'};
+  border-radius: 12px;
+  border: 1px solid ${({ theme }) => theme.bg3};
   width: 100%;
   background: ${({ theme }) => theme.bg0};
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
-    0px 24px 32px rgba(0, 0, 0, 0.01);
-  border-radius: 24px;
-  margin-top: 1rem;
-`
 
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding: 1rem;
+  `}
+`
+export const BodyWrapperSm = styled(BodyWrapper)`
+  max-width: 480px;
+`
+export const BodyWrapperLg = styled(BodyWrapper)`
+  max-width: 100%;
+`
 /**
  * The styled container element that wraps the content of most pages and the tabs.
  */
-export default function AppBody({ children, ...rest }: { children: React.ReactNode }) {
+export default function AppBody({
+  children,
+  size = 'sm',
+  ...rest
+}: {
+  children: React.ReactNode
+  margin?: string
+  padding?: string
+  size?: string
+}) {
+  if (size === 'sm') return <BodyWrapperSm {...rest}>{children}</BodyWrapperSm>
+  if (size === 'lg') return <BodyWrapperLg {...rest}>{children}</BodyWrapperLg>
   return <BodyWrapper {...rest}>{children}</BodyWrapper>
 }

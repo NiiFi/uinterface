@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsReporter'
 import AddressClaimModal from '../components/claim/AddressClaimModal'
-import Header from '../components/Header'
+import Header from '../components/Header/Sidebar'
 import Polling from '../components/Header/Polling'
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
@@ -22,40 +22,68 @@ import Vote from './Vote'
 import VotePage from './Vote/VotePage'
 import { RedirectDuplicateTokenIdsV2 } from './AddLiquidityV2/redirects'
 import AddLiquidity from './AddLiquidityV2'
+import { useToggleDrawer } from 'state/application/hooks'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 
 const AppWrapper = styled.div`
   display: flex;
-  flex-flow: column;
   align-items: flex-start;
+  background-color: ${({ theme }) => theme.white};
 `
 
 const BodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding-top: 120px;
-  align-items: center;
+  width: calc(100vw - 360px);
+  align-items: flex-start;
+  height: 100vh;
+  overflow: scroll;
   flex: 1;
-  z-index: 1;
 
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 16px;
-    padding-top: 6rem;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    padding: 5px;
+    width: 100vw;
   `};
 `
 
 const HeaderWrapper = styled.div`
   ${({ theme }) => theme.flexRowNoWrap}
-  width: 100%;
+  width: 360px;
   justify-content: space-between;
-  position: fixed;
-  top: 0;
-  z-index: 2;
+  overflow: hidden;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    width: 0px;
+    left: -300px;
+    transition: width .3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    &.active {
+      position: relative;
+      z-index: 21001;
+      left: 0px;
+      width: 300px;
+      transition: width .5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+  `}
 `
-
+const HeaderWrapperBackDrop = styled.div`
+  width: 360px;
+  height: auto;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    width: 0px;
+    left: -300px;
+    background-color: rgba(0, 0, 0, 0.3);
+    &.active {
+      position: absolute;
+      z-index: 21000;
+      left: 0px;
+      width: 100vw;
+    }
+  `}
+`
 const Marginer = styled.div`
   margin-top: 5rem;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    margin-top: 0.5rem;
+  `}
 `
 
 function TopLevelModals() {
@@ -65,15 +93,18 @@ function TopLevelModals() {
 }
 
 export default function App() {
+  const { showDrawer, setDrawerToggle } = useToggleDrawer()
   return (
     <ErrorBoundary>
       <Route component={GoogleAnalyticsReporter} />
       <Route component={DarkModeQueryParamReader} />
       <Route component={ApeModeQueryParamReader} />
       <AppWrapper>
-        <HeaderWrapper>
-          <Header />
-        </HeaderWrapper>
+        <HeaderWrapperBackDrop className={showDrawer ? 'active' : ''} onClick={() => setDrawerToggle(false)}>
+          <HeaderWrapper className={showDrawer ? 'active' : ''}>
+            <Header />
+          </HeaderWrapper>
+        </HeaderWrapperBackDrop>
         <BodyWrapper>
           <Popups />
           <Polling />
