@@ -13,7 +13,7 @@ import { useModalOpen, useToggleModal } from '../state/application/hooks'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import Earn from './Earn'
 import Manage from './Earn/Manage'
-import Pool from './Pool/v2'
+import PoolV2 from './Pool/v2'
 import PoolFinder from './PoolFinder'
 import RemoveLiquidity from './RemoveLiquidity'
 import Swap from './Swap'
@@ -91,7 +91,7 @@ export default function App() {
               <Route exact strict path="/swap" component={Swap} />
 
               <Route exact strict path="/pool/v2/find" component={PoolFinder} />
-              <Route exact strict path="/pool" component={Pool} />
+              <Route exact strict path="/pool/v2" component={PoolV2} />
 
               <Route exact strict path="/add/v2/:currencyIdA?/:currencyIdB?" component={RedirectDuplicateTokenIdsV2} />
 
@@ -103,7 +103,6 @@ export default function App() {
               />
 
               <Route exact strict path="/remove/v2/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
-              <Route exact strict path="/remove/:tokenId" component={RemoveLiquidity} />
 
               <Route component={RedirectPathToSwapOnly} />
             </Switch>
