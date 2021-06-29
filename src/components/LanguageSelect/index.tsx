@@ -29,7 +29,13 @@ export default function LanguageSelect() {
   return (
     <LanguageWrapper>
       <LanguageIcon />
-      <Select labelId="language-select" id="lang-select" value={currentLocale} onChange={handleChange}>
+      <Select
+        labelId="language-select"
+        id="lang-select"
+        value={currentLocale}
+        onClick={(e) => e.stopPropagation()}
+        onChange={handleChange}
+      >
         {SUPPORTED_LOCALES.map((locale, localeIdx) => (
           <MenuItem key={localeIdx} value={locale}>
             {locale.split('-')[0].toUpperCase()}

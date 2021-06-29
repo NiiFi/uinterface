@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 export const TRANSACTION_QUERY_GQL = gql`
   query transactions {
-    transactions(first: 100, orderBy: timestamp, orderDirection: desc) {
+    transactions(first: 500, orderBy: timestamp, orderDirection: desc) {
       mints(orderBy: timestamp, orderDirection: desc) {
         transaction {
           id
