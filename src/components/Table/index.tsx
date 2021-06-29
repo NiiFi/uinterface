@@ -277,7 +277,7 @@ export default function EnhancedTable() {
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
       <TableContainer>
-        <Table className={classes.table} size={'medium'} style={{ width: 'auto', tableLayout: 'auto' }}>
+        <Table className={classes.table} size={'medium'} style={{ width: '100%', tableLayout: 'auto' }}>
           <EnhancedTableHead
             classes={classes}
             numSelected={selected.length}
