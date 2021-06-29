@@ -26,6 +26,11 @@ import { SampleResponse } from './sample-response'
 const BASE_URL = 'https://etherscan.io'
 
 function mapSwapResponseToTableData(swaps: Array<Swap>): Array<TransactionTableData> {
+  /**
+   * Reason for disabling the below typescript rule is to
+   * avoid missing argument error.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return swaps.map(({ amount0Out, amount1In, amount1Out, amount0In, to, ...rest }, _) => {
     const amount0 = amount0In
     const amount1 = amount1In
@@ -38,6 +43,12 @@ function mapSwapResponseToTableData(swaps: Array<Swap>): Array<TransactionTableD
   })
 }
 function mapBurnResponseToTableData(burns: Array<Burn>): Array<TransactionTableData> {
+  /**
+   * Reason for disabling the below typescript rule is to
+   * avoid the liquidity being part of return result. and _ need to be passed as it was
+   * throwing the missing argument error
+   */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return burns.map(({ liquidity, sender, ...rest }, _) => {
     return {
       ...rest,
@@ -46,6 +57,12 @@ function mapBurnResponseToTableData(burns: Array<Burn>): Array<TransactionTableD
   })
 }
 function mapMintResponseToTableData(mints: Array<Mint>): Array<TransactionTableData> {
+  /**
+   * Reason for disabling the below typescript rule is to
+   * avoid the liquidity being part of return result. and _ need to be passed as it was
+   * throwing the missing argument error
+   */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return mints.map(({ liquidity, to, ...rest }, _) => {
     return {
       ...rest,
@@ -55,6 +72,11 @@ function mapMintResponseToTableData(mints: Array<Mint>): Array<TransactionTableD
 }
 function mapTransactionListDataToTableData(data: TransactionListQuery): Array<TransactionTableData> {
   const tableData: Array<TransactionTableData> = []
+  /**
+   * Reason for disabling the below typescript rule is to
+   * avoid missing argument error.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   data.transactions.reduce((acc: Array<TransactionTableData>, { swaps, mints, burns }, _) => {
     const mappedSwaps = mapSwapResponseToTableData(swaps)
     const mappedMints = mapMintResponseToTableData(mints)
@@ -101,7 +123,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
     { id: 'address', numeric: false, disablePadding: false, label: t`Account` },
     { id: 'transaction.timestamp', numeric: false, disablePadding: false, label: t`Time` },
   ]
-  const { classes, order, orderBy, onRequestSort, onTransactionTypeChange, transactionType } = props
+  const { order, orderBy, onRequestSort, onTransactionTypeChange, transactionType } = props
   const createSortHandler = (property: string) => (event: React.MouseEvent<unknown>) => {
     onRequestSort(event, property)
   }
@@ -277,7 +299,7 @@ export default function EnhancedTable() {
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
       <TableContainer>
-        <Table className={classes.table} size={'medium'} style={{ width: 'auto', tableLayout: 'auto' }}>
+        <Table className={classes.table} size={'medium'} style={{ width: '100%', tableLayout: 'auto' }}>
           <EnhancedTableHead
             classes={classes}
             numSelected={selected.length}

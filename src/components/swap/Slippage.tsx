@@ -138,7 +138,9 @@ export default function Slippage() {
     }
   }
   const handleCustomSlippageChange = (value: string) => {
-    setSlippageInput(value)
+    if (!isNaN(Number(value))) {
+      setSlippageInput(value)
+    }
     setSlippageError(false)
     const parsed = Math.floor(Number.parseFloat(value) * 100)
     if (isNaN(parsed) || value === '.') {
@@ -215,6 +217,7 @@ export default function Slippage() {
                   value={slippageInput !== THREE_PERCENT && slippageInput !== TWO_PERCENT ? slippageInput : ''}
                   name="customSlippage"
                 />
+                <span>%</span>
               </SlippageOption>
             </OptionWrapper>
           </MenuWrapper>
