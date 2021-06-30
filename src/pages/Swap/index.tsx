@@ -376,7 +376,7 @@ export default function Swap({ history }: RouteComponentProps) {
         position="static"
         style={{
           boxShadow: 'none',
-          backgroundColor: 'white',
+          backgroundColor: theme.bg0,
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',

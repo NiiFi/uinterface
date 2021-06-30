@@ -7,7 +7,7 @@ import styled from 'styled-components/macro'
 import LanguageSelect from '../LanguageSelect'
 
 import Logo from '../../assets/images/niifi-logo.png'
-
+import ThemeSwitch from '../ThemeSwitch'
 import { DashboardIcon, PoolIcon, SwapIcon, LendIcon, DiscoverIcon, FarmIcon } from '../Icons'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { CardNoise } from '../earn/styled'
@@ -163,7 +163,7 @@ const Title = styled.a`
   pointer-events: auto;
   justify-self: flex-start;
   margin-right: 12px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.white};
   ${({ theme }) => theme.mediaWidth.upToSmall`
     justify-self: center;
   `};
@@ -354,6 +354,7 @@ export default function Header() {
             )}
           </HeaderElement>
           <HeaderElementWrap>
+            <ThemeSwitch />
             <LanguageSelect />
             <SocialLinks />
           </HeaderElementWrap>
