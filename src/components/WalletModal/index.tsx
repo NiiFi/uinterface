@@ -227,6 +227,21 @@ export default function WalletModal({
             />
           )
         }
+        if (!(window.web3 || window.ethereum)) {
+          if (option.name === 'MetaMask') {
+            return (
+              <Option
+                id={`connect-${key}`}
+                key={key}
+                color={'#E8831D'}
+                header={<Trans>Install Metamask</Trans>}
+                subheader={null}
+                link={`https://metamask.app.link/dapp/${window.location.host}`}
+                icon={MetamaskIcon}
+              />
+            )
+          }
+        }
         return null
       }
 
@@ -242,7 +257,7 @@ export default function WalletModal({
                 color={'#E8831D'}
                 header={<Trans>Install Metamask</Trans>}
                 subheader={null}
-                link={'https://metamask.io/'}
+                link={`https://metamask.app.link/dapp/${window.location.host}`}
                 icon={MetamaskIcon}
               />
             )
