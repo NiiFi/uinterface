@@ -121,7 +121,7 @@ const InternalMenuItem = styled(Link)`
   }
 `
 
-const CODE_LINK = 'https://github.com/Uniswap/uniswap-interface'
+const CODE_LINK = 'https://github.com/NiiFi/uinterface'
 
 export default function Menu() {
   const { account } = useActiveWeb3React()

@@ -219,8 +219,12 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "Permitir negociações de alto impacto nos preços e ignorar a tela de confirmação. Use por sua conta e risco."
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "Permitir que o Uniswap Protocolo use seu {0}"
+msgid "Allow the Niifi to use your {0}"
+msgstr ""
+
+#: 
+#~ msgid "Allow the Uniswap Protocol to use your {0}"
+#~ msgstr "Permitir que o Uniswap Protocolo use seu {0}"
 
 #: 
 #~ msgid "Allowed"
@@ -269,9 +273,9 @@ msgstr "Aprovando {0}"
 msgid "Are you sure?"
 msgstr "Você tem certeza?"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "Como membro da comunidade Uniswap, você pode afirmar que a UNI será usada para votar e governar.<0/><1/><2>Leia mais sobre a UNI</2>"
+#: 
+#~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+#~ msgstr "Como membro da comunidade Uniswap, você pode afirmar que a UNI será usada para votar e governar.<0/><1/><2>Leia mais sobre a UNI</2>"
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -657,9 +661,13 @@ msgstr "Documentação"
 msgid "ETH-NII Transactions"
 msgstr ""
 
+#: 
+#~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
+#~ msgstr "Os tokens ganhados da UNI representam ações de voto na governação da Uniswap."
+
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "Os tokens ganhados da UNI representam ações de voto na governação da Uniswap."
+msgid "Earned tokens represent voting shares in governance."
+msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
@@ -996,6 +1004,10 @@ msgstr "Mínimo recebido"
 #: 
 #~ msgid "New Position"
 #~ msgstr "Nova Posição"
+
+#: src/components/SwitchLocaleLink/index.tsx
+msgid "Niifi available in: <0>{0}</0>"
+msgstr ""
 
 #: 
 #~ msgid "No V2 Liquidity found."
@@ -1364,9 +1376,13 @@ msgstr "Trocar mesmo assim"
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "Trocando {0} {1} por {2} {3}"
 
+#: 
+#~ msgid "Thanks for being part of the Uniswap community <0/>"
+#~ msgstr "Obrigado por fazer parte da comunidade Uniswap <0 />"
+
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "Obrigado por fazer parte da comunidade Uniswap <0 />"
+msgid "Thanks for being part of the community <0/>"
+msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1552,9 +1568,9 @@ msgstr "Desistrocar a governança"
 msgid "Uniswap V3 is here!"
 msgstr "Uniswap V3 está aqui!"
 
-#: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Uniswap disponível em: <0>{0}</0>"
+#: 
+#~ msgid "Uniswap available in: <0>{0}</0>"
+#~ msgstr "Uniswap disponível em: <0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -1770,9 +1786,13 @@ msgstr "Você ainda não tem liquidez nesta piscina."
 #~ msgid "You must connect an account."
 #~ msgstr "Você deve conectar uma conta."
 
+#: 
+#~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
+#~ msgstr "Você precisa dar permissão de contratos inteligentes do Uniswap para usar seu {0}. Você só precisa fazer isso uma vez por token."
+
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "Você precisa dar permissão de contratos inteligentes do Uniswap para usar seu {0}. Você só precisa fazer isso uma vez por token."
+msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr ""
 
 #: 
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
