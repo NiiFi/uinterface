@@ -87,8 +87,8 @@ const ControlWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-top: 1px solid ${({ theme }) => theme.bg5}
-  border-bottom: 1px solid ${({ theme }) => theme.bg5}
+  border-top: 1px solid ${({ theme }) => theme.bg3}
+  border-bottom: 1px solid ${({ theme }) => theme.bg3}
   padding: 0.5rem 0px;
   justify-content: space-between;
   box-sizing: border-box;
@@ -217,7 +217,6 @@ export default function Slippage() {
                   value={slippageInput !== THREE_PERCENT && slippageInput !== TWO_PERCENT ? slippageInput : ''}
                   name="customSlippage"
                 />
-                <span>%</span>
               </SlippageOption>
             </OptionWrapper>
           </MenuWrapper>

@@ -82,7 +82,7 @@ const StyledInfo = styled(Info)`
 const ArrowContainer = styled.div`
   width: 100%;
   height: 1px;
-  margin: 0px 0px;
+  margin: 1rem 0px;
   position: relative;
   background-color: ${({ theme }) => theme.bg5};
 `
@@ -363,7 +363,7 @@ export default function Swap({ history }: RouteComponentProps) {
   const swapIsUnsupported = useIsSwapUnsupported(currencies?.INPUT, currencies?.OUTPUT)
 
   const priceImpactTooHigh = priceImpactSeverity > 3 && !isExpertMode
-
+  const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
   return (
     <>
       <TokenWarningModal
@@ -383,7 +383,7 @@ export default function Swap({ history }: RouteComponentProps) {
         }}
       >
         <ToggleDrawer />
-        <Tabs value={activeTab} onChange={(e, newValue: number) => setActiveTab(newValue)}>
+        <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={t`Swap`} />
           <Tab key={`tab-1`} label={t`Overview`} />
         </Tabs>
