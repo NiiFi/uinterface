@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   padding: 1rem 2rem;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 1rem;
+    padding: 0.5rem;
   `}
 `
 export const BodyScroller = styled.div`
