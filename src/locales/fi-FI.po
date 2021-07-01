@@ -326,8 +326,12 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "Lisäämällä tämän listan luotat implisiittisesti, että tiedot ovat oikeita. Kuka tahansa voi luoda listan, mukaan lukien luoda väärennettyjä versioita olemassa olevista listoista ja listoista, jotka väittävät edustavansa hankkeita, joilla ei ole sellaista."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-msgstr "Yhdistämällä lompakon hyväksyt Uniswap Labsin <0>Käyttöehdot</0> ja hyväksyt, että olet lukenut ja ymmärtänyt <1>Uniswap protokollan vastuuvapaus</1>."
+msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgstr ""
+
+#: 
+#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
+#~ msgstr "Yhdistämällä lompakon hyväksyt Uniswap Labsin <0>Käyttöehdot</0> ja hyväksyt, että olet lukenut ja ymmärtänyt <1>Uniswap protokollan vastuuvapaus</1>."
 
 #: src/components/AccountDetails/index.tsx
 msgid "Change"

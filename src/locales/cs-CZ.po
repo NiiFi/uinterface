@@ -326,8 +326,12 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "Přidáním tohoto seznamu implicitně věříte, že data jsou správná. Kdokoli může vytvořit seznam, včetně vytváření falešných verzí existujících seznamů a seznamů, které označují projekty, které jej nemají."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-msgstr "Připojením peněženky souhlasíte s Uniswap Labs<0>Podmínky služby</0> a potvrzte, že jste si přečetli <1>Zrušení odpovědnosti protokolu a rozumí</1>."
+msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgstr ""
+
+#: 
+#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
+#~ msgstr "Připojením peněženky souhlasíte s Uniswap Labs<0>Podmínky služby</0> a potvrzte, že jste si přečetli <1>Zrušení odpovědnosti protokolu a rozumí</1>."
 
 #: src/components/AccountDetails/index.tsx
 msgid "Change"
