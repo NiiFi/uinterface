@@ -13,15 +13,15 @@ import { useModalOpen, useToggleModal } from '../state/application/hooks'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import Earn from './Earn'
 import Manage from './Earn/Manage'
-import PoolV2 from './Pool/v2'
+import Pool from './Pool'
 import PoolFinder from './PoolFinder'
 import RemoveLiquidity from './RemoveLiquidity'
 import Swap from './Swap'
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import Vote from './Vote'
 import VotePage from './Vote/VotePage'
-import { RedirectDuplicateTokenIdsV2 } from './AddLiquidityV2/redirects'
-import AddLiquidity from './AddLiquidityV2'
+import { RedirectDuplicateTokenIds } from './AddLiquidity/redirects'
+import AddLiquidity from './AddLiquidity'
 import { useToggleDrawer } from 'state/application/hooks'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 
@@ -121,10 +121,10 @@ export default function App() {
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/swap" component={Swap} />
 
-              <Route exact strict path="/pool/v2/find" component={PoolFinder} />
-              <Route exact strict path="/pool/v2" component={PoolV2} />
+              <Route exact strict path="/pool/find" component={PoolFinder} />
+              <Route exact strict path="/pool" component={Pool} />
 
-              <Route exact strict path="/add/v2/:currencyIdA?/:currencyIdB?" component={RedirectDuplicateTokenIdsV2} />
+              <Route exact strict path="/add/:currencyIdA?/:currencyIdB?" component={RedirectDuplicateTokenIds} />
 
               <Route
                 exact
@@ -133,7 +133,7 @@ export default function App() {
                 component={AddLiquidity}
               />
 
-              <Route exact strict path="/remove/v2/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
+              <Route exact strict path="/remove/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
 
               <Route component={RedirectPathToSwapOnly} />
             </Switch>
