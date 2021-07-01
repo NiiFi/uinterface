@@ -219,8 +219,12 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "אפשר עסקאות עם השפעות מחיר גבוהות ודלג על מסך האישור. השתמש על אחריותך בלבד."
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "אפשר לפרוטוקול Uniswap להשתמש ב- {0}"
+msgid "Allow the Niifi to use your {0}"
+msgstr ""
+
+#: 
+#~ msgid "Allow the Uniswap Protocol to use your {0}"
+#~ msgstr "אפשר לפרוטוקול Uniswap להשתמש ב- {0}"
 
 #: 
 #~ msgid "Allowed"
@@ -269,9 +273,9 @@ msgstr "מאשר {0}"
 msgid "Are you sure?"
 msgstr "האם אתה בטוח?"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "כחבר בקהילת Uniswap אתה יכול לטעון ש- UNI משמשת להצבעה ולממשל. <0 /> <1 /> <2> קרא עוד על UNI</2>"
+#: 
+#~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+#~ msgstr "כחבר בקהילת Uniswap אתה יכול לטעון ש- UNI משמשת להצבעה ולממשל. <0 /> <1 /> <2> קרא עוד על UNI</2>"
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -326,8 +330,12 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "על ידי הוספת רשימה זו אתה סומך באופן מרומז שהנתונים נכונים. כל אחד יכול ליצור רשימה, כולל יצירת גרסאות מזויפות של רשימות קיימות ורשימות המתיימרות לייצג פרויקטים שאין להם."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-msgstr "על ידי חיבור ארנק אתה מסכים לתנאי השירות <0> של Uniswap Labs</0> והודה כי קראת והבנת את כתב הוויתור על פרוטוקול Uniswap</1> ."
+msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgstr ""
+
+#: 
+#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
+#~ msgstr "על ידי חיבור ארנק אתה מסכים לתנאי השירות <0> של Uniswap Labs</0> והודה כי קראת והבנת את כתב הוויתור על פרוטוקול Uniswap</1> ."
 
 #: src/components/AccountDetails/index.tsx
 msgid "Change"
@@ -653,9 +661,13 @@ msgstr "מסמכים"
 msgid "ETH-NII Transactions"
 msgstr ""
 
+#: 
+#~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
+#~ msgstr "אסימונים של UNI שהושכרו מייצגים מניות הצבעה בממשל Uniswap."
+
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "אסימונים של UNI שהושכרו מייצגים מניות הצבעה בממשל Uniswap."
+msgid "Earned tokens represent voting shares in governance."
+msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
@@ -992,6 +1004,10 @@ msgstr "מינימום שהתקבל"
 #: 
 #~ msgid "New Position"
 #~ msgstr "תפקיד חדש"
+
+#: src/components/SwitchLocaleLink/index.tsx
+msgid "Niifi available in: <0>{0}</0>"
+msgstr ""
 
 #: 
 #~ msgid "No V2 Liquidity found."
@@ -1360,9 +1376,13 @@ msgstr "החלף בכל מקרה"
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "החלפת {0} {1} ל {2} {3}"
 
+#: 
+#~ msgid "Thanks for being part of the Uniswap community <0/>"
+#~ msgstr "תודה שהיית חלק מקהילת Uniswap <0 />"
+
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "תודה שהיית חלק מקהילת Uniswap <0 />"
+msgid "Thanks for being part of the community <0/>"
+msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1548,9 +1568,9 @@ msgstr "ממשל לא מוחלף"
 msgid "Uniswap V3 is here!"
 msgstr "Un3wap V3 כבר כאן!"
 
-#: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Uniswap זמין ב: <0>{0}</0>"
+#: 
+#~ msgid "Uniswap available in: <0>{0}</0>"
+#~ msgstr "Uniswap זמין ב: <0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -1766,9 +1786,13 @@ msgstr "עדיין אין לך נזילות במאגר זה."
 #~ msgid "You must connect an account."
 #~ msgstr "עליך לחבר חשבון."
 
+#: 
+#~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
+#~ msgstr "עליך לתת לחוזים החכמים של Uniswap להשתמש ב- {0}שלך. אתה צריך לעשות זאת רק פעם אחת לכל אסימון."
+
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "עליך לתת לחוזים החכמים של Uniswap להשתמש ב- {0}שלך. אתה צריך לעשות זאת רק פעם אחת לכל אסימון."
+msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr ""
 
 #: 
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."

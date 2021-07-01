@@ -11,17 +11,8 @@ import ErrorBoundary from '../components/ErrorBoundary'
 import { ApplicationModal } from '../state/application/actions'
 import { useModalOpen, useToggleModal } from '../state/application/hooks'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
-import Earn from './Earn'
-import Manage from './Earn/Manage'
-import Pool from './Pool'
-import PoolFinder from './PoolFinder'
-import RemoveLiquidity from './RemoveLiquidity'
 import Swap from './Swap'
-import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
-import Vote from './Vote'
-import VotePage from './Vote/VotePage'
-import { RedirectDuplicateTokenIds } from './AddLiquidity/redirects'
-import AddLiquidity from './AddLiquidity'
+import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import { useToggleDrawer } from 'state/application/hooks'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 
@@ -111,30 +102,9 @@ export default function App() {
           <TopLevelModals />
           <Web3ReactManager>
             <Switch>
-              <Route exact strict path="/vote" component={Vote} />
-              <Route exact strict path="/vote/:id" component={VotePage} />
-              <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
-              <Route exact strict path="/uni" component={Earn} />
-              <Route exact strict path="/uni/:currencyIdA/:currencyIdB" component={Manage} />
-
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/swap" component={Swap} />
-
-              <Route exact strict path="/pool/find" component={PoolFinder} />
-              <Route exact strict path="/pool" component={Pool} />
-
-              <Route exact strict path="/add/:currencyIdA?/:currencyIdB?" component={RedirectDuplicateTokenIds} />
-
-              <Route
-                exact
-                strict
-                path="/increase/:currencyIdA?/:currencyIdB?/:feeAmount?/:tokenId?"
-                component={AddLiquidity}
-              />
-
-              <Route exact strict path="/remove/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
-
               <Route component={RedirectPathToSwapOnly} />
             </Switch>
           </Web3ReactManager>
