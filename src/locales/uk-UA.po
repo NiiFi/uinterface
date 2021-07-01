@@ -15,15 +15,15 @@ msgstr ""
 "Project-Id-Version: uniswap-interface\n"
 "Language-Team: Ukrainian\n"
 "PO-Revision-Date: 2021-06-10 00:10\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
 
-#: src/pages/Pool/PositionPage.tsx
-#: src/pages/Pool/PositionPage.tsx
-msgid "$-"
-msgstr "$-"
+#: 
+#: 
+#~ msgid "$-"
+#~ msgstr "$-"
 
 #: src/components/earn/PoolCard.tsx
-#: src/pages/Pool/PositionPage.tsx
-#: src/pages/Pool/PositionPage.tsx
 msgid "${0}"
 msgstr "${0}"
 
@@ -47,17 +47,17 @@ msgstr "(очистити все)"
 msgid "(edit)"
 msgstr "(редагувати)"
 
-#: src/components/InputStepCounter/InputStepCounter.tsx
-msgid "+{feeAmountFormatted}%"
-msgstr "+{feeAmountFormatted}%"
+#: 
+#~ msgid "+{feeAmountFormatted}%"
+#~ msgstr "+{feeAmountFormatted}%"
 
 #: src/pages/Swap/index.tsx
 msgid "- Remove send"
 msgstr "- Видалити відправку"
 
-#: src/components/InputStepCounter/InputStepCounter.tsx
-msgid "-{feeAmountFormatted}%"
-msgstr "-{feeAmountFormatted}%"
+#: 
+#~ msgid "-{feeAmountFormatted}%"
+#~ msgstr "-{feeAmountFormatted}%"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -66,29 +66,37 @@ msgstr "-{feeAmountFormatted}%"
 msgid "0 UNI / week"
 msgstr "0 UNI / тиждень"
 
-#: src/components/FeeSelector/index.tsx
-msgid "0.05% fee"
-msgstr "Вартість 0,05%"
+#: 
+#~ msgid "0.05% fee"
+#~ msgstr "Вартість 0,05%"
 
-#: src/components/FeeSelector/index.tsx
-msgid "0.3% fee"
-msgstr "0.3% комісія"
+#: 
+#~ msgid "0.3% fee"
+#~ msgstr "0.3% комісія"
 
-#: src/components/FeeSelector/index.tsx
-msgid "1% fee"
-msgstr "1% Плата"
+#: 
+#~ msgid "1% fee"
+#~ msgstr "1% Плата"
 
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "25%"
-msgstr "25%"
+#: src/components/swap/Slippage.tsx
+msgid "2%"
+msgstr ""
 
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "50%"
-msgstr "50%"
+#: 
+#~ msgid "25%"
+#~ msgstr "25%"
 
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "75%"
-msgstr "75%"
+#: src/components/swap/Slippage.tsx
+msgid "3%"
+msgstr ""
+
+#: 
+#~ msgid "50%"
+#~ msgstr "50%"
+
+#: 
+#~ msgid "75%"
+#~ msgstr "75%"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "<0/> All Proposals"
@@ -103,9 +111,9 @@ msgstr "<0/> Голосів"
 msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
 msgstr "<0>Аналітика облікових записів та накопичена комісія</0><1> ↗ </1>"
 
-#: src/pages/Swap/index.tsx
-msgid "<0>Back to </0>V3"
-msgstr "<0> Повернутися до</0> V3"
+#: 
+#~ msgid "<0>Back to </0>V3"
+#~ msgstr "<0> Повернутися до</0> V3"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
@@ -140,6 +148,7 @@ msgid "Accept"
 msgstr "Прийняти"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Account"
 msgstr "Обліковий запис"
 
@@ -148,7 +157,7 @@ msgid "Active"
 msgstr "Активний"
 
 #: src/components/PositionCard/index.tsx
-#: src/pages/AddLiquidity/index.tsx
+#: src/components/Table/index.tsx
 msgid "Add"
 msgstr "Додати"
 
@@ -181,9 +190,9 @@ msgstr "Додати {0} {1} і {2} {3}"
 msgid "Add {0}-{1} liquidity"
 msgstr "Додати {0}-{1} ліквідність"
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Add {0}/{1} V3 liquidity"
-msgstr "Додати {0}/{1} V3 ліквідність"
+#: 
+#~ msgid "Add {0}/{1} V3 liquidity"
+#~ msgstr "Додати {0}/{1} V3 ліквідність"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
@@ -197,33 +206,41 @@ msgstr "Адреса не має доступного запиту"
 msgid "Against"
 msgstr "Проти"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Allow LP token migration"
-msgstr "Дозволити перенесення токенів LP"
+#: src/components/Table/index.tsx
+msgid "All"
+msgstr ""
+
+#: 
+#~ msgid "Allow LP token migration"
+#~ msgstr "Дозволити перенесення токенів LP"
 
 #: src/components/Settings/index.tsx
 msgid "Allow high price impact trades and skip the confirm screen. Use at your own risk."
 msgstr "Дозвольте високі ціни угоди і пропустити екран підтвердження. Використовуйте на свій страх і ризик."
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "Надати протоколу Uniswap використовувати ваш {0}"
+msgid "Allow the Niifi to use your {0}"
+msgstr ""
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Allowed"
-msgstr "Дозволено"
+#: 
+#~ msgid "Allow the Uniswap Protocol to use your {0}"
+#~ msgstr "Надати протоколу Uniswap використовувати ваш {0}"
+
+#: 
+#~ msgid "Allowed"
+#~ msgstr "Дозволено"
 
 #: src/components/Header/URLWarning.tsx
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
 msgstr "Завжди переконайтеся, що URL для<0>app.uniswap.org</0> - закладка має бути в безпеці."
 
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "Amount"
-msgstr "Сума"
+#: 
+#~ msgid "Amount"
+#~ msgstr "Сума"
 
-#: src/hooks/useSwapCallback.ts
-msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Під час спроби виконати цей обмін сталася помилка. Можливо, вам доведеться збільшити толерантність до ковзання. Якщо це не спрацює, можливо, існує несумісність з токеном, яким ви торгуєте. Зверніть увагу, плата за перенесення та перебазування токенів несумісна з Uniswap V3."
+#: 
+#~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
+#~ msgstr "Під час спроби виконати цей обмін сталася помилка. Можливо, вам доведеться збільшити толерантність до ковзання. Якщо це не спрацює, можливо, існує несумісність з токеном, яким ви торгуєте. Зверніть увагу, плата за перенесення та перебазування токенів несумісна з Uniswap V3."
 
 #: src/components/Menu/index.tsx
 msgid "Analytics"
@@ -243,7 +260,6 @@ msgstr "Схвалити {0}"
 msgid "Approved"
 msgstr "Затверджено"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Approving"
 msgstr "Затвердження"
@@ -257,13 +273,13 @@ msgstr "Затвердження {0}"
 msgid "Are you sure?"
 msgstr "Ви впевнені?"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "Як учасник спільноти Uniswap ви можете стверджувати, що UNI слід використовувати для голосування та управління. <0><2>Прочитайте більше про UNI</2>"
+#: 
+#~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+#~ msgstr "Як учасник спільноти Uniswap ви можете стверджувати, що UNI слід використовувати для голосування та управління. <0><2>Прочитайте більше про UNI</2>"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
-msgstr "Щонайменше {0} {1} і {2} {3} повертаються до вашого гаманця через вибраний період ціни."
+#: 
+#~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
+#~ msgstr "Щонайменше {0} {1} і {2} {3} повертаються до вашого гаманця через вибраний період ціни."
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Auto"
@@ -282,20 +298,24 @@ msgid "Balance:"
 msgstr "Баланс:"
 
 #: src/components/CurrencyInputPanel/index.tsx
-msgid "Balance: {0} {1}"
-msgstr "Баланс: {0} {1}"
+msgid "Balance: {0}"
+msgstr ""
 
-#: src/components/FeeSelector/index.tsx
-msgid "Best for exotic pairs."
-msgstr "Найкраще для екзотичних парків."
+#: 
+#~ msgid "Balance: {0} {1}"
+#~ msgstr "Баланс: {0} {1}"
 
-#: src/components/FeeSelector/index.tsx
-msgid "Best for most pairs."
-msgstr "Найкраще для більшості пар."
+#: 
+#~ msgid "Best for exotic pairs."
+#~ msgstr "Найкраще для екзотичних парків."
 
-#: src/components/FeeSelector/index.tsx
-msgid "Best for stable pairs."
-msgstr "Найкраще для стабільних пар."
+#: 
+#~ msgid "Best for most pairs."
+#~ msgstr "Найкраще для більшості пар."
+
+#: 
+#~ msgid "Best for stable pairs."
+#~ msgstr "Найкраще для стабільних пар."
 
 #: src/components/Blocklist/index.tsx
 msgid "Blocked address"
@@ -310,8 +330,12 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "Додаючи цей список, ви неявно довіряєте, що дані правильні. Будь-хто може створити список, включаючи створення підроблених версій існуючих списків і списків, які претендують на представлення проектів, яких ще немає."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-msgstr "Підключивши гаманець, ви погоджуєтеся з Uniswap Labs <0>Умовами користування</0> і підтверджуєте, що ви прочитали та зрозуміли <1>Uniswap protocol disclaimer</1>."
+msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgstr ""
+
+#: 
+#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
+#~ msgstr "Підключивши гаманець, ви погоджуєтеся з Uniswap Labs <0>Умовами користування</0> і підтверджуєте, що ви прочитали та зрозуміли <1>Uniswap protocol disclaimer</1>."
 
 #: src/components/AccountDetails/index.tsx
 msgid "Change"
@@ -331,6 +355,7 @@ msgstr "Ознайомтеся з нашим прогулянком v3 LP та �
 msgid "Claim"
 msgstr "Claim"
 
+#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/Menu/index.tsx
 #: src/components/claim/AddressClaimModal.tsx
@@ -348,9 +373,9 @@ msgstr "Claim UNI Token"
 msgid "Claim accumulated UNI rewards"
 msgstr "Забрати накопичені винагороди ЮНІ"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Claim fees"
-msgstr "Вимагати платежі"
+#: 
+#~ msgid "Claim fees"
+#~ msgstr "Вимагати платежі"
 
 #: src/components/Popups/ClaimPopup.tsx
 msgid "Claim your UNI tokens"
@@ -369,6 +394,7 @@ msgstr "Твердили ЮНІ!"
 msgid "Claiming"
 msgstr "Захоплення"
 
+#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 msgid "Claiming UNI"
 msgstr "Захоплення ЮНІ"
@@ -378,9 +404,9 @@ msgstr "Захоплення ЮНІ"
 msgid "Claiming {0} UNI"
 msgstr "Захоплення {0} UNI"
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Clear All"
-msgstr "Очистити все"
+#: 
+#~ msgid "Clear All"
+#~ msgstr "Очистити все"
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "Clear all"
@@ -391,7 +417,6 @@ msgid "Close"
 msgstr "Закрити"
 
 #: src/components/Badge/RangeBadge.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
 msgid "Closed"
 msgstr "зачинено"
 
@@ -399,34 +424,34 @@ msgstr "зачинено"
 msgid "Code"
 msgstr "Код"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Collect"
-msgstr "Зібрати дані"
+#: 
+#~ msgid "Collect"
+#~ msgstr "Зібрати дані"
 
-#: src/pages/Pool/PositionPage.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "Collect as WETH"
-msgstr "Збирати як ЗВЕДУ"
+#: 
+#: 
+#~ msgid "Collect as WETH"
+#~ msgstr "Збирати як ЗВЕДУ"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Collect fees"
-msgstr "Збирайте платежі"
+#: 
+#~ msgid "Collect fees"
+#~ msgstr "Збирайте платежі"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Collected"
-msgstr "Зібрано"
+#: 
+#~ msgid "Collected"
+#~ msgstr "Зібрано"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Collecting"
-msgstr "Колекціонування"
+#: 
+#~ msgid "Collecting"
+#~ msgstr "Колекціонування"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Collecting fees"
-msgstr "Збір за колекцію"
+#: 
+#~ msgid "Collecting fees"
+#~ msgstr "Збір за колекцію"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Collecting fees will withdraw currently available fees for you."
-msgstr "Збір зборів знімає доступний для вас тариф."
+#: 
+#~ msgid "Collecting fees will withdraw currently available fees for you."
+#~ msgstr "Збір зборів знімає доступний для вас тариф."
 
 #: src/components/SearchModal/CommonBases.tsx
 msgid "Common bases"
@@ -458,7 +483,6 @@ msgstr "Підтвердіть транзакцію у вашому гаманц
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/mint/v3/hooks.ts
 #: src/state/stake/hooks.ts
 #: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
@@ -466,12 +490,12 @@ msgid "Connect Wallet"
 msgstr "Підключіть Wallet"
 
 #: src/components/earn/UnstakingModal.tsx
-#: src/pages/Pool/index.tsx
 msgid "Connect a wallet"
 msgstr "Підключити гаманець"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
+#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Підключення до гаманця"
 
@@ -479,16 +503,15 @@ msgstr "Підключення до гаманця"
 msgid "Connect to a wallet to find pools"
 msgstr "Під'єднайтеся до гаманця для пошуку басейнів"
 
-#: src/pages/MigrateV2/index.tsx
-msgid "Connect to a wallet to view your V2 liquidity."
-msgstr "Підключіться до гаманця для перегляду вашої ліквідності V2."
+#: 
+#~ msgid "Connect to a wallet to view your V2 liquidity."
+#~ msgstr "Підключіться до гаманця для перегляду вашої ліквідності V2."
 
 #: src/pages/Pool/v2.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "Підключіться до гаманця для перегляду вашої ліквідності."
 
 #: src/components/earn/ClaimRewardModal.tsx
-#: src/pages/AddLiquidity/index.tsx
 msgid "Connect wallet"
 msgstr "Підключіть гаманець"
 
@@ -514,34 +537,38 @@ msgstr "Створити басейн та пропозицію"
 msgid "Create a pair"
 msgstr "Створити пару"
 
-#: src/pages/Pool/index.tsx
-msgid "Create a pool"
-msgstr "Створити басейн"
+#: 
+#~ msgid "Create a pool"
+#~ msgstr "Створити басейн"
 
 #: src/components/ErrorBoundary/index.tsx
 msgid "Create an issue on GitHub"
 msgstr "Створіть випуск на GitHub"
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Create pool and add {0}/{1} V3 liquidity"
-msgstr "Створіть пул і додайте {0}/{1} В3 ліквідність"
+#: 
+#~ msgid "Create pool and add {0}/{1} V3 liquidity"
+#~ msgstr "Створіть пул і додайте {0}/{1} В3 ліквідність"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Create pool."
 msgstr "Створити басейн."
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Current Price"
-msgstr "Поточна ціна"
+#: 
+#~ msgid "Current Price"
+#~ msgstr "Поточна ціна"
 
-#: src/components/PositionPreview/index.tsx
-#: src/pages/Pool/PositionPage.tsx
-msgid "Current price"
-msgstr "Поточна ціна"
+#: 
+#: 
+#~ msgid "Current price"
+#~ msgstr "Поточна ціна"
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Current {0} Price:"
-msgstr "Поточна {0} ціна:"
+#: 
+#~ msgid "Current {0} Price:"
+#~ msgstr "Поточна {0} ціна:"
+
+#: src/components/Header/Sidebar.tsx
+msgid "Dashboard"
+msgstr ""
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Delegate Votes"
@@ -562,9 +589,9 @@ msgstr "Делегуючі голоси"
 msgid "Deposit"
 msgstr "Поповнити"
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Deposit Amounts"
-msgstr "Сума для поповнення"
+#: 
+#~ msgid "Deposit Amounts"
+#~ msgstr "Сума для поповнення"
 
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit UNI-V2 LP Tokens"
@@ -614,6 +641,10 @@ msgstr "Від'єднатись"
 msgid "Discord"
 msgstr "Discord"
 
+#: src/components/Header/Sidebar.tsx
+msgid "Discover"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Dismiss"
 msgstr "Відхилити"
@@ -622,13 +653,21 @@ msgstr "Відхилити"
 msgid "Docs"
 msgstr "Документація"
 
-#: src/pages/MigrateV2/index.tsx
-msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
-msgstr "Не бачите одну з ваших позицій v2? <0>Імпортувати ї.</0>"
+#: 
+#~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
+#~ msgstr "Не бачите одну з ваших позицій v2? <0>Імпортувати ї.</0>"
+
+#: src/components/Table/index.tsx
+msgid "ETH-NII Transactions"
+msgstr ""
+
+#: 
+#~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
+#~ msgstr "Отримані маркери UNI представляють акції голосування в управлінні Uniswap (Unischang)."
 
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "Отримані маркери UNI представляють акції голосування в управлінні Uniswap (Unischang)."
+msgid "Earned tokens represent voting shares in governance."
+msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
@@ -646,7 +685,6 @@ msgstr "Введіть адресу для запуску запиту «UNI». 
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/mint/v3/hooks.ts
 #: src/state/stake/hooks.ts
 #: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
@@ -663,6 +701,7 @@ msgstr "Введіть коректну адресу маркера"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
+#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Помилка"
 
@@ -691,17 +730,21 @@ msgstr "Експертний режим вимикає підтвердженн�
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "Дослідіть популярні басейни на Аналітиці Uniswap або UNIT."
 
-#: src/components/PositionPreview/index.tsx
-msgid "Fee Tier"
-msgstr "Фай-Теєр"
+#: src/components/Header/Sidebar.tsx
+msgid "Farm"
+msgstr ""
+
+#: 
+#~ msgid "Fee Tier"
+#~ msgstr "Фай-Теєр"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "For"
 msgstr "Для"
 
-#: src/pages/MigrateV2/index.tsx
-msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
-msgstr "Для кожного басейну показано нижче, натисніть кнопку мігрувати, щоб видалити вашу ліквідність з Uniswap V2 і вкласти її в Uniswap V3."
+#: 
+#~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
+#~ msgstr "Для кожного басейну показано нижче, натисніть кнопку мігрувати, щоб видалити вашу ліквідність з Uniswap V2 і вкласти її в Uniswap V3."
 
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Swap/index.tsx
@@ -716,9 +759,9 @@ msgstr "Від (максимум)"
 msgid "Get support on Discord"
 msgstr "Отримайте підтримку щодо Discord"
 
-#: src/pages/Pool/index.tsx
-msgid "Hide closed positions"
-msgstr "Приховати закриті позиції"
+#: 
+#~ msgid "Hide closed positions"
+#~ msgstr "Приховати закриті позиції"
 
 #: src/pages/Swap/index.tsx
 msgid "High Price Impact"
@@ -759,9 +802,9 @@ msgstr "Імпорт на Ваш страх і ризик"
 msgid "In range"
 msgstr "У діапазоні"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Increase Liquidity"
-msgstr "Збільшення ліквідності"
+#: 
+#~ msgid "Increase Liquidity"
+#~ msgstr "Збільшення ліквідності"
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "Initial prices and pool share"
@@ -776,6 +819,7 @@ msgid "Input is estimated. You will sell at most <0>{0} {1}</0> or the transacti
 msgstr "Дане число оцінено. Ви продаєте не більше <0>{0} {1}</0> або транзакція буде скасована."
 
 #: src/components/WalletModal/index.tsx
+#: src/components/WalletModal/index.tsx
 msgid "Install Metamask"
 msgstr "Встановити Metamask"
 
@@ -789,8 +833,6 @@ msgstr "Недостатньо ліквідності для цієї торгі
 
 #: src/state/mint/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/mint/v3/hooks.ts
-#: src/state/mint/v3/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Insufficient {0} balance"
 msgstr "Недостатній баланс {0}"
@@ -800,7 +842,6 @@ msgid "Interface Settings"
 msgstr "Налаштування інтерфейсу"
 
 #: src/state/mint/hooks.ts
-#: src/state/mint/v3/hooks.ts
 msgid "Invalid pair"
 msgstr "Недійсна пара"
 
@@ -808,25 +849,28 @@ msgstr "Недійсна пара"
 msgid "Invalid pair."
 msgstr "Недійсна пара."
 
-#: src/state/mint/v3/hooks.ts
-msgid "Invalid price input"
-msgstr "Недійсне введення ціни"
+#: 
+#~ msgid "Invalid price input"
+#~ msgstr "Недійсне введення ціни"
 
-#: src/pages/AddLiquidity/index.tsx
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Invalid range selected. The min price must be lower than the max price."
-msgstr "Некоректний діапазон обраний. Мінімальна ціна має бути меншою за максимальну ціну."
+#: 
+#: 
+#~ msgid "Invalid range selected. The min price must be lower than the max price."
+#~ msgstr "Некоректний діапазон обраний. Мінімальна ціна має бути меншою за максимальну ціну."
 
 #: src/state/swap/hooks.ts
 msgid "Invalid recipient"
 msgstr "Недійсний одержувач"
 
-#: src/pages/Pool/index.tsx
-msgid "Learn"
-msgstr "Вчитися"
+#: 
+#~ msgid "Learn"
+#~ msgstr "Вчитися"
+
+#: src/components/Header/Sidebar.tsx
+msgid "Lend"
+msgstr ""
 
 #: src/components/claim/ClaimModal.tsx
-#: src/pages/Pool/PositionPage.tsx
 msgid "Liquidity"
 msgstr "Ліквідність"
 
@@ -853,8 +897,6 @@ msgstr "Завантажено"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-#: src/pages/MigrateV2/index.tsx
 #: src/pages/Pool/v2.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
@@ -886,22 +928,22 @@ msgstr "Керувати списками токенів"
 msgid "Manage this pool."
 msgstr "Управління басейном."
 
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "Max"
-msgstr "Макс"
+#: 
+#~ msgid "Max"
+#~ msgstr "Макс"
 
-#: src/components/PositionPreview/index.tsx
-#: src/components/RangeSelector/index.tsx
-msgid "Max Price"
-msgstr "Максимальна ціна"
+#: 
+#: 
+#~ msgid "Max Price"
+#~ msgstr "Максимальна ціна"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Max price"
-msgstr "Максимальна ціна"
+#: 
+#~ msgid "Max price"
+#~ msgstr "Максимальна ціна"
 
-#: src/components/PositionListItem/index.tsx
-msgid "Max:"
-msgstr "Максимум:"
+#: 
+#~ msgid "Max:"
+#~ msgstr "Максимум:"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Maximum sent"
@@ -910,64 +952,66 @@ msgstr "Максимум відправлених"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-#: src/pages/Pool/index.tsx
 msgid "Migrate"
 msgstr "Міграція"
 
-#: src/pages/Pool/index.tsx
-msgid "Migrate Liquidity"
-msgstr "Перенесення ліквідності"
+#: 
+#~ msgid "Migrate Liquidity"
+#~ msgstr "Перенесення ліквідності"
 
 #: src/pages/Pool/v2.tsx
 msgid "Migrate Liquidity to V3"
 msgstr "Перенесення ліквідності V3"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-#: src/pages/MigrateV2/index.tsx
-msgid "Migrate V2 Liquidity"
-msgstr "Мігрувати V2 ліквідність"
+#: 
+#: 
+#~ msgid "Migrate V2 Liquidity"
+#~ msgstr "Мігрувати V2 ліквідність"
 
-#: src/pages/Pool/index.tsx
-msgid "Migrate V2 liquidity"
-msgstr "Міграція V2 ліквідності"
+#: 
+#~ msgid "Migrate V2 liquidity"
+#~ msgstr "Міграція V2 ліквідності"
 
-#: src/pages/MigrateV2/index.tsx
-msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
-msgstr "Перенесення токенів ліквідності з Uniswap V2 на Uniswap V3."
+#: 
+#~ msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
+#~ msgstr "Перенесення токенів ліквідності з Uniswap V2 на Uniswap V3."
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Migrating"
-msgstr "Міграція"
+#: 
+#~ msgid "Migrating"
+#~ msgstr "Міграція"
 
-#: src/components/PositionPreview/index.tsx
-#: src/components/RangeSelector/index.tsx
-msgid "Min Price"
-msgstr "Мінімальна ціна"
+#: 
+#: 
+#~ msgid "Min Price"
+#~ msgstr "Мінімальна ціна"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Min price"
-msgstr "Мінімальна ціна"
+#: 
+#~ msgid "Min price"
+#~ msgstr "Мінімальна ціна"
 
-#: src/components/PositionListItem/index.tsx
-msgid "Min:"
-msgstr "Мін:"
+#: 
+#~ msgid "Min:"
+#~ msgstr "Мін:"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Minimum received"
 msgstr "Мінімум отриманих"
 
-#: src/pages/Pool/index.tsx
-msgid "More"
-msgstr "Більше"
+#: 
+#~ msgid "More"
+#~ msgstr "Більше"
 
-#: src/pages/Pool/index.tsx
-msgid "New Position"
-msgstr "Нове розташування"
+#: 
+#~ msgid "New Position"
+#~ msgstr "Нове розташування"
 
-#: src/pages/MigrateV2/index.tsx
-msgid "No V2 Liquidity found."
-msgstr "Не знайдено ліквідності V2."
+#: src/components/SwitchLocaleLink/index.tsx
+msgid "Niifi available in: <0>{0}</0>"
+msgstr ""
+
+#: 
+#~ msgid "No V2 Liquidity found."
+#~ msgstr "Не знайдено ліквідності V2."
 
 #: src/pages/Earn/index.tsx
 #: src/pages/Earn/index.tsx
@@ -1039,9 +1083,18 @@ msgstr "Вивід оцінено. Ви отримаєте не менше <0>{0
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "Вивід буде надіслано на <0>{0}</0>"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Owner"
-msgstr "Власник"
+#: src/pages/Swap/index.tsx
+#: src/pages/Swap/index.tsx
+msgid "Overview"
+msgstr ""
+
+#: 
+#~ msgid "Owner"
+#~ msgstr "Власник"
+
+#: src/components/Table/TableToolbar.tsx
+msgid "Page {0} of {totalPages}"
+msgstr ""
 
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
@@ -1055,6 +1108,7 @@ msgstr "Будь ласка, під'єднайтеся до відповідно
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Будь ласка, введіть слово \"{confirmWord}\", щоб увімкнути режим експерта."
 
+#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Pool"
@@ -1081,25 +1135,21 @@ msgstr "Токени басейну у пулі:"
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
 msgid "Pooled {0}:"
 msgstr "Завантажено {0}:"
 
-#: src/pages/Pool/index.tsx
-msgid "Pools Overview"
-msgstr "Огляд пулів"
+#: 
+#~ msgid "Pools Overview"
+#~ msgstr "Огляд пулів"
 
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price"
 msgstr "Ціна"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Price Difference:"
-msgstr "Різниця у ціні:"
+#: 
+#~ msgid "Price Difference:"
+#~ msgstr "Різниця у ціні:"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Price Impact"
@@ -1113,10 +1163,10 @@ msgstr "Занадто високий вплив ціни"
 msgid "Price Updated"
 msgstr "Ціну оновлено"
 
-#: src/components/PositionList/index.tsx
-#: src/pages/Pool/PositionPage.tsx
-msgid "Price range"
-msgstr "Діапазон цін"
+#: 
+#: 
+#~ msgid "Price range"
+#~ msgstr "Діапазон цін"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price:"
@@ -1164,8 +1214,7 @@ msgstr "Останні Транзакції"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
+#: src/components/Table/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr "Видалити"
@@ -1179,8 +1228,6 @@ msgid "Remove Delegate"
 msgstr "Видалити делегат"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/PositionPage.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
 msgid "Remove Liquidity"
 msgstr "Видалити ліквідність"
 
@@ -1193,9 +1240,9 @@ msgstr "Видалити список"
 msgid "Remove {0} {1} and {2} {3}"
 msgstr "Видалити {0} {1} і {2} {3}"
 
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "Remove {0}/{1} V3 liquidity"
-msgstr "Видалити {0}/{1} V3 ліквідність"
+#: 
+#~ msgid "Remove {0}/{1} V3 liquidity"
+#~ msgstr "Видалити {0}/{1} V3 ліквідність"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Removing {0} {1} and {2} {3}"
@@ -1217,13 +1264,13 @@ msgstr "Маршрут"
 msgid "Search name or paste address"
 msgstr "Знайдіть ім'я або вставку адресу"
 
-#: src/components/FeeSelector/index.tsx
-msgid "Select Pool"
-msgstr "Вибрати басейн"
+#: 
+#~ msgid "Select Pool"
+#~ msgstr "Вибрати басейн"
 
-#: src/components/FeeSelector/index.tsx
-msgid "Select a pool type based on your preferred liquidity provider fee."
-msgstr "Виберіть тип пуску на основі необхідної комісії провайдера ліквідності."
+#: 
+#~ msgid "Select a pool type based on your preferred liquidity provider fee."
+#~ msgstr "Виберіть тип пуску на основі необхідної комісії провайдера ліквідності."
 
 #: src/components/CurrencyInputPanel/index.tsx
 #: src/components/SearchModal/CurrencySearch.tsx
@@ -1237,13 +1284,13 @@ msgstr "Вибрати токен"
 msgid "Select a token to find your v2 liquidity."
 msgstr "Виберіть маркер, щоб знайти свою ліквідність v2."
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Select pair"
-msgstr "Обрати пару"
+#: 
+#~ msgid "Select pair"
+#~ msgstr "Обрати пару"
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Selected Range"
-msgstr "Обраний діапазон"
+#: 
+#~ msgid "Selected Range"
+#~ msgstr "Обраний діапазон"
 
 #: src/pages/Vote/index.tsx
 msgid "Self"
@@ -1253,14 +1300,14 @@ msgstr "Я сам"
 msgid "Self Delegate"
 msgstr "Власний делегат"
 
-#: src/pages/AddLiquidity/index.tsx
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Set Price Range"
-msgstr "Встановити ціновий діапазон"
+#: 
+#: 
+#~ msgid "Set Price Range"
+#~ msgstr "Встановити ціновий діапазон"
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Set Starting Price"
-msgstr "Встановити стартову ціну"
+#: 
+#~ msgid "Set Starting Price"
+#~ msgstr "Встановити стартову ціну"
 
 #: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
@@ -1273,6 +1320,11 @@ msgstr "Show Portis"
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Simple"
 msgstr "Просте"
+
+#: src/components/swap/Slippage.tsx
+#: src/components/swap/Slippage.tsx
+msgid "Slippage Tolerance"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 #: src/components/swap/AdvancedSwapDetails.tsx
@@ -1303,9 +1355,13 @@ msgstr "Пропозиція"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Постачання {0} {1} та {2} {3}"
 
+#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/Table/index.tsx
 #: src/components/swap/SwapHeader.tsx
+#: src/pages/Swap/index.tsx
+#: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Swap"
@@ -1320,9 +1376,13 @@ msgstr "Поміняти місцями все одно"
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "Обмін {0} {1} на {2} {3}"
 
+#: 
+#~ msgid "Thanks for being part of the Uniswap community <0/>"
+#~ msgstr "Дякуємо за участь у спільноті Uniswap <0 />"
+
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "Дякуємо за участь у спільноті Uniswap <0 />"
+msgid "Thanks for being part of the community <0/>"
+msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1340,9 +1400,9 @@ msgstr "Ринкова ціна за межами вашого зазначен�
 msgid "The output token cannot be transferred. There may be an issue with the output token."
 msgstr "Вихідний маркер неможливо передати. Можливо, проблема з вихідним маркером."
 
-#: src/hooks/useSwapCallback.ts
-msgid "The output token cannot be transferred. There may be an issue with the output token. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Вихідний маркер неможливо передати. Можливо, проблема з вихідним маркером. Зверніть увагу, плата за перенесення та перебазування токенів несумісна з Uniswap V3."
+#: 
+#~ msgid "The output token cannot be transferred. There may be an issue with the output token. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
+#~ msgstr "Вихідний маркер неможливо передати. Можливо, проблема з вихідним маркером. Зверніть увагу, плата за перенесення та перебазування токенів несумісна з Uniswap V3."
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1368,17 +1428,21 @@ msgstr "Ці токени зазвичай поєднані з іншими то
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
 msgstr "Цей маркер не відображається у списку (ах) активних маркерів. Переконайтеся, що це маркер, яким ви хочете торгувати."
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
-msgstr "Цей інструмент безпечно перенесе вашу {0} ліквідність до V3. Процес абсолютно недовірливий завдяки"
+#: 
+#~ msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
+#~ msgstr "Цей інструмент безпечно перенесе вашу {0} ліквідність до V3. Процес абсолютно недовірливий завдяки"
 
-#: src/hooks/useSwapCallback.ts
-msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Ця операція не буде успішною через рух ціни. Спробуйте збільшити свою толерантність до ковзання. Зверніть увагу, плата за перенесення та перебазування токенів несумісна з Uniswap V3."
+#: 
+#~ msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
+#~ msgstr "Ця операція не буде успішною через рух ціни. Спробуйте збільшити свою толерантність до ковзання. Зверніть увагу, плата за перенесення та перебазування токенів несумісна з Uniswap V3."
 
 #: src/hooks/useSwapCallback.ts
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
 msgstr "Ця транзакція не буде успішною ні через рух ціни, ні через комісію за переказ. Спробуйте збільшити свою толерантність до ковзання."
+
+#: src/components/Table/index.tsx
+msgid "Time"
+msgstr ""
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "Tip: Custom tokens are stored locally in your browser"
@@ -1397,6 +1461,11 @@ msgstr "До (не менше)"
 msgid "Toggle Expert Mode"
 msgstr "Ввімкнути/вимкнути експериментальний режим"
 
+#: src/components/Table/index.tsx
+#: src/components/Table/index.tsx
+msgid "Token Amount"
+msgstr ""
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Tokens"
 msgstr "Токени"
@@ -1412,6 +1481,10 @@ msgstr "Топ-басейни"
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Total Supply"
 msgstr "Загальна пропозиція"
+
+#: src/components/Table/index.tsx
+msgid "Total Value"
+msgstr ""
 
 #: src/components/earn/PoolCard.tsx
 msgid "Total deposited"
@@ -1479,9 +1552,9 @@ msgstr "UNI-V2 {0}-{1}"
 msgid "Unclaimed UNI"
 msgstr "Не отримана UNI"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "Unclaimed fees"
-msgstr "Незапотребовані платежі"
+#: 
+#~ msgid "Unclaimed fees"
+#~ msgstr "Незапотребовані платежі"
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Unclaimed:"
@@ -1495,25 +1568,29 @@ msgstr "Об’єднати управління"
 msgid "Uniswap V3 is here!"
 msgstr "Uniswap V3 тут!"
 
-#: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Відміна доступна за: <0>{0}</0>"
+#: 
+#~ msgid "Uniswap available in: <0>{0}</0>"
+#~ msgstr "Відміна доступна за: <0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
 msgstr "Обміняти видобуток ліквідності"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Uniswap migration contract↗"
-msgstr "Скасувати міграційний контракт↗"
+#: 
+#~ msgid "Uniswap migration contract↗"
+#~ msgstr "Скасувати міграційний контракт↗"
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "Unknown Source"
 msgstr "Невідоме джерело"
 
 #: src/hooks/useSwapCallback.ts
-msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-msgstr "Невідома помилка{0}. Спробуйте збільшити свою толерантність до ковзання. Зверніть увагу, плата за перенесення та перебазування токенів несумісна з Uniswap V3."
+msgid "Unknown error{0}."
+msgstr ""
+
+#: 
+#~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
+#~ msgstr "Невідома помилка{0}. Спробуйте збільшити свою толерантність до ковзання. Зверніть увагу, плата за перенесення та перебазування токенів несумісна з Uniswap V3."
 
 #: src/pages/Vote/VotePage.tsx
 #: src/pages/Vote/index.tsx
@@ -1528,7 +1605,6 @@ msgstr "Відкрити голосування"
 msgid "Unlocking Votes"
 msgstr "Розблокування голосів"
 
-#: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidityV2/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
@@ -1554,26 +1630,26 @@ msgstr "Оновити список"
 msgid "User"
 msgstr "Користувач"
 
-#: src/pages/Pool/index.tsx
-msgid "V2 liquidity"
-msgstr "V2 ліквідність"
+#: 
+#~ msgid "V2 liquidity"
+#~ msgstr "V2 ліквідність"
 
-#: src/pages/Swap/index.tsx
-msgid "V3"
-msgstr "В3"
+#: 
+#~ msgid "V3"
+#~ msgstr "В3"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "V3 {0} Price:"
-msgstr "V3 {0} ціна:"
+#: 
+#: 
+#~ msgid "V3 {0} Price:"
+#~ msgstr "V3 {0} ціна:"
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
 msgstr "Переглянути аналітику UNI"
 
-#: src/pages/Pool/index.tsx
-msgid "View V2 Liquidity"
-msgstr "Перегляд V2 ліквідності"
+#: 
+#~ msgid "View V2 Liquidity"
+#~ msgstr "Перегляд V2 ліквідності"
 
 #: src/components/PositionCard/index.tsx
 msgid "View accrued fees and analytics<0>↗</0>"
@@ -1678,6 +1754,7 @@ msgstr "Перенос"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
+#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Некоректна мережа"
 
@@ -1685,9 +1762,9 @@ msgstr "Некоректна мережа"
 msgid "You are creating a pool"
 msgstr "Ви створюєте басейн"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-msgstr "Ви є першим постачальником ліквідності для цього пулу Uniswap V3. Ваша ліквідність буде перенесена за поточною ціною {0}."
+#: 
+#~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
+#~ msgstr "Ви є першим постачальником ліквідності для цього пулу Uniswap V3. Ваша ліквідність буде перенесена за поточною ціною {0}."
 
 #: src/pages/AddLiquidityV2/index.tsx
 msgid "You are the first liquidity provider."
@@ -1705,21 +1782,25 @@ msgstr "Тепер ви можете торгувати {0}"
 msgid "You don’t have liquidity in this pool yet."
 msgstr "У вас поки що немає ліквідності."
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You must connect an account."
-msgstr "Ви повинні підключити обліковий запис."
+#: 
+#~ msgid "You must connect an account."
+#~ msgstr "Ви повинні підключити обліковий запис."
+
+#: 
+#~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
+#~ msgstr "Ви повинні надати дозвіл Uniswap smart контракти на використання вашого {0}. Вам потрібно виконати це лише один раз на один токен."
 
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "Ви повинні надати дозвіл Uniswap smart контракти на використання вашого {0}. Вам потрібно виконати це лише один раз на один токен."
+msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr ""
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-msgstr "Ви повинні тільки ввести ліквідність на депозит Uniswap V3 за ціною, яку ви вважаєте, є правильною. <0/>Якщо ціна здається невірною, ви можете змінити операцію, щоб перемістити ціну або чекати на когось іншого."
+#: 
+#~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
+#~ msgstr "Ви повинні тільки ввести ліквідність на депозит Uniswap V3 за ціною, яку ви вважаєте, є правильною. <0/>Якщо ціна здається невірною, ви можете змінити операцію, щоб перемістити ціну або чекати на когось іншого."
 
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "You will also collect fees earned from this position."
-msgstr "Ви також збиратимете комісію, отримані з цього положення."
+#: 
+#~ msgid "You will also collect fees earned from this position."
+#~ msgstr "Ви також збиратимете комісію, отримані з цього положення."
 
 #: src/pages/AddLiquidityV2/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -1734,17 +1815,17 @@ msgstr "Ваш пристрій ООН"
 msgid "Your V2 liquidity"
 msgstr "Ваша V2 ліквідність"
 
-#: src/pages/Pool/index.tsx
-msgid "Your V3 liquidity positions will appear here."
-msgstr "Тут з'являться ваші позиції V3 ліквідності."
+#: 
+#~ msgid "Your V3 liquidity positions will appear here."
+#~ msgstr "Тут з'являться ваші позиції V3 ліквідності."
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
 msgstr "Ваші депозити ліквідності"
 
-#: src/pages/AddLiquidity/index.tsx
-msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
-msgstr "Ваша ліквідність заробляє лише тоді, коли ринкова ціна пари знаходиться в межах вашого діапазону. <0> Потрібна допомога у виборі діапазону?</0>"
+#: 
+#~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
+#~ msgstr "Ваша ліквідність заробляє лише тоді, коли ринкова ціна пари знаходиться в межах вашого діапазону. <0> Потрібна допомога у виборі діапазону?</0>"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
@@ -1760,25 +1841,25 @@ msgstr "Ваша позиція"
 msgid "Your position has 0 liquidity, and is not earning fees."
 msgstr "Ваша позиція має 0 ліквідності і не заробляє платежі."
 
-#: src/components/PositionPreview/index.tsx
-#: src/components/PositionPreview/index.tsx
-msgid "Your position will be 100% composed of {0} at this price"
-msgstr "Ваша позиція буде на 100% складена за цією ціною {0}"
+#: 
+#: 
+#~ msgid "Your position will be 100% composed of {0} at this price"
+#~ msgstr "Ваша позиція буде на 100% складена за цією ціною {0}"
 
-#: src/pages/Pool/PositionPage.tsx
-#: src/pages/Pool/PositionPage.tsx
-msgid "Your position will be 100% {0} at this price."
-msgstr "Ваша позиція буде на 100% {0} за цієї ціни."
+#: 
+#: 
+#~ msgid "Your position will be 100% {0} at this price."
+#~ msgstr "Ваша позиція буде на 100% {0} за цієї ціни."
 
-#: src/pages/AddLiquidity/index.tsx
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Your position will not earn fees or be used in trades until the market price moves into your range."
-msgstr "Ваша позиція не отримає плату або не буде використовуватися в угодах, поки ринкова ціна не зміниться на ваш ареал."
+#: 
+#: 
+#~ msgid "Your position will not earn fees or be used in trades until the market price moves into your range."
+#~ msgstr "Ваша позиція не отримає плату або не буде використовуватися в угодах, поки ринкова ціна не зміниться на ваш ареал."
 
-#: src/components/PositionList/index.tsx
-#: src/components/PositionList/index.tsx
-msgid "Your positions"
-msgstr "Ваші позиції"
+#: 
+#: 
+#~ msgid "Your positions"
+#~ msgstr "Ваші позиції"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Your rate"
@@ -1789,9 +1870,9 @@ msgstr "Ваша оцінка"
 msgid "Your total pool tokens:"
 msgstr "Ваш токени басейну:"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "Your transaction cost will be much higher as it includes the gas to create the pool."
-msgstr "Вартість вашої транзакції буде набагато більшою, оскільки газ має для створення басейну."
+#: 
+#~ msgid "Your transaction cost will be much higher as it includes the gas to create the pool."
+#~ msgstr "Вартість вашої транзакції буде набагато більшою, оскільки газ має для створення басейну."
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Your transaction may be frontrun"
@@ -1826,6 +1907,7 @@ msgid "for {0}"
 msgstr "на {0}"
 
 #: src/components/Web3Status/index.tsx
+#: src/components/Web3Status/indexOld.tsx
 msgid "has socks emoji"
 msgstr "має емодзі"
 
@@ -1855,10 +1937,10 @@ msgstr "{0, plural, one {Імпортувати маркер} other {Імпор�
 msgid "{0} %"
 msgstr "{0} %"
 
-#: src/components/PositionListItem/index.tsx
-#: src/components/PositionListItem/index.tsx
-msgid "{0} <0/> per <1/>"
-msgstr "{0} <0/> на <1/>"
+#: 
+#: 
+#~ msgid "{0} <0/> per <1/>"
+#~ msgstr "{0} <0/> на <1/>"
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "{0} Custom Tokens"
@@ -1873,13 +1955,18 @@ msgstr "{0} викинуто"
 msgid "{0} ETH"
 msgstr "{0} ETH"
 
-#: src/pages/RemoveLiquidity/V3.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "{0} Fees Earned:"
-msgstr "{0} Зроблено комісій:"
+#: src/components/Web3Status/index.tsx
+msgid "{0} ETHs"
+msgstr ""
+
+#: 
+#: 
+#: 
+#~ msgid "{0} Fees Earned:"
+#~ msgstr "{0} Зроблено комісій:"
 
 #: src/components/Web3Status/index.tsx
+#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} Pending"
 
@@ -1911,14 +1998,14 @@ msgstr "{0} доступні UNI-V2 LP токени"
 msgid "{0} Votes"
 msgstr "{0} голосів"
 
-#: src/components/PositionPreview/index.tsx
-#: src/components/PositionPreview/index.tsx
-#: src/components/PositionPreview/index.tsx
-#: src/pages/AddLiquidity/index.tsx
-#: src/pages/Pool/PositionPage.tsx
-#: src/pages/Pool/PositionPage.tsx
-msgid "{0} per {1}"
-msgstr "{0} в {1}"
+#: 
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} per {1}"
+#~ msgstr "{0} в {1}"
 
 #: src/components/RateToggle/index.tsx
 #: src/components/RateToggle/index.tsx
@@ -1931,23 +2018,21 @@ msgstr "{0} ціна"
 msgid "{0} tokens"
 msgstr "{0} токени"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "{0} {1} Price:"
-msgstr "{0} {1} Ціна:"
+#: 
+#: 
+#~ msgid "{0} {1} Price:"
+#~ msgstr "{0} {1} Ціна:"
+
+#: src/components/Table/index.tsx
+msgid "{0} {1} for {2}"
+msgstr ""
 
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "{0} • Added by user"
 msgstr "{0} • Додано користувачем"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/components/PositionListItem/index.tsx
-#: src/components/PositionPreview/index.tsx
 #: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-#: src/pages/Pool/PositionPage.tsx
-#: src/pages/Pool/PositionPage.tsx
-#: src/pages/Pool/PositionPage.tsx
 msgid "{0}%"
 msgstr "{0}%"
 
@@ -1955,13 +2040,13 @@ msgstr "{0}%"
 msgid "{0}-{1} Liquidity Mining"
 msgstr "{0}-{1} Видобуток ліквідності"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "{0}/{1} LP NFT"
-msgstr "{0}з{1} LP NFT"
+#: 
+#~ msgid "{0}/{1} LP NFT"
+#~ msgstr "{0}з{1} LP NFT"
 
-#: src/pages/MigrateV2/MigrateV2Pair.tsx
-msgid "{0}/{1} LP Tokens"
-msgstr "{0}/{1} LP токени"
+#: 
+#~ msgid "{0}/{1} LP Tokens"
+#~ msgstr "{0}/{1} LP токени"
 
 #: src/components/claim/ClaimModal.tsx
 msgid "{SOCKS_AMOUNT} UNI"
@@ -1971,19 +2056,26 @@ msgstr "{SOCKS_AMOUNT} UNI"
 msgid "{USER_AMOUNT} UNI"
 msgstr "{USER_AMOUNT} UNI"
 
-#: src/pages/RemoveLiquidity/V3.tsx
-msgid "{percentForSlider}%"
-msgstr "{percentForSlider}%"
+#: src/components/CurrencyInputPanel/index.tsx
+msgid "{labelText}"
+msgstr ""
 
-#: src/components/InputStepCounter/InputStepCounter.tsx
-msgid "{tokenB} per {tokenA}"
-msgstr "{tokenB} в {tokenA}"
+#: 
+#~ msgid "{percentForSlider}%"
+#~ msgstr "{percentForSlider}%"
+
+#: src/components/Header/Sidebar.tsx
+msgid "{title}"
+msgstr ""
+
+#: 
+#~ msgid "{tokenB} per {tokenA}"
+#~ msgstr "{tokenB} в {tokenA}"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr "~$ <0/>"
 
-#: src/pages/Pool/PositionPage.tsx
-msgid "← Back to Pools Overview"
-msgstr "← Назад до пулів огляд"
-
+#: 
+#~ msgid "← Back to Pools Overview"
+#~ msgstr "← Назад до пулів огляд"

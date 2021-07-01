@@ -101,7 +101,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   if (!loaded) return null
 
   return (
-    <I18nProvider forceRenderOnLocaleChange={false} i18n={i18n}>
+    <I18nProvider forceRenderOnLocaleChange={true} i18n={i18n}>
       {children}
     </I18nProvider>
   )

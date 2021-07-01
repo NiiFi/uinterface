@@ -22,7 +22,7 @@ const ResponsiveButton = styled(ButtonPrimary)`
   `};
 `
 
-export default function BetterTradeLink({
+function BetterTradeLink({
   version,
   otherTradeNonexistent = false,
 }: {

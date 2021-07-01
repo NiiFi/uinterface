@@ -2,7 +2,7 @@ import { useCallback, useMemo } from 'react'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { AppState } from '../index'
-import { addPopup, ApplicationModal, PopupContent, removePopup, setOpenModal } from './actions'
+import { addPopup, ApplicationModal, PopupContent, removePopup, setOpenModal, showDrawer } from './actions'
 
 export function useBlockNumber(): number | undefined {
   const { chainId } = useActiveWeb3React()
@@ -86,4 +86,16 @@ export function useRemovePopup(): (key: string) => void {
 export function useActivePopups(): AppState['application']['popupList'] {
   const list = useAppSelector((state: AppState) => state.application.popupList)
   return useMemo(() => list.filter((item) => item.show), [list])
+}
+
+export function useToggleDrawer(): { setDrawerToggle: (showDrawer: boolean) => void; showDrawer: boolean } {
+  const showDrawerCurrentValue = useAppSelector((state: AppState) => state.application.showDrawer)
+  const dispatch = useAppDispatch()
+  const setDrawerToggle = useCallback(
+    (nextDrawerValue: boolean) => {
+      dispatch(showDrawer({ showDrawer: nextDrawerValue }))
+    },
+    [dispatch]
+  )
+  return { showDrawer: showDrawerCurrentValue, setDrawerToggle }
 }

@@ -227,6 +227,21 @@ export default function WalletModal({
             />
           )
         }
+        if (!(window.web3 || window.ethereum)) {
+          if (option.name === 'MetaMask') {
+            return (
+              <Option
+                id={`connect-${key}`}
+                key={key}
+                color={'#E8831D'}
+                header={<Trans>Install Metamask</Trans>}
+                subheader={null}
+                link={`https://metamask.app.link/dapp/${window.location.host}`}
+                icon={MetamaskIcon}
+              />
+            )
+          }
+        }
         return null
       }
 
@@ -242,7 +257,7 @@ export default function WalletModal({
                 color={'#E8831D'}
                 header={<Trans>Install Metamask</Trans>}
                 subheader={null}
-                link={'https://metamask.io/'}
+                link={`https://metamask.app.link/dapp/${window.location.host}`}
                 icon={MetamaskIcon}
               />
             )
@@ -346,10 +361,8 @@ export default function WalletModal({
             <AutoRow style={{ flexWrap: 'nowrap' }}>
               <TYPE.main fontSize={14}>
                 <Trans>
-                  By connecting a wallet, you agree to Uniswap Labs’{' '}
-                  <ExternalLink href="https://uniswap.org/terms-of-service/">Terms of Service</ExternalLink> and
-                  acknowledge that you have read and understand the{' '}
-                  <ExternalLink href="https://uniswap.org/disclaimer/">Uniswap protocol disclaimer</ExternalLink>.
+                  By connecting a wallet, you agree to Niifi{` `}
+                  <ExternalLink href="http://example.com">Terms of Service(coming soon)</ExternalLink>
                 </Trans>
               </TYPE.main>
             </AutoRow>

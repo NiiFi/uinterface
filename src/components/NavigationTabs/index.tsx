@@ -11,7 +11,7 @@ import SettingsTab from '../Settings'
 
 import { useAppDispatch } from 'state/hooks'
 import { resetMintState } from 'state/mint/actions'
-import { resetMintState as resetMintV3State } from 'state/mint/v3/actions'
+
 import { TYPE } from 'theme'
 import useTheme from 'hooks/useTheme'
 
@@ -112,7 +112,6 @@ export function AddRemoveTabs({
             if (adding) {
               // not 100% sure both of these are needed
               dispatch(resetMintState())
-              dispatch(resetMintV3State())
             }
           }}
         >
