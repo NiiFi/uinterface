@@ -11,7 +11,7 @@ export const BodyWrapper = styled.div<{ margin?: string; padding?: string }>`
   background: ${({ theme }) => theme.bg0};
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 1rem;
+    padding: 0.5rem;
   `}
 `
 export const BodyWrapperSm = styled(BodyWrapper)`
