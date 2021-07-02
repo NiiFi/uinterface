@@ -22,28 +22,14 @@ if (typeof INFURA_KEY === 'undefined') {
 const NETWORK_URLS: {
   [chainId in SupportedChainId]: string
 } = {
-  [SupportedChainId.MAINNET]: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.RINKEBY]: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
   [SupportedChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.GOERLI]: `https://goerli.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.KOVAN]: `https://kovan.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.ARBITRUM_KOVAN]: `https://kovan5.arbitrum.io/rpc`,
-  [SupportedChainId.ARBITRUM_ONE]: `https://arb1.arbitrum.io/rpc`,
 }
 
-const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
-  SupportedChainId.MAINNET,
-  SupportedChainId.KOVAN,
-  SupportedChainId.GOERLI,
-  SupportedChainId.RINKEBY,
-  SupportedChainId.ROPSTEN,
-  SupportedChainId.ARBITRUM_KOVAN,
-  SupportedChainId.ARBITRUM_ONE,
-]
+const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.ROPSTEN]
 
 export const network = new NetworkConnector({
   urls: NETWORK_URLS,
-  defaultChainId: 1,
+  defaultChainId: 3,
 })
 
 let networkLibrary: Web3Provider | undefined
@@ -77,7 +63,7 @@ export const portis = new PortisConnector({
 
 // mainnet only
 export const walletlink = new WalletLinkConnector({
-  url: NETWORK_URLS[1],
+  url: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
   appName: 'Uniswap',
   appLogoUrl: UNISWAP_LOGO_URL,
 })
