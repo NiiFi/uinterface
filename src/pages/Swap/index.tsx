@@ -394,8 +394,8 @@ export default function Swap({ history }: RouteComponentProps) {
             value={'usd'}
             onChange={() => console.log('running')}
           >
-            <MenuItem value={'usd'}>$US</MenuItem>
-            <MenuItem value={'euro'}>EURO</MenuItem>
+            <MenuItem value={'usd'}>USD</MenuItem>
+            {/* <MenuItem value={'euro'}>EUR</MenuItem> */}
           </Select>
         </CurrencySelectWrapper>
       </AppBar>
