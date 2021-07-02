@@ -335,7 +335,7 @@ export default function EnhancedTable() {
                           </Trans>
                         </ExternalLink>
                       </TableCell>
-                      <TableCell align="center">{shortenDecimalValues(row.amountUSD)} US$</TableCell>
+                      <TableCell align="center">{shortenDecimalValues(row.amountUSD)} USD</TableCell>
                       <TableCell align="center">
                         {shortenDecimalValues(row.amount0)} {row.pair.token0.symbol}
                       </TableCell>
