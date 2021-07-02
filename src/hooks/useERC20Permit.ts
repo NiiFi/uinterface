@@ -3,7 +3,7 @@ import { Percent, CurrencyAmount, Currency, TradeType, Token } from '@uniswap/sd
 import { Trade as V2Trade } from '@uniswap/v2-sdk'
 import { splitSignature } from 'ethers/lib/utils'
 import { useMemo, useState } from 'react'
-import { DAI, UNI, USDC } from '../constants/tokens'
+import { UNI } from '../constants/tokens'
 import { useSingleCallResult } from '../state/multicall/hooks'
 import { useActiveWeb3React } from './web3'
 import { useEIP2612Contract } from './useContract'
@@ -31,24 +31,11 @@ const PERMITTABLE_TOKENS: {
     [checksummedTokenAddress: string]: PermitInfo
   }
 } = {
-  [1]: {
-    [USDC.address]: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' },
-    [DAI.address]: { type: PermitType.ALLOWED, name: 'Dai Stablecoin', version: '1' },
-    [UNI[1].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
-  },
-  [4]: {
-    ['0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735']: { type: PermitType.ALLOWED, name: 'Dai Stablecoin', version: '1' },
-    [UNI[4].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
-  },
   [3]: {
+    // [USDC.address]: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' },
+    // [DAI.address]: { type: PermitType.ALLOWED, name: 'Dai Stablecoin', version: '1' },
     [UNI[3].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
     ['0x07865c6E87B9F70255377e024ace6630C1Eaa37F']: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' },
-  },
-  [5]: {
-    [UNI[5].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
-  },
-  [42]: {
-    [UNI[42].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
   },
 }
 
