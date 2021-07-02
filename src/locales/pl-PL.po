@@ -107,9 +107,13 @@ msgstr "<0/> Wszystkie wnioski"
 msgid "<0/> Votes"
 msgstr "<0/> Głosy"
 
-#: src/pages/Pool/v2.tsx
-msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-msgstr "<0>Analiza konta i naliczone opłaty</0><1> ↗ </1>"
+#: src/pages/Pool/index.tsx
+msgid "<0> ↗ </0>"
+msgstr ""
+
+#: 
+#~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
+#~ msgstr "<0>Analiza konta i naliczone opłaty</0><1> ↗ </1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
@@ -123,7 +127,7 @@ msgstr "<0>Wskazówka:</0> Usuwanie tokenów puli konwertuje Twoją pozycję z p
 msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 msgstr "<0>Wskazówka:</0> Użyj tego narzędzia, aby znaleźć pule v2, które nie pojawiają się automatycznie w interfejsie."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Wskazówka:</0> Kiedy dodasz płynność, otrzymasz tokeny puli reprezentujące Twoją pozycję. Te tokeny automatycznie zarabiają opłaty proporcjonalne do Twojego udziału w puli, i mogą zostać umorzone w każdej chwili."
 
@@ -166,12 +170,13 @@ msgid "Add Delegate +"
 msgstr "Dodaj Delegata +"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "Dodaj płynność"
 
-#: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "Dodaj płynność V2"
+#: 
+#~ msgid "Add V2 Liquidity"
+#~ msgstr "Dodaj płynność V2"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -181,8 +186,8 @@ msgstr "Dodaj płynność."
 msgid "Add {0} to Metamask <0/>"
 msgstr "Dodaj {0} do Metamask <0/>"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Dodaj {0} {1} i {2} {3}"
 
@@ -251,8 +256,8 @@ msgstr "Analityka"
 msgid "Approve"
 msgstr "Zatwierdź"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
 msgstr "Zatwierdź {0}"
 
@@ -264,8 +269,8 @@ msgstr "Zatwierdzone"
 msgid "Approving"
 msgstr "Zatwierdzanie"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approving {0}"
 msgstr "Zatwierdzanie {0}"
 
@@ -461,7 +466,7 @@ msgstr "Wspólne podstawy"
 msgid "Confirm"
 msgstr "Potwierdź"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Confirm Supply"
 msgstr "Potwierdź dostawę"
 
@@ -478,7 +483,7 @@ msgstr "Potwierdź zamianę"
 msgid "Confirm this transaction in your wallet"
 msgstr "Potwierdź tę transakcję w swoim portfelu"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -507,7 +512,7 @@ msgstr "Połącz się z portfelem, aby znaleźć pule"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "Połącz się z portfelem, aby zobaczyć płynność V2."
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "Połącz się z portfelem, aby zobaczyć płynność."
 
@@ -528,12 +533,12 @@ msgstr "Skopiowano"
 msgid "Copy Address"
 msgstr "Kopiuj adres"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "Utwórz Pulę i Zaopatrzenie"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "Utwórz parę"
 
@@ -657,9 +662,9 @@ msgstr "Dokumentacja"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Nie widzisz jednej z pozycji v2? <0>Importuj ją.</0>"
 
-#: src/components/Table/index.tsx
-msgid "ETH-NII Transactions"
-msgstr ""
+#: 
+#~ msgid "ETH-NII Transactions"
+#~ msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -786,7 +791,7 @@ msgstr "Importuj"
 msgid "Import List"
 msgstr "Importuj listę"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Import Pool"
 msgstr "Importuj Pulę"
 
@@ -806,7 +811,7 @@ msgstr "W zakresie"
 #~ msgid "Increase Liquidity"
 #~ msgstr "Zyski lub straty z tytułu aktywów i zobowiązań finansowych przeznaczonych do obrotu, netto"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "Ceny początkowe i udział w pule"
 
@@ -878,11 +883,11 @@ msgstr "Płynność"
 msgid "Liquidity Provider Fee"
 msgstr "Opłata dla dostawcy płynności"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity provider rewards"
 msgstr "Nagrody za płynność"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 msgstr "Dostawcy płynności otrzymują opłatę w wysokości 0,3 % od wszystkich transakcji proporcjonalnie do ich udziału w puli. Opłaty są dodawane do puli, naliczane w czasie rzeczywistym i mogą być pobierane poprzez wycofanie płynności."
 
@@ -897,7 +902,7 @@ msgstr "Załadowano"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Loading"
@@ -959,9 +964,9 @@ msgstr "Migruj"
 #~ msgid "Migrate Liquidity"
 #~ msgstr "Migruj płynność"
 
-#: src/pages/Pool/v2.tsx
-msgid "Migrate Liquidity to V3"
-msgstr "Przenieś płynność do V3"
+#: 
+#~ msgid "Migrate Liquidity to V3"
+#~ msgstr "Przenieś płynność do V3"
 
 #: 
 #: 
@@ -1018,7 +1023,7 @@ msgstr ""
 msgid "No active pools"
 msgstr "Brak aktywnych pul"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "No liquidity found."
 msgstr "Nie znaleziono płynności."
 
@@ -1054,7 +1059,7 @@ msgstr "Poza"
 msgid "On"
 msgstr "Na"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Gdy będziesz zadowolony z kursu, kliknij przycisk zaopatrzenia, aby przejrzeć."
 
@@ -1070,7 +1075,7 @@ msgstr "Ups! Wystąpił nieznany błąd. Odśwież stronę lub odwiedź z innej 
 msgid "Out of range"
 msgstr "Poza zasięgiem"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Output is estimated. If the price changes by more than {0}% your transaction will revert."
 msgstr "Wyjście jest szacowane. Jeśli cena zmieni się o ponad {0}%, Twoja transakcja zostanie przywrócona."
@@ -1172,7 +1177,7 @@ msgstr "Cena zaktualizowana"
 msgid "Price:"
 msgstr "Cena"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Prices and pool share"
 msgstr "Ceny i udział w pule"
 
@@ -1188,7 +1193,7 @@ msgstr "Propozycje złożone przez członków społeczności pojawią się tutaj
 msgid "Proposer"
 msgstr "Wniosek"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Stawki"
 
@@ -1200,15 +1205,16 @@ msgstr "Dowiedz się więcej o UNI"
 msgid "Read more about Uniswap governance"
 msgstr "Dowiedz się więcej o zarządzaniu Uniswap"
 
-#: src/pages/Pool/v2.tsx
-msgid "Read more about providing liquidity"
-msgstr "Dowiedz się więcej o zapewnieniu płynności"
+#: 
+#~ msgid "Read more about providing liquidity"
+#~ msgstr "Dowiedz się więcej o zapewnieniu płynności"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
 msgstr "Przeczytaj więcej o nieobsługiwanych zasobach"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "Ostatnie transakcje"
 
@@ -1309,7 +1315,7 @@ msgstr "Własny Delegat"
 #~ msgid "Set Starting Price"
 #~ msgstr "Ustaw początkową cenę"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
 msgstr "Udział w puli:"
 
@@ -1347,11 +1353,11 @@ msgstr "Krok 1. Pobierz tokeny płynności UNI-V2"
 msgid "Submitting Vote"
 msgstr "Wysyłanie głosu"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "Dostawa"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Zapewnianie {0} {1} i {2} {3}"
 
@@ -1412,7 +1418,7 @@ msgstr "Cena tej puli jest poza wybranym przez Ciebie zakresem. Twoja pozycja ni
 msgid "The price of this pool is within your selected range. Your position is currently earning fees."
 msgstr "Cena tej puli mieści się w wybranym przez Ciebie zasięgu. Twoja pozycja obecnie zarabia opłaty."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "The ratio of tokens you add will set the price of this pool."
 msgstr "Współczynnik dodanych tokenów ustawi cenę tej puli."
 
@@ -1423,6 +1429,10 @@ msgstr "Nie można wysłać transakcji, ponieważ upłynął termin. Sprawdź, c
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Te tokeny są zwykle sparowane z innymi tokenami."
+
+#: src/components/Table/TableToolbar.tsx
+msgid "This is Dummy Data"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1605,7 +1615,7 @@ msgstr "Odblokuj głosowanie"
 msgid "Unlocking Votes"
 msgstr "Odblokowanie głosów"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
 msgstr "Nieobsługiwany zasób"
@@ -1758,7 +1768,7 @@ msgstr "Zawijanie"
 msgid "Wrong Network"
 msgstr "Nieprawidłowa sieć"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
 msgstr "Tworzysz pulę"
 
@@ -1766,7 +1776,7 @@ msgstr "Tworzysz pulę"
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "Jesteś pierwszym dostawcą płynności dla tej puli Uniswap V3. Twoja płynność zostanie zmigrowana po bieżącej cenie {0}."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "Jesteś pierwszym dostawcą płynności."
 
@@ -1802,7 +1812,7 @@ msgstr ""
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "Będziesz również pobierać opłaty zarobione na tej pozycji."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "Otrzymasz"
@@ -1811,13 +1821,17 @@ msgstr "Otrzymasz"
 msgid "Your UNI Breakdown"
 msgstr "Twój podział UNI"
 
-#: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "Twoja płynność V2"
+#: 
+#~ msgid "Your V2 liquidity"
+#~ msgstr "Twoja płynność V2"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "Twoje pozycje płynności V3 pojawią się tutaj."
+
+#: src/pages/Pool/index.tsx
+msgid "Your liquidity"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -1946,8 +1960,8 @@ msgstr "{0} %"
 msgid "{0} Custom Tokens"
 msgstr "{0} żetonów niestandardowych"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0} Deposited"
 msgstr "{0} zdeponowane"
 
@@ -2032,7 +2046,7 @@ msgid "{0} • Added by user"
 msgstr "{0} • Dodane przez użytkownika"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
 msgstr "{0}%"
 

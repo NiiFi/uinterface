@@ -23,6 +23,17 @@ const TitleWrapper = styled.div`
     font-size: 1rem;
   `}
 `
+const Disclaimer = styled.div`
+  width: 100%;
+  background-color: #ffffe0;
+  border-radius: 8px;
+  border: 1px solid #f0e68c;
+  font-size: 0.75rem;
+  padding: 10px 20px;
+  > span {
+    font-weight: bold;
+  }
+`
 const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
   display: flex;
   justify-content: space-between;
@@ -54,13 +65,20 @@ const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
 `
 export default function TableToolBar({ title, currentPage, totalPages, onNext, onBack }: TableToolBarProps) {
   return (
-    <Wrapper>
-      <TitleWrapper>{title}</TitleWrapper>
-      <PagerWrapper currentPage={currentPage} totalPages={totalPages}>
-        <ArrowLeft onClick={() => onBack(currentPage)} />
-        <p>{t`Page ${totalPages === 0 ? 0 : currentPage} of ${totalPages}`}</p>
-        <ArrowRight onClick={() => onNext(currentPage)} />
-      </PagerWrapper>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <TitleWrapper>{title}</TitleWrapper>
+        <PagerWrapper currentPage={currentPage} totalPages={totalPages}>
+          <ArrowLeft onClick={() => onBack(currentPage)} />
+          <p>{t`Page ${totalPages === 0 ? 0 : currentPage} of ${totalPages}`}</p>
+          <ArrowRight onClick={() => onNext(currentPage)} />
+        </PagerWrapper>
+      </Wrapper>
+      <Disclaimer>
+        <span>Disclaimer:</span>
+        {` `}
+        {t`This is Dummy Data`}
+      </Disclaimer>
+    </>
   )
 }

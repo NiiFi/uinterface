@@ -107,9 +107,13 @@ msgstr "<0/> 모든 제안"
 msgid "<0/> Votes"
 msgstr "<0/> 투표"
 
-#: src/pages/Pool/v2.tsx
-msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-msgstr "<0> 계정 분석 및 발생 수수료</0> <1> ↗</1>"
+#: src/pages/Pool/index.tsx
+msgid "<0> ↗ </0>"
+msgstr ""
+
+#: 
+#~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
+#~ msgstr "<0> 계정 분석 및 발생 수수료</0> <1> ↗</1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
@@ -123,7 +127,7 @@ msgstr "<0> 팁 :</0> 풀 토큰을 제거하면 풀 점유율에 비례하여 �
 msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 msgstr "<0> 팁 :</0> 이 도구를 사용하여 인터페이스에 자동으로 표시되지 않는 v2 풀을 찾습니다."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0> 팁 :</0> 유동성을 추가하면 귀하의 포지션을 나타내는 풀 토큰을 받게됩니다. 이 토큰은 풀의 몫에 비례하여 자동으로 수수료를 획득하며 언제든지 사용할 수 있습니다."
 
@@ -166,12 +170,13 @@ msgid "Add Delegate +"
 msgstr "대리인 추가 +"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "유동성 추가"
 
-#: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "V2 유동성 추가"
+#: 
+#~ msgid "Add V2 Liquidity"
+#~ msgstr "V2 유동성 추가"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -181,8 +186,8 @@ msgstr "유동성을 추가하십시오."
 msgid "Add {0} to Metamask <0/>"
 msgstr "추가 {0} Metamask에 <0/>"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "{0} {1} 과 {2} {3}추가"
 
@@ -251,8 +256,8 @@ msgstr "해석학"
 msgid "Approve"
 msgstr "승인"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
 msgstr "{0}승인"
 
@@ -264,8 +269,8 @@ msgstr "승인 됨"
 msgid "Approving"
 msgstr "승인"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approving {0}"
 msgstr "{0}승인"
 
@@ -461,7 +466,7 @@ msgstr "공통 기지"
 msgid "Confirm"
 msgstr "확인"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Confirm Supply"
 msgstr "공급 확인"
 
@@ -478,7 +483,7 @@ msgstr "스왑 확인"
 msgid "Confirm this transaction in your wallet"
 msgstr "지갑에서이 거래를 확인하세요"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -507,7 +512,7 @@ msgstr "지갑에 연결하여 풀 찾기"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "V2 유동성을 보려면 지갑에 연결하십시오."
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "유동성을 보려면 지갑에 연결하십시오."
 
@@ -528,12 +533,12 @@ msgstr "복사 됨"
 msgid "Copy Address"
 msgstr "주소 복사"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "풀 생성 및 공급"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "쌍 만들기"
 
@@ -657,9 +662,9 @@ msgstr "문서"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "v2 위치 중 하나가 보이지 않습니까? <0> 가져 오기.</0>"
 
-#: src/components/Table/index.tsx
-msgid "ETH-NII Transactions"
-msgstr ""
+#: 
+#~ msgid "ETH-NII Transactions"
+#~ msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -786,7 +791,7 @@ msgstr "수입"
 msgid "Import List"
 msgstr "가져 오기 목록"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Import Pool"
 msgstr "풀 가져 오기"
 
@@ -806,7 +811,7 @@ msgstr "범위 내"
 #~ msgid "Increase Liquidity"
 #~ msgstr "유동성 증가"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "초기 가격 및 풀 점유율"
 
@@ -878,11 +883,11 @@ msgstr "유동성"
 msgid "Liquidity Provider Fee"
 msgstr "유동성 제공자 수수료"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity provider rewards"
 msgstr "유동성 공급자 보상"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 msgstr "유동성 공급자는 풀 점유율에 비례하여 모든 거래에 대해 0.3 %의 수수료를받습니다. 수수료는 풀에 추가되고 실시간으로 발생하며 유동성을 인출하여 청구 할 수 있습니다."
 
@@ -897,7 +902,7 @@ msgstr "짐을 실은"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Loading"
@@ -959,9 +964,9 @@ msgstr "마이그레이션"
 #~ msgid "Migrate Liquidity"
 #~ msgstr "유동성 마이그레이션"
 
-#: src/pages/Pool/v2.tsx
-msgid "Migrate Liquidity to V3"
-msgstr "유동성을 V3로 마이그레이션"
+#: 
+#~ msgid "Migrate Liquidity to V3"
+#~ msgstr "유동성을 V3로 마이그레이션"
 
 #: 
 #: 
@@ -1018,7 +1023,7 @@ msgstr ""
 msgid "No active pools"
 msgstr "활성 풀 없음"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "No liquidity found."
 msgstr "유동성이 없습니다."
 
@@ -1054,7 +1059,7 @@ msgstr "떨어져서"
 msgid "On"
 msgstr "의 위에"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
 msgstr "요율에 만족하면 공급을 클릭하여 검토하십시오."
 
@@ -1070,7 +1075,7 @@ msgstr "이런! 알 수없는 오류가 발생했습니다. 페이지를 새로 
 msgid "Out of range"
 msgstr "범위를 벗어남"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Output is estimated. If the price changes by more than {0}% your transaction will revert."
 msgstr "산출은 추정됩니다. {0}% 이상 변경되면 거래가 취소됩니다."
@@ -1172,7 +1177,7 @@ msgstr "가격 업데이트"
 msgid "Price:"
 msgstr "가격:"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Prices and pool share"
 msgstr "가격 및 풀 점유율"
 
@@ -1188,7 +1193,7 @@ msgstr "커뮤니티 회원이 제출 한 제안이 여기에 표시됩니다."
 msgid "Proposer"
 msgstr "제안자"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "요금"
 
@@ -1200,15 +1205,16 @@ msgstr "UNI에 대해 자세히 알아보기"
 msgid "Read more about Uniswap governance"
 msgstr "Uniswap 거버넌스에 대해 자세히 알아보기"
 
-#: src/pages/Pool/v2.tsx
-msgid "Read more about providing liquidity"
-msgstr "유동성 제공에 대해 자세히 알아보기"
+#: 
+#~ msgid "Read more about providing liquidity"
+#~ msgstr "유동성 제공에 대해 자세히 알아보기"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
 msgstr "지원되지 않는 자산에 대해 자세히 알아보기"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "최근 거래"
 
@@ -1309,7 +1315,7 @@ msgstr "자체 대리인"
 #~ msgid "Set Starting Price"
 #~ msgstr "시작 가격 설정"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
 msgstr "풀 점유율 :"
 
@@ -1347,11 +1353,11 @@ msgstr "1 단계. UNI-V2 유동성 토큰 받기"
 msgid "Submitting Vote"
 msgstr "투표 제출"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "공급"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "{0} {1} 및 {2} {3}공급"
 
@@ -1412,7 +1418,7 @@ msgstr "이 풀의 가격이 선택한 범위를 벗어났습니다. 귀하의 �
 msgid "The price of this pool is within your selected range. Your position is currently earning fees."
 msgstr "이 풀의 가격은 선택한 범위 내에 있습니다. 귀하의 직책은 현재 수수료를 받고 있습니다."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "The ratio of tokens you add will set the price of this pool."
 msgstr "추가하는 토큰의 비율이이 풀의 가격을 설정합니다."
 
@@ -1423,6 +1429,10 @@ msgstr "기한이 지났기 때문에 거래를 보낼 수 없습니다. 거래 
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
 msgstr "이러한 토큰은 일반적으로 다른 토큰과 쌍을 이룹니다."
+
+#: src/components/Table/TableToolbar.tsx
+msgid "This is Dummy Data"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1605,7 +1615,7 @@ msgstr "투표 잠금 해제"
 msgid "Unlocking Votes"
 msgstr "투표 잠금 해제"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
 msgstr "지원되지 않는 자산"
@@ -1758,7 +1768,7 @@ msgstr "싸다"
 msgid "Wrong Network"
 msgstr "잘못된 네트워크"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
 msgstr "풀을 만들고 있습니다."
 
@@ -1766,7 +1776,7 @@ msgstr "풀을 만들고 있습니다."
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "귀하는이 Uniswap V3 풀의 최초 유동성 공급자입니다. 유동성은 현재 {0} 가격으로 마이그레이션됩니다."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "당신은 최초의 유동성 공급자입니다."
 
@@ -1802,7 +1812,7 @@ msgstr ""
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "이 직책에서 얻은 수수료도 징수합니다."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "당신은 받게 될 것입니다"
@@ -1811,13 +1821,17 @@ msgstr "당신은 받게 될 것입니다"
 msgid "Your UNI Breakdown"
 msgstr "UNI 고장"
 
-#: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "V2 유동성"
+#: 
+#~ msgid "Your V2 liquidity"
+#~ msgstr "V2 유동성"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "V3 유동성 포지션이 여기에 표시됩니다."
+
+#: src/pages/Pool/index.tsx
+msgid "Your liquidity"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -1946,8 +1960,8 @@ msgstr "{0} %"
 msgid "{0} Custom Tokens"
 msgstr "{0} 사용자 지정 토큰"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0} Deposited"
 msgstr "{0} 입금"
 
@@ -2032,7 +2046,7 @@ msgid "{0} • Added by user"
 msgstr "{0} • 사용자가 추가"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
 msgstr "{0}%"
 
