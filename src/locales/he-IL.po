@@ -107,9 +107,13 @@ msgstr "<0 /> כל ההצעות"
 msgid "<0/> Votes"
 msgstr "<0 /> הצבעות"
 
-#: src/pages/Pool/v2.tsx
-msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-msgstr "<0> ניתוח חשבונות ועמלות שנצברו</0> <1> ↗</1>"
+#: src/pages/Pool/index.tsx
+msgid "<0> ↗ </0>"
+msgstr ""
+
+#: 
+#~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
+#~ msgstr "<0> ניתוח חשבונות ועמלות שנצברו</0> <1> ↗</1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
@@ -123,7 +127,7 @@ msgstr "<0> טיפ:</0> הסרת אסימונים לבריכה ממירה את �
 msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 msgstr "<0> טיפ:</0> השתמש בכלי זה כדי למצוא מאגרי v2 שלא מופיעים אוטומטית בממשק."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0> טיפ:</0> כשתוסיף נזילות, תקבל אסימונים לבריכה המייצגים את עמדתך. אסימונים אלה מרוויחים עמלות באופן אוטומטי ביחס לחלקכם בבריכה, וניתן לפדותם בכל עת."
 
@@ -166,12 +170,13 @@ msgid "Add Delegate +"
 msgstr "הוסף נציג +"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "הוסף נזילות"
 
-#: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "הוסף נזילות V2"
+#: 
+#~ msgid "Add V2 Liquidity"
+#~ msgstr "הוסף נזילות V2"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -181,8 +186,8 @@ msgstr "הוסף נזילות."
 msgid "Add {0} to Metamask <0/>"
 msgstr "הוסף {0} למטא-מסכה <0 />"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "הוסף {0} {1} ו {2} {3}"
 
@@ -251,8 +256,8 @@ msgstr "ניתוח"
 msgid "Approve"
 msgstr "לְאַשֵׁר"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
 msgstr "אשר {0}"
 
@@ -264,8 +269,8 @@ msgstr "אושר"
 msgid "Approving"
 msgstr "מאשר"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approving {0}"
 msgstr "מאשר {0}"
 
@@ -461,7 +466,7 @@ msgstr "בסיסים משותפים"
 msgid "Confirm"
 msgstr "לְאַשֵׁר"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Confirm Supply"
 msgstr "אשר אספקה"
 
@@ -478,7 +483,7 @@ msgstr "אשר החלפה"
 msgid "Confirm this transaction in your wallet"
 msgstr "אשר את העסקה בארנק שלך"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -507,7 +512,7 @@ msgstr "התחבר לארנק כדי למצוא בריכות"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "התחבר לארנק כדי להציג את נזילות V2 שלך."
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "התחבר לארנק כדי להציג את הנזילות שלך."
 
@@ -528,12 +533,12 @@ msgstr "מוּעֲתָק"
 msgid "Copy Address"
 msgstr "העתק כתובת"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "צור בריכה ואספקה"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "צור זוג"
 
@@ -657,9 +662,9 @@ msgstr "מסמכים"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "אינך רואה את אחת מעמדות ה- v2 שלך? <0> ייבא אותו.</0>"
 
-#: src/components/Table/index.tsx
-msgid "ETH-NII Transactions"
-msgstr ""
+#: 
+#~ msgid "ETH-NII Transactions"
+#~ msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -786,7 +791,7 @@ msgstr "יְבוּא"
 msgid "Import List"
 msgstr "רשימת ייבוא"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Import Pool"
 msgstr "יבוא בריכה"
 
@@ -806,7 +811,7 @@ msgstr "בטווח"
 #~ msgid "Increase Liquidity"
 #~ msgstr "הגדל את הנזילות"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "מחירים ראשוניים ונתח בריכה"
 
@@ -878,11 +883,11 @@ msgstr "נְזִילוּת"
 msgid "Liquidity Provider Fee"
 msgstr "עמלת ספק נזילות"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity provider rewards"
 msgstr "תגמולים של ספק נזילות"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 msgstr "ספקי נזילות מרוויחים עמלה של 0.3% על כל העסקאות שביחס לחלקם במאגר. העמלות מתווספות לבריכה, נצברות בזמן אמת וניתן לתבוע אותן באמצעות משיכת הנזילות שלך."
 
@@ -897,7 +902,7 @@ msgstr "עמוס"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Loading"
@@ -959,9 +964,9 @@ msgstr "להגר"
 #~ msgid "Migrate Liquidity"
 #~ msgstr "העבר נזילות"
 
-#: src/pages/Pool/v2.tsx
-msgid "Migrate Liquidity to V3"
-msgstr "העבר נזילות ל- V3"
+#: 
+#~ msgid "Migrate Liquidity to V3"
+#~ msgstr "העבר נזילות ל- V3"
 
 #: 
 #: 
@@ -1018,7 +1023,7 @@ msgstr ""
 msgid "No active pools"
 msgstr "אין בריכות פעילות"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "No liquidity found."
 msgstr "לא נמצא נזילות."
 
@@ -1054,7 +1059,7 @@ msgstr "כבוי"
 msgid "On"
 msgstr "עַל"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
 msgstr "ברגע שאתה מרוצה מהספק לחץ על שיעור לבדיקה."
 
@@ -1070,7 +1075,7 @@ msgstr "אופס! אירעה שגיאה לא ידועה. אנא רענן את ה
 msgid "Out of range"
 msgstr "מחוץ לטווח"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Output is estimated. If the price changes by more than {0}% your transaction will revert."
 msgstr "התפוקה מוערכת. אם המחיר ישתנה ביותר מ- {0}% העסקה שלך תחזור."
@@ -1172,7 +1177,7 @@ msgstr "המחיר עודכן"
 msgid "Price:"
 msgstr "מחיר:"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Prices and pool share"
 msgstr "מחירים ונתח בריכה"
 
@@ -1188,7 +1193,7 @@ msgstr "הצעות שהוגשו על ידי חברי הקהילה יופיעו �
 msgid "Proposer"
 msgstr "מציע"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "תעריפים"
 
@@ -1200,15 +1205,16 @@ msgstr "קרא עוד על UNI"
 msgid "Read more about Uniswap governance"
 msgstr "קרא עוד על ממשל Uniswap"
 
-#: src/pages/Pool/v2.tsx
-msgid "Read more about providing liquidity"
-msgstr "קרא עוד אודות מתן נזילות"
+#: 
+#~ msgid "Read more about providing liquidity"
+#~ msgstr "קרא עוד אודות מתן נזילות"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
 msgstr "קרא עוד על נכסים שאינם נתמכים"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "תנועות אחרונות"
 
@@ -1309,7 +1315,7 @@ msgstr "נציג עצמי"
 #~ msgid "Set Starting Price"
 #~ msgstr "קבע מחיר התחלתי"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
 msgstr "נתח הבריכה:"
 
@@ -1347,11 +1353,11 @@ msgstr "שלב 1. קבל תווי נזילות של UNI-V2"
 msgid "Submitting Vote"
 msgstr "הגשת הצבעה"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "לְסַפֵּק"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "אספקת {0} {1} ו {2} {3}"
 
@@ -1412,7 +1418,7 @@ msgstr "המחיר של הבריכה הזו מחוץ לטווח שבחרתם. ע
 msgid "The price of this pool is within your selected range. Your position is currently earning fees."
 msgstr "המחיר של הבריכה הזו הוא בטווח שבחרתם. עמדתך מרוויחה כרגע עמלות."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "The ratio of tokens you add will set the price of this pool."
 msgstr "יחס האסימונים שתוסיף יקבע את מחיר הבריכה הזו."
 
@@ -1423,6 +1429,10 @@ msgstr "לא ניתן היה לשלוח את העסקה מכיוון שהמוע�
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
 msgstr "אסימונים אלה משויכים בדרך כלל לאסימונים אחרים."
+
+#: src/components/Table/TableToolbar.tsx
+msgid "This is Dummy Data"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1605,7 +1615,7 @@ msgstr "בטל את נעילת ההצבעה"
 msgid "Unlocking Votes"
 msgstr "נעילת הצבעות"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
 msgstr "נכס לא נתמך"
@@ -1758,7 +1768,7 @@ msgstr "לַעֲטוֹף"
 msgid "Wrong Network"
 msgstr "רשת לא נכונה"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
 msgstr "אתה יוצר בריכה"
 
@@ -1766,7 +1776,7 @@ msgstr "אתה יוצר בריכה"
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "אתה ספק הנזילות הראשון לבריכת Uniswap V3 זו. הנזילות שלך תעבור במחיר {0} הנוכחי."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "אתה ספק הנזילות הראשון."
 
@@ -1802,7 +1812,7 @@ msgstr ""
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "אתה גם יגבה עמלות שהרווחת מתפקיד זה."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "אתה תקבל"
@@ -1811,13 +1821,17 @@ msgstr "אתה תקבל"
 msgid "Your UNI Breakdown"
 msgstr "התמוטטות של ה- UNI שלך"
 
-#: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "נזילות ה- V2 שלך"
+#: 
+#~ msgid "Your V2 liquidity"
+#~ msgstr "נזילות ה- V2 שלך"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "עמדות הנזילות שלך ב- V3 יופיעו כאן."
+
+#: src/pages/Pool/index.tsx
+msgid "Your liquidity"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -1946,8 +1960,8 @@ msgstr "{0} %"
 msgid "{0} Custom Tokens"
 msgstr "{0} אסימונים בהתאמה אישית"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0} Deposited"
 msgstr "{0} מופקד"
 
@@ -2032,7 +2046,7 @@ msgid "{0} • Added by user"
 msgstr "{0} • נוסף על ידי המשתמש"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
 msgstr "{0}%"
 

@@ -107,9 +107,13 @@ msgstr "<0/> Toate propunerile"
 msgid "<0/> Votes"
 msgstr "Voturi <0/>"
 
-#: src/pages/Pool/v2.tsx
-msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-msgstr "<0>Statistici cont și taxe acumulate</0><1> :up-κ: </1>"
+#: src/pages/Pool/index.tsx
+msgid "<0> ↗ </0>"
+msgstr ""
+
+#: 
+#~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
+#~ msgstr "<0>Statistici cont și taxe acumulate</0><1> :up-κ: </1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
@@ -123,7 +127,7 @@ msgstr "<0>Sfat: </0> Eliminarea tokenurilor de rezervă convertește poziția d
 msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 msgstr "<0> Sfat:</0> Utilizați acest instrument pentru a găsi pool-uri v2 care nu apar automat în interfață."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Sfat: </0> Când adaugi lichiditate, vei primi tokeni de rezervă care reprezintă poziția ta. Aceste jetoane câștigă automat taxe proporțional cu cota ta din pool, și pot fi răscumpărate oricând."
 
@@ -166,12 +170,13 @@ msgid "Add Delegate +"
 msgstr "Adaugă Delegat +"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "Adaugă lichiditate"
 
-#: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "Adaugă lichiditate V2"
+#: 
+#~ msgid "Add V2 Liquidity"
+#~ msgstr "Adaugă lichiditate V2"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -181,8 +186,8 @@ msgstr "Adaugă lichiditate."
 msgid "Add {0} to Metamask <0/>"
 msgstr "Adaugă {0} la Metamask <0/>"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Add {0} {1} and {2} {3} (Automatic Copy)"
 
@@ -251,8 +256,8 @@ msgstr "Analize"
 msgid "Approve"
 msgstr "Aprobați"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
 msgstr "Aprobați {0}"
 
@@ -264,8 +269,8 @@ msgstr "Aprobat"
 msgid "Approving"
 msgstr "Aprobare"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approving {0}"
 msgstr "Aprobare {0}"
 
@@ -461,7 +466,7 @@ msgstr "Bazele comune"
 msgid "Confirm"
 msgstr "Confirmare"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Confirm Supply"
 msgstr "Confirmă aprovizionarea"
 
@@ -478,7 +483,7 @@ msgstr "Confirmați Swap"
 msgid "Confirm this transaction in your wallet"
 msgstr "Confirmați această tranzacție în portofel"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -507,7 +512,7 @@ msgstr "Conectează-te la un portofel pentru a găsi pool-uri"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "Conectează-te la un portofel pentru a vizualiza lichiditatea V2."
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "Conectează-te la un portofel pentru a vizualiza lichiditatea."
 
@@ -528,12 +533,12 @@ msgstr "Copiat"
 msgid "Copy Address"
 msgstr "Copiază adresa"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "Crează rezervă & Aprovizionare"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "Creează o pereche"
 
@@ -657,9 +662,9 @@ msgstr "Documente"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Nu vezi una dintre pozițiile tale v2? <0>Importă-l.</0>"
 
-#: src/components/Table/index.tsx
-msgid "ETH-NII Transactions"
-msgstr ""
+#: 
+#~ msgid "ETH-NII Transactions"
+#~ msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -786,7 +791,7 @@ msgstr "Importă"
 msgid "Import List"
 msgstr "Listă de import"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Import Pool"
 msgstr "Importă grupa"
 
@@ -806,7 +811,7 @@ msgstr "În interval"
 #~ msgid "Increase Liquidity"
 #~ msgstr "Crește lichiditatea"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "Prețurile inițiale și cota parte"
 
@@ -878,11 +883,11 @@ msgstr "Lichiditate"
 msgid "Liquidity Provider Fee"
 msgstr "Taxa furnizorului de lichiditate"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity provider rewards"
 msgstr "Recompense furnizor de lichidități"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 msgstr "Furnizorii de lichidități câștigă o taxă de 0,3 % pentru toate tranzacțiile proporționale cu cota lor din grupare. Taxele sunt adăugate în rezervă, acumulează în timp real şi pot fi revendicate prin retragerea lichidităţii."
 
@@ -897,7 +902,7 @@ msgstr "Încărcat"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Loading"
@@ -959,9 +964,9 @@ msgstr "Migrare"
 #~ msgid "Migrate Liquidity"
 #~ msgstr "Migrare lichiditate"
 
-#: src/pages/Pool/v2.tsx
-msgid "Migrate Liquidity to V3"
-msgstr "Migrare lichiditate la V3"
+#: 
+#~ msgid "Migrate Liquidity to V3"
+#~ msgstr "Migrare lichiditate la V3"
 
 #: 
 #: 
@@ -1018,7 +1023,7 @@ msgstr ""
 msgid "No active pools"
 msgstr "Nu există pool-uri active"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "No liquidity found."
 msgstr "Nici o lichiditate găsită."
 
@@ -1054,7 +1059,7 @@ msgstr "Dezactivat"
 msgid "On"
 msgstr "Pe"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Odată ce sunteți mulțumit de rata de schimb faceți clic pe ofertă pentru a o examina."
 
@@ -1070,7 +1075,7 @@ msgstr "Ups! A apărut o eroare necunoscută. Reîmprospătați pagina, sau vizi
 msgid "Out of range"
 msgstr "În afara razei"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Output is estimated. If the price changes by more than {0}% your transaction will revert."
 msgstr "Ieșirea este estimată. Dacă prețul se schimbă cu mai mult de {0}% tranzacția dvs. va reveni."
@@ -1172,7 +1177,7 @@ msgstr "Preț actualizat"
 msgid "Price:"
 msgstr "Preț:"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Prices and pool share"
 msgstr "Prețuri și partajare grup"
 
@@ -1188,7 +1193,7 @@ msgstr "Propunerile depuse de membrii comunității vor apărea aici."
 msgid "Proposer"
 msgstr "Propunător"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Tarife"
 
@@ -1200,15 +1205,16 @@ msgstr "Citește mai multe despre UNI"
 msgid "Read more about Uniswap governance"
 msgstr "Citește mai multe despre guvernanța Uniswap"
 
-#: src/pages/Pool/v2.tsx
-msgid "Read more about providing liquidity"
-msgstr "Citește mai multe despre furnizarea de lichidități"
+#: 
+#~ msgid "Read more about providing liquidity"
+#~ msgstr "Citește mai multe despre furnizarea de lichidități"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
 msgstr "Citește mai multe despre activele neacceptate"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "Tranzacții recente"
 
@@ -1309,7 +1315,7 @@ msgstr "Auto-delegare"
 #~ msgid "Set Starting Price"
 #~ msgstr "Setează prețul de început"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
 msgstr "Cota din rezervă:"
 
@@ -1347,11 +1353,11 @@ msgstr "Pasul 1. Obține jetoane de lichiditate UNI-V2"
 msgid "Submitting Vote"
 msgstr "Se trimite votul"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "Aprovizionare"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Furnizare {0} {1} și {2} {3}"
 
@@ -1412,7 +1418,7 @@ msgstr "Prețul acestui pool este în afara intervalului selectat. Poziția dvs.
 msgid "The price of this pool is within your selected range. Your position is currently earning fees."
 msgstr "Prețul acestui pool se încadrează în intervalul selectat. Poziția dvs. câștigă în prezent."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "The ratio of tokens you add will set the price of this pool."
 msgstr "Raportul dintre jetoanele adăugate va seta prețul acestui grup."
 
@@ -1423,6 +1429,10 @@ msgstr "Tranzacția nu a putut fi trimisă deoarece termenul a trecut. Vă rugă
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Aceste jetoane sunt de obicei asociate cu alte jetoane."
+
+#: src/components/Table/TableToolbar.tsx
+msgid "This is Dummy Data"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1605,7 +1615,7 @@ msgstr "Deblocare Votare"
 msgid "Unlocking Votes"
 msgstr "Deblocarea voturilor"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
 msgstr "Activă nesuportată"
@@ -1758,7 +1768,7 @@ msgstr "Încadrare"
 msgid "Wrong Network"
 msgstr "Rețea greșită"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
 msgstr "Creezi un pool"
 
@@ -1766,7 +1776,7 @@ msgstr "Creezi un pool"
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "Sunteți primul furnizor de lichidități pentru această placă Uniswap V3. Lichiditatea dvs. va migra la prețul actual de {0}."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "Sunteți primul furnizor de lichidități."
 
@@ -1802,7 +1812,7 @@ msgstr ""
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "De asemenea, veți colecta taxe câștigate din această poziție."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "Vei primi"
@@ -1811,13 +1821,17 @@ msgstr "Vei primi"
 msgid "Your UNI Breakdown"
 msgstr "Defalcarea UNI"
 
-#: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "Lichiditatea dvs. V2"
+#: 
+#~ msgid "Your V2 liquidity"
+#~ msgstr "Lichiditatea dvs. V2"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "Pozițiile tale de lichiditate V3 vor apărea aici."
+
+#: src/pages/Pool/index.tsx
+msgid "Your liquidity"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -1946,8 +1960,8 @@ msgstr "{0} %"
 msgid "{0} Custom Tokens"
 msgstr "{0} jetoane personalizate"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0} Deposited"
 msgstr "{0} depozitat"
 
@@ -2032,7 +2046,7 @@ msgid "{0} • Added by user"
 msgstr "{0} • Adăugat de utilizator"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
 msgstr "{0}%"
 

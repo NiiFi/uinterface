@@ -107,9 +107,13 @@ msgstr "<0/> Alla förslag"
 msgid "<0/> Votes"
 msgstr "<0/> Röster"
 
-#: src/pages/Pool/v2.tsx
-msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-msgstr "<0>Kontoanalys och upplupna avgifter</0><1> ↗ </1>"
+#: src/pages/Pool/index.tsx
+msgid "<0> ↗ </0>"
+msgstr ""
+
+#: 
+#~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
+#~ msgstr "<0>Kontoanalys och upplupna avgifter</0><1> ↗ </1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
@@ -123,7 +127,7 @@ msgstr "<0>Tips: </0> Ta bort poolpolletter omvandlar din position tillbaka till
 msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 msgstr "<0> Tips:</0> Använd det här verktyget för att hitta v2-pooler som inte automatiskt visas i gränssnittet."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Tip:</0> När du lägger till likviditet får du pooltokens som representerar din position. Dessa tokens automatiskt tjäna avgifter proportionellt mot din del av poolen, och kan lösas in när som helst."
 
@@ -166,12 +170,13 @@ msgid "Add Delegate +"
 msgstr "Lägg till Delegera +"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "Lägg till likviditet"
 
-#: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "Lägg till V2 Likviditet"
+#: 
+#~ msgid "Add V2 Liquidity"
+#~ msgstr "Lägg till V2 Likviditet"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -181,8 +186,8 @@ msgstr "Tillsätt likviditet."
 msgid "Add {0} to Metamask <0/>"
 msgstr "Lägg till {0} till Metamask <0/>"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Lägg till {0} {1} och {2} {3}"
 
@@ -251,8 +256,8 @@ msgstr "Analys"
 msgid "Approve"
 msgstr "Godkänn"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
 msgstr "Godkänn {0}"
 
@@ -264,8 +269,8 @@ msgstr "Godkänd"
 msgid "Approving"
 msgstr "Godkänner"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approving {0}"
 msgstr "Godkänner {0}"
 
@@ -461,7 +466,7 @@ msgstr "Vanliga baser"
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Confirm Supply"
 msgstr "Bekräfta tillförsel"
 
@@ -478,7 +483,7 @@ msgstr "Bekräfta byte"
 msgid "Confirm this transaction in your wallet"
 msgstr "Bekräfta denna transaktion i din plånbok"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -507,7 +512,7 @@ msgstr "Anslut till en plånbok för att hitta pooler"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "Anslut till en plånbok för att visa din V2-likviditet."
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "Anslut till en plånbok för att visa din likviditet."
 
@@ -528,12 +533,12 @@ msgstr "Kopierad"
 msgid "Copy Address"
 msgstr "Kopiera adress"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "Skapa frågebank & Förråd"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "Skapa ett par"
 
@@ -657,9 +662,9 @@ msgstr "Dokument"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Ser du inte en av dina v2-positioner? <0>Importera den.</0>"
 
-#: src/components/Table/index.tsx
-msgid "ETH-NII Transactions"
-msgstr ""
+#: 
+#~ msgid "ETH-NII Transactions"
+#~ msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -786,7 +791,7 @@ msgstr "Importera"
 msgid "Import List"
 msgstr "Importera lista"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Import Pool"
 msgstr "Importera frågebank"
 
@@ -806,7 +811,7 @@ msgstr "Inom räckvidd"
 #~ msgid "Increase Liquidity"
 #~ msgstr "Öka likviditeten"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "Inledande priser och pool aktie"
 
@@ -878,11 +883,11 @@ msgstr "Likviditet"
 msgid "Liquidity Provider Fee"
 msgstr "Avgift för leverantör av likviditet"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity provider rewards"
 msgstr "Likviditetsleverantör belöningar"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 msgstr "Likviditetsleverantörer tjänar en avgift på 0,3 % på alla affärer i proportion till sin andel av poolen. Avgifter läggs till poolen, samlas in i realtid och kan hävdas genom att dra tillbaka din likviditet."
 
@@ -897,7 +902,7 @@ msgstr "Laddad"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Loading"
@@ -959,9 +964,9 @@ msgstr "Migrera"
 #~ msgid "Migrate Liquidity"
 #~ msgstr "Migrera likviditet"
 
-#: src/pages/Pool/v2.tsx
-msgid "Migrate Liquidity to V3"
-msgstr "Migrera likviditet till V3"
+#: 
+#~ msgid "Migrate Liquidity to V3"
+#~ msgstr "Migrera likviditet till V3"
 
 #: 
 #: 
@@ -1018,7 +1023,7 @@ msgstr ""
 msgid "No active pools"
 msgstr "Inga aktiva frågebanker"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "No liquidity found."
 msgstr "Ingen likviditet hittades."
 
@@ -1054,7 +1059,7 @@ msgstr "Av"
 msgid "On"
 msgstr "På"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
 msgstr "När du är nöjd med priset klicka leverans för att granska."
 
@@ -1070,7 +1075,7 @@ msgstr "Hoppsan! Ett okänt fel inträffade. Uppdatera sidan eller besök från 
 msgid "Out of range"
 msgstr "Utanför intervallet"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Output is estimated. If the price changes by more than {0}% your transaction will revert."
 msgstr "Produktionen uppskattas. Om priset ändras med mer än {0}% kommer din transaktion att återställas."
@@ -1172,7 +1177,7 @@ msgstr "Pris uppdaterat"
 msgid "Price:"
 msgstr "Pris:"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Prices and pool share"
 msgstr "Priser och pooldelning"
 
@@ -1188,7 +1193,7 @@ msgstr "Förslag som lämnats in av medlemmar i gemenskapen kommer att visas hä
 msgid "Proposer"
 msgstr "Förslag"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Priser"
 
@@ -1200,15 +1205,16 @@ msgstr "Läs mer om UNI"
 msgid "Read more about Uniswap governance"
 msgstr "Läs mer om Uniswap styrning"
 
-#: src/pages/Pool/v2.tsx
-msgid "Read more about providing liquidity"
-msgstr "Läs mer om att tillhandahålla likviditet"
+#: 
+#~ msgid "Read more about providing liquidity"
+#~ msgstr "Läs mer om att tillhandahålla likviditet"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
 msgstr "Läs mer om tillgångar som inte stöds"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "Senaste transaktioner"
 
@@ -1309,7 +1315,7 @@ msgstr "Själv Delegat"
 #~ msgid "Set Starting Price"
 #~ msgstr "Ställ in startpris"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
 msgstr "Andel av Pool:"
 
@@ -1347,11 +1353,11 @@ msgstr "Steg 1. Få UNI-V2 Likviditetstokens"
 msgid "Submitting Vote"
 msgstr "Skickar röst"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "Tilluft"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Levererar {0} {1} och {2} {3}"
 
@@ -1412,7 +1418,7 @@ msgstr "Priset för denna pool är utanför ditt valda intervall. Din position �
 msgid "The price of this pool is within your selected range. Your position is currently earning fees."
 msgstr "Priset för denna pool ligger inom ditt valda intervall. Din position tjänar för närvarande avgifter."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "The ratio of tokens you add will set the price of this pool."
 msgstr "Förhållandet mellan polletter du lägger till kommer att ställa in priset för denna pool."
 
@@ -1423,6 +1429,10 @@ msgstr "Transaktionen kunde inte skickas eftersom tidsfristen har passerat. Kont
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Dessa tokens är vanligtvis paras ihop med andra tokens."
+
+#: src/components/Table/TableToolbar.tsx
+msgid "This is Dummy Data"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1605,7 +1615,7 @@ msgstr "Lås upp röstning"
 msgid "Unlocking Votes"
 msgstr "Låser upp röster"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
 msgstr "Tillgång stöds ej"
@@ -1758,7 +1768,7 @@ msgstr "Radbryt"
 msgid "Wrong Network"
 msgstr "Fel nätverk"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
 msgstr "Du skapar en frågebank"
 
@@ -1766,7 +1776,7 @@ msgstr "Du skapar en frågebank"
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "Du är den första likviditetsleverantören för denna Uniswap V3-pool. Din likviditet kommer att migrera till nuvarande {0} pris."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "Du är den första likviditetsleverantören."
 
@@ -1802,7 +1812,7 @@ msgstr ""
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "Du kommer också att samla in avgifter intjänade från denna tjänst."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "Du kommer att få"
@@ -1811,13 +1821,17 @@ msgstr "Du kommer att få"
 msgid "Your UNI Breakdown"
 msgstr "Din UNI-uppdelning"
 
-#: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "Din V2 likviditet"
+#: 
+#~ msgid "Your V2 liquidity"
+#~ msgstr "Din V2 likviditet"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "Dina V3 likviditetspositioner kommer att visas här."
+
+#: src/pages/Pool/index.tsx
+msgid "Your liquidity"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -1946,8 +1960,8 @@ msgstr "{0} %"
 msgid "{0} Custom Tokens"
 msgstr "{0} Anpassade token"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0} Deposited"
 msgstr "{0} insatt"
 
@@ -2032,7 +2046,7 @@ msgid "{0} • Added by user"
 msgstr "{0} • Tillagd av användare"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
 msgstr "{0}%"
 
