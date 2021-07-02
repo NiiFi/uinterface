@@ -303,13 +303,7 @@ export const StyledMenuButton = styled.button`
 `
 
 const NETWORK_LABELS: { [chainId in SupportedChainId | number]: string } = {
-  [SupportedChainId.MAINNET]: 'Mainnet',
-  [SupportedChainId.RINKEBY]: 'Rinkeby',
   [SupportedChainId.ROPSTEN]: 'Ropsten',
-  [SupportedChainId.GOERLI]: 'Görli',
-  [SupportedChainId.KOVAN]: 'Kovan',
-  [SupportedChainId.ARBITRUM_KOVAN]: 'kArbitrum',
-  [SupportedChainId.ARBITRUM_ONE]: 'Arbitrum One',
 }
 
 export default function Header() {
@@ -363,7 +357,7 @@ export default function Header() {
         <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
           <Trans>Vote</Trans>
         </StyledNavLink>
-        <StyledExternalLink id={`stake-nav-link`} href={'https://info.uniswap.org'}>
+        <StyledExternalLink id={`stake-nav-link`} href={'https://niifi.com'}>
           <Trans>Charts</Trans>
           <sup>↗</sup>
         </StyledExternalLink>
@@ -371,7 +365,7 @@ export default function Header() {
       <HeaderControls>
         <HeaderElement>
           <HideSmall>
-            {chainId && chainId !== SupportedChainId.MAINNET && NETWORK_LABELS[chainId] && (
+            {chainId && chainId !== SupportedChainId.ROPSTEN && NETWORK_LABELS[chainId] && (
               <NetworkCard title={NETWORK_LABELS[chainId]}>{NETWORK_LABELS[chainId]}</NetworkCard>
             )}
           </HideSmall>
