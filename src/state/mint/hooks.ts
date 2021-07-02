@@ -5,7 +5,7 @@ import { Field, typeInput } from './actions'
 import { Pair } from '@uniswap/v2-sdk'
 import { Currency, Token, Percent, Price, CurrencyAmount } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
-import { PairState, useV2Pair } from '../../hooks/useV2Pairs'
+import { PairState, usePair } from '../../hooks/usePairs'
 import { useTotalSupply } from '../../hooks/useTotalSupply'
 
 import { useActiveWeb3React } from '../../hooks/web3'
@@ -77,7 +77,7 @@ export function useDerivedMintInfo(
   )
 
   // pair
-  const [pairState, pair] = useV2Pair(currencies[Field.CURRENCY_A], currencies[Field.CURRENCY_B])
+  const [pairState, pair] = usePair(currencies[Field.CURRENCY_A], currencies[Field.CURRENCY_B])
   const totalSupply = useTotalSupply(pair?.liquidityToken)
 
   const noLiquidity: boolean =

@@ -12,7 +12,7 @@ import { MinimalPositionCard } from '../../components/PositionCard'
 import Row from '../../components/Row'
 import CurrencySearchModal from '../../components/SearchModal/CurrencySearchModal'
 import { ExtendedEther } from '../../constants/tokens'
-import { PairState, useV2Pair } from '../../hooks/useV2Pairs'
+import { PairState, usePair } from '../../hooks/usePairs'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { usePairAdder } from '../../state/user/hooks'
 import { useTokenBalance } from '../../state/wallet/hooks'
@@ -45,7 +45,7 @@ export default function PoolFinder() {
   const [currency0, setCurrency0] = useState<Currency | null>(() => (chainId ? ExtendedEther.onChain(chainId) : null))
   const [currency1, setCurrency1] = useState<Currency | null>(null)
 
-  const [pairState, pair] = useV2Pair(currency0 ?? undefined, currency1 ?? undefined)
+  const [pairState, pair] = usePair(currency0 ?? undefined, currency1 ?? undefined)
   const addPair = usePairAdder()
   useEffect(() => {
     if (pair) {
@@ -86,7 +86,7 @@ export default function PoolFinder() {
         {!account ? (
           <Trans>Connect to a wallet to find pools</Trans>
         ) : (
-          <Trans>Select a token to find your v2 liquidity.</Trans>
+          <Trans>Select a token to find your liquidity.</Trans>
         )}
       </Text>
     </LightCard>
@@ -100,7 +100,7 @@ export default function PoolFinder() {
           <AutoColumn gap="10px">
             <TYPE.link fontWeight={400} color={'primaryText1'}>
               <Trans>
-                <b>Tip:</b> Use this tool to find v2 pools that don&apos;t automatically appear in the interface.
+                <b>Tip:</b> Use this tool to find pools that don&apos;t automatically appear in the interface.
               </Trans>
             </TYPE.link>
           </AutoColumn>
