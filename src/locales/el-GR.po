@@ -107,9 +107,13 @@ msgstr "<0/> Όλες Οι Προτάσεις"
 msgid "<0/> Votes"
 msgstr "<0/> Ψηφοφορίες"
 
-#: src/pages/Pool/v2.tsx
-msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-msgstr "<0>Αναλυτικά λογαριασμού και δεδουλευμένα τέλη</0><1> ↗ </1>"
+#: src/pages/Pool/index.tsx
+msgid "<0> ↗ </0>"
+msgstr ""
+
+#: 
+#~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
+#~ msgstr "<0>Αναλυτικά λογαριασμού και δεδουλευμένα τέλη</0><1> ↗ </1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
@@ -123,7 +127,7 @@ msgstr "<0>Συμβουλή:</0> Αφαίρεση tokens πισίνα μετατ
 msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 msgstr "<0> Συμβουλή:</0> Χρησιμοποιήστε αυτό το εργαλείο για να βρείτε ομάδες v2 που δεν εμφανίζονται αυτόματα στη διεπαφή."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Συμβουλή:</0> Όταν προσθέσετε ρευστότητα, θα λάβετε tokens πισίνας που αντιπροσωπεύουν τη θέση σας. Αυτές οι μάρκες κερδίζουν αυτόματα τέλη ανάλογα με το μερίδιό σας στην πισίνα, και μπορούν να εξαργυρωθούν ανά πάσα στιγμή."
 
@@ -166,12 +170,13 @@ msgid "Add Delegate +"
 msgstr "Προσθήκη Αντιπροσωπείας +"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "Προσθήκη Ρευστότητας"
 
-#: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "Προσθήκη Ρευστότητας V2"
+#: 
+#~ msgid "Add V2 Liquidity"
+#~ msgstr "Προσθήκη Ρευστότητας V2"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -181,8 +186,8 @@ msgstr "Προσθέστε ρευστότητα."
 msgid "Add {0} to Metamask <0/>"
 msgstr "Προσθήκη {0} στο Metamask <0/>"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Προσθήκη {0} {1} και {2} {3}"
 
@@ -219,8 +224,12 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "Επιτρέψτε τις συναλλαγές υψηλής επίδρασης τιμών και παραλείψτε την οθόνη επιβεβαίωσης. Χρησιμοποιήστε τη με δική σας ευθύνη."
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "Επιτρέψτε στο πρωτόκολλο Uniswap να χρησιμοποιήσει το {0} σας"
+msgid "Allow the Niifi to use your {0}"
+msgstr ""
+
+#: 
+#~ msgid "Allow the Uniswap Protocol to use your {0}"
+#~ msgstr "Επιτρέψτε στο πρωτόκολλο Uniswap να χρησιμοποιήσει το {0} σας"
 
 #: 
 #~ msgid "Allowed"
@@ -247,8 +256,8 @@ msgstr "Αναλύσεις"
 msgid "Approve"
 msgstr "Έγκριση"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
 msgstr "Έγκριση {0}"
 
@@ -260,8 +269,8 @@ msgstr "Εγκρίθηκε"
 msgid "Approving"
 msgstr "Έγκριση"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approving {0}"
 msgstr "Έγκριση {0}"
 
@@ -269,9 +278,9 @@ msgstr "Έγκριση {0}"
 msgid "Are you sure?"
 msgstr "Είσαι σίγουρος?"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "Ως μέλος της κοινότητας Uniswap μπορείτε να διεκδικήσετε το UNI για να χρησιμοποιηθεί για ψηφοφορία και διακυβέρνηση.<0/><1/><2>Διαβάστε περισσότερα για UNI</2>"
+#: 
+#~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+#~ msgstr "Ως μέλος της κοινότητας Uniswap μπορείτε να διεκδικήσετε το UNI για να χρησιμοποιηθεί για ψηφοφορία και διακυβέρνηση.<0/><1/><2>Διαβάστε περισσότερα για UNI</2>"
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -326,8 +335,12 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "Προσθέτοντας αυτή τη λίστα, εμπιστεύεστε έμμεσα ότι τα δεδομένα είναι σωστά. Οποιοσδήποτε μπορεί να δημιουργήσει μια λίστα, συμπεριλαμβανομένης της δημιουργίας πλαστών εκδόσεων των υφιστάμενων καταλόγων και καταλόγων που ισχυρίζονται ότι αντιπροσωπεύουν έργα που δεν έχουν ένα."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-msgstr "Συνδέοντας ένα πορτοφόλι, συμφωνείτε με την Uniswap Labs’ <0>Terms of Service</0> και αναγνωρίζετε ότι έχετε διαβάσει και κατανοήσει το <1>Uniswap protocol disclaimer</1>."
+msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgstr ""
+
+#: 
+#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
+#~ msgstr "Συνδέοντας ένα πορτοφόλι, συμφωνείτε με την Uniswap Labs’ <0>Terms of Service</0> και αναγνωρίζετε ότι έχετε διαβάσει και κατανοήσει το <1>Uniswap protocol disclaimer</1>."
 
 #: src/components/AccountDetails/index.tsx
 msgid "Change"
@@ -453,7 +466,7 @@ msgstr "Κοινές βάσεις"
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Confirm Supply"
 msgstr "Επιβεβαίωση Προμήθειας"
 
@@ -470,7 +483,7 @@ msgstr "Επιβεβαίωση ανταλλαγής"
 msgid "Confirm this transaction in your wallet"
 msgstr "Επιβεβαιώστε αυτή τη συναλλαγή στο πορτοφόλι σας"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -499,7 +512,7 @@ msgstr "Συνδεθείτε σε ένα πορτοφόλι για να βρεί
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "Συνδεθείτε σε ένα πορτοφόλι για να δείτε τη ρευστότητα V2."
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "Συνδεθείτε σε ένα πορτοφόλι για να δείτε την ρευστότητά σας."
 
@@ -520,12 +533,12 @@ msgstr "Αντιγράφηκε"
 msgid "Copy Address"
 msgstr "Αντιγραφή Διεύθυνσης"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "Δημιουργία Πισίνας & Προμήθειας"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "Δημιουργήστε ένα ζευγάρι"
 
@@ -649,13 +662,17 @@ msgstr "Έγγραφα"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Μην βλέπετε μία από τις v2 θέσεις σας? <0>Εισαγωγή της.</0>"
 
-#: src/components/Table/index.tsx
-msgid "ETH-NII Transactions"
-msgstr ""
+#: 
+#~ msgid "ETH-NII Transactions"
+#~ msgstr ""
+
+#: 
+#~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
+#~ msgstr "Κερδισμένα νομίσματα του UNI αντιπροσωπεύουν μετοχές ψήφου στη διακυβέρνηση Uniswap."
 
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "Κερδισμένα νομίσματα του UNI αντιπροσωπεύουν μετοχές ψήφου στη διακυβέρνηση Uniswap."
+msgid "Earned tokens represent voting shares in governance."
+msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
@@ -774,7 +791,7 @@ msgstr "Εισαγωγή"
 msgid "Import List"
 msgstr "Εισαγωγή Λίστας"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Import Pool"
 msgstr "Εισαγωγή Λίστας"
 
@@ -794,7 +811,7 @@ msgstr "Σε εμβέλεια"
 #~ msgid "Increase Liquidity"
 #~ msgstr "Αύξηση Ρευστότητας"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "Αρχικές τιμές και μερίδιο αγοράς"
 
@@ -866,11 +883,11 @@ msgstr "Ταχύτητα"
 msgid "Liquidity Provider Fee"
 msgstr "Χρέωση παρόχου ρευστότητας"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity provider rewards"
 msgstr "Ανταμοιβές παρόχου ρευστότητας"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 msgstr "Οι πάροχοι ρευστότητας κερδίζουν ένα τέλος 0,3% σε όλες τις συναλλαγές ανάλογα με το μερίδιο τους από την πισίνα. Τα τέλη προστίθενται στην πισίνα, συσσωρεύονται σε πραγματικό χρόνο και μπορεί να ζητηθεί από την ανάληψη ρευστότητας σας."
 
@@ -885,7 +902,7 @@ msgstr "Φορτώθηκε"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Loading"
@@ -947,9 +964,9 @@ msgstr "Μετεγκατάσταση"
 #~ msgid "Migrate Liquidity"
 #~ msgstr "Μετεγκατάσταση Ρευστότητας"
 
-#: src/pages/Pool/v2.tsx
-msgid "Migrate Liquidity to V3"
-msgstr "Μετεγκατάσταση ρευστότητας σε V3"
+#: 
+#~ msgid "Migrate Liquidity to V3"
+#~ msgstr "Μετεγκατάσταση ρευστότητας σε V3"
 
 #: 
 #: 
@@ -993,6 +1010,10 @@ msgstr "Ελάχιστο λαμβανόμενο"
 #~ msgid "New Position"
 #~ msgstr "Νέα Θέση"
 
+#: src/components/SwitchLocaleLink/index.tsx
+msgid "Niifi available in: <0>{0}</0>"
+msgstr ""
+
 #: 
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "Δεν βρέθηκε ρευστότητα V2."
@@ -1002,7 +1023,7 @@ msgstr "Ελάχιστο λαμβανόμενο"
 msgid "No active pools"
 msgstr "Δεν υπάρχουν ενεργές πισίνες"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "No liquidity found."
 msgstr "Δεν βρέθηκε ρευστότητα."
 
@@ -1038,7 +1059,7 @@ msgstr "Μακριά από"
 msgid "On"
 msgstr "Επί"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Μόλις είστε ευχαριστημένοι με το ποσοστό κάντε κλικ προμήθεια για να επανεξετάσετε."
 
@@ -1054,7 +1075,7 @@ msgstr "Ωχ! Προέκυψε ένα άγνωστο σφάλμα. Παρακα�
 msgid "Out of range"
 msgstr "Εκτός εμβέλειας"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Output is estimated. If the price changes by more than {0}% your transaction will revert."
 msgstr "Εκτιμάται η έξοδος. Εάν η τιμή αλλάξει κατά περισσότερο από {0}% η συναλλαγή σας θα επανέλθει."
@@ -1156,7 +1177,7 @@ msgstr "Η Τιμή Ενημερώθηκε"
 msgid "Price:"
 msgstr "Τιμή:"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Prices and pool share"
 msgstr "Τιμές και μερίδιο πισίνας"
 
@@ -1172,7 +1193,7 @@ msgstr "Προτάσεις που υποβάλλονται από τα μέλη 
 msgid "Proposer"
 msgstr "Προθέτης"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Συντελεστές"
 
@@ -1184,15 +1205,16 @@ msgstr "Διαβάστε περισσότερα για UNI"
 msgid "Read more about Uniswap governance"
 msgstr "Διαβάστε περισσότερα για τη διακυβέρνηση Uniswap"
 
-#: src/pages/Pool/v2.tsx
-msgid "Read more about providing liquidity"
-msgstr "Διαβάστε περισσότερα για την παροχή ρευστότητας"
+#: 
+#~ msgid "Read more about providing liquidity"
+#~ msgstr "Διαβάστε περισσότερα για την παροχή ρευστότητας"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
 msgstr "Διαβάστε περισσότερα για τα μη υποστηριζόμενα περιουσιακά στοιχεία"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "Πρόσφατες Συναλλαγές"
 
@@ -1293,7 +1315,7 @@ msgstr "Ίδιος Εκπρόσωπος"
 #~ msgid "Set Starting Price"
 #~ msgstr "Ορισμός Τιμής Έναρξης"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
 msgstr "Μοιραστείτε την πισίνα:"
 
@@ -1331,11 +1353,11 @@ msgstr "Βήμα 1. Πάρτε τα διακριτικά ρευστότητας 
 msgid "Submitting Vote"
 msgstr "Υποβολή Ψηφοφορίας"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "Προμήθεια"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Προμήθεια {0} {1} και {2} {3}"
 
@@ -1360,9 +1382,13 @@ msgstr "Εναλλαγή Τέλος Τέλος Τέλος"
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "Ανταλλαγή {0} {1} για {2} {3}"
 
+#: 
+#~ msgid "Thanks for being part of the Uniswap community <0/>"
+#~ msgstr "Σας ευχαριστούμε που συμμετείχατε στην κοινότητα Uniswap <0 />"
+
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "Σας ευχαριστούμε που συμμετείχατε στην κοινότητα Uniswap <0 />"
+msgid "Thanks for being part of the community <0/>"
+msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1392,7 +1418,7 @@ msgstr "Η τιμή αυτής της πισίνας είναι εκτός το�
 msgid "The price of this pool is within your selected range. Your position is currently earning fees."
 msgstr "Η τιμή αυτής της πισίνας είναι εντός του επιλεγμένου εύρους. Η θέση σας κερδίζει επί του παρόντος τέλη."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "The ratio of tokens you add will set the price of this pool."
 msgstr "Η αναλογία των νομισμάτων που προσθέτετε θα ορίσει την τιμή αυτής της πισίνας."
 
@@ -1403,6 +1429,10 @@ msgstr "Δεν ήταν δυνατή η αποστολή της συναλλαγ
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Αυτά τα νομίσματα είναι συνήθως σε συνδυασμό με άλλα νομίσματα."
+
+#: src/components/Table/TableToolbar.tsx
+msgid "This is Dummy Data"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1548,9 +1578,9 @@ msgstr "Ανάκτηση Διακυβέρνησης"
 msgid "Uniswap V3 is here!"
 msgstr "Uniswap V3 είναι εδώ!"
 
-#: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Το Uniswap διατίθεται σε: <0>{0}</0>"
+#: 
+#~ msgid "Uniswap available in: <0>{0}</0>"
+#~ msgstr "Το Uniswap διατίθεται σε: <0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -1585,7 +1615,7 @@ msgstr "Ξεκλείδωμα Ψηφοφορίας"
 msgid "Unlocking Votes"
 msgstr "Ξεκλείδωμα Ψηφοφοριών"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
 msgstr "Μη Υποστηριζόμενο Αντικείμενο"
@@ -1738,7 +1768,7 @@ msgstr "Αναδίπλωση"
 msgid "Wrong Network"
 msgstr "Λάθος Δίκτυο"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
 msgstr "Δημιουργείτε μια πισίνα"
 
@@ -1746,7 +1776,7 @@ msgstr "Δημιουργείτε μια πισίνα"
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "Είστε ο πρώτος πάροχος ρευστότητας για αυτό το Uniswap V3 pool. Η ρευστότητά σας θα μεταναστεύσει στην τρέχουσα τιμή {0}."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "Είστε ο πρώτος πάροχος ρευστότητας."
 
@@ -1766,9 +1796,13 @@ msgstr "Δεν έχετε ακόμα ρευστότητα σε αυτή την �
 #~ msgid "You must connect an account."
 #~ msgstr "Πρέπει να συνδέσετε ένα λογαριασμό."
 
+#: 
+#~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
+#~ msgstr "Πρέπει να δώσετε στο έξυπνο συμβόλαιο Uniswap άδεια για να χρησιμοποιήσετε το {0}σας. Πρέπει να το κάνετε αυτό μία φορά ανά διακριτικό."
+
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "Πρέπει να δώσετε στο έξυπνο συμβόλαιο Uniswap άδεια για να χρησιμοποιήσετε το {0}σας. Πρέπει να το κάνετε αυτό μία φορά ανά διακριτικό."
+msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr ""
 
 #: 
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
@@ -1778,7 +1812,7 @@ msgstr "Πρέπει να δώσετε στο έξυπνο συμβόλαιο Un
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "Θα εισπράξετε επίσης τα τέλη που κερδίζονται από αυτή τη θέση."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "Θα λάβετε"
@@ -1787,13 +1821,17 @@ msgstr "Θα λάβετε"
 msgid "Your UNI Breakdown"
 msgstr "Κατανομή UNI Σας"
 
-#: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "Η ρευστότητα V2 σας"
+#: 
+#~ msgid "Your V2 liquidity"
+#~ msgstr "Η ρευστότητα V2 σας"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "Οι θέσεις ρευστότητας V3 σας θα εμφανιστούν εδώ."
+
+#: src/pages/Pool/index.tsx
+msgid "Your liquidity"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -1922,8 +1960,8 @@ msgstr "{0} %"
 msgid "{0} Custom Tokens"
 msgstr "{0} προσαρμοσμένα κουπόνια"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0} Deposited"
 msgstr "{0} Κατάθεση"
 
@@ -2008,7 +2046,7 @@ msgid "{0} • Added by user"
 msgstr "{0} • Προστέθηκε από τον χρήστη"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
 msgstr "{0}%"
 

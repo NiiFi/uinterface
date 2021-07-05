@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { t, Trans } from '@lingui/macro'
 import { orderBy as lodashOrderBy, get } from 'lodash'
-import { useQuery } from '@apollo/client'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -13,17 +12,15 @@ import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
-import Loader from '../Loader'
 import useTheme from 'hooks/useTheme'
 import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 import { ExternalLink } from '../../theme'
 import TableToolBar from './TableToolbar'
 import { shortenAddress, shortenDecimalValues, formatTimeStamp } from '../../utils'
-import { TRANSACTION_QUERY_GQL } from './TransactionQuery'
 import { TransactionListQuery, TransactionTableData, Swap, Burn, Mint, TransactionTypes } from './types'
 import { SampleResponse } from './sample-response'
 
-const BASE_URL = 'https://etherscan.io'
+const BASE_URL = 'https://ropsten.etherscan.io'
 
 function mapSwapResponseToTableData(swaps: Array<Swap>): Array<TransactionTableData> {
   /**
@@ -227,15 +224,9 @@ export default function EnhancedTable() {
   const [selected, setSelected] = React.useState<string[]>([])
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(25)
-  const { loading, error, data } = useQuery<TransactionListQuery>(TRANSACTION_QUERY_GQL)
   useEffect(() => {
-    if (error) {
-      setTableData(mapTransactionListDataToTableData(SampleResponse.data))
-    }
-    if (data && data.transactions) {
-      setTableData(mapTransactionListDataToTableData(data))
-    }
-  }, [error, data, setTableData])
+    setTableData(mapTransactionListDataToTableData(SampleResponse.data))
+  }, [setTableData])
 
   const handleRequestSort = (event: React.MouseEvent<unknown>, property: string) => {
     const isAsc = orderBy === property && order === 'asc'
@@ -282,7 +273,7 @@ export default function EnhancedTable() {
           <TableToolBar
             currentPage={page + 1}
             totalPages={totalPages}
-            title={t`ETH-NII Transactions`}
+            title={t`Recent Transactions`}
             onNext={(currentPage: number) => {
               if (currentPage !== totalPages) {
                 setPage(currentPage)
@@ -311,15 +302,7 @@ export default function EnhancedTable() {
             rowCount={tableData.length}
           />
           <TableBody>
-            {loading && (
-              <TableRow>
-                <TableCell colSpan={6} rowSpan={1} align="center">
-                  <Loader size="2rem" />
-                </TableCell>
-              </TableRow>
-            )}
-            {!loading &&
-              tableData &&
+            {tableData &&
               lodashOrderBy(
                 tableData,
                 function (o) {
@@ -343,14 +326,16 @@ export default function EnhancedTable() {
                       selected={false}
                     >
                       <TableCell align="left">
-                        <ExternalLink href={`${BASE_URL}/tx/${row.transaction.id}`}>
+                        <ExternalLink
+                          href={`${BASE_URL}/tx/${'0x47cd9080afdb5fedc61347a022d9c2de0cc12ca4681a45cd4701376e87170eff'}`}
+                        >
                           <Trans>
                             {mapTransactionTypeToWords(row.__typename)} {row.pair.token0.symbol} for{' '}
                             {row.pair.token1.symbol}
                           </Trans>
                         </ExternalLink>
                       </TableCell>
-                      <TableCell align="center">{shortenDecimalValues(row.amountUSD)} US$</TableCell>
+                      <TableCell align="center">{shortenDecimalValues(row.amountUSD)} USD</TableCell>
                       <TableCell align="center">
                         {shortenDecimalValues(row.amount0)} {row.pair.token0.symbol}
                       </TableCell>
@@ -358,8 +343,8 @@ export default function EnhancedTable() {
                         {shortenDecimalValues(row.amount1)} {row.pair.token1.symbol}
                       </TableCell>
                       <TableCell align="center">
-                        <ExternalLink href={`${BASE_URL}/address/${row.address}`}>
-                          {shortenAddress(row.address)}
+                        <ExternalLink href={`${BASE_URL}/address/${'0x1Ff482D42D8727258A1686102Fa4ba925C46Bc42'}`}>
+                          {shortenAddress('0x1Ff482D42D8727258A1686102Fa4ba925C46Bc42')}
                         </ExternalLink>
                       </TableCell>
                       <TableCell align="center">

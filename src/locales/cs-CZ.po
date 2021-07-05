@@ -107,9 +107,13 @@ msgstr "<0/> Všechny návrhy"
 msgid "<0/> Votes"
 msgstr "<0/> hlasů"
 
-#: src/pages/Pool/v2.tsx
-msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-msgstr "<0>Analýza účtu a naběhlé poplatky</0><1> ↗ </1>"
+#: src/pages/Pool/index.tsx
+msgid "<0> ↗ </0>"
+msgstr ""
+
+#: 
+#~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
+#~ msgstr "<0>Analýza účtu a naběhlé poplatky</0><1> ↗ </1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
@@ -123,7 +127,7 @@ msgstr "<0>Tip:</0> Odstranění tokenů bazénu převede vaši pozici zpět na 
 msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 msgstr "<0> Tip:</0> Pomocí tohoto nástroje můžete najít fondy v2, které se v rozhraní automaticky nezobrazí."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Tip:</0> Když přidáte likviditu, obdržíte tokeny bazénu reprezentující vaši pozici. Tyto žetony automaticky získávají poplatky úměrné vašemu podílu na bazénu a mohou být kdykoli vyměněny."
 
@@ -166,12 +170,13 @@ msgid "Add Delegate +"
 msgstr "Přidat delegát +"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "Přidat likviditu"
 
-#: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "Přidat V2 likviditu"
+#: 
+#~ msgid "Add V2 Liquidity"
+#~ msgstr "Přidat V2 likviditu"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -181,8 +186,8 @@ msgstr "Přidat likviditu."
 msgid "Add {0} to Metamask <0/>"
 msgstr "Přidat {0} do metamasku <0/>"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Přidat {0} {1} a {2} {3}"
 
@@ -219,8 +224,12 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "Povolit obchody s vysokým dopadem ceny a přeskočit obrazovku s potvrzením. Použijte na vlastní nebezpečí."
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "Povolit Uniswap Protocol používat váš {0}"
+msgid "Allow the Niifi to use your {0}"
+msgstr ""
+
+#: 
+#~ msgid "Allow the Uniswap Protocol to use your {0}"
+#~ msgstr "Povolit Uniswap Protocol používat váš {0}"
 
 #: 
 #~ msgid "Allowed"
@@ -247,8 +256,8 @@ msgstr "Analytici"
 msgid "Approve"
 msgstr "Schválit"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
 msgstr "Schválit {0}"
 
@@ -260,8 +269,8 @@ msgstr "Schváleno"
 msgid "Approving"
 msgstr "Schvalování"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approving {0}"
 msgstr "Schvalování {0}"
 
@@ -269,9 +278,9 @@ msgstr "Schvalování {0}"
 msgid "Are you sure?"
 msgstr "Jste si jisti?"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "Jako člen komunity Uniswap můžete tvrdit, že UNI bude použita pro hlasování a správu věcí veřejných.<0/><1/><2>Přečtěte si více o UNI</2>"
+#: 
+#~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+#~ msgstr "Jako člen komunity Uniswap můžete tvrdit, že UNI bude použita pro hlasování a správu věcí veřejných.<0/><1/><2>Přečtěte si více o UNI</2>"
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -326,8 +335,12 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "Přidáním tohoto seznamu implicitně věříte, že data jsou správná. Kdokoli může vytvořit seznam, včetně vytváření falešných verzí existujících seznamů a seznamů, které označují projekty, které jej nemají."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-msgstr "Připojením peněženky souhlasíte s Uniswap Labs<0>Podmínky služby</0> a potvrzte, že jste si přečetli <1>Zrušení odpovědnosti protokolu a rozumí</1>."
+msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgstr ""
+
+#: 
+#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
+#~ msgstr "Připojením peněženky souhlasíte s Uniswap Labs<0>Podmínky služby</0> a potvrzte, že jste si přečetli <1>Zrušení odpovědnosti protokolu a rozumí</1>."
 
 #: src/components/AccountDetails/index.tsx
 msgid "Change"
@@ -453,7 +466,7 @@ msgstr "Společné základny"
 msgid "Confirm"
 msgstr "Potvrdit"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Confirm Supply"
 msgstr "Potvrdit dodávku"
 
@@ -470,7 +483,7 @@ msgstr "Potvrďte výměnu"
 msgid "Confirm this transaction in your wallet"
 msgstr "Potvrďte tuto transakci ve Vaší peněžence"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -499,7 +512,7 @@ msgstr "Připojte se k peněžence pro nalezení bazénů"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "Připojte se k peněžence pro zobrazení vaší V2 likvidity."
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "Připojte se k peněžence pro zobrazení Vaší likvidity."
 
@@ -520,12 +533,12 @@ msgstr "Zkopírováno"
 msgid "Copy Address"
 msgstr "Kopírovat adresu"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "Vytvořit bazén a zásobu"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "Vytvořit pár"
 
@@ -649,13 +662,17 @@ msgstr "Dokumenty"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Nevidíte jednu z vašich v2 pozic? <0>Importujte je.</0>"
 
-#: src/components/Table/index.tsx
-msgid "ETH-NII Transactions"
-msgstr ""
+#: 
+#~ msgid "ETH-NII Transactions"
+#~ msgstr ""
+
+#: 
+#~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
+#~ msgstr "Získané tokeny UNI představují hlasovací podíly ve správě Uniswap."
 
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "Získané tokeny UNI představují hlasovací podíly ve správě Uniswap."
+msgid "Earned tokens represent voting shares in governance."
+msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
@@ -774,7 +791,7 @@ msgstr "Importovat"
 msgid "Import List"
 msgstr "Importovat seznam"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Import Pool"
 msgstr "Importovat soubor"
 
@@ -794,7 +811,7 @@ msgstr "V dosahu"
 #~ msgid "Increase Liquidity"
 #~ msgstr "Zvýšit likviditu"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "Počáteční ceny a podíl seskupení"
 
@@ -866,11 +883,11 @@ msgstr "Likvidita"
 msgid "Liquidity Provider Fee"
 msgstr "Poplatek poskytovatele likvidity"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity provider rewards"
 msgstr "Poskytovatel likvidity odměňuje"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 msgstr "Poskytovatelé likvidity dostávají u všech obchodů 0,3% poplatek úměrný jejich podílu na poli. Poplatky jsou připočteny do bazálu, nabíhají v reálném čase a lze je požadovat výběrem Vaší likvidity."
 
@@ -885,7 +902,7 @@ msgstr "Načteno"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Loading"
@@ -947,9 +964,9 @@ msgstr "Migrovat"
 #~ msgid "Migrate Liquidity"
 #~ msgstr "Migrovat likviditu"
 
-#: src/pages/Pool/v2.tsx
-msgid "Migrate Liquidity to V3"
-msgstr "Přenést likviditu na V3"
+#: 
+#~ msgid "Migrate Liquidity to V3"
+#~ msgstr "Přenést likviditu na V3"
 
 #: 
 #: 
@@ -993,6 +1010,10 @@ msgstr "Minimum přijato"
 #~ msgid "New Position"
 #~ msgstr "Nová pozice"
 
+#: src/components/SwitchLocaleLink/index.tsx
+msgid "Niifi available in: <0>{0}</0>"
+msgstr ""
+
 #: 
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "Nebyla nalezena likvidita V2."
@@ -1002,7 +1023,7 @@ msgstr "Minimum přijato"
 msgid "No active pools"
 msgstr "Žádné aktivní skupiny"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "No liquidity found."
 msgstr "Nenalezena žádná likvidita."
 
@@ -1038,7 +1059,7 @@ msgstr "Vypnuto"
 msgid "On"
 msgstr "Na"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Jakmile jste spokojeni s sazbou, klikněte na nabídku pro kontrolu."
 
@@ -1054,7 +1075,7 @@ msgstr "Jejda! Došlo k neznámé chybě. Obnovte stránku nebo navštivte jiný
 msgid "Out of range"
 msgstr "Mimo rozsah"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Output is estimated. If the price changes by more than {0}% your transaction will revert."
 msgstr "Výstup je odhadnut. Pokud se cena změní o více než {0}%, vaše transakce se vrátí."
@@ -1156,7 +1177,7 @@ msgstr "Cena aktualizována"
 msgid "Price:"
 msgstr "Cena:"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Prices and pool share"
 msgstr "Ceny a podíl na trhu"
 
@@ -1172,7 +1193,7 @@ msgstr "Zde se objeví návrhy předložené členy komunity."
 msgid "Proposer"
 msgstr "Navrhovatel"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Sazby"
 
@@ -1184,15 +1205,16 @@ msgstr "Přečtěte si více o UNI"
 msgid "Read more about Uniswap governance"
 msgstr "Přečtěte si více o správě Uniswap"
 
-#: src/pages/Pool/v2.tsx
-msgid "Read more about providing liquidity"
-msgstr "Přečtěte si více o poskytování likvidity"
+#: 
+#~ msgid "Read more about providing liquidity"
+#~ msgstr "Přečtěte si více o poskytování likvidity"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
 msgstr "Přečtěte si více o nepodporovaných aktivech"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "Poslední transakce"
 
@@ -1293,7 +1315,7 @@ msgstr "Samostatná delegace"
 #~ msgid "Set Starting Price"
 #~ msgstr "Nastavit počáteční cenu"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
 msgstr "Podíl sdružení:"
 
@@ -1331,11 +1353,11 @@ msgstr "Krok 1. Získejte UNI-V2 žetony pro likviditu"
 msgid "Submitting Vote"
 msgstr "Odesílání hlasování"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "Dodávka"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Dodávání {0} {1} a {2} {3}"
 
@@ -1360,9 +1382,13 @@ msgstr "Přesto prohodit"
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "Výměna {0} {1} za {2} {3}"
 
+#: 
+#~ msgid "Thanks for being part of the Uniswap community <0/>"
+#~ msgstr "Děkujeme, že jste součástí komunity Uniswap <0 />"
+
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "Děkujeme, že jste součástí komunity Uniswap <0 />"
+msgid "Thanks for being part of the community <0/>"
+msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1392,7 +1418,7 @@ msgstr "Cena tohoto bazénu je mimo váš vybraný rozsah. Vaše pozice v souča
 msgid "The price of this pool is within your selected range. Your position is currently earning fees."
 msgstr "Cena tohoto bazénu je ve vybraném rozsahu. Vaše pozice nyní získává poplatky."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "The ratio of tokens you add will set the price of this pool."
 msgstr "Poměr tokenů, které přidáte, nastaví cenu tohoto souboru."
 
@@ -1403,6 +1429,10 @@ msgstr "Transakci nelze odeslat, protože lhůta uplynula. Zkontrolujte, zda nen
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Tyto žetony jsou běžně spárovány s jinými žetony."
+
+#: src/components/Table/TableToolbar.tsx
+msgid "This is Dummy Data"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1548,9 +1578,9 @@ msgstr "Uniswapová správa"
 msgid "Uniswap V3 is here!"
 msgstr "Uniswap V3 je tady!"
 
-#: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Uniswap k dispozici za: <0>{0}</0>"
+#: 
+#~ msgid "Uniswap available in: <0>{0}</0>"
+#~ msgstr "Uniswap k dispozici za: <0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -1585,7 +1615,7 @@ msgstr "Odemknout hlasování"
 msgid "Unlocking Votes"
 msgstr "Odemykání hlasů"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
 msgstr "Nepodporovaný majetek"
@@ -1738,7 +1768,7 @@ msgstr "Zalomit"
 msgid "Wrong Network"
 msgstr "Špatná síť"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
 msgstr "Vytváříte bazén"
 
@@ -1746,7 +1776,7 @@ msgstr "Vytváříte bazén"
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "Jste prvním poskytovatelem likvidity pro tento Uniswap V3. Vaše likvidita bude migrovat za aktuální cenu {0}."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "Jste prvním poskytovatelem likvidity."
 
@@ -1766,9 +1796,13 @@ msgstr "V tomto bazénu zatím nemáte likviditu."
 #~ msgid "You must connect an account."
 #~ msgstr "Musíte se připojit k účtu."
 
+#: 
+#~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
+#~ msgstr "Musíte udělit oprávnění k chytrým smlouvám Uniswap pro použití vašeho {0}. Toto musíte udělat pouze jednou za token."
+
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "Musíte udělit oprávnění k chytrým smlouvám Uniswap pro použití vašeho {0}. Toto musíte udělat pouze jednou za token."
+msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr ""
 
 #: 
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
@@ -1778,7 +1812,7 @@ msgstr "Musíte udělit oprávnění k chytrým smlouvám Uniswap pro použití 
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "Budete také vybírat poplatky získané z této pozice."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "Obdržíte"
@@ -1787,13 +1821,17 @@ msgstr "Obdržíte"
 msgid "Your UNI Breakdown"
 msgstr "Vaše Rozdělení UNI"
 
-#: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "Vaše V2 likvidita"
+#: 
+#~ msgid "Your V2 liquidity"
+#~ msgstr "Vaše V2 likvidita"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "Zde se objeví vaše V3 likviditní pozice."
+
+#: src/pages/Pool/index.tsx
+msgid "Your liquidity"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -1922,8 +1960,8 @@ msgstr "{0} %"
 msgid "{0} Custom Tokens"
 msgstr "{0} vlastních žetonů"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0} Deposited"
 msgstr "{0} vloženo"
 
@@ -2008,7 +2046,7 @@ msgid "{0} • Added by user"
 msgstr "{0} • Přidáno uživatelem"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
 msgstr "{0}%"
 

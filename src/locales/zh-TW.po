@@ -107,9 +107,13 @@ msgstr "<0/> 所有提案"
 msgid "<0/> Votes"
 msgstr "<0/> 投票"
 
-#: src/pages/Pool/v2.tsx
-msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-msgstr "<0>賬戶分析和已累積的手續費</0><1>↗</1>"
+#: src/pages/Pool/index.tsx
+msgid "<0> ↗ </0>"
+msgstr ""
+
+#: 
+#~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
+#~ msgstr "<0>賬戶分析和已累積的手續費</0><1>↗</1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
@@ -123,7 +127,7 @@ msgstr "<0>提示：</0>退出資金池，按照當前匯率將您的資金池�
 msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 msgstr "<0>提示：</0>使用此工具可查找未自動出現在界面中的 v2 池。"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>提示：</0>當您註入流動資金時，您將收到代表您份額的流動池代幣。這些代幣將根據您在池中所占份額，自動賺取和累計相稱的手續費，並且可以隨時贖回流動池幣對。"
 
@@ -166,12 +170,13 @@ msgid "Add Delegate +"
 msgstr "添加委托 +"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "註入流動資金"
 
-#: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "註入 V2 流動資金"
+#: 
+#~ msgid "Add V2 Liquidity"
+#~ msgstr "註入 V2 流動資金"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -181,8 +186,8 @@ msgstr "註入流動資金。"
 msgid "Add {0} to Metamask <0/>"
 msgstr "將 {0} 添加到 Metamask <0/>"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "註入 {0} {1} 和 {2} {3}"
 
@@ -219,8 +224,12 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "允許高度影響價格的交易，並跳過確認步驟。須自行承擔使用風險。"
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "允許 Uniswap 調用您的 {0}"
+msgid "Allow the Niifi to use your {0}"
+msgstr ""
+
+#: 
+#~ msgid "Allow the Uniswap Protocol to use your {0}"
+#~ msgstr "允許 Uniswap 調用您的 {0}"
 
 #: 
 #~ msgid "Allowed"
@@ -247,8 +256,8 @@ msgstr "數據分析"
 msgid "Approve"
 msgstr "批準"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
 msgstr "批準 {0}"
 
@@ -260,8 +269,8 @@ msgstr "已批準"
 msgid "Approving"
 msgstr "批準中"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approving {0}"
 msgstr "批準 {0}"
 
@@ -269,9 +278,9 @@ msgstr "批準 {0}"
 msgid "Are you sure?"
 msgstr "您確定嗎？"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "作為 Uniswap 社群的成員，您可以認領 UNI 代幣，用於投票和治理。<0/><1/><2>閱讀更多關於 UNI 代幣的訊息</2>"
+#: 
+#~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+#~ msgstr "作為 Uniswap 社群的成員，您可以認領 UNI 代幣，用於投票和治理。<0/><1/><2>閱讀更多關於 UNI 代幣的訊息</2>"
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -326,8 +335,12 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "添加此代幣列表代表您信任其數據是正確的。任何人都可以創建代幣列表，包括創建假冒實際列表的造假版本，以及自我聲稱代表了某項目的代幣列表。"
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-msgstr "通過連接錢包，您同意接受 Uniswap 實驗室的<0>服務條款</0>，並確認您已閱讀和理解<1>Uniswap協議免責聲明</1>。"
+msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgstr ""
+
+#: 
+#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
+#~ msgstr "通過連接錢包，您同意接受 Uniswap 實驗室的<0>服務條款</0>，並確認您已閱讀和理解<1>Uniswap協議免責聲明</1>。"
 
 #: src/components/AccountDetails/index.tsx
 msgid "Change"
@@ -453,7 +466,7 @@ msgstr "共同基礎"
 msgid "Confirm"
 msgstr "確認"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Confirm Supply"
 msgstr "確認供應"
 
@@ -470,7 +483,7 @@ msgstr "確認兌換"
 msgid "Confirm this transaction in your wallet"
 msgstr "在您的錢包中確認這筆交易"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -499,7 +512,7 @@ msgstr "連接到錢包以查找流動池"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "連接到錢包以查看您的 V2 流動資金。"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "連接到錢包以查看您的流動資金。"
 
@@ -520,12 +533,12 @@ msgstr "已複製"
 msgid "Copy Address"
 msgstr "複製地址"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "創建流動池和供應流動資金"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "創建幣對"
 
@@ -649,13 +662,17 @@ msgstr "文檔"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "看不到您的一些 v2 流動資金嗎？<0>將它手動導入。</0>"
 
-#: src/components/Table/index.tsx
-msgid "ETH-NII Transactions"
-msgstr ""
+#: 
+#~ msgid "ETH-NII Transactions"
+#~ msgstr ""
+
+#: 
+#~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
+#~ msgstr "已賺取的 UNI 代幣代表了 Uniswap 治理中的投票份額。"
 
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "已賺取的 UNI 代幣代表了 Uniswap 治理中的投票份額。"
+msgid "Earned tokens represent voting shares in governance."
+msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
@@ -774,7 +791,7 @@ msgstr "導入"
 msgid "Import List"
 msgstr "導入代幣列表"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Import Pool"
 msgstr "導入流動池"
 
@@ -794,7 +811,7 @@ msgstr "在範圍內"
 #~ msgid "Increase Liquidity"
 #~ msgstr "增加流動資金"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "初始兌換率和流動池份額"
 
@@ -866,11 +883,11 @@ msgstr "流動資金"
 msgid "Liquidity Provider Fee"
 msgstr "流動資金提供者手續費"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity provider rewards"
 msgstr "流動資金提供者獎勵"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 msgstr "流動資金提供者在所有交易中按其在流動池中的份額獲得0.3%的手續費。手續費按實時累計方式添加到流動池中，可與流動資金一起贖回。"
 
@@ -885,7 +902,7 @@ msgstr "已加載"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Loading"
@@ -947,9 +964,9 @@ msgstr "遷移"
 #~ msgid "Migrate Liquidity"
 #~ msgstr "遷移流動資金"
 
-#: src/pages/Pool/v2.tsx
-msgid "Migrate Liquidity to V3"
-msgstr "將流動資金遷移到V3"
+#: 
+#~ msgid "Migrate Liquidity to V3"
+#~ msgstr "將流動資金遷移到V3"
 
 #: 
 #: 
@@ -993,6 +1010,10 @@ msgstr "收到的最低數額"
 #~ msgid "New Position"
 #~ msgstr "新倉位"
 
+#: src/components/SwitchLocaleLink/index.tsx
+msgid "Niifi available in: <0>{0}</0>"
+msgstr ""
+
 #: 
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "找不到V2流動資金。"
@@ -1002,7 +1023,7 @@ msgstr "收到的最低數額"
 msgid "No active pools"
 msgstr "無運行中的流動池"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "No liquidity found."
 msgstr "未找到流動資金。"
 
@@ -1038,7 +1059,7 @@ msgstr "關閉"
 msgid "On"
 msgstr "開啟"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
 msgstr "對費率感到滿意的話，請點擊“供應”鍵，到審查步驟。"
 
@@ -1054,7 +1075,7 @@ msgstr "糟糕！出現未知錯誤。請刷新頁面，或從其他瀏覽器或
 msgid "Out of range"
 msgstr "超出範圍"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Output is estimated. If the price changes by more than {0}% your transaction will revert."
 msgstr "輸出數額僅為估值。如果兌換率變化超過 {0}%，您的交易將會還原。"
@@ -1156,7 +1177,7 @@ msgstr "兌換率已更新"
 msgid "Price:"
 msgstr "兌換率："
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Prices and pool share"
 msgstr "兌換率和流動池份額"
 
@@ -1172,7 +1193,7 @@ msgstr "社區成員提交的提案將在此顯示。"
 msgid "Proposer"
 msgstr "提案人"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "費率"
 
@@ -1184,15 +1205,16 @@ msgstr "了解有關 UNI 代幣的更多信息"
 msgid "Read more about Uniswap governance"
 msgstr "閱讀有關 Uniswap 治理的更多信息"
 
-#: src/pages/Pool/v2.tsx
-msgid "Read more about providing liquidity"
-msgstr "閱讀有關提供流動資金的更多信息"
+#: 
+#~ msgid "Read more about providing liquidity"
+#~ msgstr "閱讀有關提供流動資金的更多信息"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
 msgstr "閱讀有關不受支持的代幣的更多信息"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "最近交易"
 
@@ -1293,7 +1315,7 @@ msgstr "自我代表"
 #~ msgid "Set Starting Price"
 #~ msgstr "設置起始兌換率"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
 msgstr "流動池份額："
 
@@ -1331,11 +1353,11 @@ msgstr "第 1 步：獲取 UNI-V2 流動池代幣"
 msgid "Submitting Vote"
 msgstr "提交投票"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "供應"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "供應 {0} {1} 和 {2} {3}"
 
@@ -1360,9 +1382,13 @@ msgstr "仍要兌換"
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "將 {0} {1} 兌換為 {2} {3}"
 
+#: 
+#~ msgid "Thanks for being part of the Uniswap community <0/>"
+#~ msgstr "感謝您加入 Uniswap 社區 <0/>"
+
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "感謝您加入 Uniswap 社區 <0/>"
+msgid "Thanks for being part of the community <0/>"
+msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1392,7 +1418,7 @@ msgstr "此流動池的兌換率超出了您選定的範圍。因此您的流動
 msgid "The price of this pool is within your selected range. Your position is currently earning fees."
 msgstr "此流動池的兌換率在您選定的範圍內。因此您的流動資金目前正在賺取手續費。"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "The ratio of tokens you add will set the price of this pool."
 msgstr "您註入的代幣比率將決定此流動池的初始兌換率。"
 
@@ -1403,6 +1429,10 @@ msgstr "由於期限已過，因此無法發送交易。請檢查您的交易截
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
 msgstr "這些代幣通常與其他代幣配對。"
+
+#: src/components/Table/TableToolbar.tsx
+msgid "This is Dummy Data"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1548,9 +1578,9 @@ msgstr "Uniswap治理"
 msgid "Uniswap V3 is here!"
 msgstr "Uniswap V3 已發布！"
 
-#: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Uniswap 可選語言：<0>{0}</0>"
+#: 
+#~ msgid "Uniswap available in: <0>{0}</0>"
+#~ msgstr "Uniswap 可選語言：<0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -1585,7 +1615,7 @@ msgstr "解鎖投票"
 msgid "Unlocking Votes"
 msgstr "解鎖投票"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
 msgstr "不支持的代幣"
@@ -1738,7 +1768,7 @@ msgstr "換行"
 msgid "Wrong Network"
 msgstr "錯誤的網絡"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
 msgstr "您正在創建一個流動池"
 
@@ -1746,7 +1776,7 @@ msgstr "您正在創建一個流動池"
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "您是此 Uniswap V3 流動池的第一個流動資金提供者。您的流動資金將以當前的 {0} 兌換率遷移。"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "您是第一個流動資金提供者。"
 
@@ -1766,9 +1796,13 @@ msgstr "您在此流動池中還未有流動資金。"
 #~ msgid "You must connect an account."
 #~ msgstr "您必須連接帳戶。"
 
+#: 
+#~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
+#~ msgstr "您必須授予 Uniswap 智能合約使用您的 {0} 的權限。每個代幣只需要授權一次。"
+
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "您必須授予 Uniswap 智能合約使用您的 {0} 的權限。每個代幣只需要授權一次。"
+msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr ""
 
 #: 
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
@@ -1778,7 +1812,7 @@ msgstr "您必須授予 Uniswap 智能合約使用您的 {0} 的權限。每個�
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "您還將從此倉位中領取已賺取的手續費。"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "您將收到"
@@ -1787,13 +1821,17 @@ msgstr "您將收到"
 msgid "Your UNI Breakdown"
 msgstr "您的 UNI 代幣明細表"
 
-#: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "您的V2流動資金"
+#: 
+#~ msgid "Your V2 liquidity"
+#~ msgstr "您的V2流動資金"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "您的 V3 流動資金將在此顯示。"
+
+#: src/pages/Pool/index.tsx
+msgid "Your liquidity"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -1922,8 +1960,8 @@ msgstr "{0} %"
 msgid "{0} Custom Tokens"
 msgstr "{0} 自定義代幣"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0} Deposited"
 msgstr "註入 {0}"
 
@@ -2008,7 +2046,7 @@ msgid "{0} • Added by user"
 msgstr "{0} • 由用戶添加"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
 msgstr "{0}%"
 

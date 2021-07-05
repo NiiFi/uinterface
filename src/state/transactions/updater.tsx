@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo } from 'react'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
-import { SupportedChainId } from '../../constants/chains'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { retry, RetryableError, RetryOptions } from '../../utils/retry'
 import { updateBlockNumber } from '../application/actions'
@@ -31,10 +30,6 @@ export function shouldCheck(lastBlockNumber: number, tx: TxInterface): boolean {
   }
 }
 
-const RETRY_OPTIONS_BY_CHAIN_ID: { [chainId: number]: RetryOptions } = {
-  [SupportedChainId.ARBITRUM_ONE]: { n: 10, minWait: 250, maxWait: 1000 },
-  [SupportedChainId.ARBITRUM_KOVAN]: { n: 10, minWait: 250, maxWait: 1000 },
-}
 const DEFAULT_RETRY_OPTIONS: RetryOptions = { n: 3, minWait: 1000, maxWait: 3000 }
 
 export default function Updater(): null {
@@ -53,7 +48,7 @@ export default function Updater(): null {
   const getReceipt = useCallback(
     (hash: string) => {
       if (!library || !chainId) throw new Error('No library or chainId')
-      const retryOptions = RETRY_OPTIONS_BY_CHAIN_ID[chainId] ?? DEFAULT_RETRY_OPTIONS
+      const retryOptions = DEFAULT_RETRY_OPTIONS
       return retry(
         () =>
           library.getTransactionReceipt(hash).then((receipt) => {

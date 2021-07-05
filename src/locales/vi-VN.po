@@ -107,9 +107,13 @@ msgstr "<0 /> Tất cả các đề xuất"
 msgid "<0/> Votes"
 msgstr "<0 /> Phiếu bầu"
 
-#: src/pages/Pool/v2.tsx
-msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-msgstr "<0> Phân tích tài khoản và phí tích lũy</0> <1> ↗</1>"
+#: src/pages/Pool/index.tsx
+msgid "<0> ↗ </0>"
+msgstr ""
+
+#: 
+#~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
+#~ msgstr "<0> Phân tích tài khoản và phí tích lũy</0> <1> ↗</1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
@@ -123,7 +127,7 @@ msgstr "<0> Mẹo:</0> Loại bỏ mã thông báo chung sẽ chuyển đổi v�
 msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 msgstr "<0> Mẹo:</0> Sử dụng công cụ này để tìm các nhóm v2 không tự động xuất hiện trong giao diện."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0> Mẹo:</0> Khi bạn thêm thanh khoản, bạn sẽ nhận được mã thông báo chung đại diện cho vị trí của bạn. Các mã thông báo này tự động kiếm được phí tỷ lệ thuận với phần của bạn trong nhóm và có thể được đổi bất kỳ lúc nào."
 
@@ -166,12 +170,13 @@ msgid "Add Delegate +"
 msgstr "Thêm đại biểu +"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "Thêm thanh khoản"
 
-#: src/pages/Pool/v2.tsx
-msgid "Add V2 Liquidity"
-msgstr "Thêm thanh khoản V2"
+#: 
+#~ msgid "Add V2 Liquidity"
+#~ msgstr "Thêm thanh khoản V2"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Add liquidity."
@@ -181,8 +186,8 @@ msgstr "Thêm thanh khoản."
 msgid "Add {0} to Metamask <0/>"
 msgstr "Thêm {0} vào Metamask <0 />"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Thêm {0} {1} và {2} {3}"
 
@@ -219,8 +224,12 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "Cho phép các giao dịch tác động đến giá cao và bỏ qua màn hình xác nhận. Sử dụng có nguy cơ của riêng bạn."
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Uniswap Protocol to use your {0}"
-msgstr "Cho phép Giao thức hoán đổi Uniswap sử dụng {0}"
+msgid "Allow the Niifi to use your {0}"
+msgstr ""
+
+#: 
+#~ msgid "Allow the Uniswap Protocol to use your {0}"
+#~ msgstr "Cho phép Giao thức hoán đổi Uniswap sử dụng {0}"
 
 #: 
 #~ msgid "Allowed"
@@ -247,8 +256,8 @@ msgstr "phân tích"
 msgid "Approve"
 msgstr "Phê duyệt"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
 msgstr "Phê duyệt {0}"
 
@@ -260,8 +269,8 @@ msgstr "Tán thành"
 msgid "Approving"
 msgstr "Phê duyệt"
 
-#: src/pages/AddLiquidityV2/index.tsx
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Approving {0}"
 msgstr "Phê duyệt {0}"
 
@@ -269,9 +278,9 @@ msgstr "Phê duyệt {0}"
 msgid "Are you sure?"
 msgstr "Bạn có chắc không?"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-msgstr "Là một thành viên của cộng đồng Uniswap, bạn có thể yêu cầu UNI được sử dụng để bỏ phiếu và quản trị. <0 /> <1 /> <2> Đọc thêm về UNI</2>"
+#: 
+#~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
+#~ msgstr "Là một thành viên của cộng đồng Uniswap, bạn có thể yêu cầu UNI được sử dụng để bỏ phiếu và quản trị. <0 /> <1 /> <2> Đọc thêm về UNI</2>"
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -326,8 +335,12 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "Bằng cách thêm danh sách này, bạn hoàn toàn tin tưởng rằng dữ liệu là chính xác. Bất kỳ ai cũng có thể tạo danh sách, bao gồm cả việc tạo các phiên bản giả mạo của danh sách hiện có và danh sách yêu cầu đại diện cho các dự án không có danh sách đó."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-msgstr "Bằng cách kết nối ví, bạn đồng ý với Điều khoản dịch vụ <0> của Uniswap Labs</0> và xác nhận rằng bạn đã đọc và hiểu <1> tuyên bố từ chối trách nhiệm của giao thức Uniswap</1> ."
+msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgstr ""
+
+#: 
+#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
+#~ msgstr "Bằng cách kết nối ví, bạn đồng ý với Điều khoản dịch vụ <0> của Uniswap Labs</0> và xác nhận rằng bạn đã đọc và hiểu <1> tuyên bố từ chối trách nhiệm của giao thức Uniswap</1> ."
 
 #: src/components/AccountDetails/index.tsx
 msgid "Change"
@@ -453,7 +466,7 @@ msgstr "Cơ sở chung"
 msgid "Confirm"
 msgstr "Xác nhận"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Confirm Supply"
 msgstr "Xác nhận cung cấp"
 
@@ -470,7 +483,7 @@ msgstr "Xác nhận Hoán đổi"
 msgid "Confirm this transaction in your wallet"
 msgstr "Xác nhận giao dịch này trong ví của bạn"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -499,7 +512,7 @@ msgstr "Kết nối với ví để tìm nhóm"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "Kết nối với ví để xem tính thanh khoản V2 của bạn."
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Connect to a wallet to view your liquidity."
 msgstr "Kết nối với ví để xem tính thanh khoản của bạn."
 
@@ -520,12 +533,12 @@ msgstr "Đã sao chép"
 msgid "Copy Address"
 msgstr "Sao chép địa chỉ"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "Tạo Pool & Supply"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "Tạo một cặp"
 
@@ -649,13 +662,17 @@ msgstr "Docs"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Bạn không thấy một trong các vị trí v2 của mình? <0> Nhập nó.</0>"
 
-#: src/components/Table/index.tsx
-msgid "ETH-NII Transactions"
-msgstr ""
+#: 
+#~ msgid "ETH-NII Transactions"
+#~ msgstr ""
+
+#: 
+#~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
+#~ msgstr "Token UNI kiếm được đại diện cho cổ phần có quyền biểu quyết trong quản trị Uniswap."
 
 #: src/components/vote/DelegateModal.tsx
-msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-msgstr "Token UNI kiếm được đại diện cho cổ phần có quyền biểu quyết trong quản trị Uniswap."
+msgid "Earned tokens represent voting shares in governance."
+msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
@@ -774,7 +791,7 @@ msgstr "Nhập khẩu"
 msgid "Import List"
 msgstr "Nhập danh sách"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Import Pool"
 msgstr "Nhập nhóm"
 
@@ -794,7 +811,7 @@ msgstr "Trong phạm vi"
 #~ msgid "Increase Liquidity"
 #~ msgstr "Tăng tính thanh khoản"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "Giá ban đầu và tỷ trọng chung"
 
@@ -866,11 +883,11 @@ msgstr "Tính thanh khoản"
 msgid "Liquidity Provider Fee"
 msgstr "Phí nhà cung cấp thanh khoản"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity provider rewards"
 msgstr "Phần thưởng của nhà cung cấp thanh khoản"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 msgstr "Các nhà cung cấp thanh khoản kiếm được một khoản phí 0,3% cho tất cả các giao dịch tỷ lệ với phần của họ trong nhóm. Phí được thêm vào nhóm, tích lũy trong thời gian thực và có thể được yêu cầu bằng cách rút tiền thanh khoản của bạn."
 
@@ -885,7 +902,7 @@ msgstr "Nạp vào"
 #: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Loading"
@@ -947,9 +964,9 @@ msgstr "Di cư"
 #~ msgid "Migrate Liquidity"
 #~ msgstr "Thanh khoản di chuyển"
 
-#: src/pages/Pool/v2.tsx
-msgid "Migrate Liquidity to V3"
-msgstr "Chuyển thanh khoản sang V3"
+#: 
+#~ msgid "Migrate Liquidity to V3"
+#~ msgstr "Chuyển thanh khoản sang V3"
 
 #: 
 #: 
@@ -993,6 +1010,10 @@ msgstr "Số tiền nhận được tối thiểu"
 #~ msgid "New Position"
 #~ msgstr "Vị trí mới"
 
+#: src/components/SwitchLocaleLink/index.tsx
+msgid "Niifi available in: <0>{0}</0>"
+msgstr ""
+
 #: 
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "Không tìm thấy Thanh khoản V2."
@@ -1002,7 +1023,7 @@ msgstr "Số tiền nhận được tối thiểu"
 msgid "No active pools"
 msgstr "Không có nhóm hoạt động"
 
-#: src/pages/Pool/v2.tsx
+#: src/pages/Pool/index.tsx
 msgid "No liquidity found."
 msgstr "Không tìm thấy thanh khoản."
 
@@ -1038,7 +1059,7 @@ msgstr "Tắt"
 msgid "On"
 msgstr "Trên"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Một khi bạn hài lòng với tỷ lệ nhấp cung cấp để xem xét."
 
@@ -1054,7 +1075,7 @@ msgstr "Giáo sư! Đã xảy ra lỗi không xác định. Vui lòng làm mới
 msgid "Out of range"
 msgstr "Ngoài phạm vi"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Output is estimated. If the price changes by more than {0}% your transaction will revert."
 msgstr "Sản lượng được ước tính. Nếu giá thay đổi nhiều hơn {0}%, giao dịch của bạn sẽ hoàn nguyên."
@@ -1156,7 +1177,7 @@ msgstr "Đã cập nhật giá"
 msgid "Price:"
 msgstr "Giá bán:"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Prices and pool share"
 msgstr "Giá và tỷ lệ chia sẻ"
 
@@ -1172,7 +1193,7 @@ msgstr "Các đề xuất do các thành viên cộng đồng gửi sẽ xuất 
 msgid "Proposer"
 msgstr "Người đề xuất"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Giá"
 
@@ -1184,15 +1205,16 @@ msgstr "Đọc thêm về UNI"
 msgid "Read more about Uniswap governance"
 msgstr "Đọc thêm về quản trị Uniswap"
 
-#: src/pages/Pool/v2.tsx
-msgid "Read more about providing liquidity"
-msgstr "Đọc thêm về cung cấp thanh khoản"
+#: 
+#~ msgid "Read more about providing liquidity"
+#~ msgstr "Đọc thêm về cung cấp thanh khoản"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
 msgstr "Đọc thêm về nội dung không được hỗ trợ"
 
 #: src/components/AccountDetails/index.tsx
+#: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "Giao dịch gần đây"
 
@@ -1293,7 +1315,7 @@ msgstr "Tự ủy quyền"
 #~ msgid "Set Starting Price"
 #~ msgstr "Đặt giá khởi điểm"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
 msgstr "Chia sẻ của Pool:"
 
@@ -1331,11 +1353,11 @@ msgstr "Bước 1. Nhận mã thông báo thanh khoản UNI-V2"
 msgid "Submitting Vote"
 msgstr "Gửi phiếu bầu"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "Cung cấp"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Cung cấp {0} {1} và {2} {3}"
 
@@ -1360,9 +1382,13 @@ msgstr "Vẫn hoán đổi"
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "Đổi {0} {1} lấy {2} {3}"
 
+#: 
+#~ msgid "Thanks for being part of the Uniswap community <0/>"
+#~ msgstr "Cảm ơn bạn đã tham gia cộng đồng Uniswap <0 />"
+
 #: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the Uniswap community <0/>"
-msgstr "Cảm ơn bạn đã tham gia cộng đồng Uniswap <0 />"
+msgid "Thanks for being part of the community <0/>"
+msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1392,7 +1418,7 @@ msgstr "Giá của hồ bơi này nằm ngoài phạm vi bạn đã chọn. Vị
 msgid "The price of this pool is within your selected range. Your position is currently earning fees."
 msgstr "Giá của hồ bơi này nằm trong phạm vi bạn đã chọn. Vị trí của bạn hiện đang thu phí."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "The ratio of tokens you add will set the price of this pool."
 msgstr "Tỷ lệ mã thông báo bạn thêm vào sẽ thiết lập giá của nhóm này."
 
@@ -1403,6 +1429,10 @@ msgstr "Không thể gửi giao dịch vì đã hết thời hạn. Vui lòng ki
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Các mã thông báo này thường được ghép nối với các mã thông báo khác."
+
+#: src/components/Table/TableToolbar.tsx
+msgid "This is Dummy Data"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
@@ -1548,9 +1578,9 @@ msgstr "Quản trị Uniswap"
 msgid "Uniswap V3 is here!"
 msgstr "Uniswap V3 là ở đây!"
 
-#: src/components/SwitchLocaleLink/index.tsx
-msgid "Uniswap available in: <0>{0}</0>"
-msgstr "Uniswap có sẵn trong: <0>{0}</0>"
+#: 
+#~ msgid "Uniswap available in: <0>{0}</0>"
+#~ msgstr "Uniswap có sẵn trong: <0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -1585,7 +1615,7 @@ msgstr "Mở khóa biểu quyết"
 msgid "Unlocking Votes"
 msgstr "Mở khóa phiếu bầu"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Unsupported Asset"
 msgstr "Nội dung không được hỗ trợ"
@@ -1738,7 +1768,7 @@ msgstr "Bọc lại"
 msgid "Wrong Network"
 msgstr "Mạng sai"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
 msgstr "Bạn đang tạo một nhóm"
 
@@ -1746,7 +1776,7 @@ msgstr "Bạn đang tạo một nhóm"
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "Bạn là nhà cung cấp thanh khoản đầu tiên cho nhóm Uniswap V3 này. Thanh khoản của bạn sẽ thay đổi ở mức giá {0}"
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "Bạn là nhà cung cấp thanh khoản đầu tiên."
 
@@ -1766,9 +1796,13 @@ msgstr "Bạn chưa có thanh khoản trong nhóm này."
 #~ msgid "You must connect an account."
 #~ msgstr "Bạn phải kết nối một tài khoản."
 
+#: 
+#~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
+#~ msgstr "Bạn phải cấp quyền cho hợp đồng thông minh Uniswap để sử dụng số {0}của bạn. Bạn chỉ phải làm điều này một lần cho mỗi mã thông báo."
+
 #: src/pages/Swap/index.tsx
-msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-msgstr "Bạn phải cấp quyền cho hợp đồng thông minh Uniswap để sử dụng số {0}của bạn. Bạn chỉ phải làm điều này một lần cho mỗi mã thông báo."
+msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
+msgstr ""
 
 #: 
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
@@ -1778,7 +1812,7 @@ msgstr "Bạn phải cấp quyền cho hợp đồng thông minh Uniswap để s
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "Bạn cũng sẽ thu phí kiếm được từ vị trí này."
 
-#: src/pages/AddLiquidityV2/index.tsx
+#: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "Bạn sẽ nhận"
@@ -1787,13 +1821,17 @@ msgstr "Bạn sẽ nhận"
 msgid "Your UNI Breakdown"
 msgstr "Sự cố UNI của bạn"
 
-#: src/pages/Pool/v2.tsx
-msgid "Your V2 liquidity"
-msgstr "Thanh khoản V2 của bạn"
+#: 
+#~ msgid "Your V2 liquidity"
+#~ msgstr "Thanh khoản V2 của bạn"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "Các vị trí thanh khoản V3 của bạn sẽ xuất hiện tại đây."
+
+#: src/pages/Pool/index.tsx
+msgid "Your liquidity"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -1922,8 +1960,8 @@ msgstr "{0} %"
 msgid "{0} Custom Tokens"
 msgstr "{0} tùy chỉnh"
 
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0} Deposited"
 msgstr "{0} gửi 0"
 
@@ -2008,7 +2046,7 @@ msgid "{0} • Added by user"
 msgstr "{0} • Người dùng thêm vào"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
-#: src/pages/AddLiquidityV2/ConfirmAddModalBottom.tsx
+#: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
 msgstr "{0}%"
 
