@@ -211,23 +211,6 @@ export default function WalletModal({
         }
 
         if (!window.web3 && !window.ethereum && option.mobile) {
-          return (
-            <Option
-              onClick={() => {
-                option.connector !== connector && !option.href && tryActivation(option.connector)
-              }}
-              id={`connect-${key}`}
-              key={key}
-              active={option.connector && option.connector === connector}
-              color={option.color}
-              link={option.href}
-              header={option.name}
-              subheader={null}
-              icon={option.iconURL}
-            />
-          )
-        }
-        if (!(window.web3 || window.ethereum)) {
           if (option.name === 'MetaMask') {
             return (
               <Option
@@ -241,6 +224,25 @@ export default function WalletModal({
               />
             )
           }
+        }
+        if (option.mobile && option.name === 'MetaMask') {
+          return (
+            <Option
+              id={`connect-${key}`}
+              onClick={() => {
+                option.connector === connector
+                  ? setWalletView(WALLET_VIEWS.ACCOUNT)
+                  : !option.href && tryActivation(option.connector)
+              }}
+              key={key}
+              active={option.connector === connector}
+              color={option.color}
+              link={option.href}
+              header={option.name}
+              subheader={null} //use option.descriptio to bring back multi-line
+              icon={option.iconURL}
+            />
+          )
         }
         return null
       }
