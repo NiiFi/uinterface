@@ -132,6 +132,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             labelId="transaction-typeSelect"
             id="transaction-typeSelect"
             value={transactionType}
+            style={{ color: theme.primary1 }}
             onChange={(e: any) => {
               onTransactionTypeChange(e.target.value)
             }}
@@ -152,6 +153,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
+            style={{ color: `${theme.text4}` }}
             key={headCell.id}
             align={'center'}
             padding={headCell.disablePadding ? 'none' : 'default'}
@@ -217,6 +219,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function EnhancedTable() {
   const classes = useStyles()
+  const theme = useTheme()
   const [tableData, setTableData] = React.useState<Array<TransactionTableData>>([])
   const [transactionType, setTransactionType] = React.useState<TransactionTypes>('All')
   const [order, setOrder] = React.useState<Order>('asc')
@@ -325,7 +328,7 @@ export default function EnhancedTable() {
                       key={index}
                       selected={false}
                     >
-                      <TableCell align="left">
+                      <TableCell style={{ color: theme.black }} align="left">
                         <ExternalLink
                           href={`${BASE_URL}/tx/${'0x47cd9080afdb5fedc61347a022d9c2de0cc12ca4681a45cd4701376e87170eff'}`}
                         >
@@ -335,19 +338,21 @@ export default function EnhancedTable() {
                           </Trans>
                         </ExternalLink>
                       </TableCell>
-                      <TableCell align="center">{shortenDecimalValues(row.amountUSD)} USD</TableCell>
-                      <TableCell align="center">
+                      <TableCell style={{ color: theme.black }} align="center">
+                        {shortenDecimalValues(row.amountUSD)} USD
+                      </TableCell>
+                      <TableCell style={{ color: theme.black }} align="center">
                         {shortenDecimalValues(row.amount0)} {row.pair.token0.symbol}
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell style={{ color: theme.black }} align="center">
                         {shortenDecimalValues(row.amount1)} {row.pair.token1.symbol}
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell style={{ color: theme.black }} align="center">
                         <ExternalLink href={`${BASE_URL}/address/${'0x1Ff482D42D8727258A1686102Fa4ba925C46Bc42'}`}>
                           {shortenAddress('0x1Ff482D42D8727258A1686102Fa4ba925C46Bc42')}
                         </ExternalLink>
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell style={{ color: theme.black }} align="center">
                         {formatTimeStamp(`${Number(row.transaction.timestamp) * 1000}`)}
                       </TableCell>
                     </TableRow>

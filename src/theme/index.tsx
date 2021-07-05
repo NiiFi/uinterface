@@ -41,7 +41,7 @@ export function colors(darkMode: boolean): Colors {
   return {
     // base
     white: darkMode ? 'rgba(6, 34, 32, 1)' : white,
-    black,
+    black: darkMode ? white : black,
 
     // text
     text1: darkMode ? '#FFFFFF' : 'rgba(12, 68, 63, 1)',

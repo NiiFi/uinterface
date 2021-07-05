@@ -16,7 +16,7 @@ const IOSSwitch = withStyles(() =>
       padding: 0,
     },
     switchBase: {
-      padding: 3,
+      padding: 4,
       '&$checked': {
         transform: 'translateX(28px)',
         '& + $track': {
