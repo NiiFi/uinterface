@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Describe an issue in the Uniswap Interface
+about: Describe an issue in the NiiFi Interface
 title: ''
 labels: bug
 assignees: ''
@@ -19,4 +19,4 @@ A clear and concise description of the bug.
 A clear and concise description of what you expected to happen.
 
 **Additional Context**
-Add any other context about the problem here (screenshots, whether the bug only occurs only in certain mobile/desktop/browser environments, etc.)
+Add any other context about the problem here (screenshots, whether the bug only occurs only in certain mobile/desktop/browser environments, software versions, etc.)
