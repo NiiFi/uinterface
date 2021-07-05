@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
 import { Percent, Currency, TradeType } from '@uniswap/sdk-core'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
+import { Trade } from '@uniswap/v2-sdk'
 import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from 'styled-components'
 import { TYPE } from '../../theme'
@@ -11,7 +11,7 @@ import FormattedPriceImpact from './FormattedPriceImpact'
 import SwapRoute from './SwapRoute'
 
 export interface AdvancedSwapDetailsProps {
-  trade?: V2Trade<Currency, Currency, TradeType>
+  trade?: Trade<Currency, Currency, TradeType>
   allowedSlippage: Percent
 }
 

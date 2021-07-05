@@ -5,7 +5,7 @@ import Select from '@material-ui/core/Select'
 
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import Table from '../../components/Table'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
+import { Trade } from '@uniswap/v2-sdk'
 import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
 import { MouseoverTooltip, MouseoverTooltipContent } from 'components/Tooltip'
@@ -32,14 +32,7 @@ import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import Slippage from '../../components/swap/Slippage'
 
-import {
-  ArrowWrapper,
-  BottomGrouping,
-  Dots,
-  SwapCallbackError,
-  Wrapper,
-  BodyScroller,
-} from '../../components/swap/styleds'
+import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper, BodyScroller } from '../../components/swap/styleds'
 import TradePrice from '../../components/swap/TradePrice'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
 import TokenWarningModal from '../../components/TokenWarningModal'
@@ -50,7 +43,6 @@ import { useERC20PermitFromTrade, UseERC20PermitState } from '../../hooks/useERC
 import useIsArgentWallet from '../../hooks/useIsArgentWallet'
 import { useIsSwapUnsupported } from '../../hooks/useIsSwapUnsupported'
 import { useSwapCallback } from '../../hooks/useSwapCallback'
-import useToggledVersion, { Version } from '../../hooks/useToggledVersion'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
 import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
 import { useActiveWeb3React } from '../../hooks/web3'
@@ -127,9 +119,6 @@ export default function Swap({ history }: RouteComponentProps) {
   // for expert mode
   const [isExpertMode] = useExpertModeManager()
 
-  // get version from the url
-  const toggledVersion = useToggledVersion()
-
   // swap state
   const { independentField, typedValue, recipient } = useSwapState()
   const {
@@ -193,7 +182,7 @@ export default function Swap({ history }: RouteComponentProps) {
   // modal and loading
   const [{ showConfirm, tradeToConfirm, swapErrorMessage, attemptingTxn, txHash }, setSwapState] = useState<{
     showConfirm: boolean
-    tradeToConfirm: V2Trade<Currency, Currency, TradeType> | undefined // | V3Trade<Currency, Currency, TradeType>
+    tradeToConfirm: Trade<Currency, Currency, TradeType> | undefined
     attemptingTxn: boolean
     swapErrorMessage: string | undefined
     txHash: string | undefined
@@ -216,7 +205,6 @@ export default function Swap({ history }: RouteComponentProps) {
     currencies[Field.INPUT] && currencies[Field.OUTPUT] && parsedAmounts[independentField]?.greaterThan(JSBI.BigInt(0))
   )
   const routeNotFound = !trade?.route
-  const isLoadingRoute = toggledVersion === Version.v3 // && V3TradeState.LOADING === v3TradeState
 
   // check whether the user has approved the router on the input token
   const [approvalState, approveCallback] = useApproveCallbackFromTrade(trade, allowedSlippage)
@@ -526,11 +514,7 @@ export default function Swap({ history }: RouteComponentProps) {
                   ) : routeNotFound && userHasSpecifiedInputOutput ? (
                     <GreyCard style={{ textAlign: 'center' }}>
                       <TYPE.main mb="4px">
-                        {isLoadingRoute ? (
-                          <Dots>
-                            <Trans>Loading</Trans>
-                          </Dots>
-                        ) : singleHopOnly ? (
+                        {singleHopOnly ? (
                           <Trans>Insufficient liquidity for this trade. Try enabling multi-hop trades.</Trans>
                         ) : (
                           <Trans>Insufficient liquidity for this trade.</Trans>

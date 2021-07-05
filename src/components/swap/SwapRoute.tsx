@@ -1,5 +1,5 @@
 import { Currency, TradeType } from '@uniswap/sdk-core'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
+import { Trade } from '@uniswap/v2-sdk'
 import React, { Fragment, memo, useContext } from 'react'
 import { ChevronRight } from 'react-feather'
 import { Flex } from 'rebass'
@@ -7,7 +7,7 @@ import { ThemeContext } from 'styled-components'
 import { TYPE } from '../../theme'
 import { unwrappedToken } from 'utils/unwrappedToken'
 
-export default memo(function SwapRoute({ trade }: { trade: V2Trade<Currency, Currency, TradeType> }) {
+export default memo(function SwapRoute({ trade }: { trade: Trade<Currency, Currency, TradeType> }) {
   const tokenPath = trade.route.path
   const theme = useContext(ThemeContext)
   return (
