@@ -17,6 +17,8 @@ import {
   updateUserSingleHopOnly,
   updateHideClosedPositions,
   updateUserLocale,
+  saveNewWallet,
+  UserWallets,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
 
@@ -30,6 +32,10 @@ export interface UserState {
   matchesDarkMode: boolean // whether the dark mode media query matches
 
   userLocale: SupportedLocale | null
+
+  userWallets: {
+    [key: string]: UserWallets
+  }
 
   userExpertMode: boolean
 
@@ -74,6 +80,7 @@ export const initialState: UserState = {
   userSingleHopOnly: false,
   userHideClosedPositions: false,
   userSlippageTolerance: 'auto',
+  userWallets: {},
   userSlippageToleranceHasBeenMigratedToAuto: true,
   userDeadline: DEFAULT_DEADLINE_FROM_NOW,
   tokens: {},
@@ -184,5 +191,15 @@ export default createReducer(initialState, (builder) =>
     })
     .addCase(toggleURLWarning, (state) => {
       state.URLWarningVisible = !state.URLWarningVisible
+    })
+    .addCase(saveNewWallet, (state, { payload: { address, name, type } }) => {
+      state.userWallets = state.userWallets || {}
+      const totalWallets = Object.keys(state.userWallets).length + 1
+      if (!state.userWallets[address]) {
+        state.userWallets[address] = {
+          name: name || `Account ${totalWallets}`,
+          type,
+        }
+      }
     })
 )

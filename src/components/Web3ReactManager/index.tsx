@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 import { Trans } from '@lingui/macro'
 
 import { network } from '../../connectors'
-import { useEagerConnect, useInactiveListener } from '../../hooks/web3'
+import { useEagerConnect, useInactiveListener, useAccountChange } from '../../hooks/web3'
 import { NetworkContextName } from '../../constants/misc'
 import Loader from '../Loader'
 
@@ -35,6 +35,7 @@ export default function Web3ReactManager({ children }: { children: JSX.Element }
 
   // when there's no account connected, react to logins (broadly speaking) on the injected provider, if it exists
   useInactiveListener(!triedEager)
+  useAccountChange()
 
   // handle delayed loader state
   const [showLoader, setShowLoader] = useState(false)
