@@ -13,8 +13,8 @@ const WalletWrapper = styled.div`
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 
   &:nth-child(1) {
     margin-top: 0;
@@ -42,6 +42,7 @@ const WalletTitleWrapper = styled.div<{ active?: boolean }>`
 const WalletListWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
 `
 const WalletIconTitleWrapper = styled.div`
   display: flex;

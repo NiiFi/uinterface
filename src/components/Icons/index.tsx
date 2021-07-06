@@ -164,3 +164,24 @@ export function PencilIcon({ width = 23, height = 23, color = 'currentColor', ..
     </svg>
   )
 }
+
+export function WalletIcon({ width = 21, height = 19, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0 3C0 1.34315 1.34315 0 3 0H18V4H20V8H21V15H20V19H3C1.34315 19 0 17.6569 0 16V3ZM2 5.82929V16C2 16.5523 2.44772 17 3 17H18V15H15C13.3431 15 12 13.6569 12 12V11C12 9.34315 13.3431 8 15 8H18V6H3C2.64936 6 2.31278 5.93985 2 5.82929ZM2 3C2 3.55228 2.44772 4 3 4H16V2H3C2.44772 2 2 2.44772 2 3ZM15 10C14.4477 10 14 10.4477 14 11V12C14 12.5523 14.4477 13 15 13H19V10H15Z"
+        fill={color}
+      />
+    </svg>
+  )
+}
+
+export function PlusIcon({ width = 20, height = 20, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M0 10H20M10 0L10 20" stroke={color} strokeWidth="2" />
+    </svg>
+  )
+}

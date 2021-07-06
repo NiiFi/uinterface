@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
-
+import { Trans } from '@lingui/macro'
+import { isTablet, isMobile } from 'react-device-detect'
 import { ChevronDown } from 'react-feather'
 import styled from 'styled-components'
 
@@ -10,10 +11,36 @@ import WalletModal from '../WalletModal'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import Menu from '../Menu'
+import { WalletIcon, PlusIcon } from '../Icons'
 const MenuWrapper = styled.div`
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
+  margin: 0 1rem;
+  max-height: 320px;
+  overflow-y: scroll;
 `
 
+const MenuFooter = styled.div`
+  border-top: 1px solid ${({ theme }) => theme.bg3};
+  flex-direction: column;
+  display: flex;
+  padding: 0.5rem;
+  margin: 0.25rem 1rem;
+`
+const MenuFooterButton = styled.div`
+  width: 100%;
+  display: flex;
+  margin: 0.625rem 0px;
+  color: ${({ theme }) => theme.text1};
+  > svg {
+    margin-right: 1rem;
+  }
+`
+
+const ListTitle = styled.div`
+  color: ${({ theme }) => theme.text5};
+  font-size: 1rem;
+  margin-bottom: 0.625rem;
+`
 const ControlWrapper = styled.div<{ open: boolean }>`
   cursor: pointer;
   width: content-fit;
@@ -64,7 +91,8 @@ export default function WalletPopover() {
   const handleClose = () => {
     setOpen(false)
   }
-  const handleClick = () => {
+  const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    e.stopPropagation()
     setOpen(!open)
   }
 
@@ -81,15 +109,28 @@ export default function WalletPopover() {
             <ChevronDown />
           </ControlButton>
           <Menu
-            style={{ width: '20rem' }}
+            style={{ width: isMobile || isTablet ? '14.75rem' : '20rem', borderRadius: '12px' }}
             id="WalletMenu"
             anchorEl={anchorRef.current}
             open={open}
             onClose={handleClose}
           >
             <MenuWrapper>
+              <ListTitle>
+                <Trans>Connected</Trans>
+              </ListTitle>
               <WalletList onItemClicked={onMenuItemClicked} />
             </MenuWrapper>
+            <MenuFooter>
+              <MenuFooterButton>
+                <PlusIcon />
+                <Trans>Connect Wallet</Trans>
+              </MenuFooterButton>
+              <MenuFooterButton>
+                <WalletIcon />
+                <Trans>Manage Wallet</Trans>
+              </MenuFooterButton>
+            </MenuFooter>
           </Menu>
         </ControlBody>
       </ControlWrapper>
