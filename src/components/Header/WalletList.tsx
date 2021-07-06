@@ -59,7 +59,19 @@ const WalletIconWrapper = styled.div`
     background-color: ${({ theme }) => theme.bg5};
   }
 `
-
+const ConnectedSign = styled.div`
+  position: absolute;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  border: 1px solid white;
+  bottom: 0px;
+  right: -2px;
+  background-color: ${({ theme }) => theme.primary1};
+`
+const IdenticonWrapper = styled.div`
+  position: relative;
+`
 export const WalletTitle = ({ name, address }: { name: string; address: string }) => {
   const { account } = useActiveWeb3React()
   const isActive = account?.toLowerCase() === address
@@ -84,6 +96,8 @@ export const WalletItem = ({
   address: string
   onClick?: ({ address }: { address: string }) => void
 }) => {
+  const { account } = useActiveWeb3React()
+  const isActive = account?.toLowerCase() === address.toLowerCase()
   const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (onClick) {
       e.stopPropagation()
@@ -93,7 +107,10 @@ export const WalletItem = ({
   return (
     <WalletWrapper>
       <WalletIconTitleWrapper>
-        <Identicon address={address} />
+        <IdenticonWrapper>
+          <Identicon address={address} />
+          {isActive && <ConnectedSign />}
+        </IdenticonWrapper>
         <WalletTitle name={name} address={address}></WalletTitle>
       </WalletIconTitleWrapper>
       {editable && (
