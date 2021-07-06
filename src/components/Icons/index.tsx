@@ -151,3 +151,16 @@ export function ArrowDownIcon({ width = 24, height = 24, color = 'currentColor',
 export function ArrowUpIcon(props: IconProps) {
   return <ArrowDownIcon {...props} style={{ transform: 'rotate(180deg)' }} />
 }
+
+export function PencilIcon({ width = 23, height = 23, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M17.8491 0.585693L22.0918 4.82833L8.26699 18.6531L2.63183 20.0456L4.02435 14.4105L17.8491 0.585693ZM17.8491 3.41412L16.4349 4.82833L17.8491 6.24255L19.2633 4.82833L17.8491 3.41412ZM16.4349 7.65676L15.0207 6.24255L5.83235 15.4309L5.36817 17.3093L7.24656 16.8451L16.4349 7.65676Z"
+        fill={color}
+      />
+    </svg>
+  )
+}

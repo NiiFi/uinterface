@@ -322,11 +322,7 @@ export default function Header() {
               </UniIcon>
             </Title>
           </HeaderRow>
-          <HeaderRow>
-            <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
-              <WalletPopover />
-            </AccountElement>
-          </HeaderRow>
+          <WalletPopover />
           <HeaderLinks>
             {SidebarLinks.map(({ Icon, link, id, title, disable }, index) => (
               <StyledNavLink id={`${id}-nav-link`} disable={disable} to={link} key={index}>

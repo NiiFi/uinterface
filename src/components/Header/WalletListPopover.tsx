@@ -14,14 +14,22 @@ const MenuWrapper = styled.div`
   padding: 0.5rem 1rem;
 `
 
-const ControlWrapper = styled.div`
+const ControlWrapper = styled.div<{ open: boolean }>`
+  cursor: pointer;
+  width: content-fit;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0.5rem;
   justify-content: space-between;
   box-sizing: border-box;
-  margin: 0px 0px;
+  margin: 0px 0px 1rem 0px;
+  background-color: ${({ open, theme }) => (open ? theme.bg5 : '')};
+  border-radius: 8px;
+  :hover {
+    background-color: ${({ theme }) => theme.bg5};
+    border-radius: 8px;
+  }
 `
 
 const ControlBody = styled.div`
@@ -33,7 +41,11 @@ const ControlButton = styled.div`
   align-items: center;
   justify-content: center;
   color: ${({ theme }) => theme.text5};
+  box-sizing: border-box;
   cursor: pointer;
+  > svg {
+    margin-left: 0.5rem;
+  }
 `
 
 export default function WalletPopover() {
@@ -47,7 +59,6 @@ export default function WalletPopover() {
 
   const onMenuItemClicked = ({ address }: { address: string }) => {
     setClickedWalletAddress(address.toLowerCase())
-    // handleClose()
     toggleWalletModal()
   }
   const handleClose = () => {
@@ -63,13 +74,19 @@ export default function WalletPopover() {
 
   return (
     <>
-      <ControlWrapper>
+      <ControlWrapper ref={anchorRef} open={open} onClick={handleClick}>
         <ControlBody>
-          <ControlButton ref={anchorRef} onClick={handleClick}>
+          <ControlButton>
             <WalletItem name={activeWallet.name} address={account as string} />
             <ChevronDown />
           </ControlButton>
-          <Menu id="WalletMenu" anchorEl={anchorRef.current} open={open} onClose={handleClose}>
+          <Menu
+            style={{ width: '20rem' }}
+            id="WalletMenu"
+            anchorEl={anchorRef.current}
+            open={open}
+            onClose={handleClose}
+          >
             <MenuWrapper>
               <WalletList onItemClicked={onMenuItemClicked} />
             </MenuWrapper>
