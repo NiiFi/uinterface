@@ -62,8 +62,8 @@ const WalletIconWrapper = styled.div`
 const ConnectedSign = styled.div`
   position: absolute;
   border-radius: 50%;
-  height: 12px;
-  width: 12px;
+  height: 10px;
+  width: 10px;
   border: 1px solid white;
   bottom: 0px;
   right: -2px;
@@ -74,7 +74,7 @@ const IdenticonWrapper = styled.div`
 `
 export const WalletTitle = ({ name, address }: { name: string; address: string }) => {
   const { account } = useActiveWeb3React()
-  const isActive = account?.toLowerCase() === address
+  const isActive = account?.toLowerCase() === address.toLowerCase()
   return (
     <WalletTitleWrapper active={isActive}>
       <p>{name}</p>

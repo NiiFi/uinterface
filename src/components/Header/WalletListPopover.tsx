@@ -78,7 +78,7 @@ const ControlButton = styled.div`
 export default function WalletPopover() {
   const anchorRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = React.useState<boolean>(false)
-  const [clickedWalletAddress, setClickedWalletAddress] = React.useState<string>('')
+  const [clickedWalletAddress, setClickedWalletAddress] = React.useState<string | null>(null)
   const { userWallets } = useUserWallets()
   const { account } = useActiveWeb3React()
   const toggleWalletModal = useWalletModalToggle()
@@ -134,11 +134,7 @@ export default function WalletPopover() {
           </Menu>
         </ControlBody>
       </ControlWrapper>
-      <WalletModal
-        ENSName={clickedWalletAddress ? userWallets[clickedWalletAddress].name : ''}
-        pendingTransactions={[]}
-        confirmedTransactions={[]}
-      />
+      <WalletModal ENSName={clickedWalletAddress ?? undefined} pendingTransactions={[]} confirmedTransactions={[]} />
     </>
   )
 }

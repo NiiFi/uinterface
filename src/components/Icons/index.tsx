@@ -185,3 +185,23 @@ export function PlusIcon({ width = 20, height = 20, color = 'currentColor', ...r
     </svg>
   )
 }
+
+export function CopyIcon({ width = 18, height = 20, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M13 3V1H1V15H3M5 5H17V19H5V5Z" stroke={color} strokeWidth="2" />
+    </svg>
+  )
+}
+
+export function LinkIcon({ width = 18, height = 20, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path
+        d="M9 1H5C2.79086 1 1 2.79086 1 5C1 7.20914 2.79086 9 5 9H9M11 1H15C17.2091 1 19 2.79086 19 5C19 7.20914 17.2091 9 15 9H11M6 5H14"
+        stroke={color}
+        strokeWidth="2"
+      />
+    </svg>
+  )
+}

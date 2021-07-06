@@ -1,24 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SUPPORTED_WALLETS } from '../../constants/wallet'
 import { useActiveWeb3React } from '../../hooks/web3'
+import { Trans } from '@lingui/macro'
 
-import { shortenAddress } from '../../utils'
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 import Copy from './Copy'
 
 import { ReactComponent as Close } from '../../assets/images/x.svg'
-import { injected, walletlink } from '../../connectors'
-import { ButtonSecondary } from '../Button'
-import { ExternalLink as LinkIcon } from 'react-feather'
+import { LinkIcon } from '../Icons'
 import { ExternalLink } from '../../theme'
-import { Trans } from '@lingui/macro'
+import { useUserWallets } from 'state/user/hooks'
 
 const HeaderRow = styled.div`
-  ${({ theme }) => theme.flexRowNoWrap};
-  padding: 1rem 1rem;
   font-weight: 500;
   color: ${(props) => (props.color === 'blue' ? ({ theme }) => theme.primary1 : 'inherit')};
+  > p {
+    margin: 0;
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: ${({ theme }) => theme.text5};
+  }
+
   ${({ theme }) => theme.mediaWidth.upToMedium`
     padding: 1rem;
   `};
@@ -26,7 +28,7 @@ const HeaderRow = styled.div`
 
 const UpperSection = styled.div`
   position: relative;
-
+  padding: 2rem;
   h5 {
     margin: 0;
     margin-bottom: 0.5rem;
@@ -44,83 +46,51 @@ const UpperSection = styled.div`
   }
 `
 
-const InfoCard = styled.div`
-  padding: 1rem;
-  border: 1px solid ${({ theme }) => theme.bg3};
-  border-radius: 20px;
+const InfoCard = styled.div<{ topBorder?: boolean }>`
   position: relative;
-  display: grid;
-  grid-row-gap: 12px;
-  margin-bottom: 20px;
-`
-
-const AccountGroupingRow = styled.div`
-  ${({ theme }) => theme.flexRowNoWrap};
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 400;
-  color: ${({ theme }) => theme.text1};
-
-  div {
-    ${({ theme }) => theme.flexRowNoWrap}
-    align-items: center;
-  }
-`
-
-const AccountSection = styled.div`
-  padding: 0rem 1rem;
-  ${({ theme }) => theme.mediaWidth.upToMedium`padding: 0rem 1rem 1.5rem 1rem;`};
-`
-
-const YourAccount = styled.div`
-  h5 {
-    margin: 0 0 1rem 0;
-    font-weight: 400;
-  }
-
+  border-bottom: 1px solid ${({ theme }) => theme.bg3};
+  border-top: ${({ topBorder }) => (topBorder ? '1px solid ' : '')} ${({ theme }) => theme.bg3};
+  margin-top: 0.625rem;
+  padding: 0.5rem 0px;
   h4 {
-    margin: 0;
-    font-weight: 500;
+    font-size: 1rem;
+    color: ${({ theme }) => theme.text1};
   }
 `
 
-const AccountControl = styled.div`
+const AccountControlWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   min-width: 0;
   width: 100%;
 
   font-weight: 500;
   font-size: 1.25rem;
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  p {
-    min-width: 0;
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+`
+const AccountControl = styled.div`
+  display: flex;
+  padding: 0.75rem 0rem;
+  svg {
+    margin-right: 1rem;
   }
 `
-
 const AddressLink = styled(ExternalLink)<{ hasENS: boolean; isENS: boolean }>`
-  font-size: 0.825rem;
-  color: ${({ theme }) => theme.text3};
-  margin-left: 1rem;
-  font-size: 0.825rem;
+  flex-shrink: 0;
   display: flex;
-  :hover {
-    color: ${({ theme }) => theme.text2};
+  font-size: 1rem;
+  text-decoration: none;
+  color: ${({ theme }) => theme.text1};
+  :hover,
+  :active,
+  :focus {
+    text-decoration: none;
   }
 `
 
 const CloseIcon = styled.div`
   position: absolute;
-  right: 1rem;
-  top: 14px;
+  right: 2rem;
+  top: 2rem;
   &:hover {
     cursor: pointer;
     opacity: 0.6;
@@ -133,25 +103,6 @@ const CloseColor = styled(Close)`
   }
 `
 
-const WalletName = styled.div`
-  width: initial;
-  font-size: 0.825rem;
-  font-weight: 500;
-  color: ${({ theme }) => theme.text3};
-`
-
-const WalletAction = styled(ButtonSecondary)`
-  width: fit-content;
-  font-weight: 400;
-  margin-left: 8px;
-  font-size: 0.825rem;
-  padding: 4px 6px;
-  :hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-`
-
 interface AccountDetailsProps {
   toggleWalletModal: () => void
   pendingTransactions: string[]
@@ -160,25 +111,10 @@ interface AccountDetailsProps {
   openOptions: () => void
 }
 
-export default function AccountDetails({ toggleWalletModal, ENSName, openOptions }: AccountDetailsProps) {
-  const { chainId, account, connector } = useActiveWeb3React()
-
-  function formatConnectorName() {
-    const { ethereum } = window
-    const isMetaMask = !!(ethereum && ethereum.isMetaMask)
-    const name = Object.keys(SUPPORTED_WALLETS)
-      .filter(
-        (k) =>
-          SUPPORTED_WALLETS[k].connector === connector && (connector !== injected || isMetaMask === (k === 'METAMASK'))
-      )
-      .map((k) => SUPPORTED_WALLETS[k].name)[0]
-    return (
-      <WalletName>
-        <Trans>Connected with {name}</Trans>
-      </WalletName>
-    )
-  }
-
+export default function AccountDetails({ toggleWalletModal, ENSName }: AccountDetailsProps) {
+  const { chainId } = useActiveWeb3React()
+  const { userWallets } = useUserWallets()
+  const walletDetail = ENSName ? userWallets[ENSName.toLowerCase()] : null
   return (
     <>
       <UpperSection>
@@ -187,108 +123,36 @@ export default function AccountDetails({ toggleWalletModal, ENSName, openOptions
         </CloseIcon>
         <HeaderRow>
           <Trans>Wallet</Trans>
+          <p>{ENSName ?? ''}</p>
         </HeaderRow>
-        <AccountSection>
-          <YourAccount>
-            <InfoCard>
-              <AccountGroupingRow>
-                {formatConnectorName()}
-                <div>
-                  {connector !== injected && connector !== walletlink && (
-                    <WalletAction
-                      style={{ fontSize: '.825rem', fontWeight: 400, marginRight: '8px' }}
-                      onClick={() => {
-                        ;(connector as any).close()
-                      }}
-                    >
-                      <Trans>Disconnect</Trans>
-                    </WalletAction>
-                  )}
-                  <WalletAction
-                    style={{ fontSize: '.825rem', fontWeight: 400 }}
-                    onClick={() => {
-                      openOptions()
-                    }}
-                  >
-                    <Trans>Change</Trans>
-                  </WalletAction>
-                </div>
-              </AccountGroupingRow>
-              <AccountGroupingRow id="web3-account-identifier-row">
+        <InfoCard topBorder>
+          {ENSName && (
+            <AccountControlWrapper>
+              <AccountControl>
+                <Copy toCopy={ENSName}>
+                  <Trans>Copy Address</Trans>
+                </Copy>
+              </AccountControl>
+              {chainId && (
                 <AccountControl>
-                  {ENSName ? (
-                    <>
-                      <div>
-                        <p> {ENSName}</p>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div>
-                        <p> {account && shortenAddress(account)}</p>
-                      </div>
-                    </>
-                  )}
+                  <AddressLink
+                    hasENS={!!ENSName}
+                    isENS={true}
+                    href={getExplorerLink(chainId, ENSName, ExplorerDataType.ADDRESS)}
+                  >
+                    <LinkIcon />
+                    <Trans>View on Explorer</Trans>
+                  </AddressLink>
                 </AccountControl>
-              </AccountGroupingRow>
-              <AccountGroupingRow>
-                {ENSName ? (
-                  <>
-                    <AccountControl>
-                      <div>
-                        {account && (
-                          <Copy toCopy={account}>
-                            <span style={{ marginLeft: '4px' }}>
-                              <Trans>Copy Address</Trans>
-                            </span>
-                          </Copy>
-                        )}
-                        {chainId && account && (
-                          <AddressLink
-                            hasENS={!!ENSName}
-                            isENS={true}
-                            href={getExplorerLink(chainId, ENSName, ExplorerDataType.ADDRESS)}
-                          >
-                            <LinkIcon size={16} />
-                            <span style={{ marginLeft: '4px' }}>
-                              <Trans>View on Explorer</Trans>
-                            </span>
-                          </AddressLink>
-                        )}
-                      </div>
-                    </AccountControl>
-                  </>
-                ) : (
-                  <>
-                    <AccountControl>
-                      <div>
-                        {account && (
-                          <Copy toCopy={account}>
-                            <span style={{ marginLeft: '4px' }}>
-                              <Trans>Copy Address</Trans>
-                            </span>
-                          </Copy>
-                        )}
-                        {chainId && account && (
-                          <AddressLink
-                            hasENS={!!ENSName}
-                            isENS={false}
-                            href={getExplorerLink(chainId, account, ExplorerDataType.ADDRESS)}
-                          >
-                            <LinkIcon size={16} />
-                            <span style={{ marginLeft: '4px' }}>
-                              <Trans>View on Explorer</Trans>
-                            </span>
-                          </AddressLink>
-                        )}
-                      </div>
-                    </AccountControl>
-                  </>
-                )}
-              </AccountGroupingRow>
-            </InfoCard>
-          </YourAccount>
-        </AccountSection>
+              )}
+            </AccountControlWrapper>
+          )}
+        </InfoCard>
+        <InfoCard>
+          <h4>
+            <Trans>Wallet Name</Trans>
+          </h4>
+        </InfoCard>
       </UpperSection>
     </>
   )
