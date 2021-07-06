@@ -24,6 +24,7 @@ const WalletTitleWrapper = styled.div<{ active?: boolean }>`
   display: flex;
   flex-direction: column;
   margin-left: 5px;
+
   > p {
     margin: 0;
     font-size: 1rem;
@@ -53,26 +54,51 @@ export const WalletTitle = ({ name, address }: { name: string; address: string }
   )
 }
 
-export const WalletItem = ({ name, address }: { name: string; address: string }) => {
+export const WalletItem = ({
+  name,
+  address,
+  onClick,
+}: {
+  name: string
+  address: string
+  onClick?: ({ address }: { address: string }) => void
+}) => {
   return (
-    <WalletWrapper>
+    <WalletWrapper
+      onClick={() => {
+        if (onClick) {
+          onClick({ address })
+        }
+      }}
+    >
       <Identicon address={address} />
       <WalletTitle name={name} address={address}></WalletTitle>
     </WalletWrapper>
   )
 }
 
-export const WalletList = () => {
+export const WalletList = ({ onItemClicked }: { onItemClicked: ({ address }: { address: string }) => void }) => {
   const { userWallets } = useUserWallets()
   const { account } = useActiveWeb3React()
   const accountKey = account?.toLowerCase()
+
   const addresses = Object.keys(userWallets).filter((address) => accountKey !== address)
   const activeWallet = accountKey ? userWallets[accountKey] : null
+  const onWalletItemClicked = ({ address }: { address: string }) => {
+    onItemClicked({ address })
+  }
   return (
     <WalletListWrapper>
-      {activeWallet && <WalletItem address={accountKey as string} name={activeWallet.name}></WalletItem>}
+      {activeWallet && (
+        <WalletItem address={accountKey as string} onClick={onWalletItemClicked} name={activeWallet.name}></WalletItem>
+      )}
       {addresses.map((address, index) => (
-        <WalletItem key={index} address={address} name={userWallets[address].name}></WalletItem>
+        <WalletItem
+          onClick={onWalletItemClicked}
+          key={index}
+          address={address}
+          name={userWallets[address].name}
+        ></WalletItem>
       ))}
     </WalletListWrapper>
   )

@@ -1,13 +1,15 @@
-import React from 'react'
-import Menu from '@material-ui/core/Menu'
+import React, { useRef } from 'react'
+
 import { ChevronDown } from 'react-feather'
 import styled from 'styled-components'
 
 import { useUserWallets } from 'state/user/hooks'
 import { WalletItem, WalletList } from './WalletList'
 import Web3Status from '../Web3Status'
+import WalletModal from '../WalletModal'
 import { useActiveWeb3React } from '../../hooks/web3'
-
+import { useWalletModalToggle } from '../../state/application/hooks'
+import Menu from '../Menu'
 const MenuWrapper = styled.div`
   padding: 0.5rem 1rem;
 `
@@ -35,15 +37,24 @@ const ControlButton = styled.div`
 `
 
 export default function WalletPopover() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const anchorRef = useRef<HTMLDivElement>(null)
+  const [open, setOpen] = React.useState<boolean>(false)
+  const [clickedWalletAddress, setClickedWalletAddress] = React.useState<string>('')
   const { userWallets } = useUserWallets()
   const { account } = useActiveWeb3React()
+  const toggleWalletModal = useWalletModalToggle()
   const activeWallet = account ? userWallets[account.toLowerCase()] : null
-  const handleClose = () => {
-    setAnchorEl(null)
+
+  const onMenuItemClicked = ({ address }: { address: string }) => {
+    setClickedWalletAddress(address.toLowerCase())
+    // handleClose()
+    toggleWalletModal()
   }
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    setAnchorEl(event.currentTarget)
+  const handleClose = () => {
+    setOpen(false)
+  }
+  const handleClick = () => {
+    setOpen(!open)
   }
 
   if (!activeWallet) {
@@ -51,18 +62,25 @@ export default function WalletPopover() {
   }
 
   return (
-    <ControlWrapper>
-      <ControlBody>
-        <ControlButton onClick={handleClick}>
-          <WalletItem name={activeWallet.name} address={account as string} />
-          <ChevronDown />
-        </ControlButton>
-        <Menu id="WalletMenu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-          <MenuWrapper>
-            <WalletList />
-          </MenuWrapper>
-        </Menu>
-      </ControlBody>
-    </ControlWrapper>
+    <>
+      <ControlWrapper>
+        <ControlBody>
+          <ControlButton ref={anchorRef} onClick={handleClick}>
+            <WalletItem name={activeWallet.name} address={account as string} />
+            <ChevronDown />
+          </ControlButton>
+          <Menu id="WalletMenu" anchorEl={anchorRef.current} open={open} onClose={handleClose}>
+            <MenuWrapper>
+              <WalletList onItemClicked={onMenuItemClicked} />
+            </MenuWrapper>
+          </Menu>
+        </ControlBody>
+      </ControlWrapper>
+      <WalletModal
+        ENSName={clickedWalletAddress ? userWallets[clickedWalletAddress].name : ''}
+        pendingTransactions={[]}
+        confirmedTransactions={[]}
+      />
+    </>
   )
 }

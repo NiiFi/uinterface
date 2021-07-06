@@ -1,26 +1,18 @@
-import React, { useCallback, useContext } from 'react'
-import styled, { ThemeContext } from 'styled-components'
+import React from 'react'
+import styled from 'styled-components'
 import { SUPPORTED_WALLETS } from '../../constants/wallet'
 import { useActiveWeb3React } from '../../hooks/web3'
-import { clearAllTransactions } from '../../state/transactions/actions'
+
 import { shortenAddress } from '../../utils'
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
-import { AutoRow } from '../Row'
 import Copy from './Copy'
-import Transaction from './Transaction'
 
 import { ReactComponent as Close } from '../../assets/images/x.svg'
-import { injected, walletconnect, walletlink, fortmatic, portis } from '../../connectors'
-import CoinbaseWalletIcon from '../../assets/images/coinbaseWalletIcon.svg'
-import WalletConnectIcon from '../../assets/images/walletConnectIcon.svg'
-import FortmaticIcon from '../../assets/images/fortmaticIcon.png'
-import PortisIcon from '../../assets/images/portisIcon.png'
-import Identicon from '../Identicon'
+import { injected, walletlink } from '../../connectors'
 import { ButtonSecondary } from '../Button'
 import { ExternalLink as LinkIcon } from 'react-feather'
-import { ExternalLink, LinkStyledButton, TYPE } from '../../theme'
+import { ExternalLink } from '../../theme'
 import { Trans } from '@lingui/macro'
-import { useAppDispatch } from 'state/hooks'
 
 const HeaderRow = styled.div`
   ${({ theme }) => theme.flexRowNoWrap};
@@ -92,22 +84,6 @@ const YourAccount = styled.div`
   }
 `
 
-const LowerSection = styled.div`
-  ${({ theme }) => theme.flexColumnNoWrap}
-  padding: 1.5rem;
-  flex-grow: 1;
-  overflow: auto;
-  background-color: ${({ theme }) => theme.bg2};
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  h5 {
-    margin: 0;
-    font-weight: 400;
-    color: ${({ theme }) => theme.text3};
-  }
-`
-
 const AccountControl = styled.div`
   display: flex;
   justify-content: space-between;
@@ -164,25 +140,6 @@ const WalletName = styled.div`
   color: ${({ theme }) => theme.text3};
 `
 
-const IconWrapper = styled.div<{ size?: number }>`
-  ${({ theme }) => theme.flexColumnNoWrap};
-  align-items: center;
-  justify-content: center;
-  margin-right: 8px;
-  & > img,
-  span {
-    height: ${({ size }) => (size ? size + 'px' : '32px')};
-    width: ${({ size }) => (size ? size + 'px' : '32px')};
-  }
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    align-items: flex-end;
-  `};
-`
-
-const TransactionListWrapper = styled.div`
-  ${({ theme }) => theme.flexColumnNoWrap};
-`
-
 const WalletAction = styled(ButtonSecondary)`
   width: fit-content;
   font-weight: 400;
@@ -195,20 +152,6 @@ const WalletAction = styled(ButtonSecondary)`
   }
 `
 
-const MainWalletAction = styled(WalletAction)`
-  color: ${({ theme }) => theme.primary1};
-`
-
-function renderTransactions(transactions: string[]) {
-  return (
-    <TransactionListWrapper>
-      {transactions.map((hash, i) => {
-        return <Transaction key={i} hash={hash} />
-      })}
-    </TransactionListWrapper>
-  )
-}
-
 interface AccountDetailsProps {
   toggleWalletModal: () => void
   pendingTransactions: string[]
@@ -217,16 +160,8 @@ interface AccountDetailsProps {
   openOptions: () => void
 }
 
-export default function AccountDetails({
-  toggleWalletModal,
-  pendingTransactions,
-  confirmedTransactions,
-  ENSName,
-  openOptions,
-}: AccountDetailsProps) {
+export default function AccountDetails({ toggleWalletModal, ENSName, openOptions }: AccountDetailsProps) {
   const { chainId, account, connector } = useActiveWeb3React()
-  const theme = useContext(ThemeContext)
-  const dispatch = useAppDispatch()
 
   function formatConnectorName() {
     const { ethereum } = window
@@ -244,54 +179,6 @@ export default function AccountDetails({
     )
   }
 
-  function getStatusIcon() {
-    if (connector === injected) {
-      return (
-        <IconWrapper size={16}>
-          <Identicon />
-        </IconWrapper>
-      )
-    } else if (connector === walletconnect) {
-      return (
-        <IconWrapper size={16}>
-          <img src={WalletConnectIcon} alt={'WalletConnect logo'} />
-        </IconWrapper>
-      )
-    } else if (connector === walletlink) {
-      return (
-        <IconWrapper size={16}>
-          <img src={CoinbaseWalletIcon} alt={'Coinbase Wallet logo'} />
-        </IconWrapper>
-      )
-    } else if (connector === fortmatic) {
-      return (
-        <IconWrapper size={16}>
-          <img src={FortmaticIcon} alt={'Fortmatic logo'} />
-        </IconWrapper>
-      )
-    } else if (connector === portis) {
-      return (
-        <>
-          <IconWrapper size={16}>
-            <img src={PortisIcon} alt={'Portis logo'} />
-            <MainWalletAction
-              onClick={() => {
-                portis.portis.showPortis()
-              }}
-            >
-              <Trans>Show Portis</Trans>
-            </MainWalletAction>
-          </IconWrapper>
-        </>
-      )
-    }
-    return null
-  }
-
-  const clearAllTransactionsCallback = useCallback(() => {
-    if (chainId) dispatch(clearAllTransactions({ chainId }))
-  }, [dispatch, chainId])
-
   return (
     <>
       <UpperSection>
@@ -299,7 +186,7 @@ export default function AccountDetails({
           <CloseColor />
         </CloseIcon>
         <HeaderRow>
-          <Trans>Account</Trans>
+          <Trans>Wallet</Trans>
         </HeaderRow>
         <AccountSection>
           <YourAccount>
@@ -332,14 +219,12 @@ export default function AccountDetails({
                   {ENSName ? (
                     <>
                       <div>
-                        {getStatusIcon()}
                         <p> {ENSName}</p>
                       </div>
                     </>
                   ) : (
                     <>
                       <div>
-                        {getStatusIcon()}
                         <p> {account && shortenAddress(account)}</p>
                       </div>
                     </>
@@ -405,26 +290,6 @@ export default function AccountDetails({
           </YourAccount>
         </AccountSection>
       </UpperSection>
-      {!!pendingTransactions.length || !!confirmedTransactions.length ? (
-        <LowerSection>
-          <AutoRow mb={'1rem'} style={{ justifyContent: 'space-between' }}>
-            <TYPE.body>
-              <Trans>Recent Transactions</Trans>
-            </TYPE.body>
-            <LinkStyledButton onClick={clearAllTransactionsCallback}>
-              <Trans>(clear all)</Trans>
-            </LinkStyledButton>
-          </AutoRow>
-          {renderTransactions(pendingTransactions)}
-          {renderTransactions(confirmedTransactions)}
-        </LowerSection>
-      ) : (
-        <LowerSection>
-          <TYPE.body color={theme.text1}>
-            <Trans>Your transactions will appear here...</Trans>
-          </TYPE.body>
-        </LowerSection>
-      )}
     </>
   )
 }
