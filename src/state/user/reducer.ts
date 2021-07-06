@@ -194,9 +194,10 @@ export default createReducer(initialState, (builder) =>
     })
     .addCase(saveNewWallet, (state, { payload: { address, name, type } }) => {
       state.userWallets = state.userWallets || {}
+      const key = address.toLowerCase()
       const totalWallets = Object.keys(state.userWallets).length + 1
-      if (!state.userWallets[address]) {
-        state.userWallets[address] = {
+      if (!state.userWallets[key]) {
+        state.userWallets[key] = {
           name: name || `Account ${totalWallets}`,
           type,
         }

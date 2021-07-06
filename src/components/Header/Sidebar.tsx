@@ -14,7 +14,6 @@ import { CardNoise } from '../earn/styled'
 import { TYPE } from '../../theme'
 
 import Row, { RowFixed } from '../Row'
-import Web3Status from '../Web3Status'
 import ClaimModal from '../claim/ClaimModal'
 import { useToggleSelfClaimModal, useShowClaimPopup } from '../../state/application/hooks'
 import { useUserHasAvailableClaim } from '../../state/claim/hooks'
@@ -23,6 +22,7 @@ import { Dots } from '../swap/styleds'
 import SocialLinks from '../SocialLinks'
 import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
+import WalletPopover from './WalletListPopover'
 
 const HeaderFrame = styled.div<{ showBackground: boolean }>`
   display: flex;
@@ -88,7 +88,11 @@ const HeaderRow = styled(RowFixed)`
   }
 
   &:nth-child(2) {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+  &:nth-child(2):hover {
+    background-color: ${({ theme }) => theme.bg5};
+    border-radius: 8px;
   }
   ${({ theme }) => theme.mediaWidth.upToMedium`
    width: 100%;
@@ -123,12 +127,10 @@ const AccountElement = styled.div<{ active: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: ${({ theme, active }) => (!active ? theme.bg1 : theme.bg2)};
   border-radius: 12px;
   white-space: nowrap;
   width: 100%;
   cursor: pointer;
-
   :focus {
     border: 1px solid blue;
   }
@@ -322,7 +324,7 @@ export default function Header() {
           </HeaderRow>
           <HeaderRow>
             <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
-              <Web3Status />
+              <WalletPopover />
             </AccountElement>
           </HeaderRow>
           <HeaderLinks>
