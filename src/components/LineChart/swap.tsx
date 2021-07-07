@@ -35,7 +35,7 @@ const SwapChart = () => {
       <ButtonOutlined
         value={value}
         onClick={handleChartPeriod}
-        width="20%"
+        width="19%"
         padding="6px"
         margin="10px"
         style={{
@@ -72,7 +72,7 @@ const SwapChart = () => {
   return (
     <>
       <TYPE.largeHeader fontSize="20px" style={{ paddingBottom: '15px' }}>
-        <Trans>ETH-ANY Pair Stats (DUMMY DATA)</Trans>
+        <Trans>ETH-ANY Pair Stats (Dummy data)</Trans>
       </TYPE.largeHeader>
       <Wrapper>
         <Trans>Liquidity</Trans>
