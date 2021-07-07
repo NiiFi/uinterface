@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import { useUserWallets } from 'state/user/hooks'
 import { WalletItem, WalletList } from './WalletList'
 import Web3Status from '../Web3Status'
-import WalletModal from '../WalletModal'
+import WalletModal, { WALLET_VIEWS } from '../WalletModal'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import Menu from '../Menu'
@@ -31,6 +31,7 @@ const MenuFooterButton = styled.div`
   width: 100%;
   display: flex;
   margin: 0.625rem 0px;
+  cursor: pointer;
   color: ${({ theme }) => theme.text1};
   > svg {
     margin-right: 1rem;
@@ -79,6 +80,7 @@ const ControlButton = styled.div`
 export default function WalletPopover() {
   const anchorRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = React.useState<boolean>(false)
+  const [walletModalView, setWalletModalView] = React.useState<string>()
   const [clickedWalletAddress, setClickedWalletAddress] = React.useState<string | null>(null)
   const { userWallets, userRecentWallet } = useUserWallets()
   const { account } = useActiveWeb3React()
@@ -91,6 +93,7 @@ export default function WalletPopover() {
     : null
 
   const onMenuItemClicked = ({ address }: { address: string }) => {
+    setWalletModalView(WALLET_VIEWS.ACCOUNT)
     setClickedWalletAddress(address.toLowerCase())
     toggleWalletModal()
   }
@@ -101,7 +104,13 @@ export default function WalletPopover() {
     e.stopPropagation()
     setOpen(!open)
   }
-  console.log({ error })
+
+  const handleConnectWalletClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    e.stopPropagation()
+    setClickedWalletAddress(null)
+    setWalletModalView(WALLET_VIEWS.OPTIONS)
+    toggleWalletModal()
+  }
   if (error || !activeWallet) {
     return <Web3Status />
   }
@@ -128,7 +137,7 @@ export default function WalletPopover() {
               <WalletList onItemClicked={onMenuItemClicked} />
             </MenuWrapper>
             <MenuFooter>
-              <MenuFooterButton>
+              <MenuFooterButton onClick={handleConnectWalletClick}>
                 <PlusIcon />
                 <Trans>Connect Wallet</Trans>
               </MenuFooterButton>
@@ -140,7 +149,12 @@ export default function WalletPopover() {
           </Menu>
         </ControlBody>
       </ControlWrapper>
-      <WalletModal ENSName={clickedWalletAddress ?? undefined} pendingTransactions={[]} confirmedTransactions={[]} />
+      <WalletModal
+        ENSName={clickedWalletAddress ?? undefined}
+        pendingTransactions={[]}
+        confirmedTransactions={[]}
+        activeView={walletModalView}
+      />
     </>
   )
 }

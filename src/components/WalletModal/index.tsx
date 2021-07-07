@@ -105,7 +105,7 @@ const HoverText = styled.div`
   }
 `
 
-const WALLET_VIEWS = {
+export const WALLET_VIEWS = {
   OPTIONS: 'options',
   OPTIONS_SECONDARY: 'options_secondary',
   ACCOUNT: 'account',
@@ -116,15 +116,17 @@ export default function WalletModal({
   pendingTransactions,
   confirmedTransactions,
   ENSName,
+  activeView = WALLET_VIEWS.ACCOUNT,
 }: {
   pendingTransactions: string[] // hashes of pending
   confirmedTransactions: string[] // hashes of confirmed
   ENSName?: string
+  activeView?: string
 }) {
   // important that these are destructed from the account-specific web3-react context
   const { active, account, connector, activate, error } = useWeb3React()
 
-  const [walletView, setWalletView] = useState(WALLET_VIEWS.ACCOUNT)
+  const [walletView, setWalletView] = useState(activeView)
 
   const [pendingWallet, setPendingWallet] = useState<AbstractConnector | undefined>()
 
@@ -146,9 +148,9 @@ export default function WalletModal({
   useEffect(() => {
     if (walletModalOpen) {
       setPendingError(false)
-      setWalletView(WALLET_VIEWS.ACCOUNT)
+      setWalletView(activeView || WALLET_VIEWS.ACCOUNT)
     }
-  }, [walletModalOpen])
+  }, [walletModalOpen, activeView])
 
   // close modal when a connection is successful
   const activePrevious = usePrevious(active)
@@ -329,7 +331,7 @@ export default function WalletModal({
           toggleWalletModal={toggleWalletModal}
           pendingTransactions={pendingTransactions}
           confirmedTransactions={confirmedTransactions}
-          ENSName={ENSName}
+          ENSName={ENSName || account}
           openOptions={() => setWalletView(WALLET_VIEWS.OPTIONS)}
         />
       )
@@ -339,24 +341,11 @@ export default function WalletModal({
         <CloseIcon onClick={toggleWalletModal}>
           <CloseColor />
         </CloseIcon>
-        {walletView !== WALLET_VIEWS.ACCOUNT ? (
-          <HeaderRow color="blue">
-            <HoverText
-              onClick={() => {
-                setPendingError(false)
-                setWalletView(WALLET_VIEWS.ACCOUNT)
-              }}
-            >
-              <Trans>Back</Trans>
-            </HoverText>
-          </HeaderRow>
-        ) : (
-          <HeaderRow>
-            <HoverText>
-              <Trans>Connect to a wallet</Trans>
-            </HoverText>
-          </HeaderRow>
-        )}
+        <HeaderRow>
+          <HoverText>
+            <Trans>Connect to a wallet</Trans>
+          </HoverText>
+        </HeaderRow>
 
         <ContentWrapper>
           <LightCard style={{ marginBottom: '16px' }}>
