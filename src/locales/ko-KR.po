@@ -39,9 +39,9 @@ msgstr "(최대)"
 msgid "(claim)"
 msgstr "(청구)"
 
-#: src/components/AccountDetails/index.tsx
-msgid "(clear all)"
-msgstr "(모두 지우기)"
+#: 
+#~ msgid "(clear all)"
+#~ msgstr "(모두 지우기)"
 
 #: src/pages/Vote/index.tsx
 msgid "(edit)"
@@ -124,8 +124,12 @@ msgid "<0>Tip:</0> Removing pool tokens converts your position back into underly
 msgstr "<0> 팁 :</0> 풀 토큰을 제거하면 풀 점유율에 비례하여 현재 비율로 포지션을 기본 토큰으로 다시 전환합니다. 미지급 수수료는 귀하가받는 금액에 포함됩니다."
 
 #: src/pages/PoolFinder/index.tsx
-msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
-msgstr "<0> 팁 :</0> 이 도구를 사용하여 인터페이스에 자동으로 표시되지 않는 v2 풀을 찾습니다."
+msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
+msgstr ""
+
+#: 
+#~ msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
+#~ msgstr "<0> 팁 :</0> 이 도구를 사용하여 인터페이스에 자동으로 표시되지 않는 v2 풀을 찾습니다."
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -143,15 +147,14 @@ msgstr "<0> 🎉</0> Unicorn 팀에 오신 것을 환영합니다. :) <1> 🎉</
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "제안서를 제출하려면 총 UNI 공급량의 최소 1 %가 필요합니다."
 
-#: src/components/Menu/index.tsx
-msgid "About"
-msgstr "약"
+#: 
+#~ msgid "About"
+#~ msgstr "약"
 
 #: src/components/swap/SwapModalHeader.tsx
 msgid "Accept"
 msgstr "동의하기"
 
-#: src/components/AccountDetails/index.tsx
 #: src/components/Table/index.tsx
 msgid "Account"
 msgstr "계정"
@@ -247,9 +250,9 @@ msgstr "항상 URL이 <0> app.uniswap.org인지 확인하십시오.</0> -안전�
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "이 스왑을 실행하는 중에 오류가 발생했습니다. 미끄러짐 허용치를 높여야 할 수도 있습니다. 그래도 작동하지 않으면 거래중인 토큰과 호환되지 않을 수 있습니다. 전송 및 리베이스 토큰에 대한 참고 수수료는 Uniswap V3와 호환되지 않습니다."
 
-#: src/components/Menu/index.tsx
-msgid "Analytics"
-msgstr "해석학"
+#: 
+#~ msgid "Analytics"
+#~ msgstr "해석학"
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -294,9 +297,9 @@ msgstr "자동"
 msgid "Available to deposit: {0}"
 msgstr "입금 가능 : {0}"
 
-#: src/components/WalletModal/index.tsx
-msgid "Back"
-msgstr "뒤"
+#: 
+#~ msgid "Back"
+#~ msgstr "뒤"
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Balance:"
@@ -343,8 +346,12 @@ msgstr ""
 #~ msgstr "지갑을 연결하면 Uniswap Labs의 <0> 서비스 약관에 동의하게됩니다.</0> <1> Uniswap 프로토콜 면책 조항을 읽고 이해했음을 인정합니다.</1> ."
 
 #: src/components/AccountDetails/index.tsx
-msgid "Change"
-msgstr "변화"
+msgid "CANCEL"
+msgstr ""
+
+#: 
+#~ msgid "Change"
+#~ msgstr "변화"
 
 #: src/components/Header/index.tsx
 msgid "Charts"
@@ -362,7 +369,6 @@ msgstr "청구"
 
 #: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
-#: src/components/Menu/index.tsx
 #: src/components/claim/AddressClaimModal.tsx
 #: src/components/claim/ClaimModal.tsx
 #: src/components/claim/ClaimModal.tsx
@@ -425,9 +431,9 @@ msgstr "닫기"
 msgid "Closed"
 msgstr "닫은"
 
-#: src/components/Menu/index.tsx
-msgid "Code"
-msgstr "암호"
+#: 
+#~ msgid "Code"
+#~ msgstr "암호"
 
 #: 
 #~ msgid "Collect"
@@ -483,6 +489,7 @@ msgstr "스왑 확인"
 msgid "Confirm this transaction in your wallet"
 msgstr "지갑에서이 거래를 확인하세요"
 
+#: src/components/Header/WalletListPopover.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -520,15 +527,19 @@ msgstr "유동성을 보려면 지갑에 연결하십시오."
 msgid "Connect wallet"
 msgstr "지갑 연결"
 
-#: src/components/AccountDetails/index.tsx
-msgid "Connected with {name}"
-msgstr "{name}과 연결됨"
+#: src/components/Header/WalletListPopover.tsx
+#: src/components/ManageWalletListModal/index.tsx
+msgid "Connected"
+msgstr ""
+
+#: 
+#~ msgid "Connected with {name}"
+#~ msgstr "{name}과 연결됨"
 
 #: src/components/AccountDetails/Copy.tsx
 msgid "Copied"
 msgstr "복사 됨"
 
-#: src/components/AccountDetails/index.tsx
 #: src/components/AccountDetails/index.tsx
 msgid "Copy Address"
 msgstr "주소 복사"
@@ -638,13 +649,17 @@ msgstr "세부"
 msgid "Disable Multihops"
 msgstr "멀티 홉 비활성화"
 
-#: src/components/AccountDetails/index.tsx
-msgid "Disconnect"
-msgstr "연결 해제"
+#: 
+#~ msgid "Disconnect"
+#~ msgstr "연결 해제"
 
-#: src/components/Menu/index.tsx
-msgid "Discord"
-msgstr "불일치"
+#: src/components/AccountDetails/index.tsx
+msgid "Disconnect Wallet"
+msgstr ""
+
+#: 
+#~ msgid "Discord"
+#~ msgstr "불일치"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Discover"
@@ -654,9 +669,9 @@ msgstr ""
 msgid "Dismiss"
 msgstr "버리다"
 
-#: src/components/Menu/index.tsx
-msgid "Docs"
-msgstr "문서"
+#: 
+#~ msgid "Docs"
+#~ msgstr "문서"
 
 #: 
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
@@ -904,7 +919,6 @@ msgstr "짐을 실은"
 #: src/components/PositionCard/index.tsx
 #: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Loading"
 msgstr "로딩 중"
 
@@ -928,6 +942,14 @@ msgstr "보상 풀에서 유동성 관리"
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Manage Token Lists"
 msgstr "토큰 목록 관리"
+
+#: src/components/Header/WalletListPopover.tsx
+msgid "Manage Wallet"
+msgstr ""
+
+#: src/components/ManageWalletListModal/index.tsx
+msgid "Manage Wallets"
+msgstr ""
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Manage this pool."
@@ -1193,6 +1215,10 @@ msgstr "커뮤니티 회원이 제출 한 제안이 여기에 표시됩니다."
 msgid "Proposer"
 msgstr "제안자"
 
+#: src/components/AccountDetails/index.tsx
+msgid "RENAME"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "요금"
@@ -1213,7 +1239,6 @@ msgstr "Uniswap 거버넌스에 대해 자세히 알아보기"
 msgid "Read more about unsupported assets"
 msgstr "지원되지 않는 자산에 대해 자세히 알아보기"
 
-#: src/components/AccountDetails/index.tsx
 #: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "최근 거래"
@@ -1236,6 +1261,10 @@ msgstr "대리인 제거"
 #: src/components/NavigationTabs/index.tsx
 msgid "Remove Liquidity"
 msgstr "유동성 제거"
+
+#: src/components/Header/WalletList.tsx
+msgid "Remove Wallet"
+msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Remove list"
@@ -1287,8 +1316,12 @@ msgid "Select a token"
 msgstr "토큰 선택"
 
 #: src/pages/PoolFinder/index.tsx
-msgid "Select a token to find your v2 liquidity."
-msgstr "v2 유동성을 찾으려면 토큰을 선택하십시오."
+msgid "Select a token to find your liquidity."
+msgstr ""
+
+#: 
+#~ msgid "Select a token to find your v2 liquidity."
+#~ msgstr "v2 유동성을 찾으려면 토큰을 선택하십시오."
 
 #: 
 #~ msgid "Select pair"
@@ -1319,9 +1352,9 @@ msgstr "자체 대리인"
 msgid "Share of Pool:"
 msgstr "풀 점유율 :"
 
-#: src/components/AccountDetails/index.tsx
-msgid "Show Portis"
-msgstr "Portis 표시"
+#: 
+#~ msgid "Show Portis"
+#~ msgstr "Portis 표시"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Simple"
@@ -1670,7 +1703,6 @@ msgid "View list"
 msgstr "목록보기"
 
 #: src/components/AccountDetails/index.tsx
-#: src/components/AccountDetails/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "View on Explorer"
 msgstr "Explorer에서보기"
@@ -1715,6 +1747,15 @@ msgstr "투표는 약 {0}"
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "확인을 기다리는 중"
+
+#: src/components/AccountDetails/index.tsx
+#: src/components/Header/WalletList.tsx
+msgid "Wallet"
+msgstr ""
+
+#: src/components/AccountDetails/index.tsx
+msgid "Wallet Name"
+msgstr ""
 
 #: src/components/earn/StakingModal.tsx
 msgid "Weekly Rewards"
@@ -1904,9 +1945,9 @@ msgstr "이 기간 이상 보류중인 거래는 되돌려집니다."
 msgid "Your transaction will revert if the price changes unfavorably by more than this percentage."
 msgstr "가격이이 비율 이상으로 불리하게 변경되면 거래가 취소됩니다."
 
-#: src/components/AccountDetails/index.tsx
-msgid "Your transactions will appear here..."
-msgstr "거래 내역이 여기에 표시됩니다 ..."
+#: 
+#~ msgid "Your transactions will appear here..."
+#~ msgstr "거래 내역이 여기에 표시됩니다 ..."
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your unclaimed UNI"
