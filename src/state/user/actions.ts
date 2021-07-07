@@ -42,3 +42,4 @@ export const toggleURLWarning = createAction<void>('app/toggleURLWarning')
 export const saveNewWallet =
   createAction<{ address: string; name?: string; type: UserWalletTypes }>('user/saveNewWallet')
 export const updateWallet = createAction<{ address: string; name: string }>('user/updateWallet')
+export const setRecentConnectedWallet = createAction<{ address: string }>('user/setRecentConnectWallet')

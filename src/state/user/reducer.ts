@@ -19,6 +19,7 @@ import {
   updateUserLocale,
   saveNewWallet,
   updateWallet,
+  setRecentConnectedWallet,
   UserWallets,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
@@ -37,6 +38,7 @@ export interface UserState {
   userWallets: {
     [key: string]: UserWallets
   }
+  userRecentWallet: string | null
 
   userExpertMode: boolean
 
@@ -82,6 +84,7 @@ export const initialState: UserState = {
   userHideClosedPositions: false,
   userSlippageTolerance: 'auto',
   userWallets: {},
+  userRecentWallet: null,
   userSlippageToleranceHasBeenMigratedToAuto: true,
   userDeadline: DEFAULT_DEADLINE_FROM_NOW,
   tokens: {},
@@ -207,5 +210,8 @@ export default createReducer(initialState, (builder) =>
     .addCase(updateWallet, (state, { payload: { address, name } }) => {
       const key = address.toLowerCase()
       state.userWallets[key].name = name
+    })
+    .addCase(setRecentConnectedWallet, (state, { payload: { address } }) => {
+      state.userRecentWallet = address
     })
 )

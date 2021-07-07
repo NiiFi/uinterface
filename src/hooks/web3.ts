@@ -88,13 +88,14 @@ export function useInactiveListener(suppress = false) {
 }
 
 export function useAccountChange() {
-  const { addNewUserWallet } = useUserWallets()
+  const { addNewUserWallet, setUserRecentWallet } = useUserWallets()
   useEffect(() => {
     const { ethereum } = window
     if (ethereum?.on) {
       const handleAccountsChanged = (accounts: string[]) => {
         if (accounts.length > 0) {
           addNewUserWallet({ address: accounts[0], type: UserWalletTypes.CONNECTED })
+          setUserRecentWallet(accounts[0])
         }
       }
 
@@ -108,5 +109,5 @@ export function useAccountChange() {
     }
 
     return undefined
-  }, [addNewUserWallet])
+  }, [addNewUserWallet, setUserRecentWallet])
 }

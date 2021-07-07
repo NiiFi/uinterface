@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { Trans } from '@lingui/macro'
+import { useWeb3React } from '@web3-react/core'
 import { isTablet, isMobile } from 'react-device-detect'
 import { ChevronDown } from 'react-feather'
 import styled from 'styled-components'
@@ -79,10 +80,15 @@ export default function WalletPopover() {
   const anchorRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = React.useState<boolean>(false)
   const [clickedWalletAddress, setClickedWalletAddress] = React.useState<string | null>(null)
-  const { userWallets } = useUserWallets()
+  const { userWallets, userRecentWallet } = useUserWallets()
   const { account } = useActiveWeb3React()
+  const { error } = useWeb3React()
   const toggleWalletModal = useWalletModalToggle()
-  const activeWallet = account ? userWallets[account.toLowerCase()] : null
+  const activeWallet = account
+    ? userWallets[account.toLowerCase()]
+    : userRecentWallet
+    ? userWallets[userRecentWallet.toLowerCase()]
+    : null
 
   const onMenuItemClicked = ({ address }: { address: string }) => {
     setClickedWalletAddress(address.toLowerCase())
@@ -95,8 +101,8 @@ export default function WalletPopover() {
     e.stopPropagation()
     setOpen(!open)
   }
-
-  if (!activeWallet) {
+  console.log({ error })
+  if (error || !activeWallet) {
     return <Web3Status />
   }
 

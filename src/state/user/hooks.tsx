@@ -26,6 +26,7 @@ import {
   updateUserLocale,
   UserWalletTypes,
   saveNewWallet,
+  setRecentConnectedWallet,
   updateWallet,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
@@ -345,8 +346,14 @@ export function useTrackedTokenPairs(): [Token, Token][] {
 }
 
 export function useUserWallets() {
-  const userWallets = useAppSelector((state) => state.user.userWallets)
+  const { userWallets, userRecentWallet } = useAppSelector((state) => state.user)
   const dispatch = useAppDispatch()
+  const setUserRecentWallet = useCallback(
+    (address: string) => {
+      dispatch(setRecentConnectedWallet({ address }))
+    },
+    [dispatch]
+  )
   const addNewUserWallet = useCallback(
     ({ address, name, type }: { address: string; name?: string; type: UserWalletTypes }) => {
       dispatch(saveNewWallet({ address, name, type }))
@@ -359,5 +366,5 @@ export function useUserWallets() {
     },
     [dispatch]
   )
-  return { userWallets, addNewUserWallet, updateUserWallet }
+  return { userWallets, userRecentWallet, addNewUserWallet, updateUserWallet, setUserRecentWallet }
 }

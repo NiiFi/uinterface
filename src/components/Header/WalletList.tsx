@@ -74,7 +74,7 @@ const IdenticonWrapper = styled.div`
 `
 export const WalletTitle = ({ name, address }: { name: string; address: string }) => {
   const { account } = useActiveWeb3React()
-  const isActive = account?.toLowerCase() === address.toLowerCase()
+  const isActive = !!account && account.toLowerCase() === address.toLowerCase()
   return (
     <WalletTitleWrapper active={isActive}>
       <p>{name}</p>
@@ -97,7 +97,7 @@ export const WalletItem = ({
   onClick?: ({ address }: { address: string }) => void
 }) => {
   const { account } = useActiveWeb3React()
-  const isActive = account?.toLowerCase() === address.toLowerCase()
+  const isActive = account && account.toLowerCase() === address.toLowerCase()
   const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (onClick) {
       e.stopPropagation()
@@ -125,7 +125,7 @@ export const WalletItem = ({
 export const WalletList = ({ onItemClicked }: { onItemClicked: ({ address }: { address: string }) => void }) => {
   const { userWallets } = useUserWallets()
   const { account } = useActiveWeb3React()
-  const accountKey = account?.toLowerCase()
+  const accountKey = !!account && account.toLowerCase()
 
   const addresses = Object.keys(userWallets).filter((address) => accountKey !== address)
   const activeWallet = accountKey ? userWallets[accountKey] : null
