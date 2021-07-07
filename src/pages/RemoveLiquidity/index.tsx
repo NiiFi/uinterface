@@ -23,7 +23,7 @@ import { WETH9_EXTENDED } from '../../constants/tokens'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useCurrency } from '../../hooks/Tokens'
 import { usePairContract, useV2RouterContract } from '../../hooks/useContract'
-import { useV2LiquidityTokenPermit } from '../../hooks/useERC20Permit'
+import { useLiquidityTokenPermit } from '../../hooks/useERC20Permit'
 import useTransactionDeadline from '../../hooks/useTransactionDeadline'
 
 import { useTransactionAdder } from '../../state/transactions/hooks'
@@ -99,7 +99,7 @@ export default function RemoveLiquidity({
   const router = useV2RouterContract()
 
   // allowance handling
-  const { gatherPermitSignature, signatureData } = useV2LiquidityTokenPermit(
+  const { gatherPermitSignature, signatureData } = useLiquidityTokenPermit(
     parsedAmounts[Field.LIQUIDITY],
     router?.address
   )

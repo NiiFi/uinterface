@@ -1,6 +1,6 @@
 import JSBI from 'jsbi'
 import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
+import { Trade } from '@uniswap/v2-sdk'
 
 import {
   ALLOWED_PRICE_IMPACT_HIGH,
@@ -15,7 +15,7 @@ const INPUT_FRACTION_AFTER_FEE = ONE_HUNDRED_PERCENT.subtract(THIRTY_BIPS_FEE)
 
 // computes realized lp fee as a percent
 export function computeRealizedLPFeePercent(
-  trade: V2Trade<Currency, Currency, TradeType> // | V3Trade<Currency, Currency, TradeType>
+  trade: Trade<Currency, Currency, TradeType> // | V3Trade<Currency, Currency, TradeType>
 ): Percent {
   // for each hop in our trade, take away the x*y=k price impact from 0.3% fees
   // e.g. for 3 tokens/2 hops: 1 - ((1 - .03) * (1-.03))
@@ -31,7 +31,7 @@ export function computeRealizedLPFeePercent(
 
 // computes price breakdown for the trade
 export function computeRealizedLPFeeAmount(
-  trade?: V2Trade<Currency, Currency, TradeType> | null // | V3Trade<Currency, Currency, TradeType>
+  trade?: Trade<Currency, Currency, TradeType> | null // | V3Trade<Currency, Currency, TradeType>
 ): CurrencyAmount<Currency> | undefined {
   if (trade) {
     const realizedLPFee = computeRealizedLPFeePercent(trade)

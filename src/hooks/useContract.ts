@@ -22,7 +22,7 @@ import {
   GOVERNANCE_ADDRESS,
   MERKLE_DISTRIBUTOR_ADDRESS,
   MULTICALL2_ADDRESSES,
-  V2_ROUTER_ADDRESS,
+  ROUTER_ADDRESS,
   ENS_REGISTRAR_ADDRESSES,
   SOCKS_CONTROLLER_ADDRESSES,
 } from 'constants/addresses'
@@ -89,7 +89,7 @@ export function usePairContract(pairAddress?: string, withSignerIfPossible?: boo
 }
 
 export function useV2RouterContract(): Contract | null {
-  return useContract(V2_ROUTER_ADDRESS, IUniswapV2Router02ABI, true)
+  return useContract(ROUTER_ADDRESS, IUniswapV2Router02ABI, true)
 }
 
 export function useMulticall2Contract() {
