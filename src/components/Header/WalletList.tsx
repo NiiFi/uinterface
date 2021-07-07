@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { Trans } from '@lingui/macro'
+import { Trans, t } from '@lingui/macro'
 
 import { useUserWallets } from 'state/user/hooks'
 import { UserWalletTypes } from 'state/user/actions'
@@ -51,7 +51,7 @@ const WalletIconTitleWrapper = styled.div`
   width: 100%;
   align-items: center;
 `
-const WalletIconWrapper = styled.div`
+const WalletIconWrapper = styled.div<{ isRemoving?: boolean }>`
   border-radius: 50%;
   padding: 0.5rem;
   cursor: pointer;
@@ -59,7 +59,7 @@ const WalletIconWrapper = styled.div`
   align-items: center;
   justify-content: center;
   :hover {
-    background-color: ${({ theme }) => theme.bg5};
+    background-color: ${({ isRemoving, theme }) => (!isRemoving ? theme.bg5 : '')};
   }
 `
 const ConnectedSign = styled.div`
@@ -92,11 +92,15 @@ export const WalletItem = ({
   name,
   address,
   onClick,
+  Icon = <PencilIcon />,
   editable = false,
+  isRemoving = false,
 }: {
   editable?: boolean
+  isRemoving?: boolean
   name: string
   address: string
+  Icon?: JSX.Element
   onClick?: ({ address }: { address: string }) => void
 }) => {
   const { account } = useActiveWeb3React()
@@ -117,8 +121,8 @@ export const WalletItem = ({
         <WalletTitle name={name} address={address}></WalletTitle>
       </WalletIconTitleWrapper>
       {editable && (
-        <WalletIconWrapper onClick={handleClick}>
-          <PencilIcon />
+        <WalletIconWrapper title={t`Remove Wallet`} isRemoving={isRemoving} onClick={handleClick}>
+          {Icon}
         </WalletIconWrapper>
       )}
     </WalletWrapper>
@@ -126,11 +130,15 @@ export const WalletItem = ({
 }
 
 export const WalletList = ({
+  isRemoving = false,
   onItemClicked,
+  Icon,
   type = UserWalletTypes.CONNECTED,
 }: {
+  isRemoving?: boolean
   onItemClicked: ({ address }: { address: string }) => void
   type?: UserWalletTypes
+  Icon?: JSX.Element
 }) => {
   const { userWallets } = useUserWallets()
   const { account } = useActiveWeb3React()
@@ -146,6 +154,8 @@ export const WalletList = ({
       {activeWallet && (
         <WalletItem
           editable
+          isRemoving={isRemoving}
+          Icon={Icon}
           address={accountKey as string}
           onClick={onWalletItemClicked}
           name={activeWallet.name}
@@ -156,6 +166,8 @@ export const WalletList = ({
         .map((address, index) => (
           <WalletItem
             editable
+            isRemoving={isRemoving}
+            Icon={Icon}
             onClick={onWalletItemClicked}
             key={index}
             address={address}

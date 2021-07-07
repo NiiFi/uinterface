@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { MinusCircle, IconProps as RAIconProps } from 'react-feather'
 type IconProps = React.SVGProps<SVGSVGElement>
 export function DiscordIcon({ width = 24, height = 24, color = 'currentColor', ...rest }: IconProps) {
   return (
@@ -204,4 +204,8 @@ export function LinkIcon({ width = 18, height = 20, color = 'currentColor', ...r
       />
     </svg>
   )
+}
+
+export function RemoveIcon(props: RAIconProps) {
+  return <MinusCircle {...props} style={{ transform: 'rotate(90deg)' }} />
 }

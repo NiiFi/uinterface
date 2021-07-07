@@ -5,6 +5,10 @@ import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useManageWalletListModalToggle } from '../../state/application/hooks'
 import { Trans } from '@lingui/macro'
 
+import { RemoveIcon } from '../Icons'
+import { useActiveWeb3React } from '../../hooks/web3'
+import useTheme from 'hooks/useTheme'
+import { useUserWallets } from 'state/user/hooks'
 import Modal from '../Modal'
 import { WalletList } from '../Header/WalletList'
 
@@ -77,11 +81,20 @@ const ListWrapper = styled.div`
 `
 
 export default function ManageWalletListModal() {
+  const theme = useTheme()
   const walletModalOpen = useModalOpen(ApplicationModal.MANAGE_WALLET_LIST)
+  const { account, deactivate } = useActiveWeb3React()
   const toggleWalletModal = useManageWalletListModalToggle()
-  const handleItemClicked = useCallback(({ address }: { address: string }) => {
-    console.log({ address })
-  }, [])
+  const { removeUserWallet } = useUserWallets()
+  const handleItemClicked = useCallback(
+    ({ address }: { address: string }) => {
+      if (account && account.toLowerCase() === address) {
+        deactivate()
+      }
+      removeUserWallet({ address })
+    },
+    [removeUserWallet, deactivate, account]
+  )
   return (
     <Modal isOpen={walletModalOpen} onDismiss={toggleWalletModal} minHeight={false} maxHeight={90}>
       <Wrapper>
@@ -96,7 +109,7 @@ export default function ManageWalletListModal() {
             <ListTitle>
               <Trans>Connected</Trans>
             </ListTitle>
-            <WalletList onItemClicked={handleItemClicked} />
+            <WalletList isRemoving={true} Icon={<RemoveIcon color={theme.error} />} onItemClicked={handleItemClicked} />
           </ListWrapper>
         </UpperSection>
       </Wrapper>

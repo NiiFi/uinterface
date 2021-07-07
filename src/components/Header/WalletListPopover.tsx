@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Trans } from '@lingui/macro'
 import { useWeb3React } from '@web3-react/core'
 import { isTablet, isMobile } from 'react-device-detect'
@@ -11,6 +11,7 @@ import Web3Status from '../Web3Status'
 import WalletModal, { WALLET_VIEWS } from '../WalletModal'
 import ManageWalletListModal from 'components/ManageWalletListModal'
 import { useActiveWeb3React } from '../../hooks/web3'
+import { UserWalletTypes } from 'state/user/actions'
 import { useWalletModalToggle, useManageWalletListModalToggle } from '../../state/application/hooks'
 import Menu from '../Menu'
 import { WalletIcon, PlusIcon } from '../Icons'
@@ -78,6 +79,15 @@ const ControlButton = styled.div`
   }
 `
 
+const useAccountChange = () => {
+  const { account } = useActiveWeb3React()
+  const { addNewUserWallet } = useUserWallets()
+  useEffect(() => {
+    if (account) {
+      addNewUserWallet({ address: account.toLowerCase(), type: UserWalletTypes.CONNECTED })
+    }
+  }, [account, addNewUserWallet])
+}
 export default function WalletPopover() {
   const anchorRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = React.useState<boolean>(false)
@@ -94,6 +104,7 @@ export default function WalletPopover() {
     ? userWallets[userRecentWallet.toLowerCase()]
     : null
 
+  useAccountChange()
   const onMenuItemClicked = ({ address }: { address: string }) => {
     setWalletModalView(WALLET_VIEWS.ACCOUNT)
     setClickedWalletAddress(address.toLowerCase())

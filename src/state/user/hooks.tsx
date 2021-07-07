@@ -26,6 +26,7 @@ import {
   updateUserLocale,
   UserWalletTypes,
   saveNewWallet,
+  removeWallet,
   setRecentConnectedWallet,
   updateWallet,
 } from './actions'
@@ -366,5 +367,11 @@ export function useUserWallets() {
     },
     [dispatch]
   )
-  return { userWallets, userRecentWallet, addNewUserWallet, updateUserWallet, setUserRecentWallet }
+  const removeUserWallet = useCallback(
+    ({ address }) => {
+      dispatch(removeWallet({ address }))
+    },
+    [dispatch]
+  )
+  return { userWallets, userRecentWallet, addNewUserWallet, updateUserWallet, setUserRecentWallet, removeUserWallet }
 }

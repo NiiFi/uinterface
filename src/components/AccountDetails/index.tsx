@@ -2,13 +2,12 @@ import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { Trans } from '@lingui/macro'
-import { MinusCircle } from 'react-feather'
 
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 import Copy from './Copy'
 
 import { ReactComponent as Close } from '../../assets/images/x.svg'
-import { LinkIcon } from '../Icons'
+import { LinkIcon, RemoveIcon } from '../Icons'
 import { ExternalLink } from '../../theme'
 import { useUserWallets } from 'state/user/hooks'
 import { ButtonPrimary, ButtonSecondary } from '../Button'
@@ -152,12 +151,11 @@ const DisconnectWallet = styled.div`
   margin-top: 1.25rem;
   width: fit-content;
   cursor: pointer;
-  color: rgba(239, 70, 47, 1);
+  color: ${({ theme }) => theme.error};
   display: flex;
   align-items: center;
   svg {
     margin-right: 1rem;
-    transform: rotate(90deg);
   }
 `
 interface AccountDetailsProps {
@@ -240,7 +238,7 @@ export default function AccountDetails({ toggleWalletModal, ENSName }: AccountDe
         </InfoCard>
         {account && account.toLowerCase() === ENSName?.toLowerCase() && (
           <DisconnectWallet onClick={onDisconnect}>
-            <MinusCircle />
+            <RemoveIcon />
             <Trans>Disconnect Wallet</Trans>
           </DisconnectWallet>
         )}

@@ -19,6 +19,7 @@ import {
   updateUserLocale,
   saveNewWallet,
   updateWallet,
+  removeWallet,
   setRecentConnectedWallet,
   UserWallets,
 } from './actions'
@@ -210,6 +211,10 @@ export default createReducer(initialState, (builder) =>
     .addCase(updateWallet, (state, { payload: { address, name } }) => {
       const key = address.toLowerCase()
       state.userWallets[key].name = name
+    })
+    .addCase(removeWallet, (state, { payload: { address } }) => {
+      const key = address.toLowerCase()
+      if (state.userWallets[key]) delete state.userWallets[key]
     })
     .addCase(setRecentConnectedWallet, (state, { payload: { address } }) => {
       state.userRecentWallet = address
