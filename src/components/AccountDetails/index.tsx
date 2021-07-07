@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { Trans } from '@lingui/macro'
+import { Info } from 'react-feather'
 
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 import Copy from './Copy'
@@ -144,6 +145,17 @@ const CancelButton = styled(ButtonSecondary)`
     border: 1px solid ${({ theme }) => theme.bg4};
   }
 `
+const DisconnectWallet = styled.div`
+  margin-top: 1.25rem;
+  width: fit-content;
+  cursor: pointer;
+  color: rgba(239, 70, 47, 1);
+  display: flex;
+  align-items: center;
+  svg {
+    margin-right: 0.5rem;
+  }
+`
 interface AccountDetailsProps {
   toggleWalletModal: () => void
   pendingTransactions: string[]
@@ -153,7 +165,7 @@ interface AccountDetailsProps {
 }
 
 export default function AccountDetails({ toggleWalletModal, ENSName }: AccountDetailsProps) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId, deactivate, account } = useActiveWeb3React()
   const { userWallets, updateUserWallet } = useUserWallets()
   const walletDetail = ENSName ? userWallets[ENSName.toLowerCase()] : null
   const [walletName, setWalletName] = useState<string>(walletDetail ? walletDetail.name : '')
@@ -170,6 +182,9 @@ export default function AccountDetails({ toggleWalletModal, ENSName }: AccountDe
     }
     toggleWalletModal()
   }, [walletName, walletDetail, ENSName, updateUserWallet, toggleWalletModal])
+  const onDisconnect = useCallback(() => {
+    deactivate()
+  }, [deactivate])
   return (
     <>
       <UpperSection>
@@ -219,6 +234,12 @@ export default function AccountDetails({ toggleWalletModal, ENSName }: AccountDe
             </CancelButton>
           </ButtonWrapper>
         </InfoCard>
+        {account && account.toLowerCase() === ENSName?.toLowerCase() && (
+          <DisconnectWallet onClick={onDisconnect}>
+            <Info />
+            <Trans>Disconnect Wallet</Trans>
+          </DisconnectWallet>
+        )}
       </UpperSection>
     </>
   )
