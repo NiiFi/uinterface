@@ -55,7 +55,7 @@ const SwapChart = () => {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0.4rem 0px;
+    padding: 0.2rem 0px;
     color: ${({ theme }) => theme.text5};
   `
 
@@ -63,7 +63,7 @@ const SwapChart = () => {
     border-top: 1px solid ${({ theme }) => theme.bg5}
     box-sizing: border-box;
     margin: 0;
-    padding: 0.8rem 0px;
+    padding: 0.4rem 0px;
     margin-top: 10px;
   `
 
@@ -71,7 +71,7 @@ const SwapChart = () => {
 
   return (
     <>
-      <TYPE.largeHeader fontSize="20px" style={{ paddingBottom: '15px' }}>
+      <TYPE.largeHeader fontSize="18px" style={{ paddingBottom: '10px' }}>
         <Trans>ETH-ANY Pair Stats (Dummy data)</Trans>
       </TYPE.largeHeader>
       <Wrapper>
@@ -106,7 +106,7 @@ const SwapChart = () => {
       </ControlWrapper>
       <LineChart
         data={lineChartData}
-        minHeight={125}
+        minHeight={165}
         color={theme.orange1}
         value1={liquidityHover}
         setValue1={setLiquidityHover}
