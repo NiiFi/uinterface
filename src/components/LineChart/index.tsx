@@ -78,7 +78,7 @@ const LineChart = ({
         layout: {
           backgroundColor: 'transparent',
           textColor: textColor,
-          fontFamily: 'Inter',
+          fontFamily: 'Roboto',
         },
         rightPriceScale: {
           scaleMargins: {
