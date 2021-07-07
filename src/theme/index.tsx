@@ -88,6 +88,7 @@ export function colors(darkMode: boolean): Colors {
     yellow3: '#F3B71E',
     blue1: '#2172E5',
     blue2: '#5199FF',
+    orange1: '#F79942',
 
     error: '#FD4040',
     success: '#27AE60',
@@ -199,4 +200,15 @@ html {
 a {
  color: ${({ theme }) => theme.blue1}; 
 }
+`
+export const Disclaimer = styled.div`
+  width: 100%;
+  background-color: #ffffe0;
+  border-radius: 8px;
+  border: 1px solid #f0e68c;
+  font-size: 0.75rem;
+  padding: 10px 20px;
+  > span {
+    font-weight: bold;
+  }
 `

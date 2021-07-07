@@ -199,7 +199,7 @@ export const ButtonUNIGradient = styled(ButtonPrimary)`
 export const ButtonOutlined = styled(Base)`
   border: 1px solid ${({ theme }) => theme.bg2};
   background-color: transparent;
-  color: ${({ theme }) => theme.text1};
+  color: ${({ theme }) => theme.text2};
 
   &:focus {
     box-shadow: 0 0 0 1px ${({ theme }) => theme.bg4};
