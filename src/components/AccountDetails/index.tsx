@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { Trans } from '@lingui/macro'
-import { Info } from 'react-feather'
+import { MinusCircle } from 'react-feather'
 
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 import Copy from './Copy'
@@ -153,7 +153,8 @@ const DisconnectWallet = styled.div`
   display: flex;
   align-items: center;
   svg {
-    margin-right: 0.5rem;
+    margin-right: 1rem;
+    transform: rotate(90deg);
   }
 `
 interface AccountDetailsProps {
@@ -236,7 +237,7 @@ export default function AccountDetails({ toggleWalletModal, ENSName }: AccountDe
         </InfoCard>
         {account && account.toLowerCase() === ENSName?.toLowerCase() && (
           <DisconnectWallet onClick={onDisconnect}>
-            <Info />
+            <MinusCircle />
             <Trans>Disconnect Wallet</Trans>
           </DisconnectWallet>
         )}
