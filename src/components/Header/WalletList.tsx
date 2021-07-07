@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import { Trans } from '@lingui/macro'
 
 import { useUserWallets } from 'state/user/hooks'
+import { UserWalletTypes } from 'state/user/actions'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { PencilIcon } from '../Icons'
 import Identicon from '../Identicon'
@@ -124,7 +125,13 @@ export const WalletItem = ({
   )
 }
 
-export const WalletList = ({ onItemClicked }: { onItemClicked: ({ address }: { address: string }) => void }) => {
+export const WalletList = ({
+  onItemClicked,
+  type = UserWalletTypes.CONNECTED,
+}: {
+  onItemClicked: ({ address }: { address: string }) => void
+  type?: UserWalletTypes
+}) => {
   const { userWallets } = useUserWallets()
   const { account } = useActiveWeb3React()
   const accountKey = !!account && account.toLowerCase()
@@ -144,15 +151,17 @@ export const WalletList = ({ onItemClicked }: { onItemClicked: ({ address }: { a
           name={activeWallet.name}
         ></WalletItem>
       )}
-      {addresses.map((address, index) => (
-        <WalletItem
-          editable
-          onClick={onWalletItemClicked}
-          key={index}
-          address={address}
-          name={userWallets[address].name}
-        ></WalletItem>
-      ))}
+      {addresses
+        .filter((address) => userWallets[address].type === type)
+        .map((address, index) => (
+          <WalletItem
+            editable
+            onClick={onWalletItemClicked}
+            key={index}
+            address={address}
+            name={userWallets[address].name}
+          ></WalletItem>
+        ))}
     </WalletListWrapper>
   )
 }

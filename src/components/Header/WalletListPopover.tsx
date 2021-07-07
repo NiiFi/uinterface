@@ -9,8 +9,9 @@ import { useUserWallets } from 'state/user/hooks'
 import { WalletItem, WalletList } from './WalletList'
 import Web3Status from '../Web3Status'
 import WalletModal, { WALLET_VIEWS } from '../WalletModal'
+import ManageWalletListModal from 'components/ManageWalletListModal'
 import { useActiveWeb3React } from '../../hooks/web3'
-import { useWalletModalToggle } from '../../state/application/hooks'
+import { useWalletModalToggle, useManageWalletListModalToggle } from '../../state/application/hooks'
 import Menu from '../Menu'
 import { WalletIcon, PlusIcon } from '../Icons'
 const MenuWrapper = styled.div`
@@ -86,6 +87,7 @@ export default function WalletPopover() {
   const { account } = useActiveWeb3React()
   const { error } = useWeb3React()
   const toggleWalletModal = useWalletModalToggle()
+  const toggleManageWalletListModal = useManageWalletListModalToggle()
   const activeWallet = account
     ? userWallets[account.toLowerCase()]
     : userRecentWallet
@@ -141,7 +143,12 @@ export default function WalletPopover() {
                 <PlusIcon />
                 <Trans>Connect Wallet</Trans>
               </MenuFooterButton>
-              <MenuFooterButton>
+              <MenuFooterButton
+                onClick={(e) => {
+                  e.stopPropagation()
+                  toggleManageWalletListModal()
+                }}
+              >
                 <WalletIcon />
                 <Trans>Manage Wallet</Trans>
               </MenuFooterButton>
@@ -155,6 +162,7 @@ export default function WalletPopover() {
         confirmedTransactions={[]}
         activeView={walletModalView}
       />
+      <ManageWalletListModal />
     </>
   )
 }
