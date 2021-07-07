@@ -14,6 +14,9 @@ const CopyIcon = styled(LinkStyledButton)`
   text-decoration: none;
   padding: 0px;
   color: ${({ theme }) => theme.text1};
+  &.copied {
+    color: ${({ theme }) => theme.primary1};
+  }
   :hover,
   :active,
   :focus {
@@ -25,7 +28,7 @@ export default function CopyHelper(props: { toCopy: string; children?: React.Rea
   const [isCopied, setCopied] = useCopyClipboard()
 
   return (
-    <CopyIcon onClick={() => setCopied(props.toCopy)}>
+    <CopyIcon className={isCopied ? 'copied' : ''} onClick={() => setCopied(props.toCopy)}>
       {isCopied ? (
         <>
           <CheckCircle size={'20'} />

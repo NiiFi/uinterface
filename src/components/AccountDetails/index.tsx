@@ -46,6 +46,9 @@ const UpperSection = styled.div`
     margin-top: 0;
     font-weight: 500;
   }
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    padding: 0.75rem;
+  `}
 `
 
 const InfoCard = styled.div<{ topBorder?: boolean }>`
