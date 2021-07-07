@@ -1,12 +1,12 @@
-import React, { useState, useContext, useEffect, useMemo } from 'react'
+import React, { useState, useContext, useMemo } from 'react'
 import styled, { ThemeContext } from 'styled-components'
-import { t, Trans } from '@lingui/macro'
+import { Trans } from '@lingui/macro'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import LineChart from './index'
 import getLineChartData from './data'
-import { TYPE, Disclaimer } from '../../theme'
-import { ButtonOutlined, ButtonRadioChecked } from '../Button'
+import { TYPE } from '../../theme'
+import { ButtonOutlined } from '../Button'
 
 const SwapChart = () => {
   const theme = useContext(ThemeContext)
@@ -15,14 +15,7 @@ const SwapChart = () => {
   const [feesHover, setFeesHover] = useState<number | undefined>()
   const [currentChartValue, setCurrentChartValue] = useState<string>('value1')
   const [currentChartPeriod, setCurrentChartPeriod] = useState<string>('week')
-  const [chartData, setChartData] = useState<any>()
   const realCurrency = 'US$'
-
-  // useEffect(() => {
-  //   setChartData(getLineChartData(currentChartPeriod))
-  // }, [currentChartPeriod])
-
-  // console.log(chartData)
 
   const lineChartData = useMemo(() => {
     return getLineChartData(currentChartPeriod)
@@ -36,9 +29,26 @@ const SwapChart = () => {
     setCurrentChartPeriod(e.target.value)
   }
 
-  // const getActiveStyle = (e: React.ChangeEvent<any>) => {
-  //   return { borderColor: true ? theme.primary1 : 'transparent' };
-  // }
+  // FIXME: should be used better approach
+  const CustomButton = ({ value, text }: { value: string; text: string }) => {
+    return (
+      <ButtonOutlined
+        value={value}
+        onClick={handleChartPeriod}
+        width="20%"
+        padding="6px"
+        margin="10px"
+        style={{
+          display: 'inline',
+          fontSize: '12px',
+          color: currentChartPeriod === value ? theme.primary1 : theme.text2,
+          borderColor: currentChartPeriod === value ? theme.primary1 : theme.bg2,
+        }}
+      >
+        <Trans>{text}</Trans>
+      </ButtonOutlined>
+    )
+  }
 
   const Wrapper = styled.div`
     display: flex;
@@ -61,20 +71,20 @@ const SwapChart = () => {
 
   return (
     <>
-      <TYPE.largeHeader fontSize="20px" style={{ paddingBottom: '20px' }}>
-        <Trans>ETH-ANY Pair Stats</Trans>
+      <TYPE.largeHeader fontSize="20px" style={{ paddingBottom: '15px' }}>
+        <Trans>ETH-ANY Pair Stats (DUMMY DATA)</Trans>
       </TYPE.largeHeader>
       <Wrapper>
         <Trans>Liquidity</Trans>
-        <div>{liquidityHover ? liquidityHover + realCurrency : '-'}</div>
+        <div>{liquidityHover ? `${liquidityHover} ${realCurrency}` : '-'}</div>
       </Wrapper>
       <Wrapper>
         <Trans>Volume</Trans>
-        <div>{volumeHover ? volumeHover + realCurrency : '-'}</div>
+        <div>{volumeHover ? `${volumeHover} ${realCurrency}` : '-'}</div>
       </Wrapper>
       <Wrapper>
         <Trans>Fees</Trans>
-        <div>{feesHover ? feesHover + realCurrency : '-'}</div>
+        <div>{feesHover ? `${feesHover} ${realCurrency}` : '-'}</div>
       </Wrapper>
       <ControlWrapper>
         <Select value={currentChartValue} onChange={handleChartType} disableUnderline>
@@ -89,41 +99,14 @@ const SwapChart = () => {
           </MenuItem>
         </Select>
         <TYPE.main>
-          <ButtonOutlined
-            value="week"
-            onClick={handleChartPeriod}
-            width="25%"
-            padding="4px"
-            margin="5px"
-            style={{ display: 'inline', borderColor: currentChartPeriod === 'week' ? theme.primary1 : theme.bg2 }}
-          >
-            <Trans>1W</Trans>
-          </ButtonOutlined>
-          <ButtonOutlined
-            value="month"
-            onClick={handleChartPeriod}
-            width="25%"
-            padding="4px"
-            margin="5px"
-            style={{ display: 'inline', borderColor: currentChartPeriod === 'month' ? theme.primary1 : theme.bg2 }}
-          >
-            <Trans>1M</Trans>
-          </ButtonOutlined>
-          <ButtonOutlined
-            value="all"
-            onClick={handleChartPeriod}
-            width="25%"
-            padding="4px"
-            margin="5px"
-            style={{ display: 'inline', borderColor: currentChartPeriod === 'all' ? theme.primary1 : theme.bg2 }}
-          >
-            <Trans>1W</Trans>
-          </ButtonOutlined>
+          <CustomButton value="week" text="1W" />
+          <CustomButton value="month" text="1M" />
+          <CustomButton value="all" text="All" />
         </TYPE.main>
       </ControlWrapper>
       <LineChart
         data={lineChartData}
-        height={300}
+        minHeight={125}
         color={theme.orange1}
         value1={liquidityHover}
         setValue1={setLiquidityHover}
@@ -135,11 +118,6 @@ const SwapChart = () => {
         dateFormat={dateFormat}
         style={{ flexDirection: 'column' }}
       />
-      <Disclaimer>
-        <span>Disclaimer:</span>
-        {` `}
-        {t`This is Dummy Data`}
-      </Disclaimer>
     </>
   )
 }

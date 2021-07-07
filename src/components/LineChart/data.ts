@@ -58,18 +58,18 @@ const dummyMonthData = [
 ]
 
 const dummyAllData = [
-  { time: '2020-01-01', value1: 0, value2: 2.6, value3: 3 },
-  { time: '2020-02-01', value1: 2655235, value2: 3, value3: 4 },
+  { time: '2020-01-01', value1: 0, value2: 2655235, value3: 4655235 },
+  { time: '2020-02-01', value1: 2655235, value2: 4655235, value3: 2655235 },
   { time: '2021-03-01', value1: 7674235, value2: 7, value3: 5 },
   { time: '2021-04-01', value1: 3155235, value2: 2, value3: 6 },
   { time: '2021-05-01', value1: 2655235, value2: 4, value3: 7 },
   { time: '2021-06-01', value1: 4655235, value2: 5, value3: 8 },
-  { time: '2021-07-01', value1: 5655235, value2: 5, value3: 8 },
+  { time: '2021-07-01', value1: 5655235, value2: 9655235, value3: 7655235 },
   { time: '2021-08-01', value1: 6655235, value2: 5, value3: 8 },
   { time: '2021-09-01', value1: 7655235, value2: 5, value3: 8 },
   { time: '2021-10-01', value1: 8655235, value2: 5, value3: 8 },
   { time: '2021-11-01', value1: 9655235, value2: 5, value3: 8 },
-  { time: '2021-12-01', value1: 10655235, value2: 5, value3: 8 },
+  { time: '2021-12-01', value1: 10655235, value2: 8655235, value3: 9655235 },
 ]
 
 export default function getLineChartData(type: string) {

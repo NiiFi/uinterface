@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback, Dispatch, SetStateAction, ReactNode } from 'react'
+import React, { Dispatch, SetStateAction, ReactNode } from 'react'
 import { ResponsiveContainer, XAxis, YAxis, Tooltip, AreaChart, Area } from 'recharts'
 import { DataKey } from 'recharts/types/util/types'
 import { RowBetween } from 'components/Row'
@@ -7,9 +7,10 @@ import styled from 'styled-components/macro'
 import useTheme from 'hooks/useTheme'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
+import { shortenDecimalValues } from '../../utils'
 dayjs.extend(utc)
 
-const DEFAULT_HEIGHT = 300
+const DEFAULT_HEIGHT = 100
 
 const Wrapper = styled(Card)`
   width: 100%;
@@ -78,13 +79,13 @@ const LineChart = ({
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           width={500}
-          height={300}
+          height={100}
           data={data}
           margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
+            top: 0,
+            right: 0,
+            left: 0,
+            bottom: 0,
           }}
           onMouseLeave={() => {
             setLabel && setLabel(undefined)
@@ -100,7 +101,14 @@ const LineChart = ({
             tickFormatter={(time) => dayjs(time).format(dateFormat)}
             minTickGap={10}
           />
-          <YAxis dataKey="value1" orientation="right" axisLine={false} tickLine={false} />
+          <YAxis
+            dataKey="value1"
+            orientation="right"
+            axisLine={false}
+            tickLine={false}
+            tickFormatter={(value1) => shortenDecimalValues(value1)}
+            width={40}
+          />
           <Tooltip
             cursor={{ stroke: theme.bg2 }}
             contentStyle={{ display: 'none' }}
