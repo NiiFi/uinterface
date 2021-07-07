@@ -15,6 +15,7 @@ import { UserWalletTypes } from 'state/user/actions'
 import { useWalletModalToggle, useManageWalletListModalToggle } from '../../state/application/hooks'
 import Menu from '../Menu'
 import { WalletIcon, PlusIcon } from '../Icons'
+
 const MenuWrapper = styled.div`
   padding: 0.5rem;
   margin: 0 1rem;
@@ -84,8 +85,14 @@ const useAccountChange = () => {
   const { addNewUserWallet } = useUserWallets()
   useEffect(() => {
     if (account) {
-      addNewUserWallet({ address: account.toLowerCase(), type: UserWalletTypes.CONNECTED })
+      const timeOut: number = window.setTimeout(() => {
+        addNewUserWallet({ address: account.toLowerCase(), type: UserWalletTypes.CONNECTED })
+      })
+      return () => {
+        window.clearTimeout(timeOut)
+      }
     }
+    return undefined
   }, [account, addNewUserWallet])
 }
 export default function WalletPopover() {
