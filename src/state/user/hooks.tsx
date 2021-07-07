@@ -26,6 +26,7 @@ import {
   updateUserLocale,
   UserWalletTypes,
   saveNewWallet,
+  updateWallet,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
@@ -352,5 +353,11 @@ export function useUserWallets() {
     },
     [dispatch]
   )
-  return { userWallets, addNewUserWallet }
+  const updateUserWallet = useCallback(
+    ({ address, name }: { address: string; name: string }) => {
+      dispatch(updateWallet({ address, name }))
+    },
+    [dispatch]
+  )
+  return { userWallets, addNewUserWallet, updateUserWallet }
 }

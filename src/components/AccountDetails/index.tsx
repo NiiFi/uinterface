@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { Trans } from '@lingui/macro'
@@ -10,6 +10,7 @@ import { ReactComponent as Close } from '../../assets/images/x.svg'
 import { LinkIcon } from '../Icons'
 import { ExternalLink } from '../../theme'
 import { useUserWallets } from 'state/user/hooks'
+import { ButtonPrimary, ButtonSecondary } from '../Button'
 
 const HeaderRow = styled.div`
   font-weight: 500;
@@ -53,6 +54,8 @@ const InfoCard = styled.div<{ topBorder?: boolean }>`
   margin-top: 0.625rem;
   padding: 0.5rem 0px;
   h4 {
+    margin: 0;
+    margin-bottom: 0.75rem;
     font-size: 1rem;
     color: ${({ theme }) => theme.text1};
   }
@@ -102,7 +105,45 @@ const CloseColor = styled(Close)`
     stroke: ${({ theme }) => theme.text4};
   }
 `
-
+const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+const Input = styled.input`
+  padding: 1rem;
+  border: 1px solid ${({ theme }) => theme.bg4};
+  width: 100%;
+  border-radius: 0.5rem;
+  color: ${({ theme }) => theme.bg4};
+  font-size: 1rem;
+  &:focus {
+    outline-width: 0 !important;
+    color: ${({ theme }) => theme.primary1}
+    border: 1px solid ${({ theme }) => theme.primary1}
+    outline: none;
+  }
+`
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  > button:first-child {
+    margin-right: 0.25rem;
+  }
+  > button:last-child {
+    margin-left: 0.25rem;
+  }
+`
+const CancelButton = styled(ButtonSecondary)`
+  color: ${({ theme }) => theme.bg4};
+  border: 1px solid ${({ theme }) => theme.bg4};
+  :hover {
+    border: 1px solid ${({ theme }) => theme.bg4};
+  }
+`
 interface AccountDetailsProps {
   toggleWalletModal: () => void
   pendingTransactions: string[]
@@ -113,8 +154,22 @@ interface AccountDetailsProps {
 
 export default function AccountDetails({ toggleWalletModal, ENSName }: AccountDetailsProps) {
   const { chainId } = useActiveWeb3React()
-  const { userWallets } = useUserWallets()
+  const { userWallets, updateUserWallet } = useUserWallets()
   const walletDetail = ENSName ? userWallets[ENSName.toLowerCase()] : null
+  const [walletName, setWalletName] = useState<string>(walletDetail ? walletDetail.name : '')
+  const handleNameChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    e.stopPropagation()
+    if (e.target.value.length > 25) {
+      return
+    }
+    setWalletName(e.target.value)
+  }, [])
+  const onConfirmRename = useCallback(() => {
+    if (walletDetail && ENSName && walletName !== walletDetail.name) {
+      updateUserWallet({ address: ENSName, name: walletName })
+    }
+    toggleWalletModal()
+  }, [walletName, walletDetail, ENSName, updateUserWallet, toggleWalletModal])
   return (
     <>
       <UpperSection>
@@ -152,6 +207,17 @@ export default function AccountDetails({ toggleWalletModal, ENSName }: AccountDe
           <h4>
             <Trans>Wallet Name</Trans>
           </h4>
+          <InputWrapper>
+            <Input name="walletName" value={walletName} onChange={handleNameChange} />
+          </InputWrapper>
+          <ButtonWrapper>
+            <ButtonPrimary onClick={onConfirmRename}>
+              <Trans>RENAME</Trans>
+            </ButtonPrimary>
+            <CancelButton onClick={toggleWalletModal}>
+              <Trans>CANCEL</Trans>
+            </CancelButton>
+          </ButtonWrapper>
         </InfoCard>
       </UpperSection>
     </>

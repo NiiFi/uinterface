@@ -18,6 +18,7 @@ import {
   updateHideClosedPositions,
   updateUserLocale,
   saveNewWallet,
+  updateWallet,
   UserWallets,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
@@ -202,5 +203,9 @@ export default createReducer(initialState, (builder) =>
           type,
         }
       }
+    })
+    .addCase(updateWallet, (state, { payload: { address, name } }) => {
+      const key = address.toLowerCase()
+      state.userWallets[key].name = name
     })
 )
