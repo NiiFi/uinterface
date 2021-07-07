@@ -22,10 +22,6 @@ const HeaderRow = styled.div`
     font-size: 0.75rem;
     color: ${({ theme }) => theme.text5};
   }
-
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 1rem;
-  `};
 `
 
 const UpperSection = styled.div`
@@ -47,7 +43,7 @@ const UpperSection = styled.div`
     font-weight: 500;
   }
   ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 0.75rem;
+    padding: 1.5rem;
   `}
 `
 
@@ -102,6 +98,10 @@ const CloseIcon = styled.div`
     cursor: pointer;
     opacity: 0.6;
   }
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    right: 1.5rem;
+    top: 1.5rem;
+  `}
 `
 
 const CloseColor = styled(Close)`
