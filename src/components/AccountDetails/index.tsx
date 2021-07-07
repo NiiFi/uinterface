@@ -224,7 +224,7 @@ export default function AccountDetails({ toggleWalletModal, ENSName }: AccountDe
             <Trans>Wallet Name</Trans>
           </h4>
           <InputWrapper>
-            <Input name="walletName" value={walletName} onChange={handleNameChange} />
+            <Input name="walletName" autoFocus value={walletName} onChange={handleNameChange} />
           </InputWrapper>
           <ButtonWrapper>
             <ButtonPrimary onClick={onConfirmRename}>

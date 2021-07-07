@@ -28,6 +28,7 @@ const WalletTitleWrapper = styled.div<{ active?: boolean }>`
   display: flex;
   flex-direction: column;
   margin-left: 5px;
+  cursor: auto;
 
   > p {
     margin: 0;
@@ -52,6 +53,7 @@ const WalletIconTitleWrapper = styled.div`
 const WalletIconWrapper = styled.div`
   border-radius: 50%;
   padding: 0.5rem;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
