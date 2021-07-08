@@ -7,17 +7,19 @@ import { useAppDispatch } from 'state/hooks'
 import { updateUserLocale } from 'state/user/actions'
 import { useActiveLocale } from 'hooks/useActiveLocale'
 import { SUPPORTED_LOCALES } from '../../constants/locales'
+import useTheme from 'hooks/useTheme'
 
 const LanguageWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: ${({ theme }) => theme.bg4};
+  color: ${({ theme }) => theme.text4};
   & svg {
     margin-right: 2px;
   }
 `
 export default function LanguageSelect() {
+  const theme = useTheme()
   const currentLocale = useActiveLocale()
   const dispatch = useAppDispatch()
   const handleChange = useCallback(
@@ -32,6 +34,7 @@ export default function LanguageSelect() {
       <Select
         labelId="language-select"
         id="lang-select"
+        style={{ color: theme.text4 }}
         value={currentLocale}
         onClick={(e) => e.stopPropagation()}
         onChange={handleChange}

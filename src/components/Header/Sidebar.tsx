@@ -14,7 +14,7 @@ import { useActiveWeb3React } from '../../hooks/web3'
 import { CardNoise } from '../earn/styled'
 import { TYPE } from '../../theme'
 
-import Row, { RowFixed } from '../Row'
+import Row, { RowFixed, RowBetween, RowStart } from '../Row'
 import ClaimModal from '../claim/ClaimModal'
 import { useToggleSelfClaimModal, useShowClaimPopup } from '../../state/application/hooks'
 import { useUserHasAvailableClaim } from '../../state/claim/hooks'
@@ -38,12 +38,12 @@ const HeaderFrame = styled.div<{ showBackground: boolean }>`
   background-color: ${({ theme }) => theme.white};
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding:  1rem;
+    padding: 1rem 0px;
     grid-template-columns: auto 1fr;
   `};
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    padding: 1rem;
+    padding: 1rem 0px;
   `}
 `
 
@@ -52,9 +52,9 @@ const HeaderControls = styled.div`
   flex-direction: row;
   align-items: center;
   justify-self: flex-end;
-  padding: 1rem;
-  border-top: 1px solid ${({ theme }) => theme.bg3}
-    ${({ theme }) => theme.mediaWidth.upToMedium`
+  padding: 0.5rem 1rem 0px 1rem;
+  border-top: 1px solid ${({ theme }) => theme.bg3};
+  ${({ theme }) => theme.mediaWidth.upToMedium`
     width: 100%;
   `};
 `
@@ -76,6 +76,7 @@ const HeaderElement = styled.div`
 
 const HeaderElementWrap = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -357,9 +358,13 @@ export default function Header() {
             )}
           </HeaderElement>
           <HeaderElementWrap>
-            <ThemeSwitch />
-            <LanguageSelect />
-            <SocialLinks />
+            <RowBetween style={{ marginBottom: '0.5rem' }}>
+              <LanguageSelect />
+              <ThemeSwitch />
+            </RowBetween>
+            <RowStart>
+              <SocialLinks />
+            </RowStart>
           </HeaderElementWrap>
         </HeaderControls>
       </HeaderContainer>

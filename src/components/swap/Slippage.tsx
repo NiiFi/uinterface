@@ -35,7 +35,7 @@ const SlippageOption = styled.div`
     text-align: right;
     width: 100%
     border: none;
-    background-color: transparent;
+    background-color: ${({ theme }) => theme.bg6};
     color: ${({ theme }) => theme.bg4};
     font-size: 1rem;
     &:focus{
@@ -207,7 +207,7 @@ export default function Slippage() {
                 <Trans>3%</Trans>
               </SlippageOption>
               <SlippageOption
-                style={{ width: '120px' }}
+                style={{ width: '120px', backgroundColor: theme.bg6 }}
                 className={
                   slippageError
                     ? 'has-error'

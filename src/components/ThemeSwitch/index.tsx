@@ -2,12 +2,30 @@ import React, { useCallback } from 'react'
 import Switch, { SwitchClassKey, SwitchProps } from '@material-ui/core/Switch'
 import { withStyles, createStyles } from '@material-ui/core/styles'
 import { useDarkModeManager } from 'state/user/hooks'
+import styled from 'styled-components/macro'
+import { DarkModeIcon, LightModeIcon } from '../Icons'
 interface Styles extends Partial<Record<SwitchClassKey, string>> {
   focusVisible?: string
 }
 interface Props extends SwitchProps {
   classes: Styles
 }
+
+const SwitchWrapper = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 56px;
+  height: 28px;
+`
+const SwitchIcon = styled.span<{ isDark?: boolean }>`
+  position: absolute;
+  width: fit-content;
+  top: 0;
+  right: ${({ isDark }) => !isDark && '5px'};
+  left: ${({ isDark }) => isDark && '-5px'};
+  z-index: 1;
+`
 const CustomSwitch = withStyles(() =>
   createStyles({
     root: {
@@ -43,19 +61,32 @@ const CustomSwitch = withStyles(() =>
     focusVisible: {},
   })
 )(({ classes, ...props }: Props) => {
+  const { checked } = props
   return (
-    <Switch
-      focusVisibleClassName={classes.focusVisible}
-      disableRipple
-      classes={{
-        root: classes.root,
-        switchBase: classes.switchBase,
-        thumb: classes.thumb,
-        track: classes.track,
-        checked: classes.checked,
-      }}
-      {...props}
-    />
+    <SwitchWrapper>
+      {checked && (
+        <SwitchIcon isDark={true}>
+          <DarkModeIcon color={'rgba(6, 34, 32, 1)'} width={'32'} height="30" />
+        </SwitchIcon>
+      )}
+      <Switch
+        focusVisibleClassName={classes.focusVisible}
+        disableRipple
+        classes={{
+          root: classes.root,
+          switchBase: classes.switchBase,
+          thumb: classes.thumb,
+          track: classes.track,
+          checked: classes.checked,
+        }}
+        {...props}
+      />
+      {!checked && (
+        <SwitchIcon>
+          <LightModeIcon color={'rgba(12, 68, 63, 0.6)'} width={'24'} height="29" />
+        </SwitchIcon>
+      )}
+    </SwitchWrapper>
   )
 })
 
@@ -64,5 +95,12 @@ export default function ThemeSwitch() {
   const handleChange = useCallback(() => {
     toggleSetDarkMode()
   }, [toggleSetDarkMode])
-  return <CustomSwitch checked={darkMode} onChange={handleChange} name="toggleDarkMode" />
+  return (
+    <CustomSwitch
+      checked={darkMode}
+      onClick={(e) => e.stopPropagation()}
+      onChange={handleChange}
+      name="toggleDarkMode"
+    />
+  )
 }

@@ -19,26 +19,26 @@ const Wrapper = styled.div`
   width: 100%;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
-    max-width: 750px;
-    padding: 8px;
+    max-width: 100%;
+    padding: 0.625rem;
     box-sizing: border-box;
   `}
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    max-width: 415px;
-    padding: 8px;
+    max-width: 100%;
+    padding: 0.625rem;
     box-sizing: border-box;
   `}
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall1`
-    max-width: 365px;
-    padding: 8px;
+    max-width: 100%;
+    padding: 0.625rem;
     box-sizing: border-box;
   `}
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall2`
-    max-width: 300px;
-    padding: 8px;
+    max-width: 100%;
+    padding: 0.625rem;
     box-sizing: border-box;
   `}
 `

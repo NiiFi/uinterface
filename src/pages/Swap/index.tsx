@@ -377,6 +377,7 @@ export default function Swap({ history }: RouteComponentProps) {
         </Tabs>
         <CurrencySelectWrapper>
           <Select
+            style={{ color: theme.text4 }}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={'usd'}

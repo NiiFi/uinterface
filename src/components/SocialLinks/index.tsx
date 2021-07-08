@@ -33,7 +33,7 @@ const StyledSocialLink = styled.a`
   align-items: center;
   font-size: 0.75rem;
   justify-content: center;
-  margin: 0px 5px;
+  margin: 0px 0.625rem;
 
   &:first-child {
     margin-left: 0px;
@@ -50,7 +50,7 @@ const StyledSocialLinkWrapper = styled.div`
 function SocialLink({ name, Icon, link }: TSocialLink) {
   return (
     <StyledSocialLink href={link} target="_blank" id={name}>
-      <Icon size={'1.25rem'} />
+      <Icon width={'32px'} height={'32'} />
     </StyledSocialLink>
   )
 }

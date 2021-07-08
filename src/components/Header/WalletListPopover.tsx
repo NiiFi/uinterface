@@ -151,7 +151,7 @@ export default function WalletPopover() {
               name={activeWallet.name}
               address={account || userRecentWallet || ''}
             />
-            <ChevronDown color={theme.black} />
+            <ChevronDown size="30px" color={theme.black} />
           </ControlButton>
           <Menu
             style={{ width: isMobile || isTablet ? '14.75rem' : '20rem', borderRadius: '12px' }}
