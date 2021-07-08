@@ -1,7 +1,8 @@
-import React, { useState, useContext, useMemo } from 'react'
+import React, { useState, useContext, useMemo, useEffect } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import { TYPE } from '../../theme'
+import { shortenDecimalValues } from '../../utils'
 import LineChart from './index'
 import getLineChartData from './data'
 
@@ -14,13 +15,27 @@ const OverviewChart = () => {
     return getLineChartData('all')
   }, [])
 
+  useEffect(() => {
+    if (!time && lineChartData) {
+      setTime(lineChartData[lineChartData.length - 1].time)
+    }
+  }, [time])
+
+  useEffect(() => {
+    if (!amount && lineChartData) {
+      setAmount(lineChartData[lineChartData.length - 1].value1)
+    }
+  }, [amount])
+
   return (
     <>
-      <TYPE.largeHeader fontSize="16px">
+      <TYPE.subHeader fontSize="16px">
         <Trans>TVL</Trans>
-      </TYPE.largeHeader>
-      <>{amount}</>
-      <>{time}</>
+      </TYPE.subHeader>
+      <TYPE.mediumHeader>{shortenDecimalValues(String(amount))}</TYPE.mediumHeader>
+      <TYPE.body color={theme.text4} fontWeight={400} fontSize={14}>
+        {time || '-'}
+      </TYPE.body>
       <LineChart
         data={lineChartData}
         minHeight={165}
@@ -31,6 +46,7 @@ const OverviewChart = () => {
         dateFormat="DD"
         label={time}
         setLabel={setTime}
+        YAxisTick={false}
         style={{ flexDirection: 'column' }}
       />
     </>

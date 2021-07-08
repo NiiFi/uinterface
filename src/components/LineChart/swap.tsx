@@ -122,6 +122,8 @@ const SwapChart = () => {
         setValue3={setFeesHover}
         currentValue={currentChartValue}
         dateFormat={dateFormat}
+        XAxisTickGap={100}
+        YAxisTick={{ fontSize: 14 }}
         style={{ flexDirection: 'column' }}
       />
     </>

@@ -8,13 +8,11 @@ import utc from 'dayjs/plugin/utc'
 
 dayjs.extend(utc)
 
-const DEFAULT_HEIGHT = 200
+const DEFAULT_HEIGHT = 135
 
 const Wrapper = styled(Card)`
   width: 100%;
   height: ${DEFAULT_HEIGHT}px;
-  padding: 1rem;
-  padding-right: 2rem;
   display: flex;
   background-color: ${({ theme }) => theme.bg0}
   flex-direction: column;
@@ -95,6 +93,8 @@ const Chart = ({
             tickLine={false}
             tickFormatter={(time) => dayjs(time).format('DD')}
             minTickGap={10}
+            tick={{ fontSize: 14 }}
+            stroke={theme.text4}
           />
           <Tooltip
             cursor={{ fill: theme.bg2 }}

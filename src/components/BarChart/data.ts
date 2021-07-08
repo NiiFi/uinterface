@@ -1,5 +1,5 @@
 const dummyData = [
-  { time: '2020-01-01', value: 0 },
+  { time: '2020-01-01', value: 3023420 },
   { time: '2020-01-02', value: 2023420 },
   { time: '2020-01-03', value: 4654213 },
   { time: '2020-01-04', value: 3765421 },
@@ -27,6 +27,8 @@ const dummyData = [
   { time: '2020-01-26', value: 6563244 },
   { time: '2020-01-27', value: 9083276 },
   { time: '2020-01-28', value: 7333231 },
+  { time: '2020-01-29', value: 6333231 },
+  { time: '2020-01-30', value: 9333231 },
 ]
 
 export default dummyData

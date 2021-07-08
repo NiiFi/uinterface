@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, ReactNode } from 'react'
 import { ResponsiveContainer, XAxis, YAxis, Tooltip, AreaChart, Area } from 'recharts'
-import { DataKey } from 'recharts/types/util/types'
+import { DataKey, BaseAxisProps } from 'recharts/types/util/types'
 import { RowBetween } from 'components/Row'
 import Card from '../Card'
 import styled from 'styled-components/macro'
@@ -43,6 +43,8 @@ export type LineChartProps = {
   topRight?: ReactNode | undefined
   bottomLeft?: ReactNode | undefined
   bottomRight?: ReactNode | undefined
+  XAxisTickGap?: number | undefined
+  YAxisTick?: BaseAxisProps['tick']
 } & React.HTMLAttributes<HTMLDivElement>
 
 const LineChart = ({
@@ -62,6 +64,8 @@ const LineChart = ({
   topRight,
   bottomLeft,
   bottomRight,
+  XAxisTickGap,
+  YAxisTick,
   minHeight = DEFAULT_HEIGHT,
   ...rest
 }: LineChartProps) => {
@@ -99,7 +103,7 @@ const LineChart = ({
             axisLine={false}
             tickLine={false}
             tickFormatter={(time) => dayjs(time).format(dateFormat)}
-            minTickGap={100}
+            minTickGap={XAxisTickGap}
             tick={{ fontSize: 14 }}
             stroke={theme.text4}
           />
@@ -111,7 +115,7 @@ const LineChart = ({
             tickFormatter={(value1) => shortenDecimalValues(value1)}
             width={40}
             minTickGap={30}
-            tick={{ fontSize: 14 }}
+            tick={YAxisTick}
             stroke={theme.text4}
           />
           <Tooltip
