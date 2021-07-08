@@ -18,7 +18,6 @@ import { CardNoise } from '../earn/styled'
 import { TYPE, ExternalLink } from '../../theme'
 
 import { YellowCard } from '../Card'
-import Menu from '../Menu'
 
 import Row, { RowFixed } from '../Row'
 import Web3Status from '../Web3Status/indexOld'
@@ -398,7 +397,6 @@ export default function Header() {
           <StyledMenuButton onClick={() => toggleDarkMode()}>
             {darkMode ? <Moon size={20} /> : <Sun size={20} />}
           </StyledMenuButton>
-          <Menu />
         </HeaderElementWrap>
       </HeaderControls>
     </HeaderFrame>

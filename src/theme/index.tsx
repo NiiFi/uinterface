@@ -89,7 +89,7 @@ export function colors(darkMode: boolean): Colors {
     blue1: '#2172E5',
     blue2: '#5199FF',
 
-    error: '#FD4040',
+    error: 'rgba(239, 70, 47, 1)',
     success: '#27AE60',
     warning: '#ff8f00',
 

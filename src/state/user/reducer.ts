@@ -17,6 +17,11 @@ import {
   updateUserSingleHopOnly,
   updateHideClosedPositions,
   updateUserLocale,
+  saveNewWallet,
+  updateWallet,
+  removeWallet,
+  setRecentConnectedWallet,
+  UserWallets,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
 
@@ -30,6 +35,11 @@ export interface UserState {
   matchesDarkMode: boolean // whether the dark mode media query matches
 
   userLocale: SupportedLocale | null
+
+  userWallets: {
+    [key: string]: UserWallets
+  }
+  userRecentWallet: string | null
 
   userExpertMode: boolean
 
@@ -74,6 +84,8 @@ export const initialState: UserState = {
   userSingleHopOnly: false,
   userHideClosedPositions: false,
   userSlippageTolerance: 'auto',
+  userWallets: {},
+  userRecentWallet: null,
   userSlippageToleranceHasBeenMigratedToAuto: true,
   userDeadline: DEFAULT_DEADLINE_FROM_NOW,
   tokens: {},
@@ -184,5 +196,30 @@ export default createReducer(initialState, (builder) =>
     })
     .addCase(toggleURLWarning, (state) => {
       state.URLWarningVisible = !state.URLWarningVisible
+    })
+    .addCase(saveNewWallet, (state, { payload: { address, name, type } }) => {
+      state.userWallets = state.userWallets || {}
+      const key = address.toLowerCase()
+      const totalWallets = Object.keys(state.userWallets).length + 1
+      if (!state.userWallets[key]) {
+        state.userWallets[key] = {
+          name: name || `Account ${totalWallets}`,
+          timestamp: Date.now(),
+          type,
+        }
+      } else {
+        state.userWallets[key].timestamp = Date.now()
+      }
+    })
+    .addCase(updateWallet, (state, { payload: { address, name } }) => {
+      const key = address.toLowerCase()
+      state.userWallets[key].name = name
+    })
+    .addCase(removeWallet, (state, { payload: { address } }) => {
+      const key = address.toLowerCase()
+      if (state.userWallets[key]) delete state.userWallets[key]
+    })
+    .addCase(setRecentConnectedWallet, (state, { payload: { address } }) => {
+      state.userRecentWallet = address
     })
 )
