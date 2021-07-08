@@ -21,6 +21,9 @@ const MenuWrapper = styled.div`
   margin: 0 1rem;
   max-height: 320px;
   overflow-y: scroll;
+  &:focus-visible {
+    outline: none;
+  }
 `
 
 const MenuFooter = styled.div`
@@ -125,8 +128,7 @@ export default function WalletPopover() {
     setOpen(!open)
   }
 
-  const handleConnectWalletClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    e.stopPropagation()
+  const handleConnectWalletClick: React.MouseEventHandler<HTMLDivElement> = () => {
     setClickedWalletAddress(null)
     setWalletModalView(WALLET_VIEWS.OPTIONS)
     toggleWalletModal()
@@ -162,8 +164,7 @@ export default function WalletPopover() {
                 <Trans>Connect Wallet</Trans>
               </MenuFooterButton>
               <MenuFooterButton
-                onClick={(e) => {
-                  e.stopPropagation()
+                onClick={() => {
                   toggleManageWalletListModal()
                 }}
               >
