@@ -37,7 +37,7 @@ const SwapChart = () => {
         onClick={handleChartPeriod}
         width="19%"
         padding="6px"
-        margin="10px"
+        margin="11px"
         style={{
           display: 'inline',
           fontSize: '12px',
@@ -71,20 +71,26 @@ const SwapChart = () => {
 
   return (
     <>
-      <TYPE.largeHeader fontSize="18px" style={{ paddingBottom: '10px' }}>
+      <TYPE.mediumHeader style={{ paddingBottom: '10px' }}>
         <Trans>ETH-ANY Pair Stats (Dummy data)</Trans>
-      </TYPE.largeHeader>
+      </TYPE.mediumHeader>
       <Wrapper>
-        <Trans>Liquidity</Trans>
-        <div>{liquidityHover ? `${liquidityHover} ${realCurrency}` : '-'}</div>
+        <TYPE.black fontWeight={400}>
+          <Trans>Liquidity</Trans>
+        </TYPE.black>
+        <TYPE.black>{liquidityHover ? `${liquidityHover} ${realCurrency}` : '-'}</TYPE.black>
       </Wrapper>
       <Wrapper>
-        <Trans>Volume</Trans>
-        <div>{volumeHover ? `${volumeHover} ${realCurrency}` : '-'}</div>
+        <TYPE.black fontWeight={400}>
+          <Trans>Volume</Trans>
+        </TYPE.black>
+        <TYPE.black>{volumeHover ? `${volumeHover} ${realCurrency}` : '-'}</TYPE.black>
       </Wrapper>
       <Wrapper>
-        <Trans>Fees</Trans>
-        <div>{feesHover ? `${feesHover} ${realCurrency}` : '-'}</div>
+        <TYPE.black fontWeight={400}>
+          <Trans>Fees</Trans>
+        </TYPE.black>
+        <TYPE.black>{feesHover ? `${feesHover} ${realCurrency}` : '-'}</TYPE.black>
       </Wrapper>
       <ControlWrapper>
         <Select value={currentChartValue} onChange={handleChartType} disableUnderline>
@@ -106,7 +112,7 @@ const SwapChart = () => {
       </ControlWrapper>
       <LineChart
         data={lineChartData}
-        minHeight={165}
+        minHeight={160}
         color={theme.orange1}
         value1={liquidityHover}
         setValue1={setLiquidityHover}
