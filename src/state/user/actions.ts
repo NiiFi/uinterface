@@ -14,6 +14,16 @@ export interface SerializedPair {
   token1: SerializedToken
 }
 
+export enum UserWalletTypes {
+  'WATCHED' = 'WATCHED',
+  'CONNECTED' = 'CONNECTED',
+}
+export interface UserWallets {
+  name: string
+  type: UserWalletTypes
+  timestamp: number
+}
+
 export const updateMatchesDarkMode = createAction<{ matchesDarkMode: boolean }>('user/updateMatchesDarkMode')
 export const updateUserDarkMode = createAction<{ userDarkMode: boolean }>('user/updateUserDarkMode')
 export const updateUserExpertMode = createAction<{ userExpertMode: boolean }>('user/updateUserExpertMode')
@@ -30,3 +40,8 @@ export const addSerializedPair = createAction<{ serializedPair: SerializedPair }
 export const removeSerializedPair =
   createAction<{ chainId: number; tokenAAddress: string; tokenBAddress: string }>('user/removeSerializedPair')
 export const toggleURLWarning = createAction<void>('app/toggleURLWarning')
+export const saveNewWallet =
+  createAction<{ address: string; name?: string; type: UserWalletTypes }>('user/saveNewWallet')
+export const updateWallet = createAction<{ address: string; name: string }>('user/updateWallet')
+export const removeWallet = createAction<{ address: string }>('user/removeWallet')
+export const setRecentConnectedWallet = createAction<{ address: string }>('user/setRecentConnectWallet')

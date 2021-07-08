@@ -24,6 +24,11 @@ import {
   updateUserSingleHopOnly,
   updateUserSlippageTolerance,
   updateUserLocale,
+  UserWalletTypes,
+  saveNewWallet,
+  removeWallet,
+  setRecentConnectedWallet,
+  updateWallet,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
@@ -339,4 +344,34 @@ export function useTrackedTokenPairs(): [Token, Token][] {
 
     return Object.keys(keyed).map((key) => keyed[key])
   }, [combinedList])
+}
+
+export function useUserWallets() {
+  const { userWallets, userRecentWallet } = useAppSelector((state) => state.user)
+  const dispatch = useAppDispatch()
+  const setUserRecentWallet = useCallback(
+    (address: string) => {
+      dispatch(setRecentConnectedWallet({ address }))
+    },
+    [dispatch]
+  )
+  const addNewUserWallet = useCallback(
+    ({ address, name, type }: { address: string; name?: string; type: UserWalletTypes }) => {
+      dispatch(saveNewWallet({ address, name, type }))
+    },
+    [dispatch]
+  )
+  const updateUserWallet = useCallback(
+    ({ address, name }: { address: string; name: string }) => {
+      dispatch(updateWallet({ address, name }))
+    },
+    [dispatch]
+  )
+  const removeUserWallet = useCallback(
+    ({ address }) => {
+      dispatch(removeWallet({ address }))
+    },
+    [dispatch]
+  )
+  return { userWallets, userRecentWallet, addNewUserWallet, updateUserWallet, setUserRecentWallet, removeUserWallet }
 }

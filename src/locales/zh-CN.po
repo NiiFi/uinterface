@@ -39,9 +39,9 @@ msgstr "(最大值)"
 msgid "(claim)"
 msgstr "(领取)"
 
-#: src/components/AccountDetails/index.tsx
-msgid "(clear all)"
-msgstr "(全部清除)"
+#: 
+#~ msgid "(clear all)"
+#~ msgstr "(全部清除)"
 
 #: src/pages/Vote/index.tsx
 msgid "(edit)"
@@ -124,8 +124,12 @@ msgid "<0>Tip:</0> Removing pool tokens converts your position back into underly
 msgstr "<0>提示：</0>退出资金池，按照当前汇率将您的资金池份额转换回原本代币。您收到的代币数额中将包含已累计的手续费。"
 
 #: src/pages/PoolFinder/index.tsx
-msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
-msgstr "<0>提示：</0>使用此工具可查找未自动出现在界面中的 v2 池。"
+msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
+msgstr ""
+
+#: 
+#~ msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
+#~ msgstr "<0>提示：</0>使用此工具可查找未自动出现在界面中的 v2 池。"
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -143,15 +147,14 @@ msgstr "<0>🎉 </0>欢迎加入Unicorn（独角兽）团队 :) <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "提交提案的最低门槛为 UNI 代币总供应量的1％。"
 
-#: src/components/Menu/index.tsx
-msgid "About"
-msgstr "关于"
+#: 
+#~ msgid "About"
+#~ msgstr "关于"
 
 #: src/components/swap/SwapModalHeader.tsx
 msgid "Accept"
 msgstr "接受"
 
-#: src/components/AccountDetails/index.tsx
 #: src/components/Table/index.tsx
 msgid "Account"
 msgstr "账户"
@@ -247,9 +250,9 @@ msgstr "务必确保网址为<0>app.uniswap.org</0> - 将其加入书签，以�
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "尝试执行此兑换时发生错误。您可能需要增加滑点限制。如果还是不行，则可能是您正在交易的代币与 Uniswap 不兼容。注：转账时带扣除费用（fee-on-transfer）的代币和会自动重新定价（rebase）的代币都与Uniswap V3不兼容。"
 
-#: src/components/Menu/index.tsx
-msgid "Analytics"
-msgstr "数据分析"
+#: 
+#~ msgid "Analytics"
+#~ msgstr "数据分析"
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -294,9 +297,9 @@ msgstr "自动"
 msgid "Available to deposit: {0}"
 msgstr "可调用的数额：{0}"
 
-#: src/components/WalletModal/index.tsx
-msgid "Back"
-msgstr "返回"
+#: 
+#~ msgid "Back"
+#~ msgstr "返回"
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Balance:"
@@ -343,8 +346,12 @@ msgstr ""
 #~ msgstr "通过连接钱包，您同意接受 Uniswap 实验室的<0>服务条款</0>，并确认您已阅读和理解<1>Uniswap协议免责声明</1>。"
 
 #: src/components/AccountDetails/index.tsx
-msgid "Change"
-msgstr "更改"
+msgid "CANCEL"
+msgstr ""
+
+#: 
+#~ msgid "Change"
+#~ msgstr "更改"
 
 #: src/components/Header/index.tsx
 msgid "Charts"
@@ -362,7 +369,6 @@ msgstr "领取"
 
 #: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
-#: src/components/Menu/index.tsx
 #: src/components/claim/AddressClaimModal.tsx
 #: src/components/claim/ClaimModal.tsx
 #: src/components/claim/ClaimModal.tsx
@@ -425,9 +431,9 @@ msgstr "关闭"
 msgid "Closed"
 msgstr "已关闭"
 
-#: src/components/Menu/index.tsx
-msgid "Code"
-msgstr "代码"
+#: 
+#~ msgid "Code"
+#~ msgstr "代码"
 
 #: 
 #~ msgid "Collect"
@@ -483,6 +489,7 @@ msgstr "确认兑换"
 msgid "Confirm this transaction in your wallet"
 msgstr "在您的钱包中确认这笔交易"
 
+#: src/components/Header/WalletListPopover.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -520,15 +527,19 @@ msgstr "连接到钱包以查看您的流动资金。"
 msgid "Connect wallet"
 msgstr "连接钱包"
 
-#: src/components/AccountDetails/index.tsx
-msgid "Connected with {name}"
-msgstr "已与 {name} 连接"
+#: src/components/Header/WalletListPopover.tsx
+#: src/components/ManageWalletListModal/index.tsx
+msgid "Connected"
+msgstr ""
+
+#: 
+#~ msgid "Connected with {name}"
+#~ msgstr "已与 {name} 连接"
 
 #: src/components/AccountDetails/Copy.tsx
 msgid "Copied"
 msgstr "已复制"
 
-#: src/components/AccountDetails/index.tsx
 #: src/components/AccountDetails/index.tsx
 msgid "Copy Address"
 msgstr "复制地址"
@@ -638,13 +649,17 @@ msgstr "详细信息"
 msgid "Disable Multihops"
 msgstr "停用“多节点”（多跳式）兑换途径"
 
-#: src/components/AccountDetails/index.tsx
-msgid "Disconnect"
-msgstr "断开"
+#: 
+#~ msgid "Disconnect"
+#~ msgstr "断开"
 
-#: src/components/Menu/index.tsx
-msgid "Discord"
-msgstr "Discord"
+#: src/components/AccountDetails/index.tsx
+msgid "Disconnect Wallet"
+msgstr ""
+
+#: 
+#~ msgid "Discord"
+#~ msgstr "Discord"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Discover"
@@ -654,9 +669,9 @@ msgstr ""
 msgid "Dismiss"
 msgstr "关闭"
 
-#: src/components/Menu/index.tsx
-msgid "Docs"
-msgstr "文档"
+#: 
+#~ msgid "Docs"
+#~ msgstr "文档"
 
 #: 
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
@@ -904,7 +919,6 @@ msgstr "已加载"
 #: src/components/PositionCard/index.tsx
 #: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Loading"
 msgstr "正在加载"
 
@@ -928,6 +942,14 @@ msgstr "在奖励池中管理流动资金"
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Manage Token Lists"
 msgstr "管理代币列表"
+
+#: src/components/Header/WalletListPopover.tsx
+msgid "Manage Wallet"
+msgstr ""
+
+#: src/components/ManageWalletListModal/index.tsx
+msgid "Manage Wallets"
+msgstr ""
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Manage this pool."
@@ -1193,6 +1215,10 @@ msgstr "社区成员提交的提案将在此显示。"
 msgid "Proposer"
 msgstr "提案者"
 
+#: src/components/AccountDetails/index.tsx
+msgid "RENAME"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "费率"
@@ -1213,7 +1239,6 @@ msgstr "阅读有关 Uniswap 治理的更多信息"
 msgid "Read more about unsupported assets"
 msgstr "阅读有关不受支持的代币的更多信息"
 
-#: src/components/AccountDetails/index.tsx
 #: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "最近的交易"
@@ -1236,6 +1261,10 @@ msgstr "去除投票权代表"
 #: src/components/NavigationTabs/index.tsx
 msgid "Remove Liquidity"
 msgstr "去除流动资金"
+
+#: src/components/Header/WalletList.tsx
+msgid "Remove Wallet"
+msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Remove list"
@@ -1287,8 +1316,12 @@ msgid "Select a token"
 msgstr "选择代币"
 
 #: src/pages/PoolFinder/index.tsx
-msgid "Select a token to find your v2 liquidity."
-msgstr "选择代币以查找您的 v2 流动资金。"
+msgid "Select a token to find your liquidity."
+msgstr ""
+
+#: 
+#~ msgid "Select a token to find your v2 liquidity."
+#~ msgstr "选择代币以查找您的 v2 流动资金。"
 
 #: 
 #~ msgid "Select pair"
@@ -1319,9 +1352,9 @@ msgstr "自我代表"
 msgid "Share of Pool:"
 msgstr "流动池份额："
 
-#: src/components/AccountDetails/index.tsx
-msgid "Show Portis"
-msgstr "显示 Portis"
+#: 
+#~ msgid "Show Portis"
+#~ msgstr "显示 Portis"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Simple"
@@ -1670,7 +1703,6 @@ msgid "View list"
 msgstr "查看代币列表"
 
 #: src/components/AccountDetails/index.tsx
-#: src/components/AccountDetails/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "View on Explorer"
 msgstr "在以太坊资源浏览器上查看"
@@ -1715,6 +1747,15 @@ msgstr "投票大约结束于 {0}"
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "等待确认"
+
+#: src/components/AccountDetails/index.tsx
+#: src/components/Header/WalletList.tsx
+msgid "Wallet"
+msgstr ""
+
+#: src/components/AccountDetails/index.tsx
+msgid "Wallet Name"
+msgstr ""
 
 #: src/components/earn/StakingModal.tsx
 msgid "Weekly Rewards"
@@ -1904,9 +1945,9 @@ msgstr "如果您的交易待处理超过此时间期限，则将还原该交易
 msgid "Your transaction will revert if the price changes unfavorably by more than this percentage."
 msgstr "如果兑换率变动超过此百分比，则将还原该交易。"
 
-#: src/components/AccountDetails/index.tsx
-msgid "Your transactions will appear here..."
-msgstr "您的交易将出现在这里..."
+#: 
+#~ msgid "Your transactions will appear here..."
+#~ msgstr "您的交易将出现在这里..."
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your unclaimed UNI"
