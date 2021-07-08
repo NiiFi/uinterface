@@ -9,6 +9,7 @@ interface Styles extends Partial<Record<SwitchClassKey, string>> {
 }
 interface Props extends SwitchProps {
   classes: Styles
+  onChange: () => void
 }
 
 const SwitchWrapper = styled.div`
@@ -63,7 +64,12 @@ const CustomSwitch = withStyles(() =>
 )(({ classes, ...props }: Props) => {
   const { checked } = props
   return (
-    <SwitchWrapper>
+    <SwitchWrapper
+      onClick={(e) => {
+        e.stopPropagation()
+        props.onChange && props.onChange()
+      }}
+    >
       {checked && (
         <SwitchIcon isDark={true}>
           <DarkModeIcon color={'rgba(6, 34, 32, 1)'} width={'32'} height="30" />
