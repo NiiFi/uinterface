@@ -99,7 +99,8 @@ const LineChart = ({
             axisLine={false}
             tickLine={false}
             tickFormatter={(time) => dayjs(time).format(dateFormat)}
-            minTickGap={10}
+            minTickGap={100}
+            tick={{ fontSize: 14 }}
           />
           <YAxis
             dataKey="value1"
@@ -108,6 +109,8 @@ const LineChart = ({
             tickLine={false}
             tickFormatter={(value1) => shortenDecimalValues(value1)}
             width={40}
+            minTickGap={30}
+            tick={{ fontSize: 14 }}
           />
           <Tooltip
             cursor={{ stroke: theme.bg2 }}

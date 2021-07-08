@@ -62,6 +62,8 @@ import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
 import SwapChart from 'components/LineChart/swap'
+import OverviewChart from 'components/LineChart/overview'
+import BarChart from 'components/BarChart/overview'
 
 const StyledInfo = styled(Info)`
   opacity: 0.4;
@@ -671,30 +673,20 @@ export default function Swap({ history }: RouteComponentProps) {
           <TabPanelHeading>
             <Trans>Overview</Trans>
           </TabPanelHeading>
-          <AppBody>
-            {/* <AutoRow style={{ flexWrap: 'nowrap', width: '100%' }}>
-              <AutoColumn style={{ width: '100%' }} gap="12px">
-                <LineChart
-                  data={lineChartData}
-                  height={220}
-                  minHeight={332}
-                  color={theme.orange1}
-                  value1={liquidityHover}
-                  setValue1={setLiquidityHover}
-                />
-              </AutoColumn>
-              <AutoColumn style={{ width: '100%' }} gap="12px">
-                <LineChart
-                  data={lineChartData}
-                  height={220}
-                  minHeight={332}
-                  color={theme.orange1}
-                  value1={liquidityHover}
-                  setValue1={setLiquidityHover}
-                />
-              </AutoColumn>
-            </AutoRow> */}
-          </AppBody>
+          <AutoColumn>
+            <ResponsiveRow>
+              <AppBody size="md">
+                <Wrapper>
+                  <OverviewChart />
+                </Wrapper>
+              </AppBody>
+              <AppBody size="md">
+                <Wrapper>
+                  <BarChart />
+                </Wrapper>
+              </AppBody>
+            </ResponsiveRow>
+          </AutoColumn>
         </TabPanel>
       </BodyScroller>
     </>
