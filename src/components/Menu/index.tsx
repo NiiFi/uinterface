@@ -14,7 +14,7 @@ export default function CustomMenu({ children, onClose, ...rest }: CustomMenuPro
       {({ TransitionProps }) => (
         <Grow {...TransitionProps} style={{ transformOrigin: 'bottom' }}>
           <ClickAwayListener onClickAway={onClose}>
-            <Paper style={{ borderRadius: '12px', backgroundColor: theme.bg0, border: `1px solid ${theme.bg1}` }}>
+            <Paper style={{ borderRadius: '12px', backgroundColor: theme.bg0, border: `1px solid ${theme.bg3}` }}>
               <MenuList>{children}</MenuList>
             </Paper>
           </ClickAwayListener>

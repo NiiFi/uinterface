@@ -6,6 +6,7 @@ import { Percent } from '@uniswap/sdk-core'
 import styled from 'styled-components'
 import { useSetUserSlippageTolerance, useUserSlippageTolerance } from 'state/user/hooks'
 import Menu from '../Menu'
+import useTheme from 'hooks/useTheme'
 const SlippageOption = styled.div`
   display: flex;
   align-items: center;
@@ -62,7 +63,7 @@ const MenuWrapper = styled.div`
 const MenuTitle = styled.h3`
   font-size: 1rem;
   font-weight: 400;
-  color: ${({ theme }) => theme.text5};
+  color: ${({ theme }) => theme.black};
   margin-bottom: 10px;
   margin-top: 0px;
   width: 100%;
@@ -112,7 +113,7 @@ const ControlButton = styled.div<{ active?: boolean }>`
   justify-content: center;
   padding: 0.5rem;
   border-radius: 8px;
-  color: ${({ theme }) => theme.text5};
+  color: ${({ theme }) => theme.black};
   cursor: pointer;
   background-color: ${({ active, theme }) => (active ? theme.bg5 : '')};
 `
@@ -121,6 +122,7 @@ const TWO_PERCENT = `2.00`
 const THREE_PERCENT = `3.00`
 const DEFAULT_PERCENT = TWO_PERCENT
 export default function Slippage() {
+  const theme = useTheme()
   const anchorRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = React.useState<boolean>(false)
   const userSlippageTolerance = useUserSlippageTolerance()
@@ -182,7 +184,7 @@ export default function Slippage() {
                 <Trans>Slippage Tolerance</Trans>
               </MenuTitle>
               <MenuClose onClick={handleClose}>
-                <X size={'1rem'} />
+                <X size={'1rem'} color={theme.black} />
               </MenuClose>
             </MenuTitleWrapper>
             <OptionWrapper>
@@ -222,6 +224,7 @@ export default function Slippage() {
                   value={slippageInput !== THREE_PERCENT && slippageInput !== TWO_PERCENT ? slippageInput : ''}
                   name="customSlippage"
                 />
+                <span>%</span>
               </SlippageOption>
             </OptionWrapper>
           </MenuWrapper>

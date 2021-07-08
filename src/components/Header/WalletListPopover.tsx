@@ -14,6 +14,8 @@ import { useActiveWeb3React } from '../../hooks/web3'
 import { UserWalletTypes } from 'state/user/actions'
 import { useWalletModalToggle, useManageWalletListModalToggle } from '../../state/application/hooks'
 import Menu from '../Menu'
+import { PencilIcon } from '../Icons'
+import useTheme from 'hooks/useTheme'
 import { WalletIcon, PlusIcon } from '../Icons'
 
 const MenuWrapper = styled.div`
@@ -99,6 +101,7 @@ const useAccountChange = () => {
   }, [account, addNewUserWallet])
 }
 export default function WalletPopover() {
+  const theme = useTheme()
   const anchorRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = React.useState<boolean>(false)
   const [walletModalView, setWalletModalView] = React.useState<string>()
@@ -148,7 +151,7 @@ export default function WalletPopover() {
               name={activeWallet.name}
               address={account || userRecentWallet || ''}
             />
-            <ChevronDown />
+            <ChevronDown color={theme.black} />
           </ControlButton>
           <Menu
             style={{ width: isMobile || isTablet ? '14.75rem' : '20rem', borderRadius: '12px' }}
@@ -161,7 +164,7 @@ export default function WalletPopover() {
               <ListTitle>
                 <Trans>Connected</Trans>
               </ListTitle>
-              <WalletList onItemClicked={onMenuItemClicked} />
+              <WalletList Icon={<PencilIcon color={theme.black} />} onItemClicked={onMenuItemClicked} />
             </MenuWrapper>
             <MenuFooter>
               <MenuFooterButton onClick={handleConnectWalletClick}>
