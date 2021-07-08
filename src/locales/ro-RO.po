@@ -39,9 +39,9 @@ msgstr "(Max)"
 msgid "(claim)"
 msgstr "(claim)"
 
-#: src/components/AccountDetails/index.tsx
-msgid "(clear all)"
-msgstr "(curățat)"
+#: 
+#~ msgid "(clear all)"
+#~ msgstr "(curățat)"
 
 #: src/pages/Vote/index.tsx
 msgid "(edit)"
@@ -124,8 +124,12 @@ msgid "<0>Tip:</0> Removing pool tokens converts your position back into underly
 msgstr "<0>Sfat: </0> Eliminarea tokenurilor de rezervă convertește poziția dvs. înapoi în tokeni de bază, la rata curentă, proporțional cu cota dvs. din grup. Taxele acumulate sunt incluse în sumele pe care le primiți."
 
 #: src/pages/PoolFinder/index.tsx
-msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
-msgstr "<0> Sfat:</0> Utilizați acest instrument pentru a găsi pool-uri v2 care nu apar automat în interfață."
+msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
+msgstr ""
+
+#: 
+#~ msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
+#~ msgstr "<0> Sfat:</0> Utilizați acest instrument pentru a găsi pool-uri v2 care nu apar automat în interfață."
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -143,15 +147,14 @@ msgstr "<0>🎉 </0>Bine ai venit la echipa Unicorn :) <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "Este necesar un prag minim de 1 % din totalul ofertei UNI pentru prezentarea de propuneri"
 
-#: src/components/Menu/index.tsx
-msgid "About"
-msgstr "Despre"
+#: 
+#~ msgid "About"
+#~ msgstr "Despre"
 
 #: src/components/swap/SwapModalHeader.tsx
 msgid "Accept"
 msgstr "Acceptă"
 
-#: src/components/AccountDetails/index.tsx
 #: src/components/Table/index.tsx
 msgid "Account"
 msgstr "Cont"
@@ -247,9 +250,9 @@ msgstr "Asigurați-vă întotdeauna că URL-ul este<0>app.uniswap.org</0> - marc
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "A apărut o eroare la încercarea de a executa acest swap. Este posibil să fie nevoie să vă măriți toleranța la alunecare. Dacă acest lucru nu funcționează, poate exista o incompatibilitate cu jetonul pe care îl tranzacționați. Taxa de notă pentru jetoanele de transfer și rebase sunt incompatibile cu Uniswap V3."
 
-#: src/components/Menu/index.tsx
-msgid "Analytics"
-msgstr "Analize"
+#: 
+#~ msgid "Analytics"
+#~ msgstr "Analize"
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -294,9 +297,9 @@ msgstr "Automat"
 msgid "Available to deposit: {0}"
 msgstr "Disponibil pentru depunere: {0}"
 
-#: src/components/WalletModal/index.tsx
-msgid "Back"
-msgstr "Înapoi"
+#: 
+#~ msgid "Back"
+#~ msgstr "Înapoi"
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Balance:"
@@ -343,8 +346,12 @@ msgstr ""
 #~ msgstr "Prin conectarea unui portofel, sunteți de acord cu Uniswap Labs’ <0>Termenii de utilizare</0> și acceptați că ați citit și înțeles <1>Dislaimer-ul protocolului Uniswap </1>."
 
 #: src/components/AccountDetails/index.tsx
-msgid "Change"
-msgstr "Schimbă"
+msgid "CANCEL"
+msgstr ""
+
+#: 
+#~ msgid "Change"
+#~ msgstr "Schimbă"
 
 #: src/components/Header/index.tsx
 msgid "Charts"
@@ -362,7 +369,6 @@ msgstr "Claim"
 
 #: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
-#: src/components/Menu/index.tsx
 #: src/components/claim/AddressClaimModal.tsx
 #: src/components/claim/ClaimModal.tsx
 #: src/components/claim/ClaimModal.tsx
@@ -425,9 +431,9 @@ msgstr "Inchide"
 msgid "Closed"
 msgstr "Închis"
 
-#: src/components/Menu/index.tsx
-msgid "Code"
-msgstr "Cod"
+#: 
+#~ msgid "Code"
+#~ msgstr "Cod"
 
 #: 
 #~ msgid "Collect"
@@ -483,6 +489,7 @@ msgstr "Confirmați Swap"
 msgid "Confirm this transaction in your wallet"
 msgstr "Confirmați această tranzacție în portofel"
 
+#: src/components/Header/WalletListPopover.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -520,15 +527,19 @@ msgstr "Conectează-te la un portofel pentru a vizualiza lichiditatea."
 msgid "Connect wallet"
 msgstr "Conectare portofel"
 
-#: src/components/AccountDetails/index.tsx
-msgid "Connected with {name}"
-msgstr "Conectat cu {name}"
+#: src/components/Header/WalletListPopover.tsx
+#: src/components/ManageWalletListModal/index.tsx
+msgid "Connected"
+msgstr ""
+
+#: 
+#~ msgid "Connected with {name}"
+#~ msgstr "Conectat cu {name}"
 
 #: src/components/AccountDetails/Copy.tsx
 msgid "Copied"
 msgstr "Copiat"
 
-#: src/components/AccountDetails/index.tsx
 #: src/components/AccountDetails/index.tsx
 msgid "Copy Address"
 msgstr "Copiază adresa"
@@ -638,13 +649,17 @@ msgstr "Detalii"
 msgid "Disable Multihops"
 msgstr "Dezactivează Multihops"
 
-#: src/components/AccountDetails/index.tsx
-msgid "Disconnect"
-msgstr "Deconectare"
+#: 
+#~ msgid "Disconnect"
+#~ msgstr "Deconectare"
 
-#: src/components/Menu/index.tsx
-msgid "Discord"
-msgstr "Discord"
+#: src/components/AccountDetails/index.tsx
+msgid "Disconnect Wallet"
+msgstr ""
+
+#: 
+#~ msgid "Discord"
+#~ msgstr "Discord"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Discover"
@@ -654,9 +669,9 @@ msgstr ""
 msgid "Dismiss"
 msgstr "Renunţaţi"
 
-#: src/components/Menu/index.tsx
-msgid "Docs"
-msgstr "Documente"
+#: 
+#~ msgid "Docs"
+#~ msgstr "Documente"
 
 #: 
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
@@ -904,7 +919,6 @@ msgstr "Încărcat"
 #: src/components/PositionCard/index.tsx
 #: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Loading"
 msgstr "Încărcare"
 
@@ -928,6 +942,14 @@ msgstr "Gestionează lichiditatea în bazinul de recompense"
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Manage Token Lists"
 msgstr "Gestionează lista de simboluri"
+
+#: src/components/Header/WalletListPopover.tsx
+msgid "Manage Wallet"
+msgstr ""
+
+#: src/components/ManageWalletListModal/index.tsx
+msgid "Manage Wallets"
+msgstr ""
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Manage this pool."
@@ -1193,6 +1215,10 @@ msgstr "Propunerile depuse de membrii comunității vor apărea aici."
 msgid "Proposer"
 msgstr "Propunător"
 
+#: src/components/AccountDetails/index.tsx
+msgid "RENAME"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Tarife"
@@ -1213,7 +1239,6 @@ msgstr "Citește mai multe despre guvernanța Uniswap"
 msgid "Read more about unsupported assets"
 msgstr "Citește mai multe despre activele neacceptate"
 
-#: src/components/AccountDetails/index.tsx
 #: src/components/Table/index.tsx
 msgid "Recent Transactions"
 msgstr "Tranzacții recente"
@@ -1236,6 +1261,10 @@ msgstr "Elimină Delegatul"
 #: src/components/NavigationTabs/index.tsx
 msgid "Remove Liquidity"
 msgstr "Elimină lichiditatea"
+
+#: src/components/Header/WalletList.tsx
+msgid "Remove Wallet"
+msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Remove list"
@@ -1287,8 +1316,12 @@ msgid "Select a token"
 msgstr "Selectează un simbol"
 
 #: src/pages/PoolFinder/index.tsx
-msgid "Select a token to find your v2 liquidity."
-msgstr "Selectați un simbol pentru a vă găsi lichiditatea v2."
+msgid "Select a token to find your liquidity."
+msgstr ""
+
+#: 
+#~ msgid "Select a token to find your v2 liquidity."
+#~ msgstr "Selectați un simbol pentru a vă găsi lichiditatea v2."
 
 #: 
 #~ msgid "Select pair"
@@ -1319,9 +1352,9 @@ msgstr "Auto-delegare"
 msgid "Share of Pool:"
 msgstr "Cota din rezervă:"
 
-#: src/components/AccountDetails/index.tsx
-msgid "Show Portis"
-msgstr "Show Portis"
+#: 
+#~ msgid "Show Portis"
+#~ msgstr "Show Portis"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Simple"
@@ -1670,7 +1703,6 @@ msgid "View list"
 msgstr "Vezi lista"
 
 #: src/components/AccountDetails/index.tsx
-#: src/components/AccountDetails/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "View on Explorer"
 msgstr "Vizualizați pe Explorer"
@@ -1715,6 +1747,15 @@ msgstr "Votarea se termină aproximativ {0}"
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "Aşteptare pentru confirmare"
+
+#: src/components/AccountDetails/index.tsx
+#: src/components/Header/WalletList.tsx
+msgid "Wallet"
+msgstr ""
+
+#: src/components/AccountDetails/index.tsx
+msgid "Wallet Name"
+msgstr ""
 
 #: src/components/earn/StakingModal.tsx
 msgid "Weekly Rewards"
@@ -1904,9 +1945,9 @@ msgstr "Tranzacția dvs. va reveni dacă este în așteptare pentru mai mult de 
 msgid "Your transaction will revert if the price changes unfavorably by more than this percentage."
 msgstr "Tranzacția dvs. va reveni în cazul în care prețul se modifică nefavorabil cu mai mult de acest procent."
 
-#: src/components/AccountDetails/index.tsx
-msgid "Your transactions will appear here..."
-msgstr "Tranzacțiile vor apărea aici..."
+#: 
+#~ msgid "Your transactions will appear here..."
+#~ msgstr "Tranzacțiile vor apărea aici..."
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your unclaimed UNI"

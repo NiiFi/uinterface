@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
 import { injected } from '../connectors'
 import { NetworkContextName } from '../constants/misc'
+import { useUserWallets } from '../state/user/hooks'
+import { UserWalletTypes } from 'state/user/actions'
 
 export function useActiveWeb3React(): Web3ReactContextInterface<Web3Provider> {
   const context = useWeb3ReactCore<Web3Provider>()
@@ -83,4 +85,29 @@ export function useInactiveListener(suppress = false) {
     }
     return undefined
   }, [active, error, suppress, activate])
+}
+
+export function useAccountChange() {
+  const { addNewUserWallet, setUserRecentWallet } = useUserWallets()
+  useEffect(() => {
+    const { ethereum } = window
+    if (ethereum?.on) {
+      const handleAccountsChanged = (accounts: string[]) => {
+        if (accounts.length > 0) {
+          addNewUserWallet({ address: accounts[0], type: UserWalletTypes.CONNECTED })
+          setUserRecentWallet(accounts[0])
+        }
+      }
+
+      ethereum.on('accountsChanged', handleAccountsChanged)
+
+      return () => {
+        if (ethereum.removeListener) {
+          ethereum.removeListener('accountsChanged', handleAccountsChanged)
+        }
+      }
+    }
+
+    return undefined
+  }, [addNewUserWallet, setUserRecentWallet])
 }

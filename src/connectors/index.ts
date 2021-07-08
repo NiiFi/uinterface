@@ -2,7 +2,6 @@ import { Web3Provider } from '@ethersproject/providers'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { WalletLinkConnector } from '@web3-react/walletlink-connector'
-import { PortisConnector } from '@web3-react/portis-connector'
 import { SupportedChainId } from '../constants/chains'
 import getLibrary from '../utils/getLibrary'
 
@@ -12,7 +11,6 @@ import UNISWAP_LOGO_URL from '../assets/svg/logo.svg'
 
 const INFURA_KEY = process.env.REACT_APP_INFURA_KEY
 const FORMATIC_KEY = process.env.REACT_APP_FORTMATIC_KEY
-const PORTIS_ID = process.env.REACT_APP_PORTIS_ID
 const WALLETCONNECT_BRIDGE_URL = process.env.REACT_APP_WALLETCONNECT_BRIDGE_URL
 
 if (typeof INFURA_KEY === 'undefined') {
@@ -53,12 +51,6 @@ export const walletconnect = new WalletConnectConnector({
 export const fortmatic = new FortmaticConnector({
   apiKey: FORMATIC_KEY ?? '',
   chainId: 1,
-})
-
-// mainnet only
-export const portis = new PortisConnector({
-  dAppId: PORTIS_ID ?? '',
-  networks: [1],
 })
 
 // mainnet only
