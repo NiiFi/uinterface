@@ -6,7 +6,8 @@ import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components/macro'
 import LanguageSelect from '../LanguageSelect'
 
-import Logo from '../../assets/images/niifi-logo.png'
+import LightLogo from '../../assets/images/niifi-logo-light.png'
+import DarkLogo from '../../assets/images/niifi-logo-dark.png'
 import ThemeSwitch from '../ThemeSwitch'
 import { DashboardIcon, PoolIcon, SwapIcon, LendIcon, DiscoverIcon, FarmIcon } from '../Icons'
 import { useActiveWeb3React } from '../../hooks/web3'
@@ -23,6 +24,7 @@ import SocialLinks from '../SocialLinks'
 import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
 import WalletPopover from './WalletListPopover'
+import { useIsDarkMode } from 'state/user/hooks'
 
 const HeaderFrame = styled.div<{ showBackground: boolean }>`
   display: flex;
@@ -249,6 +251,7 @@ export const StyledMenuButton = styled.button`
 `
 
 export default function Header() {
+  const isDarkMode = useIsDarkMode()
   const SidebarLinks: Array<{ title: string; id: string; Icon: any; link: string; disable: boolean }> = [
     {
       id: 'discover',
@@ -293,6 +296,7 @@ export default function Header() {
       disable: true,
     },
   ]
+
   const { account } = useActiveWeb3React()
 
   const toggleClaimModal = useToggleSelfClaimModal()
@@ -304,6 +308,7 @@ export default function Header() {
   const [showUniBalanceModal, setShowUniBalanceModal] = useState(false)
   const showClaimPopup = useShowClaimPopup()
   const scrollY = useScrollPosition()
+  const Logo = isDarkMode ? LightLogo : DarkLogo
 
   return (
     <HeaderFrame showBackground={scrollY > 45}>
