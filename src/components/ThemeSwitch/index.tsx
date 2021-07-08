@@ -14,6 +14,7 @@ interface Props extends SwitchProps {
 
 const SwitchWrapper = styled.div`
   position: relative;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   width: 56px;

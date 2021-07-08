@@ -34,17 +34,11 @@ const HeaderFrame = styled.div<{ showBackground: boolean }>`
   width: 370px;
   top: 0;
   position: relative;
-  position: relative;
   background-color: ${({ theme }) => theme.white};
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 1rem 0px;
     grid-template-columns: auto 1fr;
   `};
-
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    padding: 1rem 0px;
-  `}
 `
 
 const HeaderControls = styled.div`
@@ -120,7 +114,7 @@ const HeaderContent = styled.div`
 `
 const HeaderContainer = styled(HeaderContent)`
   height: 100%;
-  padding: 0px;
+  padding: 1rem 0px;
   border-right: 1px solid ${({ theme }) => theme.bg3};
   ${({ theme }) => theme.mediaWidth.upToMedium`
     border-right: 0px;

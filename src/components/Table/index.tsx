@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+import { createStyles, makeStyles } from '@material-ui/core/styles'
 import { t, Trans } from '@lingui/macro'
 import { orderBy as lodashOrderBy, get } from 'lodash'
 import Table from '@material-ui/core/Table'
@@ -127,7 +127,13 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell key={'type'} align={'left'} padding={'none'} sortDirection={false}>
+        <TableCell
+          style={{ borderBottom: `1px solid ${theme.bg3}` }}
+          key={'type'}
+          align={'left'}
+          padding={'none'}
+          sortDirection={false}
+        >
           <Select
             labelId="transaction-typeSelect"
             id="transaction-typeSelect"
@@ -153,7 +159,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
-            style={{ color: `${theme.text4}` }}
+            style={{ color: `${theme.text4}`, borderBottom: `1px solid ${theme.bg3}` }}
             key={headCell.id}
             align={'center'}
             padding={headCell.disablePadding ? 'none' : 'default'}
@@ -191,14 +197,13 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   )
 }
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       width: '100%',
     },
     paper: {
       width: '100%',
-      marginBottom: theme.spacing(2),
     },
     table: {
       minWidth: 750,
@@ -265,6 +270,7 @@ export default function EnhancedTable() {
   }
 
   const totalPages = Math.ceil(tableData.length / rowsPerPage)
+  const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
   return (
     <div className={classes.root}>
       <TablePagination
@@ -328,7 +334,7 @@ export default function EnhancedTable() {
                       key={index}
                       selected={false}
                     >
-                      <TableCell style={{ color: theme.black }} align="left">
+                      <TableCell style={rowCellStyles} align="left">
                         <ExternalLink
                           href={`${BASE_URL}/tx/${'0x47cd9080afdb5fedc61347a022d9c2de0cc12ca4681a45cd4701376e87170eff'}`}
                         >
@@ -338,21 +344,21 @@ export default function EnhancedTable() {
                           </Trans>
                         </ExternalLink>
                       </TableCell>
-                      <TableCell style={{ color: theme.black }} align="center">
+                      <TableCell style={rowCellStyles} align="center">
                         {shortenDecimalValues(row.amountUSD)} USD
                       </TableCell>
-                      <TableCell style={{ color: theme.black }} align="center">
+                      <TableCell style={rowCellStyles} align="center">
                         {shortenDecimalValues(row.amount0)} {row.pair.token0.symbol}
                       </TableCell>
-                      <TableCell style={{ color: theme.black }} align="center">
+                      <TableCell style={rowCellStyles} align="center">
                         {shortenDecimalValues(row.amount1)} {row.pair.token1.symbol}
                       </TableCell>
-                      <TableCell style={{ color: theme.black }} align="center">
+                      <TableCell style={rowCellStyles} align="center">
                         <ExternalLink href={`${BASE_URL}/address/${'0x1Ff482D42D8727258A1686102Fa4ba925C46Bc42'}`}>
                           {shortenAddress('0x1Ff482D42D8727258A1686102Fa4ba925C46Bc42')}
                         </ExternalLink>
                       </TableCell>
-                      <TableCell style={{ color: theme.black }} align="center">
+                      <TableCell style={rowCellStyles} align="center">
                         {formatTimeStamp(`${Number(row.transaction.timestamp) * 1000}`)}
                       </TableCell>
                     </TableRow>
