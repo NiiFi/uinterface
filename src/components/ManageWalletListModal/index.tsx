@@ -68,7 +68,7 @@ const Wrapper = styled.div`
   width: 100%;
 `
 const ListTitle = styled.div`
-  color: ${({ theme }) => theme.text5};
+  color: ${({ theme }) => theme.text4};
   font-size: 1rem;
   margin-top: 1rem;
 `

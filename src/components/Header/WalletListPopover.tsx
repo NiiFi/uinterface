@@ -45,7 +45,7 @@ const MenuFooterButton = styled.div`
 `
 
 const ListTitle = styled.div`
-  color: ${({ theme }) => theme.text5};
+  color: ${({ theme }) => theme.text4};
   font-size: 1rem;
   margin-bottom: 0.625rem;
 `
