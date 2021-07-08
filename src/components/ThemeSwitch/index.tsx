@@ -8,7 +8,7 @@ interface Styles extends Partial<Record<SwitchClassKey, string>> {
 interface Props extends SwitchProps {
   classes: Styles
 }
-const IOSSwitch = withStyles(() =>
+const CustomSwitch = withStyles(() =>
   createStyles({
     root: {
       width: 56,
@@ -64,5 +64,5 @@ export default function ThemeSwitch() {
   const handleChange = useCallback(() => {
     toggleSetDarkMode()
   }, [toggleSetDarkMode])
-  return <IOSSwitch checked={darkMode} onChange={handleChange} name="toggleDarkMode" />
+  return <CustomSwitch checked={darkMode} onChange={handleChange} name="toggleDarkMode" />
 }
