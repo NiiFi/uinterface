@@ -8,6 +8,7 @@ import { Trans } from '@lingui/macro'
 import { RemoveIcon } from '../Icons'
 import { useActiveWeb3React } from '../../hooks/web3'
 import useTheme from 'hooks/useTheme'
+import { UserWalletTypes } from 'state/user/actions'
 import { useUserWallets } from 'state/user/hooks'
 import Modal from '../Modal'
 import { WalletList } from '../Header/WalletList'
@@ -85,15 +86,25 @@ export default function ManageWalletListModal() {
   const walletModalOpen = useModalOpen(ApplicationModal.MANAGE_WALLET_LIST)
   const { account, deactivate } = useActiveWeb3React()
   const toggleWalletModal = useManageWalletListModalToggle()
-  const { removeUserWallet } = useUserWallets()
+  const { removeUserWallet, setUserRecentWallet, userWallets } = useUserWallets()
   const handleItemClicked = useCallback(
     ({ address }: { address: string }) => {
+      let isActive = false
+      const sortedWalletInDescending = Object.keys(userWallets)
+        .filter((value) => userWallets[value].type === UserWalletTypes.CONNECTED && value !== address.toLowerCase())
+        .sort((a, b) => userWallets[a].timestamp - userWallets[b].timestamp)
+        .reverse()
+      const nextRecentWallet = sortedWalletInDescending.length ? sortedWalletInDescending[0] : null
       if (account && account.toLowerCase() === address) {
+        isActive = true
         deactivate()
+      }
+      if ((!account || isActive) && nextRecentWallet) {
+        setUserRecentWallet(nextRecentWallet)
       }
       removeUserWallet({ address })
     },
-    [removeUserWallet, deactivate, account]
+    [removeUserWallet, deactivate, account, setUserRecentWallet, userWallets]
   )
   return (
     <Modal isOpen={walletModalOpen} onDismiss={toggleWalletModal} minHeight={false} maxHeight={90}>

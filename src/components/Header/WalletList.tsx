@@ -14,12 +14,11 @@ const WalletWrapper = styled.div`
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
 
   &:nth-child(1) {
     margin-top: 0;
-    margin-bottom: 0;
   }
   &:last-child {
     margin-bottom: 0;
@@ -153,6 +152,7 @@ export const WalletList = ({
     <WalletListWrapper>
       {activeWallet && (
         <WalletItem
+          key={addresses.length + 1}
           editable
           isRemoving={isRemoving}
           Icon={Icon}
@@ -163,6 +163,8 @@ export const WalletList = ({
       )}
       {addresses
         .filter((address) => userWallets[address].type === type)
+        .sort((a, b) => userWallets[a].timestamp - userWallets[b].timestamp)
+        .reverse()
         .map((address, index) => (
           <WalletItem
             editable

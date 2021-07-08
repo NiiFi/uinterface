@@ -108,11 +108,12 @@ export default function WalletPopover() {
   const { error } = useWeb3React()
   const toggleWalletModal = useWalletModalToggle()
   const toggleManageWalletListModal = useManageWalletListModalToggle()
-  const activeWallet = account
-    ? userWallets[account.toLowerCase()]
-    : userRecentWallet
-    ? userWallets[userRecentWallet.toLowerCase()]
-    : null
+  const activeWallet =
+    account && userWallets[account.toLowerCase()]
+      ? userWallets[account.toLowerCase()]
+      : userRecentWallet && userWallets[userRecentWallet.toLowerCase()]
+      ? userWallets[userRecentWallet.toLowerCase()]
+      : null
 
   useAccountChange()
   const onMenuItemClicked = ({ address }: { address: string }) => {
@@ -142,7 +143,7 @@ export default function WalletPopover() {
       <ControlWrapper ref={anchorRef} open={open} onClick={handleClick}>
         <ControlBody>
           <ControlButton>
-            <WalletItem name={activeWallet.name} address={account as string} />
+            <WalletItem name={activeWallet.name} address={account || userRecentWallet || ''} />
             <ChevronDown />
           </ControlButton>
           <Menu

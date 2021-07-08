@@ -21,6 +21,7 @@ export enum UserWalletTypes {
 export interface UserWallets {
   name: string
   type: UserWalletTypes
+  timestamp: number
 }
 
 export const updateMatchesDarkMode = createAction<{ matchesDarkMode: boolean }>('user/updateMatchesDarkMode')

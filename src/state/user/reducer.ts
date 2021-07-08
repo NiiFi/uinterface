@@ -204,8 +204,11 @@ export default createReducer(initialState, (builder) =>
       if (!state.userWallets[key]) {
         state.userWallets[key] = {
           name: name || `Account ${totalWallets}`,
+          timestamp: Date.now(),
           type,
         }
+      } else {
+        state.userWallets[key].timestamp = Date.now()
       }
     })
     .addCase(updateWallet, (state, { payload: { address, name } }) => {
