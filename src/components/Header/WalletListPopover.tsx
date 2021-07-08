@@ -143,7 +143,11 @@ export default function WalletPopover() {
       <ControlWrapper ref={anchorRef} open={open} onClick={handleClick}>
         <ControlBody>
           <ControlButton>
-            <WalletItem name={activeWallet.name} address={account || userRecentWallet || ''} />
+            <WalletItem
+              style={{ marginBottom: '0px' }}
+              name={activeWallet.name}
+              address={account || userRecentWallet || ''}
+            />
             <ChevronDown />
           </ControlButton>
           <Menu

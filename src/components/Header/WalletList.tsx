@@ -17,7 +17,7 @@ const WalletWrapper = styled.div`
   margin-top: 0.625rem;
   margin-bottom: 0.625rem;
 
-  &:nth-child(1) {
+  &:first-child {
     margin-top: 0;
   }
   &:last-child {
@@ -94,7 +94,9 @@ export const WalletItem = ({
   Icon = <PencilIcon />,
   editable = false,
   isRemoving = false,
+  style = {},
 }: {
+  style?: React.CSSProperties
   editable?: boolean
   isRemoving?: boolean
   name: string
@@ -111,7 +113,7 @@ export const WalletItem = ({
     }
   }
   return (
-    <WalletWrapper>
+    <WalletWrapper style={style}>
       <WalletIconTitleWrapper>
         <IdenticonWrapper>
           <Identicon address={address} />
