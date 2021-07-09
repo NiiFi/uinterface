@@ -70,7 +70,7 @@ const SwapChart = () => {
   `
 
   const ControlWrapper = styled(Wrapper)`
-    border-top: 1px solid ${({ theme }) => theme.bg5}
+    border-top: 1px solid ${({ theme }) => theme.bg5};
     box-sizing: border-box;
     margin: 0;
     padding: 0.4rem 0px;
