@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Trans } from '@lingui/macro'
-import Menu from '@material-ui/core/Menu'
+
 import { ChevronDown, X } from 'react-feather'
 import { Percent } from '@uniswap/sdk-core'
 import styled from 'styled-components'
 import { useSetUserSlippageTolerance, useUserSlippageTolerance } from 'state/user/hooks'
-
+import Menu from '../Menu'
+import useTheme from 'hooks/useTheme'
 const SlippageOption = styled.div`
   display: flex;
   align-items: center;
@@ -34,6 +35,7 @@ const SlippageOption = styled.div`
     text-align: right;
     width: 100%
     border: none;
+    background-color: ${({ theme }) => theme.bg6};
     color: ${({ theme }) => theme.bg4};
     font-size: 1rem;
     &:focus{
@@ -61,7 +63,7 @@ const MenuWrapper = styled.div`
 const MenuTitle = styled.h3`
   font-size: 1rem;
   font-weight: 400;
-  color: ${({ theme }) => theme.text5};
+  color: ${({ theme }) => theme.black};
   margin-bottom: 10px;
   margin-top: 0px;
   width: 100%;
@@ -87,8 +89,8 @@ const ControlWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-top: 1px solid ${({ theme }) => theme.bg5}
-  border-bottom: 1px solid ${({ theme }) => theme.bg5}
+  border-top: 1px solid ${({ theme }) => theme.bg3};
+  border-bottom: 1px solid ${({ theme }) => theme.bg3};
   padding: 0.5rem 0px;
   justify-content: space-between;
   box-sizing: border-box;
@@ -102,22 +104,27 @@ const ControlLabel = styled.h3`
 `
 const ControlBody = styled.div`
   display: flex;
+  z-index: 11;
 `
-const ControlButton = styled.div`
+const ControlButton = styled.div<{ active?: boolean }>`
   display: flex;
   font-size: 1rem;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0px;
-  color: ${({ theme }) => theme.text5};
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: ${({ theme }) => theme.black};
   cursor: pointer;
+  background-color: ${({ active, theme }) => (active ? theme.bg5 : '')};
 `
 
 const TWO_PERCENT = `2.00`
 const THREE_PERCENT = `3.00`
 const DEFAULT_PERCENT = TWO_PERCENT
 export default function Slippage() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const theme = useTheme()
+  const anchorRef = useRef<HTMLDivElement>(null)
+  const [open, setOpen] = React.useState<boolean>(false)
   const userSlippageTolerance = useUserSlippageTolerance()
   const setUserSlippageTolerance = useSetUserSlippageTolerance()
 
@@ -148,8 +155,8 @@ export default function Slippage() {
       return
     }
   }
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    setAnchorEl(event.currentTarget)
+  const handleClick = () => {
+    setOpen(true)
   }
 
   const handelCustomSlippageOnBlur = () => {
@@ -157,7 +164,7 @@ export default function Slippage() {
   }
 
   const handleClose = () => {
-    setAnchorEl(null)
+    setOpen(false)
   }
 
   return (
@@ -166,18 +173,18 @@ export default function Slippage() {
         <Trans>Slippage Tolerance</Trans>
       </ControlLabel>
 
-      <ControlBody>
-        <ControlButton onClick={handleClick}>
+      <ControlBody ref={anchorRef}>
+        <ControlButton onClick={handleClick} active={open}>
           {Number(slippageInput).toFixed(2).replace('.00', '')}% <ChevronDown />
         </ControlButton>
-        <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+        <Menu id="simple-menu" anchorEl={anchorRef.current} open={open} onClose={handleClose}>
           <MenuWrapper>
             <MenuTitleWrapper>
               <MenuTitle>
                 <Trans>Slippage Tolerance</Trans>
               </MenuTitle>
               <MenuClose onClick={handleClose}>
-                <X size={'1rem'} />
+                <X size={'1rem'} color={theme.black} />
               </MenuClose>
             </MenuTitleWrapper>
             <OptionWrapper>
@@ -200,7 +207,7 @@ export default function Slippage() {
                 <Trans>3%</Trans>
               </SlippageOption>
               <SlippageOption
-                style={{ width: '120px' }}
+                style={{ width: '120px', backgroundColor: theme.bg6 }}
                 className={
                   slippageError
                     ? 'has-error'

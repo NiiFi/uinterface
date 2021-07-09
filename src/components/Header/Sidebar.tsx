@@ -4,17 +4,17 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components/macro'
-import LanguageSelect from '../LanguageSelect'
+import LanguageDropdown from '../Dropdowns/LanguageDropdown'
 
-import Logo from '../../assets/images/niifi-logo.png'
-
+import LightLogo from '../../assets/images/niifi-logo-light.png'
+import DarkLogo from '../../assets/images/niifi-logo-dark.png'
+import ThemeSwitch from '../ThemeSwitch'
 import { DashboardIcon, PoolIcon, SwapIcon, LendIcon, DiscoverIcon, FarmIcon } from '../Icons'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { CardNoise } from '../earn/styled'
 import { TYPE } from '../../theme'
 
-import Row, { RowFixed } from '../Row'
-import Web3Status from '../Web3Status'
+import Row, { RowFixed, RowBetween, RowStart } from '../Row'
 import ClaimModal from '../claim/ClaimModal'
 import { useToggleSelfClaimModal, useShowClaimPopup } from '../../state/application/hooks'
 import { useUserHasAvailableClaim } from '../../state/claim/hooks'
@@ -23,6 +23,8 @@ import { Dots } from '../swap/styleds'
 import SocialLinks from '../SocialLinks'
 import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
+import WalletPopover from './WalletListPopover'
+import { useIsDarkMode } from 'state/user/hooks'
 
 const HeaderFrame = styled.div<{ showBackground: boolean }>`
   display: flex;
@@ -32,17 +34,11 @@ const HeaderFrame = styled.div<{ showBackground: boolean }>`
   width: 370px;
   top: 0;
   position: relative;
-  position: relative;
   background-color: ${({ theme }) => theme.white};
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding:  1rem;
     grid-template-columns: auto 1fr;
   `};
-
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    padding: 1rem;
-  `}
 `
 
 const HeaderControls = styled.div`
@@ -50,9 +46,9 @@ const HeaderControls = styled.div`
   flex-direction: row;
   align-items: center;
   justify-self: flex-end;
-  padding: 1rem;
-  border-top: 1px solid ${({ theme }) => theme.bg3}
-    ${({ theme }) => theme.mediaWidth.upToMedium`
+  padding: 0.5rem 1rem 0px 1rem;
+  border-top: 1px solid ${({ theme }) => theme.bg3};
+  ${({ theme }) => theme.mediaWidth.upToMedium`
     width: 100%;
   `};
 `
@@ -74,6 +70,7 @@ const HeaderElement = styled.div`
 
 const HeaderElementWrap = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -88,7 +85,11 @@ const HeaderRow = styled(RowFixed)`
   }
 
   &:nth-child(2) {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+  &:nth-child(2):hover {
+    background-color: ${({ theme }) => theme.bg5};
+    border-radius: 8px;
   }
   ${({ theme }) => theme.mediaWidth.upToMedium`
    width: 100%;
@@ -113,7 +114,7 @@ const HeaderContent = styled.div`
 `
 const HeaderContainer = styled(HeaderContent)`
   height: 100%;
-  padding: 0px;
+  padding: 1rem 0px;
   border-right: 1px solid ${({ theme }) => theme.bg3};
   ${({ theme }) => theme.mediaWidth.upToMedium`
     border-right: 0px;
@@ -123,12 +124,10 @@ const AccountElement = styled.div<{ active: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: ${({ theme, active }) => (!active ? theme.bg1 : theme.bg2)};
   border-radius: 12px;
   white-space: nowrap;
   width: 100%;
   cursor: pointer;
-
   :focus {
     border: 1px solid blue;
   }
@@ -163,7 +162,7 @@ const Title = styled.a`
   pointer-events: auto;
   justify-self: flex-start;
   margin-right: 12px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.white};
   ${({ theme }) => theme.mediaWidth.upToSmall`
     justify-self: center;
   `};
@@ -247,6 +246,7 @@ export const StyledMenuButton = styled.button`
 `
 
 export default function Header() {
+  const isDarkMode = useIsDarkMode()
   const SidebarLinks: Array<{ title: string; id: string; Icon: any; link: string; disable: boolean }> = [
     {
       id: 'discover',
@@ -291,6 +291,7 @@ export default function Header() {
       disable: true,
     },
   ]
+
   const { account } = useActiveWeb3React()
 
   const toggleClaimModal = useToggleSelfClaimModal()
@@ -302,6 +303,7 @@ export default function Header() {
   const [showUniBalanceModal, setShowUniBalanceModal] = useState(false)
   const showClaimPopup = useShowClaimPopup()
   const scrollY = useScrollPosition()
+  const Logo = isDarkMode ? LightLogo : DarkLogo
 
   return (
     <HeaderFrame showBackground={scrollY > 45}>
@@ -320,11 +322,7 @@ export default function Header() {
               </UniIcon>
             </Title>
           </HeaderRow>
-          <HeaderRow>
-            <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
-              <Web3Status />
-            </AccountElement>
-          </HeaderRow>
+          <WalletPopover />
           <HeaderLinks>
             {SidebarLinks.map(({ Icon, link, id, title, disable }, index) => (
               <StyledNavLink id={`${id}-nav-link`} disable={disable} to={link} key={index}>
@@ -354,8 +352,13 @@ export default function Header() {
             )}
           </HeaderElement>
           <HeaderElementWrap>
-            <LanguageSelect />
-            <SocialLinks />
+            <RowBetween style={{ marginBottom: '0.5rem' }}>
+              <LanguageDropdown />
+              <ThemeSwitch />
+            </RowBetween>
+            <RowStart>
+              <SocialLinks />
+            </RowStart>
           </HeaderElementWrap>
         </HeaderControls>
       </HeaderContainer>

@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { useV2LiquidityTokenPermit } from '../../hooks/useERC20Permit'
+import { useLiquidityTokenPermit } from '../../hooks/useERC20Permit'
 import useTransactionDeadline from '../../hooks/useTransactionDeadline'
 import { formatCurrencyAmount } from '../../utils/formatCurrencyAmount'
 import Modal from '../Modal'
@@ -84,7 +84,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
   // approval data for stake
   const deadline = useTransactionDeadline()
   const router = useV2RouterContract()
-  const { signatureData, gatherPermitSignature } = useV2LiquidityTokenPermit(parsedAmountWrapped, router?.address)
+  const { signatureData, gatherPermitSignature } = useLiquidityTokenPermit(parsedAmountWrapped, router?.address)
   const [approval, approveCallback] = useApproveCallback(parsedAmount, stakingInfo.stakingRewardAddress)
 
   const stakingContract = useStakingContract(stakingInfo.stakingRewardAddress)

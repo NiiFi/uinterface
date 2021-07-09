@@ -4,7 +4,7 @@ import JSBI from 'jsbi'
 import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual } from 'react-redux'
-import { V2_FACTORY_ADDRESSES } from '../../constants/addresses'
+import { FACTORY_ADDRESSES } from '../../constants/addresses'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from '../../constants/routing'
 
 import { useActiveWeb3React } from '../../hooks/web3'
@@ -24,6 +24,11 @@ import {
   updateUserSingleHopOnly,
   updateUserSlippageTolerance,
   updateUserLocale,
+  UserWalletTypes,
+  saveNewWallet,
+  removeWallet,
+  setRecentConnectedWallet,
+  updateWallet,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
@@ -260,14 +265,14 @@ export function useURLWarningToggle(): () => void {
  * @param tokenA one of the two tokens
  * @param tokenB the other token
  */
-export function toV2LiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
+export function toLiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
   if (tokenA.chainId !== tokenB.chainId) throw new Error('Not matching chain IDs')
   if (tokenA.equals(tokenB)) throw new Error('Tokens cannot be equal')
-  if (!V2_FACTORY_ADDRESSES[tokenA.chainId]) throw new Error('No V2 factory address on this chain')
+  if (!FACTORY_ADDRESSES[tokenA.chainId]) throw new Error('No V2 factory address on this chain')
 
   return new Token(
     tokenA.chainId,
-    computePairAddress({ factoryAddress: V2_FACTORY_ADDRESSES[tokenA.chainId], tokenA, tokenB }),
+    computePairAddress({ factoryAddress: FACTORY_ADDRESSES[tokenA.chainId], tokenA, tokenB }),
     18,
     'UNI-V2',
     'Uniswap V2'
@@ -339,4 +344,34 @@ export function useTrackedTokenPairs(): [Token, Token][] {
 
     return Object.keys(keyed).map((key) => keyed[key])
   }, [combinedList])
+}
+
+export function useUserWallets() {
+  const { userWallets, userRecentWallet } = useAppSelector((state) => state.user)
+  const dispatch = useAppDispatch()
+  const setUserRecentWallet = useCallback(
+    (address: string) => {
+      dispatch(setRecentConnectedWallet({ address }))
+    },
+    [dispatch]
+  )
+  const addNewUserWallet = useCallback(
+    ({ address, name, type }: { address: string; name?: string; type: UserWalletTypes }) => {
+      dispatch(saveNewWallet({ address, name, type }))
+    },
+    [dispatch]
+  )
+  const updateUserWallet = useCallback(
+    ({ address, name }: { address: string; name: string }) => {
+      dispatch(updateWallet({ address, name }))
+    },
+    [dispatch]
+  )
+  const removeUserWallet = useCallback(
+    ({ address }) => {
+      dispatch(removeWallet({ address }))
+    },
+    [dispatch]
+  )
+  return { userWallets, userRecentWallet, addNewUserWallet, updateUserWallet, setUserRecentWallet, removeUserWallet }
 }

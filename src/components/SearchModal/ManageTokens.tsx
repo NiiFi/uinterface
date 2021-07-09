@@ -144,9 +144,9 @@ export default function ManageTokens({
         </PaddedColumn>
       </Column>
       <Footer>
-        <TYPE.darkGray>
+        <TYPE.link>
           <Trans>Tip: Custom tokens are stored locally in your browser</Trans>
-        </TYPE.darkGray>
+        </TYPE.link>
       </Footer>
     </Wrapper>
   )

@@ -17,6 +17,13 @@ export const BodyWrapper = styled.div<{ margin?: string; padding?: string }>`
 export const BodyWrapperSm = styled(BodyWrapper)`
   max-width: 480px;
 `
+export const BodyWrapperMd = styled(BodyWrapper)`
+  width: 49%;
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    width: 100%;
+  `};
+`
 export const BodyWrapperLg = styled(BodyWrapper)`
   max-width: 100%;
 `
@@ -32,8 +39,10 @@ export default function AppBody({
   margin?: string
   padding?: string
   size?: string
+  style?: React.CSSProperties
 }) {
   if (size === 'sm') return <BodyWrapperSm {...rest}>{children}</BodyWrapperSm>
+  if (size === 'md') return <BodyWrapperMd {...rest}>{children}</BodyWrapperMd>
   if (size === 'lg') return <BodyWrapperLg {...rest}>{children}</BodyWrapperLg>
   return <BodyWrapper {...rest}>{children}</BodyWrapper>
 }

@@ -7,9 +7,8 @@ import { t, Trans } from '@lingui/macro'
 import styled, { css } from 'styled-components'
 import CoinbaseWalletIcon from '../../assets/images/coinbaseWalletIcon.svg'
 import FortmaticIcon from '../../assets/images/fortmaticIcon.png'
-import PortisIcon from '../../assets/images/portisIcon.png'
 import WalletConnectIcon from '../../assets/images/walletConnectIcon.svg'
-import { fortmatic, injected, portis, walletconnect, walletlink } from '../../connectors'
+import { fortmatic, injected, walletconnect, walletlink } from '../../connectors'
 import { NetworkContextName } from '../../constants/misc'
 import useENSName from '../../hooks/useENSName'
 import { useETHBalances } from '../../state/wallet/hooks'
@@ -61,13 +60,13 @@ const Web3StatusError = styled(Web3StatusGeneric)`
 const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
   background-color: ${({ theme }) => theme.primary1};
   border: none;
-  color: ${({ theme }) => theme.white};
+  color: #ffffff;
   font-weight: 500;
 
   :hover,
   :focus {
     border: 1px solid ${({ theme }) => darken(0.05, theme.primary1)};
-    color: ${({ theme }) => theme.white};
+    color: #ffffff;
   }
 
   ${({ faded }) =>
@@ -75,12 +74,12 @@ const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
     css`
       background-color: ${({ theme }) => theme.primary1};
       border: 1px solid ${({ theme }) => theme.primary1};
-      color: ${({ theme }) => theme.white};
+      color: #ffffff;
 
       :hover,
       :focus {
         border: 1px solid ${({ theme }) => darken(0.05, theme.primary1)};
-        color: ${({ theme }) => darken(0.05, theme.white)};
+        color: #ffffff;
       }
     `}
 `
@@ -163,12 +162,6 @@ function StatusIcon({ connector }: { connector: AbstractConnector }) {
     return (
       <IconWrapper size={16}>
         <img src={FortmaticIcon} alt={'Fortmatic'} />
-      </IconWrapper>
-    )
-  } else if (connector === portis) {
-    return (
-      <IconWrapper size={16}>
-        <img src={PortisIcon} alt={'Portis'} />
       </IconWrapper>
     )
   }

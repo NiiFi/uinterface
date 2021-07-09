@@ -3,14 +3,14 @@ import styled from 'styled-components/macro'
 import { ExternalLink } from '../../theme'
 
 const InfoCard = styled.button<{ active?: boolean }>`
-  background-color: ${({ theme, active }) => (active ? theme.bg3 : theme.bg2)};
+  background-color: ${({ theme, active }) => (active ? theme.bg3 : theme.bg0)};
   padding: 1rem;
   outline: none;
   border: 1px solid;
   border-radius: 12px;
   width: 100% !important;
   &:focus {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.primary1};
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.bg3};
   }
   border-color: ${({ theme, active }) => (active ? 'transparent' : theme.bg3)};
 `
@@ -34,7 +34,8 @@ const OptionCardClickable = styled(OptionCard as any)<{ clickable?: boolean }>`
   margin-top: 0;
   &:hover {
     cursor: ${({ clickable }) => (clickable ? 'pointer' : '')};
-    border: ${({ clickable, theme }) => (clickable ? `1px solid ${theme.primary1}` : ``)};
+    background-color: ${({ theme }) => theme.bg5};
+    border: ${({ clickable, theme }) => (clickable ? `1px solid ${theme.bg3}` : ``)};
   }
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 `

@@ -13,7 +13,7 @@ import { currencyId } from '../../utils/currencyId'
 import { Break, CardNoise, CardBGImage } from './styled'
 import { unwrappedToken } from '../../utils/unwrappedToken'
 import { useTotalSupply } from '../../hooks/useTotalSupply'
-import { useV2Pair } from '../../hooks/useV2Pairs'
+import { usePair } from '../../hooks/usePairs'
 import useUSDCPrice from '../../hooks/useUSDCPrice'
 import { BIG_INT_SECONDS_IN_WEEK } from '../../constants/misc'
 import { Trans } from '@lingui/macro'
@@ -85,7 +85,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
   const backgroundColor = useColor(token)
 
   const totalSupplyOfStakingToken = useTotalSupply(stakingInfo.stakedAmount.currency)
-  const [, stakingTokenPair] = useV2Pair(...stakingInfo.tokens)
+  const [, stakingTokenPair] = usePair(...stakingInfo.tokens)
 
   // let returnOverMonth: Percent = new Percent('0')
   let valueOfTotalStakedAmountInWETH: CurrencyAmount<Token> | undefined

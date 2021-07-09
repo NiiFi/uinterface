@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { t } from '@lingui/macro'
 import { ArrowLeft, ArrowRight } from 'react-feather'
+import { Disclaimer } from '../../theme'
 type TableToolBarProps = {
   title: string
   currentPage: number
@@ -22,17 +23,6 @@ const TitleWrapper = styled.div`
   ${({ theme }) => theme.mediaWidth.upToSmall`
     font-size: 1rem;
   `}
-`
-const Disclaimer = styled.div`
-  width: 100%;
-  background-color: #ffffe0;
-  border-radius: 8px;
-  border: 1px solid #f0e68c;
-  font-size: 0.75rem;
-  padding: 10px 20px;
-  > span {
-    font-weight: bold;
-  }
 `
 const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
   display: flex;

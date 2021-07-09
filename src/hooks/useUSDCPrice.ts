@@ -2,7 +2,7 @@ import { Currency, CurrencyAmount, Price, Token } from '@uniswap/sdk-core'
 import { useMemo } from 'react'
 // import { SupportedChainId } from '../constants/chains'
 // import { USDC } from '../constants/tokens'
-import { useV2TradeExactOut } from './useV2Trade'
+import { useTradeExactOut } from './useTrade'
 import { useActiveWeb3React } from './web3'
 
 // Stablecoin amounts used when calculating spot price for a given currency.
@@ -21,7 +21,7 @@ export default function useUSDCPrice(currency?: Currency): Price<Currency, Token
   const amountOut = chainId ? STABLECOIN_AMOUNT_OUT[chainId] : undefined
   const stablecoin = amountOut?.currency
 
-  const v2USDCTrade = useV2TradeExactOut(currency, amountOut, {
+  const USDCTrade = useTradeExactOut(currency, amountOut, {
     maxHops: 2,
   })
 
@@ -36,13 +36,13 @@ export default function useUSDCPrice(currency?: Currency): Price<Currency, Token
     }
 
     // use v2 price if available, v3 as fallback
-    if (v2USDCTrade) {
-      const { numerator, denominator } = v2USDCTrade.route.midPrice
+    if (USDCTrade) {
+      const { numerator, denominator } = USDCTrade.route.midPrice
       return new Price(currency, stablecoin, denominator, numerator)
     }
 
     return undefined
-  }, [currency, stablecoin, v2USDCTrade]) // , v3USDCTrade.trade
+  }, [currency, stablecoin, USDCTrade])
 }
 
 export function useUSDCValue(currencyAmount: CurrencyAmount<Currency> | undefined | null) {
