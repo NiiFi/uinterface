@@ -164,7 +164,6 @@ msgid "Active"
 msgstr "Activ"
 
 #: src/components/PositionCard/index.tsx
-#: src/components/Table/index.tsx
 msgid "Add"
 msgstr "Adăugare"
 
@@ -210,11 +209,15 @@ msgstr "Adăugat {0}"
 msgid "Address has no available claim"
 msgstr "Adresa nu are nici o cerere disponibilă"
 
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Adds"
+msgstr ""
+
 #: src/pages/Vote/VotePage.tsx
 msgid "Against"
 msgstr "Împotriva"
 
-#: src/components/Table/index.tsx
+#: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
 msgstr ""
 
@@ -1245,7 +1248,6 @@ msgstr "Tranzacții recente"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/components/Table/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr "Elimină"
@@ -1278,6 +1280,10 @@ msgstr "Elimină {0} {1} și {2} {3}"
 #: 
 #~ msgid "Remove {0}/{1} V3 liquidity"
 #~ msgstr "Șterge {0}/{1} V3 lichidități"
+
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Removes"
+msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Removing {0} {1} and {2} {3}"
@@ -1397,7 +1403,6 @@ msgstr "Furnizare {0} {1} și {2} {3}"
 #: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
-#: src/components/Table/index.tsx
 #: src/components/swap/SwapHeader.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1414,6 +1419,10 @@ msgstr "Schimbă oricum"
 #: src/components/swap/ConfirmSwapModal.tsx
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "Schimbarea {0} {1} cu {2} {3}"
+
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Swaps"
+msgstr ""
 
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
@@ -1589,6 +1598,11 @@ msgstr "Sunt necesare jetoane UNI-V2. Odată ce ai adăugat lichiditate în reze
 #: src/pages/Earn/Manage.tsx
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
+
+#: src/components/Dropdowns/CurrencyDropdown.tsx
+#: src/components/Dropdowns/CurrencyDropdown.tsx
+msgid "USD"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -1985,6 +1999,10 @@ msgstr "prin {0} listă de jetoane"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {Importați jetonul} other {Importați jetoane}}"
+
+#: src/components/Dropdowns/LanguageDropdown.tsx
+msgid "{0}"
+msgstr ""
 
 #: src/components/PositionCard/index.tsx
 #: src/pages/Vote/VotePage.tsx

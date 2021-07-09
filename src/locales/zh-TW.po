@@ -164,7 +164,6 @@ msgid "Active"
 msgstr "已激活"
 
 #: src/components/PositionCard/index.tsx
-#: src/components/Table/index.tsx
 msgid "Add"
 msgstr "新增"
 
@@ -210,11 +209,15 @@ msgstr "已添加 {0}"
 msgid "Address has no available claim"
 msgstr "地址沒有可领取的代幣"
 
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Adds"
+msgstr ""
+
 #: src/pages/Vote/VotePage.tsx
 msgid "Against"
 msgstr "反對"
 
-#: src/components/Table/index.tsx
+#: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
 msgstr ""
 
@@ -1245,7 +1248,6 @@ msgstr "最近交易"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/components/Table/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr "去除"
@@ -1278,6 +1280,10 @@ msgstr "去除 {0} {1} 和 {2} {3}"
 #: 
 #~ msgid "Remove {0}/{1} V3 liquidity"
 #~ msgstr "去除 {0}/{1} V3 流動資金"
+
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Removes"
+msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Removing {0} {1} and {2} {3}"
@@ -1397,7 +1403,6 @@ msgstr "供應 {0} {1} 和 {2} {3}"
 #: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
-#: src/components/Table/index.tsx
 #: src/components/swap/SwapHeader.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1414,6 +1419,10 @@ msgstr "仍要兌換"
 #: src/components/swap/ConfirmSwapModal.tsx
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "將 {0} {1} 兌換為 {2} {3}"
+
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Swaps"
+msgstr ""
 
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
@@ -1589,6 +1598,11 @@ msgstr "需要 UNI-V2 流動池代幣。一旦您已註入流動資金到 {0}-{1
 #: src/pages/Earn/Manage.tsx
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
+
+#: src/components/Dropdowns/CurrencyDropdown.tsx
+#: src/components/Dropdowns/CurrencyDropdown.tsx
+msgid "USD"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -1985,6 +1999,10 @@ msgstr "從 {0} 代幣列表"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {導入代幣} other {導入代幣}}"
+
+#: src/components/Dropdowns/LanguageDropdown.tsx
+msgid "{0}"
+msgstr ""
 
 #: src/components/PositionCard/index.tsx
 #: src/pages/Vote/VotePage.tsx

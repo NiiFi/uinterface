@@ -164,7 +164,6 @@ msgid "Active"
 msgstr "アクティブ"
 
 #: src/components/PositionCard/index.tsx
-#: src/components/Table/index.tsx
 msgid "Add"
 msgstr "追加"
 
@@ -210,11 +209,15 @@ msgstr "{0} を追加"
 msgid "Address has no available claim"
 msgstr "請求可能なアドレスではありません"
 
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Adds"
+msgstr ""
+
 #: src/pages/Vote/VotePage.tsx
 msgid "Against"
 msgstr "反対"
 
-#: src/components/Table/index.tsx
+#: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
 msgstr ""
 
@@ -1245,7 +1248,6 @@ msgstr "最近の取引"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/components/Table/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr "削除"
@@ -1278,6 +1280,10 @@ msgstr "{0} {1} と {2} {3} を削除"
 #: 
 #~ msgid "Remove {0}/{1} V3 liquidity"
 #~ msgstr "{0}/{1} V3流動性を削除"
+
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Removes"
+msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Removing {0} {1} and {2} {3}"
@@ -1397,7 +1403,6 @@ msgstr "{0} {1} と {2} {3} を追加中"
 #: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
-#: src/components/Table/index.tsx
 #: src/components/swap/SwapHeader.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1414,6 +1419,10 @@ msgstr "とにかくスワップする"
 #: src/components/swap/ConfirmSwapModal.tsx
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "{0} {1} を {2} {3} にスワップ中"
+
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Swaps"
+msgstr ""
 
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
@@ -1589,6 +1598,11 @@ msgstr "UNI-V2 LP トークンが必要です。 {0}-{1} プールに流動性�
 #: src/pages/Earn/Manage.tsx
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
+
+#: src/components/Dropdowns/CurrencyDropdown.tsx
+#: src/components/Dropdowns/CurrencyDropdown.tsx
+msgid "USD"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -1985,6 +1999,10 @@ msgstr "{0} トークンリスト経由"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {トークンをインポート} other {トークンをインポート}}"
+
+#: src/components/Dropdowns/LanguageDropdown.tsx
+msgid "{0}"
+msgstr ""
 
 #: src/components/PositionCard/index.tsx
 #: src/pages/Vote/VotePage.tsx
