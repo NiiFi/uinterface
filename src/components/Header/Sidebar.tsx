@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components/macro'
-import LanguageSelect from '../LanguageSelect'
+import LanguageDropdown from '../Dropdowns/LanguageDropdown'
 
 import LightLogo from '../../assets/images/niifi-logo-light.png'
 import DarkLogo from '../../assets/images/niifi-logo-dark.png'
@@ -353,7 +353,7 @@ export default function Header() {
           </HeaderElement>
           <HeaderElementWrap>
             <RowBetween style={{ marginBottom: '0.5rem' }}>
-              <LanguageSelect />
+              <LanguageDropdown />
               <ThemeSwitch />
             </RowBetween>
             <RowStart>

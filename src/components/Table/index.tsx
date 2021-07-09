@@ -10,8 +10,6 @@ import TableHead from '@material-ui/core/TableHead'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
-import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
 import useTheme from 'hooks/useTheme'
 import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 import { ExternalLink } from '../../theme'
@@ -19,7 +17,7 @@ import TableToolBar from './TableToolbar'
 import { shortenAddress, shortenDecimalValues, formatTimeStamp } from '../../utils'
 import { TransactionListQuery, TransactionTableData, Swap, Burn, Mint, TransactionTypes } from './types'
 import { SampleResponse } from './sample-response'
-
+import SwapTableDropdown from '../Dropdowns/SwapTableDropdown'
 const BASE_URL = 'https://ropsten.etherscan.io'
 
 function mapSwapResponseToTableData(swaps: Array<Swap>): Array<TransactionTableData> {
@@ -134,28 +132,12 @@ function EnhancedTableHead(props: EnhancedTableProps) {
           padding={'none'}
           sortDirection={false}
         >
-          <Select
-            labelId="transaction-typeSelect"
-            id="transaction-typeSelect"
-            value={transactionType}
-            style={{ color: theme.primary1 }}
-            onChange={(e: any) => {
-              onTransactionTypeChange(e.target.value)
+          <SwapTableDropdown
+            selectedItem={transactionType}
+            onItemSelect={(value: string) => {
+              onTransactionTypeChange(value)
             }}
-          >
-            <MenuItem value={'All'}>
-              <Trans>All</Trans>
-            </MenuItem>
-            <MenuItem value={'Swap'}>
-              <Trans>Swap</Trans>
-            </MenuItem>
-            <MenuItem value={'Mint'}>
-              <Trans>Add</Trans>
-            </MenuItem>
-            <MenuItem value={'Burn'}>
-              <Trans>Remove</Trans>
-            </MenuItem>
-          </Select>
+          />
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
