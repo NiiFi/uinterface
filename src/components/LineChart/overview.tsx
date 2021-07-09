@@ -19,13 +19,13 @@ const OverviewChart = () => {
     if (!time && lineChartData) {
       setTime(lineChartData[lineChartData.length - 1].time)
     }
-  }, [time])
+  }, [time, lineChartData])
 
   useEffect(() => {
     if (!amount && lineChartData) {
       setAmount(lineChartData[lineChartData.length - 1].value1)
     }
-  }, [amount])
+  }, [amount, lineChartData])
 
   return (
     <>
