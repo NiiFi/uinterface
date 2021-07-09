@@ -37,12 +37,13 @@ const SwapChart = () => {
         onClick={handleChartPeriod}
         width="32px"
         padding="6px"
-        margin="11px"
+        margin="12px"
         style={{
           display: 'inline',
           fontSize: '12px',
           color: currentChartPeriod === value ? theme.primary1 : theme.text2,
           borderColor: currentChartPeriod === value ? theme.primary1 : theme.bg4,
+          marginRight: '0px',
         }}
       >
         <Trans>{text}</Trans>
@@ -112,7 +113,7 @@ const SwapChart = () => {
       </ControlWrapper>
       <LineChart
         data={lineChartData}
-        minHeight={160}
+        minHeight={158}
         color={theme.orange1}
         value1={liquidityHover}
         setValue1={setLiquidityHover}
