@@ -82,7 +82,6 @@ const ArrowContainer = styled.div`
 const CurrencySelectWrapper = styled.div`
   display: flex;
   padding: 6px;
-  border-bottom: 1px solid ${({ theme }) => theme.bg3};
   ${({ theme }) => theme.mediaWidth.upToSmall`
   display: none
   `}
@@ -367,6 +366,7 @@ export default function Swap({ history }: RouteComponentProps) {
         position="static"
         style={{
           boxShadow: 'none',
+          borderBottom: `1px solid ${theme.bg3}`,
           backgroundColor: theme.bg0,
           display: 'flex',
           flexDirection: 'row',

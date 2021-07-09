@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   display: none;
   ${({ theme }) => theme.mediaWidth.upToMedium`
     display: flex
-    border-bottom: 1px solid ${({ theme }) => theme.bg3}
   `};
 `
 const StyledButtonEmpty = styled(ButtonEmpty)`
