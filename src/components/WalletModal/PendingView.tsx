@@ -4,7 +4,6 @@ import styled from 'styled-components/macro'
 import { SUPPORTED_WALLETS } from '../../constants/wallet'
 import Option from './Option'
 import { injected } from '../../connectors'
-import { darken } from 'polished'
 import Loader from '../Loader'
 import { Trans } from '@lingui/macro'
 
@@ -28,8 +27,8 @@ const LoadingMessage = styled.div<{ error?: boolean }>`
   justify-content: flex-start;
   border-radius: 12px;
   margin-bottom: 20px;
-  color: ${({ theme, error }) => (error ? theme.red1 : 'inherit')};
-  border: 1px solid ${({ theme, error }) => (error ? theme.red1 : theme.text4)};
+  color: ${({ theme, error }) => (error ? theme.error : 'inherit')};
+  border: 1px solid ${({ theme, error }) => (error ? theme.error : theme.bg3)};
 
   & > * {
     padding: 1rem;
@@ -45,8 +44,8 @@ const ErrorGroup = styled.div`
 const ErrorButton = styled.div`
   border-radius: 8px;
   font-size: 12px;
-  color: ${({ theme }) => theme.text1};
-  background-color: ${({ theme }) => theme.bg4};
+  color: ${({ theme }) => theme.primary1};
+  background-color: ${({ theme }) => theme.bg5};
   margin-left: 1rem;
   padding: 0.5rem;
   font-weight: 600;
@@ -54,7 +53,6 @@ const ErrorButton = styled.div`
 
   &:hover {
     cursor: pointer;
-    background-color: ${({ theme }) => darken(0.1, theme.text4)};
   }
 `
 

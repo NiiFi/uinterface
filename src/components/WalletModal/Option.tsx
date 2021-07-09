@@ -34,6 +34,7 @@ const OptionCardClickable = styled(OptionCard as any)<{ clickable?: boolean }>`
   margin-top: 0;
   &:hover {
     cursor: ${({ clickable }) => (clickable ? 'pointer' : '')};
+    background-color: ${({ theme }) => theme.bg5};
     border: ${({ clickable, theme }) => (clickable ? `1px solid ${theme.bg3}` : ``)};
   }
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
