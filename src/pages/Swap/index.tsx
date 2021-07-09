@@ -1,7 +1,5 @@
 import { Trans, t } from '@lingui/macro'
 import AppBar from '@material-ui/core/AppBar'
-import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
 
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import Table from '../../components/Table'
@@ -31,7 +29,7 @@ import confirmPriceImpactWithoutFee from '../../components/swap/confirmPriceImpa
 import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import Slippage from '../../components/swap/Slippage'
-
+import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
 import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper, BodyScroller } from '../../components/swap/styleds'
 import TradePrice from '../../components/swap/TradePrice'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
@@ -80,6 +78,8 @@ const ArrowContainer = styled.div`
 `
 const CurrencySelectWrapper = styled.div`
   display: flex;
+  padding: 6px;
+  border-bottom: 1px solid ${({ theme }) => theme.bg3};
   ${({ theme }) => theme.mediaWidth.upToSmall`
   display: none
   `}
@@ -367,6 +367,7 @@ export default function Swap({ history }: RouteComponentProps) {
           backgroundColor: theme.bg0,
           display: 'flex',
           flexDirection: 'row',
+          alignItems: 'center',
           justifyContent: 'space-between',
         }}
       >
@@ -376,16 +377,7 @@ export default function Swap({ history }: RouteComponentProps) {
           <Tab key={`tab-1`} label={t`Overview`} />
         </Tabs>
         <CurrencySelectWrapper>
-          <Select
-            style={{ color: theme.text4 }}
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={'usd'}
-            onChange={() => console.log('running')}
-          >
-            <MenuItem value={'usd'}>USD</MenuItem>
-            {/* <MenuItem value={'euro'}>EUR</MenuItem> */}
-          </Select>
+          <CurrencyDropdown />
         </CurrencySelectWrapper>
       </AppBar>
       <BodyScroller>

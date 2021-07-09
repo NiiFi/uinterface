@@ -55,7 +55,14 @@ export default function LanguageDropdown() {
   )
   return (
     <LanguageWrapper>
-      <MenuButton ref={elementRef} active={open} onClick={handleClick}>
+      <MenuButton
+        ref={elementRef}
+        active={open}
+        onClick={(e) => {
+          e.stopPropagation()
+          handleClick()
+        }}
+      >
         <LanguageIcon />
         <Trans>{currentLocale.split('-')[0].toUpperCase()}</Trans>
       </MenuButton>

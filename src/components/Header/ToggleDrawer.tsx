@@ -12,15 +12,18 @@ const Wrapper = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.bg3}
   `};
 `
+const StyledButtonEmpty = styled(ButtonEmpty)`
+  padding: 13px;
+`
 export default function ToggleDrawer() {
   const theme = useTheme()
   const { showDrawer, setDrawerToggle } = useToggleDrawer()
 
   return (
     <Wrapper>
-      <ButtonEmpty onClick={() => setDrawerToggle(!showDrawer)}>
+      <StyledButtonEmpty onClick={() => setDrawerToggle(!showDrawer)}>
         <Menu color={theme.black} />
-      </ButtonEmpty>
+      </StyledButtonEmpty>
     </Wrapper>
   )
 }
