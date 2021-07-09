@@ -19,7 +19,7 @@ const HeaderRow = styled.div`
     margin: 0;
     margin-top: 8px;
     font-size: 0.75rem;
-    color: ${({ theme }) => theme.text5};
+    color: ${({ theme }) => theme.text4};
   }
 `
 
@@ -119,6 +119,7 @@ const Input = styled.input`
   width: 100%;
   border-radius: 0.5rem;
   color: ${({ theme }) => theme.bg4};
+  background-color: ${({ theme }) => theme.bg6};
   font-size: 1rem;
   &:focus {
     outline-width: 0 !important;

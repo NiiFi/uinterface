@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import { useToggleDrawer } from 'state/application/hooks'
 import { ButtonEmpty } from '../Button'
 import { Menu } from 'react-feather'
+import useTheme from 'hooks/useTheme'
 
 const Wrapper = styled.div`
   display: none;
@@ -11,14 +12,18 @@ const Wrapper = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.bg3}
   `};
 `
+const StyledButtonEmpty = styled(ButtonEmpty)`
+  padding: 13px;
+`
 export default function ToggleDrawer() {
+  const theme = useTheme()
   const { showDrawer, setDrawerToggle } = useToggleDrawer()
 
   return (
     <Wrapper>
-      <ButtonEmpty onClick={() => setDrawerToggle(!showDrawer)}>
-        <Menu color="black" />
-      </ButtonEmpty>
+      <StyledButtonEmpty onClick={() => setDrawerToggle(!showDrawer)}>
+        <Menu color={theme.black} />
+      </StyledButtonEmpty>
     </Wrapper>
   )
 }
