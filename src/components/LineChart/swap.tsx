@@ -1,12 +1,11 @@
 import React, { useState, useContext, useMemo } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
-import Select from '@material-ui/core/Select'
-import MenuItem from '@material-ui/core/MenuItem'
 import LineChart from './index'
 import getLineChartData from './data'
 import { TYPE } from '../../theme'
 import { ButtonOutlined } from '../Button'
+import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
 
 const CustomButton = ({
   value,
@@ -53,8 +52,8 @@ const SwapChart = () => {
     return getLineChartData(currentChartPeriod)
   }, [currentChartPeriod])
 
-  const handleChartType = (e: React.ChangeEvent<any>): void => {
-    setCurrentChartValue(e.target.value)
+  const handleChartType = (e: string): void => {
+    setCurrentChartValue(e)
   }
 
   const handleChartPeriod = (e: React.ChangeEvent<any>): void => {
@@ -71,7 +70,7 @@ const SwapChart = () => {
   `
 
   const ControlWrapper = styled(Wrapper)`
-    border-top: 1px solid ${({ theme }) => theme.bg5}
+    border-top: 1px solid ${({ theme }) => theme.bg5};
     box-sizing: border-box;
     margin: 0;
     padding: 0.4rem 0px;
@@ -104,17 +103,7 @@ const SwapChart = () => {
         <TYPE.black>{feesHover ? `${feesHover} ${realCurrency}` : '-'}</TYPE.black>
       </Wrapper>
       <ControlWrapper>
-        <Select value={currentChartValue} onChange={handleChartType} disableUnderline>
-          <MenuItem value={'value1'}>
-            <Trans>Liquidity</Trans>
-          </MenuItem>
-          <MenuItem value={'value2'}>
-            <Trans>Volume</Trans>
-          </MenuItem>
-          <MenuItem value={'value3'}>
-            <Trans>Fees</Trans>
-          </MenuItem>
-        </Select>
+        <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
         <TYPE.main>
           <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
           <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
@@ -135,7 +124,7 @@ const SwapChart = () => {
         dateFormat={dateFormat}
         XAxisTickGap={100}
         YAxisTick={{ fontSize: 14 }}
-        style={{ flexDirection: 'column' }}
+        style={{ flexDirection: 'column', marginTop: '0.5rem' }}
       />
     </>
   )

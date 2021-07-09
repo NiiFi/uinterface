@@ -680,6 +680,10 @@ msgstr "Avvis"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Ikke se en av dine v2 posisjoner? <0>Importer den.</0>"
 
+#: src/components/LineChart/swap.tsx
+msgid "ETH-ANY Pair Stats (Dummy data)"
+msgstr ""
+
 #: 
 #~ msgid "ETH-NII Transactions"
 #~ msgstr ""
@@ -760,6 +764,11 @@ msgstr ""
 #: 
 #~ msgid "Fee Tier"
 #~ msgstr "Gebyr Nivå"
+
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/swap.tsx
+msgid "Fees"
+msgstr ""
 
 #: src/pages/Vote/VotePage.tsx
 msgid "For"
@@ -893,6 +902,8 @@ msgstr "Ugyldig mottaker"
 msgid "Lend"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/swap.tsx
 #: src/components/claim/ClaimModal.tsx
 msgid "Liquidity"
 msgstr "Liquidity"
@@ -1309,12 +1320,15 @@ msgstr "Søk navn eller lim inn adresse"
 #~ msgid "Select Pool"
 #~ msgstr "Velg samling"
 
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "Select a Token"
+msgstr ""
+
 #: 
 #~ msgid "Select a pool type based on your preferred liquidity provider fee."
 #~ msgstr "Velg en pooltype basert på den foretrukne likviditetsleverandøren."
 
 #: src/components/CurrencyInputPanel/index.tsx
-#: src/components/SearchModal/CurrencySearch.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/state/swap/hooks.ts
@@ -1424,6 +1438,10 @@ msgstr "Bytte {0} {1} mot {2} {3}"
 msgid "Swaps"
 msgstr ""
 
+#: src/components/LineChart/overview.tsx
+msgid "TVL"
+msgstr ""
+
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Takk for at du er en del av Uniswap-fellesskapet <0 />"
@@ -1473,6 +1491,7 @@ msgid "These tokens are commonly paired with other tokens."
 msgstr "Tokene er ofte sammenkoblet med andre tokener."
 
 #: src/components/Table/TableToolbar.tsx
+#: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
 
@@ -1727,6 +1746,15 @@ msgstr "Vis på Explorer"
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Se transaksjonen på Explorer"
+
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/swap.tsx
+msgid "Volume"
+msgstr ""
+
+#: src/components/BarChart/overview.tsx
+msgid "Volume 24H"
+msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "Vote"
@@ -2001,6 +2029,7 @@ msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {Importer token} other {Importer tokens}}"
 
 #: src/components/Dropdowns/LanguageDropdown.tsx
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 msgid "{0}"
 msgstr ""
 
@@ -2136,6 +2165,10 @@ msgstr ""
 #: 
 #~ msgid "{percentForSlider}%"
 #~ msgstr "{percentForSlider}%"
+
+#: src/components/LineChart/swap.tsx
+msgid "{text}"
+msgstr ""
 
 #: src/components/Header/Sidebar.tsx
 msgid "{title}"

@@ -680,6 +680,10 @@ msgstr "Renunţaţi"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Nu vezi una dintre pozițiile tale v2? <0>Importă-l.</0>"
 
+#: src/components/LineChart/swap.tsx
+msgid "ETH-ANY Pair Stats (Dummy data)"
+msgstr ""
+
 #: 
 #~ msgid "ETH-NII Transactions"
 #~ msgstr ""
@@ -760,6 +764,11 @@ msgstr ""
 #: 
 #~ msgid "Fee Tier"
 #~ msgstr "Nivelul Taxei"
+
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/swap.tsx
+msgid "Fees"
+msgstr ""
 
 #: src/pages/Vote/VotePage.tsx
 msgid "For"
@@ -893,6 +902,8 @@ msgstr "Destinatar nevalid"
 msgid "Lend"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/swap.tsx
 #: src/components/claim/ClaimModal.tsx
 msgid "Liquidity"
 msgstr "Lichiditate"
@@ -1309,12 +1320,15 @@ msgstr "Caută nume sau lipește adresa"
 #~ msgid "Select Pool"
 #~ msgstr "Selectare grup"
 
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "Select a Token"
+msgstr ""
+
 #: 
 #~ msgid "Select a pool type based on your preferred liquidity provider fee."
 #~ msgstr "Selectați un tip de grup pe baza taxei dvs. preferate de furnizor de lichidități."
 
 #: src/components/CurrencyInputPanel/index.tsx
-#: src/components/SearchModal/CurrencySearch.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/state/swap/hooks.ts
@@ -1424,6 +1438,10 @@ msgstr "Schimbarea {0} {1} cu {2} {3}"
 msgid "Swaps"
 msgstr ""
 
+#: src/components/LineChart/overview.tsx
+msgid "TVL"
+msgstr ""
+
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Vă mulțumim că faceți parte din comunitatea Uniswap <0 />"
@@ -1473,6 +1491,7 @@ msgid "These tokens are commonly paired with other tokens."
 msgstr "Aceste jetoane sunt de obicei asociate cu alte jetoane."
 
 #: src/components/Table/TableToolbar.tsx
+#: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
 
@@ -1727,6 +1746,15 @@ msgstr "Vizualizați pe Explorer"
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Vizualizați tranzacția în Explorer"
+
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/swap.tsx
+msgid "Volume"
+msgstr ""
+
+#: src/components/BarChart/overview.tsx
+msgid "Volume 24H"
+msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "Vote"
@@ -2001,6 +2029,7 @@ msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {Importați jetonul} other {Importați jetoane}}"
 
 #: src/components/Dropdowns/LanguageDropdown.tsx
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 msgid "{0}"
 msgstr ""
 
@@ -2136,6 +2165,10 @@ msgstr ""
 #: 
 #~ msgid "{percentForSlider}%"
 #~ msgstr "{percentForSlider}%"
+
+#: src/components/LineChart/swap.tsx
+msgid "{text}"
+msgstr ""
 
 #: src/components/Header/Sidebar.tsx
 msgid "{title}"

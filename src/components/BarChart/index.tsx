@@ -94,7 +94,7 @@ const Chart = ({
             tickFormatter={(time) => dayjs(time).format('DD')}
             minTickGap={10}
             tick={{ fontSize: 14 }}
-            stroke={theme.text4}
+            stroke={theme.text6}
           />
           <Tooltip
             cursor={{ fill: theme.bg2 }}

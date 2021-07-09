@@ -89,8 +89,8 @@ const ControlWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-top: 1px solid ${({ theme }) => theme.bg3}
-  border-bottom: 1px solid ${({ theme }) => theme.bg3}
+  border-top: 1px solid ${({ theme }) => theme.bg3};
+  border-bottom: 1px solid ${({ theme }) => theme.bg3};
   padding: 0.5rem 0px;
   justify-content: space-between;
   box-sizing: border-box;

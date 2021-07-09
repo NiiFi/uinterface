@@ -680,6 +680,10 @@ msgstr "Απόρριψη"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Μην βλέπετε μία από τις v2 θέσεις σας? <0>Εισαγωγή της.</0>"
 
+#: src/components/LineChart/swap.tsx
+msgid "ETH-ANY Pair Stats (Dummy data)"
+msgstr ""
+
 #: 
 #~ msgid "ETH-NII Transactions"
 #~ msgstr ""
@@ -760,6 +764,11 @@ msgstr ""
 #: 
 #~ msgid "Fee Tier"
 #~ msgstr "Βαθμίδα Αμοιβής"
+
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/swap.tsx
+msgid "Fees"
+msgstr ""
 
 #: src/pages/Vote/VotePage.tsx
 msgid "For"
@@ -893,6 +902,8 @@ msgstr "Μη έγκυρος παραλήπτης"
 msgid "Lend"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/swap.tsx
 #: src/components/claim/ClaimModal.tsx
 msgid "Liquidity"
 msgstr "Ταχύτητα"
@@ -1309,12 +1320,15 @@ msgstr "Αναζήτηση ονόματος ή επικόλλησης διεύθ
 #~ msgid "Select Pool"
 #~ msgstr "Επιλογή Πισίνας"
 
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "Select a Token"
+msgstr ""
+
 #: 
 #~ msgid "Select a pool type based on your preferred liquidity provider fee."
 #~ msgstr "Επιλέξτε έναν τύπο πισίνας με βάση την προτιμώμενη χρέωση παρόχου ρευστότητας."
 
 #: src/components/CurrencyInputPanel/index.tsx
-#: src/components/SearchModal/CurrencySearch.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/pages/PoolFinder/index.tsx
 #: src/state/swap/hooks.ts
@@ -1424,6 +1438,10 @@ msgstr "Ανταλλαγή {0} {1} για {2} {3}"
 msgid "Swaps"
 msgstr ""
 
+#: src/components/LineChart/overview.tsx
+msgid "TVL"
+msgstr ""
+
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Σας ευχαριστούμε που συμμετείχατε στην κοινότητα Uniswap <0 />"
@@ -1473,6 +1491,7 @@ msgid "These tokens are commonly paired with other tokens."
 msgstr "Αυτά τα νομίσματα είναι συνήθως σε συνδυασμό με άλλα νομίσματα."
 
 #: src/components/Table/TableToolbar.tsx
+#: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
 
@@ -1727,6 +1746,15 @@ msgstr "Προβολή στον Explorer"
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Προβολή συναλλαγής στον Explorer"
+
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/swap.tsx
+msgid "Volume"
+msgstr ""
+
+#: src/components/BarChart/overview.tsx
+msgid "Volume 24H"
+msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "Vote"
@@ -2001,6 +2029,7 @@ msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {Εισαγωγή διακριτικού} other {Εισαγωγή διακριτικών}}"
 
 #: src/components/Dropdowns/LanguageDropdown.tsx
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 msgid "{0}"
 msgstr ""
 
@@ -2136,6 +2165,10 @@ msgstr ""
 #: 
 #~ msgid "{percentForSlider}%"
 #~ msgstr "{percentForSlider}%"
+
+#: src/components/LineChart/swap.tsx
+msgid "{text}"
+msgstr ""
 
 #: src/components/Header/Sidebar.tsx
 msgid "{title}"
