@@ -8,6 +8,38 @@ import getLineChartData from './data'
 import { TYPE } from '../../theme'
 import { ButtonOutlined } from '../Button'
 
+const CustomButton = ({
+  value,
+  text,
+  current,
+  onClick,
+}: {
+  value: string
+  text: string
+  current: string
+  onClick: (e: React.ChangeEvent<any>) => void
+}) => {
+  const theme = useContext(ThemeContext)
+  return (
+    <ButtonOutlined
+      value={value}
+      onClick={onClick}
+      width="32px"
+      padding="6px"
+      margin="12px"
+      style={{
+        display: 'inline',
+        fontSize: '12px',
+        color: current === value ? theme.primary1 : theme.text2,
+        borderColor: current === value ? theme.primary1 : theme.bg4,
+        marginRight: '0px',
+      }}
+    >
+      <Trans>{text}</Trans>
+    </ButtonOutlined>
+  )
+}
+
 const SwapChart = () => {
   const theme = useContext(ThemeContext)
   const [liquidityHover, setLiquidityHover] = useState<number | undefined>()
@@ -27,28 +59,6 @@ const SwapChart = () => {
 
   const handleChartPeriod = (e: React.ChangeEvent<any>): void => {
     setCurrentChartPeriod(e.target.value)
-  }
-
-  // FIXME: should be used better approach
-  const CustomButton = ({ value, text }: { value: string; text: string }) => {
-    return (
-      <ButtonOutlined
-        value={value}
-        onClick={handleChartPeriod}
-        width="32px"
-        padding="6px"
-        margin="12px"
-        style={{
-          display: 'inline',
-          fontSize: '12px',
-          color: currentChartPeriod === value ? theme.primary1 : theme.text2,
-          borderColor: currentChartPeriod === value ? theme.primary1 : theme.bg4,
-          marginRight: '0px',
-        }}
-      >
-        <Trans>{text}</Trans>
-      </ButtonOutlined>
-    )
   }
 
   const Wrapper = styled.div`
@@ -106,9 +116,9 @@ const SwapChart = () => {
           </MenuItem>
         </Select>
         <TYPE.main>
-          <CustomButton value="week" text="1W" />
-          <CustomButton value="month" text="1M" />
-          <CustomButton value="all" text="All" />
+          <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
+          <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
+          <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
         </TYPE.main>
       </ControlWrapper>
       <LineChart

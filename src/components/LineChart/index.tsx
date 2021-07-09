@@ -139,7 +139,7 @@ const LineChart = ({
               if (setLabel && label !== formattedTime) setLabel(formattedTime)
             }}
           />
-          <Area dataKey={currentValue} type="monotone" stroke={color} fill="url(#gradient)" strokeWidth={2} />
+          <Area dataKey={currentValue} type="monotone" stroke={color} fill="#ffffff" fillOpacity={0} strokeWidth={2} />
         </AreaChart>
       </ResponsiveContainer>
       <RowBetween>
