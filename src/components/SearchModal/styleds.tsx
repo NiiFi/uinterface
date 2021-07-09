@@ -69,7 +69,7 @@ export const MenuItem = styled(RowBetween)`
   cursor: ${({ disabled }) => !disabled && 'pointer'};
   pointer-events: ${({ disabled }) => disabled && 'none'};
   :hover {
-    background-color: ${({ theme, disabled }) => !disabled && theme.bg2};
+    background-color: ${({ theme, disabled }) => !disabled && theme.bg5};
   }
   opacity: ${({ disabled, selected }) => (disabled || selected ? 0.5 : 1)};
 `
@@ -81,19 +81,19 @@ export const SearchInput = styled.input`
   align-items: center;
   width: 100%;
   white-space: nowrap;
-  background: none;
+  background-color: ${({ theme }) => theme.bg6};
   border: none;
   outline: none;
-  border-radius: 20px;
-  color: ${({ theme }) => theme.text1};
+  border-radius: 6px;
+  color: ${({ theme }) => theme.text6};
   border-style: solid;
-  border: 1px solid ${({ theme }) => theme.bg3};
+  border: 1px solid ${({ theme }) => theme.text6};
   -webkit-appearance: none;
 
   font-size: 18px;
 
   ::placeholder {
-    color: ${({ theme }) => theme.text3};
+    color: ${({ theme }) => theme.text6};
   }
   transition: border 100ms;
   :focus {

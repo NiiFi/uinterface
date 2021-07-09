@@ -30,7 +30,7 @@ const ToggleOption = styled.div<{ active?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 16px;
   font-weight: 600;
   background-color: ${({ theme, active }) => (active ? theme.bg1 : theme.bg3)};
   color: ${({ theme, active }) => (active ? theme.text1 : theme.text2)};

@@ -33,12 +33,9 @@ const ContentWrapper = styled(Column)`
 
 const Footer = styled.div`
   width: 100%;
-  border-radius: 20px;
   padding: 20px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  background-color: ${({ theme }) => theme.bg1};
-  border-top: 1px solid ${({ theme }) => theme.bg2};
+  background-color: ${({ theme }) => theme.bg0};
+  border-top: 1px solid ${({ theme }) => theme.bg3};
 `
 
 interface CurrencySearchProps {
@@ -172,7 +169,7 @@ export function CurrencySearch({
       <PaddedColumn gap="16px">
         <RowBetween>
           <Text fontWeight={500} fontSize={16}>
-            <Trans>Select a token</Trans>
+            <Trans>Select a Token</Trans>
           </Text>
           <CloseIcon onClick={onDismiss} />
         </RowBetween>
@@ -226,10 +223,10 @@ export function CurrencySearch({
         <Row justify="center">
           <ButtonText onClick={showManageView} color={theme.blue1} className="list-token-manage-button">
             <RowFixed>
-              <IconWrapper size="16px" marginRight="6px">
+              <IconWrapper stroke={theme.primary1} size="16px" marginRight="6px">
                 <Edit />
               </IconWrapper>
-              <TYPE.main color={theme.blue1}>
+              <TYPE.main color={theme.primary1}>
                 <Trans>Manage Token Lists</Trans>
               </TYPE.main>
             </RowFixed>
