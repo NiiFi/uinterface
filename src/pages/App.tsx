@@ -19,7 +19,7 @@ import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 const AppWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  background-color: ${({ theme }) => theme.white};
+  background-color: ${({ theme }) => theme.bg6};
 `
 
 const BodyWrapper = styled.div`
@@ -32,7 +32,6 @@ const BodyWrapper = styled.div`
   flex: 1;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 5px;
     width: 100vw;
   `};
 `
@@ -70,12 +69,6 @@ const HeaderWrapperBackDrop = styled.div`
     }
   `}
 `
-const Marginer = styled.div`
-  margin-top: 5rem;
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    margin-top: 0.5rem;
-  `}
-`
 
 function TopLevelModals() {
   const open = useModalOpen(ApplicationModal.ADDRESS_CLAIM)
@@ -108,7 +101,6 @@ export default function App() {
               <Route component={RedirectPathToSwapOnly} />
             </Switch>
           </Web3ReactManager>
-          <Marginer />
         </BodyWrapper>
       </AppWrapper>
     </ErrorBoundary>

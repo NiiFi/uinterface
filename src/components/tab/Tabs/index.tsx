@@ -1,20 +1,19 @@
 import React from 'react'
-import { withStyles } from '@material-ui/core/styles'
-import Tabs from '@material-ui/core/Tabs'
-import { colors } from '../../../theme'
+import { makeStyles } from '@material-ui/core/styles'
+import MuiTabs, { TabsProps } from '@material-ui/core/Tabs'
+import useTheme from 'hooks/useTheme'
 
-interface StyledTabsProps {
-  value: number
-  onChange: (event: React.ChangeEvent<any>, newValue: number) => void
+export default function Tabs(props: TabsProps) {
+  const theme = useTheme()
+  const useStyles = makeStyles({
+    root: {
+      borderBottom: `1px solid ${theme.bg3}`,
+      flex: 1,
+      minHeight: '40px',
+    },
+    indicator: {
+      backgroundColor: 'transparent',
+    },
+  })
+  return <MuiTabs {...props} classes={useStyles()} />
 }
-
-export default withStyles({
-  root: {
-    borderBottom: `1px solid ${colors(false).bg3}`,
-    flex: 1,
-    minHeight: '40px',
-  },
-  indicator: {
-    backgroundColor: 'transparent',
-  },
-})((props: StyledTabsProps) => <Tabs {...props} />)

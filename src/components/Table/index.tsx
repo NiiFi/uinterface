@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+import { createStyles, makeStyles } from '@material-ui/core/styles'
 import { t, Trans } from '@lingui/macro'
 import { orderBy as lodashOrderBy, get } from 'lodash'
 import Table from '@material-ui/core/Table'
@@ -10,8 +10,6 @@ import TableHead from '@material-ui/core/TableHead'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
-import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
 import useTheme from 'hooks/useTheme'
 import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 import { ExternalLink } from '../../theme'
@@ -19,7 +17,7 @@ import TableToolBar from './TableToolbar'
 import { shortenAddress, shortenDecimalValues, formatTimeStamp } from '../../utils'
 import { TransactionListQuery, TransactionTableData, Swap, Burn, Mint, TransactionTypes } from './types'
 import { SampleResponse } from './sample-response'
-
+import SwapTableDropdown from '../Dropdowns/SwapTableDropdown'
 const BASE_URL = 'https://ropsten.etherscan.io'
 
 function mapSwapResponseToTableData(swaps: Array<Swap>): Array<TransactionTableData> {
@@ -127,31 +125,23 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell key={'type'} align={'left'} padding={'none'} sortDirection={false}>
-          <Select
-            labelId="transaction-typeSelect"
-            id="transaction-typeSelect"
-            value={transactionType}
-            onChange={(e: any) => {
-              onTransactionTypeChange(e.target.value)
+        <TableCell
+          style={{ borderBottom: `1px solid ${theme.bg3}` }}
+          key={'type'}
+          align={'left'}
+          padding={'none'}
+          sortDirection={false}
+        >
+          <SwapTableDropdown
+            selectedItem={transactionType}
+            onItemSelect={(value: string) => {
+              onTransactionTypeChange(value)
             }}
-          >
-            <MenuItem value={'All'}>
-              <Trans>All</Trans>
-            </MenuItem>
-            <MenuItem value={'Swap'}>
-              <Trans>Swap</Trans>
-            </MenuItem>
-            <MenuItem value={'Mint'}>
-              <Trans>Add</Trans>
-            </MenuItem>
-            <MenuItem value={'Burn'}>
-              <Trans>Remove</Trans>
-            </MenuItem>
-          </Select>
+          />
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
+            style={{ color: `${theme.text4}`, borderBottom: `1px solid ${theme.bg3}` }}
             key={headCell.id}
             align={'center'}
             padding={headCell.disablePadding ? 'none' : 'default'}
@@ -189,14 +179,13 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   )
 }
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       width: '100%',
     },
     paper: {
       width: '100%',
-      marginBottom: theme.spacing(2),
     },
     table: {
       minWidth: 750,
@@ -217,6 +206,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function EnhancedTable() {
   const classes = useStyles()
+  const theme = useTheme()
   const [tableData, setTableData] = React.useState<Array<TransactionTableData>>([])
   const [transactionType, setTransactionType] = React.useState<TransactionTypes>('All')
   const [order, setOrder] = React.useState<Order>('asc')
@@ -262,6 +252,7 @@ export default function EnhancedTable() {
   }
 
   const totalPages = Math.ceil(tableData.length / rowsPerPage)
+  const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
   return (
     <div className={classes.root}>
       <TablePagination
@@ -325,7 +316,7 @@ export default function EnhancedTable() {
                       key={index}
                       selected={false}
                     >
-                      <TableCell align="left">
+                      <TableCell style={rowCellStyles} align="left">
                         <ExternalLink
                           href={`${BASE_URL}/tx/${'0x47cd9080afdb5fedc61347a022d9c2de0cc12ca4681a45cd4701376e87170eff'}`}
                         >
@@ -335,19 +326,21 @@ export default function EnhancedTable() {
                           </Trans>
                         </ExternalLink>
                       </TableCell>
-                      <TableCell align="center">{shortenDecimalValues(row.amountUSD)} USD</TableCell>
-                      <TableCell align="center">
+                      <TableCell style={rowCellStyles} align="center">
+                        {shortenDecimalValues(row.amountUSD)} USD
+                      </TableCell>
+                      <TableCell style={rowCellStyles} align="center">
                         {shortenDecimalValues(row.amount0)} {row.pair.token0.symbol}
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell style={rowCellStyles} align="center">
                         {shortenDecimalValues(row.amount1)} {row.pair.token1.symbol}
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell style={rowCellStyles} align="center">
                         <ExternalLink href={`${BASE_URL}/address/${'0x1Ff482D42D8727258A1686102Fa4ba925C46Bc42'}`}>
                           {shortenAddress('0x1Ff482D42D8727258A1686102Fa4ba925C46Bc42')}
                         </ExternalLink>
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell style={rowCellStyles} align="center">
                         {formatTimeStamp(`${Number(row.transaction.timestamp) * 1000}`)}
                       </TableCell>
                     </TableRow>

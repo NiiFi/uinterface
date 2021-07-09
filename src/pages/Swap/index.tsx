@@ -1,7 +1,5 @@
 import { Trans, t } from '@lingui/macro'
 import AppBar from '@material-ui/core/AppBar'
-import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
 
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import Table from '../../components/Table'
@@ -31,7 +29,7 @@ import confirmPriceImpactWithoutFee from '../../components/swap/confirmPriceImpa
 import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import Slippage from '../../components/swap/Slippage'
-
+import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
 import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper, BodyScroller } from '../../components/swap/styleds'
 import TradePrice from '../../components/swap/TradePrice'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
@@ -74,12 +72,14 @@ const StyledInfo = styled(Info)`
 const ArrowContainer = styled.div`
   width: 100%;
   height: 1px;
-  margin: 0px 0px;
+  margin: 1rem 0px;
   position: relative;
   background-color: ${({ theme }) => theme.bg5};
 `
 const CurrencySelectWrapper = styled.div`
   display: flex;
+  padding: 6px;
+  border-bottom: 1px solid ${({ theme }) => theme.bg3};
   ${({ theme }) => theme.mediaWidth.upToSmall`
   display: none
   `}
@@ -351,7 +351,7 @@ export default function Swap({ history }: RouteComponentProps) {
   const swapIsUnsupported = useIsSwapUnsupported(currencies?.INPUT, currencies?.OUTPUT)
 
   const priceImpactTooHigh = priceImpactSeverity > 3 && !isExpertMode
-
+  const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
   return (
     <>
       <TokenWarningModal
@@ -364,27 +364,20 @@ export default function Swap({ history }: RouteComponentProps) {
         position="static"
         style={{
           boxShadow: 'none',
-          backgroundColor: 'white',
+          backgroundColor: theme.bg0,
           display: 'flex',
           flexDirection: 'row',
+          alignItems: 'center',
           justifyContent: 'space-between',
         }}
       >
         <ToggleDrawer />
-        <Tabs value={activeTab} onChange={(e, newValue: number) => setActiveTab(newValue)}>
+        <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={t`Swap`} />
           <Tab key={`tab-1`} label={t`Overview`} />
         </Tabs>
         <CurrencySelectWrapper>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={'usd'}
-            onChange={() => console.log('running')}
-          >
-            <MenuItem value={'usd'}>USD</MenuItem>
-            {/* <MenuItem value={'euro'}>EUR</MenuItem> */}
-          </Select>
+          <CurrencyDropdown />
         </CurrencySelectWrapper>
       </AppBar>
       <BodyScroller>

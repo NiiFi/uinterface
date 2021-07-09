@@ -40,31 +40,32 @@ const black = '#000000'
 export function colors(darkMode: boolean): Colors {
   return {
     // base
-    white,
-    black,
+    white: darkMode ? 'rgba(6, 34, 32, 1)' : white,
+    black: darkMode ? white : black,
 
     // text
     text1: darkMode ? '#FFFFFF' : 'rgba(12, 68, 63, 1)',
     text2: darkMode ? '#C3C5CB' : 'rgba(12, 68, 63, 0.38)',
     text3: darkMode ? '#6C7284' : '#888D9B',
-    text4: darkMode ? '#565A69' : '#C3C5CB',
-    text5: darkMode ? '#2C2F36' : 'rgba(12, 68, 63, 0.6)',
+    text4: darkMode ? 'rgba(255, 255, 255, 0.6)' : '#0C443F',
+    text5: darkMode ? '#2C2F36' : '#0C443F',
+    text6: darkMode ? 'rgba(255, 255, 255, 0.38)' : 'rgba(12, 68, 63, 0.38)',
 
     // backgrounds / greys
-    bg0: darkMode ? '#191B1F' : '#FFF',
+    bg0: darkMode ? 'rgba(6, 34, 32, 1)' : '#FFF',
     bg1: darkMode ? '#212429' : '#F7F8FA',
     bg2: darkMode ? '#2C2F36' : '#EDEEF2',
-    bg3: darkMode ? '#40444F' : '#C9F0ED',
+    bg3: darkMode ? 'rgba(20, 60, 56, 1)' : '#C9F0ED',
     bg4: darkMode ? '#565A69' : 'rgba(12, 68, 63, 0.6)',
-    bg5: darkMode ? '#6C7284' : '#E4F7F5',
-    bg6: darkMode ? '#1A2028' : '#6C7284',
+    bg5: darkMode ? 'rgba(9, 53, 49, 1)' : 'rgba(228, 247, 245, 1)',
+    bg6: darkMode ? 'rgba(5, 26, 24, 1)' : white,
 
     //specialty colors
     modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
     advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
 
     //primary colors
-    primary1: darkMode ? '#2172E5' : '#9871F9',
+    primary1: '#9871F9',
     primary2: darkMode ? '#3680E7' : '#FF8CC3',
     primary3: darkMode ? '#4D8FEA' : '#FF99C9',
     primary4: darkMode ? '#376bad70' : '#F6DDE8',

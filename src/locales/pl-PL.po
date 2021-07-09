@@ -164,7 +164,6 @@ msgid "Active"
 msgstr "Aktywne"
 
 #: src/components/PositionCard/index.tsx
-#: src/components/Table/index.tsx
 msgid "Add"
 msgstr "Dodaj"
 
@@ -210,11 +209,15 @@ msgstr "Dodano {0}"
 msgid "Address has no available claim"
 msgstr "Adres nie posiada dostępnych włości"
 
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Adds"
+msgstr ""
+
 #: src/pages/Vote/VotePage.tsx
 msgid "Against"
 msgstr "Przeciwko"
 
-#: src/components/Table/index.tsx
+#: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
 msgstr ""
 
@@ -1245,7 +1248,6 @@ msgstr "Ostatnie transakcje"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/components/Table/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr "Usuń"
@@ -1278,6 +1280,10 @@ msgstr "Usuń {0} {1} i {2} {3}"
 #: 
 #~ msgid "Remove {0}/{1} V3 liquidity"
 #~ msgstr "Usuń płynność {0}/{1} V3"
+
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Removes"
+msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Removing {0} {1} and {2} {3}"
@@ -1397,7 +1403,6 @@ msgstr "Zapewnianie {0} {1} i {2} {3}"
 #: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
-#: src/components/Table/index.tsx
 #: src/components/swap/SwapHeader.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1414,6 +1419,10 @@ msgstr "Zamień mimo to"
 #: src/components/swap/ConfirmSwapModal.tsx
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr "Zamiana {0} {1} na {2} {3}"
+
+#: src/components/Dropdowns/SwapTableDropdown.tsx
+msgid "Swaps"
+msgstr ""
 
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
@@ -1589,6 +1598,11 @@ msgstr "Żetony UNI-V2 LP są wymagane. Po dodaniu płynności do puli {0}-{1} m
 #: src/pages/Earn/Manage.tsx
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
+
+#: src/components/Dropdowns/CurrencyDropdown.tsx
+#: src/components/Dropdowns/CurrencyDropdown.tsx
+msgid "USD"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -1985,6 +1999,10 @@ msgstr "przez {0} listy tokenów"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {Importuj token} other {Importuj tokeny}}"
+
+#: src/components/Dropdowns/LanguageDropdown.tsx
+msgid "{0}"
+msgstr ""
 
 #: src/components/PositionCard/index.tsx
 #: src/pages/Vote/VotePage.tsx

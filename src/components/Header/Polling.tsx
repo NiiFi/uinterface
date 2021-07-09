@@ -8,6 +8,7 @@ import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 
 const StyledPolling = styled.div`
   position: fixed;
+  opacity: 0;
   display: flex;
   align-items: center;
   right: 0;

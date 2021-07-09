@@ -148,6 +148,7 @@ export function ArrowDownIcon({ width = 24, height = 24, color = 'currentColor',
     </svg>
   )
 }
+
 export function ArrowUpIcon(props: IconProps) {
   return <ArrowDownIcon {...props} style={{ transform: 'rotate(180deg)' }} />
 }
@@ -208,4 +209,30 @@ export function LinkIcon({ width = 18, height = 20, color = 'currentColor', ...r
 
 export function RemoveIcon(props: RAIconProps) {
   return <MinusCircle {...props} style={{ transform: 'rotate(90deg)' }} />
+}
+
+export function DarkModeIcon({ width = 32, height = 25, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path
+        d="M28.7 14.3C28.8995 13.5685 28.9995 12.8018 29 12C28.9999 11.1843 28.8999 10.4009 28.7 9.65001C28.5715 10.9638 28.0382 12.0971 27.1 13.05L27.05 13.1C27.0076 13.1559 26.9576 13.2059 26.9 13.25C25.7755 14.2474 24.4755 14.7474 23 14.75C21.4202 14.7521 20.0869 14.2021 19 13.1C17.8652 11.9606 17.2986 10.5939 17.3 9.00001C17.3022 7.44585 17.8522 6.12918 18.95 5.05001C18.9655 5.05014 18.9822 5.03348 19 5.00001C19.9621 4.00157 21.1121 3.43491 22.45 3.30001C21.6781 3.09936 20.8615 2.99936 20 3.00001C19.2908 2.99897 18.6074 3.06564 17.95 3.20001C16.3483 3.57553 14.9317 4.3922 13.7 5.65001L13.65 5.70001C11.8798 7.42684 10.9965 9.52684 11 12C10.9982 14.4705 11.8815 16.5871 13.65 18.35H13.7C15.4276 20.1164 17.5276 20.9998 20 21C22.4731 20.9983 24.5897 20.115 26.35 18.35C27.5427 17.1604 28.3261 15.8104 28.7 14.3ZM15.1 7.10001C15.2917 6.91694 15.475 6.73361 15.65 6.55001C15.4159 7.32371 15.2992 8.14038 15.3 9.00001C15.3014 11.1395 16.0681 12.9728 17.6 14.5H17.55C19.0297 15.9978 20.8464 16.7478 23 16.75C23.8705 16.7512 24.6871 16.6179 25.45 16.35C25.3042 16.5619 25.1375 16.7619 24.95 16.95C23.577 18.3184 21.927 19.0017 20 19C18.0841 19.0001 16.4508 18.3168 15.1 16.95V16.9C13.7018 15.5513 13.0018 13.918 13 12C13.0034 10.0848 13.7034 8.45144 15.1 7.10001Z"
+        fill={color}
+        fillOpacity="1"
+      />
+    </svg>
+  )
+}
+
+export function LightModeIcon({ width = 24, height = 24, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <circle cx="12" cy="12" r="5" stroke={color} strokeOpacity="1" strokeWidth="2" />
+      <path
+        d="M11.9646 1V4.22287M11.9646 19.7061V22.9289M22.9289 11.9645H19.7061M4.22287 11.9645H1M19.7176 4.21151L17.4387 6.49042M6.49041 17.4387L4.21149 19.7176M19.7176 19.7175L17.4387 17.4386M6.49041 6.49036L4.21149 4.21145"
+        stroke={color}
+        strokeOpacity="1"
+        strokeWidth="2"
+      />
+    </svg>
+  )
 }

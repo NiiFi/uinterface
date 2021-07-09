@@ -30,6 +30,7 @@ const Disclaimer = styled.div`
   border: 1px solid #f0e68c;
   font-size: 0.75rem;
   padding: 10px 20px;
+  color: black;
   > span {
     font-weight: bold;
   }
