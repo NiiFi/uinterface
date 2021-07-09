@@ -35,14 +35,14 @@ const SwapChart = () => {
       <ButtonOutlined
         value={value}
         onClick={handleChartPeriod}
-        width="19%"
+        width="32px"
         padding="6px"
         margin="11px"
         style={{
           display: 'inline',
           fontSize: '12px',
           color: currentChartPeriod === value ? theme.primary1 : theme.text2,
-          borderColor: currentChartPeriod === value ? theme.primary1 : theme.bg2,
+          borderColor: currentChartPeriod === value ? theme.primary1 : theme.bg4,
         }}
       >
         <Trans>{text}</Trans>

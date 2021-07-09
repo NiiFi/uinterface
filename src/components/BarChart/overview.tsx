@@ -39,7 +39,7 @@ const OverviewChart = () => {
         setValue={setAmount}
         label={time}
         setLabel={setTime}
-        style={{ marginTop: '30px' }}
+        style={{ padding: 0, marginTop: '30px' }}
       />
     </>
   )
