@@ -39,6 +39,7 @@ export default function AppBody({
   margin?: string
   padding?: string
   size?: string
+  style?: React.CSSProperties
 }) {
   if (size === 'sm') return <BodyWrapperSm {...rest}>{children}</BodyWrapperSm>
   if (size === 'md') return <BodyWrapperMd {...rest}>{children}</BodyWrapperMd>

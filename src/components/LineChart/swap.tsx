@@ -124,7 +124,7 @@ const SwapChart = () => {
         dateFormat={dateFormat}
         XAxisTickGap={100}
         YAxisTick={{ fontSize: 14 }}
-        style={{ flexDirection: 'column' }}
+        style={{ flexDirection: 'column', marginTop: '0.5rem' }}
       />
     </>
   )

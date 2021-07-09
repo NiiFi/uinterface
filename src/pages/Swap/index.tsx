@@ -390,7 +390,7 @@ export default function Swap({ history }: RouteComponentProps) {
           </TabPanelHeading>
           <AutoColumn>
             <ResponsiveRow>
-              <AppBody size="md">
+              <AppBody size="md" style={{ minHeight: '400px' }}>
                 <Wrapper id="swap-page">
                   <ConfirmSwapModal
                     isOpen={showConfirm}
@@ -647,7 +647,7 @@ export default function Swap({ history }: RouteComponentProps) {
                   </AutoColumn>
                 </Wrapper>
               </AppBody>
-              <AppBody size="md">
+              <AppBody size="md" style={{ minHeight: '400px' }}>
                 <Wrapper>
                   <SwapChart />
                 </Wrapper>
