@@ -21,7 +21,7 @@ export default memo(function SwapRoute({ trade }: { trade: Trade<Currency, Curre
                 {currency.symbol}
               </TYPE.black>
             </Flex>
-            <ChevronRight size={14} color={theme.text2} />
+            {tokenPath.length - 1 !== i && <ChevronRight size={14} color={theme.text2} />}
           </Fragment>
         )
       })}
