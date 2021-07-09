@@ -206,6 +206,7 @@ a {
 export const Disclaimer = styled.div`
   width: 100%;
   background-color: #ffffe0;
+  color: black;
   border-radius: 8px;
   border: 1px solid #f0e68c;
   font-size: 0.75rem;
