@@ -1,17 +1,18 @@
 {
-  "name": "Nahmii Token List",
+  "name": "NiiFi Default List",
+  "timestamp": "2021-07-10T11:13:37.105Z",
   "version": {
     "major": 0,
     "minor": 1,
     "patch": 0
   },
+  "tags": {},
+  "logoURI": "",
   "keywords": [
     "nahmii",
     "tokens",
     "trusted"
   ],
-  "logoURI": "",
-  "timestamp": "2021-07-01T14:15:22+0000",
   "tokens": [
     {
       "name": "Niifi EURO",
