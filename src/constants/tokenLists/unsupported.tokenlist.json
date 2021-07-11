@@ -1,0 +1,17 @@
+{
+  "name": "Unsupported Tokens",
+  "timestamp": "2021-07-10T11:05:37.105Z",
+  "version": {
+    "major": 0,
+    "minor": 1,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "",
+  "keywords": [
+    "niifi",
+    "tokens",
+    "unsupported"
+  ],
+  "tokens": []
+}
