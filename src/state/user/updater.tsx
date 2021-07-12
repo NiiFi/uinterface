@@ -13,7 +13,7 @@ export default function Updater(): null {
     }
 
     const match = window?.matchMedia('(prefers-color-scheme: dark)')
-    dispatch(updateMatchesDarkMode({ matchesDarkMode: false }))
+    dispatch(updateMatchesDarkMode({ matchesDarkMode: match.matches }))
 
     if (match?.addListener) {
       match?.addListener(darkHandler)
