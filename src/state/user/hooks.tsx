@@ -373,5 +373,12 @@ export function useUserWallets() {
     },
     [dispatch]
   )
-  return { userWallets, userRecentWallet, addNewUserWallet, updateUserWallet, setUserRecentWallet, removeUserWallet }
+  return {
+    userWallets: userWallets || {},
+    userRecentWallet,
+    addNewUserWallet,
+    updateUserWallet,
+    setUserRecentWallet,
+    removeUserWallet,
+  }
 }

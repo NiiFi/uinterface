@@ -1,0 +1,34 @@
+{
+  "name": "NiiFi Default List",
+  "timestamp": "2021-07-10T11:13:37.105Z",
+  "version": {
+    "major": 0,
+    "minor": 1,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "",
+  "keywords": [
+    "nahmii",
+    "tokens",
+    "trusted"
+  ],
+  "tokens": [
+    {
+      "name": "Niifi EURO",
+      "chainId": 3,
+      "symbol": "NEURO",
+      "decimals": 18,
+      "address": "0x01D8755f8ea44d90F8f2d6458153853c84abbf32",
+      "logoURI": ""
+    },
+    {
+      "name": "Niifi USD",
+      "chainId": 3,
+      "symbol": "NUSD",
+      "decimals": 18,
+      "address": "0x11CA3411F42A7F6c8ca3a1ef5f8045893FF0BBa5",
+      "logoURI": ""
+    }
+  ]
+}
