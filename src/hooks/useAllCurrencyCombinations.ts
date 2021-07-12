@@ -1,5 +1,5 @@
 import { Currency, Token } from '@uniswap/sdk-core'
-import flatMap from 'lodash.flatmap'
+import { flatMap } from 'lodash'
 import { useMemo } from 'react'
 import { ADDITIONAL_BASES, BASES_TO_CHECK_TRADES_AGAINST, CUSTOM_BASES } from '../constants/routing'
 import { useActiveWeb3React } from './web3'
