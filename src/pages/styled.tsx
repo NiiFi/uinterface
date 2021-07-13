@@ -6,7 +6,7 @@ export const StandardPageWrapper = styled.div`
 `
 export const BodyPanel = styled.div`
   box-sizing: border-box;
-  padding: 2rem 2rem 0px 2rem;
+  padding: 2rem;
   width: 100%;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`

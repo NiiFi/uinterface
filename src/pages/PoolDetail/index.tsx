@@ -12,18 +12,29 @@ import { AutoColumn } from 'components/Column'
 import { ResponsiveRow } from 'components/Row'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
+import { TYPE } from 'theme'
+import CurrencyAvatar from 'components/CurrencyAvatar'
+import { TextItemWrapper, TextValue, TextLabel } from './styled'
+import TokenDetails, { MainCurrency } from './TokenDetails'
 
 const TokenStatsWrapper = styled(BodyWrapper)`
   flex: 2;
+  padding: 2rem;
   ${({ theme }) => theme.mediaWidth.upToMedium`
     width: 100%;
   `};
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding: 1rem;
+  `}
 `
 const ROISimulatorWrapper = styled(BodyWrapper)`
   flex: 1;
+  padding: 2rem;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     width: 100%;
-  `};
+    padding: 1rem;
+  `}
 `
 const RowColumn = styled.div`
   display: flex;
@@ -62,6 +73,31 @@ const Wrapper = styled.div`
   width: 100%;
   gap: 2rem;
 `
+const PoolDetailAppBodyWrap = styled(AppBody)`
+  padding: 2rem;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding: 1rem;
+  `}
+`
+const PoolCardRowColumn = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2rem;
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    flex-direction: column;
+  `}
+`
+const PoolCardItem = styled(AutoColumn)<{ borderRight?: boolean; flex?: string }>`
+  flex: ${({ flex }) => (flex ? flex : '')};
+  border-right: ${({ theme, borderRight }) => (borderRight ? `1px solid ${theme.bg3}` : '')};
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    flex: 1;
+    border-right: none;
+  `}
+`
 export default function PoolDetails({
   match: {
     params: { token0, token1 },
@@ -91,18 +127,64 @@ export default function PoolDetails({
           <Wrapper>
             <AutoColumn>
               <ResponsiveRow>
-                <AppBody size="lg">
-                  <PoolDetailChart />
-                </AppBody>
+                <PoolDetailAppBodyWrap size="lg">
+                  <PoolCardRowColumn>
+                    <PoolCardItem flex={'1'} borderRight style={{ width: '100%' }}>
+                      <TYPE.mediumHeaderEllipsis>
+                        {`${token0}-${token1} `}
+                        <Trans> Pair Stats</Trans>
+                      </TYPE.mediumHeaderEllipsis>
+                      <TextItemWrapper>
+                        <TextLabel>
+                          <Trans>Liquidity</Trans>
+                        </TextLabel>
+                        <TextValue>768.867 {MainCurrency}</TextValue>
+                      </TextItemWrapper>
+                      <TextItemWrapper>
+                        <TextLabel>
+                          <Trans>Volume</Trans>
+                        </TextLabel>
+                        <TextValue>677.430 {MainCurrency}</TextValue>
+                      </TextItemWrapper>
+                      <TextItemWrapper>
+                        <TextLabel>
+                          <Trans>Fees</Trans>
+                        </TextLabel>
+                        <TextValue>2.032 {MainCurrency}</TextValue>
+                      </TextItemWrapper>
+                    </PoolCardItem>
+                    <PoolCardItem flex={'2'} style={{ width: '100%' }}>
+                      <PoolDetailChart />
+                    </PoolCardItem>
+                  </PoolCardRowColumn>
+                </PoolDetailAppBodyWrap>
               </ResponsiveRow>
             </AutoColumn>
             <AutoColumn>
               <RowColumn>
                 <TokenStatsWrapper>
-                  <h1>Token Stats Wrapper</h1>
+                  <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
+                    <Trans>Token Stats</Trans>
+                  </TYPE.mediumHeaderEllipsis>
+                  <PoolCardRowColumn>
+                    <PoolCardItem flex={'1'} borderRight style={{ width: '100%' }}>
+                      <CurrencyAvatar
+                        symbol={'ETH'}
+                        containerStyle={{ padding: '0.3125rem' }}
+                        rootStyle={{ marginBottom: '1rem' }}
+                      />
+                      <TokenDetails />
+                    </PoolCardItem>
+                    <PoolCardItem flex={'1'} style={{ width: '100%' }}>
+                      <CurrencyAvatar symbol={'NII'} rootStyle={{ marginBottom: '1rem' }} />
+                      <TokenDetails />
+                    </PoolCardItem>
+                  </PoolCardRowColumn>
                 </TokenStatsWrapper>
                 <ROISimulatorWrapper>
-                  <h1>ROI Wrapper</h1>
+                  <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
+                    <Trans>ROI Simulator</Trans>
+                  </TYPE.mediumHeaderEllipsis>
                 </ROISimulatorWrapper>
               </RowColumn>
             </AutoColumn>
