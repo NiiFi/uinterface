@@ -1,7 +1,7 @@
 import { Percent, Token } from '@uniswap/sdk-core'
 import { computePairAddress, Pair } from '@uniswap/v2-sdk'
 import JSBI from 'jsbi'
-import flatMap from 'lodash.flatmap'
+import { flatMap } from 'lodash'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual } from 'react-redux'
 import { FACTORY_ADDRESSES } from '../../constants/addresses'
