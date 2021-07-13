@@ -15,6 +15,7 @@ import PoolDetailChart from 'components/LineChart/PoolDetail'
 import { TYPE } from 'theme'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TokenDetails from './TokenDetails'
+import ROISimulator from './ROISimulator'
 
 const TokenStatsWrapper = styled(BodyWrapper)`
   flex: 2;
@@ -163,6 +164,7 @@ export default function PoolDetails({
                   <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
                     <Trans>ROI Simulator</Trans>
                   </TYPE.mediumHeaderEllipsis>
+                  <ROISimulator token0={token0} token1={token1} />
                 </ROISimulatorWrapper>
               </RowColumn>
             </AutoColumn>
