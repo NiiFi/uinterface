@@ -49,6 +49,10 @@ const RowColumn = styled.div`
   ${({ theme }) => theme.mediaWidth.upToMedium`
     flex-direction: column;
   `};
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    gap: 1rem;
+  `}
 `
 const BarWrapper = styled.div`
   width: 100%;
@@ -76,6 +80,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 2rem;
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    gap: 1rem;
+  `}
 `
 const PoolDetailAppBodyWrap = styled(AppBody)`
   padding: 2rem;
@@ -91,6 +99,7 @@ const PoolCardRowColumn = styled.div`
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
     flex-direction: column;
+    gap: 1rem;
   `}
 `
 const PoolCardItem = styled(AutoColumn)`
