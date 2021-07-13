@@ -6,6 +6,7 @@ import getLineChartData from './data'
 import { TYPE } from '../../theme'
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
+import { AutoRow } from 'components/Row'
 
 const CustomButton = ({
   value,
@@ -39,7 +40,7 @@ const CustomButton = ({
   )
 }
 
-const SwapChart = () => {
+const PoolDetailChart = () => {
   const theme = useContext(ThemeContext)
   const [liquidityHover, setLiquidityHover] = useState<number | undefined>()
   const [volumeHover, setVolumeHover] = useState<number | undefined>()
@@ -70,6 +71,11 @@ const SwapChart = () => {
   const ControlWrapper = styled(Wrapper)`
     box-sizing: border-box;
     margin: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   `
 
   const dateFormat = currentChartPeriod === 'all' ? 'MMM' : 'dd'
@@ -78,30 +84,35 @@ const SwapChart = () => {
     <>
       <ControlWrapper>
         <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
-        <TYPE.main>
-          <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
-          <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
-          <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
-        </TYPE.main>
+        <AutoRow justify={'flex-end'}>
+          <TYPE.main>
+            <CustomButton value="today" text="24H" current={currentChartPeriod} onClick={handleChartPeriod} />
+            <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
+            <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
+            <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
+          </TYPE.main>
+        </AutoRow>
       </ControlWrapper>
-      <LineChart
-        data={lineChartData}
-        minHeight={158}
-        color={theme.orange1}
-        value1={liquidityHover}
-        setValue1={setLiquidityHover}
-        value2={volumeHover}
-        setValue2={setVolumeHover}
-        value3={feesHover}
-        setValue3={setFeesHover}
-        currentValue={currentChartValue}
-        dateFormat={dateFormat}
-        XAxisTickGap={100}
-        YAxisTick={{ fontSize: 14 }}
-        style={{ flexDirection: 'column', marginTop: '0.5rem' }}
-      />
+      <AutoRow>
+        <LineChart
+          data={lineChartData}
+          minHeight={158}
+          color={theme.orange1}
+          value1={liquidityHover}
+          setValue1={setLiquidityHover}
+          value2={volumeHover}
+          setValue2={setVolumeHover}
+          value3={feesHover}
+          setValue3={setFeesHover}
+          currentValue={currentChartValue}
+          dateFormat={dateFormat}
+          XAxisTickGap={100}
+          YAxisTick={{ fontSize: 14 }}
+          style={{ flexDirection: 'column', marginTop: '0.5rem' }}
+        />
+      </AutoRow>
     </>
   )
 }
 
-export default SwapChart
+export default PoolDetailChart
