@@ -14,8 +14,7 @@ import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
 import { TYPE } from 'theme'
 import CurrencyAvatar from 'components/CurrencyAvatar'
-import { TextItemWrapper, TextValue, TextLabel } from './styled'
-import TokenDetails, { MainCurrency } from './TokenDetails'
+import TokenDetails from './TokenDetails'
 
 const TokenStatsWrapper = styled(BodyWrapper)`
   flex: 2;
@@ -31,6 +30,11 @@ const TokenStatsWrapper = styled(BodyWrapper)`
 const ROISimulatorWrapper = styled(BodyWrapper)`
   flex: 1;
   padding: 2rem;
+
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    width: 48%;
+  `};
+
   ${({ theme }) => theme.mediaWidth.upToSmall`
     width: 100%;
     padding: 1rem;
@@ -89,13 +93,15 @@ const PoolCardRowColumn = styled.div`
     flex-direction: column;
   `}
 `
-const PoolCardItem = styled(AutoColumn)<{ borderRight?: boolean; flex?: string }>`
-  flex: ${({ flex }) => (flex ? flex : '')};
-  border-right: ${({ theme, borderRight }) => (borderRight ? `1px solid ${theme.bg3}` : '')};
-
+const PoolCardItem = styled(AutoColumn)`
+  :nth-child(1) {
+    border-right: 1px solid ${({ theme }) => theme.bg3};
+  }
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    flex: 1;
-    border-right: none;
+    :nth-child(1) {
+      border-right: none;
+      border-bottom: 1px solid ${({ theme }) => theme.bg3};
+    }
   `}
 `
 export default function PoolDetails({
@@ -128,35 +134,7 @@ export default function PoolDetails({
             <AutoColumn>
               <ResponsiveRow>
                 <PoolDetailAppBodyWrap size="lg">
-                  <PoolCardRowColumn>
-                    <PoolCardItem flex={'1'} borderRight style={{ width: '100%' }}>
-                      <TYPE.mediumHeaderEllipsis>
-                        {`${token0}-${token1} `}
-                        <Trans> Pair Stats</Trans>
-                      </TYPE.mediumHeaderEllipsis>
-                      <TextItemWrapper>
-                        <TextLabel>
-                          <Trans>Liquidity</Trans>
-                        </TextLabel>
-                        <TextValue>768.867 {MainCurrency}</TextValue>
-                      </TextItemWrapper>
-                      <TextItemWrapper>
-                        <TextLabel>
-                          <Trans>Volume</Trans>
-                        </TextLabel>
-                        <TextValue>677.430 {MainCurrency}</TextValue>
-                      </TextItemWrapper>
-                      <TextItemWrapper>
-                        <TextLabel>
-                          <Trans>Fees</Trans>
-                        </TextLabel>
-                        <TextValue>2.032 {MainCurrency}</TextValue>
-                      </TextItemWrapper>
-                    </PoolCardItem>
-                    <PoolCardItem flex={'2'} style={{ width: '100%' }}>
-                      <PoolDetailChart />
-                    </PoolCardItem>
-                  </PoolCardRowColumn>
+                  <PoolDetailChart token0={token0} token1={token1} />
                 </PoolDetailAppBodyWrap>
               </ResponsiveRow>
             </AutoColumn>
@@ -167,7 +145,7 @@ export default function PoolDetails({
                     <Trans>Token Stats</Trans>
                   </TYPE.mediumHeaderEllipsis>
                   <PoolCardRowColumn>
-                    <PoolCardItem flex={'1'} borderRight style={{ width: '100%' }}>
+                    <PoolCardItem style={{ width: '100%' }}>
                       <CurrencyAvatar
                         symbol={'ETH'}
                         containerStyle={{ padding: '0.3125rem' }}
@@ -175,7 +153,7 @@ export default function PoolDetails({
                       />
                       <TokenDetails />
                     </PoolCardItem>
-                    <PoolCardItem flex={'1'} style={{ width: '100%' }}>
+                    <PoolCardItem style={{ width: '100%' }}>
                       <CurrencyAvatar symbol={'NII'} rootStyle={{ marginBottom: '1rem' }} />
                       <TokenDetails />
                     </PoolCardItem>

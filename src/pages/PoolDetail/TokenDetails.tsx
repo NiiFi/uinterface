@@ -1,9 +1,8 @@
 import React from 'react'
 import { Trans } from '@lingui/macro'
 
-import { TextItemWrapper, TextValue, TextLabel } from './styled'
-
-export const MainCurrency = 'US$'
+import { TextItemWrapper, TextValue, TextLabel } from 'components/pools/styled'
+import { MainCurrency } from 'utils'
 export default function TokenDetail() {
   return (
     <>

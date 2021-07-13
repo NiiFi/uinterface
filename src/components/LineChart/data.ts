@@ -82,7 +82,13 @@ const dummyTodayData = [
   { time: '2021-01-01', value1: 3.3, value2: 1.2, value3: 1 },
 ]
 
-export default function getLineChartData(type: string) {
+export type LineChartData = {
+  time: string
+  value1: number
+  value2: number
+  value3: number
+}
+export default function getLineChartData(type: string): LineChartData[] {
   switch (type) {
     case 'today':
       return dummyTodayData
