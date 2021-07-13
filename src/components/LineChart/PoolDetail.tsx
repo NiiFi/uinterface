@@ -12,6 +12,13 @@ import { AutoColumn } from 'components/Column'
 import { TextItemWrapper, TextLabel, TextValue } from 'components/pools/styled'
 import { MainCurrency, shortenDecimalValues } from 'utils'
 const CurrencyFormat = '0,0.00'
+
+const StyleButtonOutlined = styled(ButtonOutlined)`
+  margin: 12px;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    margin: 8px;
+  `}
+`
 const CustomButton = ({
   value,
   text,
@@ -25,12 +32,11 @@ const CustomButton = ({
 }) => {
   const theme = useContext(ThemeContext)
   return (
-    <ButtonOutlined
+    <StyleButtonOutlined
       value={value}
       onClick={onClick}
       width="32px"
       padding="6px"
-      margin="12px"
       style={{
         display: 'inline',
         fontSize: '12px',
@@ -40,7 +46,7 @@ const CustomButton = ({
       }}
     >
       <Trans>{text}</Trans>
-    </ButtonOutlined>
+    </StyleButtonOutlined>
   )
 }
 const Wrapper = styled.div`
@@ -67,6 +73,7 @@ const ChartRowColumnWrapper = styled.div`
   gap: 2rem;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
+    gap: 0.625rem;
     flex-direction: column;
   `}
 `

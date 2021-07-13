@@ -9,7 +9,6 @@ import AppBar from 'components/AppBar'
 import { ButtonPrimary } from 'components/Button'
 import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
-import { ResponsiveRow } from 'components/Row'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
 import { TYPE } from 'theme'
@@ -132,42 +131,36 @@ export default function PoolDetails({
       <BodyScroller>
         <BodyPanel>
           <Wrapper>
-            <AutoColumn>
-              <ResponsiveRow>
-                <PoolDetailAppBodyWrap size="lg">
-                  <PoolDetailChart token0={token0} token1={token1} />
-                </PoolDetailAppBodyWrap>
-              </ResponsiveRow>
-            </AutoColumn>
-            <AutoColumn>
-              <RowColumn>
-                <TokenStatsWrapper>
-                  <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
-                    <Trans>Token Stats</Trans>
-                  </TYPE.mediumHeaderEllipsis>
-                  <PoolCardRowColumn>
-                    <PoolCardItem style={{ width: '100%' }}>
-                      <CurrencyAvatar
-                        symbol={'ETH'}
-                        containerStyle={{ padding: '0.3125rem' }}
-                        rootStyle={{ marginBottom: '1rem' }}
-                      />
-                      <TokenDetails />
-                    </PoolCardItem>
-                    <PoolCardItem style={{ width: '100%' }}>
-                      <CurrencyAvatar symbol={'NII'} rootStyle={{ marginBottom: '1rem' }} />
-                      <TokenDetails />
-                    </PoolCardItem>
-                  </PoolCardRowColumn>
-                </TokenStatsWrapper>
-                <ROISimulatorWrapper>
-                  <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
-                    <Trans>ROI Simulator</Trans>
-                  </TYPE.mediumHeaderEllipsis>
-                  <ROISimulator token0={token0} token1={token1} />
-                </ROISimulatorWrapper>
-              </RowColumn>
-            </AutoColumn>
+            <PoolDetailAppBodyWrap size="lg">
+              <PoolDetailChart token0={token0} token1={token1} />
+            </PoolDetailAppBodyWrap>
+            <RowColumn>
+              <TokenStatsWrapper>
+                <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
+                  <Trans>Token Stats</Trans>
+                </TYPE.mediumHeaderEllipsis>
+                <PoolCardRowColumn>
+                  <PoolCardItem style={{ width: '100%' }}>
+                    <CurrencyAvatar
+                      symbol={'ETH'}
+                      containerStyle={{ padding: '0.3125rem' }}
+                      rootStyle={{ marginBottom: '1rem' }}
+                    />
+                    <TokenDetails />
+                  </PoolCardItem>
+                  <PoolCardItem style={{ width: '100%' }}>
+                    <CurrencyAvatar symbol={'NII'} rootStyle={{ marginBottom: '1rem' }} />
+                    <TokenDetails />
+                  </PoolCardItem>
+                </PoolCardRowColumn>
+              </TokenStatsWrapper>
+              <ROISimulatorWrapper>
+                <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
+                  <Trans>ROI Simulator</Trans>
+                </TYPE.mediumHeaderEllipsis>
+                <ROISimulator token0={token0} token1={token1} />
+              </ROISimulatorWrapper>
+            </RowColumn>
           </Wrapper>
         </BodyPanel>
       </BodyScroller>
