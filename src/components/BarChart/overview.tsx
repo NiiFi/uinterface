@@ -1,10 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 import { TYPE } from '../../theme'
 import { shortenDecimalValues } from '../../utils'
 import BarChart from './index'
 import dummyData from './data'
+
+dayjs.extend(utc)
 
 const OverviewChart = () => {
   const theme = useContext(ThemeContext)
@@ -13,7 +17,7 @@ const OverviewChart = () => {
 
   useEffect(() => {
     if (!time && dummyData) {
-      setTime(dummyData[dummyData.length - 1].time)
+      setTime(dayjs(dummyData[dummyData.length - 1].time).format('MMM D, YYYY'))
     }
   }, [time])
 
@@ -25,11 +29,11 @@ const OverviewChart = () => {
 
   return (
     <>
-      <TYPE.subHeader fontSize="16px">
+      <TYPE.subHeader fontSize="16px" style={{ margin: '12px 0 6px 0' }}>
         <Trans>Volume 24H</Trans>
       </TYPE.subHeader>
-      <TYPE.mediumHeader>{shortenDecimalValues(String(amount))}</TYPE.mediumHeader>
-      <TYPE.body color={theme.text4} fontWeight={400} fontSize={14}>
+      <TYPE.mediumHeader>{shortenDecimalValues(String(amount), '$0.[00]a')}</TYPE.mediumHeader>
+      <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
         {time || '-'}
       </TYPE.body>
       <BarChart
