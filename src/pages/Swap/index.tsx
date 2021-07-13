@@ -362,7 +362,7 @@ export default function Swap({ history }: RouteComponentProps) {
         onConfirm={handleConfirmTokenWarning}
         onDismiss={handleDismissTokenWarning}
       />
-      <AppBar>
+      <AppBar style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
         <ToggleDrawer />
         <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={t`Swap`} />

@@ -2,7 +2,7 @@ import React from 'react'
 import MuiAppBar, { AppBarProps } from '@material-ui/core/AppBar'
 import useTheme from 'hooks/useTheme'
 
-export default function AppBar({ children, ...rest }: AppBarProps) {
+export default function AppBar({ children, style, ...rest }: AppBarProps) {
   const theme = useTheme()
   return (
     <MuiAppBar
@@ -15,6 +15,7 @@ export default function AppBar({ children, ...rest }: AppBarProps) {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        ...style,
       }}
       {...rest}
     >
