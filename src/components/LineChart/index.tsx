@@ -74,6 +74,24 @@ const LineChart = ({
   const parsedValue2 = value2
   const parsedValue3 = value3
 
+  let yAxis
+
+  if (YAxisTick) {
+    yAxis = (
+      <YAxis
+        dataKey="value1"
+        orientation="right"
+        axisLine={false}
+        tickLine={false}
+        tickFormatter={(value1) => shortenDecimalValues(value1, '0,0a')}
+        width={36}
+        minTickGap={30}
+        tick={YAxisTick}
+        stroke={theme.text6}
+      />
+    )
+  }
+
   return (
     <Wrapper minHeight={minHeight} {...rest}>
       <RowBetween>
@@ -107,17 +125,7 @@ const LineChart = ({
             tick={{ fontSize: 14 }}
             stroke={theme.text6}
           />
-          <YAxis
-            dataKey="value1"
-            orientation="right"
-            axisLine={false}
-            tickLine={false}
-            tickFormatter={(value1) => shortenDecimalValues(value1)}
-            width={36}
-            minTickGap={30}
-            tick={YAxisTick}
-            stroke={theme.text6}
-          />
+          {yAxis}
           <Tooltip
             cursor={{ stroke: theme.bg2 }}
             contentStyle={{ display: 'none' }}
