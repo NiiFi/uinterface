@@ -54,3 +54,5 @@ export class ExtendedEther extends Ether {
     return new ExtendedEther(chainId)
   }
 }
+
+export const TOKEN_VALUE_CURRENCY_FORMAT = '0,0.00'
