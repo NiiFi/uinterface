@@ -101,6 +101,7 @@ const HeaderLinks = styled(Row)`
   width: 100%;
   padding: 4px;
   display: flex;
+  gap: 0.5rem;
   flex-direction: column;
   ${({ theme }) => theme.mediaWidth.upToMedium`
     justify-self: flex-end;
@@ -190,12 +191,14 @@ const StyledNavLink = styled(NavLink).attrs({
   outline: none;
   cursor: ${({ disable }) => (disable ? 'not-allowed' : 'pointer')};
   text-decoration: none;
-  color: ${({ theme, disable }) => (disable ? theme.text4 : theme.bg4)};
+  color: ${({ theme }) => theme.text4};
   font-size: 1rem;
   width: 100%;
   font-weight: 400;
   padding: 12px 12px;
   word-break: break-word;
+  display: flex;
+  align-items: center;
   pointer-event: ${({ disable }) => (disable ? 'none' : 'auto')};
 
   > i,
@@ -271,7 +274,7 @@ export default function Header() {
     },
     {
       id: 'pool',
-      link: '/pool',
+      link: '/pool/ETH/NII',
       title: t`Pool`,
       Icon: PoolIcon,
       disable: false,

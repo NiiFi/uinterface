@@ -1,5 +1,4 @@
 import { Trans, t } from '@lingui/macro'
-import AppBar from '@material-ui/core/AppBar'
 
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import SwapTable from '../../components/Table/swap'
@@ -31,7 +30,7 @@ import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import Slippage from '../../components/swap/Slippage'
 import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
-import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper, BodyScroller } from '../../components/swap/styleds'
+import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper, BodyScroller } from 'components/swap/styleds'
 import TradePrice from '../../components/swap/TradePrice'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
 import TokenWarningModal from '../../components/TokenWarningModal'
@@ -63,6 +62,7 @@ import AppBody from '../AppBody'
 import SwapChart from 'components/LineChart/swap'
 import OverviewChart from 'components/LineChart/overview'
 import BarChart from 'components/BarChart/overview'
+import AppBar from 'components/AppBar'
 
 const StyledInfo = styled(Info)`
   opacity: 0.4;
@@ -363,18 +363,7 @@ export default function Swap({ history }: RouteComponentProps) {
         onConfirm={handleConfirmTokenWarning}
         onDismiss={handleDismissTokenWarning}
       />
-      <AppBar
-        position="static"
-        style={{
-          boxShadow: 'none',
-          borderBottom: `1px solid ${theme.bg3}`,
-          backgroundColor: theme.bg0,
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
+      <AppBar style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
         <ToggleDrawer />
         <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={t`Swap`} />
