@@ -135,8 +135,8 @@ export default function PoolDetails({
           </BarTitle>
           <ButtonWrapper>
             <InvestButton
-              token0={{ symbol: token0, address: '1234' }}
-              token1={{ symbol: token1, address: '1235' }}
+              token0={{ symbol: 'ETH', address: '1234' }}
+              token1={{ symbol: 'NII', address: '1235' }}
               type="primary"
               onClick={togglePoolInvestModal}
               style={{ fontSize: '14px' }}

@@ -1,7 +1,14 @@
 import { useCallback } from 'react'
 import { AppState } from '../index'
 
-import { PoolInvestPair, setInvestTokenPair, removeTokenPair } from './actions'
+import {
+  PoolInvestPair,
+  setInvestTokenPair,
+  removeTokenPair,
+  PoolToken,
+  PoolTokenValue,
+  PoolInvestPairValues,
+} from './actions'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
 
 export function usePoolState(): AppState['pool'] {
@@ -25,4 +32,55 @@ export function useSetUnSetPoolInvestTokenPair() {
   }, [dispatch])
 
   return { setPoolInvestTokenPair, unSetPoolInvestTokenPair }
+}
+
+export function useFakePoolValuesCalculator() {
+  const ONE_USD = 154
+  const ONE_ETH_IN_USD = 500 * ONE_USD
+  const ONE_NII_IN_USD = 0.25 * ONE_USD
+  const ROI_PER_DAY_RATIO = 0.001
+  /**
+   * NOTE: These set of functions are dummy and not permanent.
+   * We need to remove these in the future.
+   */
+  function getUSDValue(token: PoolTokenValue) {
+    if (token.symbol === 'ETH') {
+      return Number(token.value) * ONE_ETH_IN_USD
+    }
+    return Number(token.value) * ONE_NII_IN_USD
+  }
+
+  function getROIValueByPeriod(period: string, token: PoolTokenValue) {
+    if (period === 'oneMonth') return Number(token.value) * (ROI_PER_DAY_RATIO * 30)
+    if (period === 'oneWeek') return Number(token.value) * (ROI_PER_DAY_RATIO * 7)
+    return Number(token.value) * (ROI_PER_DAY_RATIO * 360)
+  }
+
+  const calculateTotalInvestmentInUSD = ({ token0, token1 }: PoolInvestPairValues) => {
+    const token0USD = getUSDValue(token0)
+    const token1USD = getUSDValue(token1)
+    return `${token0USD + token1USD}`
+  }
+
+  const getValueEquivalentTo = (compareTo: PoolToken, compareToValue: string, compare: PoolToken) => {
+    const Million = 100_000
+    if (compareTo.symbol === 'NII' && compare.symbol === 'ETH') {
+      return `${Number(compareToValue) / Million}`
+    }
+    return `${Number(compareToValue) * Million}`
+  }
+
+  const calculateEstimatedROI = ({ token0, token1 }: PoolInvestPairValues, period: string) => {
+    const token0ROI = getROIValueByPeriod(period, token0)
+    const token1ROI = getROIValueByPeriod(period, token1)
+    const token0ROIInUSD = getUSDValue({ ...token0, value: `${token0ROI}` })
+    const token1ROIInUSD = getUSDValue({ ...token1, value: `${token1ROI}` })
+    console.log({ token0ROI: `${token0ROI}` })
+    return {
+      token0: `${token0ROI}`,
+      token1: `${token1ROI}`,
+      roiInUSD: `${token0ROIInUSD + token1ROIInUSD}`,
+    }
+  }
+  return { calculateTotalInvestmentInUSD, getValueEquivalentTo, calculateEstimatedROI }
 }

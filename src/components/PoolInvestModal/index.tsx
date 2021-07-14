@@ -5,10 +5,11 @@ import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, usePoolInvestModalToggle } from '../../state/application/hooks'
 import { Trans } from '@lingui/macro'
 import { RowBetween } from 'components/Row'
+import { AutoColumn } from 'components/Column'
+import TokenPairInputPanel from 'components/pools/TokenPairInputPanel'
 import Modal from '../Modal'
 import { TYPE } from 'theme'
 import { MainCurrency } from 'utils'
-import CurrencyAvatar from 'components/CurrencyAvatar'
 import Slippage from 'components/swap/Slippage'
 import { ButtonPrimary } from 'components/Button'
 
@@ -89,18 +90,12 @@ export default function PoolInvestModal() {
               {` ${MainCurrency}`}
             </TYPE.subHeader>
           </RowBetween>
-          <RowBetween marginTop={'0.5rem'}>
-            <CurrencyAvatar symbol={'ETH'} containerStyle={{ padding: '0.3125rem' }} />
-            <TYPE.mediumHeader color="text1">
-              <Trans>14</Trans>
-            </TYPE.mediumHeader>
-          </RowBetween>
-          <RowBetween marginTop={'0.5rem'}>
-            <CurrencyAvatar symbol={'NII'} />
-            <TYPE.mediumHeader color="text1">
-              <Trans>148</Trans>
-            </TYPE.mediumHeader>
-          </RowBetween>
+          <AutoColumn style={{ paddingTop: '1rem' }}>
+            <TokenPairInputPanel
+              token0={{ symbol: 'ETH', address: '12345' }}
+              token1={{ symbol: 'NII', address: '12345' }}
+            />
+          </AutoColumn>
           <TYPE.subHeader color="text6" textAlign="right">
             <Trans>≈ 9,394.85</Trans>
             {` ${MainCurrency}`}
