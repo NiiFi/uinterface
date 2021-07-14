@@ -7,7 +7,7 @@ import { ChevronDown, Check } from 'react-feather'
 import { Button as RebassButton, ButtonProps as ButtonPropsOriginal } from 'rebass/styled-components'
 import useTheme from 'hooks/useTheme'
 
-type ButtonProps = Omit<ButtonPropsOriginal, 'css'>
+export type ButtonProps = Omit<ButtonPropsOriginal, 'css'>
 
 const Base = styled(RebassButton)<
   {
