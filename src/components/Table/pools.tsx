@@ -1,14 +1,14 @@
 import React from 'react'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
-import { t } from '@lingui/macro'
+import { t, Trans } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
-import Percent from 'components/Percent'
 import { shortenDecimalValues } from '../../utils'
 import CurrencyLogo from '../CurrencyLogo'
-import { SampleResponse } from './sample-tokens'
+import { SampleResponse } from './sample-pools'
 import Table from './index'
+import { ButtonOutlined } from '../Button'
 
 const ResponsiveLogo = styled(CurrencyLogo)`
   @media screen and (max-width: 670px) {
@@ -24,11 +24,16 @@ const CustomTableRow = (
 ) => {
   const theme = useTheme()
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
-  // const logoData = { isNative: true, isToken: false, symbol: row.symbol }
-  // const logoData = row
 
   row.isNative = true
-  row.isToken = false
+
+  // TODO: fill with real data
+  const roiW = row.roiW || Math.random()
+  const roiY = row.roiY || roiW / 52
+  const trendingPercent = row.trendingPercent || (Math.random() - 0.5) * 100
+  const trendingSum = row.totalValueLockedUSD * trendingPercent
+
+  const invest = (e: React.MouseEvent<unknown>) => console.log(e.target)
 
   return (
     <TableRow
@@ -40,41 +45,45 @@ const CustomTableRow = (
       key={index}
       selected={false}
     >
-      <TableCell style={rowCellStyles} align="center">
-        {index + 1}
-      </TableCell>
       <TableCell style={rowCellStyles} align="left">
         <ResponsiveLogo currency={row} />
-        {row.symbol}
+        {row.token0.symbol} / {row.token1.symbol}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(row.priceUSD)}
+        {shortenDecimalValues(row.liquidity, '0.[00]a')}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <Percent value={row.priceUSDChange} fontWeight={400} fontSize={'0.875rem'} />
+        {shortenDecimalValues(roiY, '0.[00]a')} - {shortenDecimalValues(roiW, '0.[00]a')}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        ${shortenDecimalValues(row.volumeUSD)}
+        {trendingPercent} - {trendingSum}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        ${shortenDecimalValues(row.tvlUSD)}
+        <ButtonOutlined
+          value={row.id}
+          onClick={invest}
+          padding="6px"
+          margin="10px 18px"
+          style={{
+            textTransform: 'uppercase',
+          }}
+        >
+          <Trans>Invest</Trans>
+        </ButtonOutlined>
       </TableCell>
     </TableRow>
   )
 }
 
-export default function OverviewTable() {
+export default function PoolsTable() {
   return (
     <Table
-      title={t`Top Tokens`}
-      data={SampleResponse.data.tokens}
+      data={SampleResponse.data.pools}
       headCells={[
-        { id: 'number', numeric: true, disablePadding: false, label: '#' },
-        { id: 'symbol', numeric: false, disablePadding: false, label: t`Name` },
-        { id: 'priceUSD', numeric: true, disablePadding: false, label: t`Price` },
-        { id: 'priceUSDChange', numeric: true, disablePadding: false, label: t`Price Change` },
-        { id: 'volumeUSD', numeric: true, disablePadding: false, label: t`Volume 24H` },
-        { id: 'tvlUSD', numeric: true, disablePadding: false, label: t`TVL` },
+        { id: 'token0.symbol', numeric: false, disablePadding: false, label: t`Available Pools` },
+        { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
+        { id: 'address', numeric: false, disablePadding: false, label: t`ROI` },
+        { id: 'address2', numeric: false, disablePadding: false, label: t`Trending` },
       ]}
       row={CustomTableRow}
     />

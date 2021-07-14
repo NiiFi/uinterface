@@ -24,7 +24,7 @@ export interface HeadCell {
 }
 
 interface EnhancedTableProps {
-  title: string
+  title?: string
   data: Array<TransactionTableData>
   headCells: HeadCell[]
   row: (row: any, index: number, handleClick: (event: React.MouseEvent<unknown>, name: string) => void) => unknown

@@ -4,7 +4,7 @@ import { t } from '@lingui/macro'
 import { ArrowLeft, ArrowRight } from 'react-feather'
 import { Disclaimer } from '../../theme'
 type TableToolBarProps = {
-  title: string
+  title?: string
   currentPage: number
   totalPages: number
   onNext: (currentPage: number) => void

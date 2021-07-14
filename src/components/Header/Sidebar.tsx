@@ -274,7 +274,7 @@ export default function Header() {
       link: '/pool',
       title: t`Pool`,
       Icon: PoolIcon,
-      disable: true,
+      disable: false,
     },
     {
       id: 'farm',
