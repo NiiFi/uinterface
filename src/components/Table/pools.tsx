@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
 import { t, Trans } from '@lingui/macro'
+import { createStyles, makeStyles } from '@material-ui/core/styles'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import TextField from '@material-ui/core/TextField'
@@ -17,7 +18,7 @@ import { ButtonOutlined } from '../Button'
 import { TransactionTableData } from '../Table/types'
 
 const CircleWrapper = styled.div`
-  background-color: white;
+  background-color: ${({ theme }) => theme.bg0};
   border: 1px solid ${({ theme }) => theme.bg3};
   border-radius: 50%;
   display: flex;
@@ -131,11 +132,25 @@ const CustomTableRow = (row: any, index: number) => {
 }
 
 export default function PoolsTable() {
+  const theme = useTheme()
   const [sword, setSword] = useState<string>('')
   const [pools, setPools] = useState<TransactionTableData[]>()
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setSword(e.target.value)
   }
+  const useStyles = makeStyles(() =>
+    createStyles({
+      root: {
+        background: theme.bg7,
+        borderRadius: 6,
+        color: theme.text6,
+      },
+      notchedOutline: {
+        borderColor: theme.text6,
+      },
+    })
+  )
+  const classes = useStyles()
   const searchField = (
     <TextField
       type="search"
@@ -150,6 +165,7 @@ export default function PoolsTable() {
             <MagnifierIcon />
           </InputAdornment>
         ),
+        classes: classes,
       }}
       style={{ width: '460px', height: '48px' }}
       autoFocus
