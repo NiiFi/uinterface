@@ -6,7 +6,7 @@ import { RouteComponentProps, Redirect } from 'react-router-dom'
 
 import { BodyScroller } from 'components/swap/styleds'
 import AppBar from 'components/AppBar'
-import { ButtonPrimary } from 'components/Button'
+import InvestButton from 'components/pools/InvestButton'
 import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
@@ -131,9 +131,15 @@ export default function PoolDetails({
             {t`Pool`}
           </BarTitle>
           <ButtonWrapper>
-            <ButtonPrimary style={{ fontSize: '14px' }} padding={'10px 14px'}>
+            <InvestButton
+              token0={{ symbol: token0, address: '1234' }}
+              token1={{ symbol: token1, address: '1235' }}
+              type="primary"
+              style={{ fontSize: '14px' }}
+              padding={'10px 14px'}
+            >
               <Trans>Invest</Trans>
-            </ButtonPrimary>
+            </InvestButton>
           </ButtonWrapper>
         </BarWrapper>
       </AppBar>
