@@ -1,10 +1,14 @@
 import React, { useState, useContext, useMemo, useEffect } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 import { TYPE } from '../../theme'
 import { shortenDecimalValues } from '../../utils'
 import LineChart from './index'
 import getLineChartData from './data'
+
+dayjs.extend(utc)
 
 const OverviewChart = () => {
   const theme = useContext(ThemeContext)
@@ -12,12 +16,12 @@ const OverviewChart = () => {
   const [time, setTime] = useState<string | undefined>()
 
   const lineChartData = useMemo(() => {
-    return getLineChartData('all')
+    return getLineChartData('month')
   }, [])
 
   useEffect(() => {
     if (!time && lineChartData) {
-      setTime(lineChartData[lineChartData.length - 1].time)
+      setTime(dayjs(lineChartData[lineChartData.length - 1].time).format('MMM D, YYYY'))
     }
   }, [time, lineChartData])
 
@@ -29,11 +33,11 @@ const OverviewChart = () => {
 
   return (
     <>
-      <TYPE.subHeader fontSize="16px">
+      <TYPE.subHeader fontSize="16px" style={{ margin: '12px 0 6px 0' }}>
         <Trans>TVL</Trans>
       </TYPE.subHeader>
-      <TYPE.mediumHeader>{shortenDecimalValues(String(amount))}</TYPE.mediumHeader>
-      <TYPE.body color={theme.text4} fontWeight={400} fontSize={14}>
+      <TYPE.mediumHeader>{shortenDecimalValues(String(amount), '$0.[00]a')}</TYPE.mediumHeader>
+      <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
         {time || '-'}
       </TYPE.body>
       <LineChart

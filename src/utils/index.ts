@@ -25,8 +25,8 @@ export function shortenAddress(address: string, chars = 4): string {
   return `${parsed.substring(0, chars + 2)}...${parsed.substring(42 - chars)}`
 }
 
-export function shortenDecimalValues(value: string): string {
-  return numeral(Number(value)).format('0.[000]a')
+export function shortenDecimalValues(value: string, formatType = '0.[000]a'): string {
+  return numeral(Number(value)).format(formatType)
 }
 
 export function formatTimeStamp(value: string): string {

@@ -167,6 +167,16 @@ export const TYPE = {
   mediumHeader(props: TextProps) {
     return <TextWrapper fontWeight={500} fontSize={20} {...props} />
   },
+  mediumHeaderEllipsis(props: TextProps) {
+    return (
+      <TextWrapper
+        fontWeight={500}
+        fontSize={20}
+        style={{ overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}
+        {...props}
+      />
+    )
+  },
   subHeader(props: TextProps) {
     return <TextWrapper fontWeight={400} fontSize={14} {...props} />
   },
