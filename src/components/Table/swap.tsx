@@ -82,7 +82,7 @@ export default function SwapTable() {
       row={CustomTableRow}
       headCellsBefore={({ transactionType, onTransactionTypeChange }) => (
         <TableCell
-          style={{ borderBottom: `1px solid ${theme.bg3}` }}
+          style={{ borderBottom: `1px solid ${theme.bg3}`, paddingLeft: '10px' }}
           key={'type'}
           align={'left'}
           padding={'none'}

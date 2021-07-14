@@ -274,8 +274,8 @@ export default function Header() {
     },
     {
       id: 'pool',
-      link: '/pool/ETH/NII',
-      title: t`Pool`,
+      link: '/pools',
+      title: t`Pools`,
       Icon: PoolIcon,
       disable: false,
     },

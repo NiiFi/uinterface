@@ -35,7 +35,6 @@ export const CurrencyAvatar = ({ symbol, iconProps, containerStyle, rootStyle }:
   return (
     <CurrencyAvatarWrapper style={rootStyle}>
       <CurrencyLogoWrapper style={containerStyle}>{Icon}</CurrencyLogoWrapper>
-      <span>{symbol}</span>
     </CurrencyAvatarWrapper>
   )
 }

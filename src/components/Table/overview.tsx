@@ -5,16 +5,15 @@ import { t } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import Percent from 'components/Percent'
+import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
-import CurrencyLogo from '../CurrencyLogo'
+import { TYPE } from '../../theme'
 import { SampleResponse } from './sample-tokens'
 import Table from './index'
 
-const ResponsiveLogo = styled(CurrencyLogo)`
-  @media screen and (max-width: 670px) {
-    width: 16px;
-    height: 16px;
-  }
+const RowWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
 `
 
 const CustomTableRow = (
@@ -24,11 +23,6 @@ const CustomTableRow = (
 ) => {
   const theme = useTheme()
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
-  // const logoData = { isNative: true, isToken: false, symbol: row.symbol }
-  // const logoData = row
-
-  row.isNative = true
-  row.isToken = false
 
   return (
     <TableRow
@@ -44,8 +38,12 @@ const CustomTableRow = (
         {index + 1}
       </TableCell>
       <TableCell style={rowCellStyles} align="left">
-        <ResponsiveLogo currency={row} />
-        {row.symbol}
+        <RowWrapper>
+          <CurrencyAvatar symbol={'ETH'} iconProps={{ width: '32', height: '32' }} containerStyle={{ zIndex: 1 }} />
+          <TYPE.black fontWeight={400} style={{ padding: '6px' }}>
+            {row.symbol}
+          </TYPE.black>
+        </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         {shortenDecimalValues(row.priceUSD)}

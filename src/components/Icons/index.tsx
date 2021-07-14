@@ -294,3 +294,51 @@ export function NIIIcon({ width = 34, height = 34, ...rest }: IconProps) {
     </svg>
   )
 }
+
+export function NIILogo({ width = 14, height = 14, ...rest }: IconProps) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 14 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      {...rest}
+    >
+      <rect width="14" height="14" fill="url(#niiLogo0)" />
+      <defs>
+        <pattern id="niiLogo0" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref="#niiLogo" transform="scale(0.0333333)" />
+        </pattern>
+        <image
+          id="niiLogo"
+          width="30"
+          height="30"
+          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAADfAAAA3wEPrWGOAAAEFklEQVRIia3WTYjcZBzH8e/zkszs7mwZtB4t6EXBgymiIAiaHqRg6aHiSdGMFVqr0hbKYimuBbGt4kvrammtMkHEKrYXhRYRyZ7EgoccFOyp4E1EGBR38v73MDPMbvdtZuoPcgj5P/nk/zzhSWDC7Pyuaj5xtWpOOl5PMshfrJqiiWxB9NTlyfCx4Yd/qpqVJlKCpys8WxI993k5Nj4WvD0eoqoCJaArPFsQ7b8wHj4yfO/1qlkaIsBTgKIHKxGU9PDDC6PjI8HbfpchKj0QiLUQDs6V4JmS6Ojbo+Gbwrf/Jc3CEonqdQogivDKTr396z26pYRwUNtf9+j4G5vjG8L1rjQL00MBpI9Gj+rWoOazp00PV73rCjwtRCdf2xhfH5ZhpwO00oTXHhqig3y817QY4L1p8ZQQvfvq+vjasEgTeqj0b1Zpwl/uW40OsnDAtIBwUI/CQ4jOHFkbXw33URiipSG8cdf66CDvHOrjGqreWE8J0UeHVuMr4WUoDNE/71CbooOcmDMtTRkqXSFaqPqdn3ulWIEP4ZtQAJSE3enR0UHmj7kto8pQ6xJlKkSLB0QXDgxxvRaqEByKUNTm07te5l6vt7QuQ9XH0eKJIvrkxR6ubkY1FTXysKvqE6PLs3Ds37YudKBzjSk0ulAxgr9ijQ0Vs3S5Tf75P0wAtC1QpgRbIqZCTAUKNEp1AN9QxQ26zMoSW1gKHqx+a98qevatP9rKFoGyBZgSsWVc2cp/4azt9DpWqjND4jekG8/SpcESDZaCXeWPE+PnPrjRVjYPtM1RtgCnjLGlv+/9egeWvdV/q5lOg64/Qzdu0KUhXRp0g+fLK2PjFz79ta2dPDA2RzkFOEWsbOHvPznbGdSsWOPrelsPlySeIaF3dIO58uLIePjltba1aWBshnYytJPFysn9/fNbO8vrVu1ci3p7Z4bEnyaNp0mYJmVakuBUcX5T/Itvv29bJwmsk2GdDONksba5v+/InZ2ba9fcq78yOzrTJP4UWTwlKVOkTJEG57P31sUvRZfb1k0D66QYN8G4aWyczN/70j2r0HVhgA/Nnk5dUr9OFtfJqJNRU2lwcenEKvybn9tt6yaB4yQ4boJ109i4qf9s8MCaKPT+YDbM6WKhWSeL6mRejRy3LHFSFe7ecrwFcPX66bakbiBpjSqtUaa1uMxr/pM7d6+LjgQDtItTzRpZVJPccymwBZjUhGrJhbQWkLpUqUuV1uIyq/u7HnlmQ3RkGOBSPt90KCKXwrOUmMxA4kDqIomLZLW4Sl3/8ftf3hQdCwa4ks81LWVkqTwtApmDJC6kbiyp6++4++hI6NgwwA/54aZGIoV4iILMiSVxfX/rmyOjE8EAi/nBwRcNwH/MOTMWektZzA82+w8wUf4DgFfpBX0AJsQAAAAASUVORK5CYII="
+        />
+      </defs>
+    </svg>
+  )
+}
+
+export function MagnifierIcon({ width = 24, height = 24, ...rest }: IconProps) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      {...rest}
+    >
+      <path
+        d="M15.9706 15.9706C19.0948 12.8464 19.0948 7.78106 15.9706 4.65687C12.8464 1.53267 7.78105 1.53267 4.65685 4.65687C1.53266 7.78106 1.53266 12.8464 4.65685 15.9706C7.78105 19.0948 12.8464 19.0948 15.9706 15.9706ZM15.9706 15.9706L22.5 22.5"
+        stroke="#0C443F"
+        strokeOpacity="0.38"
+        strokeWidth="2"
+      />
+    </svg>
+  )
+}

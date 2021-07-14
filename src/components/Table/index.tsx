@@ -24,7 +24,7 @@ export interface HeadCell {
 }
 
 interface EnhancedTableProps {
-  title?: string
+  title?: any
   data: Array<TransactionTableData>
   headCells: HeadCell[]
   row: (row: any, index: number, handleClick: (event: React.MouseEvent<unknown>, name: string) => void) => unknown
@@ -59,7 +59,7 @@ function EnhancedTableHead(props: EnhancedTableHeadProps) {
         <TableCell
           style={{ color: `${theme.text4}`, borderBottom: `1px solid ${theme.bg3}` }}
           key={headCell.id}
-          align={'center'}
+          align={'left'}
           padding={headCell.disablePadding ? 'none' : 'default'}
           sortDirection={orderBy === headCell.id ? order : false}
         >
@@ -112,6 +112,9 @@ const useStyles = makeStyles(() =>
     },
     table: {
       minWidth: 750,
+    },
+    headerWrap: {
+      padding: '16px 16px 0 16px',
     },
     visuallyHidden: {
       border: 0,
@@ -176,32 +179,34 @@ export default function EnhancedTable(props: EnhancedTableProps) {
   const totalPages = Math.ceil(tableData.length / rowsPerPage)
   return (
     <div className={classes.root}>
-      <TablePagination
-        rowsPerPageOptions={[1000]}
-        count={1000}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        component={() => (
-          <TableToolBar
-            currentPage={page + 1}
-            totalPages={totalPages}
-            title={props.title}
-            onNext={(currentPage: number) => {
-              if (currentPage !== totalPages) {
-                setPage(currentPage)
-              }
-            }}
-            onBack={(currentPage: number) => {
-              if (currentPage - 2 >= 0) {
-                setPage(currentPage - 2)
-              }
-            }}
-            showDisclaimer={props.showDisclaimer}
-          />
-        )}
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-      />
+      <div className={classes.headerWrap}>
+        <TablePagination
+          rowsPerPageOptions={[1000]}
+          count={1000}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          component={() => (
+            <TableToolBar
+              currentPage={page + 1}
+              totalPages={totalPages}
+              title={props.title}
+              onNext={(currentPage: number) => {
+                if (currentPage !== totalPages) {
+                  setPage(currentPage)
+                }
+              }}
+              onBack={(currentPage: number) => {
+                if (currentPage - 2 >= 0) {
+                  setPage(currentPage - 2)
+                }
+              }}
+              showDisclaimer={props.showDisclaimer}
+            />
+          )}
+          onChangePage={handleChangePage}
+          onChangeRowsPerPage={handleChangeRowsPerPage}
+        />
+      </div>
       <TableContainer>
         <Table className={classes.table} size={'medium'} style={{ width: '100%', tableLayout: 'auto' }}>
           <EnhancedTableHead

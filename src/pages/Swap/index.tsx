@@ -644,7 +644,7 @@ export default function Swap({ history }: RouteComponentProps) {
               </AppBody>
             </ResponsiveRow>
           </AutoColumn>
-          <AppBody size="lg" margin="2rem" padding="1rem 2rem">
+          <AppBody size="lg" margin="2rem">
             <SwapTable />
           </AppBody>
           <SwitchLocaleLink />
@@ -677,7 +677,7 @@ export default function Swap({ history }: RouteComponentProps) {
               </AppBody>
             </ResponsiveRow>
           </AutoColumn>
-          <AppBody size="lg">
+          <AppBody size="lg" style={{ marginTop: '1rem' }}>
             <OverviewTable />
           </AppBody>
         </TabPanel>
