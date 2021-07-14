@@ -9,6 +9,7 @@ type TableToolBarProps = {
   totalPages: number
   onNext: (currentPage: number) => void
   onBack: (currentPage: number) => void
+  showDisclaimer?: boolean
 }
 const Wrapper = styled.div`
   display: flex;
@@ -53,7 +54,14 @@ const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
     }
   `}
 `
-export default function TableToolBar({ title, currentPage, totalPages, onNext, onBack }: TableToolBarProps) {
+export default function TableToolBar({
+  title,
+  currentPage,
+  totalPages,
+  onNext,
+  onBack,
+  showDisclaimer,
+}: TableToolBarProps) {
   return (
     <>
       <Wrapper>
@@ -64,11 +72,13 @@ export default function TableToolBar({ title, currentPage, totalPages, onNext, o
           <ArrowRight onClick={() => onNext(currentPage)} />
         </PagerWrapper>
       </Wrapper>
-      <Disclaimer>
-        <span>Disclaimer:</span>
-        {` `}
-        {t`This is Dummy Data`}
-      </Disclaimer>
+      {showDisclaimer && (
+        <Disclaimer>
+          <span>Disclaimer:</span>
+          {` `}
+          {t`This is Dummy Data`}
+        </Disclaimer>
+      )}
     </>
   )
 }

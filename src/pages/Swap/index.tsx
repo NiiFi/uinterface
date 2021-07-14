@@ -2,7 +2,8 @@ import { Trans, t } from '@lingui/macro'
 import AppBar from '@material-ui/core/AppBar'
 
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
-import Table from '../../components/Table'
+import SwapTable from '../../components/Table/swap'
+import OverviewTable from '../../components/Table/overview'
 import { Trade } from '@uniswap/v2-sdk'
 import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
@@ -655,7 +656,7 @@ export default function Swap({ history }: RouteComponentProps) {
             </ResponsiveRow>
           </AutoColumn>
           <AppBody size="lg" margin="2rem" padding="1rem 2rem">
-            <Table />
+            <SwapTable />
           </AppBody>
           <SwitchLocaleLink />
           {!swapIsUnsupported ? null : (
@@ -687,6 +688,9 @@ export default function Swap({ history }: RouteComponentProps) {
               </AppBody>
             </ResponsiveRow>
           </AutoColumn>
+          <AppBody size="lg">
+            <OverviewTable />
+          </AppBody>
         </TabPanel>
       </BodyScroller>
     </>
