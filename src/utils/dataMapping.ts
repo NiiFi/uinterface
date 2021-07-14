@@ -64,20 +64,3 @@ export function mapTransactionListDataToTableData(data: TransactionListQuery): A
   }, tableData)
   return tableData
 }
-
-// export function mapTokenListDataToTableData(data: TokenListQuery): Array<TransactionTableData> {
-//   const tableData: Array<TransactionTableData> = []
-//   /**
-//    * Reason for disabling the below typescript rule is to
-//    * avoid missing argument error.
-//    */
-//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//   data.transactions.reduce((acc: Array<TransactionTableData>, { swaps, mints, burns }, _) => {
-//     const mappedSwaps = mapSwapResponseToTableData(swaps)
-//     const mappedMints = mapMintResponseToTableData(mints)
-//     const mappedBurns = mapBurnResponseToTableData(burns)
-//     tableData.push(...mappedSwaps, ...mappedMints, ...mappedBurns)
-//     return tableData
-//   }, tableData)
-//   return tableData
-// }

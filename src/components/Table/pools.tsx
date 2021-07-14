@@ -130,32 +130,7 @@ const CustomTableRow = (row: any, index: number) => {
   )
 }
 
-// const SearchField = (
-//   sword: string,
-//   handleSearch: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
-// ) => {
-//   return (
-//     <TextField
-//       type="search"
-//       placeholder={t`Filter by token, protocol, ...`}
-//       value={sword}
-//       variant="outlined"
-//       margin="dense"
-//       onChange={handleSearch}
-//       InputProps={{
-//         startAdornment: (
-//           <InputAdornment position="start">
-//             <MagnifierIcon />
-//           </InputAdornment>
-//         ),
-//       }}
-//       style={{ width: '460px', height: '48px' }}
-//     />
-//   )
-// }
-
 export default function PoolsTable() {
-  // const classes = useStyles()
   const [sword, setSword] = useState<string>('')
   const [pools, setPools] = useState<TransactionTableData[]>()
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
