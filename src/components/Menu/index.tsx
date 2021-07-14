@@ -12,7 +12,7 @@ export default function CustomMenu({ children, onClose, ...rest }: CustomMenuPro
   return (
     <Popper {...rest} transition disablePortal>
       {({ TransitionProps }) => (
-        <Grow {...TransitionProps} style={{ transformOrigin: 'bottom' }}>
+        <Grow {...TransitionProps}>
           <ClickAwayListener onClickAway={onClose}>
             <Paper style={{ borderRadius: '12px', backgroundColor: theme.bg0, border: `1px solid ${theme.bg3}` }}>
               <MenuList>{children}</MenuList>

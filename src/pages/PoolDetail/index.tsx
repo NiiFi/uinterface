@@ -12,6 +12,8 @@ import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
 import { TYPE } from 'theme'
+import { usePoolInvestModalToggle } from 'state/application/hooks'
+import PoolInvestModal from 'components/PoolInvestModal'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TokenDetails from './TokenDetails'
 import ROISimulator from './ROISimulator'
@@ -118,6 +120,7 @@ export default function PoolDetails({
     params: { token0, token1 },
   },
 }: RouteComponentProps<{ token0: string; token1: string }>) {
+  const togglePoolInvestModal = usePoolInvestModalToggle()
   if (!token0 || !token1) {
     return <Redirect to={'/swap'} />
   }
@@ -131,7 +134,7 @@ export default function PoolDetails({
             {t`Pool`}
           </BarTitle>
           <ButtonWrapper>
-            <ButtonPrimary style={{ fontSize: '14px' }} padding={'10px 14px'}>
+            <ButtonPrimary onClick={togglePoolInvestModal} style={{ fontSize: '14px' }} padding={'10px 14px'}>
               <Trans>Invest</Trans>
             </ButtonPrimary>
           </ButtonWrapper>
@@ -173,6 +176,7 @@ export default function PoolDetails({
           </Wrapper>
         </BodyPanel>
       </BodyScroller>
+      <PoolInvestModal />
     </>
   )
 }
