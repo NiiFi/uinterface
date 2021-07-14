@@ -3,7 +3,21 @@ import { Trans } from '@lingui/macro'
 
 import { TextItemWrapper, TextValue, TextLabel } from 'components/pools/styled'
 import { MainCurrency } from 'utils'
-export default function TokenDetail() {
+
+export type TokenDetailProps = {
+  symbol?: string
+  address?: string
+}
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function TokenDetail(props: TokenDetailProps) {
+  /**
+   * NOTE: We need to implement the API that fetches the detail
+   * about the Token. Then we also need to integrate API
+   * Which convert the overall value to User Selected Currency.
+   * That Is why Passing the props of address and symbol.
+   *
+   * TODO: Once we Implement the API we need to make the symbol and address required in interface.
+   */
   return (
     <>
       <TextItemWrapper>
