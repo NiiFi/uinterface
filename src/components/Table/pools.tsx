@@ -64,11 +64,17 @@ const CustomTableRow = (row: any, index: number) => {
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper>
           <div>
-            <CurrencyAvatar symbol={'ETH'} iconProps={{ width: '32', height: '32' }} containerStyle={{ zIndex: 1 }} />
+            <CurrencyAvatar
+              symbol={'ETH'}
+              iconProps={{ width: '32', height: '32' }}
+              containerStyle={{ zIndex: 1 }}
+              hideSymbol={true}
+            />
             <CurrencyAvatar
               symbol={'NII'}
               iconProps={{ width: '34', height: '34' }}
               containerStyle={{ left: '38px', position: 'absolute', marginTop: '-34px' }}
+              hideSymbol={true}
             />
             <CircleWrapper style={{ left: '62px', position: 'absolute', marginTop: '-36px' }}>
               <NIILogo />
