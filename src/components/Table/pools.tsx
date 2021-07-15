@@ -14,8 +14,19 @@ import { shortenDecimalValues } from '../../utils'
 import { TYPE } from '../../theme'
 import { SampleResponse } from './sample-pools'
 import Table from './index'
-import { ButtonOutlined } from '../Button'
+import Loader from 'components/Loader'
 import { TransactionTableData } from '../Table/types'
+import InvestButton from 'components/pools/InvestButton'
+import { usePoolInvestModalToggle } from 'state/application/hooks'
+import PoolInvestModal from 'components/PoolInvestModal'
+
+const LoaderWrapper = styled.div`
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 10rem);
+`
 
 const CircleWrapper = styled.div`
   background-color: ${({ theme }) => theme.bg0};
@@ -36,9 +47,9 @@ const ColumnWrapper = styled.div`
 
 const CustomTableRow = (row: any, index: number) => {
   const theme = useTheme()
-  const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
+  const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
   const history = useHistory()
-
+  const toggleInvestModal = usePoolInvestModalToggle()
   row.isNative = true
 
   // TODO: fill with real data
@@ -47,22 +58,13 @@ const CustomTableRow = (row: any, index: number) => {
   const trendingPercent = row.trendingPercent || Math.random() - 0.5
   const trendingSum = row.totalValueLockedUSD * trendingPercent
 
-  const invest = (e: React.MouseEvent<unknown>) => {
-    e.stopPropagation()
-    console.log(e.target)
+  const handleCellOnClick = () => {
+    history.push('/pools/ETH/NII')
   }
 
   return (
-    <TableRow
-      hover
-      onClick={() => history.push('/pool/ETH/NII')} // FIXME
-      role="checkbox"
-      aria-checked={false}
-      tabIndex={-1}
-      key={index}
-      selected={false}
-    >
-      <TableCell style={rowCellStyles} align="left">
+    <TableRow hover role="checkbox" aria-checked={false} tabIndex={-1} key={index} selected={false}>
+      <TableCell style={rowCellStyles} align="left" onClick={handleCellOnClick}>
         <RowWrapper>
           <div>
             <CurrencyAvatar
@@ -89,10 +91,10 @@ const CustomTableRow = (row: any, index: number) => {
           </ColumnWrapper>
         </RowWrapper>
       </TableCell>
-      <TableCell style={rowCellStyles} align="center">
+      <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
         {shortenDecimalValues(row.liquidity, '$ 0.[00]a')}
       </TableCell>
-      <TableCell style={rowCellStyles} align="center">
+      <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
         <ColumnWrapper>
           <div>
             {shortenDecimalValues(roiY, '0.[00]a')} (<Trans>1Y</Trans>)
@@ -102,7 +104,7 @@ const CustomTableRow = (row: any, index: number) => {
           </TYPE.small>
         </ColumnWrapper>
       </TableCell>
-      <TableCell style={rowCellStyles} align="center">
+      <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
         <ColumnWrapper>
           <div>
             {trendingPercent > 0 && '+'}
@@ -115,17 +117,16 @@ const CustomTableRow = (row: any, index: number) => {
         </ColumnWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <ButtonOutlined
-          value={row.id}
-          onClick={invest}
-          padding="5px"
-          margin="2px 4px"
-          style={{
-            textTransform: 'uppercase',
-          }}
+        <InvestButton
+          token0={{ symbol: 'ETH', address: '1234' }}
+          token1={{ symbol: 'NII', address: '1235' }}
+          type="outlined"
+          onClick={toggleInvestModal}
+          style={{ fontSize: '14px' }}
+          padding={'10px 14px'}
         >
           <Trans>Invest</Trans>
-        </ButtonOutlined>
+        </InvestButton>
       </TableCell>
     </TableRow>
   )
@@ -181,7 +182,11 @@ export default function PoolsTable() {
   }, [])
 
   if (!pools) {
-    return <>Loading ...</>
+    return (
+      <LoaderWrapper>
+        <Loader size="2rem" />
+      </LoaderWrapper>
+    )
   }
 
   return (
@@ -198,6 +203,7 @@ export default function PoolsTable() {
         ]}
         row={CustomTableRow}
       />
+      <PoolInvestModal />
     </>
   )
 }
