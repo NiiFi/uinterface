@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react'
 import { PoolInvestPair } from 'state/pool/actions'
 import { useSetUnSetPoolInvestTokenPair } from 'state/pool/hooks'
-import { ButtonPrimary, ButtonSecondary, ButtonProps } from 'components/Button'
+import { ButtonPrimary, ButtonOutlined, ButtonProps } from 'components/Button'
 
-type InvestButtonProps = ButtonProps & PoolInvestPair & { type: 'primary' | 'secondary' }
+type InvestButtonProps = ButtonProps & PoolInvestPair & { type: 'primary' | 'outlined' }
 export default function InvestButton({ token0, token1, onClick, type, ...rest }: InvestButtonProps) {
   let Button = ButtonPrimary
   const { setPoolInvestTokenPair } = useSetUnSetPoolInvestTokenPair()
@@ -16,7 +16,7 @@ export default function InvestButton({ token0, token1, onClick, type, ...rest }:
   )
 
   if (type !== 'primary') {
-    Button = ButtonSecondary
+    Button = ButtonOutlined
   }
   return <Button {...rest} onClick={handleClick} />
 }

@@ -11,7 +11,7 @@ import { AutoRow } from 'components/Row'
 import { AutoColumn } from 'components/Column'
 import { TextItemWrapper, TextLabel, TextValue } from 'components/pools/styled'
 import { MainCurrency, shortenDecimalValues } from 'utils'
-const CurrencyFormat = '0,0.00'
+import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 
 const StyleButtonOutlined = styled(ButtonOutlined)`
   margin: 12px;
@@ -133,7 +133,7 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
             <Trans>Liquidity</Trans>
           </TextLabel>
           <TextValue>
-            {shortenDecimalValues(`${liquiditySum}`, CurrencyFormat)} {MainCurrency}
+            {shortenDecimalValues(`${liquiditySum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
           </TextValue>
         </TextItemWrapper>
         <TextItemWrapper>
@@ -141,7 +141,7 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
             <Trans>Volume</Trans>
           </TextLabel>
           <TextValue>
-            {shortenDecimalValues(`${volumeSum}`, CurrencyFormat)} {MainCurrency}
+            {shortenDecimalValues(`${volumeSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
           </TextValue>
         </TextItemWrapper>
         <TextItemWrapper>
@@ -149,7 +149,7 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
             <Trans>Fees</Trans>
           </TextLabel>
           <TextValue>
-            {shortenDecimalValues(`${feesSum}`, CurrencyFormat)} {MainCurrency}
+            {shortenDecimalValues(`${feesSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
           </TextValue>
         </TextItemWrapper>
       </ChartColumnItem>

@@ -3,6 +3,7 @@ import { Trans } from '@lingui/macro'
 
 import { ChevronDown, X } from 'react-feather'
 import { Percent } from '@uniswap/sdk-core'
+import { PopperPlacementType } from '@material-ui/core/Popper'
 import styled from 'styled-components'
 import { useSetUserSlippageTolerance, useUserSlippageTolerance } from 'state/user/hooks'
 import Menu from '../Menu'
@@ -86,6 +87,7 @@ const MenuClose = styled.div`
 `
 
 const ControlWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -121,7 +123,7 @@ const ControlButton = styled.div<{ active?: boolean }>`
 const TWO_PERCENT = `2.00`
 const THREE_PERCENT = `3.00`
 const DEFAULT_PERCENT = TWO_PERCENT
-export default function Slippage() {
+export default function Slippage({ placement = 'bottom' }: { placement?: PopperPlacementType }) {
   const theme = useTheme()
   const anchorRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = React.useState<boolean>(false)
@@ -177,7 +179,7 @@ export default function Slippage() {
         <ControlButton onClick={handleClick} active={open}>
           {Number(slippageInput).toFixed(2).replace('.00', '')}% <ChevronDown />
         </ControlButton>
-        <Menu id="simple-menu" anchorEl={anchorRef.current} open={open} onClose={handleClose}>
+        <Menu id="simple-menu" placement={placement} anchorEl={anchorRef.current} open={open} onClose={handleClose}>
           <MenuWrapper>
             <MenuTitleWrapper>
               <MenuTitle>

@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 import { ETHIcon, NIIIcon, IconProps } from 'components/Icons'
+import { TokenName } from 'state/pool/actions'
 
-type CurrencyNames = 'NII' | 'ETH'
 type Props = {
-  symbol: CurrencyNames
+  symbol: TokenName
   containerStyle?: React.CSSProperties
   rootStyle?: React.CSSProperties
   iconProps?: IconProps
