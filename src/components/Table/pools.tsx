@@ -45,6 +45,13 @@ const ColumnWrapper = styled.div`
   flex-direction: column;
 `
 
+const TextFieldWrapper = styled.div`
+  width: 460px;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    width: 100%;
+    max-width: 255px;
+  `}
+`
 const CustomTableRow = (row: any, index: number) => {
   const theme = useTheme()
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
@@ -66,7 +73,7 @@ const CustomTableRow = (row: any, index: number) => {
     <TableRow hover role="checkbox" aria-checked={false} tabIndex={-1} key={index} selected={false}>
       <TableCell style={rowCellStyles} align="left" onClick={handleCellOnClick}>
         <RowWrapper>
-          <div>
+          <div style={{ position: 'relative' }}>
             <CurrencyAvatar
               symbol={'ETH'}
               iconProps={{ width: '32', height: '32' }}
@@ -76,10 +83,10 @@ const CustomTableRow = (row: any, index: number) => {
             <CurrencyAvatar
               symbol={'NII'}
               iconProps={{ width: '34', height: '34' }}
-              containerStyle={{ left: '38px', position: 'absolute', marginTop: '-34px' }}
+              containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
               hideSymbol={true}
             />
-            <CircleWrapper style={{ left: '62px', position: 'absolute', marginTop: '-36px' }}>
+            <CircleWrapper style={{ left: '42px', position: 'absolute', marginTop: '-36px' }}>
               <NIILogo />
             </CircleWrapper>
           </div>
@@ -121,7 +128,6 @@ const CustomTableRow = (row: any, index: number) => {
           token0={{ symbol: 'ETH', address: '1234' }}
           token1={{ symbol: 'NII', address: '1235' }}
           type="outlined"
-          onClick={toggleInvestModal}
           style={{ fontSize: '14px' }}
           padding={'10px 14px'}
         >
@@ -153,24 +159,26 @@ export default function PoolsTable() {
   )
   const classes = useStyles()
   const searchField = (
-    <TextField
-      type="search"
-      placeholder={t`Filter by token, protocol, ...`}
-      value={sword}
-      variant="outlined"
-      margin="dense"
-      onChange={handleSearch}
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <MagnifierIcon />
-          </InputAdornment>
-        ),
-        classes: classes,
-      }}
-      style={{ width: '460px', height: '48px' }}
-      autoFocus
-    />
+    <TextFieldWrapper>
+      <TextField
+        type="search"
+        placeholder={t`Filter by token, protocol, ...`}
+        value={sword}
+        variant="outlined"
+        margin="dense"
+        onChange={handleSearch}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <MagnifierIcon />
+            </InputAdornment>
+          ),
+          classes: classes,
+        }}
+        style={{ width: '100%', height: '48px' }}
+        autoFocus
+      />
+    </TextFieldWrapper>
   )
 
   useEffect(() => {
