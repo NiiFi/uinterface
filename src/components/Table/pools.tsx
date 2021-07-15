@@ -1,21 +1,39 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
 import { t, Trans } from '@lingui/macro'
-import { createStyles, makeStyles } from '@material-ui/core/styles'
+
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
-import TextField from '@material-ui/core/TextField'
-import InputAdornment from '@material-ui/core/InputAdornment'
-import { MagnifierIcon, NIILogo } from 'components/Icons'
+import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
 import { TYPE } from '../../theme'
 import { SampleResponse } from './sample-pools'
 import Table from './index'
-import { ButtonOutlined } from '../Button'
+import Loader from 'components/Loader'
 import { TransactionTableData } from '../Table/types'
+import InvestButton from 'components/pools/InvestButton'
+import { usePoolInvestModalToggle } from 'state/application/hooks'
+import PoolInvestModal from 'components/PoolInvestModal'
+import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
+import { ArrowLeft, ArrowRight } from 'react-feather'
+import { Disclaimer } from '../../theme'
+import { SearchInput } from 'components/SearchModal/styleds'
+import {
+  Wrapper as DefaultToolBarWrapper,
+  PagerWrapper as DefaultToolBarPagerWrapper,
+  TitleWrapper as DefaultToolBarTitleWrapper,
+} from './TableToolbar'
+
+const LoaderWrapper = styled.div`
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 10rem);
+`
 
 const CircleWrapper = styled.div`
   background-color: ${({ theme }) => theme.bg0};
@@ -34,11 +52,10 @@ const ColumnWrapper = styled.div`
   flex-direction: column;
 `
 
-const CustomTableRow = (row: any, index: number) => {
+const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHandler<HTMLButtonElement>) => {
   const theme = useTheme()
-  const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
+  const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
   const history = useHistory()
-
   row.isNative = true
 
   // TODO: fill with real data
@@ -47,24 +64,15 @@ const CustomTableRow = (row: any, index: number) => {
   const trendingPercent = row.trendingPercent || Math.random() - 0.5
   const trendingSum = row.totalValueLockedUSD * trendingPercent
 
-  const invest = (e: React.MouseEvent<unknown>) => {
-    e.stopPropagation()
-    console.log(e.target)
+  const handleCellOnClick = () => {
+    history.push('/pools/ETH/NII')
   }
 
   return (
-    <TableRow
-      hover
-      onClick={() => history.push('/pool/ETH/NII')} // FIXME
-      role="checkbox"
-      aria-checked={false}
-      tabIndex={-1}
-      key={index}
-      selected={false}
-    >
-      <TableCell style={rowCellStyles} align="left">
+    <TableRow hover role="checkbox" aria-checked={false} tabIndex={-1} key={index} selected={false}>
+      <TableCell style={rowCellStyles} align="left" onClick={handleCellOnClick}>
         <RowWrapper>
-          <div>
+          <div style={{ position: 'relative' }}>
             <CurrencyAvatar
               symbol={'ETH'}
               iconProps={{ width: '32', height: '32' }}
@@ -74,10 +82,10 @@ const CustomTableRow = (row: any, index: number) => {
             <CurrencyAvatar
               symbol={'NII'}
               iconProps={{ width: '34', height: '34' }}
-              containerStyle={{ left: '38px', position: 'absolute', marginTop: '-34px' }}
+              containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
               hideSymbol={true}
             />
-            <CircleWrapper style={{ left: '62px', position: 'absolute', marginTop: '-36px' }}>
+            <CircleWrapper style={{ left: '42px', position: 'absolute', marginTop: '-36px' }}>
               <NIILogo />
             </CircleWrapper>
           </div>
@@ -89,10 +97,10 @@ const CustomTableRow = (row: any, index: number) => {
           </ColumnWrapper>
         </RowWrapper>
       </TableCell>
-      <TableCell style={rowCellStyles} align="center">
+      <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
         {shortenDecimalValues(row.liquidity, '$ 0.[00]a')}
       </TableCell>
-      <TableCell style={rowCellStyles} align="center">
+      <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
         <ColumnWrapper>
           <div>
             {shortenDecimalValues(roiY, '0.[00]a')} (<Trans>1Y</Trans>)
@@ -102,7 +110,7 @@ const CustomTableRow = (row: any, index: number) => {
           </TYPE.small>
         </ColumnWrapper>
       </TableCell>
-      <TableCell style={rowCellStyles} align="center">
+      <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
         <ColumnWrapper>
           <div>
             {trendingPercent > 0 && '+'}
@@ -115,80 +123,117 @@ const CustomTableRow = (row: any, index: number) => {
         </ColumnWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <ButtonOutlined
-          value={row.id}
-          onClick={invest}
-          padding="5px"
-          margin="2px 4px"
-          style={{
-            textTransform: 'uppercase',
-          }}
+        <InvestButton
+          token0={{ symbol: 'ETH', address: '1234' }}
+          token1={{ symbol: 'NII', address: '1235' }}
+          type="outlined"
+          onClick={handleClick}
+          style={{ fontSize: '14px' }}
+          padding={'10px 14px'}
         >
           <Trans>Invest</Trans>
-        </ButtonOutlined>
+        </InvestButton>
       </TableCell>
     </TableRow>
   )
 }
 
+const PoolToolbarTitleWrapper = styled(DefaultToolBarTitleWrapper)`
+  width: 65%;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    width: 78%;
+  `}
+`
+const PoolToolBarPagerWrapper = styled(DefaultToolBarPagerWrapper)`
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    > p {
+      display: none;
+    }
+    > svg {
+      margin: 0px 8px;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  `}
+`
+const PoolTableToolbar = ({
+  onNext,
+  onBack,
+  currentPage,
+  totalPages,
+  searchValue,
+  onSearchValueChange,
+}: {
+  onNext: (page: number) => void
+  onBack: (page: number) => void
+  onSearchValueChange: (str: any) => void
+  searchValue: string
+  currentPage: number
+  totalPages: number
+}) => {
+  return (
+    <>
+      <DefaultToolBarWrapper style={{ marginBottom: '1rem' }}>
+        <PoolToolbarTitleWrapper>
+          <SearchInput
+            placeholder={t`Filter by token, protocol, ...`}
+            value={searchValue}
+            autoFocus
+            onChange={(e) => onSearchValueChange(e.target.value)}
+            style={{ width: '100%', height: '3rem' }}
+          />
+        </PoolToolbarTitleWrapper>
+        <PoolToolBarPagerWrapper currentPage={currentPage} totalPages={totalPages}>
+          <ArrowLeft onClick={() => onBack(currentPage)} />
+          <p>{t`Page ${totalPages === 0 ? 0 : currentPage} of ${totalPages}`}</p>
+          <ArrowRight onClick={() => onNext(currentPage)} />
+        </PoolToolBarPagerWrapper>
+      </DefaultToolBarWrapper>
+      <Disclaimer>
+        <span>Disclaimer:</span>
+        {` `}
+        {t`This is Dummy Data`}
+      </Disclaimer>
+    </>
+  )
+}
 export default function PoolsTable() {
-  const theme = useTheme()
-  const [sword, setSword] = useState<string>('')
-  const [pools, setPools] = useState<TransactionTableData[]>()
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setSword(e.target.value)
+  const [pools, setPools] = useState<TransactionTableData[]>(SampleResponse.data.pools)
+  function debouncedSearchChange(value: string) {
+    setPools(
+      SampleResponse.data.pools.filter((pool: any) => {
+        const regex = new RegExp(`^${value}`, 'ig')
+        const { name: token0Name, symbol: token0Symbol, id: token0Id } = pool.token0
+        const { name: token1Name, symbol: token1Symbol, id: token1Id } = pool.token1
+        return (
+          regex.test(token0Name) ||
+          regex.test(token0Symbol) ||
+          regex.test(token0Id) ||
+          regex.test(token1Name) ||
+          regex.test(token1Symbol) ||
+          regex.test(token1Id)
+        )
+      })
+    )
   }
-  const useStyles = makeStyles(() =>
-    createStyles({
-      root: {
-        background: theme.bg7,
-        borderRadius: 6,
-        color: theme.text6,
-      },
-      notchedOutline: {
-        borderColor: theme.text6,
-      },
-    })
-  )
-  const classes = useStyles()
-  const searchField = (
-    <TextField
-      type="search"
-      placeholder={t`Filter by token, protocol, ...`}
-      value={sword}
-      variant="outlined"
-      margin="dense"
-      onChange={handleSearch}
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <MagnifierIcon />
-          </InputAdornment>
-        ),
-        classes: classes,
-      }}
-      style={{ width: '460px', height: '48px' }}
-      autoFocus
-    />
-  )
+  const [sword, setSword] = useDebouncedChangeHandler<string>('', debouncedSearchChange, 500)
 
-  useEffect(() => {
-    setPools(SampleResponse.data.pools.filter((pool: any) => pool.token0.name.includes(sword))) // TODO: add filters
-  }, [sword])
-
-  useEffect(() => {
-    setPools(SampleResponse.data.pools)
-  }, [])
+  const toggleInvestModal = usePoolInvestModalToggle()
 
   if (!pools) {
-    return <>Loading ...</>
+    return (
+      <LoaderWrapper>
+        <Loader size="2rem" />
+      </LoaderWrapper>
+    )
   }
 
   return (
     <>
       <Table
-        title={searchField}
+        title={''}
         data={pools}
+        showDisclaimer={true}
         headCells={[
           { id: 'token0.symbol', numeric: false, disablePadding: false, label: t`Available Pools` },
           { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
@@ -196,8 +241,12 @@ export default function PoolsTable() {
           { id: 'trending', numeric: false, disablePadding: false, label: t`Trending` },
           { id: '', numeric: false, disablePadding: false, label: '' },
         ]}
-        row={CustomTableRow}
+        renderToolbar={(props) => PoolTableToolbar({ ...props, searchValue: sword, onSearchValueChange: setSword })}
+        row={(row: any, index: number) => {
+          return CustomTableRow(row, index, toggleInvestModal)
+        }}
       />
+      <PoolInvestModal />
     </>
   )
 }

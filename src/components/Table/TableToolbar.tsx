@@ -11,13 +11,14 @@ type TableToolBarProps = {
   onBack: (currentPage: number) => void
   showDisclaimer?: boolean
 }
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
 `
-const TitleWrapper = styled.div`
+export const TitleWrapper = styled.div`
+  width: 50%;
   font-weight: 500;
   color: ${({ theme }) => theme.text1};
   font-size: 1.25rem;
@@ -25,7 +26,7 @@ const TitleWrapper = styled.div`
     font-size: 1rem;
   `}
 `
-const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
+export const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
