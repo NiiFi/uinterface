@@ -22,7 +22,7 @@ const CustomTableRow = (
   handleClick: (event: React.MouseEvent<unknown>, name: string) => void
 ) => {
   const theme = useTheme()
-  const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
+  const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, fontSize: '16px' }
 
   return (
     <TableRow
@@ -39,7 +39,7 @@ const CustomTableRow = (
       </TableCell>
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper>
-          <CurrencyAvatar symbol={'ETH'} iconProps={{ width: '32', height: '32' }} containerStyle={{ zIndex: 1 }} />
+          <CurrencyAvatar symbol={'ETH'} iconProps={{ width: '32', height: '32' }} hideSymbol={true} />
           <TYPE.black fontWeight={400} style={{ padding: '6px' }}>
             {row.symbol}
           </TYPE.black>
@@ -49,7 +49,7 @@ const CustomTableRow = (
         {shortenDecimalValues(row.priceUSD)}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <Percent value={row.priceUSDChange} fontWeight={400} fontSize={'0.875rem'} />
+        <Percent value={row.priceUSDChange} fontWeight={400} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         ${shortenDecimalValues(row.volumeUSD)}
