@@ -101,7 +101,7 @@ export default function App() {
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/swap" component={Swap} />
               <Route exact strict path="/pools" component={Pools} />
-              <Route exact strict path="/pool/:token0/:token1" component={PoolDetail} />
+              <Route exact strict path="/pools/:token0/:token1" component={PoolDetail} />
               <Route component={RedirectPathToSwapOnly} />
             </Switch>
           </Web3ReactManager>
