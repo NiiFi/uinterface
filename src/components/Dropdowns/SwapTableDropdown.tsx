@@ -24,7 +24,7 @@ const MenuItem = styled.div<{ active?: boolean }>`
   margin-bottom: 2px;
   margin-top: 2px;
   display: flex;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   cursor: pointer;
   border-radius: 0.5rem;
   background-color: ${({ theme, active }) => (active ? theme.bg5 : 'none')};
@@ -85,7 +85,7 @@ export default function SwapTableDropdown({
       <Menu anchorEl={elementRef.current} open={open} onClose={handleClose}>
         <MenuWrapper>
           {Options.map((option, index) => (
-            <MenuItem key={index} onClick={() => onOptionClicked(option.value)}>
+            <MenuItem active={selectedItem === option.value} key={index} onClick={() => onOptionClicked(option.value)}>
               {option.label}
             </MenuItem>
           ))}
