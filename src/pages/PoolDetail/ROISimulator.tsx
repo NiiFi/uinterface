@@ -46,7 +46,6 @@ export default function ROISimulator({ token0, token1 }: { token0: string; token
   const handleROIPeriodChange = useCallback(
     (value: string) => {
       setROIPeriod(value)
-      console.log({ pairValues })
       if (pairValues) {
         updateUIValues(pairValues, value)
       }

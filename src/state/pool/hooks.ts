@@ -75,7 +75,6 @@ export function useFakePoolValuesCalculator() {
     const token1ROI = getROIValueByPeriod(period, token1)
     const token0ROIInUSD = getUSDValue({ ...token0, value: `${token0ROI}` })
     const token1ROIInUSD = getUSDValue({ ...token1, value: `${token1ROI}` })
-    console.log({ token0ROI: `${token0ROI}` })
     return {
       token0: `${token0ROI}`,
       token1: `${token1ROI}`,
