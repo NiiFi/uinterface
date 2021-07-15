@@ -8,12 +8,7 @@
   },
   "tags": {},
   "logoURI": "ipfs://QmcexwZrYwq4vFcP7SVDokeJsrybpQjQwNFUXq1YSA9Lot",
-  "keywords": [
-    "niifi",
-    "nahmii",
-    "tokens",
-    "trusted"
-  ],
+  "keywords": ["niifi", "nahmii", "tokens", "trusted"],
   "tokens": [
     {
       "name": "NiiFi EURO",
