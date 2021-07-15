@@ -52,11 +52,10 @@ const TextFieldWrapper = styled.div`
     max-width: 255px;
   `}
 `
-const CustomTableRow = (row: any, index: number) => {
+const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHandler<HTMLButtonElement>) => {
   const theme = useTheme()
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
   const history = useHistory()
-  const toggleInvestModal = usePoolInvestModalToggle()
   row.isNative = true
 
   // TODO: fill with real data
@@ -128,6 +127,7 @@ const CustomTableRow = (row: any, index: number) => {
           token0={{ symbol: 'ETH', address: '1234' }}
           token1={{ symbol: 'NII', address: '1235' }}
           type="outlined"
+          onClick={handleClick}
           style={{ fontSize: '14px' }}
           padding={'10px 14px'}
         >
@@ -180,6 +180,7 @@ export default function PoolsTable() {
       />
     </TextFieldWrapper>
   )
+  const toggleInvestModal = usePoolInvestModalToggle()
 
   useEffect(() => {
     setPools(SampleResponse.data.pools.filter((pool: any) => pool.token0.name.includes(sword))) // TODO: add filters
@@ -209,7 +210,9 @@ export default function PoolsTable() {
           { id: 'trending', numeric: false, disablePadding: false, label: t`Trending` },
           { id: '', numeric: false, disablePadding: false, label: '' },
         ]}
-        row={CustomTableRow}
+        row={(row: any, index: number) => {
+          return CustomTableRow(row, index, toggleInvestModal)
+        }}
       />
       <PoolInvestModal />
     </>
