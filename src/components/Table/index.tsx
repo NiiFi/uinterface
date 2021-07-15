@@ -23,6 +23,12 @@ export interface HeadCell {
   numeric: boolean
 }
 
+interface RenderToolBarProps {
+  onNext: (page: number) => void
+  onBack: (page: number) => void
+  currentPage: number
+  totalPages: number
+}
 interface EnhancedTableProps {
   title?: any
   onClick?: (props: any) => unknown
@@ -30,6 +36,7 @@ interface EnhancedTableProps {
   headCells: HeadCell[]
   row: (row: any, index: number, handleClick: (event: React.MouseEvent<unknown>, name: string) => void) => unknown
   headCellsBefore?: (props: any) => unknown
+  renderToolbar?: (props: RenderToolBarProps) => any
   showDisclaimer?: boolean
 }
 interface EnhancedTableHeadProps {
@@ -41,7 +48,7 @@ interface EnhancedTableHeadProps {
   onTransactionTypeChange: (type: any) => void
   transactionType: string
   headCells: HeadCell[]
-  renderCells?: (headCell: HeadCell) => unknown
+  renderCells?: (headCell: HeadCell) => JSX.Element
   cellsBefore?: (props: any) => unknown
 }
 
@@ -131,6 +138,7 @@ const useStyles = makeStyles(() =>
 )
 
 export default function EnhancedTable(props: EnhancedTableProps) {
+  const { renderToolbar } = props
   const classes = useStyles()
   const [tableData, setTableData] = React.useState<Array<TransactionTableData>>([])
   const [transactionType, setTransactionType] = React.useState<TransactionTypes>('All')
@@ -169,24 +177,41 @@ export default function EnhancedTable(props: EnhancedTableProps) {
           count={1000}
           rowsPerPage={rowsPerPage}
           page={page}
-          component={() => (
-            <TableToolBar
-              currentPage={page + 1}
-              totalPages={totalPages}
-              title={props.title}
-              onNext={(currentPage: number) => {
-                if (currentPage !== totalPages) {
-                  setPage(currentPage)
-                }
-              }}
-              onBack={(currentPage: number) => {
-                if (currentPage - 2 >= 0) {
-                  setPage(currentPage - 2)
-                }
-              }}
-              showDisclaimer={props.showDisclaimer}
-            />
-          )}
+          component={() =>
+            renderToolbar ? (
+              renderToolbar({
+                onNext: (currentPage: number) => {
+                  if (currentPage !== totalPages) {
+                    setPage(currentPage)
+                  }
+                },
+                onBack: (currentPage: number) => {
+                  if (currentPage - 2 >= 0) {
+                    setPage(currentPage - 2)
+                  }
+                },
+                currentPage: page + 1,
+                totalPages: totalPages,
+              })
+            ) : (
+              <TableToolBar
+                currentPage={page + 1}
+                totalPages={totalPages}
+                title={props.title}
+                onNext={(currentPage: number) => {
+                  if (currentPage !== totalPages) {
+                    setPage(currentPage)
+                  }
+                }}
+                onBack={(currentPage: number) => {
+                  if (currentPage - 2 >= 0) {
+                    setPage(currentPage - 2)
+                  }
+                }}
+                showDisclaimer={props.showDisclaimer}
+              />
+            )
+          }
           onChangePage={handleChangePage}
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />

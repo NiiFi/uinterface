@@ -3,12 +3,10 @@ import { useHistory } from 'react-router-dom'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
 import { t, Trans } from '@lingui/macro'
-import { createStyles, makeStyles } from '@material-ui/core/styles'
+
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
-import TextField from '@material-ui/core/TextField'
-import InputAdornment from '@material-ui/core/InputAdornment'
-import { MagnifierIcon, NIILogo } from 'components/Icons'
+import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
 import { TYPE } from '../../theme'
@@ -20,7 +18,15 @@ import InvestButton from 'components/pools/InvestButton'
 import { usePoolInvestModalToggle } from 'state/application/hooks'
 import PoolInvestModal from 'components/PoolInvestModal'
 import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
-console.log({ length: SampleResponse.data.pools })
+import { ArrowLeft, ArrowRight } from 'react-feather'
+import { Disclaimer } from '../../theme'
+import { SearchInput } from 'components/SearchModal/styleds'
+import {
+  Wrapper as DefaultToolBarWrapper,
+  PagerWrapper as DefaultToolBarPagerWrapper,
+  TitleWrapper as DefaultToolBarTitleWrapper,
+} from './TableToolbar'
+
 const LoaderWrapper = styled.div`
   padding: 5rem;
   display: flex;
@@ -46,13 +52,6 @@ const ColumnWrapper = styled.div`
   flex-direction: column;
 `
 
-const TextFieldWrapper = styled.div`
-  width: 460px;
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    width: 100%;
-    max-width: 255px;
-  `}
-`
 const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHandler<HTMLButtonElement>) => {
   const theme = useTheme()
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
@@ -139,8 +138,66 @@ const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHa
   )
 }
 
+const PoolToolbarTitleWrapper = styled(DefaultToolBarTitleWrapper)`
+  width: 65%;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    width: 78%;
+  `}
+`
+const PoolToolBarPagerWrapper = styled(DefaultToolBarPagerWrapper)`
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    > p {
+      display: none;
+    }
+    > svg {
+      margin: 0px 8px;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  `}
+`
+const PoolTableToolbar = ({
+  onNext,
+  onBack,
+  currentPage,
+  totalPages,
+  searchValue,
+  onSearchValueChange,
+}: {
+  onNext: (page: number) => void
+  onBack: (page: number) => void
+  onSearchValueChange: (str: any) => void
+  searchValue: string
+  currentPage: number
+  totalPages: number
+}) => {
+  return (
+    <>
+      <DefaultToolBarWrapper style={{ marginBottom: '1rem' }}>
+        <PoolToolbarTitleWrapper>
+          <SearchInput
+            placeholder={t`Filter by token, protocol, ...`}
+            value={searchValue}
+            autoFocus
+            onChange={(e) => onSearchValueChange(e.target.value)}
+            style={{ width: '100%', height: '3rem' }}
+          />
+        </PoolToolbarTitleWrapper>
+        <PoolToolBarPagerWrapper currentPage={currentPage} totalPages={totalPages}>
+          <ArrowLeft onClick={() => onBack(currentPage)} />
+          <p>{t`Page ${totalPages === 0 ? 0 : currentPage} of ${totalPages}`}</p>
+          <ArrowRight onClick={() => onNext(currentPage)} />
+        </PoolToolBarPagerWrapper>
+      </DefaultToolBarWrapper>
+      <Disclaimer>
+        <span>Disclaimer:</span>
+        {` `}
+        {t`This is Dummy Data`}
+      </Disclaimer>
+    </>
+  )
+}
 export default function PoolsTable() {
-  const theme = useTheme()
   const [pools, setPools] = useState<TransactionTableData[]>(SampleResponse.data.pools)
   function debouncedSearchChange(value: string) {
     setPools(
@@ -161,41 +218,6 @@ export default function PoolsTable() {
   }
   const [sword, setSword] = useDebouncedChangeHandler<string>('', debouncedSearchChange, 500)
 
-  const useStyles = makeStyles(() =>
-    createStyles({
-      root: {
-        background: theme.bg7,
-        borderRadius: 6,
-        color: theme.text6,
-      },
-      notchedOutline: {
-        borderColor: theme.text6,
-      },
-    })
-  )
-  const classes = useStyles()
-  const searchField = (
-    <TextFieldWrapper>
-      <TextField
-        type="search"
-        placeholder={t`Filter by token, protocol, ...`}
-        value={sword}
-        variant="outlined"
-        margin="dense"
-        onChange={(e) => setSword(e.target.value)}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <MagnifierIcon />
-            </InputAdornment>
-          ),
-          classes: classes,
-        }}
-        style={{ width: '100%', height: '48px' }}
-        autoFocus
-      />
-    </TextFieldWrapper>
-  )
   const toggleInvestModal = usePoolInvestModalToggle()
 
   if (!pools) {
@@ -209,8 +231,9 @@ export default function PoolsTable() {
   return (
     <>
       <Table
-        title={searchField}
+        title={''}
         data={pools}
+        showDisclaimer={true}
         headCells={[
           { id: 'token0.symbol', numeric: false, disablePadding: false, label: t`Available Pools` },
           { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
@@ -218,6 +241,7 @@ export default function PoolsTable() {
           { id: 'trending', numeric: false, disablePadding: false, label: t`Trending` },
           { id: '', numeric: false, disablePadding: false, label: '' },
         ]}
+        renderToolbar={(props) => PoolTableToolbar({ ...props, searchValue: sword, onSearchValueChange: setSword })}
         row={(row: any, index: number) => {
           return CustomTableRow(row, index, toggleInvestModal)
         }}
