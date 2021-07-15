@@ -16,11 +16,11 @@ import { Text } from 'rebass'
 import styled, { ThemeContext } from 'styled-components'
 import AddressInputPanel from '../../components/AddressInputPanel'
 import { ButtonConfirmed, ButtonError, ButtonPrimary } from '../../components/Button'
-import { GreyCard } from '../../components/Card'
+import { DefaultCard, GreyCard } from '../../components/Card'
 import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
 import TabPanel, { TabPanelHeading } from '../../components/tab/TabPanel'
-import { AutoColumn } from '../../components/Column'
+import { AutoColumn, FlexColumn } from '../../components/Column'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import Loader from '../../components/Loader'
@@ -63,6 +63,7 @@ import SwapChart from 'components/LineChart/swap'
 import OverviewChart from 'components/LineChart/overview'
 import BarChart from 'components/BarChart/overview'
 import AppBar from 'components/AppBar'
+import Percent from 'components/Percent'
 
 const StyledInfo = styled(Info)`
   opacity: 0.4;
@@ -675,6 +676,37 @@ export default function Swap({ history }: RouteComponentProps) {
                   <BarChart />
                 </Wrapper>
               </AppBody>
+            </ResponsiveRow>
+          </AutoColumn>
+          <AutoColumn style={{ marginTop: '1rem' }}>
+            <ResponsiveRow>
+              <DefaultCard width="33%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                <TYPE.subHeader fontSize="16px">
+                  <Trans>Volume 24H</Trans>
+                </TYPE.subHeader>
+                <FlexColumn style={{ padding: '5px 0' }}>
+                  <TYPE.mediumHeader>$1.24b</TYPE.mediumHeader>
+                  <Percent value={7.258268337244848} fontWeight={400} />
+                </FlexColumn>
+              </DefaultCard>
+              <DefaultCard width="33%" style={{ minHeight: '100px', paddingTop: '25px', margin: '0 20px' }}>
+                <TYPE.subHeader fontSize="16px">
+                  <Trans>Fees 24H</Trans>
+                </TYPE.subHeader>
+                <FlexColumn style={{ padding: '5px 0' }}>
+                  <TYPE.mediumHeader>$3.03m</TYPE.mediumHeader>
+                  <Percent value={7.858268337244848} fontWeight={400} />
+                </FlexColumn>
+              </DefaultCard>
+              <DefaultCard width="33%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                <TYPE.subHeader fontSize="16px">
+                  <Trans>TVL</Trans>
+                </TYPE.subHeader>
+                <FlexColumn style={{ padding: '5px 0' }}>
+                  <TYPE.mediumHeader>$1.75b</TYPE.mediumHeader>
+                  <Percent value={-0.508268337244848} fontWeight={400} />
+                </FlexColumn>
+              </DefaultCard>
             </ResponsiveRow>
           </AutoColumn>
           <AppBody size="lg" style={{ marginTop: '1rem' }}>

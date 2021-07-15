@@ -39,8 +39,8 @@ const CustomTableRow = (
       </TableCell>
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper>
-          <CurrencyAvatar symbol={'ETH'} iconProps={{ width: '32', height: '32' }} hideSymbol={true} />
-          <TYPE.black fontWeight={400} style={{ padding: '6px' }}>
+          <CurrencyAvatar symbol={'ETH'} containerStyle={{ padding: '0.3125rem' }} hideSymbol={true} />
+          <TYPE.black fontWeight={400} style={{ padding: '8px 0 0 6px' }}>
             {row.symbol}
           </TYPE.black>
         </RowWrapper>

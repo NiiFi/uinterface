@@ -53,3 +53,13 @@ export const BlueCard = styled(Card)`
   color: ${({ theme }) => theme.blue2};
   border-radius: 12px;
 `
+
+export const DefaultCard = styled(Card)`
+  border: 1px solid ${({ theme }) => theme.bg3};
+  background-color: ${({ theme }) => theme.bg0};
+  border-radius: 12px;
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    width: 100%;
+  `};
+`
