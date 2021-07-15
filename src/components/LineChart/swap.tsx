@@ -1,9 +1,10 @@
-import React, { useState, useContext, useMemo } from 'react'
+import React, { useState, useContext, useMemo, useEffect } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import LineChart from './index'
 import getLineChartData from './data'
 import { TYPE } from '../../theme'
+import { shortenDecimalValues, MainCurrency } from 'utils'
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
 
@@ -23,9 +24,10 @@ const CustomButton = ({
     <ButtonOutlined
       value={value}
       onClick={onClick}
-      width="32px"
+      height="30px"
+      width="36px"
       padding="6px"
-      margin="12px"
+      margin="10px 18px"
       style={{
         display: 'inline',
         fontSize: '12px',
@@ -39,6 +41,22 @@ const CustomButton = ({
   )
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0px;
+  color: ${({ theme }) => theme.text5};
+`
+
+const ControlWrapper = styled(Wrapper)`
+  border-top: 1px solid ${({ theme }) => theme.bg5};
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.4rem 0px;
+  margin-top: 10px;
+`
 const SwapChart = () => {
   const theme = useContext(ThemeContext)
   const [liquidityHover, setLiquidityHover] = useState<number | undefined>()
@@ -46,7 +64,6 @@ const SwapChart = () => {
   const [feesHover, setFeesHover] = useState<number | undefined>()
   const [currentChartValue, setCurrentChartValue] = useState<string>('value1')
   const [currentChartPeriod, setCurrentChartPeriod] = useState<string>('week')
-  const realCurrency = 'US$'
 
   const lineChartData = useMemo(() => {
     return getLineChartData(currentChartPeriod)
@@ -58,53 +75,63 @@ const SwapChart = () => {
 
   const handleChartPeriod = (e: React.ChangeEvent<any>): void => {
     setCurrentChartPeriod(e.target.value)
+    setLiquidityHover(undefined)
+    setVolumeHover(undefined)
+    setFeesHover(undefined)
   }
-
-  const Wrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.2rem 0px;
-    color: ${({ theme }) => theme.text5};
-  `
-
-  const ControlWrapper = styled(Wrapper)`
-    border-top: 1px solid ${({ theme }) => theme.bg5};
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0.4rem 0px;
-    margin-top: 10px;
-  `
 
   const dateFormat = currentChartPeriod === 'all' ? 'MMM' : 'dd'
 
+  useEffect(() => {
+    if (!liquidityHover && lineChartData) {
+      setLiquidityHover(lineChartData[lineChartData.length - 1].value1)
+    }
+  }, [liquidityHover, lineChartData, currentChartPeriod])
+
+  useEffect(() => {
+    if (!volumeHover && lineChartData) {
+      setVolumeHover(lineChartData[lineChartData.length - 1].value2)
+    }
+  }, [volumeHover, lineChartData, currentChartPeriod])
+
+  useEffect(() => {
+    if (!feesHover && lineChartData) {
+      setFeesHover(lineChartData[lineChartData.length - 1].value3)
+    }
+  }, [feesHover, lineChartData, currentChartPeriod])
+
   return (
     <>
-      <TYPE.mediumHeader style={{ paddingBottom: '10px' }}>
+      <TYPE.mediumHeaderEllipsis padding="18px 0">
         <Trans>ETH-ANY Pair Stats (Dummy data)</Trans>
-      </TYPE.mediumHeader>
+      </TYPE.mediumHeaderEllipsis>
       <Wrapper>
         <TYPE.black fontWeight={400}>
           <Trans>Liquidity</Trans>
         </TYPE.black>
-        <TYPE.black>{liquidityHover ? `${liquidityHover} ${realCurrency}` : '-'}</TYPE.black>
+        <TYPE.black style={{ paddingRight: '20px' }}>
+          {liquidityHover ? shortenDecimalValues(String(liquidityHover), '0,0') + ` ${MainCurrency}` : '-'}
+        </TYPE.black>
       </Wrapper>
       <Wrapper>
         <TYPE.black fontWeight={400}>
           <Trans>Volume</Trans>
         </TYPE.black>
-        <TYPE.black>{volumeHover ? `${volumeHover} ${realCurrency}` : '-'}</TYPE.black>
+        <TYPE.black style={{ paddingRight: '20px' }}>
+          {volumeHover ? shortenDecimalValues(String(volumeHover), '0,0') + ` ${MainCurrency}` : '-'}
+        </TYPE.black>
       </Wrapper>
       <Wrapper>
         <TYPE.black fontWeight={400}>
           <Trans>Fees</Trans>
         </TYPE.black>
-        <TYPE.black>{feesHover ? `${feesHover} ${realCurrency}` : '-'}</TYPE.black>
+        <TYPE.black style={{ paddingRight: '20px' }}>
+          {feesHover ? shortenDecimalValues(String(feesHover), '0,0') + ` ${MainCurrency}` : '-'}
+        </TYPE.black>
       </Wrapper>
       <ControlWrapper>
         <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
-        <TYPE.main>
+        <TYPE.main style={{ paddingRight: '16px' }}>
           <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
           <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
           <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />

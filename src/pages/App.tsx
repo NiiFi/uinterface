@@ -12,6 +12,8 @@ import { ApplicationModal } from '../state/application/actions'
 import { useModalOpen, useToggleModal } from '../state/application/hooks'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import Swap from './Swap'
+import Pools from './Pool'
+import PoolDetail from './PoolDetail'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import { useToggleDrawer } from 'state/application/hooks'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
@@ -98,6 +100,8 @@ export default function App() {
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/swap" component={Swap} />
+              <Route exact strict path="/pools" component={Pools} />
+              <Route exact strict path="/pools/:token0/:token1" component={PoolDetail} />
               <Route component={RedirectPathToSwapOnly} />
             </Switch>
           </Web3ReactManager>

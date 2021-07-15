@@ -27,6 +27,7 @@ export const BodyWrapperMd = styled(BodyWrapper)`
 export const BodyWrapperLg = styled(BodyWrapper)`
   max-width: 100%;
 `
+
 /**
  * The styled container element that wraps the content of most pages and the tabs.
  */

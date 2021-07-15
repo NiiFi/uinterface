@@ -68,3 +68,18 @@ export type TransactionTableData = {
   amountUSD: string
   __typename: TransactionTypes
 }
+
+export type TokenOutput = Token & {
+  name: string
+  derivedETH: string
+  feesUSD: string
+  totalValueLocked: string
+  totalValueLockedUSD: string
+  txCount: string
+  volume: string
+  volumeUSD: string
+}
+
+export type TokenListQuery = {
+  tokens: Array<TokenOutput>
+}

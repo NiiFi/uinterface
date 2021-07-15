@@ -50,6 +50,7 @@ export const ResponsiveRow = styled(RowBetween)`
   ${({ theme }) => theme.mediaWidth.upToSmall`
     flex-direction: column;
     row-gap: 1rem;
+    gap: 1rem;
   `};
 `
 

@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   z-index: 1;
+  margin-left: -8px;
 `
 const MenuWrapper = styled.div`
   display: flex;

@@ -20,4 +20,13 @@ export const AutoColumn = styled.div<{
   justify-items: ${({ justify }) => justify && justify};
 `
 
+export const FlexColumn = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0px;
+  color: ${({ theme }) => theme.text5};
+`
+
 export default Column

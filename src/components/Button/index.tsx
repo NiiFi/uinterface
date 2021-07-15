@@ -7,7 +7,7 @@ import { ChevronDown, Check } from 'react-feather'
 import { Button as RebassButton, ButtonProps as ButtonPropsOriginal } from 'rebass/styled-components'
 import useTheme from 'hooks/useTheme'
 
-type ButtonProps = Omit<ButtonPropsOriginal, 'css'>
+export type ButtonProps = Omit<ButtonPropsOriginal, 'css'>
 
 const Base = styled(RebassButton)<
   {
@@ -197,18 +197,18 @@ export const ButtonUNIGradient = styled(ButtonPrimary)`
 `
 
 export const ButtonOutlined = styled(Base)`
-  border: 1px solid ${({ theme }) => theme.bg2};
+  border: 1px solid ${({ theme }) => theme.text6};
   background-color: transparent;
-  color: ${({ theme }) => theme.text2};
+  color: ${({ theme }) => theme.text6};
 
   &:focus {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.bg4};
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.text6};
   }
   &:hover {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.bg4};
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.text6};
   }
   &:active {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.bg4};
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.text6};
   }
   &:disabled {
     opacity: 50%;

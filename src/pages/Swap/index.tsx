@@ -1,8 +1,8 @@
 import { Trans, t } from '@lingui/macro'
-import AppBar from '@material-ui/core/AppBar'
 
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
-import Table from '../../components/Table'
+import SwapTable from '../../components/Table/swap'
+import OverviewTable from '../../components/Table/overview'
 import { Trade } from '@uniswap/v2-sdk'
 import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
@@ -16,11 +16,11 @@ import { Text } from 'rebass'
 import styled, { ThemeContext } from 'styled-components'
 import AddressInputPanel from '../../components/AddressInputPanel'
 import { ButtonConfirmed, ButtonError, ButtonPrimary } from '../../components/Button'
-import { GreyCard } from '../../components/Card'
+import { DefaultCard, GreyCard } from '../../components/Card'
 import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
 import TabPanel, { TabPanelHeading } from '../../components/tab/TabPanel'
-import { AutoColumn } from '../../components/Column'
+import { AutoColumn, FlexColumn } from '../../components/Column'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import Loader from '../../components/Loader'
@@ -30,7 +30,7 @@ import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import Slippage from '../../components/swap/Slippage'
 import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
-import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper, BodyScroller } from '../../components/swap/styleds'
+import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper, BodyScroller } from 'components/swap/styleds'
 import TradePrice from '../../components/swap/TradePrice'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
 import TokenWarningModal from '../../components/TokenWarningModal'
@@ -62,6 +62,8 @@ import AppBody from '../AppBody'
 import SwapChart from 'components/LineChart/swap'
 import OverviewChart from 'components/LineChart/overview'
 import BarChart from 'components/BarChart/overview'
+import AppBar from 'components/AppBar'
+import Percent from 'components/Percent'
 
 const StyledInfo = styled(Info)`
   opacity: 0.4;
@@ -362,18 +364,7 @@ export default function Swap({ history }: RouteComponentProps) {
         onConfirm={handleConfirmTokenWarning}
         onDismiss={handleDismissTokenWarning}
       />
-      <AppBar
-        position="static"
-        style={{
-          boxShadow: 'none',
-          borderBottom: `1px solid ${theme.bg3}`,
-          backgroundColor: theme.bg0,
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
+      <AppBar style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
         <ToggleDrawer />
         <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={t`Swap`} />
@@ -390,7 +381,7 @@ export default function Swap({ history }: RouteComponentProps) {
           </TabPanelHeading>
           <AutoColumn>
             <ResponsiveRow>
-              <AppBody size="md" style={{ minHeight: '400px' }}>
+              <AppBody size="md" style={{ minHeight: '440px' }}>
                 <Wrapper id="swap-page">
                   <ConfirmSwapModal
                     isOpen={showConfirm}
@@ -647,15 +638,15 @@ export default function Swap({ history }: RouteComponentProps) {
                   </AutoColumn>
                 </Wrapper>
               </AppBody>
-              <AppBody size="md" style={{ minHeight: '400px' }}>
+              <AppBody size="md" style={{ minHeight: '440px' }}>
                 <Wrapper>
                   <SwapChart />
                 </Wrapper>
               </AppBody>
             </ResponsiveRow>
           </AutoColumn>
-          <AppBody size="lg" margin="2rem" padding="1rem 2rem">
-            <Table />
+          <AppBody size="lg" margin="2rem">
+            <SwapTable />
           </AppBody>
           <SwitchLocaleLink />
           {!swapIsUnsupported ? null : (
@@ -687,6 +678,40 @@ export default function Swap({ history }: RouteComponentProps) {
               </AppBody>
             </ResponsiveRow>
           </AutoColumn>
+          <AutoColumn style={{ marginTop: '1rem' }}>
+            <ResponsiveRow>
+              <DefaultCard width="33%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                <TYPE.subHeader fontSize="16px">
+                  <Trans>Volume 24H</Trans>
+                </TYPE.subHeader>
+                <FlexColumn style={{ padding: '5px 0' }}>
+                  <TYPE.mediumHeader color="text1">$1.24b</TYPE.mediumHeader>
+                  <Percent value={7.258268337244848} fontWeight={400} />
+                </FlexColumn>
+              </DefaultCard>
+              <DefaultCard width="33%" style={{ minHeight: '100px', paddingTop: '25px', margin: '0 20px' }}>
+                <TYPE.subHeader fontSize="16px">
+                  <Trans>Fees 24H</Trans>
+                </TYPE.subHeader>
+                <FlexColumn style={{ padding: '5px 0' }}>
+                  <TYPE.mediumHeader color="text1">$3.03m</TYPE.mediumHeader>
+                  <Percent value={7.858268337244848} fontWeight={400} />
+                </FlexColumn>
+              </DefaultCard>
+              <DefaultCard width="33%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                <TYPE.subHeader fontSize="16px">
+                  <Trans>TVL</Trans>
+                </TYPE.subHeader>
+                <FlexColumn style={{ padding: '5px 0' }}>
+                  <TYPE.mediumHeader color="text1">$1.75b</TYPE.mediumHeader>
+                  <Percent value={-0.508268337244848} fontWeight={400} />
+                </FlexColumn>
+              </DefaultCard>
+            </ResponsiveRow>
+          </AutoColumn>
+          <AppBody size="lg" style={{ marginTop: '1rem' }}>
+            <OverviewTable />
+          </AppBody>
         </TabPanel>
       </BodyScroller>
     </>

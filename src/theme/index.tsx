@@ -59,6 +59,7 @@ export function colors(darkMode: boolean): Colors {
     bg4: darkMode ? '#565A69' : 'rgba(12, 68, 63, 0.6)',
     bg5: darkMode ? 'rgba(9, 53, 49, 1)' : 'rgba(228, 247, 245, 1)',
     bg6: darkMode ? 'rgba(5, 26, 24, 1)' : white,
+    bg7: darkMode ? '#051A18' : '#F7FDFC',
 
     //specialty colors
     modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
@@ -167,6 +168,16 @@ export const TYPE = {
   mediumHeader(props: TextProps) {
     return <TextWrapper fontWeight={500} fontSize={20} {...props} />
   },
+  mediumHeaderEllipsis(props: TextProps) {
+    return (
+      <TextWrapper
+        fontWeight={500}
+        fontSize={20}
+        style={{ overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}
+        {...props}
+      />
+    )
+  },
   subHeader(props: TextProps) {
     return <TextWrapper fontWeight={400} fontSize={14} {...props} />
   },
@@ -205,10 +216,10 @@ a {
 `
 export const Disclaimer = styled.div`
   width: 100%;
-  background-color: #ffffe0;
+  background-color: ${({ theme }) => theme.warning};
   color: black;
   border-radius: 8px;
-  border: 1px solid #f0e68c;
+  border: 1px solid ${({ theme }) => theme.bg3};
   font-size: 0.75rem;
   padding: 10px 20px;
   > span {
