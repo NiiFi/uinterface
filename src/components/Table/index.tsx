@@ -25,6 +25,7 @@ export interface HeadCell {
 
 interface EnhancedTableProps {
   title?: any
+  onClick?: (props: any) => unknown
   data: Array<TransactionTableData>
   headCells: HeadCell[]
   row: (row: any, index: number, handleClick: (event: React.MouseEvent<unknown>, name: string) => void) => unknown
@@ -33,7 +34,6 @@ interface EnhancedTableProps {
 }
 interface EnhancedTableHeadProps {
   classes: ReturnType<typeof useStyles>
-  numSelected: number
   onRequestSort: (event: React.MouseEvent<unknown>, property: string) => void
   order: Order
   orderBy: string
@@ -136,7 +136,6 @@ export default function EnhancedTable(props: EnhancedTableProps) {
   const [transactionType, setTransactionType] = React.useState<TransactionTypes>('All')
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<string>('amountUSD')
-  const [selected, setSelected] = React.useState<string[]>([])
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(25)
   useEffect(() => {
@@ -149,24 +148,9 @@ export default function EnhancedTable(props: EnhancedTableProps) {
     setOrderBy(property)
     setPage(0)
   }
-
-  const handleClick = (event: React.MouseEvent<unknown>, name: string) => {
-    const selectedIndex = selected.indexOf(name)
-    let newSelected: string[] = []
-
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name)
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1))
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1))
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(selected.slice(0, selectedIndex), selected.slice(selectedIndex + 1))
-    }
-
-    setSelected(newSelected)
+  const handleClick = () => {
+    props.onClick && props.onClick('')
   }
-
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage)
   }
@@ -211,7 +195,6 @@ export default function EnhancedTable(props: EnhancedTableProps) {
         <Table className={classes.table} size={'medium'} style={{ width: '100%', tableLayout: 'auto' }}>
           <EnhancedTableHead
             classes={classes}
-            numSelected={selected.length}
             order={order}
             orderBy={orderBy}
             onRequestSort={handleRequestSort}

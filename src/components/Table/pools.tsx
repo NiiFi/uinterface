@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
@@ -19,7 +19,8 @@ import { TransactionTableData } from '../Table/types'
 import InvestButton from 'components/pools/InvestButton'
 import { usePoolInvestModalToggle } from 'state/application/hooks'
 import PoolInvestModal from 'components/PoolInvestModal'
-
+import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
+console.log({ length: SampleResponse.data.pools })
 const LoaderWrapper = styled.div`
   padding: 5rem;
   display: flex;
@@ -140,11 +141,26 @@ const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHa
 
 export default function PoolsTable() {
   const theme = useTheme()
-  const [sword, setSword] = useState<string>('')
-  const [pools, setPools] = useState<TransactionTableData[]>()
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setSword(e.target.value)
+  const [pools, setPools] = useState<TransactionTableData[]>(SampleResponse.data.pools)
+  function debouncedSearchChange(value: string) {
+    setPools(
+      SampleResponse.data.pools.filter((pool: any) => {
+        const regex = new RegExp(`^${value}`, 'ig')
+        const { name: token0Name, symbol: token0Symbol, id: token0Id } = pool.token0
+        const { name: token1Name, symbol: token1Symbol, id: token1Id } = pool.token1
+        return (
+          regex.test(token0Name) ||
+          regex.test(token0Symbol) ||
+          regex.test(token0Id) ||
+          regex.test(token1Name) ||
+          regex.test(token1Symbol) ||
+          regex.test(token1Id)
+        )
+      })
+    )
   }
+  const [sword, setSword] = useDebouncedChangeHandler<string>('', debouncedSearchChange, 500)
+
   const useStyles = makeStyles(() =>
     createStyles({
       root: {
@@ -166,7 +182,7 @@ export default function PoolsTable() {
         value={sword}
         variant="outlined"
         margin="dense"
-        onChange={handleSearch}
+        onChange={(e) => setSword(e.target.value)}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
@@ -181,14 +197,6 @@ export default function PoolsTable() {
     </TextFieldWrapper>
   )
   const toggleInvestModal = usePoolInvestModalToggle()
-
-  useEffect(() => {
-    setPools(SampleResponse.data.pools.filter((pool: any) => pool.token0.name.includes(sword))) // TODO: add filters
-  }, [sword])
-
-  useEffect(() => {
-    setPools(SampleResponse.data.pools)
-  }, [])
 
   if (!pools) {
     return (
