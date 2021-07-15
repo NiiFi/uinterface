@@ -4,19 +4,21 @@ import { t } from '@lingui/macro'
 import { ArrowLeft, ArrowRight } from 'react-feather'
 import { Disclaimer } from '../../theme'
 type TableToolBarProps = {
-  title: string
+  title?: any
   currentPage: number
   totalPages: number
   onNext: (currentPage: number) => void
   onBack: (currentPage: number) => void
+  showDisclaimer?: boolean
 }
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
 `
-const TitleWrapper = styled.div`
+export const TitleWrapper = styled.div`
+  width: 50%;
   font-weight: 500;
   color: ${({ theme }) => theme.text1};
   font-size: 1.25rem;
@@ -24,7 +26,7 @@ const TitleWrapper = styled.div`
     font-size: 1rem;
   `}
 `
-const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
+export const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,7 +55,14 @@ const PagerWrapper = styled.div<{ currentPage: number; totalPages: number }>`
     }
   `}
 `
-export default function TableToolBar({ title, currentPage, totalPages, onNext, onBack }: TableToolBarProps) {
+export default function TableToolBar({
+  title,
+  currentPage,
+  totalPages,
+  onNext,
+  onBack,
+  showDisclaimer,
+}: TableToolBarProps) {
   return (
     <>
       <Wrapper>
@@ -64,11 +73,13 @@ export default function TableToolBar({ title, currentPage, totalPages, onNext, o
           <ArrowRight onClick={() => onNext(currentPage)} />
         </PagerWrapper>
       </Wrapper>
-      <Disclaimer>
-        <span>Disclaimer:</span>
-        {` `}
-        {t`This is Dummy Data`}
-      </Disclaimer>
+      {showDisclaimer && (
+        <Disclaimer>
+          <span>Disclaimer:</span>
+          {` `}
+          {t`This is Dummy Data`}
+        </Disclaimer>
+      )}
     </>
   )
 }

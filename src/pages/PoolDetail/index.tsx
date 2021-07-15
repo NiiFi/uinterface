@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { useHistory } from 'react-router-dom'
 import { ArrowLeft } from 'react-feather'
 import { Trans, t } from '@lingui/macro'
 import { RouteComponentProps, Redirect } from 'react-router-dom'
@@ -121,6 +122,7 @@ export default function PoolDetails({
   },
 }: RouteComponentProps<{ token0: string; token1: string }>) {
   const togglePoolInvestModal = usePoolInvestModalToggle()
+  const history = useHistory()
   if (!token0 || !token1) {
     return <Redirect to={'/swap'} />
   }
@@ -129,7 +131,7 @@ export default function PoolDetails({
       <AppBar>
         <BarWrapper>
           <BarTitle>
-            <ArrowLeft />
+            <ArrowLeft style={{ cursor: 'pointer' }} onClick={() => history.push('/pools')} />
             {`${token0} / ${token1} `}
             {t`Pool`}
           </BarTitle>

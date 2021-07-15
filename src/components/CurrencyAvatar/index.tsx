@@ -9,6 +9,7 @@ type Props = {
   containerStyle?: React.CSSProperties
   rootStyle?: React.CSSProperties
   iconProps?: IconProps
+  hideSymbol?: boolean
 }
 const CurrencyAvatarWrapper = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const CurrencyLogoWrapper = styled.div`
   border-radius: 50%;
   display: flex;
 `
-export const CurrencyAvatar = ({ symbol, iconProps, containerStyle, rootStyle }: Props) => {
+export const CurrencyAvatar = ({ symbol, iconProps, containerStyle, rootStyle, hideSymbol }: Props) => {
   let Icon
   if (symbol === 'ETH') {
     Icon = <ETHIcon {...iconProps} />
@@ -35,7 +36,7 @@ export const CurrencyAvatar = ({ symbol, iconProps, containerStyle, rootStyle }:
   return (
     <CurrencyAvatarWrapper style={rootStyle}>
       <CurrencyLogoWrapper style={containerStyle}>{Icon}</CurrencyLogoWrapper>
-      <span>{symbol}</span>
+      {!hideSymbol && <span>{symbol}</span>}
     </CurrencyAvatarWrapper>
   )
 }
