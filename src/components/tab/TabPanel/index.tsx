@@ -15,12 +15,12 @@ export const TabPanelHeading = styled.p`
   font-weight: 400;
 `
 const Wrapper = styled.div`
-  padding: 1rem 2rem;
+  padding: 2rem;
   width: 100%;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
     max-width: 100%;
-    padding: 0.625rem;
+    padding: 2rem;
     box-sizing: border-box;
   `}
 

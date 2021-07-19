@@ -57,6 +57,13 @@ const ControlWrapper = styled(Wrapper)`
   padding: 0.4rem 0px;
   margin-top: 10px;
 `
+const ButtonControlWrapper = styled(TYPE.main)`
+  padding-right: 1rem;
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding-right: 0.5rem;
+  `}
+`
 const SwapChart = () => {
   const theme = useContext(ThemeContext)
   const [liquidityHover, setLiquidityHover] = useState<number | undefined>()
@@ -131,11 +138,11 @@ const SwapChart = () => {
       </Wrapper>
       <ControlWrapper>
         <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
-        <TYPE.main style={{ paddingRight: '16px' }}>
+        <ButtonControlWrapper>
           <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
           <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
           <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
-        </TYPE.main>
+        </ButtonControlWrapper>
       </ControlWrapper>
       <LineChart
         data={lineChartData}

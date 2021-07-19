@@ -46,7 +46,9 @@ export const RowFixed = styled(Row)<{ gap?: string; justify?: string }>`
   margin: ${({ gap }) => gap && `-${gap}`};
 `
 
-export const ResponsiveRow = styled(RowBetween)`
+export const ResponsiveRow = styled(RowBetween)<{ gap?: string }>`
+  gap: ${({ gap }) => gap && `${gap}`};
+  box-sizing: border-box;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     flex-direction: column;
     row-gap: 1rem;

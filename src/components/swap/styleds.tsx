@@ -19,7 +19,7 @@ export const BodyScroller = styled.div`
   width: 100%;
 `
 export const ArrowWrapper = styled.div<{ clickable: boolean }>`
-  padding: 2px 4px;
+  padding: 0px 4px;
   border-radius: 50%;
   height: 3rem;
   width: 3rem;
