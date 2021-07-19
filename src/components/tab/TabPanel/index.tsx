@@ -29,18 +29,6 @@ const Wrapper = styled.div`
     padding: 0.625rem;
     box-sizing: border-box;
   `}
-
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall1`
-    max-width: 100%;
-    padding: 0.625rem;
-    box-sizing: border-box;
-  `}
-
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall2`
-    max-width: 100%;
-    padding: 0.625rem;
-    box-sizing: border-box;
-  `}
 `
 
 export default function TabPanel({ activeIndex, index, children }: TabPanelProps) {
