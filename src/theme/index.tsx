@@ -14,12 +14,10 @@ export * from './components'
 type TextProps = Omit<TextPropsOriginal, 'css'>
 
 export const MEDIA_WIDTHS = {
-  upToExtraSmall2: 320,
-  upToExtraSmall1: 375,
   upToExtraSmall: 400,
-  upToSmall: 576,
-  upToMedium: 768,
-  upToLarge: 1200,
+  upToSmall: 904,
+  upToMedium: 1239,
+  upToLarge: 1439,
 }
 
 const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } = Object.keys(MEDIA_WIDTHS).reduce(
