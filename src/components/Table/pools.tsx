@@ -176,7 +176,6 @@ export default function PoolsTable() {
       <SearchableTable
         title={''}
         data={pools}
-        showDisclaimer={true}
         searchLabel={t`Filter by token, protocol, ...`}
         debouncedSearchChange={(value: string) => {
           setPools(

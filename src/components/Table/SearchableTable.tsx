@@ -40,7 +40,6 @@ interface EnhancedTableProps {
   row: (row: any, index: number, handleClick: (event: React.MouseEvent<unknown>, name: string) => void) => unknown
   headCellsBefore?: (props: any) => unknown
   renderToolbar?: (props: RenderToolBarProps) => any
-  showDisclaimer?: boolean
   searchLabel?: string
   debouncedSearchChange: (value: string) => void
 }
