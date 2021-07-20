@@ -149,7 +149,7 @@ const PoolTableToolbar = ({
   totalPages: number
 }) => {
   return (
-    <DefaultToolBarWrapper style={{ width: 'auto', marginBottom: '1rem' }}>
+    <DefaultToolBarWrapper style={{ width: 'auto' }}>
       <PoolToolBarPagerWrapper currentPage={currentPage} totalPages={totalPages}>
         <ArrowLeft onClick={() => onBack(currentPage)} />
         <p>{t`Page ${totalPages === 0 ? 0 : currentPage} of ${totalPages}`}</p>

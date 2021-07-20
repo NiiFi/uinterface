@@ -142,9 +142,7 @@ const useStyles = makeStyles(() => {
       flexWrap: 'wrap',
       justifyContent: 'space-between',
       padding: '16px 16px 0 16px',
-      ['@media (max-width: 576px)']: {
-        marginBottom: '1rem',
-      },
+      marginBottom: '1rem',
     },
     paddingsWrap: {
       padding: '0 16px 0 16px',

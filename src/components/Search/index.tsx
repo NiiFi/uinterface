@@ -1,11 +1,19 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components/macro'
 import { SearchInput } from 'components/SearchModal/styleds'
-// import { MagnifierIcon } from 'components/Icons'
+import { MagnifierIcon } from 'components/Icons'
 import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
+import ReactDOMServer from 'react-dom/server'
 
-// TODO: add MagnifierIcon
-export const CustomSearchInput = styled(SearchInput)``
+export const CustomSearchInput = styled(SearchInput)`
+  padding: 16px 50px;
+  background-repeat: no-repeat;
+  background-position: 2%;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    font-size: 16px;
+    padding: 16px 38px;
+  `}
+`
 
 type Props = {
   placeholder: string
@@ -29,6 +37,11 @@ const SearchBar = ({ placeholder, debouncedSearchChange, query, setQuery, ...res
       placeholder={placeholder}
       onChange={(event) => setSword(event.target.value)}
       {...rest}
+      style={{
+        backgroundImage: `url('data:image/svg+xml;utf8,${encodeURIComponent(
+          ReactDOMServer.renderToStaticMarkup(MagnifierIcon({ width: 24, height: 24 }))
+        )}')`,
+      }}
     />
   )
 }
