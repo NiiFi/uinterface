@@ -16,8 +16,11 @@ export const AutoColumn = styled.div<{
 }>`
   display: grid;
   grid-auto-rows: auto;
-  grid-row-gap: ${({ gap }) => (gap === 'sm' && '8px') || (gap === 'md' && '12px') || (gap === 'lg' && '24px') || gap};
+  grid-row-gap: ${({ gap }) => (gap === 'sm' && '8px') || (gap === 'md' && '1rem') || (gap === 'lg' && '2rem') || gap};
   justify-items: ${({ justify }) => justify && justify};
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    grid-row-gap: 1rem;
+  `}
 `
 
 export const FlexColumn = styled.div`
