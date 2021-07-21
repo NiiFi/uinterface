@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { createStyles, makeStyles } from '@material-ui/core/styles'
 import { orderBy as lodashOrderBy, get } from 'lodash'
+import { t } from '@lingui/macro'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -13,6 +14,8 @@ import useTheme from 'hooks/useTheme'
 import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 import TableToolBar from './TableToolbar'
 import { TableDataTypes, TransactionTypes } from './types'
+import SearchBar from 'components/Search'
+import { Disclaimer } from '../../theme'
 
 export type Order = 'asc' | 'desc'
 
@@ -37,7 +40,8 @@ interface EnhancedTableProps {
   row: (row: any, index: number, handleClick: (event: React.MouseEvent<unknown>, name: string) => void) => unknown
   headCellsBefore?: (props: any) => unknown
   renderToolbar?: (props: RenderToolBarProps) => any
-  showDisclaimer?: boolean
+  searchLabel?: string
+  debouncedSearchChange: (value: string) => void
 }
 interface EnhancedTableHeadProps {
   classes: ReturnType<typeof useStyles>
@@ -109,8 +113,9 @@ function EnhancedTableHead(props: EnhancedTableHeadProps) {
   )
 }
 
-const useStyles = makeStyles(() =>
-  createStyles({
+const useStyles = makeStyles(() => {
+  const theme = useTheme()
+  return createStyles({
     root: {
       width: '100%',
     },
@@ -120,8 +125,27 @@ const useStyles = makeStyles(() =>
     table: {
       minWidth: 750,
     },
+    searchWrap: {
+      width: '65%',
+      fontWeight: 500,
+      color: theme.text1,
+      fontSize: '1.25rem',
+      // FIXME
+      // [theme.mediaWidth.upToSmall()]: {
+      ['@media (max-width: 576px)']: {
+        fontSize: '1rem',
+        width: '78%',
+      },
+    },
     headerWrap: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
       padding: '16px 16px 0 16px',
+      marginBottom: '1rem',
+    },
+    paddingsWrap: {
+      padding: '0 16px 0 16px',
     },
     visuallyHidden: {
       border: 0,
@@ -135,10 +159,10 @@ const useStyles = makeStyles(() =>
       width: 1,
     },
   })
-)
-
-export default function EnhancedTable(props: EnhancedTableProps) {
-  const { renderToolbar } = props
+})
+// TODO: remove transactionType and setTransactionType
+export default function SearchableTable(props: EnhancedTableProps) {
+  const { renderToolbar, searchLabel, debouncedSearchChange } = props
   const classes = useStyles()
   const [tableData, setTableData] = React.useState<Array<TableDataTypes>>([])
   const [transactionType, setTransactionType] = React.useState<TransactionTypes>('All')
@@ -146,6 +170,7 @@ export default function EnhancedTable(props: EnhancedTableProps) {
   const [orderBy, setOrderBy] = React.useState<string>('amountUSD')
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(25)
+  const [query, setQuery] = React.useState<string>('')
   useEffect(() => {
     setTableData(props.data)
   }, [props.data, setTableData])
@@ -170,8 +195,17 @@ export default function EnhancedTable(props: EnhancedTableProps) {
 
   const totalPages = Math.ceil(tableData.length / rowsPerPage)
   return (
-    <div className={classes.root}>
+    <>
       <div className={classes.headerWrap}>
+        <div className={classes.searchWrap}>
+          <SearchBar
+            placeholder={searchLabel || t`Search`}
+            debouncedSearchChange={debouncedSearchChange}
+            query={query}
+            setQuery={setQuery}
+            style={{ height: '3rem' }}
+          />
+        </div>
         <TablePagination
           rowsPerPageOptions={[1000]}
           count={1000}
@@ -181,7 +215,7 @@ export default function EnhancedTable(props: EnhancedTableProps) {
             renderToolbar ? (
               renderToolbar({
                 onNext: (currentPage: number) => {
-                  if (currentPage !== totalPages) {
+                  if (totalPages && currentPage !== totalPages) {
                     setPage(currentPage)
                   }
                 },
@@ -199,7 +233,7 @@ export default function EnhancedTable(props: EnhancedTableProps) {
                 totalPages={totalPages}
                 title={props.title}
                 onNext={(currentPage: number) => {
-                  if (currentPage !== totalPages) {
+                  if (totalPages && currentPage !== totalPages) {
                     setPage(currentPage)
                   }
                 }}
@@ -208,13 +242,20 @@ export default function EnhancedTable(props: EnhancedTableProps) {
                     setPage(currentPage - 2)
                   }
                 }}
-                showDisclaimer={props.showDisclaimer}
+                showDisclaimer={false}
               />
             )
           }
           onChangePage={handleChangePage}
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
+      </div>
+      <div className={classes.paddingsWrap}>
+        <Disclaimer>
+          <span>Disclaimer:</span>
+          {` `}
+          {t`This is Dummy Data`}
+        </Disclaimer>
       </div>
       <TableContainer>
         <Table className={classes.table} size={'medium'} style={{ width: '100%', tableLayout: 'auto' }}>
@@ -240,12 +281,12 @@ export default function EnhancedTable(props: EnhancedTableProps) {
                 },
                 [order]
               )
-                .filter((row) => (transactionType === 'All' ? true : transactionType === row.__typename))
+                // .filter((row) => (transactionType === 'All' ? true : transactionType === row.__typename))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => props.row(row, index, handleClick))}
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
+    </>
   )
 }
