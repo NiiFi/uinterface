@@ -74,12 +74,36 @@ msgstr "0 UNI / أسبوع"
 #~ msgid "0.3% fee"
 #~ msgstr "رسم 0.3%"
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Month"
+msgstr ""
+
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Week"
+msgstr ""
+
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Year"
+msgstr ""
+
 #: 
 #~ msgid "1% fee"
 #~ msgstr "1% رسوم"
 
+#: src/components/Table/pools.tsx
+msgid "1W"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "1Y"
+msgstr ""
+
 #: src/components/swap/Slippage.tsx
 msgid "2%"
+msgstr ""
+
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "24h Low / 24h High"
 msgstr ""
 
 #: 
@@ -107,9 +131,9 @@ msgstr "<0/> جميع المقترحات"
 msgid "<0/> Votes"
 msgstr "<0/> الأصوات"
 
-#: src/pages/Pool/index.tsx
-msgid "<0> ↗ </0>"
-msgstr ""
+#: 
+#~ msgid "<0> ↗ </0>"
+#~ msgstr ""
 
 #: 
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
@@ -156,7 +180,7 @@ msgstr "ويلزم حد أدنى قدره 1 في المائة من مجموع إ
 msgid "Accept"
 msgstr "قبول"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Account"
 msgstr "حساب"
 
@@ -173,7 +197,6 @@ msgid "Add Delegate +"
 msgstr "إضافة مندوب +"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "إضافة السيولة"
 
@@ -250,6 +273,11 @@ msgstr "تأكد دائماً من أن عنوان URL هو <0>app.uniswap.org</
 #~ msgid "Amount"
 #~ msgstr "المبلغ"
 
+#: src/components/PoolInvestModal/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to Invest"
+msgstr ""
+
 #: 
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "حدث خطأ أثناء محاولة تنفيذ هذا التبادل. قد تحتاج إلى زيادة تحملك للانزلاق. إذا لم يفلح ذلك ، فقد يكون هناك عدم توافق مع الرمز المميز الذي تتداوله. رسوم الملاحظات على الرموز المميزة للنقل وإعادة التسمية غير متوافقة مع Uniswap V3."
@@ -297,6 +325,10 @@ msgstr "هل أنت متأكد؟"
 msgid "Auto"
 msgstr "تلقائي"
 
+#: src/components/Table/pools.tsx
+msgid "Available Pools"
+msgstr ""
+
 #: src/components/earn/StakingModal.tsx
 msgid "Available to deposit: {0}"
 msgstr "متاح للإيداع: {0}"
@@ -304,6 +336,10 @@ msgstr "متاح للإيداع: {0}"
 #: 
 #~ msgid "Back"
 #~ msgstr "الرجوع"
+
+#: src/components/PoolInvestModal/index.tsx
+msgid "Balance"
+msgstr ""
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Balance:"
@@ -494,6 +530,7 @@ msgid "Confirm this transaction in your wallet"
 msgstr "تأكيد هذه المعاملة في محفظتك"
 
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -523,9 +560,9 @@ msgstr "الاتصال بالمحفظة للعثور على المخازن"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "اتصل بالمحفظة لعرض سيولة V2 الخاصة بك."
 
-#: src/pages/Pool/index.tsx
-msgid "Connect to a wallet to view your liquidity."
-msgstr "اتصل بالمحفظة لعرض السيولة الخاصة بك."
+#: 
+#~ msgid "Connect to a wallet to view your liquidity."
+#~ msgstr "اتصل بالمحفظة لعرض السيولة الخاصة بك."
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "Connect wallet"
@@ -553,7 +590,6 @@ msgid "Create Pool & Supply"
 msgstr "إنشاء مخزن وإمدادات"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "إنشاء زوج"
 
@@ -746,6 +782,10 @@ msgstr "خطأ في الاتصال. حاول تحديث الصفحة."
 msgid "Error importing list"
 msgstr "خطأ في استيراد قائمة"
 
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Est. ROI"
+msgstr ""
+
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
 msgstr "النتائج الموسعة من قوائم الرموز غير النشطة"
@@ -767,8 +807,17 @@ msgstr ""
 #~ msgstr "مستوى الرسوم"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "Fees"
+msgstr ""
+
+#: src/pages/Swap/index.tsx
+msgid "Fees 24H"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "Filter by token, protocol, ..."
 msgstr ""
 
 #: src/pages/Vote/VotePage.tsx
@@ -804,6 +853,10 @@ msgstr "ارتفاع تأثير السعر"
 msgid "I understand"
 msgstr "أنا أفهم"
 
+#: src/components/PoolInvestModal/index.tsx
+msgid "INVEST"
+msgstr ""
+
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
 msgstr "إذا قمت بشراء الرمز المميز من هذه القائمة، قد لا تتمكن من بيعه مرة أخرى."
@@ -819,9 +872,9 @@ msgstr "استيراد"
 msgid "Import List"
 msgstr "قائمة الاستيراد"
 
-#: src/pages/Pool/index.tsx
-msgid "Import Pool"
-msgstr "استيراد مخزن"
+#: 
+#~ msgid "Import Pool"
+#~ msgstr "استيراد مخزن"
 
 #: src/components/NavigationTabs/index.tsx
 msgid "Import V2 Pool"
@@ -855,6 +908,10 @@ msgstr "تم تقدير الإدخال. سوف تبيع على الأكثر <0>{
 #: src/components/WalletModal/index.tsx
 msgid "Install Metamask"
 msgstr "تثبيت قناع التعريف"
+
+#: src/components/PoolInvestModal/index.tsx
+msgid "Insufficient Balance"
+msgstr ""
 
 #: src/pages/Swap/index.tsx
 msgid "Insufficient liquidity for this trade."
@@ -895,6 +952,12 @@ msgstr "زوج غير صالح."
 msgid "Invalid recipient"
 msgstr "مستلم غير صالح"
 
+#: src/components/PoolInvestModal/index.tsx
+#: src/components/Table/pools.tsx
+#: src/pages/PoolDetail/index.tsx
+msgid "Invest"
+msgstr ""
+
 #: 
 #~ msgid "Learn"
 #~ msgstr "تعلم"
@@ -904,7 +967,9 @@ msgid "Lend"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
+#: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
 msgid "Liquidity"
 msgstr "السيولة"
@@ -913,13 +978,13 @@ msgstr "السيولة"
 msgid "Liquidity Provider Fee"
 msgstr "رسوم مزود السيولة"
 
-#: src/pages/Pool/index.tsx
-msgid "Liquidity provider rewards"
-msgstr "مكافآت موفر السيولة"
+#: 
+#~ msgid "Liquidity provider rewards"
+#~ msgstr "مكافآت موفر السيولة"
 
-#: src/pages/Pool/index.tsx
-msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
-msgstr "ويحصل مقدمو خدمات السيولة على رسم بنسبة 0.3٪ من جميع المهن يتناسب مع نصيبهم من المجمع. تضاف الرسوم إلى المجمع، تتراكم في الوقت الحقيقي ويمكن المطالبة بها بسحب السيولة الخاصة بك."
+#: 
+#~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
+#~ msgstr "ويحصل مقدمو خدمات السيولة على رسم بنسبة 0.3٪ من جميع المهن يتناسب مع نصيبهم من المجمع. تضاف الرسوم إلى المجمع، تتراكم في الوقت الحقيقي ويمكن المطالبة بها بسحب السيولة الخاصة بك."
 
 #: src/components/SearchModal/Manage.tsx
 msgid "Lists"
@@ -929,10 +994,8 @@ msgstr "القوائم"
 msgid "Loaded"
 msgstr "تحميل"
 
-#: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "جاري التحميل"
@@ -970,6 +1033,10 @@ msgstr ""
 msgid "Manage this pool."
 msgstr "إدارة هذا المجمع."
 
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "Market Cap"
+msgstr ""
+
 #: 
 #~ msgid "Max"
 #~ msgstr "الحد الأقصى"
@@ -991,7 +1058,6 @@ msgstr "إدارة هذا المجمع."
 msgid "Maximum sent"
 msgstr "الحد الأقصى المرسل"
 
-#: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
@@ -1043,6 +1109,10 @@ msgstr "تلقى الحد الأدنى"
 #~ msgid "More"
 #~ msgstr "المزيد"
 
+#: src/components/Table/overview.tsx
+msgid "Name"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "موضع جديد"
@@ -1060,9 +1130,9 @@ msgstr ""
 msgid "No active pools"
 msgstr "لا توجد مخازن نشطة"
 
-#: src/pages/Pool/index.tsx
-msgid "No liquidity found."
-msgstr "لم يتم العثور على سيولة."
+#: 
+#~ msgid "No liquidity found."
+#~ msgstr "لم يتم العثور على سيولة."
 
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
@@ -1125,6 +1195,7 @@ msgstr "المخرجات مقدرة. سوف تتلقى على الأقل <0>{0} 
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "سيتم إرسال المخرجات إلى <0>{0}</0>"
 
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Overview"
@@ -1135,12 +1206,21 @@ msgstr ""
 #~ msgstr "المالك"
 
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 msgid "Page {0} of {totalPages}"
+msgstr ""
+
+#: src/components/LineChart/PoolDetail.tsx
+msgid "Pair Stats"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
 msgstr "المجمعات المشاركة"
+
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Period"
+msgstr ""
 
 #: src/components/WalletModal/index.tsx
 msgid "Please connect to the appropriate Ethereum network."
@@ -1150,9 +1230,9 @@ msgstr "الرجاء الاتصال بشبكة إيثيريوم المناسبة
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "الرجاء كتابة كلمة \"{confirmWord}\" لتمكين وضع الخبير."
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Pool"
 msgstr "مخزن"
 
@@ -1180,14 +1260,26 @@ msgstr "رموز التجميع في مجمع المكافآت:"
 msgid "Pooled {0}:"
 msgstr "المجمع {0}:"
 
+#: src/components/Header/Sidebar.tsx
+#: src/pages/Pool/index.tsx
+#: src/pages/Pool/index.tsx
+msgid "Pools"
+msgstr ""
+
 #: 
 #~ msgid "Pools Overview"
 #~ msgstr "نظرة عامة للمتجمعات"
 
+#: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/PoolDetail/TokenDetails.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price"
 msgstr "السعر"
+
+#: src/components/Table/overview.tsx
+msgid "Price Change"
+msgstr ""
 
 #: 
 #~ msgid "Price Difference:"
@@ -1234,6 +1326,14 @@ msgstr "مقدم العطاء"
 msgid "RENAME"
 msgstr ""
 
+#: src/components/Table/pools.tsx
+msgid "ROI"
+msgstr ""
+
+#: src/pages/PoolDetail/index.tsx
+msgid "ROI Simulator"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "المعدلات"
@@ -1254,7 +1354,7 @@ msgstr "اقرأ المزيد عن إدارة Uniswap"
 msgid "Read more about unsupported assets"
 msgstr "اقرأ المزيد عن الأصول غير المدعومة"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Recent Transactions"
 msgstr "المعاملات الأخيرة"
 
@@ -1440,6 +1540,8 @@ msgid "Swaps"
 msgstr ""
 
 #: src/components/LineChart/overview.tsx
+#: src/components/Table/overview.tsx
+#: src/pages/Swap/index.tsx
 msgid "TVL"
 msgstr ""
 
@@ -1492,6 +1594,7 @@ msgid "These tokens are commonly paired with other tokens."
 msgstr "هذه الرموز المميزة عادة ما تقترن مع الرموز الأخرى."
 
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1512,7 +1615,7 @@ msgstr "لا يظهر هذا الرمز المميز في قائمة (قوائم
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
 msgstr "لن تنجح هذه الصفقة إما بسبب حركة السعر أو بسبب رسوم التحويل. حاول زيادة تحملك للانزلاق."
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Time"
 msgstr ""
 
@@ -1533,9 +1636,13 @@ msgstr "إلى (على الأقل)"
 msgid "Toggle Expert Mode"
 msgstr "تبديل وضع الخبير"
 
-#: src/components/Table/index.tsx
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
+#: src/components/Table/swap.tsx
 msgid "Token Amount"
+msgstr ""
+
+#: src/pages/PoolDetail/index.tsx
+msgid "Token Stats"
 msgstr ""
 
 #: src/components/SearchModal/Manage.tsx
@@ -1546,6 +1653,10 @@ msgstr "الرموز"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "الرموز من القوائم غير النشطة. قم باستيراد الرموز المميزة المحددة أدناه أو انقر فوق \"إدارة\" لتنشيط المزيد من القوائم."
 
+#: src/components/Table/overview.tsx
+msgid "Top Tokens"
+msgstr ""
+
 #: src/pages/Pool/CTACards.tsx
 msgid "Top pools"
 msgstr "أفضل المخازن"
@@ -1554,7 +1665,7 @@ msgstr "أفضل المخازن"
 msgid "Total Supply"
 msgstr "إجمالي الإمدادات"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Total Value"
 msgstr ""
 
@@ -1565,6 +1676,10 @@ msgstr "المجموع المودع"
 #: src/pages/Earn/Manage.tsx
 msgid "Total deposits"
 msgstr "مجموع الودائع"
+
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "Trading Volume"
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Transaction Settings"
@@ -1582,6 +1697,10 @@ msgstr "تم إرسال المعاملة"
 #: src/components/TransactionSettings/index.tsx
 msgid "Transaction deadline"
 msgstr "الموعد النهائي للمعاملة"
+
+#: src/components/Table/pools.tsx
+msgid "Trending"
+msgstr ""
 
 #: src/components/WalletModal/PendingView.tsx
 msgid "Try Again"
@@ -1750,11 +1869,14 @@ msgid "View transaction on Explorer"
 msgstr "عرض الصفقة على Explorer"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "Volume"
 msgstr ""
 
 #: src/components/BarChart/overview.tsx
+#: src/components/Table/overview.tsx
+#: src/pages/Swap/index.tsx
 msgid "Volume 24H"
 msgstr ""
 
@@ -1914,9 +2036,9 @@ msgstr "تفصيل UNI"
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "ستظهر هنا حالة سيولة V3 الخاصة بك."
 
-#: src/pages/Pool/index.tsx
-msgid "Your liquidity"
-msgstr ""
+#: 
+#~ msgid "Your liquidity"
+#~ msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -2031,6 +2153,7 @@ msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {رمز الاستيراد} other {استيراد الرموز}}"
 
 #: src/components/Dropdowns/LanguageDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 msgid "{0}"
 msgstr ""
@@ -2127,7 +2250,7 @@ msgstr "{0} رموز"
 #~ msgid "{0} {1} Price:"
 #~ msgstr "{0} {1} السعر:"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "{0} {1} for {2}"
 msgstr ""
 
@@ -2168,6 +2291,7 @@ msgstr ""
 #~ msgid "{percentForSlider}%"
 #~ msgstr "{percentForSlider}%"
 
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "{text}"
 msgstr ""
