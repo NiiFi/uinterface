@@ -379,8 +379,8 @@ export default function Swap({ history }: RouteComponentProps) {
           <TabPanelHeading>
             <Trans>Swap</Trans>
           </TabPanelHeading>
-          <AutoColumn>
-            <ResponsiveRow>
+          <AutoColumn gap="lg">
+            <ResponsiveRow gap="2rem">
               <AppBody size="md" style={{ minHeight: '440px' }}>
                 <Wrapper id="swap-page">
                   <ConfirmSwapModal
@@ -426,8 +426,8 @@ export default function Swap({ history }: RouteComponentProps) {
                         }}
                       >
                         <ArrowWrapper clickable>
-                          <ChevronUp size="16" color={theme.white} />
-                          <ChevronDown size="16" color={theme.white} />
+                          <ChevronUp size="1.25rem" color={'#FFFFFF'} />
+                          <ChevronDown size="1.25rem" color={'#FFFFFF'} />
                         </ArrowWrapper>
                       </ArrowContainer>
                       <CurrencyInputPanel
@@ -644,10 +644,12 @@ export default function Swap({ history }: RouteComponentProps) {
                 </Wrapper>
               </AppBody>
             </ResponsiveRow>
+            <ResponsiveRow>
+              <AppBody size="lg">
+                <SwapTable />
+              </AppBody>
+            </ResponsiveRow>
           </AutoColumn>
-          <AppBody size="lg" margin="2rem">
-            <SwapTable />
-          </AppBody>
           <SwitchLocaleLink />
           {!swapIsUnsupported ? null : (
             <UnsupportedCurrencyFooter show={swapIsUnsupported} currencies={[currencies.INPUT, currencies.OUTPUT]} />
@@ -657,15 +659,15 @@ export default function Swap({ history }: RouteComponentProps) {
           <TabPanelHeading>
             <Trans>Overview</Trans>
           </TabPanelHeading>
-          <AutoColumn>
-            <Wrapper style={{ padding: 0, paddingBottom: '20px' }}>
+          <AutoColumn gap="lg">
+            <Wrapper style={{ padding: 0 }}>
               <Disclaimer>
                 <span>Disclaimer:</span>
                 {` `}
                 {t`This is Dummy Data`}
               </Disclaimer>
             </Wrapper>
-            <ResponsiveRow>
+            <ResponsiveRow gap="2rem">
               <AppBody size="md">
                 <Wrapper>
                   <OverviewChart />
@@ -677,10 +679,8 @@ export default function Swap({ history }: RouteComponentProps) {
                 </Wrapper>
               </AppBody>
             </ResponsiveRow>
-          </AutoColumn>
-          <AutoColumn style={{ marginTop: '1rem' }}>
-            <ResponsiveRow>
-              <DefaultCard width="33%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+            <ResponsiveRow gap="2rem">
+              <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
                 <TYPE.subHeader fontSize="16px">
                   <Trans>Volume 24H</Trans>
                 </TYPE.subHeader>
@@ -689,7 +689,7 @@ export default function Swap({ history }: RouteComponentProps) {
                   <Percent value={7.258268337244848} fontWeight={400} />
                 </FlexColumn>
               </DefaultCard>
-              <DefaultCard width="33%" style={{ minHeight: '100px', paddingTop: '25px', margin: '0 20px' }}>
+              <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
                 <TYPE.subHeader fontSize="16px">
                   <Trans>Fees 24H</Trans>
                 </TYPE.subHeader>
@@ -698,7 +698,7 @@ export default function Swap({ history }: RouteComponentProps) {
                   <Percent value={7.858268337244848} fontWeight={400} />
                 </FlexColumn>
               </DefaultCard>
-              <DefaultCard width="33%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+              <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
                 <TYPE.subHeader fontSize="16px">
                   <Trans>TVL</Trans>
                 </TYPE.subHeader>
@@ -708,10 +708,12 @@ export default function Swap({ history }: RouteComponentProps) {
                 </FlexColumn>
               </DefaultCard>
             </ResponsiveRow>
+            <ResponsiveRow>
+              <AppBody size="lg">
+                <OverviewTable />
+              </AppBody>
+            </ResponsiveRow>
           </AutoColumn>
-          <AppBody size="lg" style={{ marginTop: '1rem' }}>
-            <OverviewTable />
-          </AppBody>
         </TabPanel>
       </BodyScroller>
     </>
