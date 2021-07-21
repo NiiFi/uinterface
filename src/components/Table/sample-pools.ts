@@ -1,3 +1,5 @@
+import { Pair } from 'components/Table/types'
+
 export const SampleResponse: any = {
   data: {
     pools: [
@@ -1753,4 +1755,13 @@ export const SampleResponse: any = {
       },
     ],
   },
+}
+
+export type PoolsData = {
+  id: string
+  symbol: string
+} & Pair
+
+export function getPoolsData(type: string, limit: number | undefined): PoolsData[] {
+  return SampleResponse.data.pools.slice(0, limit || 6)
 }
