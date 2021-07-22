@@ -74,12 +74,36 @@ msgstr "0 UNI / tuần"
 #~ msgid "0.3% fee"
 #~ msgstr "Phí 0,3%"
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Month"
+msgstr ""
+
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Week"
+msgstr ""
+
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Year"
+msgstr ""
+
 #: 
 #~ msgid "1% fee"
 #~ msgstr "Phí 1%"
 
+#: src/components/Table/pools.tsx
+msgid "1W"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "1Y"
+msgstr ""
+
 #: src/components/swap/Slippage.tsx
 msgid "2%"
+msgstr ""
+
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "24h Low / 24h High"
 msgstr ""
 
 #: 
@@ -107,9 +131,9 @@ msgstr "<0 /> Tất cả các đề xuất"
 msgid "<0/> Votes"
 msgstr "<0 /> Phiếu bầu"
 
-#: src/pages/Pool/index.tsx
-msgid "<0> ↗ </0>"
-msgstr ""
+#: 
+#~ msgid "<0> ↗ </0>"
+#~ msgstr ""
 
 #: 
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
@@ -155,7 +179,7 @@ msgstr "Yêu cầu ngưỡng tối thiểu 1% tổng nguồn cung cấp UNI đ�
 msgid "Accept"
 msgstr "Chấp nhận"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Account"
 msgstr "Tài khoản"
 
@@ -172,7 +196,6 @@ msgid "Add Delegate +"
 msgstr "Thêm đại biểu +"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "Thêm thanh khoản"
 
@@ -249,6 +272,11 @@ msgstr "Luôn đảm bảo URL là <0> app.uniswap.org</0> - đánh dấu nó đ
 #~ msgid "Amount"
 #~ msgstr "Số tiền"
 
+#: src/components/PoolInvestModal/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to Invest"
+msgstr ""
+
 #: 
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Đã xảy ra lỗi khi cố gắng thực hiện hoán đổi này. Bạn có thể cần phải tăng khả năng chịu trượt của mình. Nếu điều đó không hiệu quả, có thể có sự không tương thích với mã thông báo bạn đang giao dịch. Lưu ý phí chuyển và mã thông báo rebase không tương thích với Uniswap V3."
@@ -296,6 +324,10 @@ msgstr "Bạn có chắc không?"
 msgid "Auto"
 msgstr "Tự động"
 
+#: src/components/Table/pools.tsx
+msgid "Available Pools"
+msgstr ""
+
 #: src/components/earn/StakingModal.tsx
 msgid "Available to deposit: {0}"
 msgstr "Có sẵn để đặt cọc: {0}"
@@ -303,6 +335,10 @@ msgstr "Có sẵn để đặt cọc: {0}"
 #: 
 #~ msgid "Back"
 #~ msgstr "Trở lại"
+
+#: src/components/PoolInvestModal/index.tsx
+msgid "Balance"
+msgstr ""
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Balance:"
@@ -493,6 +529,7 @@ msgid "Confirm this transaction in your wallet"
 msgstr "Xác nhận giao dịch này trong ví của bạn"
 
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -522,9 +559,9 @@ msgstr "Kết nối với ví để tìm nhóm"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "Kết nối với ví để xem tính thanh khoản V2 của bạn."
 
-#: src/pages/Pool/index.tsx
-msgid "Connect to a wallet to view your liquidity."
-msgstr "Kết nối với ví để xem tính thanh khoản của bạn."
+#: 
+#~ msgid "Connect to a wallet to view your liquidity."
+#~ msgstr "Kết nối với ví để xem tính thanh khoản của bạn."
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "Connect wallet"
@@ -552,7 +589,6 @@ msgid "Create Pool & Supply"
 msgstr "Tạo Pool & Supply"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "Tạo một cặp"
 
@@ -745,6 +781,10 @@ msgstr "Lỗi khi kết nối. Hãy thử làm mới trang."
 msgid "Error importing list"
 msgstr "Lỗi khi nhập danh sách"
 
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Est. ROI"
+msgstr ""
+
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
 msgstr "Kết quả mở rộng từ Danh sách mã thông báo không hoạt động"
@@ -766,8 +806,17 @@ msgstr ""
 #~ msgstr "Bậc phí"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "Fees"
+msgstr ""
+
+#: src/pages/Swap/index.tsx
+msgid "Fees 24H"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "Filter by token, protocol, ..."
 msgstr ""
 
 #: src/pages/Vote/VotePage.tsx
@@ -803,6 +852,10 @@ msgstr "Tác động giá cao"
 msgid "I understand"
 msgstr "tôi hiểu"
 
+#: src/components/PoolInvestModal/index.tsx
+msgid "INVEST"
+msgstr ""
+
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
 msgstr "Nếu bạn mua mã thông báo từ danh sách này, bạn có thể không bán lại được."
@@ -818,9 +871,9 @@ msgstr "Nhập khẩu"
 msgid "Import List"
 msgstr "Nhập danh sách"
 
-#: src/pages/Pool/index.tsx
-msgid "Import Pool"
-msgstr "Nhập nhóm"
+#: 
+#~ msgid "Import Pool"
+#~ msgstr "Nhập nhóm"
 
 #: src/components/NavigationTabs/index.tsx
 msgid "Import V2 Pool"
@@ -854,6 +907,10 @@ msgstr "Đầu vào được ước tính. Bạn sẽ bán nhiều nhất <0>{0}
 #: src/components/WalletModal/index.tsx
 msgid "Install Metamask"
 msgstr "Cài đặt Metamask"
+
+#: src/components/PoolInvestModal/index.tsx
+msgid "Insufficient Balance"
+msgstr ""
 
 #: src/pages/Swap/index.tsx
 msgid "Insufficient liquidity for this trade."
@@ -894,6 +951,12 @@ msgstr "Cặp không hợp lệ."
 msgid "Invalid recipient"
 msgstr "Người nhận không hợp lệ"
 
+#: src/components/PoolInvestModal/index.tsx
+#: src/components/Table/pools.tsx
+#: src/pages/PoolDetail/index.tsx
+msgid "Invest"
+msgstr ""
+
 #: 
 #~ msgid "Learn"
 #~ msgstr "Học hỏi"
@@ -903,7 +966,9 @@ msgid "Lend"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
+#: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
 msgid "Liquidity"
 msgstr "Tính thanh khoản"
@@ -912,13 +977,13 @@ msgstr "Tính thanh khoản"
 msgid "Liquidity Provider Fee"
 msgstr "Phí nhà cung cấp thanh khoản"
 
-#: src/pages/Pool/index.tsx
-msgid "Liquidity provider rewards"
-msgstr "Phần thưởng của nhà cung cấp thanh khoản"
+#: 
+#~ msgid "Liquidity provider rewards"
+#~ msgstr "Phần thưởng của nhà cung cấp thanh khoản"
 
-#: src/pages/Pool/index.tsx
-msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
-msgstr "Các nhà cung cấp thanh khoản kiếm được một khoản phí 0,3% cho tất cả các giao dịch tỷ lệ với phần của họ trong nhóm. Phí được thêm vào nhóm, tích lũy trong thời gian thực và có thể được yêu cầu bằng cách rút tiền thanh khoản của bạn."
+#: 
+#~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
+#~ msgstr "Các nhà cung cấp thanh khoản kiếm được một khoản phí 0,3% cho tất cả các giao dịch tỷ lệ với phần của họ trong nhóm. Phí được thêm vào nhóm, tích lũy trong thời gian thực và có thể được yêu cầu bằng cách rút tiền thanh khoản của bạn."
 
 #: src/components/SearchModal/Manage.tsx
 msgid "Lists"
@@ -928,10 +993,8 @@ msgstr "Danh sách"
 msgid "Loaded"
 msgstr "Nạp vào"
 
-#: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Đang tải"
@@ -969,6 +1032,10 @@ msgstr ""
 msgid "Manage this pool."
 msgstr "Quản lý hồ bơi này."
 
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "Market Cap"
+msgstr ""
+
 #: 
 #~ msgid "Max"
 #~ msgstr "Max"
@@ -990,7 +1057,6 @@ msgstr "Quản lý hồ bơi này."
 msgid "Maximum sent"
 msgstr "Đã gửi tối đa"
 
-#: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
@@ -1042,6 +1108,10 @@ msgstr "Số tiền nhận được tối thiểu"
 #~ msgid "More"
 #~ msgstr "Hơn"
 
+#: src/components/Table/overview.tsx
+msgid "Name"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "Vị trí mới"
@@ -1059,9 +1129,9 @@ msgstr ""
 msgid "No active pools"
 msgstr "Không có nhóm hoạt động"
 
-#: src/pages/Pool/index.tsx
-msgid "No liquidity found."
-msgstr "Không tìm thấy thanh khoản."
+#: 
+#~ msgid "No liquidity found."
+#~ msgstr "Không tìm thấy thanh khoản."
 
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
@@ -1124,6 +1194,7 @@ msgstr "Sản lượng được ước tính. Bạn sẽ nhận được ít nh�
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "Đầu ra sẽ được gửi đến <0>{0}</0>"
 
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Overview"
@@ -1134,12 +1205,21 @@ msgstr ""
 #~ msgstr "Chủ nhân"
 
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 msgid "Page {0} of {totalPages}"
+msgstr ""
+
+#: src/components/LineChart/PoolDetail.tsx
+msgid "Pair Stats"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
 msgstr "Nhóm tham gia"
+
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Period"
+msgstr ""
 
 #: src/components/WalletModal/index.tsx
 msgid "Please connect to the appropriate Ethereum network."
@@ -1149,9 +1229,9 @@ msgstr "Vui lòng kết nối với mạng Ethereum thích hợp."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Vui lòng nhập từ \"{confirmWord}\" để bật chế độ chuyên gia."
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Pool"
 msgstr "Hồ bơi"
 
@@ -1179,14 +1259,26 @@ msgstr "Nhóm mã thông báo trong nhóm phần thưởng:"
 msgid "Pooled {0}:"
 msgstr "Nhóm {0}:"
 
+#: src/components/Header/Sidebar.tsx
+#: src/pages/Pool/index.tsx
+#: src/pages/Pool/index.tsx
+msgid "Pools"
+msgstr ""
+
 #: 
 #~ msgid "Pools Overview"
 #~ msgstr "Tổng quan về Hồ bơi"
 
+#: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/PoolDetail/TokenDetails.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price"
 msgstr "Giá bán"
+
+#: src/components/Table/overview.tsx
+msgid "Price Change"
+msgstr ""
 
 #: 
 #~ msgid "Price Difference:"
@@ -1233,6 +1325,14 @@ msgstr "Người đề xuất"
 msgid "RENAME"
 msgstr ""
 
+#: src/components/Table/pools.tsx
+msgid "ROI"
+msgstr ""
+
+#: src/pages/PoolDetail/index.tsx
+msgid "ROI Simulator"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Giá"
@@ -1253,7 +1353,7 @@ msgstr "Đọc thêm về quản trị Uniswap"
 msgid "Read more about unsupported assets"
 msgstr "Đọc thêm về nội dung không được hỗ trợ"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Recent Transactions"
 msgstr "Giao dịch gần đây"
 
@@ -1439,6 +1539,8 @@ msgid "Swaps"
 msgstr ""
 
 #: src/components/LineChart/overview.tsx
+#: src/components/Table/overview.tsx
+#: src/pages/Swap/index.tsx
 msgid "TVL"
 msgstr ""
 
@@ -1491,6 +1593,7 @@ msgid "These tokens are commonly paired with other tokens."
 msgstr "Các mã thông báo này thường được ghép nối với các mã thông báo khác."
 
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1511,7 +1614,7 @@ msgstr "Mã thông báo này không xuất hiện trên (các) danh sách mã th
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
 msgstr "Giao dịch này sẽ không thành công do biến động giá hoặc phí chuyển nhượng. Hãy thử tăng khả năng chịu trượt của bạn."
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Time"
 msgstr ""
 
@@ -1532,9 +1635,13 @@ msgstr "Ít nhất)"
 msgid "Toggle Expert Mode"
 msgstr "Chuyển đổi Chế độ chuyên gia"
 
-#: src/components/Table/index.tsx
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
+#: src/components/Table/swap.tsx
 msgid "Token Amount"
+msgstr ""
+
+#: src/pages/PoolDetail/index.tsx
+msgid "Token Stats"
 msgstr ""
 
 #: src/components/SearchModal/Manage.tsx
@@ -1545,6 +1652,10 @@ msgstr "Mã thông báo"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "Mã thông báo từ danh sách không hoạt động. Nhập mã thông báo cụ thể bên dưới hoặc nhấp vào Quản lý để kích hoạt thêm danh sách."
 
+#: src/components/Table/overview.tsx
+msgid "Top Tokens"
+msgstr ""
+
 #: src/pages/Pool/CTACards.tsx
 msgid "Top pools"
 msgstr "Hồ bơi hàng đầu"
@@ -1553,7 +1664,7 @@ msgstr "Hồ bơi hàng đầu"
 msgid "Total Supply"
 msgstr "Tổng cung"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Total Value"
 msgstr ""
 
@@ -1564,6 +1675,10 @@ msgstr "Tổng số tiền gửi"
 #: src/pages/Earn/Manage.tsx
 msgid "Total deposits"
 msgstr "Tổng số tiền gửi"
+
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "Trading Volume"
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Transaction Settings"
@@ -1581,6 +1696,10 @@ msgstr "Giao dịch đã được gửi"
 #: src/components/TransactionSettings/index.tsx
 msgid "Transaction deadline"
 msgstr "Thời hạn giao dịch"
+
+#: src/components/Table/pools.tsx
+msgid "Trending"
+msgstr ""
 
 #: src/components/WalletModal/PendingView.tsx
 msgid "Try Again"
@@ -1748,11 +1867,14 @@ msgid "View transaction on Explorer"
 msgstr "Xem giao dịch trên Explorer"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "Volume"
 msgstr ""
 
 #: src/components/BarChart/overview.tsx
+#: src/components/Table/overview.tsx
+#: src/pages/Swap/index.tsx
 msgid "Volume 24H"
 msgstr ""
 
@@ -1912,9 +2034,9 @@ msgstr "Sự cố UNI của bạn"
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "Các vị trí thanh khoản V3 của bạn sẽ xuất hiện tại đây."
 
-#: src/pages/Pool/index.tsx
-msgid "Your liquidity"
-msgstr ""
+#: 
+#~ msgid "Your liquidity"
+#~ msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -2029,6 +2151,7 @@ msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {Nhập mã thông báo} other {Nhập mã thông báo}}"
 
 #: src/components/Dropdowns/LanguageDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 msgid "{0}"
 msgstr ""
@@ -2125,7 +2248,7 @@ msgstr "{0} mã thông báo"
 #~ msgid "{0} {1} Price:"
 #~ msgstr "{0} {1} Giá:"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "{0} {1} for {2}"
 msgstr ""
 
@@ -2166,6 +2289,7 @@ msgstr ""
 #~ msgid "{percentForSlider}%"
 #~ msgstr "{percentForSlider}%"
 
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "{text}"
 msgstr ""

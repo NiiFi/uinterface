@@ -16,12 +16,4 @@ export const BodyPanel = styled.div`
   ${({ theme }) => theme.mediaWidth.upToSmall`
     padding: 0.625rem;
   `}
-
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall1`
-    padding: 0.625rem;
-  `}
-
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall2`
-    padding: 0.625rem;
-  `}
 `

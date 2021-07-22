@@ -83,3 +83,14 @@ export type TokenOutput = Token & {
 export type TokenListQuery = {
   tokens: Array<TokenOutput>
 }
+
+export type PoolTableData = {
+  pair: Pair
+  roiW: string
+  roiY: string
+  trendingPercent: string
+  trendingSum: string
+  __typename: 'Pool'
+}
+
+export type TableDataTypes = TransactionTableData | PoolTableData // TODO: add top tokens type (overview)

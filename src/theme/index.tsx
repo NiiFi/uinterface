@@ -14,12 +14,10 @@ export * from './components'
 type TextProps = Omit<TextPropsOriginal, 'css'>
 
 export const MEDIA_WIDTHS = {
-  upToExtraSmall2: 320,
-  upToExtraSmall1: 375,
   upToExtraSmall: 400,
-  upToSmall: 576,
-  upToMedium: 768,
-  upToLarge: 1200,
+  upToSmall: 904,
+  upToMedium: 1239,
+  upToLarge: 1439,
 }
 
 const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } = Object.keys(MEDIA_WIDTHS).reduce(
@@ -166,7 +164,7 @@ export const TYPE = {
     return <TextWrapper fontWeight={600} fontSize={24} {...props} />
   },
   mediumHeader(props: TextProps) {
-    return <TextWrapper fontWeight={500} fontSize={20} {...props} />
+    return <TextWrapper fontWeight={500} fontSize={20} color={'text1'} {...props} />
   },
   mediumHeaderEllipsis(props: TextProps) {
     return (
@@ -225,4 +223,21 @@ export const Disclaimer = styled.div`
   > span {
     font-weight: bold;
   }
+`
+
+export const RowWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
+export const ColumnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const CircleWrapper = styled.div`
+  display: flex;
+  background-color: ${({ theme }) => theme.bg0};
+  border: 1px solid ${({ theme }) => theme.bg3};
+  border-radius: 50%;
 `

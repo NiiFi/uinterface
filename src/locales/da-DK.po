@@ -74,12 +74,36 @@ msgstr "0 UNI / uge"
 #~ msgid "0.3% fee"
 #~ msgstr "0,3% gebyr"
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Month"
+msgstr ""
+
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Week"
+msgstr ""
+
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Year"
+msgstr ""
+
 #: 
 #~ msgid "1% fee"
 #~ msgstr "1% gebyr"
 
+#: src/components/Table/pools.tsx
+msgid "1W"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "1Y"
+msgstr ""
+
 #: src/components/swap/Slippage.tsx
 msgid "2%"
+msgstr ""
+
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "24h Low / 24h High"
 msgstr ""
 
 #: 
@@ -107,9 +131,9 @@ msgstr "<0/> Alle Forslag"
 msgid "<0/> Votes"
 msgstr "<0/> Stemmer"
 
-#: src/pages/Pool/index.tsx
-msgid "<0> ↗ </0>"
-msgstr ""
+#: 
+#~ msgid "<0> ↗ </0>"
+#~ msgstr ""
 
 #: 
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
@@ -155,7 +179,7 @@ msgstr "Der kræves en minimumstærskel på 1 % af det samlede UNI-udbud for at 
 msgid "Accept"
 msgstr "Accepter"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Account"
 msgstr "Konto"
 
@@ -172,7 +196,6 @@ msgid "Add Delegate +"
 msgstr "Tilføj Delegeret +"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "Tilføj Likviditet"
 
@@ -249,6 +272,11 @@ msgstr "Sørg altid for, at URL'en er <0>app.uniswap.org</0> - bogmærke den for
 #~ msgid "Amount"
 #~ msgstr "Beløb"
 
+#: src/components/PoolInvestModal/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to Invest"
+msgstr ""
+
 #: 
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Der opstod en fejl under forsøg på at udføre denne swap. Det kan være nødvendigt at øge din glidningstolerance. Hvis det ikke virker, kan der være en uforenelighed med det token, du handler. Bemærkningsgebyr ved overførsel og rebase-tokens er inkompatibelt med Uniswap V3."
@@ -296,6 +324,10 @@ msgstr "Er du sikker?"
 msgid "Auto"
 msgstr "Automatisk"
 
+#: src/components/Table/pools.tsx
+msgid "Available Pools"
+msgstr ""
+
 #: src/components/earn/StakingModal.tsx
 msgid "Available to deposit: {0}"
 msgstr "Tilgængelig for depositum: {0}"
@@ -303,6 +335,10 @@ msgstr "Tilgængelig for depositum: {0}"
 #: 
 #~ msgid "Back"
 #~ msgstr "Tilbage"
+
+#: src/components/PoolInvestModal/index.tsx
+msgid "Balance"
+msgstr ""
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Balance:"
@@ -493,6 +529,7 @@ msgid "Confirm this transaction in your wallet"
 msgstr "Bekræft denne transaktion i din tegnebog"
 
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -522,9 +559,9 @@ msgstr "Opret forbindelse til en tegnebog for at finde pools"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "Opret forbindelse til en tegnebog for at se din V2-likviditet."
 
-#: src/pages/Pool/index.tsx
-msgid "Connect to a wallet to view your liquidity."
-msgstr "Opret forbindelse til en tegnebog for at se din likviditet."
+#: 
+#~ msgid "Connect to a wallet to view your liquidity."
+#~ msgstr "Opret forbindelse til en tegnebog for at se din likviditet."
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "Connect wallet"
@@ -552,7 +589,6 @@ msgid "Create Pool & Supply"
 msgstr "Opret Pool & Forsyning"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "Opret et par"
 
@@ -745,6 +781,10 @@ msgstr "Der opstod en fejl. Prøv at opdatere siden."
 msgid "Error importing list"
 msgstr "Fejl ved import af liste"
 
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Est. ROI"
+msgstr ""
+
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
 msgstr "Ekspanderede resultater fra inaktive token-lister"
@@ -766,8 +806,17 @@ msgstr ""
 #~ msgstr "Gebyr Niveau"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "Fees"
+msgstr ""
+
+#: src/pages/Swap/index.tsx
+msgid "Fees 24H"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "Filter by token, protocol, ..."
 msgstr ""
 
 #: src/pages/Vote/VotePage.tsx
@@ -803,6 +852,10 @@ msgstr "Høj Prisvirkning"
 msgid "I understand"
 msgstr "Jeg forstår"
 
+#: src/components/PoolInvestModal/index.tsx
+msgid "INVEST"
+msgstr ""
+
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
 msgstr "Hvis du køber et tegn fra denne liste, kan du muligvis ikke sælge det tilbage."
@@ -818,9 +871,9 @@ msgstr "Importér"
 msgid "Import List"
 msgstr "Importér Liste"
 
-#: src/pages/Pool/index.tsx
-msgid "Import Pool"
-msgstr "Importér Pool"
+#: 
+#~ msgid "Import Pool"
+#~ msgstr "Importér Pool"
 
 #: src/components/NavigationTabs/index.tsx
 msgid "Import V2 Pool"
@@ -854,6 +907,10 @@ msgstr "Input er estimeret. Du vil sælge højst <0>{0} {1}</0> ellers vil trans
 #: src/components/WalletModal/index.tsx
 msgid "Install Metamask"
 msgstr "Installer Metamask"
+
+#: src/components/PoolInvestModal/index.tsx
+msgid "Insufficient Balance"
+msgstr ""
 
 #: src/pages/Swap/index.tsx
 msgid "Insufficient liquidity for this trade."
@@ -894,6 +951,12 @@ msgstr "Ugyldigt par."
 msgid "Invalid recipient"
 msgstr "Ugyldig modtager"
 
+#: src/components/PoolInvestModal/index.tsx
+#: src/components/Table/pools.tsx
+#: src/pages/PoolDetail/index.tsx
+msgid "Invest"
+msgstr ""
+
 #: 
 #~ msgid "Learn"
 #~ msgstr "Lær"
@@ -903,7 +966,9 @@ msgid "Lend"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
+#: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
 msgid "Liquidity"
 msgstr "Likviditet"
@@ -912,13 +977,13 @@ msgstr "Likviditet"
 msgid "Liquidity Provider Fee"
 msgstr "Gebyr for likviditetsudbyder"
 
-#: src/pages/Pool/index.tsx
-msgid "Liquidity provider rewards"
-msgstr "Likviditetsudbyder belønninger"
+#: 
+#~ msgid "Liquidity provider rewards"
+#~ msgstr "Likviditetsudbyder belønninger"
 
-#: src/pages/Pool/index.tsx
-msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
-msgstr "Likviditetsudbydere optjener et gebyr på 0,3 % på alle handler i forhold til deres andel af puljen. Gebyrer tilføjes til puljen, tilfalder i realtid og kan hævdes ved at trække din likviditet tilbage."
+#: 
+#~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
+#~ msgstr "Likviditetsudbydere optjener et gebyr på 0,3 % på alle handler i forhold til deres andel af puljen. Gebyrer tilføjes til puljen, tilfalder i realtid og kan hævdes ved at trække din likviditet tilbage."
 
 #: src/components/SearchModal/Manage.tsx
 msgid "Lists"
@@ -928,10 +993,8 @@ msgstr "Lister"
 msgid "Loaded"
 msgstr "Indlæst"
 
-#: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Indlæser"
@@ -969,6 +1032,10 @@ msgstr ""
 msgid "Manage this pool."
 msgstr "Administrer denne pool."
 
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "Market Cap"
+msgstr ""
+
 #: 
 #~ msgid "Max"
 #~ msgstr "Maks."
@@ -990,7 +1057,6 @@ msgstr "Administrer denne pool."
 msgid "Maximum sent"
 msgstr "Maksimum sendt"
 
-#: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
@@ -1042,6 +1108,10 @@ msgstr "Minimum modtaget"
 #~ msgid "More"
 #~ msgstr "Mere"
 
+#: src/components/Table/overview.tsx
+msgid "Name"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "Ny Position"
@@ -1059,9 +1129,9 @@ msgstr ""
 msgid "No active pools"
 msgstr "Ingen aktive puljer"
 
-#: src/pages/Pool/index.tsx
-msgid "No liquidity found."
-msgstr "Ingen likviditet fundet."
+#: 
+#~ msgid "No liquidity found."
+#~ msgstr "Ingen likviditet fundet."
 
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
@@ -1124,6 +1194,7 @@ msgstr "Output er anslået. Du vil modtage mindst <0>{0} {1}</0> ellers vil tran
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "Output vil blive sendt til <0>{0}</0>"
 
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Overview"
@@ -1134,12 +1205,21 @@ msgstr ""
 #~ msgstr "Ejer"
 
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 msgid "Page {0} of {totalPages}"
+msgstr ""
+
+#: src/components/LineChart/PoolDetail.tsx
+msgid "Pair Stats"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
 msgstr "Deltagende puljer"
+
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Period"
+msgstr ""
 
 #: src/components/WalletModal/index.tsx
 msgid "Please connect to the appropriate Ethereum network."
@@ -1149,9 +1229,9 @@ msgstr "Opret forbindelse til det relevante Ethereum-netværk."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Skriv venligst ordet \"{confirmWord}\" for at aktivere eksperttilstand."
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Pool"
 msgstr "Pool"
 
@@ -1179,14 +1259,26 @@ msgstr "Pool tokens i belønninger pulje:"
 msgid "Pooled {0}:"
 msgstr "Pooled {0}:"
 
+#: src/components/Header/Sidebar.tsx
+#: src/pages/Pool/index.tsx
+#: src/pages/Pool/index.tsx
+msgid "Pools"
+msgstr ""
+
 #: 
 #~ msgid "Pools Overview"
 #~ msgstr "Pools Oversigt"
 
+#: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/PoolDetail/TokenDetails.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price"
 msgstr "Pris"
+
+#: src/components/Table/overview.tsx
+msgid "Price Change"
+msgstr ""
 
 #: 
 #~ msgid "Price Difference:"
@@ -1233,6 +1325,14 @@ msgstr "Forfatter"
 msgid "RENAME"
 msgstr ""
 
+#: src/components/Table/pools.tsx
+msgid "ROI"
+msgstr ""
+
+#: src/pages/PoolDetail/index.tsx
+msgid "ROI Simulator"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Satser"
@@ -1253,7 +1353,7 @@ msgstr "Læs mere om Uniswap governance"
 msgid "Read more about unsupported assets"
 msgstr "Læs mere om ikke-understøttede aktiver"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Recent Transactions"
 msgstr "Seneste Transaktioner"
 
@@ -1439,6 +1539,8 @@ msgid "Swaps"
 msgstr ""
 
 #: src/components/LineChart/overview.tsx
+#: src/components/Table/overview.tsx
+#: src/pages/Swap/index.tsx
 msgid "TVL"
 msgstr ""
 
@@ -1491,6 +1593,7 @@ msgid "These tokens are commonly paired with other tokens."
 msgstr "Disse tokens er almindeligt parret med andre tokens."
 
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1511,7 +1614,7 @@ msgstr "Dette token vises ikke på den / de aktive tokenlister. Sørg for, at de
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
 msgstr "Denne transaktion lykkes ikke på grund af prisbevægelse eller gebyr ved overførsel. Prøv at øge din glidningstolerance."
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Time"
 msgstr ""
 
@@ -1532,9 +1635,13 @@ msgstr "Til (mindst)"
 msgid "Toggle Expert Mode"
 msgstr "Skift Eksperttilstand"
 
-#: src/components/Table/index.tsx
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
+#: src/components/Table/swap.tsx
 msgid "Token Amount"
+msgstr ""
+
+#: src/pages/PoolDetail/index.tsx
+msgid "Token Stats"
 msgstr ""
 
 #: src/components/SearchModal/Manage.tsx
@@ -1545,6 +1652,10 @@ msgstr "Tokens"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "Tokens fra inaktive lister. Importer specifikke tokens nedenfor, eller klik på Administrer for at aktivere flere lister."
 
+#: src/components/Table/overview.tsx
+msgid "Top Tokens"
+msgstr ""
+
 #: src/pages/Pool/CTACards.tsx
 msgid "Top pools"
 msgstr "Top puljer"
@@ -1553,7 +1664,7 @@ msgstr "Top puljer"
 msgid "Total Supply"
 msgstr "Tilgang I Alt"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Total Value"
 msgstr ""
 
@@ -1564,6 +1675,10 @@ msgstr "I alt deponeret"
 #: src/pages/Earn/Manage.tsx
 msgid "Total deposits"
 msgstr "Indlån i alt"
+
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "Trading Volume"
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Transaction Settings"
@@ -1581,6 +1696,10 @@ msgstr "Transaktion Indsendt"
 #: src/components/TransactionSettings/index.tsx
 msgid "Transaction deadline"
 msgstr "Frist for transaktion"
+
+#: src/components/Table/pools.tsx
+msgid "Trending"
+msgstr ""
 
 #: src/components/WalletModal/PendingView.tsx
 msgid "Try Again"
@@ -1748,11 +1867,14 @@ msgid "View transaction on Explorer"
 msgstr "Se transaktion i Explorer"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "Volume"
 msgstr ""
 
 #: src/components/BarChart/overview.tsx
+#: src/components/Table/overview.tsx
+#: src/pages/Swap/index.tsx
 msgid "Volume 24H"
 msgstr ""
 
@@ -1912,9 +2034,9 @@ msgstr "Din UNI-opdeling"
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "Dine V3 likviditetspositioner vises her."
 
-#: src/pages/Pool/index.tsx
-msgid "Your liquidity"
-msgstr ""
+#: 
+#~ msgid "Your liquidity"
+#~ msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -2029,6 +2151,7 @@ msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {Importer token} other {Importer tokens}}"
 
 #: src/components/Dropdowns/LanguageDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 msgid "{0}"
 msgstr ""
@@ -2125,7 +2248,7 @@ msgstr "{0} tokens"
 #~ msgid "{0} {1} Price:"
 #~ msgstr "{0} {1} Pris:"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "{0} {1} for {2}"
 msgstr ""
 
@@ -2166,6 +2289,7 @@ msgstr ""
 #~ msgid "{percentForSlider}%"
 #~ msgstr "{percentForSlider}%"
 
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "{text}"
 msgstr ""

@@ -74,12 +74,36 @@ msgstr "0 UNI / hafta"
 #~ msgid "0.3% fee"
 #~ msgstr "% 0.3 ücret"
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Month"
+msgstr ""
+
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Week"
+msgstr ""
+
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+msgid "1 Year"
+msgstr ""
+
 #: 
 #~ msgid "1% fee"
 #~ msgstr "% 1 ücret"
 
+#: src/components/Table/pools.tsx
+msgid "1W"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "1Y"
+msgstr ""
+
 #: src/components/swap/Slippage.tsx
 msgid "2%"
+msgstr ""
+
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "24h Low / 24h High"
 msgstr ""
 
 #: 
@@ -107,9 +131,9 @@ msgstr "<0 /> Tüm Teklifler"
 msgid "<0/> Votes"
 msgstr "<0 /> Oylar"
 
-#: src/pages/Pool/index.tsx
-msgid "<0> ↗ </0>"
-msgstr ""
+#: 
+#~ msgid "<0> ↗ </0>"
+#~ msgstr ""
 
 #: 
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
@@ -155,7 +179,7 @@ msgstr "Teklifleri sunmak için toplam UNI arzının% 1'i kadar minimum eşik ge
 msgid "Accept"
 msgstr "Onayla"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Account"
 msgstr "Hesap"
 
@@ -172,7 +196,6 @@ msgid "Add Delegate +"
 msgstr "Temsilci Ekle +"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Add Liquidity"
 msgstr "Likidite Ekle"
 
@@ -249,6 +272,11 @@ msgstr "Her zaman URL'nin <0> app.uniswap.org olduğundan emin olun</0> - güven
 #~ msgid "Amount"
 #~ msgstr "Miktar"
 
+#: src/components/PoolInvestModal/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to Invest"
+msgstr ""
+
 #: 
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Bu değişimi gerçekleştirmeye çalışırken bir hata oluştu. Kayma toleransınızı artırmanız gerekebilir. Bu işe yaramazsa, işlem yaptığınız jetonla uyumsuzluk olabilir. Transfer ve yeniden ödeme jetonları üzerindeki not ücreti, Uniswap V3 ile uyumlu değildir."
@@ -296,6 +324,10 @@ msgstr "Emin misiniz?"
 msgid "Auto"
 msgstr "Oto"
 
+#: src/components/Table/pools.tsx
+msgid "Available Pools"
+msgstr ""
+
 #: src/components/earn/StakingModal.tsx
 msgid "Available to deposit: {0}"
 msgstr "Para yatırmaya uygun: {0}"
@@ -303,6 +335,10 @@ msgstr "Para yatırmaya uygun: {0}"
 #: 
 #~ msgid "Back"
 #~ msgstr "Geri"
+
+#: src/components/PoolInvestModal/index.tsx
+msgid "Balance"
+msgstr ""
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Balance:"
@@ -493,6 +529,7 @@ msgid "Confirm this transaction in your wallet"
 msgstr "Cüzdanınızda bu işlemi onaylayın"
 
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -522,9 +559,9 @@ msgstr "Havuzları bulmak için bir cüzdana bağlanın"
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "V2 likiditenizi görüntülemek için bir cüzdana bağlanın."
 
-#: src/pages/Pool/index.tsx
-msgid "Connect to a wallet to view your liquidity."
-msgstr "Likiditenizi görüntülemek için bir cüzdana bağlanın."
+#: 
+#~ msgid "Connect to a wallet to view your liquidity."
+#~ msgstr "Likiditenizi görüntülemek için bir cüzdana bağlanın."
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "Connect wallet"
@@ -552,7 +589,6 @@ msgid "Create Pool & Supply"
 msgstr "Havuz Oluştur ve Tedarik"
 
 #: src/components/NavigationTabs/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Create a pair"
 msgstr "Bir çift oluştur"
 
@@ -745,6 +781,10 @@ msgstr "Bağlanırken hata oluştu. Sayfayı yenilemeyi deneyin."
 msgid "Error importing list"
 msgstr "Liste içe aktarılırken hata oluştu"
 
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Est. ROI"
+msgstr ""
+
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
 msgstr "Etkin olmayan Jeton Listelerinden genişletilmiş sonuçlar"
@@ -766,8 +806,17 @@ msgstr ""
 #~ msgstr "Ücret Katmanı"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "Fees"
+msgstr ""
+
+#: src/pages/Swap/index.tsx
+msgid "Fees 24H"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "Filter by token, protocol, ..."
 msgstr ""
 
 #: src/pages/Vote/VotePage.tsx
@@ -803,6 +852,10 @@ msgstr "Yüksek Fiyat Etkisi"
 msgid "I understand"
 msgstr "anlıyorum"
 
+#: src/components/PoolInvestModal/index.tsx
+msgid "INVEST"
+msgstr ""
+
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
 msgstr "Bu listeden bir jeton satın alırsanız, geri satamayabilirsiniz."
@@ -818,9 +871,9 @@ msgstr "İthalat"
 msgid "Import List"
 msgstr "Listeyi İçe Aktar"
 
-#: src/pages/Pool/index.tsx
-msgid "Import Pool"
-msgstr "İçe Aktarma Havuzu"
+#: 
+#~ msgid "Import Pool"
+#~ msgstr "İçe Aktarma Havuzu"
 
 #: src/components/NavigationTabs/index.tsx
 msgid "Import V2 Pool"
@@ -854,6 +907,10 @@ msgstr "Giriş tahminidir. En çok <0>{0} {1}</0> veya işlem geri dönecektir."
 #: src/components/WalletModal/index.tsx
 msgid "Install Metamask"
 msgstr "Metamask'ı yükleyin"
+
+#: src/components/PoolInvestModal/index.tsx
+msgid "Insufficient Balance"
+msgstr ""
 
 #: src/pages/Swap/index.tsx
 msgid "Insufficient liquidity for this trade."
@@ -894,6 +951,12 @@ msgstr "Geçersiz çift."
 msgid "Invalid recipient"
 msgstr "Geçersiz alıcı"
 
+#: src/components/PoolInvestModal/index.tsx
+#: src/components/Table/pools.tsx
+#: src/pages/PoolDetail/index.tsx
+msgid "Invest"
+msgstr ""
+
 #: 
 #~ msgid "Learn"
 #~ msgstr "Öğrenin"
@@ -903,7 +966,9 @@ msgid "Lend"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
+#: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
 msgid "Liquidity"
 msgstr "Likidite"
@@ -912,13 +977,13 @@ msgstr "Likidite"
 msgid "Liquidity Provider Fee"
 msgstr "Likidite Sağlayıcı Ücreti"
 
-#: src/pages/Pool/index.tsx
-msgid "Liquidity provider rewards"
-msgstr "Likidite sağlayıcı ödülleri"
+#: 
+#~ msgid "Liquidity provider rewards"
+#~ msgstr "Likidite sağlayıcı ödülleri"
 
-#: src/pages/Pool/index.tsx
-msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
-msgstr "Likidite sağlayıcıları, havuzdaki paylarıyla orantılı olarak tüm işlemlerde% 0,3 ücret alırlar. Ücretler havuza eklenir, gerçek zamanlı olarak tahakkuk eder ve likiditenizi çekerek talep edilebilir."
+#: 
+#~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
+#~ msgstr "Likidite sağlayıcıları, havuzdaki paylarıyla orantılı olarak tüm işlemlerde% 0,3 ücret alırlar. Ücretler havuza eklenir, gerçek zamanlı olarak tahakkuk eder ve likiditenizi çekerek talep edilebilir."
 
 #: src/components/SearchModal/Manage.tsx
 msgid "Lists"
@@ -928,10 +993,8 @@ msgstr "Listeler"
 msgid "Loaded"
 msgstr "Yüklendi"
 
-#: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/Pool/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Yükleniyor"
@@ -969,6 +1032,10 @@ msgstr ""
 msgid "Manage this pool."
 msgstr "Bu havuzu yönetin."
 
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "Market Cap"
+msgstr ""
+
 #: 
 #~ msgid "Max"
 #~ msgstr "Max"
@@ -990,7 +1057,6 @@ msgstr "Bu havuzu yönetin."
 msgid "Maximum sent"
 msgstr "Maksimum gönderme"
 
-#: src/components/PositionCard/Sushi.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
@@ -1042,6 +1108,10 @@ msgstr "Minimum alınan"
 #~ msgid "More"
 #~ msgstr "Daha"
 
+#: src/components/Table/overview.tsx
+msgid "Name"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "Yeni pozisyon"
@@ -1059,9 +1129,9 @@ msgstr ""
 msgid "No active pools"
 msgstr "Aktif havuz yok"
 
-#: src/pages/Pool/index.tsx
-msgid "No liquidity found."
-msgstr "Likidite bulunamadı."
+#: 
+#~ msgid "No liquidity found."
+#~ msgstr "Likidite bulunamadı."
 
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
@@ -1124,6 +1194,7 @@ msgstr "Çıktı tahmin edilmektedir. En az <0>{0} {1}</0> veya işlem geri dön
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "Çıktı <0>{0}</0>"
 
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Overview"
@@ -1134,12 +1205,21 @@ msgstr ""
 #~ msgstr "Sahip"
 
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 msgid "Page {0} of {totalPages}"
+msgstr ""
+
+#: src/components/LineChart/PoolDetail.tsx
+msgid "Pair Stats"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
 msgstr "Katılımcı havuzlar"
+
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Period"
+msgstr ""
 
 #: src/components/WalletModal/index.tsx
 msgid "Please connect to the appropriate Ethereum network."
@@ -1149,9 +1229,9 @@ msgstr "Lütfen uygun Ethereum ağına bağlanın."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Uzman modunu etkinleştirmek için lütfen \"{confirmWord}"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Pool"
 msgstr "Havuz"
 
@@ -1179,14 +1259,26 @@ msgstr "Ödül havuzundaki havuz jetonları:"
 msgid "Pooled {0}:"
 msgstr "Havuza alınmış {0}:"
 
+#: src/components/Header/Sidebar.tsx
+#: src/pages/Pool/index.tsx
+#: src/pages/Pool/index.tsx
+msgid "Pools"
+msgstr ""
+
 #: 
 #~ msgid "Pools Overview"
 #~ msgstr "Havuzlara Genel Bakış"
 
+#: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/PoolDetail/TokenDetails.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price"
 msgstr "Fiyat"
+
+#: src/components/Table/overview.tsx
+msgid "Price Change"
+msgstr ""
 
 #: 
 #~ msgid "Price Difference:"
@@ -1233,6 +1325,14 @@ msgstr "Teklif veren"
 msgid "RENAME"
 msgstr ""
 
+#: src/components/Table/pools.tsx
+msgid "ROI"
+msgstr ""
+
+#: src/pages/PoolDetail/index.tsx
+msgid "ROI Simulator"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Ücretler"
@@ -1253,7 +1353,7 @@ msgstr "Uniswap yönetişimi hakkında daha fazla bilgi edinin"
 msgid "Read more about unsupported assets"
 msgstr "Desteklenmeyen varlıklar hakkında daha fazla bilgi edinin"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Recent Transactions"
 msgstr "Son İşlemler"
 
@@ -1439,6 +1539,8 @@ msgid "Swaps"
 msgstr ""
 
 #: src/components/LineChart/overview.tsx
+#: src/components/Table/overview.tsx
+#: src/pages/Swap/index.tsx
 msgid "TVL"
 msgstr ""
 
@@ -1491,6 +1593,7 @@ msgid "These tokens are commonly paired with other tokens."
 msgstr "Bu jetonlar genellikle diğer jetonlarla eşleştirilir."
 
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1511,7 +1614,7 @@ msgstr "Bu belirteç, etkin belirteç listelerinde görünmüyor. Bunun takas et
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
 msgstr "Bu işlem, ne fiyat hareketinden dolayı ne de transfer ücretinden dolayı başarılı olmayacaktır. Kayma toleransınızı artırmayı deneyin."
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Time"
 msgstr ""
 
@@ -1532,9 +1635,13 @@ msgstr "En azından)"
 msgid "Toggle Expert Mode"
 msgstr "Uzman Modunu Değiştir"
 
-#: src/components/Table/index.tsx
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
+#: src/components/Table/swap.tsx
 msgid "Token Amount"
+msgstr ""
+
+#: src/pages/PoolDetail/index.tsx
+msgid "Token Stats"
 msgstr ""
 
 #: src/components/SearchModal/Manage.tsx
@@ -1545,6 +1652,10 @@ msgstr "Jetonlar"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "Etkin olmayan listelerden gelen belirteçler. Aşağıdan belirli jetonları içe aktarın veya daha fazla listeyi etkinleştirmek için Yönet'i tıklayın."
 
+#: src/components/Table/overview.tsx
+msgid "Top Tokens"
+msgstr ""
+
 #: src/pages/Pool/CTACards.tsx
 msgid "Top pools"
 msgstr "En iyi havuzlar"
@@ -1553,7 +1664,7 @@ msgstr "En iyi havuzlar"
 msgid "Total Supply"
 msgstr "Toplam Arz"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "Total Value"
 msgstr ""
 
@@ -1564,6 +1675,10 @@ msgstr "Toplam yatırılan"
 #: src/pages/Earn/Manage.tsx
 msgid "Total deposits"
 msgstr "Toplam mevduat"
+
+#: src/pages/PoolDetail/TokenDetails.tsx
+msgid "Trading Volume"
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Transaction Settings"
@@ -1581,6 +1696,10 @@ msgstr "İşlem Gönderildi"
 #: src/components/TransactionSettings/index.tsx
 msgid "Transaction deadline"
 msgstr "İşlem son tarihi"
+
+#: src/components/Table/pools.tsx
+msgid "Trending"
+msgstr ""
 
 #: src/components/WalletModal/PendingView.tsx
 msgid "Try Again"
@@ -1748,11 +1867,14 @@ msgid "View transaction on Explorer"
 msgstr "İşlemi Explorer'da görüntüle"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "Volume"
 msgstr ""
 
 #: src/components/BarChart/overview.tsx
+#: src/components/Table/overview.tsx
+#: src/pages/Swap/index.tsx
 msgid "Volume 24H"
 msgstr ""
 
@@ -1912,9 +2034,9 @@ msgstr "UNI Dökümünüz"
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "V3 likidite pozisyonlarınız burada görünecektir."
 
-#: src/pages/Pool/index.tsx
-msgid "Your liquidity"
-msgstr ""
+#: 
+#~ msgid "Your liquidity"
+#~ msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your liquidity deposits"
@@ -2029,6 +2151,7 @@ msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {Simgeyi içe aktar} other {Jetonları içe aktarın}}"
 
 #: src/components/Dropdowns/LanguageDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 msgid "{0}"
 msgstr ""
@@ -2125,7 +2248,7 @@ msgstr "{0} jeton"
 #~ msgid "{0} {1} Price:"
 #~ msgstr "{0} {1} Fiyat:"
 
-#: src/components/Table/index.tsx
+#: src/components/Table/swap.tsx
 msgid "{0} {1} for {2}"
 msgstr ""
 
@@ -2166,6 +2289,7 @@ msgstr ""
 #~ msgid "{percentForSlider}%"
 #~ msgstr "% {percentForSlider}"
 
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "{text}"
 msgstr ""

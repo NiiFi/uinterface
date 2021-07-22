@@ -1,3 +1,5 @@
+import { Pair } from 'components/Table/types'
+
 export const SampleResponse: any = {
   data: {
     pools: [
@@ -31,6 +33,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '255698347.8003782606803607017806296',
         txCount: '132240',
         volumeUSD: '18095410385.05671123343584611773872',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -62,6 +68,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '155337847.8401011908959470322073855',
         txCount: '71724',
         volumeUSD: '4391942391.444542764849488909872286',
+        roiW: '0.02',
+        roiY: '0.02',
+        trendingPercent: '12',
+        trendingSum: '123.324',
       },
       {
         __typename: 'Pool',
@@ -93,6 +103,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '135864127.6554019720399362114041462',
         txCount: '38863',
         volumeUSD: '4094344082.554563035215884562185625',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '1011.0',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -124,6 +138,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '121539038.7131218476952371781054154',
         txCount: '43140',
         volumeUSD: '2255201794.156523865820342164588264',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '71.3',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -155,6 +173,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '108679025.4114477346013246039639841',
         txCount: '90742',
         volumeUSD: '8627498682.99581631460716347378834',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -186,6 +208,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '79634806.19859541332942277168377768',
         txCount: '32023',
         volumeUSD: '1886767018.530486988113291714168854',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -217,6 +243,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '69839368.21790277500675317302608287',
         txCount: '282010',
         volumeUSD: '8911242437.099558856837741174493359',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -248,6 +278,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '54611138.70744638794404120370395072',
         txCount: '31842',
         volumeUSD: '1324846402.85538817277130806709739',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -279,6 +313,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '36706611.54598678947778873248311716',
         txCount: '30202',
         volumeUSD: '1011804333.892416863127647534765956',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -310,6 +348,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '34330393.65805502654133268718983988',
         txCount: '1712',
         volumeUSD: '42106873.05077021664836104682054429',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -341,6 +383,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '30460998.45946267719321204364435965',
         txCount: '45367',
         volumeUSD: '2245742889.866691780931909285369914',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -372,6 +418,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '26726160.14145241684676421737329208',
         txCount: '1264',
         volumeUSD: '13970093.70105861115688534704938669',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -403,6 +453,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '22235814.01277783513790394724869032',
         txCount: '27111',
         volumeUSD: '1133118511.166555239941658346213901',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -434,6 +488,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '18084168.61715522313369310982854026',
         txCount: '25910',
         volumeUSD: '173213567.607025',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -465,6 +523,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '17762674.74473714071775726260270335',
         txCount: '147',
         volumeUSD: '697120.0409264954698876520156517144',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -496,6 +558,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '15086957.89675691551351722833545325',
         txCount: '476',
         volumeUSD: '9206598.860078',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -527,6 +593,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '14166804.12382465218626176333929567',
         txCount: '549',
         volumeUSD: '7841414.65553229961803039171986247',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -558,6 +628,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '12854537.25681649077409962620795995',
         txCount: '92613',
         volumeUSD: '1802744081.626728509837607603060631',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -589,6 +663,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '12463629.98355843273677529548655817',
         txCount: '7680',
         volumeUSD: '228453278.7603820643319842547140502',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -620,6 +698,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '12124379.56828265222884946807623308',
         txCount: '40488',
         volumeUSD: '774133363.9918175994342301283238732',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -651,6 +733,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '12066411.94153245199941293479352334',
         txCount: '16649',
         volumeUSD: '418698269.8419209749306614527247018',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -682,6 +768,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '11534008.25144756002018887903965679',
         txCount: '184077',
         volumeUSD: '1499856782.475553925176903904722121',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -713,6 +803,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '11464384.83561598865196581312510625',
         txCount: '3194',
         volumeUSD: '300872900.1271771433405425190201963',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -744,6 +838,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '11302604.44547920467835913766455501',
         txCount: '10597',
         volumeUSD: '37018017.31343970525655910438984484',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -775,6 +873,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '11160355.78622811327371554423881315',
         txCount: '8970',
         volumeUSD: '158859599.2698128384076817779422591',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -806,6 +908,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '9477369.437551473143265063480659157',
         txCount: '15046',
         volumeUSD: '430829208.2656218045276625646958245',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -837,6 +943,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '8578150.053586759087226394724535558',
         txCount: '22275',
         volumeUSD: '294712537.3390060766003882485243952',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -868,6 +978,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '8260054.088699036212224039143878444',
         txCount: '1402',
         volumeUSD: '81675777.03035602435901450460115919',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -899,6 +1013,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '7746348.446755836002124227489639171',
         txCount: '122885',
         volumeUSD: '1052108336.532261585487857235326434',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -930,6 +1048,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '7244525.033070103299994081832321389',
         txCount: '6786',
         volumeUSD: '85964471.02714109366448993166247165',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -961,6 +1083,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '6087500.217670348183412058789882842',
         txCount: '5832',
         volumeUSD: '555642781.9785301595578260474799166',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -992,6 +1118,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '5657591.568946585060049571027402248',
         txCount: '30037',
         volumeUSD: '387355920.4191867052339608938072677',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1023,6 +1153,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '5313337.435615168370888308662643682',
         txCount: '4947',
         volumeUSD: '878776580.9614542693418595875750598',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1054,6 +1188,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '5049590.557380773741050880072270047',
         txCount: '4651',
         volumeUSD: '164106526.4581908701224115195086231',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1085,6 +1223,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '4764388.651896995449907829185080396',
         txCount: '1818',
         volumeUSD: '35370898.2739387582524147069460283',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1116,6 +1258,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '4333791.179215408182727465365251707',
         txCount: '1362',
         volumeUSD: '17075450.74784216532691092289306461',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1147,6 +1293,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '4274439.662079417833858906600923754',
         txCount: '913',
         volumeUSD: '4782713.526853',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1178,6 +1328,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '4237593.582919170034288576643278401',
         txCount: '4899',
         volumeUSD: '18754688.96573706716490731176329506',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1209,6 +1363,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '4224647.438718389484682103820806371',
         txCount: '5240',
         volumeUSD: '71847047.61167790767584585054047628',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1240,6 +1398,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '4086827.991783623448458676111639405',
         txCount: '61',
         volumeUSD: '522908.1498774921747453162943253566',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1271,6 +1433,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '4041139.661970601726235011115707085',
         txCount: '1044',
         volumeUSD: '30817388.2782252309415168416306491',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1302,6 +1468,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '3900584.802384638832686054403516896',
         txCount: '35',
         volumeUSD: '133870.1890811496787208781874521844',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1333,6 +1503,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '3777886.062520997671104099950610168',
         txCount: '1134',
         volumeUSD: '10548921.1652728808489784156747269',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1364,6 +1538,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '3719369.480425261095296153078168353',
         txCount: '251',
         volumeUSD: '1425869.918265159806718491633433447',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1395,6 +1573,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '3710894.319502182392155827371066449',
         txCount: '1602',
         volumeUSD: '60456968.3683296606620043404888917',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1426,6 +1608,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '3617381.124843375136576050250489587',
         txCount: '159',
         volumeUSD: '2355410.184917560908118404766064994',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1457,6 +1643,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '3507934.256042979389766109933326121',
         txCount: '8433',
         volumeUSD: '78351920.62806816851663544858794344',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1488,6 +1678,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '3306908.401265201114674503871128645',
         txCount: '5558',
         volumeUSD: '74654320.78574557446148077768740288',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1519,6 +1713,10 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '2978312.115351873405052871464839891',
         txCount: '12740',
         volumeUSD: '127863522.9745515969475278733965571',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
       {
         __typename: 'Pool',
@@ -1550,7 +1748,26 @@ export const SampleResponse: any = {
         totalValueLockedUSD: '2951606.497986369048574428751697837',
         txCount: '1825',
         volumeUSD: '18879997.70766190512337764664442001',
+        roiW: '0.01',
+        roiY: '0.01',
+        trendingPercent: '114.6',
+        trendingSum: '6.324',
       },
     ],
   },
+}
+
+export type PoolsOverviewData = {
+  id: string
+  symbol: string
+  liquidity: string
+  roiY: string
+  trendingPercent: string
+} & Pair
+
+export function getPoolsOverviewData(type: string, limit: number | undefined): PoolsOverviewData[] {
+  if (type === 'looser') {
+    return SampleResponse.data.pools.slice(-(limit || 6))
+  }
+  return SampleResponse.data.pools.slice(0, limit || 6)
 }
