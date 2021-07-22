@@ -69,7 +69,7 @@ export const SampleResponse: any = {
         txCount: '71724',
         volumeUSD: '4391942391.444542764849488909872286',
         roiW: '0.02',
-        roiY: '0.01',
+        roiY: '0.02',
         trendingPercent: '12',
         trendingSum: '123.324',
       },
@@ -105,7 +105,7 @@ export const SampleResponse: any = {
         volumeUSD: '4094344082.554563035215884562185625',
         roiW: '0.01',
         roiY: '0.01',
-        trendingPercent: '114.6',
+        trendingPercent: '1011.0',
         trendingSum: '6.324',
       },
       {
@@ -140,7 +140,7 @@ export const SampleResponse: any = {
         volumeUSD: '2255201794.156523865820342164588264',
         roiW: '0.01',
         roiY: '0.01',
-        trendingPercent: '114.6',
+        trendingPercent: '71.3',
         trendingSum: '6.324',
       },
       {
@@ -1757,11 +1757,14 @@ export const SampleResponse: any = {
   },
 }
 
-export type PoolsData = {
+export type PoolsOverviewData = {
   id: string
   symbol: string
+  liquidity: string
+  roiY: string
+  trendingPercent: string
 } & Pair
 
-export function getPoolsData(type: string, limit: number | undefined): PoolsData[] {
+export function getPoolsOverviewData(type: string, limit: number | undefined): PoolsOverviewData[] {
   return SampleResponse.data.pools.slice(0, limit || 6)
 }

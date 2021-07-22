@@ -66,7 +66,7 @@ function EnhancedTableHead(props: EnhancedTableHeadProps) {
         <TableCell
           style={{ color: `${theme.text4}`, borderBottom: `1px solid ${theme.bg3}` }}
           key={headCell.id}
-          align={'left'}
+          align={'center'}
           padding={headCell.disablePadding ? 'none' : 'default'}
           sortDirection={orderBy === headCell.id ? order : false}
         >

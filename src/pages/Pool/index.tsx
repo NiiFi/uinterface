@@ -11,6 +11,7 @@ import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
 import PoolsTable from '../../components/Table/pools'
 import PoolsOverview from '../../components/pools/PoolsOverview'
+import { Disclaimer } from '../../theme'
 
 // TODO: move to shared library
 const CurrencySelectWrapper = styled.div`
@@ -21,9 +22,19 @@ const CurrencySelectWrapper = styled.div`
   `}
 `
 
-export default function Pool() {
+const tabNameToIndex: any = {
+  0: 'overview',
+  1: 'search',
+}
+
+export default function Pool(props: any) {
+  const { match, history } = props
   const [activeTab, setActiveTab] = useState<number>(0)
-  const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
+
+  const TabChangeHandler: any = (e: any, newValue: any) => {
+    history.push(`/pools/${tabNameToIndex[newValue]}`)
+    setActiveTab(newValue)
+  }
 
   return (
     <>
@@ -39,9 +50,14 @@ export default function Pool() {
       </AppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
-          <PoolsOverview type="new" />
-          {/* <TopLoosersPools />
-          <NewPools /> */}
+          <Disclaimer>
+            <span>Disclaimer:</span>
+            {` `}
+            {t`This is Dummy Data`}
+          </Disclaimer>
+          <PoolsOverview type="gainer" setActive={setActiveTab} />
+          <PoolsOverview type="looser" style={{ paddingTop: '50px' }} setActive={setActiveTab} />
+          <PoolsOverview type="new" style={{ paddingTop: '50px' }} setActive={setActiveTab} />
         </TabPanel>
         <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
           <AppBody size="lg">
