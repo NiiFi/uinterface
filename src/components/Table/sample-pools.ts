@@ -1766,5 +1766,8 @@ export type PoolsOverviewData = {
 } & Pair
 
 export function getPoolsOverviewData(type: string, limit: number | undefined): PoolsOverviewData[] {
+  if (type === 'looser') {
+    return SampleResponse.data.pools.slice(-(limit || 6))
+  }
   return SampleResponse.data.pools.slice(0, limit || 6)
 }

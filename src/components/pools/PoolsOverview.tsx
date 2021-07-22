@@ -1,7 +1,7 @@
 import React, { CSSProperties, useMemo } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 import { t, Trans } from '@lingui/macro'
-import { Grid, GridList, GridListTile } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import styled from 'styled-components'
 import { isMobile } from 'react-device-detect'
 import CurrencyAvatar from 'components/CurrencyAvatar'
@@ -13,7 +13,6 @@ import { usePoolInvestModalToggle } from 'state/application/hooks'
 import PoolInvestModal from 'components/PoolInvestModal'
 import InvestButton from 'components/pools/InvestButton'
 import { shortenDecimalValues } from '../../utils'
-import useTheme from 'hooks/useTheme'
 import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper } from 'theme'
 
 const Header = styled(TYPE.mediumHeader)`
@@ -59,7 +58,6 @@ type PoolsOverviewProps = {
 }
 
 export default function PoolsOverview({ type, limit, style, setActive }: PoolsOverviewProps) {
-  // const { match, history } = props
   const history = useHistory()
   const poolsData = useMemo(() => {
     return getPoolsOverviewData(type, limit)
@@ -85,7 +83,7 @@ export default function PoolsOverview({ type, limit, style, setActive }: PoolsOv
       title = t`Top Gainer Pools`
       break
     case 'looser':
-      title = t`Top Loser Pools`
+      title = t`Top Looser Pools`
       break
   }
 
@@ -97,12 +95,9 @@ export default function PoolsOverview({ type, limit, style, setActive }: PoolsOv
           <Trans>See all</Trans>
         </Link>
       </FlexColumn>
-      {/* <GridList cols={isMobile ? 1 : 3} spacing={15}> */}
-      {/* <Grid container direction="row" justifyContent="space-between" alignItems="flex-start"> */}
       <Grid container direction="row" alignItems="flex-start" spacing={3}>
         {Object.entries(poolsData).map(([key, item]) => {
           return (
-            // <GridListTile key={key}>
             <Grid item xs={isMobile ? 12 : 4} key={key}>
               <Card key={key} onClick={handleCardOnClick}>
                 <RowWrapper style={{ justifyContent: 'space-between' }}>
@@ -116,12 +111,12 @@ export default function PoolsOverview({ type, limit, style, setActive }: PoolsOv
                       />
                       <CurrencyAvatar
                         symbol={'NII'}
-                        iconProps={{ width: '34', height: '34' }}
+                        iconProps={{ width: '34', height: '34', id: 'poolsNiiLogo' }}
                         containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
                         hideSymbol={true}
                       />
                       <CircleWrapper style={{ left: '42px', position: 'absolute', marginTop: '-36px' }}>
-                        <NIILogo />
+                        <NIILogo id="poolsNiiLogo" />
                       </CircleWrapper>
                     </div>
                     <ColumnWrapper style={{ marginLeft: '30px' }}>
@@ -171,7 +166,6 @@ export default function PoolsOverview({ type, limit, style, setActive }: PoolsOv
                 </FlexColumn>
               </Card>
             </Grid>
-            // </GridListTile>
           )
         })}
       </Grid>

@@ -4,6 +4,7 @@ import { SearchInput } from 'components/SearchModal/styleds'
 import { MagnifierIcon } from 'components/Icons'
 import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
 import ReactDOMServer from 'react-dom/server'
+import useTheme from 'hooks/useTheme'
 
 export const CustomSearchInput = styled(SearchInput)`
   padding: 16px 50px;
@@ -23,6 +24,7 @@ type Props = {
 } & React.HTMLAttributes<HTMLDivElement>
 
 const SearchBar = ({ placeholder, debouncedSearchChange, query, setQuery, ...rest }: Props) => {
+  const theme = useTheme()
   const [sword, setSword] = useDebouncedChangeHandler<string>(query, debouncedSearchChange, 500)
 
   useEffect((): any => {
@@ -39,7 +41,7 @@ const SearchBar = ({ placeholder, debouncedSearchChange, query, setQuery, ...res
       {...rest}
       style={{
         backgroundImage: `url('data:image/svg+xml;utf8,${encodeURIComponent(
-          ReactDOMServer.renderToStaticMarkup(MagnifierIcon({ width: 24, height: 24 }))
+          ReactDOMServer.renderToStaticMarkup(MagnifierIcon({ width: 24, height: 24, color: theme.text4 }))
         )}')`,
       }}
     />

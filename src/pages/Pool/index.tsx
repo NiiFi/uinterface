@@ -28,7 +28,7 @@ const tabNameToIndex: any = {
 }
 
 export default function Pool(props: any) {
-  const { match, history } = props
+  const { history } = props
   const [activeTab, setActiveTab] = useState<number>(0)
 
   const TabChangeHandler: any = (e: any, newValue: any) => {
