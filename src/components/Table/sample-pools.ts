@@ -7,7 +7,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8',
-        liquidity: '13025976812756543229',
+        liquidity: '1302597',
         sqrtPrice: '1800717511476367686950269139743504',
         tick: '200637',
         token0: {
@@ -42,7 +42,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x7858e59e0c01ea06df3af3d20ac7b0003275d4bf',
-        liquidity: '145091673794872492',
+        liquidity: '14509',
         sqrtPrice: '79233982037398303420945867538',
         tick: '1',
         token0: {
@@ -77,7 +77,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xcbcdf9626bc03e24f779434178a73a0b4bad62ed',
-        liquidity: '493256324016396469',
+        liquidity: '49325',
         sqrtPrice: '32398217741630643651692104998465000',
         tick: '258438',
         token0: {
@@ -112,7 +112,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x6c6bc977e13df9b0de53b251522280bb72383700',
-        liquidity: '170183807194201216074747',
+        liquidity: '170183',
         sqrtPrice: '79258058093005274387470',
         tick: '-276317',
         token0: {
@@ -147,7 +147,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x4e68ccd3e89f51c3074ca5072bbac773960dfa36',
-        liquidity: '5424699954414690587',
+        liquidity: '542469',
         sqrtPrice: '3486083597897982903109702',
         tick: '-200637',
         token0: {
@@ -182,7 +182,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x99ac8ca7087fa4a2a1fb6357269965a2014abc35',
-        liquidity: '10709328929325',
+        liquidity: '1',
         sqrtPrice: '1425674443983681961684467640841',
         tick: '57804',
         token0: {
@@ -217,7 +217,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640',
-        liquidity: '5551605392221218208',
+        liquidity: '555160',
         sqrtPrice: '1801062630530282891266023940730750',
         tick: '200641',
         token0: {
@@ -252,7 +252,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x1d42064fc4beb5f8aaf85f4617ae8b3b5b8bd801',
-        liquidity: '1351044344849502120040416',
+        liquidity: '1351044',
         sqrtPrice: '7495717973881791788240139048',
         tick: '-47163',
         token0: {
@@ -287,7 +287,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x6f48eca74b38d2936b02ab603ff4e36a6c0e3a77',
-        liquidity: '32132419786737397761515',
+        liquidity: '32132',
         sqrtPrice: '79259141218557197650640',
         tick: '-276317',
         token0: {
@@ -322,7 +322,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x8f8ef111b67c04eb1641f5ff19ee54cda062f163',
-        liquidity: '1565034151647360166',
+        liquidity: '156503',
         sqrtPrice: '1424615845318732319916472385000000000',
         tick: '334113',
         token0: {
@@ -357,7 +357,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xc2e9f25be6257c210d7adf0d4cd6e3e881ba25f8',
-        liquidity: '731343414473812831082422',
+        liquidity: '73134341447',
         sqrtPrice: '1801557478909083430926614285',
         tick: '-75678',
         token0: {
@@ -392,7 +392,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x7379e81228514a1d2a6cf7559203998e20598346',
-        liquidity: '2982492248429706330079099',
+        liquidity: '29824922',
         sqrtPrice: '79879923917254326314010889827',
         tick: '163',
         token0: {
@@ -427,7 +427,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xa6cc3c2531fdaa6ae1a3ca84c2855806728693e8',
-        liquidity: '820157516859463908029159',
+        liquidity: '82015751',
         sqrtPrice: '7344387358302821654960109601',
         tick: '-47571',
         token0: {
@@ -462,7 +462,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0x84383fb05f610222430f69727aa638f8fdbf5cc1',
-        liquidity: '765681759705473472',
+        liquidity: '7656',
         sqrtPrice: '945649943681833359710593',
         tick: '-226731',
         token0: {
@@ -497,7 +497,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x87986ae1e99f99da1f955d16930dc8914ffbed56',
-        liquidity: '26751544016228900982007932',
+        liquidity: '26751544',
         sqrtPrice: '160393249422336932057180246139',
         tick: '14106',
         token0: {
@@ -532,7 +532,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x5720eb958685deeeb5aa0b34f677861ce3a8c7f5',
-        liquidity: '301695008913169512856',
+        liquidity: '301695',
         sqrtPrice: '79227878585848131246022',
         tick: '-276325',
         token0: {
@@ -567,7 +567,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0xaf585783337434fee47c9abfbd737156f9a84dd1',
-        liquidity: '1976153831820668057191451',
+        liquidity: '197615383',
         sqrtPrice: '161965458669438191818962201',
         tick: '-123861',
         token0: {
@@ -602,7 +602,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x60594a405d53811d3bc4766596efd80fd545a270',
-        liquidity: '416637410606170012831563',
+        liquidity: '4166374',
         sqrtPrice: '1804168422567037245691906262',
         tick: '-75649',
         token0: {
@@ -637,7 +637,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xe8c6c9227491c0a8156a0106a0204d881bb7e531',
-        liquidity: '20179408030586860576607',
+        liquidity: '2017940',
         sqrtPrice: '89995881617123544546776248770',
         tick: '2548',
         token0: {
@@ -672,7 +672,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x4585fe77225b41b697c938b018e2ac67ac5a20c0',
-        liquidity: '76727066814199484',
+        liquidity: '7672',
         sqrtPrice: '32391160849506227821399324173191907',
         tick: '258434',
         token0: {
@@ -707,7 +707,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x06729eb2424da47898f935267bd4a62940de5105',
-        liquidity: '56075353606504130',
+        liquidity: '5607',
         sqrtPrice: '42185064111236285826013849260104909',
         tick: '263718',
         token0: {
@@ -742,7 +742,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x11b815efb8f581194ae79006d24e0d814b7697f6',
-        liquidity: '846475504755942343',
+        liquidity: '84647',
         sqrtPrice: '3484932313280626327339638',
         tick: '-200643',
         token0: {
@@ -777,7 +777,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0xbd5fdda17bc27bb90e37df7a838b1bfc0dc997f5',
-        liquidity: '3493940333927',
+        liquidity: '1231',
         sqrtPrice: '726279720226194408392447555',
         tick: '-93848',
         token0: {
@@ -812,7 +812,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xcba27c8e7115b4eb50aa14999bc0866674a96ecb',
-        liquidity: '107048706265790068916144',
+        liquidity: '1070487',
         sqrtPrice: '4662683697555395873660637534',
         tick: '-56658',
         token0: {
@@ -847,7 +847,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xea4ba4ce14fdd287f380b55419b1c5b6c3f22ab6',
-        liquidity: '23731313951276096932955',
+        liquidity: '2373131',
         sqrtPrice: '35259694474812625923014839139',
         tick: '-16193',
         token0: {
@@ -882,7 +882,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x151ccb92bc1ed5c6d0f9adb5cec4763ceb66ac7f',
-        liquidity: '36264044159962744933797',
+        liquidity: '3626404',
         sqrtPrice: '13875827716437613543658270220',
         tick: '-34846',
         token0: {
@@ -917,7 +917,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x69d91b94f0aaf8e8a2586909fa77a5c2c89818d5',
-        liquidity: '540667287930894',
+        liquidity: '54',
         sqrtPrice: '2961912082714382268485959546',
         tick: '-65734',
         token0: {
@@ -952,7 +952,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0x68082ecc5bbad8fe77c2cb9d0e3403d9a00ccbc2',
-        liquidity: '851038158297746415536072',
+        liquidity: '85103815',
         sqrtPrice: '798226203534080981354034921',
         tick: '-91959',
         token0: {
@@ -987,7 +987,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0x5764a6f2212d502bc5970f9f129ffcd61e5d7563',
-        liquidity: '40217633244220334692726251',
+        liquidity: '4021763',
         sqrtPrice: '4757253726780691205945704',
         tick: '-194419',
         token0: {
@@ -1022,7 +1022,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xcd83055557536eff25fd0eafbc56e74a1b4260b3',
-        liquidity: '52266464024870550787532',
+        liquidity: '522664',
         sqrtPrice: '4900155010775792809775028504',
         tick: '-55665',
         token0: {
@@ -1057,7 +1057,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x8c54aa2a32a779e6f6fbea568ad85a19e0109c26',
-        liquidity: '1563950315013487182418',
+        liquidity: '156395',
         sqrtPrice: '79135007846652353805173',
         tick: '-276348',
         token0: {
@@ -1092,7 +1092,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x290a6a7460b308ee3f19023d2d00de604bcf5b42',
-        liquidity: '327710631446635992216530',
+        liquidity: '3277106',
         sqrtPrice: '1717572578706983897836691654',
         tick: '-76633',
         token0: {
@@ -1127,7 +1127,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x5180545835bd68810fb7e11c7160bb7ea4ae8744',
-        liquidity: '279268107084815049404',
+        liquidity: '27926',
         sqrtPrice: '79122670786222864988131',
         tick: '-276351',
         token0: {
@@ -1162,7 +1162,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0xcb0c5d9d92f4f2f80cce7aa271a1e148c226e19d',
-        liquidity: '198003977700391070473594796',
+        liquidity: '198003',
         sqrtPrice: '136865732709397295423925896535',
         tick: '10933',
         token0: {
@@ -1197,7 +1197,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0x058d79a4c6eb5b11d0248993ffa1faa168ddd3c0',
-        liquidity: '116311295789635291902584',
+        liquidity: '116311',
         sqrtPrice: '13189382766480233718492771904',
         tick: '-35861',
         token0: {
@@ -1232,7 +1232,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xc29271e3a68a7647fd1399298ef18feca3879f59',
-        liquidity: '1595014906869945741926148783',
+        liquidity: '1595014',
         sqrtPrice: '47128747800392002977544943883199039',
         tick: '265934',
         token0: {
@@ -1267,7 +1267,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0xf7a716e2df2bde4d0ba7656c131b06b1af68513c',
-        liquidity: '4637807720022812982',
+        liquidity: '4637',
         sqrtPrice: '46821347631133159025753',
         tick: '-286845',
         token0: {
@@ -1302,7 +1302,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x24099552f5dadd07c4c3e32c52fd7109e7c72727',
-        liquidity: '291882919439495991884378',
+        liquidity: '2918829',
         sqrtPrice: '432247683864547244350543343',
         tick: '-104227',
         token0: {
@@ -1337,7 +1337,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x04916039b1f59d9745bf6e0a21f191d1e0a84287',
-        liquidity: '3686218708364615670756',
+        liquidity: '368621',
         sqrtPrice: '319641876609567007930825509954',
         tick: '27898',
         token0: {
@@ -1372,7 +1372,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xd83d78108dd0d1dffff11ea3f99871671a52488b',
-        liquidity: '76583115938764560698385',
+        liquidity: '765831',
         sqrtPrice: '1800724044955945863458169419',
         tick: '-75687',
         token0: {
@@ -1407,7 +1407,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x2028d7ef0223c45cadbf05e13f1823c1228012bf',
-        liquidity: '1599384286750136596581997',
+        liquidity: '15993',
         sqrtPrice: '1799476799985393867897675733',
         tick: '-75701',
         token0: {
@@ -1442,7 +1442,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '500',
         id: '0x129360c964e2e13910d603043f6287e5e9383374',
-        liquidity: '4071652422791854754974',
+        liquidity: '40716',
         sqrtPrice: '79222746609143236160904',
         tick: '-276326',
         token0: {
@@ -1477,7 +1477,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x0d47fedc9f84ceb8c95719bb6b684b50645cf2f0',
-        liquidity: '52574199596126531',
+        liquidity: '526554',
         sqrtPrice: '119126548810696064645574',
         tick: '-268167',
         token0: {
@@ -1512,7 +1512,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0xb03f87e577c4fe4685cf2c88a8473414bb1d04f1',
-        liquidity: '118880864255477764920813',
+        liquidity: '11888',
         sqrtPrice: '953176675266977754983906387',
         tick: '-88411',
         token0: {
@@ -1547,7 +1547,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0x9febc984504356225405e26833608b17719c82ae',
-        liquidity: '1557587121322546',
+        liquidity: '1678',
         sqrtPrice: '121584831914936654777365',
         tick: '-267758',
         token0: {
@@ -1582,7 +1582,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0xa46466ad5507be77ff5abdc27df9dfeda9bd7aee',
-        liquidity: '30371862081565691703088',
+        liquidity: '30371',
         sqrtPrice: '22866363953785458892696857196',
         tick: '-24855',
         token0: {
@@ -1617,7 +1617,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0x7bea39867e4169dbe237d55c8242a8f2fcdcc387',
-        liquidity: '170848532482556653',
+        liquidity: '17084',
         sqrtPrice: '1806323082686826094656001155522331',
         tick: '200699',
         token0: {
@@ -1652,7 +1652,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x5ab53ee1d50eef2c1dd3d5402789cd27bb52c1bb',
-        liquidity: '26057301939633711874603',
+        liquidity: '2605730',
         sqrtPrice: '29343667566115405495285573783',
         tick: '-19867',
         token0: {
@@ -1687,7 +1687,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '10000',
         id: '0x06b1655b9d560de112759b4f0bf57d6f005e72fe',
-        liquidity: '54468248210184933675061',
+        liquidity: '544682',
         sqrtPrice: '1476577493384780957789605904864',
         tick: '58505',
         token0: {
@@ -1722,7 +1722,7 @@ export const SampleResponse: any = {
         __typename: 'Pool',
         feeTier: '3000',
         id: '0x4f2f3bdf115539a78a30769eb42489bd0f9d47da',
-        liquidity: '3427798561327662101',
+        liquidity: '342779',
         sqrtPrice: '87239379787942734042152490126537362',
         tick: '278250',
         token0: {
