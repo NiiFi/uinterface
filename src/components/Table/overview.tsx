@@ -1,20 +1,14 @@
 import React from 'react'
 import useTheme from 'hooks/useTheme'
-import styled from 'styled-components'
 import { t } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import Percent from 'components/Percent'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
-import { TYPE } from '../../theme'
+import { TYPE, RowWrapper } from '../../theme'
 import { SampleResponse } from './sample-tokens'
 import Table from './index'
-
-const RowWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-`
 
 const CustomTableRow = (
   row: any,

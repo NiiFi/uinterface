@@ -19,7 +19,7 @@ import { ButtonConfirmed, ButtonError, ButtonPrimary } from '../../components/Bu
 import { DefaultCard, GreyCard } from '../../components/Card'
 import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
-import TabPanel, { TabPanelHeading } from '../../components/tab/TabPanel'
+import TabPanel from '../../components/tab/TabPanel'
 import { AutoColumn, FlexColumn } from '../../components/Column'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import CurrencyLogo from '../../components/CurrencyLogo'
@@ -376,9 +376,6 @@ export default function Swap({ history }: RouteComponentProps) {
       </AppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
-          <TabPanelHeading>
-            <Trans>Swap</Trans>
-          </TabPanelHeading>
           <AutoColumn gap="lg">
             <ResponsiveRow gap="2rem">
               <AppBody size="md" style={{ minHeight: '440px' }}>
@@ -656,9 +653,6 @@ export default function Swap({ history }: RouteComponentProps) {
           )}
         </TabPanel>
         <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
-          <TabPanelHeading>
-            <Trans>Overview</Trans>
-          </TabPanelHeading>
           <AutoColumn gap="lg">
             <Wrapper style={{ padding: 0 }}>
               <Disclaimer>

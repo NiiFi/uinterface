@@ -9,7 +9,7 @@ import TableCell from '@material-ui/core/TableCell'
 import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
-import { TYPE } from '../../theme'
+import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper } from '../../theme'
 import { SampleResponse } from './sample-pools'
 import SearchableTable from './SearchableTable'
 import Loader from 'components/Loader'
@@ -26,23 +26,6 @@ const LoaderWrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: calc(100vh - 10rem);
-`
-
-const CircleWrapper = styled.div`
-  background-color: ${({ theme }) => theme.bg0};
-  border: 1px solid ${({ theme }) => theme.bg3};
-  border-radius: 50%;
-  display: flex;
-`
-
-const RowWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-`
-
-const ColumnWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
 `
 
 const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHandler<HTMLButtonElement>) => {

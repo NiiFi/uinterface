@@ -268,7 +268,7 @@ export function ETHIcon({ width = 24, height = 24, ...rest }: IconProps) {
   )
 }
 
-export function NIIIcon({ width = 34, height = 34, ...rest }: IconProps) {
+export function NIIIcon({ width = 34, height = 34, id = '0', ...rest }: IconProps) {
   return (
     <svg
       width={width}
@@ -279,13 +279,13 @@ export function NIIIcon({ width = 34, height = 34, ...rest }: IconProps) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...rest}
     >
-      <rect width="34" height="34" fill="url(#pattern0)" />
+      <rect width="34" height="34" fill={'url(#pattern' + id + ')'} />
       <defs>
-        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlinkHref="#image0" transform="scale(0.0105263)" />
+        <pattern id={'pattern' + id} patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref={'#image' + id} transform="scale(0.0105263)" />
         </pattern>
         <image
-          id="image0"
+          id={'image' + id}
           width="95"
           height="95"
           xlinkHref="data:image/png;base64,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"
@@ -295,7 +295,7 @@ export function NIIIcon({ width = 34, height = 34, ...rest }: IconProps) {
   )
 }
 
-export function NIILogo({ width = 14, height = 14, ...rest }: IconProps) {
+export function NIILogo({ width = 14, height = 14, id = '0', ...rest }: IconProps) {
   return (
     <svg
       width={width}
@@ -306,9 +306,9 @@ export function NIILogo({ width = 14, height = 14, ...rest }: IconProps) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...rest}
     >
-      <rect width="14" height="14" fill="url(#niiLogo0)" />
+      <rect width="14" height="14" fill={'url(#niiLogo' + id + ')'} />
       <defs>
-        <pattern id="niiLogo0" patternContentUnits="objectBoundingBox" width="1" height="1">
+        <pattern id={'niiLogo' + id} patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlinkHref="#niiLogo" transform="scale(0.0333333)" />
         </pattern>
         <image
@@ -322,7 +322,7 @@ export function NIILogo({ width = 14, height = 14, ...rest }: IconProps) {
   )
 }
 
-export function MagnifierIcon({ width = 24, height = 24, ...rest }: IconProps) {
+export function MagnifierIcon({ width = 24, height = 24, color = '#0C443F', ...rest }: IconProps) {
   return (
     <svg
       width={width}
@@ -335,7 +335,7 @@ export function MagnifierIcon({ width = 24, height = 24, ...rest }: IconProps) {
     >
       <path
         d="M15.9706 15.9706C19.0948 12.8464 19.0948 7.78106 15.9706 4.65687C12.8464 1.53267 7.78105 1.53267 4.65685 4.65687C1.53266 7.78106 1.53266 12.8464 4.65685 15.9706C7.78105 19.0948 12.8464 19.0948 15.9706 15.9706ZM15.9706 15.9706L22.5 22.5"
-        stroke="#0C443F"
+        stroke={color}
         strokeOpacity="0.38"
         strokeWidth="2"
       />
