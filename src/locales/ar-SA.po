@@ -585,6 +585,14 @@ msgstr "منسوخ"
 msgid "Copy Address"
 msgstr "نسخ العنوان"
 
+#: src/components/CreatePoolModal/index.tsx
+msgid "Create New Pool"
+msgstr ""
+
+#: src/components/pools/CreatePoolButton.tsx
+msgid "Create Pool"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "إنشاء مخزن وإمدادات"
@@ -954,7 +962,7 @@ msgstr "مستلم غير صالح"
 
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
-#: src/pages/PoolDetail/index.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Invest"
 msgstr ""
 
@@ -971,6 +979,7 @@ msgstr ""
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Liquidity"
 msgstr "السيولة"
 
@@ -1113,6 +1122,10 @@ msgstr "تلقى الحد الأدنى"
 msgid "Name"
 msgstr ""
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "New Pools"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "موضع جديد"
@@ -1197,7 +1210,6 @@ msgstr "سيتم إرسال المخرجات إلى <0>{0}</0>"
 
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Overview"
 msgstr ""
 
@@ -1261,8 +1273,6 @@ msgid "Pooled {0}:"
 msgstr "المجمع {0}:"
 
 #: src/components/Header/Sidebar.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1328,6 +1338,10 @@ msgstr ""
 
 #: src/components/Table/pools.tsx
 msgid "ROI"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "ROI (1Y)"
 msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
@@ -1413,9 +1427,18 @@ msgstr "العودة"
 msgid "Route"
 msgstr "طريق"
 
+#: src/components/Table/SearchableTable.tsx
+#: src/pages/Pool/index.tsx
+msgid "Search"
+msgstr ""
+
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Search name or paste address"
 msgstr "البحث عن اسم أو عنوان لصق"
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "See all"
+msgstr ""
 
 #: 
 #~ msgid "Select Pool"
@@ -1522,7 +1545,6 @@ msgstr "تقديم {0} {1} و {2} {3}"
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Swap"
 msgstr "تبديل"
 
@@ -1593,8 +1615,9 @@ msgstr "تعذر إرسال المعاملة لانتهاء الموعد الم�
 msgid "These tokens are commonly paired with other tokens."
 msgstr "هذه الرموز المميزة عادة ما تقترن مع الرموز الأخرى."
 
+#: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
-#: src/components/Table/pools.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1653,6 +1676,14 @@ msgstr "الرموز"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "الرموز من القوائم غير النشطة. قم باستيراد الرموز المميزة المحددة أدناه أو انقر فوق \"إدارة\" لتنشيط المزيد من القوائم."
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Gainer Pools"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Looser Pools"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Top Tokens"
 msgstr ""
@@ -1699,6 +1730,7 @@ msgid "Transaction deadline"
 msgstr "الموعد النهائي للمعاملة"
 
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
 msgstr ""
 
