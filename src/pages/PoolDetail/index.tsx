@@ -6,14 +6,13 @@ import { Trans, t } from '@lingui/macro'
 import { RouteComponentProps, Redirect } from 'react-router-dom'
 
 import { BodyScroller } from 'components/swap/styleds'
+import CreatePoolButton from 'components/pools/CreatePoolButton'
 import AppBar from 'components/AppBar'
-import InvestButton from 'components/pools/InvestButton'
 import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
 import { TYPE } from 'theme'
-import { usePoolInvestModalToggle } from 'state/application/hooks'
 import PoolInvestModal from 'components/PoolInvestModal'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TokenDetails from './TokenDetails'
@@ -121,7 +120,6 @@ export default function PoolDetails({
     params: { token0, token1 },
   },
 }: RouteComponentProps<{ token0: string; token1: string }>) {
-  const togglePoolInvestModal = usePoolInvestModalToggle()
   const history = useHistory()
   if (!token0 || !token1) {
     return <Redirect to={'/swap'} />
@@ -136,16 +134,7 @@ export default function PoolDetails({
             {t`Pool`}
           </BarTitle>
           <ButtonWrapper>
-            <InvestButton
-              token0={{ symbol: 'ETH', address: '1234' }}
-              token1={{ symbol: 'NII', address: '1235' }}
-              type="primary"
-              onClick={togglePoolInvestModal}
-              style={{ fontSize: '14px' }}
-              padding={'10px 14px'}
-            >
-              <Trans>Invest</Trans>
-            </InvestButton>
+            <CreatePoolButton />
           </ButtonWrapper>
         </BarWrapper>
       </AppBar>

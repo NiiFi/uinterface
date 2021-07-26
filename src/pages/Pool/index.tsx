@@ -10,6 +10,7 @@ import AppBody from '../AppBody'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
 import PoolsTable from '../../components/Table/pools'
+import CreatePoolButton from 'components/pools/CreatePoolButton'
 import PoolsOverview from '../../components/pools/PoolsOverview'
 import { Disclaimer } from '../../theme'
 
@@ -44,9 +45,12 @@ export default function Pool(props: any) {
           <Tab key={`tab-0`} label={t`Overview`} />
           <Tab key={`tab-1`} label={t`Search`} />
         </Tabs>
-        <CurrencySelectWrapper>
-          <CurrencyDropdown />
-        </CurrencySelectWrapper>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <CreatePoolButton />
+          <CurrencySelectWrapper>
+            <CurrencyDropdown />
+          </CurrencySelectWrapper>
+        </div>
       </AppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
