@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useState, useEffect, useMemo } from 'react'
+import { useHistory, useLocation } from 'react-router-dom'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
 import { t, Trans } from '@lingui/macro'
@@ -10,8 +10,8 @@ import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
 import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper } from '../../theme'
-import { SampleResponse } from './sample-pools'
-import SearchableTable from './SearchableTable'
+import { getPoolsData } from './sample-pools'
+import SearchableTable, { Order } from './SearchableTable'
 import Loader from 'components/Loader'
 import { PoolTableData } from '../Table/types'
 import InvestButton from 'components/pools/InvestButton'
@@ -142,9 +142,26 @@ const PoolTableToolbar = ({
   )
 }
 export default function PoolsTable() {
-  const [pools, setPools] = useState<PoolTableData[]>(SampleResponse.data.pools)
+  const { state } = useLocation<any>() // FIXME: any
+  const poolsData = useMemo(() => {
+    return getPoolsData('new', 100)
+  }, [])
+  const [order, setOrder] = React.useState<Order>('asc')
+  const [orderBy, setOrderBy] = React.useState<string>()
+  const [pools, setPools] = useState<PoolTableData[]>(poolsData)
 
   const toggleInvestModal = usePoolInvestModalToggle()
+
+  useEffect(() => {
+    // TODO: implement sorting
+    if (state?.type !== undefined) {
+      setOrderBy('roiY')
+      setOrder(state.type === 'looser' ? 'asc' : 'desc')
+    } else {
+      setOrderBy('token0.symbol')
+      setOrder('asc')
+    }
+  }, [state])
 
   if (!pools) {
     return (
@@ -162,7 +179,7 @@ export default function PoolsTable() {
         searchLabel={t`Filter by token, protocol, ...`}
         debouncedSearchChange={(value: string) => {
           setPools(
-            SampleResponse.data.pools.filter((pool: any) => {
+            poolsData.filter((pool: any) => {
               const regex = new RegExp(`^${value}`, 'ig')
               const { name: token0Name, symbol: token0Symbol, id: token0Id } = pool.token0
               const { name: token1Name, symbol: token1Symbol, id: token1Id } = pool.token1
@@ -180,8 +197,8 @@ export default function PoolsTable() {
         headCells={[
           { id: 'token0.symbol', numeric: false, disablePadding: false, label: t`Available Pools` },
           { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
-          { id: 'roi', numeric: false, disablePadding: false, label: t`ROI` },
-          { id: 'trending', numeric: false, disablePadding: false, label: t`Trending` },
+          { id: 'roiY', numeric: false, disablePadding: false, label: t`ROI` },
+          { id: 'trendingSum', numeric: false, disablePadding: false, label: t`Trending` },
           { id: '', numeric: false, disablePadding: false, label: '' },
         ]}
         renderToolbar={(props) =>
@@ -192,6 +209,8 @@ export default function PoolsTable() {
         row={(row: any, index: number) => {
           return CustomTableRow(row, index, toggleInvestModal)
         }}
+        defaultOrder={order}
+        defaultOrderBy={orderBy}
       />
       <PoolInvestModal />
     </>

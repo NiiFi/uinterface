@@ -13,7 +13,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel'
 import useTheme from 'hooks/useTheme'
 import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 import TableToolBar from './TableToolbar'
-import { TableDataTypes, TransactionTypes } from './types'
+import { TableDataTypes } from './types'
 import SearchBar from 'components/Search'
 import { Disclaimer } from '../../theme'
 
@@ -42,6 +42,8 @@ interface EnhancedTableProps {
   renderToolbar?: (props: RenderToolBarProps) => any
   searchLabel?: string
   debouncedSearchChange: (value: string) => void
+  defaultOrder?: Order
+  defaultOrderBy?: string
 }
 interface EnhancedTableHeadProps {
   classes: ReturnType<typeof useStyles>
@@ -49,8 +51,6 @@ interface EnhancedTableHeadProps {
   order: Order
   orderBy: string
   rowCount: number
-  onTransactionTypeChange: (type: any) => void
-  transactionType: string
   headCells: HeadCell[]
   renderCells?: (headCell: HeadCell) => JSX.Element
   cellsBefore?: (props: any) => unknown
@@ -160,20 +160,26 @@ const useStyles = makeStyles(() => {
     },
   })
 })
-// TODO: remove transactionType and setTransactionType
+
 export default function SearchableTable(props: EnhancedTableProps) {
-  const { renderToolbar, searchLabel, debouncedSearchChange } = props
+  const { renderToolbar, searchLabel, debouncedSearchChange, defaultOrder, defaultOrderBy } = props
   const classes = useStyles()
   const [tableData, setTableData] = React.useState<Array<TableDataTypes>>([])
-  const [transactionType, setTransactionType] = React.useState<TransactionTypes>('All')
   const [order, setOrder] = React.useState<Order>('asc')
-  const [orderBy, setOrderBy] = React.useState<string>('amountUSD')
+  const [orderBy, setOrderBy] = React.useState<string>('liquidity')
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(25)
   const [query, setQuery] = React.useState<string>('')
   useEffect(() => {
     setTableData(props.data)
   }, [props.data, setTableData])
+  useEffect(() => {
+    if (defaultOrderBy !== undefined) {
+      setOrderBy(defaultOrderBy)
+      setOrder(defaultOrder || 'asc')
+      setPage(0)
+    }
+  }, [defaultOrder, defaultOrderBy])
 
   const handleRequestSort = (event: React.MouseEvent<unknown>, property: string) => {
     const isAsc = orderBy === property && order === 'asc'
@@ -264,8 +270,6 @@ export default function SearchableTable(props: EnhancedTableProps) {
             order={order}
             orderBy={orderBy}
             onRequestSort={handleRequestSort}
-            onTransactionTypeChange={setTransactionType}
-            transactionType={transactionType}
             rowCount={tableData.length}
             headCells={props.headCells}
             cellsBefore={props.headCellsBefore}
@@ -281,7 +285,6 @@ export default function SearchableTable(props: EnhancedTableProps) {
                 },
                 [order]
               )
-                // .filter((row) => (transactionType === 'All' ? true : transactionType === row.__typename))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => props.row(row, index, handleClick))}
           </TableBody>
