@@ -15,6 +15,7 @@ import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
 import PoolsTable from '../../components/Table/pools'
 import PoolsOverview, { getTitle } from '../../components/pools/PoolsOverview'
 import { Disclaimer, BarWrapper, BarTitle } from '../../theme'
+import CreatePoolButton from 'components/pools/CreatePoolButton'
 
 // TODO: move to shared library
 const CurrencySelectWrapper = styled.div`
@@ -73,7 +74,7 @@ export default function Pool() {
     <>
       <AppBar style={{ padding: '0 1rem' }}>
         {activeTab === 1 && state?.type ? (
-          <BarWrapper>
+          <BarWrapper style={{ width: 'auto' }}>
             <BarTitle>
               <ArrowLeft style={{ cursor: 'pointer' }} onClick={(e) => TabChangeHandler(e, 0)} />
               {getTitle(state?.type)}
@@ -88,9 +89,12 @@ export default function Pool() {
             </Tabs>
           </>
         )}
-        <CurrencySelectWrapper>
-          <CurrencyDropdown />
-        </CurrencySelectWrapper>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <CreatePoolButton />
+          <CurrencySelectWrapper>
+            <CurrencyDropdown />
+          </CurrencySelectWrapper>
+        </div>
       </AppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>

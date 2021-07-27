@@ -195,6 +195,7 @@ msgstr "לְהוֹסִיף"
 msgid "Add Delegate +"
 msgstr "הוסף נציג +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "הוסף נזילות"
@@ -584,6 +585,15 @@ msgstr "מוּעֲתָק"
 msgid "Copy Address"
 msgstr "העתק כתובת"
 
+#: src/components/CreatePoolModal/index.tsx
+msgid "Create New Pool"
+msgstr ""
+
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/pools/CreatePoolButton.tsx
+msgid "Create Pool"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
 msgstr "צור בריכה ואספקה"
@@ -953,7 +963,7 @@ msgstr "נמען לא חוקי"
 
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
-#: src/pages/PoolDetail/index.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Invest"
 msgstr ""
 
@@ -970,6 +980,7 @@ msgstr ""
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Liquidity"
 msgstr "נְזִילוּת"
 
@@ -1112,6 +1123,10 @@ msgstr "מינימום שהתקבל"
 msgid "Name"
 msgstr ""
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "New Pools"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "תפקיד חדש"
@@ -1196,7 +1211,6 @@ msgstr "הפלט יישלח אל <0>{0}</0>"
 
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Overview"
 msgstr ""
 
@@ -1260,8 +1274,6 @@ msgid "Pooled {0}:"
 msgstr "מאוגד {0}:"
 
 #: src/components/Header/Sidebar.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1327,6 +1339,10 @@ msgstr ""
 
 #: src/components/Table/pools.tsx
 msgid "ROI"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "ROI (1Y)"
 msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
@@ -1412,9 +1428,18 @@ msgstr "לַחֲזוֹר"
 msgid "Route"
 msgstr "מַסלוּל"
 
+#: src/components/Table/SearchableTable.tsx
+#: src/pages/Pool/index.tsx
+msgid "Search"
+msgstr ""
+
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Search name or paste address"
 msgstr "חפש שם או הדבק כתובת"
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "See all"
+msgstr ""
 
 #: 
 #~ msgid "Select Pool"
@@ -1521,7 +1546,6 @@ msgstr "אספקת {0} {1} ו {2} {3}"
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Swap"
 msgstr "לְהַחלִיף"
 
@@ -1592,8 +1616,9 @@ msgstr "לא ניתן היה לשלוח את העסקה מכיוון שהמוע�
 msgid "These tokens are commonly paired with other tokens."
 msgstr "אסימונים אלה משויכים בדרך כלל לאסימונים אחרים."
 
+#: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
-#: src/components/Table/pools.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1652,6 +1677,14 @@ msgstr "אסימונים"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "אסימונים מרשימות לא פעילות. ייבא אסימונים ספציפיים למטה או לחץ על נהל כדי להפעיל רשימות נוספות."
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Gainer Pools"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Looser Pools"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Top Tokens"
 msgstr ""
@@ -1698,6 +1731,7 @@ msgid "Transaction deadline"
 msgstr "מועד אחרון לעסקה"
 
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
 msgstr ""
 
