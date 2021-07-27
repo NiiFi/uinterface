@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
+import { useLocation, useHistory, useParams } from 'react-router-dom'
 import { t } from '@lingui/macro'
+import qs from 'qs'
 import styled from 'styled-components'
+import { ArrowLeft } from 'react-feather'
 import AppBar from 'components/AppBar'
 import { BodyScroller } from 'components/swap/styleds'
 import Tab from '../../components/tab/Tab'
@@ -10,9 +13,9 @@ import AppBody from '../AppBody'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
 import PoolsTable from '../../components/Table/pools'
+import PoolsOverview, { getTitle } from '../../components/pools/PoolsOverview'
+import { Disclaimer, BarWrapper, BarTitle } from '../../theme'
 import CreatePoolButton from 'components/pools/CreatePoolButton'
-import PoolsOverview from '../../components/pools/PoolsOverview'
-import { Disclaimer } from '../../theme'
 
 // TODO: move to shared library
 const CurrencySelectWrapper = styled.div`
@@ -28,29 +31,73 @@ const tabNameToIndex: any = {
   1: 'search',
 }
 
-export default function Pool(props: any) {
-  const { history } = props
-  const [activeTab, setActiveTab] = useState<number>(0)
+type PoolsParams = {
+  page?: string
+}
 
-  const TabChangeHandler: any = (e: any, newValue: any) => {
-    history.push(`/pools/${tabNameToIndex[newValue]}`)
-    setActiveTab(newValue)
-  }
+export default function Pool() {
+  const history = useHistory()
+  const { search } = history.location
+  const { state } = useLocation<any>() // FIXME: any
+  const [activeTab, setActiveTab] = useState<number>(0)
+  const params = useParams<PoolsParams>()
+
+  const TabChangeHandler: any = useCallback(
+    (e: any, newValue: any) => {
+      history.push(`/pools/${tabNameToIndex[newValue]}`)
+      setActiveTab(newValue)
+    },
+    [history]
+  )
+
+  useEffect(() => {
+    const parsedQuery = qs.parse(search, { ignoreQueryPrefix: true })
+    if (parsedQuery?.type !== undefined) {
+      history.replace({
+        ...history.location,
+        state: { activeTab: 1, type: parsedQuery.type },
+      })
+    }
+  }, [search, history])
+
+  useEffect(() => {
+    setActiveTab(state?.activeTab || activeTab)
+  }, [state, activeTab])
+
+  useEffect(() => {
+    if (params?.page === undefined) {
+      TabChangeHandler(null, 0)
+    }
+  }, [params, TabChangeHandler])
 
   return (
     <>
-      <AppBar style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
-        <ToggleDrawer />
-        <Tabs value={activeTab} onChange={TabChangeHandler}>
-          <Tab key={`tab-0`} label={t`Overview`} />
-          <Tab key={`tab-1`} label={t`Search`} />
-        </Tabs>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <CreatePoolButton />
-          <CurrencySelectWrapper>
-            <CurrencyDropdown />
-          </CurrencySelectWrapper>
-        </div>
+      <AppBar style={{ padding: '0 1rem' }}>
+        {activeTab === 1 && state?.type ? (
+          <BarWrapper>
+            <BarTitle>
+              <ArrowLeft style={{ cursor: 'pointer' }} onClick={(e) => TabChangeHandler(e, 0)} />
+              {getTitle(state?.type)}
+            </BarTitle>
+          </BarWrapper>
+        ) : (
+          <>
+            <ToggleDrawer />
+            <Tabs value={activeTab} onChange={TabChangeHandler}>
+              <Tab key={`tab-0`} label={t`Overview`} />
+              <Tab key={`tab-1`} label={t`Search`} />
+            </Tabs>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <CreatePoolButton />
+              <CurrencySelectWrapper>
+                <CurrencyDropdown />
+              </CurrencySelectWrapper>
+            </div>
+          </>
+        )}
+        <CurrencySelectWrapper>
+          <CurrencyDropdown />
+        </CurrencySelectWrapper>
       </AppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
@@ -59,9 +106,9 @@ export default function Pool(props: any) {
             {` `}
             {t`This is Dummy Data`}
           </Disclaimer>
-          <PoolsOverview type="gainer" setActive={setActiveTab} />
-          <PoolsOverview type="looser" style={{ paddingTop: '50px' }} setActive={setActiveTab} />
-          <PoolsOverview type="new" style={{ paddingTop: '50px' }} setActive={setActiveTab} />
+          <PoolsOverview type="gainer" />
+          <PoolsOverview type="looser" style={{ paddingTop: '50px' }} />
+          <PoolsOverview type="new" style={{ paddingTop: '50px' }} />
         </TabPanel>
         <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
           <AppBody size="lg">
