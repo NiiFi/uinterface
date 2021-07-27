@@ -13,7 +13,8 @@ import { usePoolInvestModalToggle } from 'state/application/hooks'
 import PoolInvestModal from 'components/PoolInvestModal'
 import InvestButton from 'components/pools/InvestButton'
 import { shortenDecimalValues } from '../../utils'
-import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper } from 'theme'
+import useBreakpoint from '../../hooks/useBreakpoint'
+import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, MEDIA_WIDTHS } from 'theme'
 
 const Header = styled(TYPE.mediumHeader)`
   padding: 0 0 10px 0;
@@ -68,6 +69,7 @@ type PoolsOverviewProps = {
 }
 
 export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps) {
+  const isSmallScreen = useBreakpoint(MEDIA_WIDTHS.upToSmall)
   const history = useHistory()
   const poolsData = useMemo(() => {
     return getPoolsData(type, limit)
@@ -96,8 +98,8 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
       <Grid container direction="row" alignItems="flex-start" spacing={3}>
         {Object.entries(poolsData).map(([key, item]) => {
           return (
-            <Grid item xs={isMobile ? 12 : 4} key={key}>
-              <Card key={key} onClick={handleCardOnClick}>
+            <Grid item xs={isSmallScreen ? 12 : 4} key={key}>
+              <Card onClick={handleCardOnClick}>
                 <RowWrapper style={{ justifyContent: 'space-between' }}>
                   <RowWrapper>
                     <div style={{ position: 'relative' }}>

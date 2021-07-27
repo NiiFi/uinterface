@@ -111,7 +111,7 @@ export default function PoolDetails({
   }
   return (
     <>
-      <AppBar>
+      <AppBar style={{ padding: '0 1rem' }}>
         <BarWrapper>
           <BarTitle>
             <ArrowLeft style={{ cursor: 'pointer' }} onClick={() => history.push('/pools')} />
