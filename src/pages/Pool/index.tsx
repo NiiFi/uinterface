@@ -5,7 +5,6 @@ import qs from 'qs'
 import styled from 'styled-components'
 import { ArrowLeft } from 'react-feather'
 import AppBar from 'components/AppBar'
-import { BodyScroller } from 'components/swap/styleds'
 import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
 import TabPanel from '../../components/tab/TabPanel'
@@ -14,7 +13,7 @@ import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
 import PoolsTable from '../../components/Table/pools'
 import PoolsOverview, { getTitle } from '../../components/pools/PoolsOverview'
-import { Disclaimer, BarWrapper, BarTitle } from '../../theme'
+import { BodyScroller, Disclaimer, BarWrapper, BarTitle } from '../../theme'
 import CreatePoolButton from 'components/pools/CreatePoolButton'
 
 // TODO: move to shared library
@@ -67,8 +66,10 @@ export default function Pool() {
   useEffect(() => {
     if (params?.page === undefined) {
       TabChangeHandler(null, 0)
+    } else {
+      setActiveTab(parseInt(Object.keys(tabNameToIndex).find((k) => tabNameToIndex[k] === params?.page) || ''))
     }
-  }, [params, TabChangeHandler])
+  }, [params, TabChangeHandler, setActiveTab, history])
 
   return (
     <>
@@ -76,7 +77,7 @@ export default function Pool() {
         {activeTab === 1 && state?.type ? (
           <BarWrapper style={{ width: 'auto' }}>
             <BarTitle>
-              <ArrowLeft style={{ cursor: 'pointer' }} onClick={(e) => TabChangeHandler(e, 0)} />
+              <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
               {getTitle(state?.type)}
             </BarTitle>
           </BarWrapper>

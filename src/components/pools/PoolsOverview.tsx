@@ -112,14 +112,14 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
                       <CurrencyAvatar
                         symbol={'NII'}
                         iconProps={{ width: '32', height: '32', id: 'poolsNiiLogo' }}
-                        containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
+                        containerStyle={{ left: '22px', position: 'absolute', marginTop: '-34px' }}
                         hideSymbol={true}
                       />
-                      <CircleWrapper style={{ left: '42px', position: 'absolute', marginTop: '-36px' }}>
+                      <CircleWrapper style={{ left: '46px', position: 'absolute', marginTop: '-36px' }}>
                         <NIILogo id="poolsNiiLogo" />
                       </CircleWrapper>
                     </div>
-                    <ColumnWrapper style={{ marginLeft: '30px' }}>
+                    <ColumnWrapper style={{ marginLeft: '32px' }}>
                       <TYPE.mediumHeader>
                         {item.token0.symbol} / {item.token1.symbol}
                       </TYPE.mediumHeader>
