@@ -195,6 +195,7 @@ msgstr "添加"
 msgid "Add Delegate +"
 msgstr "添加委托 +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "注入流动资金"
@@ -588,6 +589,7 @@ msgstr "复制地址"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""

@@ -195,6 +195,7 @@ msgstr "Ekle"
 msgid "Add Delegate +"
 msgstr "Temsilci Ekle +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Likidite Ekle"
@@ -588,6 +589,7 @@ msgstr "Adresi kopyala"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""

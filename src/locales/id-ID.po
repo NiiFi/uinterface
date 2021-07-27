@@ -195,6 +195,7 @@ msgstr "Menambahkan"
 msgid "Add Delegate +"
 msgstr "Tambahkan Delegasi +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Tambahkan Likuiditas"
@@ -588,6 +589,7 @@ msgstr "Salin Alamat"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""

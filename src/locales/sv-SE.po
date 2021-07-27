@@ -195,6 +195,7 @@ msgstr "Lägg till"
 msgid "Add Delegate +"
 msgstr "Lägg till Delegera +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Lägg till likviditet"
@@ -588,6 +589,7 @@ msgstr "Kopiera adress"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""

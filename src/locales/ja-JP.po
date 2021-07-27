@@ -195,6 +195,7 @@ msgstr "追加"
 msgid "Add Delegate +"
 msgstr "第三者に投票を委任する"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "流動性を追加"
@@ -588,6 +589,7 @@ msgstr "アドレスをコピー"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""

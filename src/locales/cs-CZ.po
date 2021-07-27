@@ -195,6 +195,7 @@ msgstr "Přidat"
 msgid "Add Delegate +"
 msgstr "Přidat delegát +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Přidat likviditu"
@@ -588,6 +589,7 @@ msgstr "Kopírovat adresu"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""

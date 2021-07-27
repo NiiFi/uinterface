@@ -195,6 +195,7 @@ msgstr "Thêm vào"
 msgid "Add Delegate +"
 msgstr "Thêm đại biểu +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Thêm thanh khoản"
@@ -588,6 +589,7 @@ msgstr "Sao chép địa chỉ"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""

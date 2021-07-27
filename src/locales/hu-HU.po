@@ -195,6 +195,7 @@ msgstr "Hozzáadás"
 msgid "Add Delegate +"
 msgstr "Adja hozzá a Delegate + elemet"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Adja hozzá a Likviditást"
@@ -588,6 +589,7 @@ msgstr "Cím másolása"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""

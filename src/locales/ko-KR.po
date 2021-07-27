@@ -195,6 +195,7 @@ msgstr "더하다"
 msgid "Add Delegate +"
 msgstr "대리인 추가 +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "유동성 추가"
@@ -588,6 +589,7 @@ msgstr "주소 복사"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""

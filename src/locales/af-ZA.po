@@ -195,6 +195,7 @@ msgstr "Voeg by"
 msgid "Add Delegate +"
 msgstr "Voeg afgevaardigde + by"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Voeg likiditeit by"
@@ -588,6 +589,7 @@ msgstr "Kopieer adres"
 msgid "Create New Pool"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/pools/CreatePoolButton.tsx
 msgid "Create Pool"
 msgstr ""
