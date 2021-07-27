@@ -133,7 +133,7 @@ const StyledBalanceMax = styled.button<{ disabled?: boolean }>`
 `
 
 interface CurrencyInputPanelProps {
-  labelText?: 'To' | 'From'
+  labelText?: 'To' | 'From' | string
   value: string
   onUserInput: (value: string) => void
   onMax?: () => void
