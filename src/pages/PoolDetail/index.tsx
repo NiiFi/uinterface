@@ -12,7 +12,7 @@ import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
-import { TYPE } from 'theme'
+import { TYPE, BarWrapper, BarTitle } from 'theme'
 import { usePoolInvestModalToggle } from 'state/application/hooks'
 import PoolInvestModal from 'components/PoolInvestModal'
 import CurrencyAvatar from 'components/CurrencyAvatar'
@@ -57,24 +57,7 @@ const RowColumn = styled.div`
     gap: 1rem;
   `}
 `
-const BarWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 2rem;
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 0.5rem 1rem;
-  `}
-`
-const BarTitle = styled.div`
-  display: flex;
-  gap: 1rem;
-  align-item: center;
-  font-size: 1.25rem;
-  justify-content: flex-start;
-  color: ${({ theme }) => theme.text1};
-`
+
 const ButtonWrapper = styled.div`
   display: flex;
 `
