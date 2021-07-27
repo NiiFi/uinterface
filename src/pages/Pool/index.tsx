@@ -74,7 +74,7 @@ export default function Pool() {
     <>
       <AppBar style={{ padding: '0 1rem' }}>
         {activeTab === 1 && state?.type ? (
-          <BarWrapper>
+          <BarWrapper style={{ width: 'auto' }}>
             <BarTitle>
               <ArrowLeft style={{ cursor: 'pointer' }} onClick={(e) => TabChangeHandler(e, 0)} />
               {getTitle(state?.type)}
@@ -87,17 +87,14 @@ export default function Pool() {
               <Tab key={`tab-0`} label={t`Overview`} />
               <Tab key={`tab-1`} label={t`Search`} />
             </Tabs>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <CreatePoolButton />
-              <CurrencySelectWrapper>
-                <CurrencyDropdown />
-              </CurrencySelectWrapper>
-            </div>
           </>
         )}
-        <CurrencySelectWrapper>
-          <CurrencyDropdown />
-        </CurrencySelectWrapper>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <CreatePoolButton />
+          <CurrencySelectWrapper>
+            <CurrencyDropdown />
+          </CurrencySelectWrapper>
+        </div>
       </AppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
