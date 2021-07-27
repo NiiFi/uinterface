@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import { Trans } from '@lingui/macro'
+import { Currency } from '@uniswap/sdk-core'
+import { t, Trans } from '@lingui/macro'
 
+import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import { ApplicationModal } from 'state/application/actions'
 import { ReactComponent as Close } from 'assets/images/x.svg'
+import { useCurrency } from 'hooks/Tokens'
 import { useCreatePoolModalToggle, useModalOpen } from 'state/application/hooks'
+import Slippage from 'components/swap/Slippage'
+import Row from 'components/Row'
+import { ButtonPrimary } from 'components/Button'
 import Modal from '../Modal'
 
 const HeaderRow = styled.div`
@@ -15,21 +21,6 @@ const HeaderRow = styled.div`
 const UpperSection = styled.div`
   position: relative;
   padding: 2rem;
-  h5 {
-    margin: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    font-weight: 400;
-  }
-
-  h5:last-child {
-    margin-bottom: 0px;
-  }
-
-  h4 {
-    margin-top: 0;
-    font-weight: 500;
-  }
   ${({ theme }) => theme.mediaWidth.upToMedium`
     padding: 1.5rem;
   `}
@@ -65,6 +56,8 @@ const Wrapper = styled.div`
 export default function CreatePoolModal() {
   const poolInvestModalOpen = useModalOpen(ApplicationModal.CREATE_POOL)
   const toggleCreatePoolModal = useCreatePoolModalToggle()
+  const [currencyTokenOne, setCurrencyTokenOne] = useState<Currency | null | undefined>(useCurrency('ETH'))
+  const [currencyTokenTwo, setCurrencyTokenTwo] = useState<Currency | null | undefined>(null)
   return (
     <Modal isOpen={poolInvestModalOpen} onDismiss={toggleCreatePoolModal} minHeight={false} maxHeight={90}>
       <Wrapper>
@@ -75,6 +68,36 @@ export default function CreatePoolModal() {
           <HeaderRow>
             <Trans>Create New Pool</Trans>
           </HeaderRow>
+          <div style={{ marginTop: '0.5rem' }}>
+            <CurrencyInputPanel
+              id="pool-input"
+              labelText={t`Add Liquidity`}
+              currency={currencyTokenOne}
+              otherCurrency={currencyTokenTwo}
+              showMaxButton={false}
+              value=""
+              onCurrencySelect={(newToken) => setCurrencyTokenOne(newToken)}
+              onUserInput={() => console.log('Currency 1')}
+            />
+            <CurrencyInputPanel
+              id="pool-output"
+              showMaxButton={false}
+              currency={currencyTokenTwo}
+              otherCurrency={currencyTokenOne}
+              value=""
+              hideBalance={true}
+              onCurrencySelect={(newToken) => setCurrencyTokenTwo(newToken)}
+              onUserInput={() => console.log('Currency 2')}
+            />
+          </div>
+          <Row marginTop="1rem">
+            <Slippage placement="left" />
+          </Row>
+          <Row marginTop="1rem">
+            <ButtonPrimary style={{ textTransform: 'uppercase' }}>
+              <Trans>Create Pool</Trans>
+            </ButtonPrimary>
+          </Row>
         </UpperSection>
       </Wrapper>
     </Modal>
