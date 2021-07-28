@@ -10,6 +10,7 @@ export const CustomSearchInput = styled(SearchInput)`
   padding: 16px 50px;
   background-repeat: no-repeat;
   background-position: 2%;
+  background-color: ${({ theme }) => theme.bg7};
   ${({ theme }) => theme.mediaWidth.upToSmall`
     font-size: 16px;
     padding: 16px 38px;

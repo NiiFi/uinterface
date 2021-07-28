@@ -5,14 +5,13 @@ import { ArrowLeft } from 'react-feather'
 import { Trans, t } from '@lingui/macro'
 import { RouteComponentProps, Redirect } from 'react-router-dom'
 
-import { BodyScroller } from 'components/swap/styleds'
 import CreatePoolButton from 'components/pools/CreatePoolButton'
 import AppBar from 'components/AppBar'
 import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
-import { TYPE, BarWrapper, BarTitle } from 'theme'
+import { BodyScroller, TYPE, BarWrapper, BarTitle } from 'theme'
 import PoolInvestModal from 'components/PoolInvestModal'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TokenDetails from './TokenDetails'
@@ -109,7 +108,7 @@ export default function PoolDetails({
   }
   return (
     <>
-      <AppBar>
+      <AppBar style={{ padding: '0 1rem' }}>
         <BarWrapper>
           <BarTitle>
             <ArrowLeft style={{ cursor: 'pointer' }} onClick={() => history.push('/pools')} />

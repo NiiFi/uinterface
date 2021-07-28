@@ -21,7 +21,7 @@ import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 const AppWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  background-color: ${({ theme }) => theme.bg6};
+  background-color: ${({ theme }) => theme.bg7};
 `
 
 const BodyWrapper = styled.div`

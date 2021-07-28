@@ -212,6 +212,13 @@ a {
  color: ${({ theme }) => theme.blue1}; 
 }
 `
+
+export const BodyScroller = styled.div`
+  height: calc(100vh - 53px);
+  overflow-y: scroll;
+  width: 100%;
+`
+
 export const Disclaimer = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.warning};
