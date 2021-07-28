@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { useHistory } from 'react-router-dom'
 import { ArrowLeft } from 'react-feather'
 import { Trans, t } from '@lingui/macro'
 import { RouteComponentProps, Redirect } from 'react-router-dom'
-
 import CreatePoolButton from 'components/pools/CreatePoolButton'
 import AppBar from 'components/AppBar'
 import AppBody, { BodyWrapper } from '../AppBody'
@@ -12,10 +11,16 @@ import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
 import { BodyScroller, TYPE, BarWrapper, BarTitle } from 'theme'
+import { usePoolInvestModalToggle } from 'state/application/hooks'
+import PoolInvest from 'components/PoolInvest'
+import PoolWithdraw from 'components/PoolWithdraw'
 import PoolInvestModal from 'components/PoolInvestModal'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TokenDetails from './TokenDetails'
 import ROISimulator from './ROISimulator'
+import Tab from '../../components/tab/Tab'
+import Tabs from '../../components/tab/Tabs'
+import TabPanel from '../../components/tab/TabPanel'
 
 const TokenStatsWrapper = styled(BodyWrapper)`
   flex: 2;
@@ -69,6 +74,18 @@ const Wrapper = styled.div`
     gap: 1rem;
   `}
 `
+
+const PoolDetailChartWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 2rem;
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    gap: 1rem;
+  `}
+`
+
 const PoolDetailAppBodyWrap = styled(AppBody)`
   padding: 2rem;
   ${({ theme }) => theme.mediaWidth.upToSmall`
@@ -102,7 +119,10 @@ export default function PoolDetails({
     params: { token0, token1 },
   },
 }: RouteComponentProps<{ token0: string; token1: string }>) {
+  const [activeTab, setActiveTab] = useState<number>(0)
+  const togglePoolInvestModal = usePoolInvestModalToggle()
   const history = useHistory()
+  const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
   if (!token0 || !token1) {
     return <Redirect to={'/swap'} />
   }
@@ -123,9 +143,75 @@ export default function PoolDetails({
       <BodyScroller>
         <BodyPanel>
           <Wrapper>
-            <PoolDetailAppBodyWrap size="lg">
-              <PoolDetailChart token0={token0} token1={token1} />
-            </PoolDetailAppBodyWrap>
+            <RowColumn>
+              <AppBody size="md" style={{ minHeight: '440px' }}>
+                <Tabs value={activeTab} onChange={TabChangeHandler}>
+                  <Tab
+                    key={`tab-0`}
+                    label={t`Invest`}
+                    style={{ backgroundColor: 'transparent', minWidth: '50%', paddingRight: '0px', marginRight: '0px' }}
+                    wrapperStyles={{
+                      root: {
+                        backgroundColor: 'transparent',
+                        fontWeight: 500,
+                        borderBottomColor: '#C9F0ED',
+                        borderBottomWidth: '1px',
+                        borderBottomStyle: 'solid',
+                      },
+                      hover: {
+                        backgroundColor: 'transparent',
+                        fontWeight: 500,
+                        borderRadius: '0px',
+                        borderBottomColor: '#9871F9',
+                      },
+                      selected: {
+                        backgroundColor: 'transparent',
+                        fontWeight: 500,
+                        borderBottomColor: '#9871F9',
+                        borderRadius: '0px',
+                      },
+                    }}
+                  />
+                  <Tab
+                    key={`tab-1`}
+                    label={t`Widthdraw`}
+                    style={{ backgroundColor: 'transparent', minWidth: '50%', paddingLeft: '0px', marginLeft: '0px' }}
+                    wrapperStyles={{
+                      root: {
+                        backgroundColor: 'transparent',
+                        fontWeight: 500,
+                        borderBottomColor: '#C9F0ED',
+                        borderBottomWidth: '1px',
+                        borderBottomStyle: 'solid',
+                      },
+                      hover: {
+                        backgroundColor: 'transparent',
+                        fontWeight: 500,
+                        borderRadius: '0px',
+                        borderBottomColor: '#9871F9',
+                      },
+                      selected: {
+                        backgroundColor: 'transparent',
+                        fontWeight: 500,
+                        borderBottomColor: '#9871F9',
+                        borderRadius: '0px',
+                      },
+                    }}
+                  />
+                </Tabs>
+                <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
+                  <PoolInvest />
+                </TabPanel>
+                <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
+                  <PoolWithdraw />
+                </TabPanel>
+              </AppBody>
+              <AppBody size="md" style={{ minHeight: '440px' }}>
+                <PoolDetailChartWrapper>
+                  <PoolDetailChart token0={token0} token1={token1} />
+                </PoolDetailChartWrapper>
+              </AppBody>
+            </RowColumn>
             <RowColumn>
               <TokenStatsWrapper>
                 <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
@@ -156,7 +242,6 @@ export default function PoolDetails({
           </Wrapper>
         </BodyPanel>
       </BodyScroller>
-      <PoolInvestModal />
     </>
   )
 }

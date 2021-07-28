@@ -54,6 +54,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0.5rem 0px;
   color: ${({ theme }) => theme.text5};
 `
 
@@ -65,7 +66,18 @@ const ControlWrapper = styled(Wrapper)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid rgba(228, 247, 245, 1);
+  margin-top: 10px;
 `
+
+const ButtonControlWrapper = styled(TYPE.main)`
+  padding-right: 1rem;
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding-right: 0.5rem;
+  `}
+`
+
 const ChartRowColumnWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -95,6 +107,9 @@ const ChartColumnItem = styled(AutoColumn)<{ flex?: string }>`
 `
 const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string }) => {
   const theme = useContext(ThemeContext)
+  const [liquidityHover, setLiquidityHover] = useState<number | undefined>()
+  const [volumeHover, setVolumeHover] = useState<number | undefined>()
+  const [feesHover, setFeesHover] = useState<number | undefined>()
   const [liquiditySum, setLiquiditySum] = useState<number | undefined>()
   const [volumeSum, setVolumeSum] = useState<number | undefined>()
   const [feesSum, setFeesSum] = useState<number | undefined>()
@@ -121,64 +136,78 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
 
   const dateFormat = currentChartPeriod === 'all' ? 'MMM' : 'dd'
 
+  useEffect(() => {
+    if (!liquidityHover && lineChartData) {
+      setLiquidityHover(lineChartData[lineChartData.length - 1].value1)
+    }
+  }, [liquidityHover, lineChartData, currentChartPeriod])
+
+  useEffect(() => {
+    if (!volumeHover && lineChartData) {
+      setVolumeHover(lineChartData[lineChartData.length - 1].value2)
+    }
+  }, [volumeHover, lineChartData, currentChartPeriod])
+
+  useEffect(() => {
+    if (!feesHover && lineChartData) {
+      setFeesHover(lineChartData[lineChartData.length - 1].value3)
+    }
+  }, [feesHover, lineChartData, currentChartPeriod])
+
   return (
-    <ChartRowColumnWrapper>
-      <ChartColumnItem flex={'1'}>
-        <TYPE.mediumHeaderEllipsis marginBottom="1rem">
-          {`${token0}-${token1} `}
-          <Trans>Pair Stats</Trans>
-        </TYPE.mediumHeaderEllipsis>
-        <TextItemWrapper>
-          <TextLabel>
-            <Trans>Liquidity</Trans>
-          </TextLabel>
-          <TextValue>
-            {shortenDecimalValues(`${liquiditySum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
-          </TextValue>
-        </TextItemWrapper>
-        <TextItemWrapper>
-          <TextLabel>
-            <Trans>Volume</Trans>
-          </TextLabel>
-          <TextValue>
-            {shortenDecimalValues(`${volumeSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
-          </TextValue>
-        </TextItemWrapper>
-        <TextItemWrapper>
-          <TextLabel>
-            <Trans>Fees</Trans>
-          </TextLabel>
-          <TextValue>
-            {shortenDecimalValues(`${feesSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
-          </TextValue>
-        </TextItemWrapper>
-      </ChartColumnItem>
-      <ChartColumnItem flex={'2'}>
-        <ControlWrapper>
-          <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
-          <AutoRow justify={'flex-end'}>
-            <TYPE.main>
-              <CustomButton value="today" text="24H" current={currentChartPeriod} onClick={handleChartPeriod} />
-              <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
-              <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
-              <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
-            </TYPE.main>
-          </AutoRow>
-        </ControlWrapper>
-        <AutoRow>
-          <LineChart
-            data={lineChartData}
-            minHeight={158}
-            color={theme.orange1}
-            currentValue={currentChartValue}
-            dateFormat={dateFormat}
-            XAxisTickGap={100}
-            YAxisTick={{ fontSize: 14 }}
-            style={{ flexDirection: 'column', marginTop: '0.5rem' }}
-          />
-        </AutoRow>
-      </ChartColumnItem>
-    </ChartRowColumnWrapper>
+    <>
+      <TYPE.mediumHeaderEllipsis padding="18px 0">
+        <Trans>ETH-ANY Pair Stats (Dummy data)</Trans>
+      </TYPE.mediumHeaderEllipsis>
+      <Wrapper>
+        <TYPE.black fontWeight={400}>
+          <Trans>Liquidity</Trans>
+        </TYPE.black>
+        <TYPE.black style={{ paddingRight: '20px' }}>
+          {liquidityHover ? shortenDecimalValues(String(liquidityHover), '0,0') + ` ${MainCurrency}` : '-'}
+        </TYPE.black>
+      </Wrapper>
+      <Wrapper>
+        <TYPE.black fontWeight={400}>
+          <Trans>Volume</Trans>
+        </TYPE.black>
+        <TYPE.black style={{ paddingRight: '20px' }}>
+          {volumeHover ? shortenDecimalValues(String(volumeHover), '0,0') + ` ${MainCurrency}` : '-'}
+        </TYPE.black>
+      </Wrapper>
+      <Wrapper>
+        <TYPE.black fontWeight={400}>
+          <Trans>Fees</Trans>
+        </TYPE.black>
+        <TYPE.black style={{ paddingRight: '20px' }}>
+          {feesHover ? shortenDecimalValues(String(feesHover), '0,0') + ` ${MainCurrency}` : '-'}
+        </TYPE.black>
+      </Wrapper>
+      <ControlWrapper>
+        <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
+        <ButtonControlWrapper>
+          <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
+          <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
+          <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
+        </ButtonControlWrapper>
+      </ControlWrapper>
+      <LineChart
+        data={lineChartData}
+        minHeight={158}
+        color={theme.orange1}
+        value1={liquidityHover}
+        setValue1={setLiquidityHover}
+        value2={volumeHover}
+        setValue2={setVolumeHover}
+        value3={feesHover}
+        setValue3={setFeesHover}
+        currentValue={currentChartValue}
+        dateFormat={dateFormat}
+        XAxisTickGap={100}
+        YAxisTick={{ fontSize: 14 }}
+        style={{ flexDirection: 'column', marginTop: '0.5rem' }}
+      />
+    </>
   )
 }
 
