@@ -1,8 +1,6 @@
 import React, { useCallback, useState, useMemo } from 'react'
 import styled from 'styled-components/macro'
-import { ReactComponent as Close } from '../../assets/images/x.svg'
-import { ApplicationModal } from '../../state/application/actions'
-import { useModalOpen, usePoolInvestModalToggle, useWalletModalToggle } from 'state/application/hooks'
+import { useWalletModalToggle } from 'state/application/hooks'
 import { Trans } from '@lingui/macro'
 
 import { shortenDecimalValues } from 'utils'
@@ -13,7 +11,6 @@ import { useCurrency } from 'hooks/Tokens'
 import { useCurrencyBalance } from 'state/wallet/hooks'
 import { useActiveWeb3React } from 'hooks/web3'
 import TokenPairInputPanel from 'components/pools/TokenPairInputPanel'
-import Modal from '../Modal'
 import { TYPE } from 'theme'
 import { MainCurrency } from 'utils'
 import Slippage from 'components/swap/Slippage'
@@ -22,12 +19,6 @@ import { useFakePoolValuesCalculator } from 'state/pool/hooks'
 import { tryParseAmount } from 'state/swap/hooks'
 import { ButtonPrimary } from 'components/Button'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
-
-const HeaderRow = styled.div`
-  font-weight: 500;
-  padding-top: 0px;
-  color: ${(props) => (props.color === 'blue' ? ({ theme }) => theme.primary1 : 'inherit')};
-`
 
 const UpperSection = styled.div`
   position: relative;
@@ -51,33 +42,6 @@ const UpperSection = styled.div`
   `}
 `
 
-const CloseIcon = styled.div`
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
-  &:hover {
-    cursor: pointer;
-    opacity: 0.6;
-  }
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    right: 1.5rem;
-    top: 1.5rem;
-  `}
-`
-
-const CloseColor = styled(Close)`
-  path {
-    stroke: ${({ theme }) => theme.text4};
-  }
-`
-
-const Wrapper = styled.div`
-  ${({ theme }) => theme.flexColumnNoWrap}
-  margin: 0;
-  padding: 0;
-  width: 100%;
-`
-
 export default function PoolInvest() {
   const { account } = useActiveWeb3React()
   const [token0Amount, setToken0Amount] = useState('')
@@ -86,8 +50,6 @@ export default function PoolInvest() {
   const inputCurrency = useCurrency('ETH')
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency ?? undefined)
   const toggleWalletModal = useWalletModalToggle()
-  const poolInvestModalOpen = useModalOpen(ApplicationModal.POOL_INVEST)
-  const togglePoolInvestModal = usePoolInvestModalToggle()
   const handlePairValueChange = useCallback(
     ({ token0, token1 }: PoolInvestPairValues) => {
       setToken0Amount(token0.value)

@@ -11,10 +11,8 @@ import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
 import { BodyScroller, TYPE, BarWrapper, BarTitle } from 'theme'
-import { usePoolInvestModalToggle } from 'state/application/hooks'
 import PoolInvest from 'components/PoolInvest'
 import PoolWithdraw from 'components/PoolWithdraw'
-import PoolInvestModal from 'components/PoolInvestModal'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TokenDetails from './TokenDetails'
 import ROISimulator from './ROISimulator'
@@ -86,12 +84,6 @@ const PoolDetailChartWrapper = styled.div`
   `}
 `
 
-const PoolDetailAppBodyWrap = styled(AppBody)`
-  padding: 2rem;
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 1rem;
-  `}
-`
 const PoolCardRowColumn = styled.div`
   display: flex;
   flex-direction: row;
@@ -120,7 +112,6 @@ export default function PoolDetails({
   },
 }: RouteComponentProps<{ token0: string; token1: string }>) {
   const [activeTab, setActiveTab] = useState<number>(0)
-  const togglePoolInvestModal = usePoolInvestModalToggle()
   const history = useHistory()
   const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
   if (!token0 || !token1) {

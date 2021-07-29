@@ -2,16 +2,11 @@ import React, { useState, useContext, useMemo, useEffect } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import LineChart from './index'
-import { sumBy } from 'lodash'
 import getLineChartData from './data'
 import { TYPE } from '../../theme'
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
-import { AutoRow } from 'components/Row'
-import { AutoColumn } from 'components/Column'
-import { TextItemWrapper, TextLabel, TextValue } from 'components/pools/styled'
 import { MainCurrency, shortenDecimalValues } from 'utils'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 
 const StyleButtonOutlined = styled(ButtonOutlined)`
   margin: 12px;
@@ -78,53 +73,17 @@ const ButtonControlWrapper = styled(TYPE.main)`
   `}
 `
 
-const ChartRowColumnWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 2rem;
-
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    gap: 0.625rem;
-    flex-direction: column;
-  `}
-`
-const ChartColumnItem = styled(AutoColumn)<{ flex?: string }>`
-  width: 100%;
-  flex: ${({ flex }) => (flex ? flex : '')};
-
-  :nth-child(1) {
-    border-right: 1px solid ${({ theme }) => theme.bg3};
-  }
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    flex: 1;
-    border-right: none;
-    :nth-child(1) {
-      border-right: none;
-      border-bottom: 1px solid ${({ theme }) => theme.bg3};
-    }
-  `}
-`
-const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string }) => {
+const PoolDetailChart = ({}: { token0: string; token1: string }) => {
   const theme = useContext(ThemeContext)
   const [liquidityHover, setLiquidityHover] = useState<number | undefined>()
   const [volumeHover, setVolumeHover] = useState<number | undefined>()
   const [feesHover, setFeesHover] = useState<number | undefined>()
-  const [liquiditySum, setLiquiditySum] = useState<number | undefined>()
-  const [volumeSum, setVolumeSum] = useState<number | undefined>()
-  const [feesSum, setFeesSum] = useState<number | undefined>()
   const [currentChartValue, setCurrentChartValue] = useState<string>('value1')
   const [currentChartPeriod, setCurrentChartPeriod] = useState<string>('week')
 
   const lineChartData = useMemo(() => {
     return getLineChartData(currentChartPeriod)
   }, [currentChartPeriod])
-
-  useEffect(() => {
-    setLiquiditySum(sumBy(lineChartData, 'value1'))
-    setVolumeSum(sumBy(lineChartData, 'value2'))
-    setFeesSum(sumBy(lineChartData, 'value3'))
-  }, [lineChartData, setLiquiditySum, setVolumeSum, setFeesSum])
 
   const handleChartType = (e: string): void => {
     setCurrentChartValue(e)
