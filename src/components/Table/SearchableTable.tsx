@@ -10,6 +10,7 @@ import TableHead from '@material-ui/core/TableHead'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
+import { DefaultTheme } from 'styled-components'
 import useTheme from 'hooks/useTheme'
 import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 import TableToolBar from './TableToolbar'
@@ -37,7 +38,12 @@ interface EnhancedTableProps {
   onClick?: (props: any) => unknown
   data: Array<TableDataTypes>
   headCells: HeadCell[]
-  row: (row: any, index: number, handleClick: (event: React.MouseEvent<unknown>, name: string) => void) => unknown
+  row: (
+    row: any,
+    index: number,
+    handleClick: (event: React.MouseEvent<unknown>, name: string) => void,
+    theme?: DefaultTheme
+  ) => unknown
   headCellsBefore?: (props: any) => unknown
   renderToolbar?: (props: RenderToolBarProps) => any
   searchLabel?: string
