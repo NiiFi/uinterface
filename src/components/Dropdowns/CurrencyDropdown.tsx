@@ -1,34 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { Trans } from '@lingui/macro'
-
 import { ChevronDown } from 'react-feather'
+
+import { SUPPORTED_BASE_CURRENCIES } from 'constants/tokens'
+import CurrencyAvatar from 'components/CurrencyAvatar'
 import useDropdownProps from './useDropdownProps'
 import { MenuButton } from './styled'
 import Menu from '../Menu'
 import useTheme from 'hooks/useTheme'
-import {
-  USD,
-  ETH,
-  CAD,
-  CHF,
-  INR,
-  HKD,
-  BTC,
-  EUR,
-  CNY,
-  GBP,
-  RUB,
-  MXN,
-  KRW,
-  TRY,
-  JPY,
-  BRL,
-  SEK,
-  AUD,
-  NOK,
-  SGD,
-} from 'components/Icons'
 
 const Wrapper = styled.div`
   display: flex;
@@ -38,13 +18,18 @@ const MenuWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 0px 0.5rem;
+  width: 450px;
+  height: 300px;
+  gap: 1rem;
+  overflow-y: scroll;
+  flex-wrap: wrap;
 `
 const MenuItem = styled.div<{ active?: boolean }>`
   display: flex;
-  padding: 1rem 0.5rem;
   cursor: pointer;
   border-radius: 0.5rem;
-  background-color: ${({ theme, active }) => (active ? theme.bg5 : 'none')};
+  padding: 0.5rem;
+  background-color: ${({ theme, active }) => (active ? theme.bg5 : 'transprent')};
   color: ${({ theme }) => theme.text1};
   &:hover {
     background-color: ${({ theme }) => theme.bg5};
@@ -62,26 +47,11 @@ export default function CurrencyDropdown() {
       </MenuButton>
       <Menu anchorEl={elementRef.current} open={open} onClose={handleClose}>
         <MenuWrapper>
-          <USD />
-          <CAD />
-          <CHF />
-          <INR />
-          <HKD />
-          <BTC />
-          <EUR />
-          <CNY />
-          <GBP />
-          <RUB />
-          <MXN />
-          <KRW />
-          <TRY />
-          <JPY />
-          <BRL />
-          <SEK />
-          <AUD />
-          <NOK />
-          <SGD />
-          <ETH />
+          {SUPPORTED_BASE_CURRENCIES.map((value, index) => (
+            <MenuItem key={index}>
+              <CurrencyAvatar symbol={value} />
+            </MenuItem>
+          ))}
         </MenuWrapper>
       </Menu>
     </Wrapper>

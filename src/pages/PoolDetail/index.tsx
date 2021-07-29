@@ -133,11 +133,7 @@ export default function PoolDetails({
                 </TYPE.mediumHeaderEllipsis>
                 <PoolCardRowColumn>
                   <PoolCardItem style={{ width: '100%' }}>
-                    <CurrencyAvatar
-                      symbol={'ETH'}
-                      containerStyle={{ padding: '0.3125rem' }}
-                      rootStyle={{ marginBottom: '1rem' }}
-                    />
+                    <CurrencyAvatar symbol={'ETH'} rootStyle={{ marginBottom: '1rem' }} />
                     <TokenDetails />
                   </PoolCardItem>
                   <PoolCardItem style={{ width: '100%' }}>

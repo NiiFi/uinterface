@@ -59,25 +59,25 @@ export const TOKEN_VALUE_CURRENCY_FORMAT = '0,0.00'
 
 export const SUPPORTED_BASE_CURRENCIES = [
   'USD',
-  'ETH',
-  'CAD',
-  'CHF',
-  'INR',
-  'HKD',
-  'BTC',
   'EUR',
   'CNY',
+  'INR',
+  'CAD',
   'GBP',
+  'JPY',
   'RUB',
   'MXN',
+  'CHF',
   'KRW',
   'TRY',
-  'JPY',
   'BRL',
   'SEK',
+  'HKD',
+  'ETH',
   'AUD',
   'NOK',
   'SGD',
+  'BTC',
 ] as const
 
 export type SupportedBaseCurrencies = typeof SUPPORTED_BASE_CURRENCIES[number]

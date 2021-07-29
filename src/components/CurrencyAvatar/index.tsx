@@ -1,10 +1,31 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-import { ETHIcon, NIIIcon } from 'components/Icons'
 import { IconProps } from 'components/Icons/types'
 import { TokenName } from 'state/pool/actions'
-
+import {
+  USD,
+  ETH,
+  CAD,
+  CHF,
+  INR,
+  HKD,
+  BTC,
+  EUR,
+  CNY,
+  GBP,
+  RUB,
+  MXN,
+  KRW,
+  TRY,
+  JPY,
+  BRL,
+  SEK,
+  AUD,
+  NOK,
+  SGD,
+  NIIIcon,
+} from 'components/Icons'
 type Props = {
   symbol: TokenName
   containerStyle?: React.CSSProperties
@@ -27,16 +48,36 @@ const CurrencyLogoWrapper = styled.div`
   border-radius: 50%;
   display: flex;
 `
+const CurrencyIconMap: { [currency in TokenName]: (props: IconProps) => JSX.Element } = {
+  USD,
+  ETH,
+  CAD,
+  CHF,
+  INR,
+  HKD,
+  BTC,
+  EUR,
+  CNY,
+  GBP,
+  RUB,
+  MXN,
+  KRW,
+  TRY,
+  JPY,
+  BRL,
+  SEK,
+  AUD,
+  NOK,
+  SGD,
+  NII: NIIIcon,
+}
 export const CurrencyAvatar = ({ symbol, iconProps, containerStyle, rootStyle, hideSymbol }: Props) => {
-  let Icon
-  if (symbol === 'ETH') {
-    Icon = <ETHIcon {...iconProps} />
-  } else if (symbol === 'NII') {
-    Icon = <NIIIcon {...iconProps} />
-  }
+  const Icon = CurrencyIconMap[symbol]
   return (
     <CurrencyAvatarWrapper style={rootStyle}>
-      <CurrencyLogoWrapper style={containerStyle}>{Icon}</CurrencyLogoWrapper>
+      <CurrencyLogoWrapper style={containerStyle}>
+        <Icon {...iconProps} />
+      </CurrencyLogoWrapper>
       {!hideSymbol && <span>{symbol}</span>}
     </CurrencyAvatarWrapper>
   )
