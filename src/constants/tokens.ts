@@ -56,3 +56,114 @@ export class ExtendedEther extends Ether {
 }
 
 export const TOKEN_VALUE_CURRENCY_FORMAT = '0,0.00'
+
+export const SUPPORTED_BASE_CURRENCIES = [
+  'USD',
+  'ETH',
+  'CAD',
+  'CHF',
+  'INR',
+  'HKD',
+  'BTC',
+  'EUR',
+  'CNY',
+  'GBP',
+  'RUB',
+  'MXN',
+  'KRW',
+  'TRY',
+  'JPY',
+  'BRL',
+  'SEK',
+  'AUD',
+  'NOK',
+  'SGD',
+] as const
+
+export type SupportedBaseCurrencies = typeof SUPPORTED_BASE_CURRENCIES[number]
+export type BaseCurrencyDetail = {
+  label: string
+  symbol: SupportedBaseCurrencies
+}
+export const SUPPORTED_BASE_CURRENCIES_MAP: { [currency in SupportedBaseCurrencies]: BaseCurrencyDetail } = {
+  USD: {
+    label: 'United State Dollar',
+    symbol: 'USD',
+  },
+  ETH: {
+    label: 'Ethereum',
+    symbol: 'ETH',
+  },
+  CAD: {
+    label: 'Canadian Dollar',
+    symbol: 'CAD',
+  },
+  CHF: {
+    label: 'Swiss Franc',
+    symbol: 'CHF',
+  },
+  INR: {
+    label: 'Indian Rupees',
+    symbol: 'INR',
+  },
+  HKD: {
+    label: 'Hong Kong Dollar',
+    symbol: 'HKD',
+  },
+  EUR: {
+    label: 'European Union Euro',
+    symbol: 'EUR',
+  },
+  BTC: {
+    label: 'Bitcoin',
+    symbol: 'BTC',
+  },
+  CNY: {
+    label: 'Chinese Yuan',
+    symbol: 'CNY',
+  },
+  GBP: {
+    label: 'United Kingdom Pound',
+    symbol: 'GBP',
+  },
+  RUB: {
+    label: 'Russian Ruble',
+    symbol: 'RUB',
+  },
+  MXN: {
+    label: 'Mexican Peso',
+    symbol: 'MXN',
+  },
+  KRW: {
+    label: 'South Korean Won',
+    symbol: 'KRW',
+  },
+  TRY: {
+    label: 'Turkish Lira',
+    symbol: 'TRY',
+  },
+  JPY: {
+    label: 'Japanese Yen',
+    symbol: 'JPY',
+  },
+  BRL: {
+    label: 'Brazilian Real',
+    symbol: 'BRL',
+  },
+  SEK: {
+    label: 'Swedish Krona',
+    symbol: 'SEK',
+  },
+  AUD: {
+    label: 'Australian Dollar',
+    symbol: 'AUD',
+  },
+  NOK: {
+    label: 'Norwegian Krone',
+    symbol: 'NOK',
+  },
+  SGD: {
+    label: 'Singapore Dollar',
+    symbol: 'SGD',
+  },
+}

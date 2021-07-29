@@ -7,6 +7,28 @@ import useDropdownProps from './useDropdownProps'
 import { MenuButton } from './styled'
 import Menu from '../Menu'
 import useTheme from 'hooks/useTheme'
+import {
+  USD,
+  ETH,
+  CAD,
+  CHF,
+  INR,
+  HKD,
+  BTC,
+  EUR,
+  CNY,
+  GBP,
+  RUB,
+  MXN,
+  KRW,
+  TRY,
+  JPY,
+  BRL,
+  SEK,
+  AUD,
+  NOK,
+  SGD,
+} from 'components/Icons'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,7 +36,7 @@ const Wrapper = styled.div`
 `
 const MenuWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 0px 0.5rem;
 `
 const MenuItem = styled.div<{ active?: boolean }>`
@@ -40,9 +62,26 @@ export default function CurrencyDropdown() {
       </MenuButton>
       <Menu anchorEl={elementRef.current} open={open} onClose={handleClose}>
         <MenuWrapper>
-          <MenuItem active={true}>
-            <Trans>USD</Trans>
-          </MenuItem>
+          <USD />
+          <CAD />
+          <CHF />
+          <INR />
+          <HKD />
+          <BTC />
+          <EUR />
+          <CNY />
+          <GBP />
+          <RUB />
+          <MXN />
+          <KRW />
+          <TRY />
+          <JPY />
+          <BRL />
+          <SEK />
+          <AUD />
+          <NOK />
+          <SGD />
+          <ETH />
         </MenuWrapper>
       </Menu>
     </Wrapper>

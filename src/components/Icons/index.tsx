@@ -1,6 +1,10 @@
 import React from 'react'
 import { MinusCircle, IconProps as RAIconProps } from 'react-feather'
-export type IconProps = React.SVGProps<SVGSVGElement>
+
+import { IconProps } from './types'
+
+export * from './Currencies'
+
 export function DiscordIcon({ width = 24, height = 24, color = 'currentColor', ...rest }: IconProps) {
   return (
     <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>

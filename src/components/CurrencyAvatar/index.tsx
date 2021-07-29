@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-import { ETHIcon, NIIIcon, IconProps } from 'components/Icons'
+import { ETHIcon, NIIIcon } from 'components/Icons'
+import { IconProps } from 'components/Icons/types'
 import { TokenName } from 'state/pool/actions'
 
 type Props = {
