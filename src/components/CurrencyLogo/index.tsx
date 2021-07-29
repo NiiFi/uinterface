@@ -3,6 +3,7 @@ import React, { useMemo } from 'react'
 import styled from 'styled-components/macro'
 import EthereumLogo from '../../assets/images/ethereum-logo.png'
 import useHttpLocations from '../../hooks/useHttpLocations'
+import CurrencyAvatar from 'components/CurrencyAvatar'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import Logo from '../Logo'
 
@@ -26,7 +27,7 @@ const StyledLogo = styled(Logo)<{ size: string }>`
 
 export default function CurrencyLogo({
   currency,
-  size = '24px',
+  size = '32px',
   style,
   ...rest
 }: {
@@ -49,6 +50,16 @@ export default function CurrencyLogo({
     return []
   }, [currency, uriLocations])
 
+  if (currency?.symbol === 'ETH' || currency?.symbol === 'NII') {
+    return (
+      <CurrencyAvatar
+        symbol={currency.symbol}
+        hideSymbol={true}
+        rootStyle={{ marginRight: '0.5rem', width: '32px', height: '32px' }}
+        iconProps={{ width: '32px', height: '32px' }}
+      />
+    )
+  }
   if (currency?.isNative) {
     return <StyledEthereumLogo src={EthereumLogo} size={size} style={style} {...rest} />
   }

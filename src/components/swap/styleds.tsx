@@ -13,11 +13,6 @@ export const Wrapper = styled.div`
     padding: 0.5rem;
   `}
 `
-export const BodyScroller = styled.div`
-  height: calc(100vh - 53px);
-  overflow-y: scroll;
-  width: 100%;
-`
 export const ArrowWrapper = styled.div<{ clickable: boolean }>`
   padding: 0px 4px;
   border-radius: 50%;

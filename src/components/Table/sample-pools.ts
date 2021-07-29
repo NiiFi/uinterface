@@ -1,4 +1,4 @@
-import { Pair } from 'components/Table/types'
+import { Pair, Token } from 'components/Table/types'
 
 export const SampleResponse: any = {
   data: {
@@ -1757,15 +1757,21 @@ export const SampleResponse: any = {
   },
 }
 
-export type PoolsOverviewData = {
+export type PoolsData = {
   id: string
   symbol: string
   liquidity: string
   roiY: string
+  roiW: string
   trendingPercent: string
-} & Pair
+  trendingSum: string
+  token0: Token
+  token1: Token
+  pair: Pair
+  __typename: 'Pool'
+}
 
-export function getPoolsOverviewData(type: string, limit: number | undefined): PoolsOverviewData[] {
+export function getPoolsData(type: string, limit: number | undefined): PoolsData[] {
   if (type === 'looser') {
     return SampleResponse.data.pools.slice(-(limit || 6))
   }

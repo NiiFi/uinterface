@@ -195,6 +195,7 @@ msgstr "Thêm vào"
 msgid "Add Delegate +"
 msgstr "Thêm đại biểu +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Thêm thanh khoản"
@@ -528,6 +529,7 @@ msgstr "Xác nhận Hoán đổi"
 msgid "Confirm this transaction in your wallet"
 msgstr "Xác nhận giao dịch này trong ví của bạn"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
@@ -583,6 +585,15 @@ msgstr "Đã sao chép"
 #: src/components/AccountDetails/index.tsx
 msgid "Copy Address"
 msgstr "Sao chép địa chỉ"
+
+#: src/components/CreatePoolModal/index.tsx
+msgid "Create New Pool"
+msgstr ""
+
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/pools/CreatePoolButton.tsx
+msgid "Create Pool"
+msgstr ""
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
@@ -953,7 +964,7 @@ msgstr "Người nhận không hợp lệ"
 
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
-#: src/pages/PoolDetail/index.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Invest"
 msgstr ""
 
@@ -970,6 +981,7 @@ msgstr ""
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Liquidity"
 msgstr "Tính thanh khoản"
 
@@ -1112,6 +1124,10 @@ msgstr "Số tiền nhận được tối thiểu"
 msgid "Name"
 msgstr ""
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "New Pools"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "Vị trí mới"
@@ -1196,7 +1212,6 @@ msgstr "Đầu ra sẽ được gửi đến <0>{0}</0>"
 
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Overview"
 msgstr ""
 
@@ -1260,8 +1275,6 @@ msgid "Pooled {0}:"
 msgstr "Nhóm {0}:"
 
 #: src/components/Header/Sidebar.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1327,6 +1340,10 @@ msgstr ""
 
 #: src/components/Table/pools.tsx
 msgid "ROI"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "ROI (1Y)"
 msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
@@ -1412,9 +1429,18 @@ msgstr "Trở về"
 msgid "Route"
 msgstr "Lộ trình"
 
+#: src/components/Table/SearchableTable.tsx
+#: src/pages/Pool/index.tsx
+msgid "Search"
+msgstr ""
+
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Search name or paste address"
 msgstr "Tìm kiếm tên hoặc dán địa chỉ"
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "See all"
+msgstr ""
 
 #: 
 #~ msgid "Select Pool"
@@ -1521,7 +1547,6 @@ msgstr "Cung cấp {0} {1} và {2} {3}"
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Swap"
 msgstr "Hoán đổi"
 
@@ -1592,8 +1617,9 @@ msgstr "Không thể gửi giao dịch vì đã hết thời hạn. Vui lòng ki
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Các mã thông báo này thường được ghép nối với các mã thông báo khác."
 
+#: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
-#: src/components/Table/pools.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1652,6 +1678,14 @@ msgstr "Mã thông báo"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "Mã thông báo từ danh sách không hoạt động. Nhập mã thông báo cụ thể bên dưới hoặc nhấp vào Quản lý để kích hoạt thêm danh sách."
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Gainer Pools"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Looser Pools"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Top Tokens"
 msgstr ""
@@ -1698,6 +1732,7 @@ msgid "Transaction deadline"
 msgstr "Thời hạn giao dịch"
 
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
 msgstr ""
 

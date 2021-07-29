@@ -21,7 +21,7 @@ import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 const AppWrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  background-color: ${({ theme }) => theme.bg6};
+  background-color: ${({ theme }) => theme.bg7};
 `
 
 const BodyWrapper = styled.div`
@@ -100,8 +100,7 @@ export default function App() {
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/swap" component={Swap} />
-              <Route exact strict path="/pools" component={Pools} />
-              <Route exact strict path="/pools/:page?" render={(props) => <Pools {...props} />} />
+              <Route exact strict path="/pools/:page?" component={Pools} />
               <Route exact strict path="/pools/:token0/:token1" component={PoolDetail} />
               <Route component={RedirectPathToSwapOnly} />
             </Switch>

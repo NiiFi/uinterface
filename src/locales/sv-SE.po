@@ -195,6 +195,7 @@ msgstr "Lägg till"
 msgid "Add Delegate +"
 msgstr "Lägg till Delegera +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Lägg till likviditet"
@@ -528,6 +529,7 @@ msgstr "Bekräfta byte"
 msgid "Confirm this transaction in your wallet"
 msgstr "Bekräfta denna transaktion i din plånbok"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
@@ -583,6 +585,15 @@ msgstr "Kopierad"
 #: src/components/AccountDetails/index.tsx
 msgid "Copy Address"
 msgstr "Kopiera adress"
+
+#: src/components/CreatePoolModal/index.tsx
+msgid "Create New Pool"
+msgstr ""
+
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/pools/CreatePoolButton.tsx
+msgid "Create Pool"
+msgstr ""
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
@@ -953,7 +964,7 @@ msgstr "Ogiltig mottagare"
 
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
-#: src/pages/PoolDetail/index.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Invest"
 msgstr ""
 
@@ -970,6 +981,7 @@ msgstr ""
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Liquidity"
 msgstr "Likviditet"
 
@@ -1112,6 +1124,10 @@ msgstr "Minsta mottagna"
 msgid "Name"
 msgstr ""
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "New Pools"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "Ny position"
@@ -1196,7 +1212,6 @@ msgstr "Utmatningen kommer att skickas till <0>{0}</0>"
 
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Overview"
 msgstr ""
 
@@ -1260,8 +1275,6 @@ msgid "Pooled {0}:"
 msgstr "Poolerad {0}:"
 
 #: src/components/Header/Sidebar.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1327,6 +1340,10 @@ msgstr ""
 
 #: src/components/Table/pools.tsx
 msgid "ROI"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "ROI (1Y)"
 msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
@@ -1412,9 +1429,18 @@ msgstr "Retur"
 msgid "Route"
 msgstr "Rutt"
 
+#: src/components/Table/SearchableTable.tsx
+#: src/pages/Pool/index.tsx
+msgid "Search"
+msgstr ""
+
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Search name or paste address"
 msgstr "Sök namn eller klistra in adress"
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "See all"
+msgstr ""
 
 #: 
 #~ msgid "Select Pool"
@@ -1521,7 +1547,6 @@ msgstr "Levererar {0} {1} och {2} {3}"
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Swap"
 msgstr "Byt"
 
@@ -1592,8 +1617,9 @@ msgstr "Transaktionen kunde inte skickas eftersom tidsfristen har passerat. Kont
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Dessa tokens är vanligtvis paras ihop med andra tokens."
 
+#: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
-#: src/components/Table/pools.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1652,6 +1678,14 @@ msgstr "Tokens"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "Tokens från inaktiva listor. Importera specifika tokens nedan eller klicka på Hantera för att aktivera fler listor."
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Gainer Pools"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Looser Pools"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Top Tokens"
 msgstr ""
@@ -1698,6 +1732,7 @@ msgid "Transaction deadline"
 msgstr "Tidsfristen för transaktion"
 
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
 msgstr ""
 

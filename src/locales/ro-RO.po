@@ -195,6 +195,7 @@ msgstr "Adăugare"
 msgid "Add Delegate +"
 msgstr "Adaugă Delegat +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Adaugă lichiditate"
@@ -528,6 +529,7 @@ msgstr "Confirmați Swap"
 msgid "Confirm this transaction in your wallet"
 msgstr "Confirmați această tranzacție în portofel"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
@@ -583,6 +585,15 @@ msgstr "Copiat"
 #: src/components/AccountDetails/index.tsx
 msgid "Copy Address"
 msgstr "Copiază adresa"
+
+#: src/components/CreatePoolModal/index.tsx
+msgid "Create New Pool"
+msgstr ""
+
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/pools/CreatePoolButton.tsx
+msgid "Create Pool"
+msgstr ""
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
@@ -953,7 +964,7 @@ msgstr "Destinatar nevalid"
 
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
-#: src/pages/PoolDetail/index.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Invest"
 msgstr ""
 
@@ -970,6 +981,7 @@ msgstr ""
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Liquidity"
 msgstr "Lichiditate"
 
@@ -1112,6 +1124,10 @@ msgstr "Minim primit"
 msgid "Name"
 msgstr ""
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "New Pools"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "Poziție nouă"
@@ -1196,7 +1212,6 @@ msgstr "Ieșirea va fi trimisă la <0>{0}</0>"
 
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Overview"
 msgstr ""
 
@@ -1260,8 +1275,6 @@ msgid "Pooled {0}:"
 msgstr "Grupat {0}:"
 
 #: src/components/Header/Sidebar.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1327,6 +1340,10 @@ msgstr ""
 
 #: src/components/Table/pools.tsx
 msgid "ROI"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "ROI (1Y)"
 msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
@@ -1412,9 +1429,18 @@ msgstr "Întoarcere"
 msgid "Route"
 msgstr "Traseu"
 
+#: src/components/Table/SearchableTable.tsx
+#: src/pages/Pool/index.tsx
+msgid "Search"
+msgstr ""
+
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Search name or paste address"
 msgstr "Caută nume sau lipește adresa"
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "See all"
+msgstr ""
 
 #: 
 #~ msgid "Select Pool"
@@ -1521,7 +1547,6 @@ msgstr "Furnizare {0} {1} și {2} {3}"
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Swap"
 msgstr "Schimbă"
 
@@ -1592,8 +1617,9 @@ msgstr "Tranzacția nu a putut fi trimisă deoarece termenul a trecut. Vă rugă
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Aceste jetoane sunt de obicei asociate cu alte jetoane."
 
+#: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
-#: src/components/Table/pools.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1652,6 +1678,14 @@ msgstr "Token-uri"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "Jetoane din liste inactive. Importați jetoane specifice de mai jos sau faceți clic pe Gestionare pentru a activa mai multe liste."
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Gainer Pools"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Looser Pools"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Top Tokens"
 msgstr ""
@@ -1698,6 +1732,7 @@ msgid "Transaction deadline"
 msgstr "Termenul tranzacției"
 
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
 msgstr ""
 

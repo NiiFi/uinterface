@@ -196,6 +196,7 @@ msgstr "Afegeix"
 msgid "Add Delegate +"
 msgstr "Afegeix delegat +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 msgid "Add Liquidity"
 msgstr "Afegiu liquiditat"
@@ -529,6 +530,7 @@ msgstr "Confirmeu l'intercanvi"
 msgid "Confirm this transaction in your wallet"
 msgstr "Confirmeu aquesta transacció a la vostra cartera"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
@@ -584,6 +586,15 @@ msgstr "Copiat"
 #: src/components/AccountDetails/index.tsx
 msgid "Copy Address"
 msgstr "Copia l'adreça"
+
+#: src/components/CreatePoolModal/index.tsx
+msgid "Create New Pool"
+msgstr ""
+
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/pools/CreatePoolButton.tsx
+msgid "Create Pool"
+msgstr ""
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
@@ -954,7 +965,7 @@ msgstr "Destinatari no vàlid"
 
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
-#: src/pages/PoolDetail/index.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Invest"
 msgstr ""
 
@@ -971,6 +982,7 @@ msgstr ""
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Liquidity"
 msgstr "Liquiditat"
 
@@ -1113,6 +1125,10 @@ msgstr "Mínim rebut"
 msgid "Name"
 msgstr ""
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "New Pools"
+msgstr ""
+
 #: 
 #~ msgid "New Position"
 #~ msgstr "Nova posició"
@@ -1197,7 +1213,6 @@ msgstr "La sortida s’enviarà a <0>{0}</0>"
 
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Overview"
 msgstr ""
 
@@ -1265,8 +1280,6 @@ msgid "Pooled {0}:"
 msgstr "Agrupat {0}:"
 
 #: src/components/Header/Sidebar.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Pool/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1332,6 +1345,10 @@ msgstr ""
 
 #: src/components/Table/pools.tsx
 msgid "ROI"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "ROI (1Y)"
 msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
@@ -1417,9 +1434,18 @@ msgstr "Torna"
 msgid "Route"
 msgstr "Ruta"
 
+#: src/components/Table/SearchableTable.tsx
+#: src/pages/Pool/index.tsx
+msgid "Search"
+msgstr ""
+
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Search name or paste address"
 msgstr "Cerqueu el nom o enganxeu l'adreça"
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "See all"
+msgstr ""
 
 #: 
 #~ msgid "Select Pool"
@@ -1526,7 +1552,6 @@ msgstr "Subministrant {0} {1} i {2} {3}"
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Swap"
 msgstr "Intercanvi"
 
@@ -1601,8 +1626,9 @@ msgstr "No s'ha pogut enviar la transacció perquè s'ha acabat el termini. Comp
 msgid "These tokens are commonly paired with other tokens."
 msgstr "Aquestes fitxes solen aparellar-se amb altres fitxes."
 
+#: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
-#: src/components/Table/pools.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1661,6 +1687,14 @@ msgstr "Fitxes"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "Fitxes de llistes inactives. Importeu fitxes específiques a continuació o feu clic a Gestiona per activar més llistes."
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Gainer Pools"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Looser Pools"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Top Tokens"
 msgstr ""
@@ -1707,6 +1741,7 @@ msgid "Transaction deadline"
 msgstr "Termini de transacció"
 
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
 msgstr ""
 

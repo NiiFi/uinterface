@@ -20,6 +20,7 @@ export enum ApplicationModal {
   POOL_OVERVIEW_OPTIONS,
   MANAGE_WALLET_LIST,
   POOL_INVEST,
+  CREATE_POOL,
 }
 
 export const updateBlockNumber = createAction<{ chainId: number; blockNumber: number }>('application/updateBlockNumber')

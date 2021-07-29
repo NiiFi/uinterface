@@ -5,15 +5,13 @@ import { ArrowLeft } from 'react-feather'
 import { Trans, t } from '@lingui/macro'
 import { RouteComponentProps, Redirect } from 'react-router-dom'
 
-import { BodyScroller } from 'components/swap/styleds'
+import CreatePoolButton from 'components/pools/CreatePoolButton'
 import AppBar from 'components/AppBar'
-import InvestButton from 'components/pools/InvestButton'
 import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
-import { TYPE } from 'theme'
-import { usePoolInvestModalToggle } from 'state/application/hooks'
+import { BodyScroller, TYPE, BarWrapper, BarTitle } from 'theme'
 import PoolInvestModal from 'components/PoolInvestModal'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TokenDetails from './TokenDetails'
@@ -57,24 +55,7 @@ const RowColumn = styled.div`
     gap: 1rem;
   `}
 `
-const BarWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 2rem;
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 0.5rem 1rem;
-  `}
-`
-const BarTitle = styled.div`
-  display: flex;
-  gap: 1rem;
-  align-item: center;
-  font-size: 1.25rem;
-  justify-content: flex-start;
-  color: ${({ theme }) => theme.text1};
-`
+
 const ButtonWrapper = styled.div`
   display: flex;
 `
@@ -121,14 +102,13 @@ export default function PoolDetails({
     params: { token0, token1 },
   },
 }: RouteComponentProps<{ token0: string; token1: string }>) {
-  const togglePoolInvestModal = usePoolInvestModalToggle()
   const history = useHistory()
   if (!token0 || !token1) {
     return <Redirect to={'/swap'} />
   }
   return (
     <>
-      <AppBar>
+      <AppBar style={{ padding: '0 1rem' }}>
         <BarWrapper>
           <BarTitle>
             <ArrowLeft style={{ cursor: 'pointer' }} onClick={() => history.push('/pools')} />
@@ -136,16 +116,7 @@ export default function PoolDetails({
             {t`Pool`}
           </BarTitle>
           <ButtonWrapper>
-            <InvestButton
-              token0={{ symbol: 'ETH', address: '1234' }}
-              token1={{ symbol: 'NII', address: '1235' }}
-              type="primary"
-              onClick={togglePoolInvestModal}
-              style={{ fontSize: '14px' }}
-              padding={'10px 14px'}
-            >
-              <Trans>Invest</Trans>
-            </InvestButton>
+            <CreatePoolButton />
           </ButtonWrapper>
         </BarWrapper>
       </AppBar>

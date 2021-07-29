@@ -8,12 +8,13 @@ import CurrencyAvatar from 'components/CurrencyAvatar'
 import { NIILogo } from 'components/Icons'
 import { FlexColumn } from 'components/Column'
 import { DefaultCard } from 'components/Card'
-import { getPoolsOverviewData } from 'components/Table/sample-pools'
+import { getPoolsData } from 'components/Table/sample-pools'
 import { usePoolInvestModalToggle } from 'state/application/hooks'
 import PoolInvestModal from 'components/PoolInvestModal'
 import InvestButton from 'components/pools/InvestButton'
 import { shortenDecimalValues } from '../../utils'
-import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper } from 'theme'
+import useBreakpoint from '../../hooks/useBreakpoint'
+import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, MEDIA_WIDTHS } from 'theme'
 
 const Header = styled(TYPE.mediumHeader)`
   padding: 0 0 10px 0;
@@ -50,56 +51,55 @@ const Card = styled(DefaultCard)`
   }
 `
 
+export const getTitle = (type: string): string => {
+  switch (type) {
+    case 'gainer':
+      return t`Top Gainer Pools`
+    case 'looser':
+      return t`Top Looser Pools`
+  }
+
+  return t`New Pools`
+}
+
 type PoolsOverviewProps = {
   type: 'gainer' | 'looser' | 'new'
   limit?: number
   style?: CSSProperties
-  setActive: React.Dispatch<React.SetStateAction<number>>
 }
 
-export default function PoolsOverview({ type, limit, style, setActive }: PoolsOverviewProps) {
+export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps) {
+  const isSmallScreen = useBreakpoint(MEDIA_WIDTHS.upToSmall)
   const history = useHistory()
   const poolsData = useMemo(() => {
-    return getPoolsOverviewData(type, limit)
+    return getPoolsData(type, limit)
   }, [type, limit])
 
   const toggleInvestModal = usePoolInvestModalToggle()
-
-  const handleFilterOnClick = (e: any) => {
-    e.preventDefault()
-    history.push(e.target.hash.split('#')[1])
-    setActive(1)
-  }
 
   const handleCardOnClick = (e: any) => {
     e.preventDefault()
     history.push('/pools/ETH/NII')
   }
 
-  let title = t`New Pools`
-
-  switch (type) {
-    case 'gainer':
-      title = t`Top Gainer Pools`
-      break
-    case 'looser':
-      title = t`Top Looser Pools`
-      break
-  }
-
   return (
     <>
       <FlexColumn style={style}>
-        <Header>{title}</Header>
-        <Link to={`/pools/search?type=${type}`} onClick={handleFilterOnClick}>
+        <Header>{getTitle(type)}</Header>
+        <Link
+          to={{
+            pathname: `/pools/search?type=${type}`,
+            state: { activeTab: 1, type },
+          }}
+        >
           <Trans>See all</Trans>
         </Link>
       </FlexColumn>
       <Grid container direction="row" alignItems="flex-start" spacing={3}>
         {Object.entries(poolsData).map(([key, item]) => {
           return (
-            <Grid item xs={isMobile ? 12 : 4} key={key}>
-              <Card key={key} onClick={handleCardOnClick}>
+            <Grid item xs={isSmallScreen ? 12 : 4} key={key}>
+              <Card onClick={handleCardOnClick}>
                 <RowWrapper style={{ justifyContent: 'space-between' }}>
                   <RowWrapper>
                     <div style={{ position: 'relative' }}>
@@ -111,15 +111,15 @@ export default function PoolsOverview({ type, limit, style, setActive }: PoolsOv
                       />
                       <CurrencyAvatar
                         symbol={'NII'}
-                        iconProps={{ width: '34', height: '34', id: 'poolsNiiLogo' }}
-                        containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
+                        iconProps={{ width: '32', height: '32', id: 'poolsNiiLogo' }}
+                        containerStyle={{ left: '22px', position: 'absolute', marginTop: '-34px' }}
                         hideSymbol={true}
                       />
-                      <CircleWrapper style={{ left: '42px', position: 'absolute', marginTop: '-36px' }}>
+                      <CircleWrapper style={{ left: '46px', position: 'absolute', marginTop: '-36px' }}>
                         <NIILogo id="poolsNiiLogo" />
                       </CircleWrapper>
                     </div>
-                    <ColumnWrapper style={{ marginLeft: '30px' }}>
+                    <ColumnWrapper style={{ marginLeft: '32px' }}>
                       <TYPE.mediumHeader>
                         {item.token0.symbol} / {item.token1.symbol}
                       </TYPE.mediumHeader>
@@ -142,7 +142,7 @@ export default function PoolsOverview({ type, limit, style, setActive }: PoolsOv
                     <TYPE.subHeader color={'text1'}>
                       <Trans>Liquidity</Trans>
                     </TYPE.subHeader>
-                    <TYPE.mediumHeader fontSize="16" padding="5px 0">
+                    <TYPE.mediumHeader fontSize="16" paddingTop="5px">
                       {shortenDecimalValues(item.liquidity, '$ 0.[00]a')}
                     </TYPE.mediumHeader>
                   </div>
@@ -150,7 +150,7 @@ export default function PoolsOverview({ type, limit, style, setActive }: PoolsOv
                     <TYPE.subHeader color={'text1'}>
                       <Trans>ROI (1Y)</Trans>
                     </TYPE.subHeader>
-                    <TYPE.mediumHeader fontSize="16" padding="5px 0">
+                    <TYPE.mediumHeader fontSize="16" paddingTop="5px">
                       {shortenDecimalValues(item.roiY, '0.[00]a')}
                     </TYPE.mediumHeader>
                   </div>{' '}
@@ -158,7 +158,7 @@ export default function PoolsOverview({ type, limit, style, setActive }: PoolsOv
                     <TYPE.subHeader color={'text1'}>
                       <Trans>Trending</Trans>
                     </TYPE.subHeader>
-                    <TYPE.mediumHeader fontSize="16" padding="5px 0">
+                    <TYPE.mediumHeader fontSize="16" paddingTop="5px">
                       {parseInt(item.trendingPercent) > 0 && '+'}
                       {shortenDecimalValues(item.trendingPercent, '0.[00]')}%
                     </TYPE.mediumHeader>

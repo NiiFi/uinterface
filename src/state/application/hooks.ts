@@ -43,6 +43,10 @@ export function usePoolInvestModalToggle(): () => void {
   return useToggleModal(ApplicationModal.POOL_INVEST)
 }
 
+export function useCreatePoolModalToggle(): () => void {
+  return useToggleModal(ApplicationModal.CREATE_POOL)
+}
+
 export function useToggleSettingsMenu(): () => void {
   return useToggleModal(ApplicationModal.SETTINGS)
 }

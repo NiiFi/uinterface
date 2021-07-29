@@ -212,6 +212,13 @@ a {
  color: ${({ theme }) => theme.blue1}; 
 }
 `
+
+export const BodyScroller = styled.div`
+  height: calc(100vh - 53px);
+  overflow-y: scroll;
+  width: 100%;
+`
+
 export const Disclaimer = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.warning};
@@ -240,4 +247,23 @@ export const CircleWrapper = styled.div`
   background-color: ${({ theme }) => theme.bg0};
   border: 1px solid ${({ theme }) => theme.bg3};
   border-radius: 50%;
+`
+export const BarWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    padding: 0.5rem 0;
+  `}
+`
+export const BarTitle = styled.div`
+  display: flex;
+  gap: 2rem;
+  align-item: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  justify-content: flex-start;
+  color: ${({ theme }) => theme.text1};
 `
