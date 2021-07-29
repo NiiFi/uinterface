@@ -88,7 +88,7 @@ const StyledRangeInput = styled.input<{ size: number }>`
 `
 
 interface InputSliderProps {
-  value: number
+  value?: number
   onChange: (value: number) => void
   step?: number
   min?: number
@@ -118,7 +118,7 @@ export default function Slider({
       {...rest}
       type="range"
       value={value}
-      style={{ padding: '15px 0' }}
+      style={{ padding: '10px 0' }}
       onChange={changeCallback}
       aria-labelledby="input slider"
       step={step}

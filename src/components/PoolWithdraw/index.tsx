@@ -18,6 +18,7 @@ import { tryParseAmount } from 'state/swap/hooks'
 import { ButtonPrimary } from 'components/Button'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 import Slider from 'components/Slider'
+import useTheme from '../../hooks/useTheme'
 
 const UpperSection = styled.div`
   position: relative;
@@ -45,6 +46,7 @@ export default function PoolWithdraw() {
   const { account } = useActiveWeb3React()
   const [token0Amount, setToken0Amount] = useState('')
   const [investmentValue, setInvestmentValue] = useState('')
+  const [withdrawValue, setWithdrawValue] = useState(50)
   const { calculateTotalInvestmentInUSD } = useFakePoolValuesCalculator()
   const inputCurrency = useCurrency('ETH')
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency ?? undefined)
@@ -63,14 +65,13 @@ export default function PoolWithdraw() {
   const hasInputAmount = Boolean(inputAmount?.greaterThan('0'))
   const sufficientBalance = inputAmount && balance && !balance.lessThan(inputAmount)
 
-  const SliderChangeHandler: any = (e: any, newValue: any) => setInvestmentValue(newValue)
+  const SliderChangeHandler: any = (e: any) => setWithdrawValue(e)
+
+  const theme = useTheme()
 
   return (
     <>
       <UpperSection>
-        {/*<HeaderRow>*/}
-        {/*  <Trans>Invest</Trans>*/}
-        {/*</HeaderRow>*/}
         <RowBetween>
           <TYPE.subHeader color="text6">
             <Trans>Amount to Withdraw</Trans>
@@ -86,10 +87,11 @@ export default function PoolWithdraw() {
             )}
           </TYPE.subHeader>
         </RowBetween>
+        <RowBetween marginTop="1rem">{withdrawValue} %</RowBetween>
         <RowBetween>
-          <Slider size={20} onChange={SliderChangeHandler} value={15} />
+          <Slider size={20} onChange={SliderChangeHandler} />
         </RowBetween>
-        <AutoColumn style={{ paddingTop: '2rem' }}>
+        <AutoColumn style={{ paddingTop: '1rem' }}>
           <TokenPairInputPanel
             onChange={handlePairValueChange}
             token0={{ symbol: 'ETH', address: '12345' }}
@@ -108,10 +110,8 @@ export default function PoolWithdraw() {
         </RowBetween>
         <RowBetween
           marginTop="1.5rem"
-          style={{ borderTopStyle: 'solid', borderTopWidth: '1px', borderTopColor: '#C9F0ED' }}
-        >
-          {/*<Slippage placement={'left'} />*/}
-        </RowBetween>
+          style={{ borderTopStyle: 'solid', borderTopWidth: '1px', borderTopColor: theme.bg3 }}
+        ></RowBetween>
         {account ? (
           <ButtonPrimary disabled={!sufficientBalance && hasInputAmount} marginTop="2rem">
             <Trans>WITHDRAW</Trans>

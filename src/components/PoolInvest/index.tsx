@@ -66,9 +66,6 @@ export default function PoolInvest() {
   return (
     <>
       <UpperSection>
-        {/*<HeaderRow>*/}
-        {/*  <Trans>Invest</Trans>*/}
-        {/*</HeaderRow>*/}
         <RowBetween>
           <TYPE.subHeader color="text6">
             <Trans>Amount to Invest</Trans>

@@ -19,6 +19,7 @@ import ROISimulator from './ROISimulator'
 import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
 import TabPanel from '../../components/tab/TabPanel'
+import useTheme from '../../hooks/useTheme'
 
 const TokenStatsWrapper = styled(BodyWrapper)`
   flex: 2;
@@ -106,6 +107,26 @@ const PoolCardItem = styled(AutoColumn)`
     }
   `}
 `
+
+const rootStyle: React.CSSProperties = {
+  backgroundColor: 'transparent',
+  fontWeight: 500,
+  borderBottomWidth: '1px',
+  borderBottomStyle: 'solid',
+}
+
+const selectedStyle: React.CSSProperties = {
+  backgroundColor: 'transparent',
+  fontWeight: 500,
+  borderRadius: '0px',
+}
+
+const wrapperStyle = {
+  root: rootStyle,
+  hover: selectedStyle,
+  selected: selectedStyle,
+}
+
 export default function PoolDetails({
   match: {
     params: { token0, token1 },
@@ -113,6 +134,11 @@ export default function PoolDetails({
 }: RouteComponentProps<{ token0: string; token1: string }>) {
   const [activeTab, setActiveTab] = useState<number>(0)
   const history = useHistory()
+  const theme = useTheme()
+  wrapperStyle.root.borderBottomColor = theme.bg3
+  wrapperStyle.hover.borderBottomColor = theme.primary1
+  wrapperStyle.selected.borderBottomColor = theme.primary1
+
   const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
   if (!token0 || !token1) {
     return <Redirect to={'/swap'} />
@@ -141,53 +167,13 @@ export default function PoolDetails({
                     key={`tab-0`}
                     label={t`Invest`}
                     style={{ backgroundColor: 'transparent', minWidth: '50%', paddingRight: '0px', marginRight: '0px' }}
-                    wrapperStyles={{
-                      root: {
-                        backgroundColor: 'transparent',
-                        fontWeight: 500,
-                        borderBottomColor: '#C9F0ED',
-                        borderBottomWidth: '1px',
-                        borderBottomStyle: 'solid',
-                      },
-                      hover: {
-                        backgroundColor: 'transparent',
-                        fontWeight: 500,
-                        borderRadius: '0px',
-                        borderBottomColor: '#9871F9',
-                      },
-                      selected: {
-                        backgroundColor: 'transparent',
-                        fontWeight: 500,
-                        borderBottomColor: '#9871F9',
-                        borderRadius: '0px',
-                      },
-                    }}
+                    wrapperStyles={wrapperStyle}
                   />
                   <Tab
                     key={`tab-1`}
-                    label={t`Widthdraw`}
+                    label={t`Withdraw`}
                     style={{ backgroundColor: 'transparent', minWidth: '50%', paddingLeft: '0px', marginLeft: '0px' }}
-                    wrapperStyles={{
-                      root: {
-                        backgroundColor: 'transparent',
-                        fontWeight: 500,
-                        borderBottomColor: '#C9F0ED',
-                        borderBottomWidth: '1px',
-                        borderBottomStyle: 'solid',
-                      },
-                      hover: {
-                        backgroundColor: 'transparent',
-                        fontWeight: 500,
-                        borderRadius: '0px',
-                        borderBottomColor: '#9871F9',
-                      },
-                      selected: {
-                        backgroundColor: 'transparent',
-                        fontWeight: 500,
-                        borderBottomColor: '#9871F9',
-                        borderRadius: '0px',
-                      },
-                    }}
+                    wrapperStyles={wrapperStyle}
                   />
                 </Tabs>
                 <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
