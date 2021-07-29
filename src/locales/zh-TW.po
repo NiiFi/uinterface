@@ -529,6 +529,7 @@ msgstr "確認兌換"
 msgid "Confirm this transaction in your wallet"
 msgstr "在您的錢包中確認這筆交易"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx

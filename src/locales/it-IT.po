@@ -529,6 +529,7 @@ msgstr "Conferma lo scambio"
 msgid "Confirm this transaction in your wallet"
 msgstr "Conferma questa transazione nel tuo portafoglio"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx

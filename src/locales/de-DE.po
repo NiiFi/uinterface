@@ -529,6 +529,7 @@ msgstr "Tausch bestätigen"
 msgid "Confirm this transaction in your wallet"
 msgstr "Diese Transaktion in Ihrer Wallet bestätigen"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx

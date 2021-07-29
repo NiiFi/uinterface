@@ -529,6 +529,7 @@ msgstr "Erősítse meg a Csere lehetőséget"
 msgid "Confirm this transaction in your wallet"
 msgstr "Erősítse meg ezt a tranzakciót a pénztárcájában"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
