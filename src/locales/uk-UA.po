@@ -529,6 +529,7 @@ msgstr "Підтвердьте обмін"
 msgid "Confirm this transaction in your wallet"
 msgstr "Підтвердіть транзакцію у вашому гаманці"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
