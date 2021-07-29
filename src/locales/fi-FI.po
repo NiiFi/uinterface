@@ -529,6 +529,7 @@ msgstr "Vahvista vaihtaminen"
 msgid "Confirm this transaction in your wallet"
 msgstr "Vahvista tapahtuma lompakossasi"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
