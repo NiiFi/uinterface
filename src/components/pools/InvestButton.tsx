@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import { PoolInvestPair } from 'state/pool/actions'
 import { useSetUnSetPoolInvestTokenPair } from 'state/pool/hooks'
 import { ButtonPrimary, ButtonOutlined, ButtonProps } from 'components/Button'
-
+// NOTE: invest button is outdated (popup was replaced with component defined on pool detail page OM-220)
 type InvestButtonProps = ButtonProps & PoolInvestPair & { type: 'primary' | 'outlined' }
 export default function InvestButton({ token0, token1, onClick, type, ...rest }: InvestButtonProps) {
   let Button = ButtonPrimary
