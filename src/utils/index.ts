@@ -7,6 +7,10 @@ import numeral from 'numeral'
 import { formatDistance } from 'date-fns'
 import { TokenAddressMap } from '../state/lists/hooks'
 
+export interface Dictionary {
+  [key: string]: string | boolean | number | Dictionary[] | Dictionary | undefined
+}
+
 // returns the checksummed address if the address is valid, otherwise returns false
 export function isAddress(value: any): string | false {
   try {
