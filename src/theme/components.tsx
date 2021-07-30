@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
 import { darken } from 'polished'
 import { ArrowLeft, X, ExternalLink as LinkIconFeather, Trash } from 'react-feather'
+import { useBaseCurrency } from 'state/user/hooks'
+import { BaseCurrencyDetail } from 'constants/tokens'
 
 export const ButtonText = styled.button`
   outline: none;
@@ -322,3 +324,24 @@ export const ExtraSmallOnly = styled.span`
     display: block;
   `};
 `
+
+export const BaseCurrencyView = ({
+  type = 'symbol',
+  format,
+  value,
+}: {
+  value: string
+  type?: Exclude<keyof BaseCurrencyDetail, 'label'>
+  format?: (detail: BaseCurrencyDetail, value: string) => string
+}) => {
+  const { baseCurrencyDetail } = useBaseCurrency()
+  if (format) {
+    return <span title={baseCurrencyDetail.label}>{format(baseCurrencyDetail, value)}</span>
+  }
+
+  if (type === 'symbol') {
+    return <span title={baseCurrencyDetail.label}>{`${baseCurrencyDetail.symbol} ${value}`}</span>
+  }
+
+  return <span title={baseCurrencyDetail.label}>{`${value} ${baseCurrencyDetail.id}`}</span>
+}
