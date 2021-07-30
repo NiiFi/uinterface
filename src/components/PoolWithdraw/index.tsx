@@ -10,8 +10,7 @@ import { useCurrency } from 'hooks/Tokens'
 import { useCurrencyBalance } from 'state/wallet/hooks'
 import { useActiveWeb3React } from 'hooks/web3'
 import TokenPairInputPanel from 'components/pools/TokenPairInputPanel'
-import { TYPE } from 'theme'
-import { MainCurrency } from 'utils'
+import { TYPE, BaseCurrencyView } from 'theme'
 import { PoolInvestPairValues } from 'state/pool/actions'
 import { useFakePoolValuesCalculator } from 'state/pool/hooks'
 import { tryParseAmount } from 'state/swap/hooks'
@@ -47,7 +46,7 @@ export default function PoolWithdraw() {
   const [token0Amount, setToken0Amount] = useState('')
   const [investmentValue, setInvestmentValue] = useState('')
   const [withdrawValue, setWithdrawValue] = useState(50)
-  const [sliderValue, setSliderValue] = useState(10)
+  const [sliderValue, setSliderValue] = useState(50)
   const { calculateTotalInvestmentInUSD } = useFakePoolValuesCalculator()
   const inputCurrency = useCurrency('ETH')
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency ?? undefined)
@@ -107,9 +106,11 @@ export default function PoolWithdraw() {
             {!sufficientBalance && hasInputAmount ? <Trans>Insufficient Balance</Trans> : ''}
           </TYPE.error>
           <TYPE.subHeader color="text6" textAlign="right" width="50%">
-            {`≈ ${
-              investmentValue ? shortenDecimalValues(investmentValue, TOKEN_VALUE_CURRENCY_FORMAT) : '0'
-            } ${MainCurrency}`}
+            {`≈ `}
+            <BaseCurrencyView
+              type="id"
+              value={investmentValue ? shortenDecimalValues(investmentValue, TOKEN_VALUE_CURRENCY_FORMAT) : '0'}
+            />
           </TYPE.subHeader>
         </RowBetween>
         <RowBetween

@@ -280,12 +280,12 @@ export const BaseCurrencyView = ({
 }) => {
   const { baseCurrencyDetail } = useBaseCurrency()
   if (format) {
-    return <>{format(baseCurrencyDetail, value)}</>
+    return <span title={baseCurrencyDetail.label}>{format(baseCurrencyDetail, value)}</span>
   }
 
   if (type === 'symbol') {
-    return <>{`${baseCurrencyDetail.symbol} ${value}`}</>
+    return <span title={baseCurrencyDetail.label}>{`${baseCurrencyDetail.symbol} ${value}`}</span>
   }
 
-  return <>{`${value} ${baseCurrencyDetail.id}`}</>
+  return <span title={baseCurrencyDetail.label}>{`${value} ${baseCurrencyDetail.id}`}</span>
 }
