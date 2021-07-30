@@ -37,13 +37,12 @@ const CurrencyAvatarWrapper = styled.div`
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.text1};
+  font-size: 1.25rem;
   span {
     margin-left: 8px;
-    font-size: 1.25rem;
   }
 `
 const CurrencyLogoWrapper = styled.div`
-  background-color: white;
   border: 1px solid ${({ theme }) => theme.bg3};
   border-radius: 50%;
   display: flex;
@@ -73,9 +72,10 @@ const CurrencyIconMap: { [currency in TokenName]: (props: IconProps) => JSX.Elem
 }
 export const CurrencyAvatar = ({ symbol, iconProps, containerStyle, rootStyle, hideSymbol }: Props) => {
   const Icon = CurrencyIconMap[symbol]
+  const backgroundColor = symbol === 'NII' ? 'white' : 'transparent'
   return (
     <CurrencyAvatarWrapper style={rootStyle}>
-      <CurrencyLogoWrapper style={containerStyle}>
+      <CurrencyLogoWrapper style={{ backgroundColor, ...containerStyle }}>
         <Icon {...iconProps} />
       </CurrencyLogoWrapper>
       {!hideSymbol && <span>{symbol}</span>}

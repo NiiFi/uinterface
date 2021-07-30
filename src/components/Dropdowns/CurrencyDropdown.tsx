@@ -42,9 +42,19 @@ export default function CurrencyDropdown() {
   const { baseCurrency, baseCurrencyDetail, setBaseCurrency } = useBaseCurrency()
   return (
     <Wrapper>
-      <MenuButton color={theme.text1} ref={elementRef} active={open} onClick={handleClick}>
-        {baseCurrencyDetail.id}
-        <ChevronDown />
+      <MenuButton
+        title={baseCurrencyDetail.label}
+        color={theme.text1}
+        ref={elementRef}
+        active={open}
+        onClick={handleClick}
+      >
+        <CurrencyAvatar
+          rootStyle={{ fontSize: '1rem' }}
+          iconProps={{ width: '1.5rem', height: '1.5rem' }}
+          symbol={baseCurrencyDetail.id}
+        />
+        <ChevronDown size="1.25rem" />
       </MenuButton>
       <Menu anchorEl={elementRef.current} open={open} onClose={handleClose}>
         <MenuWrapper>
@@ -58,7 +68,7 @@ export default function CurrencyDropdown() {
                 handleClose()
               }}
             >
-              <CurrencyAvatar containerStyle={{ border: 'none' }} symbol={value} />
+              <CurrencyAvatar symbol={value} />
             </MenuItem>
           ))}
         </MenuWrapper>
