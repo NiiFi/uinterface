@@ -58,7 +58,7 @@ export class ExtendedEther extends Ether {
 export const TOKEN_VALUE_CURRENCY_FORMAT = '0,0.00'
 
 export const SUPPORTED_BASE_CURRENCIES = [
-  'US$',
+  'USD',
   'EUR',
   'CNY',
   'INR',
@@ -81,17 +81,17 @@ export const SUPPORTED_BASE_CURRENCIES = [
 ] as const
 
 export type SupportedBaseCurrencies = typeof SUPPORTED_BASE_CURRENCIES[number]
-export const DEFAULT_BASE_CURRENCY: SupportedBaseCurrencies = 'US$'
+export const DEFAULT_BASE_CURRENCY: SupportedBaseCurrencies = 'USD'
 export type BaseCurrencyDetail = {
   id: SupportedBaseCurrencies
   label: string
   symbol: string
 }
 export const SUPPORTED_BASE_CURRENCIES_MAP: { [currency in SupportedBaseCurrencies]: BaseCurrencyDetail } = {
-  US$: {
+  USD: {
     label: t`United State Dollar`,
-    id: t`US$` as SupportedBaseCurrencies,
-    symbol: '$',
+    id: t`USD` as SupportedBaseCurrencies,
+    symbol: 'US$',
   },
   ETH: {
     label: t`Ethereum`,

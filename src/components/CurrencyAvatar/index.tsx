@@ -48,7 +48,7 @@ const CurrencyLogoWrapper = styled.div`
   display: flex;
 `
 const CurrencyIconMap: { [currency in TokenName]: (props: IconProps) => JSX.Element } = {
-  US$: USD,
+  USD,
   ETH,
   CAD,
   CHF,
