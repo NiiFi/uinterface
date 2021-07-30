@@ -272,7 +272,8 @@ export function ETHIcon({ width = 24, height = 24, ...rest }: IconProps) {
   )
 }
 
-export function NIIIcon({ width = 34, height = 34, id = '0', ...rest }: IconProps) {
+export function NIIIcon({ width = 34, height = 34, ...rest }: IconProps) {
+  const id = 'niiicon' + Math.random()
   return (
     <svg
       width={width}

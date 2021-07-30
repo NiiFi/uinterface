@@ -3,6 +3,7 @@
 # generated contract types
 /src/types/v3
 /src/types/v2
+/src/types/v2/*.ts
 /src/abis/types
 /src/locales/**/*.js
 /src/locales/**/*.ts
