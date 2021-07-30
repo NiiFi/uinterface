@@ -20,7 +20,7 @@ const StyledRangeInput = styled.input<{ size: number }>`
     height: ${({ size }) => size}px;
     width: ${({ size }) => size}px;
     background-color: ${({ theme }) => theme.primary1};
-    border-radius: 100%;
+    border-radius: 50%;
     border: none;
     transform: translateY(-50%);
     color: ${({ theme }) => theme.bg1};
@@ -67,12 +67,12 @@ const StyledRangeInput = styled.input<{ size: number }>`
   }
 
   &::-moz-range-track {
-    background: linear-gradient(90deg, ${({ theme }) => theme.bg3}, ${({ theme }) => theme.bg3});
-    height: 1px;
+    background-color: ${({ theme }) => theme.bg3};
+    height: 2px;
   }
 
   &::-moz-range-progress {
-    background: ${({ theme }) => theme.primary1};
+    background-color: ${({ theme }) => theme.primary1};
     height: 1px;
   }
 
@@ -81,14 +81,14 @@ const StyledRangeInput = styled.input<{ size: number }>`
     border-color: transparent;
     color: transparent;
 
-    background: ${({ theme }) => theme.bg3};
+    background-color: ${({ theme }) => theme.primary1};
     height: 1px;
   }
   &::-ms-fill-lower {
-    background: ${({ theme }) => theme.bg5};
+    background-color: ${({ theme }) => theme.primary1};
   }
   &::-ms-fill-upper {
-    background: ${({ theme }) => theme.bg3};
+    background-color: ${({ theme }) => theme.bg3};
   }
 `
 
