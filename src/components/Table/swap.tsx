@@ -3,6 +3,7 @@ import useTheme from 'hooks/useTheme'
 import { t, Trans } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
+import { DefaultTheme } from 'styled-components'
 import SwapTableDropdown from '../Dropdowns/SwapTableDropdown'
 import { mapTransactionListDataToTableData } from '../../utils/dataMapping'
 import { shortenAddress, shortenDecimalValues, formatTimeStamp } from '../../utils'
@@ -23,9 +24,9 @@ function mapTransactionTypeToWords(type: string) {
 const CustomTableRow = (
   row: any,
   index: number,
+  theme: DefaultTheme,
   handleClick: (event: React.MouseEvent<unknown>, name: string) => void
 ) => {
-  const theme = useTheme()
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
 
   return (

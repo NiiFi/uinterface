@@ -8,12 +8,12 @@ import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
 import { MouseoverTooltip, MouseoverTooltipContent } from 'components/Tooltip'
 import JSBI from 'jsbi'
-import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { ChevronDown, ChevronUp, CheckCircle, HelpCircle, Info } from 'react-feather'
 import ReactGA from 'react-ga'
 import { RouteComponentProps } from 'react-router-dom'
 import { Text } from 'rebass'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
 import AddressInputPanel from '../../components/AddressInputPanel'
 import { ButtonConfirmed, ButtonError, ButtonPrimary } from '../../components/Button'
 import { DefaultCard, GreyCard } from '../../components/Card'
@@ -44,6 +44,7 @@ import { useSwapCallback } from '../../hooks/useSwapCallback'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
 import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
 import { useActiveWeb3React } from '../../hooks/web3'
+import useTheme from '../../hooks/useTheme'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { Field } from '../../state/swap/actions'
 import {
@@ -115,7 +116,7 @@ export default function Swap({ history }: RouteComponentProps) {
     })
 
   const { account } = useActiveWeb3React()
-  const theme = useContext(ThemeContext)
+  const theme = useTheme()
 
   // toggle wallet when disconnected
   const toggleWalletModal = useWalletModalToggle()
