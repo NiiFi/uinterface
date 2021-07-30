@@ -6,7 +6,7 @@ import TableCell from '@material-ui/core/TableCell'
 import SwapTableDropdown from '../Dropdowns/SwapTableDropdown'
 import { mapTransactionListDataToTableData } from '../../utils/dataMapping'
 import { shortenAddress, shortenDecimalValues, formatTimeStamp } from '../../utils'
-import { ExternalLink } from '../../theme'
+import { ExternalLink, BaseCurrencyView } from 'theme'
 import { SampleResponse } from './sample-transactions'
 import Table from './index'
 
@@ -46,7 +46,7 @@ const CustomTableRow = (
         </ExternalLink>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(row.amountUSD)} USD
+        <BaseCurrencyView type="id" value={shortenDecimalValues(row.amountUSD)} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         {shortenDecimalValues(row.amount0)} {row.pair.token0.symbol}

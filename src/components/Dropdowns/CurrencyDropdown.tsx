@@ -18,8 +18,8 @@ const MenuWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 0px 0.5rem;
-  width: 450px;
-  height: 300px;
+  max-width: 450px;
+  max-height: 300px;
   gap: 1rem;
   overflow-y: scroll;
   flex-wrap: wrap;
@@ -43,7 +43,7 @@ export default function CurrencyDropdown() {
   return (
     <Wrapper>
       <MenuButton color={theme.text1} ref={elementRef} active={open} onClick={handleClick}>
-        {baseCurrencyDetail.symbol}
+        {baseCurrencyDetail.id}
         <ChevronDown />
       </MenuButton>
       <Menu anchorEl={elementRef.current} open={open} onClose={handleClose}>

@@ -6,7 +6,8 @@ import styled, {
   DefaultTheme,
   ThemeProvider as StyledComponentsThemeProvider,
 } from 'styled-components'
-import { useIsDarkMode } from '../state/user/hooks'
+import { useIsDarkMode, useBaseCurrency } from '../state/user/hooks'
+import { BaseCurrencyDetail } from 'constants/tokens'
 import { Colors } from './styled'
 
 export * from './components'
@@ -267,3 +268,24 @@ export const BarTitle = styled.div`
   justify-content: flex-start;
   color: ${({ theme }) => theme.text1};
 `
+
+export const BaseCurrencyView = ({
+  type = 'id',
+  format,
+  value,
+}: {
+  value: string
+  type?: keyof BaseCurrencyDetail
+  format?: (detail: BaseCurrencyDetail, value: string) => string
+}) => {
+  const { baseCurrencyDetail } = useBaseCurrency()
+  if (format) {
+    return <>{format(baseCurrencyDetail, value)}</>
+  }
+
+  if (type === 'symbol') {
+    return <>{`${baseCurrencyDetail.symbol} ${value}`}</>
+  }
+
+  return <>{`${value} ${baseCurrencyDetail.id}`}</>
+}

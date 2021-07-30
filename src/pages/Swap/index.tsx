@@ -53,7 +53,7 @@ import {
   useSwapState,
 } from '../../state/swap/hooks'
 import { useExpertModeManager, useUserSingleHopOnly } from '../../state/user/hooks'
-import { BodyScroller, LinkStyledButton, TYPE, Disclaimer } from '../../theme'
+import { BodyScroller, LinkStyledButton, TYPE, Disclaimer, BaseCurrencyView } from '../../theme'
 import { computeFiatValuePriceImpact } from '../../utils/computeFiatValuePriceImpact'
 import { getTradeVersion } from '../../utils/getTradeVersion'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
@@ -679,7 +679,9 @@ export default function Swap({ history }: RouteComponentProps) {
                   <Trans>Volume 24H</Trans>
                 </TYPE.subHeader>
                 <FlexColumn style={{ padding: '5px 0' }}>
-                  <TYPE.mediumHeader color="text1">$1.24b</TYPE.mediumHeader>
+                  <TYPE.mediumHeader color="text1">
+                    <BaseCurrencyView type="symbol" value="1.24b" />
+                  </TYPE.mediumHeader>
                   <Percent value={7.258268337244848} fontWeight={400} />
                 </FlexColumn>
               </DefaultCard>
@@ -688,7 +690,9 @@ export default function Swap({ history }: RouteComponentProps) {
                   <Trans>Fees 24H</Trans>
                 </TYPE.subHeader>
                 <FlexColumn style={{ padding: '5px 0' }}>
-                  <TYPE.mediumHeader color="text1">$3.03m</TYPE.mediumHeader>
+                  <TYPE.mediumHeader color="text1">
+                    <BaseCurrencyView type="symbol" value="3.03m" />
+                  </TYPE.mediumHeader>
                   <Percent value={7.858268337244848} fontWeight={400} />
                 </FlexColumn>
               </DefaultCard>
@@ -697,7 +701,9 @@ export default function Swap({ history }: RouteComponentProps) {
                   <Trans>TVL</Trans>
                 </TYPE.subHeader>
                 <FlexColumn style={{ padding: '5px 0' }}>
-                  <TYPE.mediumHeader color="text1">$1.75b</TYPE.mediumHeader>
+                  <TYPE.mediumHeader color="text1">
+                    <BaseCurrencyView type="symbol" value="1.75b" />
+                  </TYPE.mediumHeader>
                   <Percent value={-0.508268337244848} fontWeight={400} />
                 </FlexColumn>
               </DefaultCard>

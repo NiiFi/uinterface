@@ -83,88 +83,109 @@ export const SUPPORTED_BASE_CURRENCIES = [
 export type SupportedBaseCurrencies = typeof SUPPORTED_BASE_CURRENCIES[number]
 export const DEFAULT_BASE_CURRENCY: SupportedBaseCurrencies = 'US$'
 export type BaseCurrencyDetail = {
+  id: SupportedBaseCurrencies
   label: string
-  symbol: SupportedBaseCurrencies
+  symbol: string
 }
 export const SUPPORTED_BASE_CURRENCIES_MAP: { [currency in SupportedBaseCurrencies]: BaseCurrencyDetail } = {
   US$: {
     label: t`United State Dollar`,
-    symbol: t`US$` as SupportedBaseCurrencies,
+    id: t`US$` as SupportedBaseCurrencies,
+    symbol: '$',
   },
   ETH: {
     label: t`Ethereum`,
-    symbol: t`ETH` as SupportedBaseCurrencies,
+    id: t`ETH` as SupportedBaseCurrencies,
+    symbol: 'Ξ',
   },
   CAD: {
     label: t`Canadian Dollar`,
-    symbol: t`CAD` as SupportedBaseCurrencies,
+    id: t`CAD` as SupportedBaseCurrencies,
+    symbol: 'C$',
   },
   CHF: {
     label: t`Swiss Franc`,
-    symbol: t`CHF` as SupportedBaseCurrencies,
+    id: t`CHF` as SupportedBaseCurrencies,
+    symbol: '₣',
   },
   INR: {
     label: t`Indian Rupees`,
-    symbol: t`INR` as SupportedBaseCurrencies,
+    id: t`INR` as SupportedBaseCurrencies,
+    symbol: '₹',
   },
   HKD: {
     label: t`Hong Kong Dollar`,
-    symbol: t`HKD` as SupportedBaseCurrencies,
+    id: t`HKD` as SupportedBaseCurrencies,
+    symbol: 'HK$',
   },
   EUR: {
     label: t`European Union Euro`,
-    symbol: t`EUR` as SupportedBaseCurrencies,
+    id: t`EUR` as SupportedBaseCurrencies,
+    symbol: '€',
   },
   BTC: {
     label: t`Bitcoin`,
-    symbol: t`BTC` as SupportedBaseCurrencies,
+    id: t`BTC` as SupportedBaseCurrencies,
+    symbol: '฿',
   },
   CNY: {
     label: t`Chinese Yuan`,
-    symbol: t`CNY` as SupportedBaseCurrencies,
+    id: t`CNY` as SupportedBaseCurrencies,
+    symbol: '¥',
   },
   GBP: {
     label: t`United Kingdom Pound`,
-    symbol: t`GBP` as SupportedBaseCurrencies,
+    id: t`GBP` as SupportedBaseCurrencies,
+    symbol: '£',
   },
   RUB: {
     label: t`Russian Ruble`,
-    symbol: t`RUB` as SupportedBaseCurrencies,
+    id: t`RUB` as SupportedBaseCurrencies,
+    symbol: '₽',
   },
   MXN: {
     label: t`Mexican Peso`,
-    symbol: t`MXN` as SupportedBaseCurrencies,
+    id: t`MXN` as SupportedBaseCurrencies,
+    symbol: 'mex$',
   },
   KRW: {
     label: t`South Korean Won`,
-    symbol: t`KRW` as SupportedBaseCurrencies,
+    id: t`KRW` as SupportedBaseCurrencies,
+    symbol: '₩',
   },
   TRY: {
     label: t`Turkish Lira`,
-    symbol: t`TRY` as SupportedBaseCurrencies,
+    id: t`TRY` as SupportedBaseCurrencies,
+    symbol: '₺',
   },
   JPY: {
     label: t`Japanese Yen`,
-    symbol: t`JPY` as SupportedBaseCurrencies,
+    id: t`JPY` as SupportedBaseCurrencies,
+    symbol: '¥',
   },
   BRL: {
     label: t`Brazilian Real`,
-    symbol: t`BRL` as SupportedBaseCurrencies,
+    id: t`BRL` as SupportedBaseCurrencies,
+    symbol: 'R$',
   },
   SEK: {
     label: t`Swedish Krona`,
-    symbol: t`SEK` as SupportedBaseCurrencies,
+    id: t`SEK` as SupportedBaseCurrencies,
+    symbol: 'kr',
   },
   AUD: {
     label: t`Australian Dollar`,
-    symbol: t`AUD` as SupportedBaseCurrencies,
+    id: t`AUD` as SupportedBaseCurrencies,
+    symbol: 'A$',
   },
   NOK: {
     label: t`Norwegian Krone`,
-    symbol: t`NOK` as SupportedBaseCurrencies,
+    id: t`NOK` as SupportedBaseCurrencies,
+    symbol: 'kr',
   },
   SGD: {
     label: t`Singapore Dollar`,
-    symbol: t`SGD` as SupportedBaseCurrencies,
+    id: t`SGD` as SupportedBaseCurrencies,
+    symbol: 'S$',
   },
 }

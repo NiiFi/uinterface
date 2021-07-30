@@ -6,7 +6,7 @@ import TableCell from '@material-ui/core/TableCell'
 import Percent from 'components/Percent'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
-import { TYPE, RowWrapper } from '../../theme'
+import { TYPE, RowWrapper, BaseCurrencyView } from '../../theme'
 import { SampleResponse } from './sample-tokens'
 import Table from './index'
 
@@ -40,16 +40,16 @@ const CustomTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(row.priceUSD)}
+        <BaseCurrencyView type="symbol" value={shortenDecimalValues(row.priceUSD)} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <Percent value={row.priceUSDChange} fontWeight={400} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        ${shortenDecimalValues(row.volumeUSD)}
+        <BaseCurrencyView type="symbol" value={shortenDecimalValues(row.volumeUSD)} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        ${shortenDecimalValues(row.tvlUSD)}
+        <BaseCurrencyView type="symbol" value={shortenDecimalValues(row.tvlUSD)} />
       </TableCell>
     </TableRow>
   )
