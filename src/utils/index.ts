@@ -7,7 +7,6 @@ import numeral from 'numeral'
 import { formatDistance } from 'date-fns'
 import { TokenAddressMap } from '../state/lists/hooks'
 
-export const MainCurrency = 'US$'
 // returns the checksummed address if the address is valid, otherwise returns false
 export function isAddress(value: any): string | false {
   try {

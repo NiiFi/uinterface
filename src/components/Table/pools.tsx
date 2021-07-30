@@ -9,7 +9,7 @@ import TableCell from '@material-ui/core/TableCell'
 import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
-import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper } from '../../theme'
+import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, BaseCurrencyView } from '../../theme'
 import { getPoolsData } from './sample-pools'
 import SearchableTable, { Order } from './SearchableTable'
 import Loader from 'components/Loader'
@@ -67,7 +67,7 @@ const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHa
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
-        {shortenDecimalValues(row.liquidity, '$ 0.[00]a')}
+        <BaseCurrencyView type="symbol" value={shortenDecimalValues(row.liquidity, '0.[00]a')} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
         <ColumnWrapper>
@@ -82,12 +82,12 @@ const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHa
       <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
         <ColumnWrapper>
           <div>
-            {row.trendingPercent > 0 && '+'}
+            {row.trendingPercent > 0 && '+ '}
             {shortenDecimalValues(row.trendingPercent, '0.[00]')}%
           </div>
           <TYPE.small color={'text2'}>
-            {row.trendingSum > 0 && '+'}
-            {shortenDecimalValues(row.trendingSum + '', '$0.[000]a')}
+            {row.trendingSum > 0 && '+ '}
+            <BaseCurrencyView type="symbol" value={shortenDecimalValues(row.trendingSum + '', '0.[000]a')} />
           </TYPE.small>
         </ColumnWrapper>
       </TableCell>

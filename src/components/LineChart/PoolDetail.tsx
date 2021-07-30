@@ -4,13 +4,13 @@ import { Trans } from '@lingui/macro'
 import LineChart from './index'
 import { sumBy } from 'lodash'
 import getLineChartData from './data'
-import { TYPE } from '../../theme'
+import { TYPE, BaseCurrencyView } from '../../theme'
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
 import { AutoRow } from 'components/Row'
 import { AutoColumn } from 'components/Column'
 import { TextItemWrapper, TextLabel, TextValue } from 'components/pools/styled'
-import { MainCurrency, shortenDecimalValues } from 'utils'
+import { shortenDecimalValues } from 'utils'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 
 const StyleButtonOutlined = styled(ButtonOutlined)`
@@ -133,7 +133,7 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
             <Trans>Liquidity</Trans>
           </TextLabel>
           <TextValue>
-            {shortenDecimalValues(`${liquiditySum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
+            <BaseCurrencyView type="id" value={shortenDecimalValues(`${liquiditySum}`, TOKEN_VALUE_CURRENCY_FORMAT)} />
           </TextValue>
         </TextItemWrapper>
         <TextItemWrapper>
@@ -141,7 +141,7 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
             <Trans>Volume</Trans>
           </TextLabel>
           <TextValue>
-            {shortenDecimalValues(`${volumeSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
+            <BaseCurrencyView type="id" value={shortenDecimalValues(`${volumeSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} />
           </TextValue>
         </TextItemWrapper>
         <TextItemWrapper>
@@ -149,7 +149,7 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
             <Trans>Fees</Trans>
           </TextLabel>
           <TextValue>
-            {shortenDecimalValues(`${feesSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
+            <BaseCurrencyView type="id" value={shortenDecimalValues(`${feesSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} />
           </TextValue>
         </TextItemWrapper>
       </ChartColumnItem>

@@ -14,7 +14,7 @@ import PoolInvestModal from 'components/PoolInvestModal'
 import InvestButton from 'components/pools/InvestButton'
 import { shortenDecimalValues } from '../../utils'
 import useBreakpoint from '../../hooks/useBreakpoint'
-import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, MEDIA_WIDTHS } from 'theme'
+import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, MEDIA_WIDTHS, BaseCurrencyView } from 'theme'
 
 const Header = styled(TYPE.mediumHeader)`
   padding: 0 0 10px 0;
@@ -143,7 +143,7 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
                       <Trans>Liquidity</Trans>
                     </TYPE.subHeader>
                     <TYPE.mediumHeader fontSize="16" paddingTop="5px">
-                      {shortenDecimalValues(item.liquidity, '$ 0.[00]a')}
+                      <BaseCurrencyView type="symbol" value={shortenDecimalValues(item.liquidity, '0.[00]a')} />
                     </TYPE.mediumHeader>
                   </div>
                   <div>

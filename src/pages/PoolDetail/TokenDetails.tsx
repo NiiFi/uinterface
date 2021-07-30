@@ -2,7 +2,7 @@ import React from 'react'
 import { Trans } from '@lingui/macro'
 
 import { TextItemWrapper, TextValue, TextLabel } from 'components/pools/styled'
-import { MainCurrency } from 'utils'
+import { BaseCurrencyView } from 'theme'
 
 export type TokenDetailProps = {
   symbol?: string
@@ -24,26 +24,36 @@ export default function TokenDetail(props: TokenDetailProps) {
         <TextLabel>
           <Trans>Price</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}>2,153.74 {MainCurrency}</TextValue>
+        <TextValue fontSize={'1rem'}>
+          <BaseCurrencyView type="id" value="2,153.74" />
+        </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
         <TextLabel>
           <Trans>Market Cap</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}>250,740,789,640 {MainCurrency}</TextValue>
+        <TextValue fontSize={'1rem'}>
+          <BaseCurrencyView type="id" value="250,740,789,640" />
+        </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
         <TextLabel>
           <Trans>Trading Volume</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}>28,275,865,529 {MainCurrency}</TextValue>
+        <TextValue fontSize={'1rem'}>
+          <BaseCurrencyView type="id" value="28,275,865,529" />
+        </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
         <TextLabel>
           <Trans>24h Low / 24h High</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}>1,817.05 {MainCurrency}</TextValue>
-        <TextValue fontSize={'1rem'}>2,279.35 {MainCurrency}</TextValue>
+        <TextValue fontSize={'1rem'}>
+          <BaseCurrencyView type="id" value="1,817.05" />
+        </TextValue>
+        <TextValue fontSize={'1rem'}>
+          <BaseCurrencyView type="id" value="2,279.35" />
+        </TextValue>
       </TextItemWrapper>
     </>
   )

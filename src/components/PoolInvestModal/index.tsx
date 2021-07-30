@@ -14,8 +14,8 @@ import { useCurrencyBalance } from 'state/wallet/hooks'
 import { useActiveWeb3React } from 'hooks/web3'
 import TokenPairInputPanel from 'components/pools/TokenPairInputPanel'
 import Modal from '../Modal'
-import { TYPE } from 'theme'
-import { MainCurrency } from 'utils'
+import { TYPE, BaseCurrencyView } from 'theme'
+
 import Slippage from 'components/swap/Slippage'
 import { PoolInvestPairValues } from 'state/pool/actions'
 import { useFakePoolValuesCalculator } from 'state/pool/hooks'
@@ -138,9 +138,11 @@ export default function PoolInvestModal() {
               {!sufficientBalance && hasInputAmount ? <Trans>Insufficient Balance</Trans> : ''}
             </TYPE.error>
             <TYPE.subHeader color="text6" textAlign="right" width="50%">
-              {`≈ ${
-                investmentValue ? shortenDecimalValues(investmentValue, TOKEN_VALUE_CURRENCY_FORMAT) : '0'
-              } ${MainCurrency}`}
+              {`≈ `}
+              <BaseCurrencyView
+                type="id"
+                value={investmentValue ? shortenDecimalValues(investmentValue, TOKEN_VALUE_CURRENCY_FORMAT) : '0'}
+              />
             </TYPE.subHeader>
           </RowBetween>
           <RowBetween marginTop="1rem">

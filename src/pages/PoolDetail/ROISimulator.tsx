@@ -3,8 +3,7 @@ import styled from 'styled-components/macro'
 import { Trans } from '@lingui/macro'
 
 import { RowBetween } from 'components/Row'
-import { TYPE } from 'theme'
-import { MainCurrency } from 'utils'
+import { TYPE, BaseCurrencyView } from 'theme'
 import { useFakePoolValuesCalculator } from 'state/pool/hooks'
 import { PoolInvestPairValues } from 'state/pool/actions'
 import { shortenDecimalValues } from 'utils'
@@ -63,9 +62,11 @@ export default function ROISimulator({ token0, token1 }: { token0: string; token
         token1={{ symbol: 'NII', address: '12345' }}
       />
       <TYPE.subHeader color="text6" textAlign="right" marginBottom="1rem">
-        {`≈ ${
-          investmentValue ? shortenDecimalValues(investmentValue, TOKEN_VALUE_CURRENCY_FORMAT) : '0'
-        } ${MainCurrency}`}
+        {'≈ '}
+        <BaseCurrencyView
+          type="id"
+          value={investmentValue ? shortenDecimalValues(investmentValue, TOKEN_VALUE_CURRENCY_FORMAT) : '0'}
+        />
       </TYPE.subHeader>
       <PeriodWrapper>
         <TYPE.body>
@@ -84,9 +85,11 @@ export default function ROISimulator({ token0, token1 }: { token0: string; token
         </TYPE.mediumHeader>
       </RowBetween>
       <TYPE.subHeader color="text6" textAlign="right">
-        {`≈ ${
-          roiValues.roiInUSD ? shortenDecimalValues(roiValues.roiInUSD, TOKEN_VALUE_CURRENCY_FORMAT) : '0'
-        } ${MainCurrency}`}
+        {'≈ '}
+        <BaseCurrencyView
+          type="id"
+          value={roiValues.roiInUSD ? shortenDecimalValues(roiValues.roiInUSD, TOKEN_VALUE_CURRENCY_FORMAT) : '0'}
+        />
       </TYPE.subHeader>
     </>
   )
