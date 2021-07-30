@@ -171,6 +171,10 @@ msgstr "<0>🎉 </0>チーム ユニコーンにようこそ <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "提案の提出には総供給量の1%以上のUNIが必要です。"
 
+#: src/constants/tokens.ts
+msgid "AUD"
+msgstr ""
+
 #: 
 #~ msgid "About"
 #~ msgstr "概要"
@@ -321,6 +325,10 @@ msgstr "本当によろしいですか？"
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
 #~ msgstr "少なくとも {0} の {1} と {2} の {3} は選択された価格範囲のため、ウォレットに返金されます。"
 
+#: src/constants/tokens.ts
+msgid "Australian Dollar"
+msgstr ""
+
 #: src/components/TransactionSettings/index.tsx
 msgid "Auto"
 msgstr "自動"
@@ -332,6 +340,14 @@ msgstr ""
 #: src/components/earn/StakingModal.tsx
 msgid "Available to deposit: {0}"
 msgstr "預入れ可能： {0}"
+
+#: src/constants/tokens.ts
+msgid "BRL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "BTC"
+msgstr ""
 
 #: 
 #~ msgid "Back"
@@ -365,9 +381,17 @@ msgstr ""
 #~ msgid "Best for stable pairs."
 #~ msgstr "変動のないペアに最適"
 
+#: src/constants/tokens.ts
+msgid "Bitcoin"
+msgstr ""
+
 #: src/components/Blocklist/index.tsx
 msgid "Blocked address"
 msgstr "ブロックされたアドレス"
+
+#: src/constants/tokens.ts
+msgid "Brazilian Real"
+msgstr ""
 
 #: src/components/PositionCard/index.tsx
 msgid "By adding liquidity you'll earn 0.3% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
@@ -385,8 +409,24 @@ msgstr ""
 #~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
 #~ msgstr "ウォレットを接続することにより、Uniswap Labsの <0>サービス利用規約</0>に同意し、Uniswapプロトコルの<1>免責事項</1>を読み、理解したことに同意します。"
 
+#: src/constants/tokens.ts
+msgid "CAD"
+msgstr ""
+
 #: src/components/AccountDetails/index.tsx
 msgid "CANCEL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CHF"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CNY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Canadian Dollar"
 msgstr ""
 
 #: 
@@ -400,6 +440,10 @@ msgstr "チャート"
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
 msgstr "V3の流動性と移行ガイドをご覧ください。"
+
+#: src/constants/tokens.ts
+msgid "Chinese Yuan"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -529,6 +573,7 @@ msgstr "スワップの確認"
 msgid "Confirm this transaction in your wallet"
 msgstr "ウォレットで取引を確認する"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
@@ -726,6 +771,10 @@ msgstr "注文を取り下げる"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "V2の流動性が表示されない場合、該当のトークンを<0>インポート</0>してください"
 
+#: src/constants/tokens.ts
+msgid "ETH"
+msgstr ""
+
 #: src/components/LineChart/swap.tsx
 msgid "ETH-ANY Pair Stats (Dummy data)"
 msgstr ""
@@ -733,6 +782,10 @@ msgstr ""
 #: 
 #~ msgid "ETH-NII Transactions"
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "EUR"
+msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -795,6 +848,14 @@ msgstr "リストのインポートエラー"
 msgid "Est. ROI"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "Ethereum"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "European Union Euro"
+msgstr ""
+
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
 msgstr "あなたが利用していないトークンリストからの検索結果"
@@ -846,9 +907,17 @@ msgstr "売るトークン"
 msgid "From (at most)"
 msgstr "（最大）売るトークン"
 
+#: src/constants/tokens.ts
+msgid "GBP"
+msgstr ""
+
 #: src/components/ErrorBoundary/index.tsx
 msgid "Get support on Discord"
 msgstr "Discordでサポートを受ける"
+
+#: src/constants/tokens.ts
+msgid "HKD"
+msgstr ""
 
 #: 
 #~ msgid "Hide closed positions"
@@ -858,9 +927,17 @@ msgstr "Discordでサポートを受ける"
 msgid "High Price Impact"
 msgstr "価格への影響"
 
+#: src/constants/tokens.ts
+msgid "Hong Kong Dollar"
+msgstr ""
+
 #: src/components/SearchModal/ImportList.tsx
 msgid "I understand"
 msgstr "了解しました"
+
+#: src/constants/tokens.ts
+msgid "INR"
+msgstr ""
 
 #: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
@@ -900,6 +977,10 @@ msgstr "範囲内"
 #: 
 #~ msgid "Increase Liquidity"
 #~ msgstr "流動性を追加"
+
+#: src/constants/tokens.ts
+msgid "Indian Rupees"
+msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
@@ -967,6 +1048,18 @@ msgstr "受け取りアドレスが無効です"
 msgid "Invest"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "JPY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Japanese Yen"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "KRW"
+msgstr ""
+
 #: 
 #~ msgid "Learn"
 #~ msgstr "資料"
@@ -1009,6 +1102,10 @@ msgstr "読み込まれました"
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "読み込み中"
+
+#: src/constants/tokens.ts
+msgid "MXN"
+msgstr ""
 
 #: src/components/Header/URLWarning.tsx
 msgid "Make sure the URL is<0>app.uniswap.org</0>"
@@ -1068,6 +1165,10 @@ msgstr ""
 msgid "Maximum sent"
 msgstr "最大売却数量"
 
+#: src/constants/tokens.ts
+msgid "Mexican Peso"
+msgstr ""
+
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
@@ -1119,6 +1220,10 @@ msgstr "最小購入数量"
 #~ msgid "More"
 #~ msgstr "もっと見る"
 
+#: src/constants/tokens.ts
+msgid "NOK"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Name"
 msgstr ""
@@ -1159,6 +1264,10 @@ msgstr "提案が見つかりません。"
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
 msgstr "結果が見つかりませんでした。"
+
+#: src/constants/tokens.ts
+msgid "Norwegian Krone"
+msgstr ""
 
 #: src/components/Toggle/ListToggle.tsx
 msgid "OFF"
@@ -1349,6 +1458,10 @@ msgstr ""
 msgid "ROI Simulator"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "RUB"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "価格"
@@ -1428,6 +1541,18 @@ msgstr "戻る"
 msgid "Route"
 msgstr "取引ルート"
 
+#: src/constants/tokens.ts
+msgid "Russian Ruble"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SEK"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SGD"
+msgstr ""
+
 #: src/components/Table/SearchableTable.tsx
 #: src/pages/Pool/index.tsx
 msgid "Search"
@@ -1505,6 +1630,10 @@ msgstr "プールのシェア:"
 msgid "Simple"
 msgstr "シンプル"
 
+#: src/constants/tokens.ts
+msgid "Singapore Dollar"
+msgstr ""
+
 #: src/components/swap/Slippage.tsx
 #: src/components/swap/Slippage.tsx
 msgid "Slippage Tolerance"
@@ -1522,6 +1651,10 @@ msgstr "一部のトークンは、スマートコントラクトでうまく動
 #: src/components/ErrorBoundary/index.tsx
 msgid "Something went wrong"
 msgstr "何らかの問題が発生しました"
+
+#: src/constants/tokens.ts
+msgid "South Korean Won"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Step 1. Get UNI-V2 Liquidity tokens"
@@ -1560,6 +1693,18 @@ msgstr "{0} {1} を {2} {3} にスワップ中"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Swaps"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Swedish Krona"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Swiss Franc"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "TRY"
 msgstr ""
 
 #: src/components/LineChart/overview.tsx
@@ -1739,6 +1884,10 @@ msgstr ""
 msgid "Try Again"
 msgstr "もう一度試す"
 
+#: src/constants/tokens.ts
+msgid "Turkish Lira"
+msgstr ""
+
 #: src/components/Settings/index.tsx
 msgid "Turn On Expert Mode"
 msgstr "エキスパートモードをオンにする"
@@ -1771,10 +1920,13 @@ msgstr "UNI-V2 LP トークンが必要です。 {0}-{1} プールに流動性�
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: src/components/Dropdowns/CurrencyDropdown.tsx
-#: src/components/Dropdowns/CurrencyDropdown.tsx
-msgid "USD"
+#: src/constants/tokens.ts
+msgid "US$"
 msgstr ""
+
+#: 
+#~ msgid "USD"
+#~ msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -1808,6 +1960,14 @@ msgstr "Uniswap流動性マイニング"
 #: 
 #~ msgid "Uniswap migration contract↗"
 #~ msgstr "こちら↗"
+
+#: src/constants/tokens.ts
+msgid "United Kingdom Pound"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "United State Dollar"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "Unknown Source"

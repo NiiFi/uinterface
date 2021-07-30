@@ -171,6 +171,10 @@ msgstr "<0>🎉 </0>欢迎加入Unicorn（独角兽）团队 :) <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "提交提案的最低门槛为 UNI 代币总供应量的1％。"
 
+#: src/constants/tokens.ts
+msgid "AUD"
+msgstr ""
+
 #: 
 #~ msgid "About"
 #~ msgstr "关于"
@@ -321,6 +325,10 @@ msgstr "您确定吗？"
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
 #~ msgstr "根据选定的兑换率范围，至少会有 {0} {1} 和 {2} {3} 将退还到您的钱包。"
 
+#: src/constants/tokens.ts
+msgid "Australian Dollar"
+msgstr ""
+
 #: src/components/TransactionSettings/index.tsx
 msgid "Auto"
 msgstr "自动"
@@ -332,6 +340,14 @@ msgstr ""
 #: src/components/earn/StakingModal.tsx
 msgid "Available to deposit: {0}"
 msgstr "可调用的数额：{0}"
+
+#: src/constants/tokens.ts
+msgid "BRL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "BTC"
+msgstr ""
 
 #: 
 #~ msgid "Back"
@@ -365,9 +381,17 @@ msgstr ""
 #~ msgid "Best for stable pairs."
 #~ msgstr "较适合稳定代币币对。"
 
+#: src/constants/tokens.ts
+msgid "Bitcoin"
+msgstr ""
+
 #: src/components/Blocklist/index.tsx
 msgid "Blocked address"
 msgstr "已屏蔽地址"
+
+#: src/constants/tokens.ts
+msgid "Brazilian Real"
+msgstr ""
 
 #: src/components/PositionCard/index.tsx
 msgid "By adding liquidity you'll earn 0.3% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
@@ -385,8 +409,24 @@ msgstr ""
 #~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
 #~ msgstr "通过连接钱包，您同意接受 Uniswap 实验室的<0>服务条款</0>，并确认您已阅读和理解<1>Uniswap协议免责声明</1>。"
 
+#: src/constants/tokens.ts
+msgid "CAD"
+msgstr ""
+
 #: src/components/AccountDetails/index.tsx
 msgid "CANCEL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CHF"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CNY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Canadian Dollar"
 msgstr ""
 
 #: 
@@ -400,6 +440,10 @@ msgstr "图表"
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
 msgstr "查看我们的 v3 流动池介绍和迁移指南。"
+
+#: src/constants/tokens.ts
+msgid "Chinese Yuan"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -529,6 +573,7 @@ msgstr "确认兑换"
 msgid "Confirm this transaction in your wallet"
 msgstr "在您的钱包中确认这笔交易"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/AddLiquidity/index.tsx
@@ -726,6 +771,10 @@ msgstr "关闭"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "看不到您的一些 v2 流动资金吗？<0>将它手动导入。</0>"
 
+#: src/constants/tokens.ts
+msgid "ETH"
+msgstr ""
+
 #: src/components/LineChart/swap.tsx
 msgid "ETH-ANY Pair Stats (Dummy data)"
 msgstr ""
@@ -733,6 +782,10 @@ msgstr ""
 #: 
 #~ msgid "ETH-NII Transactions"
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "EUR"
+msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -795,6 +848,14 @@ msgstr "导入列表出错"
 msgid "Est. ROI"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "Ethereum"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "European Union Euro"
+msgstr ""
+
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
 msgstr "从待用代币列表中扩展出的结果"
@@ -846,9 +907,17 @@ msgstr "源自"
 msgid "From (at most)"
 msgstr "来源 (最多为)"
 
+#: src/constants/tokens.ts
+msgid "GBP"
+msgstr ""
+
 #: src/components/ErrorBoundary/index.tsx
 msgid "Get support on Discord"
 msgstr "在 Discord 上寻求技术支持"
+
+#: src/constants/tokens.ts
+msgid "HKD"
+msgstr ""
 
 #: 
 #~ msgid "Hide closed positions"
@@ -858,9 +927,17 @@ msgstr "在 Discord 上寻求技术支持"
 msgid "High Price Impact"
 msgstr "对兑换率有高度影响"
 
+#: src/constants/tokens.ts
+msgid "Hong Kong Dollar"
+msgstr ""
+
 #: src/components/SearchModal/ImportList.tsx
 msgid "I understand"
 msgstr "我已知悉"
+
+#: src/constants/tokens.ts
+msgid "INR"
+msgstr ""
 
 #: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
@@ -900,6 +977,10 @@ msgstr "在范围内"
 #: 
 #~ msgid "Increase Liquidity"
 #~ msgstr "增加流动资金"
+
+#: src/constants/tokens.ts
+msgid "Indian Rupees"
+msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
@@ -967,6 +1048,18 @@ msgstr "无效的接收方"
 msgid "Invest"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "JPY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Japanese Yen"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "KRW"
+msgstr ""
+
 #: 
 #~ msgid "Learn"
 #~ msgstr "学习"
@@ -1009,6 +1102,10 @@ msgstr "已加载"
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "正在加载"
+
+#: src/constants/tokens.ts
+msgid "MXN"
+msgstr ""
 
 #: src/components/Header/URLWarning.tsx
 msgid "Make sure the URL is<0>app.uniswap.org</0>"
@@ -1068,6 +1165,10 @@ msgstr ""
 msgid "Maximum sent"
 msgstr "发送的最大值"
 
+#: src/constants/tokens.ts
+msgid "Mexican Peso"
+msgstr ""
+
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
@@ -1119,6 +1220,10 @@ msgstr "收到的最低数额"
 #~ msgid "More"
 #~ msgstr "更多"
 
+#: src/constants/tokens.ts
+msgid "NOK"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Name"
 msgstr ""
@@ -1159,6 +1264,10 @@ msgstr "未找到提案。"
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
 msgstr "未找到任何结果。"
+
+#: src/constants/tokens.ts
+msgid "Norwegian Krone"
+msgstr ""
 
 #: src/components/Toggle/ListToggle.tsx
 msgid "OFF"
@@ -1349,6 +1458,10 @@ msgstr ""
 msgid "ROI Simulator"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "RUB"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "费率"
@@ -1428,6 +1541,18 @@ msgstr "返回"
 msgid "Route"
 msgstr "途径"
 
+#: src/constants/tokens.ts
+msgid "Russian Ruble"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SEK"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SGD"
+msgstr ""
+
 #: src/components/Table/SearchableTable.tsx
 #: src/pages/Pool/index.tsx
 msgid "Search"
@@ -1505,6 +1630,10 @@ msgstr "流动池份额："
 msgid "Simple"
 msgstr "简单型"
 
+#: src/constants/tokens.ts
+msgid "Singapore Dollar"
+msgstr ""
+
 #: src/components/swap/Slippage.tsx
 #: src/components/swap/Slippage.tsx
 msgid "Slippage Tolerance"
@@ -1522,6 +1651,10 @@ msgstr "有些代币无法通过此界面使用，因为它们可能无法很好
 #: src/components/ErrorBoundary/index.tsx
 msgid "Something went wrong"
 msgstr "出问题了"
+
+#: src/constants/tokens.ts
+msgid "South Korean Won"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Step 1. Get UNI-V2 Liquidity tokens"
@@ -1560,6 +1693,18 @@ msgstr "将 {0} {1} 兑换为 {2} {3}"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Swaps"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Swedish Krona"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Swiss Franc"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "TRY"
 msgstr ""
 
 #: src/components/LineChart/overview.tsx
@@ -1739,6 +1884,10 @@ msgstr ""
 msgid "Try Again"
 msgstr "再试一次"
 
+#: src/constants/tokens.ts
+msgid "Turkish Lira"
+msgstr ""
+
 #: src/components/Settings/index.tsx
 msgid "Turn On Expert Mode"
 msgstr "开启专家模式"
@@ -1771,10 +1920,13 @@ msgstr "需要 UNI-V2 流动池代币。一旦您已注入流动资金到 {0}-{1
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: src/components/Dropdowns/CurrencyDropdown.tsx
-#: src/components/Dropdowns/CurrencyDropdown.tsx
-msgid "USD"
+#: src/constants/tokens.ts
+msgid "US$"
 msgstr ""
+
+#: 
+#~ msgid "USD"
+#~ msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -1808,6 +1960,14 @@ msgstr "Uniswap 流动资金挖矿："
 #: 
 #~ msgid "Uniswap migration contract↗"
 #~ msgstr "Uniswap 迁移合约↗"
+
+#: src/constants/tokens.ts
+msgid "United Kingdom Pound"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "United State Dollar"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "Unknown Source"
