@@ -19,7 +19,6 @@ export enum ApplicationModal {
   VOTE,
   POOL_OVERVIEW_OPTIONS,
   MANAGE_WALLET_LIST,
-  POOL_INVEST,
   CREATE_POOL,
 }
 
