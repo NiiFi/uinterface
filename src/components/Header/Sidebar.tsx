@@ -186,7 +186,7 @@ const activeClassName = 'ACTIVE'
 
 const StyledNavLink = styled(NavLink).attrs({
   activeClassName,
-})<{ disable?: boolean }>`
+})<{ disable?: number }>`
   ${({ theme }) => theme.flexRowNoWrap}
   outline: none;
   cursor: ${({ disable }) => (disable ? 'not-allowed' : 'pointer')};
@@ -328,7 +328,7 @@ export default function Header() {
           <WalletPopover />
           <HeaderLinks>
             {SidebarLinks.map(({ Icon, link, id, title, disable }, index) => (
-              <StyledNavLink id={`${id}-nav-link`} disable={disable} to={link} key={index}>
+              <StyledNavLink id={`${id}-nav-link`} disable={+disable} to={link} key={index}>
                 <Icon />
                 <Trans>{title}</Trans>
               </StyledNavLink>

@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
+import { DefaultTheme } from 'styled-components'
 import useTheme from 'hooks/useTheme'
 import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 import TableToolBar from './TableToolbar'
@@ -34,7 +35,12 @@ interface EnhancedTableProps {
   onClick?: (props: any) => unknown
   data: Array<TableDataTypes>
   headCells: HeadCell[]
-  row: (row: any, index: number, handleClick: (event: React.MouseEvent<unknown>, name: string) => void) => unknown
+  row: (
+    row: any,
+    index: number,
+    theme: DefaultTheme,
+    handleClick: (event: React.MouseEvent<unknown>, name: string) => void
+  ) => unknown
   headCellsBefore?: (props: any) => unknown
   renderToolbar?: (props: RenderToolBarProps) => any
   showDisclaimer?: boolean
@@ -139,6 +145,7 @@ const useStyles = makeStyles(() =>
 
 export default function EnhancedTable(props: EnhancedTableProps) {
   const { renderToolbar } = props
+  const theme = useTheme()
   const classes = useStyles()
   const [tableData, setTableData] = React.useState<Array<TableDataTypes>>([])
   const [transactionType, setTransactionType] = React.useState<TransactionTypes>('All')
@@ -242,7 +249,7 @@ export default function EnhancedTable(props: EnhancedTableProps) {
               )
                 .filter((row) => (transactionType === 'All' ? true : transactionType === row.__typename))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row, index) => props.row(row, index, handleClick))}
+                .map((row, index) => props.row(row, index, theme, handleClick))}
           </TableBody>
         </Table>
       </TableContainer>

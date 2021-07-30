@@ -6,6 +6,7 @@ import { t, Trans } from '@lingui/macro'
 
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
+import { DefaultTheme } from 'styled-components'
 import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
@@ -19,6 +20,7 @@ import { usePoolInvestModalToggle } from 'state/application/hooks'
 import PoolInvestModal from 'components/PoolInvestModal'
 import { ArrowLeft, ArrowRight } from 'react-feather'
 import { Wrapper as DefaultToolBarWrapper, PagerWrapper as DefaultToolBarPagerWrapper } from './TableToolbar'
+import { History, LocationState } from 'history'
 
 const LoaderWrapper = styled.div`
   padding: 5rem;
@@ -28,10 +30,14 @@ const LoaderWrapper = styled.div`
   height: calc(100vh - 10rem);
 `
 
-const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHandler<HTMLButtonElement>) => {
-  const theme = useTheme()
+const CustomTableRow = (
+  row: any,
+  index: number,
+  handleClick: React.MouseEventHandler<HTMLButtonElement>,
+  history: History<LocationState>,
+  theme: DefaultTheme
+) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
-  const history = useHistory()
 
   const handleCellOnClick = () => {
     history.push('/pools/ETH/NII')
@@ -142,6 +148,8 @@ const PoolTableToolbar = ({
   )
 }
 export default function PoolsTable() {
+  const history = useHistory()
+  const theme = useTheme()
   const { state } = useLocation<any>() // FIXME: any
   const poolsData = useMemo(() => {
     return getPoolsData('new', 100)
@@ -206,9 +214,7 @@ export default function PoolsTable() {
             ...props,
           })
         }
-        row={(row: any, index: number) => {
-          return CustomTableRow(row, index, toggleInvestModal)
-        }}
+        row={(row: any, index: number) => CustomTableRow(row, index, toggleInvestModal, history, theme)}
         defaultOrder={order}
         defaultOrderBy={orderBy}
       />
