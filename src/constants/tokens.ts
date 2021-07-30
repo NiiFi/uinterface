@@ -1,7 +1,7 @@
 import { WETH9, Token, Ether } from '@uniswap/sdk-core'
 import { UNI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
-
+import { t } from '@lingui/macro'
 // export const AMPL = new Token(1, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
 // export const DAI = new Token(1, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'Dai Stablecoin')
 // export const USDC = new Token(1, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD//C')
@@ -58,7 +58,7 @@ export class ExtendedEther extends Ether {
 export const TOKEN_VALUE_CURRENCY_FORMAT = '0,0.00'
 
 export const SUPPORTED_BASE_CURRENCIES = [
-  'USD',
+  'US$',
   'EUR',
   'CNY',
   'INR',
@@ -81,89 +81,90 @@ export const SUPPORTED_BASE_CURRENCIES = [
 ] as const
 
 export type SupportedBaseCurrencies = typeof SUPPORTED_BASE_CURRENCIES[number]
+export const DEFAULT_BASE_CURRENCY: SupportedBaseCurrencies = 'US$'
 export type BaseCurrencyDetail = {
   label: string
   symbol: SupportedBaseCurrencies
 }
 export const SUPPORTED_BASE_CURRENCIES_MAP: { [currency in SupportedBaseCurrencies]: BaseCurrencyDetail } = {
-  USD: {
-    label: 'United State Dollar',
-    symbol: 'USD',
+  US$: {
+    label: t`United State Dollar`,
+    symbol: t`US$` as SupportedBaseCurrencies,
   },
   ETH: {
-    label: 'Ethereum',
-    symbol: 'ETH',
+    label: t`Ethereum`,
+    symbol: t`ETH` as SupportedBaseCurrencies,
   },
   CAD: {
-    label: 'Canadian Dollar',
-    symbol: 'CAD',
+    label: t`Canadian Dollar`,
+    symbol: t`CAD` as SupportedBaseCurrencies,
   },
   CHF: {
-    label: 'Swiss Franc',
-    symbol: 'CHF',
+    label: t`Swiss Franc`,
+    symbol: t`CHF` as SupportedBaseCurrencies,
   },
   INR: {
-    label: 'Indian Rupees',
-    symbol: 'INR',
+    label: t`Indian Rupees`,
+    symbol: t`INR` as SupportedBaseCurrencies,
   },
   HKD: {
-    label: 'Hong Kong Dollar',
-    symbol: 'HKD',
+    label: t`Hong Kong Dollar`,
+    symbol: t`HKD` as SupportedBaseCurrencies,
   },
   EUR: {
-    label: 'European Union Euro',
-    symbol: 'EUR',
+    label: t`European Union Euro`,
+    symbol: t`EUR` as SupportedBaseCurrencies,
   },
   BTC: {
-    label: 'Bitcoin',
-    symbol: 'BTC',
+    label: t`Bitcoin`,
+    symbol: t`BTC` as SupportedBaseCurrencies,
   },
   CNY: {
-    label: 'Chinese Yuan',
-    symbol: 'CNY',
+    label: t`Chinese Yuan`,
+    symbol: t`CNY` as SupportedBaseCurrencies,
   },
   GBP: {
-    label: 'United Kingdom Pound',
-    symbol: 'GBP',
+    label: t`United Kingdom Pound`,
+    symbol: t`GBP` as SupportedBaseCurrencies,
   },
   RUB: {
-    label: 'Russian Ruble',
-    symbol: 'RUB',
+    label: t`Russian Ruble`,
+    symbol: t`RUB` as SupportedBaseCurrencies,
   },
   MXN: {
-    label: 'Mexican Peso',
-    symbol: 'MXN',
+    label: t`Mexican Peso`,
+    symbol: t`MXN` as SupportedBaseCurrencies,
   },
   KRW: {
-    label: 'South Korean Won',
-    symbol: 'KRW',
+    label: t`South Korean Won`,
+    symbol: t`KRW` as SupportedBaseCurrencies,
   },
   TRY: {
-    label: 'Turkish Lira',
-    symbol: 'TRY',
+    label: t`Turkish Lira`,
+    symbol: t`TRY` as SupportedBaseCurrencies,
   },
   JPY: {
-    label: 'Japanese Yen',
-    symbol: 'JPY',
+    label: t`Japanese Yen`,
+    symbol: t`JPY` as SupportedBaseCurrencies,
   },
   BRL: {
-    label: 'Brazilian Real',
-    symbol: 'BRL',
+    label: t`Brazilian Real`,
+    symbol: t`BRL` as SupportedBaseCurrencies,
   },
   SEK: {
-    label: 'Swedish Krona',
-    symbol: 'SEK',
+    label: t`Swedish Krona`,
+    symbol: t`SEK` as SupportedBaseCurrencies,
   },
   AUD: {
-    label: 'Australian Dollar',
-    symbol: 'AUD',
+    label: t`Australian Dollar`,
+    symbol: t`AUD` as SupportedBaseCurrencies,
   },
   NOK: {
-    label: 'Norwegian Krone',
-    symbol: 'NOK',
+    label: t`Norwegian Krone`,
+    symbol: t`NOK` as SupportedBaseCurrencies,
   },
   SGD: {
-    label: 'Singapore Dollar',
-    symbol: 'SGD',
+    label: t`Singapore Dollar`,
+    symbol: t`SGD` as SupportedBaseCurrencies,
   },
 }

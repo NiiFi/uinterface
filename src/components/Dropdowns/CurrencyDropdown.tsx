@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { Trans } from '@lingui/macro'
 import { ChevronDown } from 'react-feather'
 
-import { SUPPORTED_BASE_CURRENCIES } from 'constants/tokens'
+import { useBaseCurrency } from 'state/user/hooks'
+import { SUPPORTED_BASE_CURRENCIES, SUPPORTED_BASE_CURRENCIES_MAP } from 'constants/tokens'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import useDropdownProps from './useDropdownProps'
 import { MenuButton } from './styled'
@@ -29,7 +29,7 @@ const MenuItem = styled.div<{ active?: boolean }>`
   cursor: pointer;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: ${({ theme, active }) => (active ? theme.bg5 : 'transprent')};
+  background-color: ${({ theme, active }) => (active ? theme.bg5 : 'transparent')};
   color: ${({ theme }) => theme.text1};
   &:hover {
     background-color: ${({ theme }) => theme.bg5};
@@ -39,17 +39,26 @@ const MenuItem = styled.div<{ active?: boolean }>`
 export default function CurrencyDropdown() {
   const theme = useTheme()
   const { open, handleClick, handleClose, elementRef } = useDropdownProps()
+  const { baseCurrency, baseCurrencyDetail, setBaseCurrency } = useBaseCurrency()
   return (
     <Wrapper>
       <MenuButton color={theme.text1} ref={elementRef} active={open} onClick={handleClick}>
-        <Trans>USD</Trans>
+        {baseCurrencyDetail.symbol}
         <ChevronDown />
       </MenuButton>
       <Menu anchorEl={elementRef.current} open={open} onClose={handleClose}>
         <MenuWrapper>
           {SUPPORTED_BASE_CURRENCIES.map((value, index) => (
-            <MenuItem key={index}>
-              <CurrencyAvatar symbol={value} />
+            <MenuItem
+              title={SUPPORTED_BASE_CURRENCIES_MAP[value].label}
+              active={baseCurrency === value}
+              key={index}
+              onClick={() => {
+                setBaseCurrency(value)
+                handleClose()
+              }}
+            >
+              <CurrencyAvatar containerStyle={{ border: 'none' }} symbol={value} />
             </MenuItem>
           ))}
         </MenuWrapper>
