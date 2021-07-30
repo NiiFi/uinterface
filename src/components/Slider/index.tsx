@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components/macro'
 
-const StyledRangeInput = styled.input<{ size: number }>`
+const StyledRangeInput = styled.input<{ size: number; value: number }>`
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   width: 100%; /* Specific width is required for Firefox. */
   background: transparent; /* Otherwise white in Chrome */
@@ -62,7 +62,13 @@ const StyledRangeInput = styled.input<{ size: number }>`
   }
 
   &::-webkit-slider-runnable-track {
-    background: linear-gradient(90deg, ${({ theme }) => theme.primary1}, ${({ theme }) => theme.bg3});
+    background: linear-gradient(
+      to right,
+      ${({ theme }) => theme.primary1} 0%,
+      ${({ theme }) => theme.primary1} ${({ value }) => value}%,
+      ${({ theme }) => theme.bg3} ${({ value }) => value}%,
+      ${({ theme }) => theme.bg3} 100%
+    );
     height: 1px;
   }
 
@@ -102,7 +108,7 @@ interface InputSliderProps {
 }
 
 export default function Slider({
-  value,
+  value = 0,
   onChange,
   min = 0,
   step = 1,

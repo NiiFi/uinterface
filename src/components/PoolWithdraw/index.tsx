@@ -47,6 +47,7 @@ export default function PoolWithdraw() {
   const [token0Amount, setToken0Amount] = useState('')
   const [investmentValue, setInvestmentValue] = useState('')
   const [withdrawValue, setWithdrawValue] = useState(50)
+  const [sliderValue, setSliderValue] = useState(10)
   const { calculateTotalInvestmentInUSD } = useFakePoolValuesCalculator()
   const inputCurrency = useCurrency('ETH')
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency ?? undefined)
@@ -65,7 +66,10 @@ export default function PoolWithdraw() {
   const hasInputAmount = Boolean(inputAmount?.greaterThan('0'))
   const sufficientBalance = inputAmount && balance && !balance.lessThan(inputAmount)
 
-  const SliderChangeHandler: any = (e: any) => setWithdrawValue(e)
+  const SliderChangeHandler: any = (e: any) => {
+    setWithdrawValue(e)
+    setSliderValue(e)
+  }
 
   const theme = useTheme()
 
@@ -89,7 +93,7 @@ export default function PoolWithdraw() {
         </RowBetween>
         <RowBetween marginTop="1rem">{withdrawValue} %</RowBetween>
         <RowBetween>
-          <Slider size={20} onChange={SliderChangeHandler} />
+          <Slider size={20} value={sliderValue} onChange={SliderChangeHandler} />
         </RowBetween>
         <AutoColumn style={{ paddingTop: '1rem' }}>
           <TokenPairInputPanel
