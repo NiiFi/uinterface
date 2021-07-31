@@ -7,6 +7,7 @@ import {
   ApplicationModal,
   setOpenModal,
   showDrawer,
+  setEthereumToBaseCurrencyRateApiState,
 } from './actions'
 
 type PopupList = Array<{ key: string; show: boolean; content: PopupContent; removeAfterMs: number | null }>
@@ -16,6 +17,10 @@ export interface ApplicationState {
   readonly popupList: PopupList
   readonly openModal: ApplicationModal | null
   readonly showDrawer: boolean
+  readonly ethereumToBaseCurrencyRateApiState: {
+    error: any
+    loading: boolean
+  }
 }
 
 const initialState: ApplicationState = {
@@ -23,6 +28,10 @@ const initialState: ApplicationState = {
   popupList: [],
   openModal: null,
   showDrawer: false,
+  ethereumToBaseCurrencyRateApiState: {
+    error: null,
+    loading: false,
+  },
 }
 
 export default createReducer(initialState, (builder) =>
@@ -57,5 +66,9 @@ export default createReducer(initialState, (builder) =>
           p.show = false
         }
       })
+    })
+    .addCase(setEthereumToBaseCurrencyRateApiState, (state, { payload: { error, loading } }) => {
+      state.ethereumToBaseCurrencyRateApiState.error = error
+      state.ethereumToBaseCurrencyRateApiState.loading = loading
     })
 )

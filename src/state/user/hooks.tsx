@@ -406,3 +406,12 @@ export function useBaseCurrency(): {
   )
   return { baseCurrency, baseCurrencyDetail, setBaseCurrency }
 }
+
+export function useEthereumToBaseCurrencyRatesAndApiState() {
+  const {
+    application: { ethereumToBaseCurrencyRateApiState },
+    user: { ethereumToBaseCurrencyRates },
+  } = useAppSelector((state: AppState) => state)
+
+  return { ethereumToBaseCurrencyRateApiState, ethereumToBaseCurrencyRates: ethereumToBaseCurrencyRates || {} }
+}

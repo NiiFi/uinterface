@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
 import { darken } from 'polished'
 import { ArrowLeft, X, ExternalLink as LinkIconFeather, Trash } from 'react-feather'
-import { useBaseCurrency } from 'state/user/hooks'
+import { useBaseCurrency, useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
 import { BaseCurrencyDetail } from 'constants/tokens'
+import Loader from 'components/Loader'
 
 export const ButtonText = styled.button`
   outline: none;
@@ -335,6 +336,13 @@ export const BaseCurrencyView = ({
   format?: (detail: BaseCurrencyDetail, value: string) => string
 }) => {
   const { baseCurrencyDetail } = useBaseCurrency()
+  const {
+    ethereumToBaseCurrencyRates: rates,
+    ethereumToBaseCurrencyRateApiState: { loading },
+  } = useEthereumToBaseCurrencyRatesAndApiState()
+  if (!rates && loading) {
+    return <Loader />
+  }
   if (format) {
     return <span title={baseCurrencyDetail.label}>{format(baseCurrencyDetail, value)}</span>
   }

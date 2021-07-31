@@ -189,3 +189,12 @@ export const SUPPORTED_BASE_CURRENCIES_MAP: { [currency in SupportedBaseCurrenci
     symbol: 'S$',
   },
 }
+
+export const BASE_CURRENCY_RATES_URL = `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=${SUPPORTED_BASE_CURRENCIES.join(
+  ','
+)}`
+export type BASE_CURRENCY_RATES_RESPONSE = {
+  ethereum: {
+    [key: string]: number
+  }
+}

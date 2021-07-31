@@ -24,6 +24,7 @@ import {
   setRecentConnectedWallet,
   UserWallets,
   setBaseCurrency,
+  setEthereumToBaseCurrencyRates,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
 
@@ -73,6 +74,9 @@ export interface UserState {
   timestamp: number
   URLWarningVisible: boolean
   readonly baseCurrency: SupportedBaseCurrencies
+  ethereumToBaseCurrencyRates: {
+    [key: string]: number
+  } | null
 }
 
 function pairKey(token0Address: string, token1Address: string) {
@@ -96,6 +100,7 @@ export const initialState: UserState = {
   timestamp: currentTimestamp(),
   URLWarningVisible: true,
   baseCurrency: DEFAULT_BASE_CURRENCY,
+  ethereumToBaseCurrencyRates: null,
 }
 
 export default createReducer(initialState, (builder) =>
@@ -228,5 +233,8 @@ export default createReducer(initialState, (builder) =>
     })
     .addCase(setBaseCurrency, (state, { payload }) => {
       state.baseCurrency = payload
+    })
+    .addCase(setEthereumToBaseCurrencyRates, (state, { payload }) => {
+      state.ethereumToBaseCurrencyRates = payload
     })
 )

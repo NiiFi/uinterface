@@ -45,4 +45,7 @@ export const saveNewWallet =
 export const updateWallet = createAction<{ address: string; name: string }>('user/updateWallet')
 export const removeWallet = createAction<{ address: string }>('user/removeWallet')
 export const setRecentConnectedWallet = createAction<{ address: string }>('user/setRecentConnectWallet')
-export const setBaseCurrency = createAction<SupportedBaseCurrencies>('application/setBaseCurrency')
+export const setBaseCurrency = createAction<SupportedBaseCurrencies>('user/setBaseCurrency')
+export const setEthereumToBaseCurrencyRates = createAction<{ [key: string]: number }>(
+  'user/setEthereumToBaseCurrencyRates'
+)
