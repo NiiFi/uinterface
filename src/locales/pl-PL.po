@@ -277,9 +277,14 @@ msgstr "Zawsze upewnij się, że adres URL jest <0>app.uniswap.org</0> - zakład
 #~ msgid "Amount"
 #~ msgstr "Kwota"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Amount to Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Amount to Withdraw"
 msgstr ""
 
 #: 
@@ -353,6 +358,7 @@ msgstr ""
 #~ msgid "Back"
 #~ msgstr "Powrót"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "Balance"
 msgstr ""
@@ -575,7 +581,9 @@ msgstr "Potwierdź tę transakcję w swoim portfelu"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -939,6 +947,7 @@ msgstr "Rozumiem"
 msgid "INR"
 msgstr ""
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
 msgstr ""
@@ -999,7 +1008,9 @@ msgstr "Dane wejściowe są szacowane. Sprzedawasz najwyżej <0>{0} {1}</0> lub 
 msgid "Install Metamask"
 msgstr "Zainstaluj Metamask"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
 
@@ -1045,7 +1056,12 @@ msgstr "Nieprawidłowy odbiorca"
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Invested"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -1332,8 +1348,12 @@ msgstr ""
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
+#: 
+#~ msgid "Pair Stats"
+#~ msgstr ""
+
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair Stats (Dummy data)"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
@@ -1920,13 +1940,13 @@ msgstr "Żetony UNI-V2 LP są wymagane. Po dodaniu płynności do puli {0}-{1} m
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: src/constants/tokens.ts
-msgid "US$"
-msgstr ""
-
 #: 
-#~ msgid "USD"
+#~ msgid "US$"
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "USD"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -2102,6 +2122,10 @@ msgstr "Głosowanie zakończyło się {0}"
 msgid "Voting ends approximately {0}"
 msgstr "Głosowanie kończy się około {0}"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "WITHDRAW"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "Oczekiwanie na potwierdzenie"
@@ -2137,6 +2161,7 @@ msgstr "Kiedy wypłacisz Twoje konto UNI jest odebrane i twoja płynność jest 
 
 #: src/components/earn/UnstakingModal.tsx
 #: src/pages/Earn/Manage.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Wycofaj"
 

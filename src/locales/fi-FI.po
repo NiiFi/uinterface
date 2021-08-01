@@ -277,9 +277,14 @@ msgstr "Varmista aina, että URL-osoite on <0>app.uniswap.org</0> - kirjanmerkki
 #~ msgid "Amount"
 #~ msgstr "Määrä"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Amount to Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Amount to Withdraw"
 msgstr ""
 
 #: 
@@ -353,6 +358,7 @@ msgstr ""
 #~ msgid "Back"
 #~ msgstr "Takaisin"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "Balance"
 msgstr ""
@@ -575,7 +581,9 @@ msgstr "Vahvista tapahtuma lompakossasi"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -939,6 +947,7 @@ msgstr "Minä ymmärrän"
 msgid "INR"
 msgstr ""
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
 msgstr ""
@@ -999,7 +1008,9 @@ msgstr "Syöte on arvioitu. Myyt korkeintaan <0>{0} {1}</0> tai tapahtuma peruta
 msgid "Install Metamask"
 msgstr "Asenna Metamaski"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
 
@@ -1045,7 +1056,12 @@ msgstr "Virheellinen vastaanottaja"
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Invested"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -1332,8 +1348,12 @@ msgstr ""
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
+#: 
+#~ msgid "Pair Stats"
+#~ msgstr ""
+
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair Stats (Dummy data)"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
@@ -1920,13 +1940,13 @@ msgstr "UNI-V2 LP poletteja tarvitaan. Kun olet lisännyt likviditeettiä {0}-{1
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: src/constants/tokens.ts
-msgid "US$"
-msgstr ""
-
 #: 
-#~ msgid "USD"
+#~ msgid "US$"
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "USD"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -2102,6 +2122,10 @@ msgstr "Äänestys päättynyt {0}"
 msgid "Voting ends approximately {0}"
 msgstr "Äänestys päättyy noin {0}"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "WITHDRAW"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "Odotetaan Vahvistusta"
@@ -2137,6 +2161,7 @@ msgstr "Kun vetäydytte pois, UNI väitetään ja maksuvalmiutenne on poistettu 
 
 #: src/components/earn/UnstakingModal.tsx
 #: src/pages/Earn/Manage.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Peruuta"
 

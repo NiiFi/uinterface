@@ -277,9 +277,14 @@ msgstr "URLが<0> app.uniswap.org</0>であることを常に確認してくだ�
 #~ msgid "Amount"
 #~ msgstr "数量"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Amount to Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Amount to Withdraw"
 msgstr ""
 
 #: 
@@ -353,6 +358,7 @@ msgstr ""
 #~ msgid "Back"
 #~ msgstr "戻る"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "Balance"
 msgstr ""
@@ -575,7 +581,9 @@ msgstr "ウォレットで取引を確認する"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -939,6 +947,7 @@ msgstr "了解しました"
 msgid "INR"
 msgstr ""
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
 msgstr ""
@@ -999,7 +1008,9 @@ msgstr "上記は概算です。最大で<0>{0} {1}</0>を売れなければ、�
 msgid "Install Metamask"
 msgstr "メタマスクのインストール"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
 
@@ -1045,7 +1056,12 @@ msgstr "受け取りアドレスが無効です"
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Invested"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -1332,8 +1348,12 @@ msgstr ""
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
+#: 
+#~ msgid "Pair Stats"
+#~ msgstr ""
+
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair Stats (Dummy data)"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
@@ -1920,13 +1940,13 @@ msgstr "UNI-V2 LP トークンが必要です。 {0}-{1} プールに流動性�
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: src/constants/tokens.ts
-msgid "US$"
-msgstr ""
-
 #: 
-#~ msgid "USD"
+#~ msgid "US$"
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "USD"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -2102,6 +2122,10 @@ msgstr "投票は終了しました {0}"
 msgid "Voting ends approximately {0}"
 msgstr "投票は {0} 頃に終了します"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "WITHDRAW"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "確認待ち"
@@ -2137,6 +2161,7 @@ msgstr "引き出すと、UNIが請求され、流動性はマイニングプー
 
 #: src/components/earn/UnstakingModal.tsx
 #: src/pages/Earn/Manage.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "引き出す"
 

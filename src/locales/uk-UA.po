@@ -277,9 +277,14 @@ msgstr "Завжди переконайтеся, що URL для<0>app.uniswap.o
 #~ msgid "Amount"
 #~ msgstr "Сума"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Amount to Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Amount to Withdraw"
 msgstr ""
 
 #: 
@@ -353,6 +358,7 @@ msgstr ""
 #~ msgid "Back"
 #~ msgstr "Відмінити"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "Balance"
 msgstr ""
@@ -575,7 +581,9 @@ msgstr "Підтвердіть транзакцію у вашому гаманц
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -939,6 +947,7 @@ msgstr "Я розумію"
 msgid "INR"
 msgstr ""
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
 msgstr ""
@@ -999,7 +1008,9 @@ msgstr "Дане число оцінено. Ви продаєте не біль�
 msgid "Install Metamask"
 msgstr "Встановити Metamask"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
 
@@ -1045,7 +1056,12 @@ msgstr "Недійсний одержувач"
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Invested"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -1332,8 +1348,12 @@ msgstr ""
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
+#: 
+#~ msgid "Pair Stats"
+#~ msgstr ""
+
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair Stats (Dummy data)"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
@@ -1920,13 +1940,13 @@ msgstr "Необхідні PRO-токени UNI-V2. Після того, як в
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: src/constants/tokens.ts
-msgid "US$"
-msgstr ""
-
 #: 
-#~ msgid "USD"
+#~ msgid "US$"
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "USD"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -2102,6 +2122,10 @@ msgstr "Голосування закінчилось {0}"
 msgid "Voting ends approximately {0}"
 msgstr "Голосування закінчується приблизно {0}"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "WITHDRAW"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "Очікується підтвердження"
@@ -2137,6 +2161,7 @@ msgstr "Коли ви знімаєте, ваш UNI заявляє, і ваша �
 
 #: src/components/earn/UnstakingModal.tsx
 #: src/pages/Earn/Manage.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Зняття коштів"
 

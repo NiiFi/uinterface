@@ -278,9 +278,14 @@ msgstr "Assegureu-vos sempre que l'URL sigui <0> app.uniswap.org</0> - Afegiu-lo
 #~ msgid "Amount"
 #~ msgstr "Import"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Amount to Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Amount to Withdraw"
 msgstr ""
 
 #: 
@@ -354,6 +359,7 @@ msgstr ""
 #~ msgid "Back"
 #~ msgstr "esquena"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "Balance"
 msgstr ""
@@ -576,7 +582,9 @@ msgstr "Confirmeu aquesta transacció a la vostra cartera"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -940,6 +948,7 @@ msgstr "entenc"
 msgid "INR"
 msgstr ""
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
 msgstr ""
@@ -1000,7 +1009,9 @@ msgstr "S’estima l’entrada. Vindràs com a màxim <0>{0} {1}</0> o la transa
 msgid "Install Metamask"
 msgstr "Instal·leu Metamask"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
 
@@ -1046,7 +1057,12 @@ msgstr "Destinatari no vàlid"
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Invested"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -1337,8 +1353,12 @@ msgstr ""
 #~ msgid "Page {currentPage} of {totalPages}"
 #~ msgstr ""
 
+#: 
+#~ msgid "Pair Stats"
+#~ msgstr ""
+
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair Stats (Dummy data)"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
@@ -1929,13 +1949,13 @@ msgstr "Calen tokens LP UNI-V2. Un cop hàgiu afegit liquiditat a l' {0}-{1} , p
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: src/constants/tokens.ts
-msgid "US$"
-msgstr ""
-
 #: 
-#~ msgid "USD"
+#~ msgid "US$"
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "USD"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -2112,6 +2132,10 @@ msgstr "La votació ha finalitzat {0}"
 msgid "Voting ends approximately {0}"
 msgstr "La votació finalitza aproximadament {0}"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "WITHDRAW"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "Esperant la confirmació"
@@ -2147,6 +2171,7 @@ msgstr "Quan es retira, es reclama la seva UNI i s’elimina la seva liquiditat 
 
 #: src/components/earn/UnstakingModal.tsx
 #: src/pages/Earn/Manage.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Retirar-se"
 
