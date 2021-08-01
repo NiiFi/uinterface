@@ -681,7 +681,7 @@ export default function Swap({ history }: RouteComponentProps) {
                 </TYPE.subHeader>
                 <FlexColumn style={{ padding: '5px 0' }}>
                   <TYPE.mediumHeader color="text1">
-                    <BaseCurrencyView type="symbol" value="1.24b" />
+                    <BaseCurrencyView type="symbol" value={1240000000} numeralFormat={'0.[00]a'} />
                   </TYPE.mediumHeader>
                   <Percent value={7.258268337244848} fontWeight={400} />
                 </FlexColumn>
@@ -692,7 +692,7 @@ export default function Swap({ history }: RouteComponentProps) {
                 </TYPE.subHeader>
                 <FlexColumn style={{ padding: '5px 0' }}>
                   <TYPE.mediumHeader color="text1">
-                    <BaseCurrencyView type="symbol" value="3.03m" />
+                    <BaseCurrencyView type="symbol" value={3030000} numeralFormat={'0.[00]a'} />
                   </TYPE.mediumHeader>
                   <Percent value={7.858268337244848} fontWeight={400} />
                 </FlexColumn>
@@ -703,7 +703,7 @@ export default function Swap({ history }: RouteComponentProps) {
                 </TYPE.subHeader>
                 <FlexColumn style={{ padding: '5px 0' }}>
                   <TYPE.mediumHeader color="text1">
-                    <BaseCurrencyView type="symbol" value="1.75b" />
+                    <BaseCurrencyView type="symbol" value={1750000000} numeralFormat={'0.[00]a'} />
                   </TYPE.mediumHeader>
                   <Percent value={-0.508268337244848} fontWeight={400} />
                 </FlexColumn>

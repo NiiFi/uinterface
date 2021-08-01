@@ -6,7 +6,6 @@ import { t, Trans } from '@lingui/macro'
 import { useActiveWeb3React } from 'hooks/web3'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, BaseCurrencyView } from 'theme'
-import { shortenDecimalValues } from 'utils'
 import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import { ApplicationModal } from 'state/application/actions'
 import { ReactComponent as Close } from 'assets/images/x.svg'
@@ -140,7 +139,8 @@ export default function CreatePoolModal() {
             {`≈ `}
             <BaseCurrencyView
               type="id"
-              value={shortenDecimalValues(fakeInvestmentValue, TOKEN_VALUE_CURRENCY_FORMAT)}
+              numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
+              value={Number(fakeInvestmentValue)}
             />
           </TYPE.body>
           <Row marginTop="1rem">

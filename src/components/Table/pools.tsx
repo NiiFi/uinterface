@@ -73,7 +73,7 @@ const CustomTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
-        <BaseCurrencyView type="symbol" value={shortenDecimalValues(row.liquidity, '0.[00]a')} />
+        <BaseCurrencyView type="symbol" value={row.liquidity} numeralFormat={'0.[00]a'} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
         <ColumnWrapper>
@@ -93,7 +93,7 @@ const CustomTableRow = (
           </div>
           <TYPE.small color={'text2'}>
             {row.trendingSum > 0 && '+ '}
-            <BaseCurrencyView type="symbol" value={shortenDecimalValues(row.trendingSum + '', '0.[000]a')} />
+            <BaseCurrencyView type="symbol" value={row.trendingSum} numeralFormat={'0.[000]a'} />
           </TYPE.small>
         </ColumnWrapper>
       </TableCell>

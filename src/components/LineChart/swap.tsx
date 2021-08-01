@@ -5,7 +5,6 @@ import LineChart from './index'
 import getLineChartData from './data'
 import { BaseCurrencyView, TYPE } from '../../theme'
 
-import { shortenDecimalValues } from 'utils'
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
 
@@ -118,10 +117,7 @@ const SwapChart = () => {
           <Trans>Liquidity</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
-          <BaseCurrencyView
-            type="id"
-            value={liquidityHover ? shortenDecimalValues(String(liquidityHover), '0,0') : '0'}
-          />
+          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={liquidityHover || 0} />
         </TYPE.black>
       </Wrapper>
       <Wrapper>
@@ -129,7 +125,7 @@ const SwapChart = () => {
           <Trans>Volume</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
-          <BaseCurrencyView type="id" value={volumeHover ? shortenDecimalValues(String(volumeHover), '0,0') : '0'} />
+          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={volumeHover || 0} />
         </TYPE.black>
       </Wrapper>
       <Wrapper>
@@ -137,7 +133,7 @@ const SwapChart = () => {
           <Trans>Fees</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
-          <BaseCurrencyView type="id" value={feesHover ? shortenDecimalValues(String(feesHover), '0,0') : '0'} />
+          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={feesHover || 0} />
         </TYPE.black>
       </Wrapper>
       <ControlWrapper>

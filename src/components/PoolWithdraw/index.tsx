@@ -2,7 +2,6 @@ import React, { useCallback, useState, useMemo } from 'react'
 import styled from 'styled-components/macro'
 import { useWalletModalToggle } from 'state/application/hooks'
 import { Trans } from '@lingui/macro'
-import { shortenDecimalValues } from 'utils'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { RowBetween } from 'components/Row'
 import { AutoColumn } from 'components/Column'
@@ -109,7 +108,8 @@ export default function PoolWithdraw() {
             {`≈ `}
             <BaseCurrencyView
               type="id"
-              value={investmentValue ? shortenDecimalValues(investmentValue, TOKEN_VALUE_CURRENCY_FORMAT) : '0'}
+              numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
+              value={investmentValue ? Number(investmentValue) : 0}
             />
           </TYPE.subHeader>
         </RowBetween>

@@ -47,7 +47,7 @@ const CustomTableRow = (
         </ExternalLink>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="id" value={shortenDecimalValues(row.amountUSD)} />
+        <BaseCurrencyView type="id" value={row.amountUSD} numeralFormat={'0.[000]a'} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         {shortenDecimalValues(row.amount0)} {row.pair.token0.symbol}

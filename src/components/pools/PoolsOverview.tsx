@@ -143,7 +143,7 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
                       <Trans>Liquidity</Trans>
                     </TYPE.subHeader>
                     <TYPE.mediumHeader fontSize="16" paddingTop="5px">
-                      <BaseCurrencyView type="symbol" value={shortenDecimalValues(item.liquidity, '0.[00]a')} />
+                      <BaseCurrencyView type="symbol" value={Number(item.liquidity)} numeralFormat={'0.[00]a'} />
                     </TYPE.mediumHeader>
                   </div>
                   <div>

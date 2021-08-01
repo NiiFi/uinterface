@@ -6,7 +6,6 @@ import { RowBetween } from 'components/Row'
 import { TYPE, BaseCurrencyView } from 'theme'
 import { useFakePoolValuesCalculator } from 'state/pool/hooks'
 import { PoolInvestPairValues } from 'state/pool/actions'
-import { shortenDecimalValues } from 'utils'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import ROIPeriodDropdown from 'components/Dropdowns/ROIPeriodDropdown'
 import TokenPairInputPanel from 'components/pools/TokenPairInputPanel'
@@ -65,7 +64,8 @@ export default function ROISimulator({ token0, token1 }: { token0: string; token
         {'≈ '}
         <BaseCurrencyView
           type="id"
-          value={investmentValue ? shortenDecimalValues(investmentValue, TOKEN_VALUE_CURRENCY_FORMAT) : '0'}
+          numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
+          value={investmentValue ? Number(investmentValue) : 0}
         />
       </TYPE.subHeader>
       <PeriodWrapper>
@@ -88,7 +88,8 @@ export default function ROISimulator({ token0, token1 }: { token0: string; token
         {'≈ '}
         <BaseCurrencyView
           type="id"
-          value={roiValues.roiInUSD ? shortenDecimalValues(roiValues.roiInUSD, TOKEN_VALUE_CURRENCY_FORMAT) : '0'}
+          numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
+          value={roiValues.roiInUSD ? Number(roiValues.roiInUSD) : 0}
         />
       </TYPE.subHeader>
     </>

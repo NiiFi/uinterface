@@ -6,7 +6,6 @@ import getLineChartData from './data'
 import { TYPE, BaseCurrencyView } from '../../theme'
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
-import { shortenDecimalValues } from 'utils'
 
 const StyleButtonOutlined = styled(ButtonOutlined)`
   margin: 12px;
@@ -124,10 +123,7 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
           <Trans>Liquidity</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
-          <BaseCurrencyView
-            type="id"
-            value={liquidityHover ? shortenDecimalValues(String(liquidityHover), '0,0') : '0'}
-          />
+          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={liquidityHover || 0} />
         </TYPE.black>
       </Wrapper>
       <Wrapper>
@@ -135,7 +131,7 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
           <Trans>Volume</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
-          <BaseCurrencyView type="id" value={volumeHover ? shortenDecimalValues(String(volumeHover), '0,0') : '0'} />
+          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={volumeHover || 0} />
         </TYPE.black>
       </Wrapper>
       <Wrapper>
@@ -143,7 +139,7 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
           <Trans>Fees</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
-          <BaseCurrencyView type="id" value={feesHover ? shortenDecimalValues(String(feesHover), '0,0') : '0'} />
+          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={feesHover || 0} />
         </TYPE.black>
       </Wrapper>
       <ControlWrapper>

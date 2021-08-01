@@ -5,8 +5,9 @@ import styled, { keyframes } from 'styled-components'
 import { darken } from 'polished'
 import { ArrowLeft, X, ExternalLink as LinkIconFeather, Trash } from 'react-feather'
 import { useBaseCurrency, useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
-import { BaseCurrencyDetail } from 'constants/tokens'
+import { BaseCurrencyDetail, TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import Loader from 'components/Loader'
+import { shortenDecimalValues } from 'utils'
 
 export const ButtonText = styled.button`
   outline: none;
@@ -325,15 +326,24 @@ export const ExtraSmallOnly = styled.span`
     display: block;
   `};
 `
+export const CurrencySelectWrapper = styled.div`
+  display: flex;
+  padding: 6px;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+  display: none
+  `}
+`
 
 export const BaseCurrencyView = ({
   type = 'symbol',
   format,
   value,
+  numeralFormat = TOKEN_VALUE_CURRENCY_FORMAT,
 }: {
-  value: string
+  value: number
   type?: Exclude<keyof BaseCurrencyDetail, 'label'>
-  format?: (detail: BaseCurrencyDetail, value: string) => string
+  format?: (detail: BaseCurrencyDetail, value: number) => string
+  numeralFormat?: string
 }) => {
   const { baseCurrencyDetail } = useBaseCurrency()
   const {
@@ -343,13 +353,15 @@ export const BaseCurrencyView = ({
   if (!rates && loading) {
     return <Loader />
   }
+  const valueEquivalent = (value / rates['USD']) * rates[baseCurrencyDetail.id]
+  const numeralFormattedValue = shortenDecimalValues(`${valueEquivalent}`, numeralFormat)
   if (format) {
     return <span title={baseCurrencyDetail.label}>{format(baseCurrencyDetail, value)}</span>
   }
 
   if (type === 'symbol') {
-    return <span title={baseCurrencyDetail.label}>{`${baseCurrencyDetail.symbol} ${value}`}</span>
+    return <span title={baseCurrencyDetail.label}>{`${baseCurrencyDetail.symbol} ${numeralFormattedValue}`}</span>
   }
 
-  return <span title={baseCurrencyDetail.label}>{`${value} ${baseCurrencyDetail.id}`}</span>
+  return <span title={baseCurrencyDetail.label}>{`${numeralFormattedValue} ${baseCurrencyDetail.id}`}</span>
 }
