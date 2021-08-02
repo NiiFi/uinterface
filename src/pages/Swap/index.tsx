@@ -54,7 +54,7 @@ import {
   useSwapState,
 } from '../../state/swap/hooks'
 import { useExpertModeManager, useUserSingleHopOnly } from '../../state/user/hooks'
-import { BodyScroller, LinkStyledButton, TYPE, Disclaimer, BaseCurrencyView } from '../../theme'
+import { BodyScroller, LinkStyledButton, TYPE, Disclaimer, BaseCurrencyView, CurrencySelectWrapper } from '../../theme'
 import { computeFiatValuePriceImpact } from '../../utils/computeFiatValuePriceImpact'
 import { getTradeVersion } from '../../utils/getTradeVersion'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
@@ -81,13 +81,6 @@ const ArrowContainer = styled.div`
   margin: 1rem 0px;
   position: relative;
   background-color: ${({ theme }) => theme.bg5};
-`
-const CurrencySelectWrapper = styled.div`
-  display: flex;
-  padding: 6px;
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-  display: none
-  `}
 `
 export default function Swap({ history }: RouteComponentProps) {
   const [activeTab, setActiveTab] = useState<number>(0)

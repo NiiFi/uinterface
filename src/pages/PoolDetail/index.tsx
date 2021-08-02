@@ -10,9 +10,10 @@ import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
-import { BodyScroller, TYPE, BarWrapper, BarTitle } from 'theme'
+import { BodyScroller, TYPE, BarTitle, CurrencySelectWrapper } from 'theme'
 import PoolInvest from 'components/PoolInvest'
 import PoolWithdraw from 'components/PoolWithdraw'
+import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TokenDetails from './TokenDetails'
 import ROISimulator from './ROISimulator'
@@ -60,9 +61,6 @@ const RowColumn = styled.div`
   `}
 `
 
-const ButtonWrapper = styled.div`
-  display: flex;
-`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -145,17 +143,18 @@ export default function PoolDetails({
   }
   return (
     <>
-      <AppBar style={{ padding: '0 1rem' }}>
-        <BarWrapper>
-          <BarTitle>
-            <ArrowLeft style={{ cursor: 'pointer' }} onClick={() => history.push('/pools')} />
-            {`${token0} / ${token1} `}
-            {t`Pool`}
-          </BarTitle>
-          <ButtonWrapper>
-            <CreatePoolButton />
-          </ButtonWrapper>
-        </BarWrapper>
+      <AppBar style={{ padding: '0 2rem' }}>
+        <BarTitle>
+          <ArrowLeft style={{ cursor: 'pointer' }} onClick={() => history.push('/pools')} />
+          {`${token0} / ${token1} `}
+          {t`Pool`}
+        </BarTitle>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <CreatePoolButton />
+          <CurrencySelectWrapper>
+            <CurrencyDropdown />
+          </CurrencySelectWrapper>
+        </div>
       </AppBar>
       <BodyScroller>
         <BodyPanel>
