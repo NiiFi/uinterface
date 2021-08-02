@@ -39,10 +39,6 @@ export function useManageWalletListModalToggle(): () => void {
   return useToggleModal(ApplicationModal.MANAGE_WALLET_LIST)
 }
 
-export function usePoolInvestModalToggle(): () => void {
-  return useToggleModal(ApplicationModal.POOL_INVEST)
-}
-
 export function useCreatePoolModalToggle(): () => void {
   return useToggleModal(ApplicationModal.CREATE_POOL)
 }

@@ -67,7 +67,9 @@ export default function Pool() {
     if (params?.page === undefined) {
       TabChangeHandler(null, 0)
     } else {
-      setActiveTab(parseInt(Object.keys(tabNameToIndex).find((k) => tabNameToIndex[k] === params?.page) || ''))
+      setActiveTab(
+        parseInt(Object.keys(tabNameToIndex).find((k) => tabNameToIndex[k] === params?.page?.split('?')[0]) || '0')
+      )
     }
   }, [params, TabChangeHandler, setActiveTab, history])
 
