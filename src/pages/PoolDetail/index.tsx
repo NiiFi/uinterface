@@ -145,7 +145,7 @@ export default function PoolDetails({
     <>
       <AppBar style={{ padding: '0 2rem' }}>
         <BarTitle>
-          <ArrowLeft style={{ cursor: 'pointer' }} onClick={() => history.push('/pools')} />
+          <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
           {`${token0} / ${token1} `}
           {t`Pool`}
         </BarTitle>

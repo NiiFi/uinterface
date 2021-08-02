@@ -9,9 +9,7 @@ import { NIILogo } from 'components/Icons'
 import { FlexColumn } from 'components/Column'
 import { DefaultCard } from 'components/Card'
 import { getPoolsData } from 'components/Table/sample-pools'
-import { usePoolInvestModalToggle } from 'state/application/hooks'
-import PoolInvestModal from 'components/PoolInvestModal'
-import InvestButton from 'components/pools/InvestButton'
+import { ButtonOutlined } from 'components/Button'
 import { shortenDecimalValues } from '../../utils'
 import useBreakpoint from '../../hooks/useBreakpoint'
 import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, MEDIA_WIDTHS, BaseCurrencyView } from 'theme'
@@ -75,8 +73,6 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
     return getPoolsData(type, limit)
   }, [type, limit])
 
-  const toggleInvestModal = usePoolInvestModalToggle()
-
   const handleCardOnClick = (e: any) => {
     e.preventDefault()
     history.push('/pools/ETH/NII')
@@ -127,14 +123,9 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
                     </ColumnWrapper>
                   </RowWrapper>
                   <RowWrapper>
-                    <InvestButton
-                      token0={{ symbol: 'ETH', address: '1234' }}
-                      token1={{ symbol: 'NII', address: '1235' }}
-                      type="outlined"
-                      onClick={toggleInvestModal}
-                    >
+                    <ButtonOutlined>
                       <Trans>Invest</Trans>
-                    </InvestButton>
+                    </ButtonOutlined>
                   </RowWrapper>
                 </RowWrapper>
                 <FlexColumn style={{ padding: '18px 0 0 0' }}>
@@ -169,7 +160,6 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
           )
         })}
       </Grid>
-      <PoolInvestModal />
     </>
   )
 }
