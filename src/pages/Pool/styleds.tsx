@@ -1,5 +1,6 @@
 import { Text } from 'rebass'
 import styled, { keyframes } from 'styled-components'
+import AppBar from 'components/AppBar'
 
 export const Wrapper = styled.div`
   position: relative;
@@ -93,4 +94,10 @@ export const LoadingRows = styled.div`
     grid-column: 3 / 4;
     margin-bottom: 2em;
   }
+`
+export const PoolAppBar = styled(AppBar)`
+  padding: 0px 2rem;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding: 0.5rem 1rem;
+  `}
 `
