@@ -3,7 +3,6 @@ import styled from 'styled-components/macro'
 import { useWalletModalToggle } from 'state/application/hooks'
 import { Trans } from '@lingui/macro'
 
-import { shortenDecimalValues } from 'utils'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { RowBetween } from 'components/Row'
 import { AutoColumn } from 'components/Column'
@@ -11,8 +10,7 @@ import { useCurrency } from 'hooks/Tokens'
 import { useCurrencyBalance } from 'state/wallet/hooks'
 import { useActiveWeb3React } from 'hooks/web3'
 import TokenPairInputPanel from 'components/pools/TokenPairInputPanel'
-import { TYPE } from 'theme'
-import { MainCurrency } from 'utils'
+import { TYPE, BaseCurrencyView } from 'theme'
 import Slippage from 'components/swap/Slippage'
 import { PoolInvestPairValues } from 'state/pool/actions'
 import { useFakePoolValuesCalculator } from 'state/pool/hooks'
@@ -93,9 +91,12 @@ export default function PoolInvest() {
             {!sufficientBalance && hasInputAmount ? <Trans>Insufficient Balance</Trans> : ''}
           </TYPE.error>
           <TYPE.subHeader color="text6" textAlign="right" width="50%">
-            {`≈ ${
-              investmentValue ? shortenDecimalValues(investmentValue, TOKEN_VALUE_CURRENCY_FORMAT) : '0'
-            } ${MainCurrency}`}
+            {`≈ `}
+            <BaseCurrencyView
+              type="id"
+              numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
+              value={investmentValue ? Number(investmentValue) : 0}
+            />
           </TYPE.subHeader>
         </RowBetween>
         <RowBetween marginTop="1.5rem">

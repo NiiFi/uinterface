@@ -3,11 +3,9 @@ import styled from 'styled-components/macro'
 import { Currency } from '@uniswap/sdk-core'
 import { t, Trans } from '@lingui/macro'
 
-import { MainCurrency } from 'utils'
 import { useActiveWeb3React } from 'hooks/web3'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
-import { TYPE } from 'theme'
-import { shortenDecimalValues } from 'utils'
+import { TYPE, BaseCurrencyView } from 'theme'
 import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import { ApplicationModal } from 'state/application/actions'
 import { ReactComponent as Close } from 'assets/images/x.svg'
@@ -138,7 +136,12 @@ export default function CreatePoolModal() {
             />
           </div>
           <TYPE.body color={`text2`} fontWeight={400} fontSize={14} textAlign={'right'}>
-            {`≈ ${shortenDecimalValues(fakeInvestmentValue, TOKEN_VALUE_CURRENCY_FORMAT)} ${MainCurrency}`}
+            {`≈ `}
+            <BaseCurrencyView
+              type="id"
+              numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
+              value={Number(fakeInvestmentValue)}
+            />
           </TYPE.body>
           <Row marginTop="1rem">
             <Slippage placement="left" />

@@ -171,6 +171,10 @@ msgstr "<0> 🎉</0> Unicorn takımına hoş geldiniz :) <1> 🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "Teklifleri sunmak için toplam UNI arzının% 1'i kadar minimum eşik gereklidir"
 
+#: src/constants/tokens.ts
+msgid "AUD"
+msgstr ""
+
 #: 
 #~ msgid "About"
 #~ msgstr "hakkında"
@@ -273,9 +277,14 @@ msgstr "Her zaman URL'nin <0> app.uniswap.org olduğundan emin olun</0> - güven
 #~ msgid "Amount"
 #~ msgstr "Miktar"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Amount to Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Amount to Withdraw"
 msgstr ""
 
 #: 
@@ -321,6 +330,10 @@ msgstr "Emin misiniz?"
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
 #~ msgstr "Seçilen fiyat aralığına göre en az {0} {1} ve {2} {3}"
 
+#: src/constants/tokens.ts
+msgid "Australian Dollar"
+msgstr ""
+
 #: src/components/TransactionSettings/index.tsx
 msgid "Auto"
 msgstr "Oto"
@@ -333,10 +346,19 @@ msgstr ""
 msgid "Available to deposit: {0}"
 msgstr "Para yatırmaya uygun: {0}"
 
+#: src/constants/tokens.ts
+msgid "BRL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "BTC"
+msgstr ""
+
 #: 
 #~ msgid "Back"
 #~ msgstr "Geri"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "Balance"
 msgstr ""
@@ -365,9 +387,17 @@ msgstr ""
 #~ msgid "Best for stable pairs."
 #~ msgstr "Kararlı çiftler için en iyisi."
 
+#: src/constants/tokens.ts
+msgid "Bitcoin"
+msgstr ""
+
 #: src/components/Blocklist/index.tsx
 msgid "Blocked address"
 msgstr "Engellenen adres"
+
+#: src/constants/tokens.ts
+msgid "Brazilian Real"
+msgstr ""
 
 #: src/components/PositionCard/index.tsx
 msgid "By adding liquidity you'll earn 0.3% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
@@ -385,8 +415,24 @@ msgstr ""
 #~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
 #~ msgstr "Bir cüzdan bağlayarak Uniswap Labs'ın <0> Hizmet Şartları'nı kabul etmiş olursunuz</0> ve <1> Uniswap protokolü sorumluluk reddini okuduğunuzu ve anladığınızı onaylayın</1> ."
 
+#: src/constants/tokens.ts
+msgid "CAD"
+msgstr ""
+
 #: src/components/AccountDetails/index.tsx
 msgid "CANCEL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CHF"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CNY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Canadian Dollar"
 msgstr ""
 
 #: 
@@ -400,6 +446,10 @@ msgstr "Grafikler"
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
 msgstr "V3 LP adım adım açıklamalı kılavuzumuza ve geçiş kılavuzlarımıza göz atın."
+
+#: src/constants/tokens.ts
+msgid "Chinese Yuan"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -531,7 +581,9 @@ msgstr "Cüzdanınızda bu işlemi onaylayın"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -727,6 +779,10 @@ msgstr "Reddet"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "V2 konumlarınızdan birini görmüyor musunuz? <0> İçe aktarın.</0>"
 
+#: src/constants/tokens.ts
+msgid "ETH"
+msgstr ""
+
 #: src/components/LineChart/swap.tsx
 msgid "ETH-ANY Pair Stats (Dummy data)"
 msgstr ""
@@ -734,6 +790,10 @@ msgstr ""
 #: 
 #~ msgid "ETH-NII Transactions"
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "EUR"
+msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -796,6 +856,14 @@ msgstr "Liste içe aktarılırken hata oluştu"
 msgid "Est. ROI"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "Ethereum"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "European Union Euro"
+msgstr ""
+
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
 msgstr "Etkin olmayan Jeton Listelerinden genişletilmiş sonuçlar"
@@ -847,9 +915,17 @@ msgstr "Nereden"
 msgid "From (at most)"
 msgstr "Gönderen (en fazla)"
 
+#: src/constants/tokens.ts
+msgid "GBP"
+msgstr ""
+
 #: src/components/ErrorBoundary/index.tsx
 msgid "Get support on Discord"
 msgstr "Discord ile ilgili destek alın"
+
+#: src/constants/tokens.ts
+msgid "HKD"
+msgstr ""
 
 #: 
 #~ msgid "Hide closed positions"
@@ -859,10 +935,19 @@ msgstr "Discord ile ilgili destek alın"
 msgid "High Price Impact"
 msgstr "Yüksek Fiyat Etkisi"
 
+#: src/constants/tokens.ts
+msgid "Hong Kong Dollar"
+msgstr ""
+
 #: src/components/SearchModal/ImportList.tsx
 msgid "I understand"
 msgstr "anlıyorum"
 
+#: src/constants/tokens.ts
+msgid "INR"
+msgstr ""
+
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
 msgstr ""
@@ -902,6 +987,10 @@ msgstr "Aralıkta"
 #~ msgid "Increase Liquidity"
 #~ msgstr "Likiditeyi Artırın"
 
+#: src/constants/tokens.ts
+msgid "Indian Rupees"
+msgstr ""
+
 #: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "İlk fiyatlar ve havuz payı"
@@ -919,7 +1008,9 @@ msgstr "Giriş tahminidir. En çok <0>{0} {1}</0> veya işlem geri dönecektir."
 msgid "Install Metamask"
 msgstr "Metamask'ı yükleyin"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
 
@@ -965,7 +1056,24 @@ msgstr "Geçersiz alıcı"
 #: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Invested"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "JPY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Japanese Yen"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "KRW"
 msgstr ""
 
 #: 
@@ -1010,6 +1118,10 @@ msgstr "Yüklendi"
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Yükleniyor"
+
+#: src/constants/tokens.ts
+msgid "MXN"
+msgstr ""
 
 #: src/components/Header/URLWarning.tsx
 msgid "Make sure the URL is<0>app.uniswap.org</0>"
@@ -1069,6 +1181,10 @@ msgstr ""
 msgid "Maximum sent"
 msgstr "Maksimum gönderme"
 
+#: src/constants/tokens.ts
+msgid "Mexican Peso"
+msgstr ""
+
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
@@ -1120,6 +1236,10 @@ msgstr "Minimum alınan"
 #~ msgid "More"
 #~ msgstr "Daha"
 
+#: src/constants/tokens.ts
+msgid "NOK"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Name"
 msgstr ""
@@ -1160,6 +1280,10 @@ msgstr "Teklif bulunamadı."
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
 msgstr "Sonuç bulunamadı."
+
+#: src/constants/tokens.ts
+msgid "Norwegian Krone"
+msgstr ""
 
 #: src/components/Toggle/ListToggle.tsx
 msgid "OFF"
@@ -1224,8 +1348,12 @@ msgstr ""
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
+#: 
+#~ msgid "Pair Stats"
+#~ msgstr ""
+
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair Stats (Dummy data)"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
@@ -1350,6 +1478,10 @@ msgstr ""
 msgid "ROI Simulator"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "RUB"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "Ücretler"
@@ -1429,6 +1561,18 @@ msgstr "Dönüş"
 msgid "Route"
 msgstr "Rota"
 
+#: src/constants/tokens.ts
+msgid "Russian Ruble"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SEK"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SGD"
+msgstr ""
+
 #: src/components/Table/SearchableTable.tsx
 #: src/pages/Pool/index.tsx
 msgid "Search"
@@ -1506,6 +1650,10 @@ msgstr "Havuz Payı:"
 msgid "Simple"
 msgstr "Basit"
 
+#: src/constants/tokens.ts
+msgid "Singapore Dollar"
+msgstr ""
+
 #: src/components/swap/Slippage.tsx
 #: src/components/swap/Slippage.tsx
 msgid "Slippage Tolerance"
@@ -1523,6 +1671,10 @@ msgstr "Bazı varlıklar bu arayüz aracılığıyla kullanılamaz çünkü akı
 #: src/components/ErrorBoundary/index.tsx
 msgid "Something went wrong"
 msgstr "Bir şeyler yanlış gitti"
+
+#: src/constants/tokens.ts
+msgid "South Korean Won"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Step 1. Get UNI-V2 Liquidity tokens"
@@ -1561,6 +1713,18 @@ msgstr "{0} {1} yerine {2} {3}"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Swaps"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Swedish Krona"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Swiss Franc"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "TRY"
 msgstr ""
 
 #: src/components/LineChart/overview.tsx
@@ -1740,6 +1904,10 @@ msgstr ""
 msgid "Try Again"
 msgstr "Tekrar deneyin"
 
+#: src/constants/tokens.ts
+msgid "Turkish Lira"
+msgstr ""
+
 #: src/components/Settings/index.tsx
 msgid "Turn On Expert Mode"
 msgstr "Uzman Modunu Açın"
@@ -1772,8 +1940,11 @@ msgstr "UNI-V2 LP tokenleri gereklidir. Eğer likidite ekledikten sonra {0}-{1} 
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: src/components/Dropdowns/CurrencyDropdown.tsx
-#: src/components/Dropdowns/CurrencyDropdown.tsx
+#: 
+#~ msgid "US$"
+#~ msgstr ""
+
+#: src/constants/tokens.ts
 msgid "USD"
 msgstr ""
 
@@ -1809,6 +1980,14 @@ msgstr "Uniswap likidite madenciliği"
 #: 
 #~ msgid "Uniswap migration contract↗"
 #~ msgstr "Uniswap geçiş sözleşmesi↗"
+
+#: src/constants/tokens.ts
+msgid "United Kingdom Pound"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "United State Dollar"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "Unknown Source"
@@ -1943,6 +2122,10 @@ msgstr "Oylama bitti {0}"
 msgid "Voting ends approximately {0}"
 msgstr "Oylama yaklaşık {0}"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "WITHDRAW"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "Onay bekliyor"
@@ -1978,6 +2161,7 @@ msgstr "Çekildiğinizde, UNI'niz talep edilir ve likiditeniz madencilik havuzun
 
 #: src/components/earn/UnstakingModal.tsx
 #: src/pages/Earn/Manage.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Çekil"
 

@@ -2,9 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { useLocation, useHistory, useParams } from 'react-router-dom'
 import { t } from '@lingui/macro'
 import qs from 'qs'
-import styled from 'styled-components'
 import { ArrowLeft } from 'react-feather'
-import AppBar from 'components/AppBar'
 import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
 import TabPanel from '../../components/tab/TabPanel'
@@ -13,18 +11,9 @@ import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
 import PoolsTable from '../../components/Table/pools'
 import PoolsOverview, { getTitle } from '../../components/pools/PoolsOverview'
-import { BodyScroller, Disclaimer, BarWrapper, BarTitle } from '../../theme'
+import { BodyScroller, Disclaimer, BarTitle, CurrencySelectWrapper } from '../../theme'
 import CreatePoolButton from 'components/pools/CreatePoolButton'
-
-// TODO: move to shared library
-const CurrencySelectWrapper = styled.div`
-  display: flex;
-  padding: 6px;
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-  display: none
-  `}
-`
-
+import { PoolAppBar } from './styleds'
 const tabNameToIndex: any = {
   0: 'overview',
   1: 'search',
@@ -75,14 +64,12 @@ export default function Pool() {
 
   return (
     <>
-      <AppBar style={{ padding: '0 1rem' }}>
+      <PoolAppBar>
         {activeTab === 1 && state?.type ? (
-          <BarWrapper style={{ width: 'auto' }}>
-            <BarTitle>
-              <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
-              {getTitle(state?.type)}
-            </BarTitle>
-          </BarWrapper>
+          <BarTitle>
+            <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
+            {getTitle(state?.type)}
+          </BarTitle>
         ) : (
           <>
             <ToggleDrawer />
@@ -98,7 +85,7 @@ export default function Pool() {
             <CurrencyDropdown />
           </CurrencySelectWrapper>
         </div>
-      </AppBar>
+      </PoolAppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
           <Disclaimer>

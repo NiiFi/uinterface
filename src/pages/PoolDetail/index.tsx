@@ -5,14 +5,15 @@ import { ArrowLeft } from 'react-feather'
 import { Trans, t } from '@lingui/macro'
 import { RouteComponentProps, Redirect } from 'react-router-dom'
 import CreatePoolButton from 'components/pools/CreatePoolButton'
-import AppBar from 'components/AppBar'
+import { PoolAppBar } from 'pages/Pool/styleds'
 import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
-import { BodyScroller, TYPE, BarWrapper, BarTitle } from 'theme'
+import { BodyScroller, TYPE, BarTitle, CurrencySelectWrapper } from 'theme'
 import PoolInvest from 'components/PoolInvest'
 import PoolWithdraw from 'components/PoolWithdraw'
+import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TokenDetails from './TokenDetails'
 import ROISimulator from './ROISimulator'
@@ -60,9 +61,6 @@ const RowColumn = styled.div`
   `}
 `
 
-const ButtonWrapper = styled.div`
-  display: flex;
-`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -145,18 +143,19 @@ export default function PoolDetails({
   }
   return (
     <>
-      <AppBar style={{ padding: '0 1rem' }}>
-        <BarWrapper>
-          <BarTitle>
-            <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
-            {`${token0} / ${token1} `}
-            {t`Pool`}
-          </BarTitle>
-          <ButtonWrapper>
-            <CreatePoolButton />
-          </ButtonWrapper>
-        </BarWrapper>
-      </AppBar>
+      <PoolAppBar>
+        <BarTitle>
+          <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
+          {`${token0} / ${token1} `}
+          {t`Pool`}
+        </BarTitle>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <CreatePoolButton />
+          <CurrencySelectWrapper>
+            <CurrencyDropdown />
+          </CurrencySelectWrapper>
+        </div>
+      </PoolAppBar>
       <BodyScroller>
         <BodyPanel>
           <Wrapper>
@@ -196,11 +195,7 @@ export default function PoolDetails({
                 </TYPE.mediumHeaderEllipsis>
                 <PoolCardRowColumn>
                   <PoolCardItem style={{ width: '100%' }}>
-                    <CurrencyAvatar
-                      symbol={'ETH'}
-                      containerStyle={{ padding: '0.3125rem' }}
-                      rootStyle={{ marginBottom: '1rem' }}
-                    />
+                    <CurrencyAvatar symbol={'ETH'} rootStyle={{ marginBottom: '1rem' }} />
                     <TokenDetails />
                   </PoolCardItem>
                   <PoolCardItem style={{ width: '100%' }}>

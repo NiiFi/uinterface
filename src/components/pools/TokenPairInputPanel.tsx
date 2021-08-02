@@ -32,7 +32,7 @@ export default function TokenPairInputPanel({ token0, token1, onChange }: TokenP
   return (
     <>
       <RowBetween marginBottom="1rem">
-        <CurrencyAvatar symbol={token0.symbol} containerStyle={{ padding: '0.3125rem' }} />
+        <CurrencyAvatar symbol={token0.symbol} />
         <NumericalInput
           style={{ maxWidth: '50%' }}
           fontSize="1.25rem"
