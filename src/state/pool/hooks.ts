@@ -39,7 +39,7 @@ export function useFakePoolValuesCalculator() {
   const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const ONE_USD = 154
   const ONE_ETH_IN_USD = rates?.['USD'] || 500 * ONE_USD
-  const ONE_NII_IN_USD = 0 * ONE_USD
+  const ONE_NII_IN_USD = 0.25 * ONE_USD
   const ROI_PER_DAY_RATIO = 0.001
   /**
    * NOTE: These set of functions are dummy and not permanent.
