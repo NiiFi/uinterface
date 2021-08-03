@@ -66,6 +66,13 @@ import BarChart from 'components/BarChart/overview'
 import AppBar from 'components/AppBar'
 import Percent from 'components/Percent'
 
+const StyledAppBar = styled(AppBar)`
+  padding: 0px 2rem;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+  padding: 0px 0.625rem;
+  `}
+`
+
 const StyledInfo = styled(Info)`
   opacity: 0.4;
   color: ${({ theme }) => theme.text1};
@@ -358,7 +365,7 @@ export default function Swap({ history }: RouteComponentProps) {
         onConfirm={handleConfirmTokenWarning}
         onDismiss={handleDismissTokenWarning}
       />
-      <AppBar style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
+      <StyledAppBar>
         <ToggleDrawer />
         <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={t`Swap`} />
@@ -367,7 +374,7 @@ export default function Swap({ history }: RouteComponentProps) {
         <CurrencySelectWrapper>
           <CurrencyDropdown />
         </CurrencySelectWrapper>
-      </AppBar>
+      </StyledAppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
           <AutoColumn gap="lg">

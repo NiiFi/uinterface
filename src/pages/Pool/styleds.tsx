@@ -98,6 +98,6 @@ export const LoadingRows = styled.div`
 export const PoolAppBar = styled(AppBar)`
   padding: 0px 2rem;
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.625rem;
   `}
 `

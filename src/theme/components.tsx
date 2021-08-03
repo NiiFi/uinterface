@@ -329,6 +329,7 @@ export const ExtraSmallOnly = styled.span`
 export const CurrencySelectWrapper = styled.div`
   display: flex;
   padding: 6px;
+  padding-right: 0px;
   ${({ theme }) => theme.mediaWidth.upToSmall`
   display: none
   `}

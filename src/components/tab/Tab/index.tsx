@@ -19,6 +19,13 @@ export default function CustomTab({ wrapperStyles = {}, ...props }: CustomTabPro
       fontWeight: 500,
       marginRight: '0px',
       color: theme.text4,
+      padding: '0px 6px',
+      '&:nth-child(1)': {
+        paddingLeft: '0px !important',
+      },
+      '&:last-child': {
+        paddingRight: '0px !important',
+      },
       '& > .MuiTab-wrapper': {
         padding: '0.5rem 1rem',
         ...wrapperStyles?.root,
