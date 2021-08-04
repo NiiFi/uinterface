@@ -13,6 +13,7 @@ import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
 import AppBody from '../AppBody'
 import Web3Status from 'components/Web3Status'
 import TabPanel from 'components/tab/TabPanel'
+import DashboardAssetsTable from 'components/Table/Dashboard/Assets'
 import { ButtonPrimary } from 'components/Button'
 import { AutoColumn } from 'components/Column'
 import { useCurrency } from 'hooks/Tokens'
@@ -129,18 +130,18 @@ export default function Dashboard() {
             </ResponsiveRow>
             <ResponsiveRow gap="2rem">
               <AppBody size="md">
-                <span>Table 1</span>
+                <DashboardAssetsTable />
               </AppBody>
               <AppBody size="md">
-                <span>Table 2</span>
+                <DashboardAssetsTable />
               </AppBody>
             </ResponsiveRow>
             <ResponsiveRow>
               <AppBody size="lg" padding="2rem">
                 <TYPE.mediumHeader>
-                  <Trans>NFT&apos;s Collections</Trans>
+                  <Trans>NFTs Collection</Trans>
                 </TYPE.mediumHeader>
-                <ResponsiveRow gap="2rem" style={{ marginTop: '1rem', overflowX: 'auto' }}>
+                <ResponsiveRow gap="1rem" style={{ marginTop: '1rem', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
                   {[CollectionImage1, CollectionImage2, CollectionImage3, CollectionImage4].map((src, index) => (
                     <div style={{ display: 'flex' }} key={index}>
                       <img src={src} alt={`Nft Collection Image ${index + 1}`} />
