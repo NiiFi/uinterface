@@ -357,7 +357,7 @@ export const BaseCurrencyView = ({
   const valueEquivalent = (value / rates['USD']) * rates[baseCurrencyDetail.id]
   const numeralFormattedValue = shortenDecimalValues(`${valueEquivalent}`, numeralFormat)
   if (format) {
-    return <span title={baseCurrencyDetail.label}>{format(baseCurrencyDetail, value)}</span>
+    return <span title={baseCurrencyDetail.label}>{format(baseCurrencyDetail, valueEquivalent)}</span>
   }
 
   if (type === 'symbol') {

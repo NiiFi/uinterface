@@ -205,7 +205,7 @@ export const TYPE = {
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
   color: ${({ theme }) => theme.text1};
-  background-color: ${({ theme }) => theme.bg1} !important;
+  background-color: ${({ theme }) => theme.bg7} !important;
 }
 
 a {
