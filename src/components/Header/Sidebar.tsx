@@ -263,7 +263,7 @@ export default function Header() {
       link: '/dashboard',
       title: t`Dashboard`,
       Icon: DashboardIcon,
-      disable: true,
+      disable: false,
     },
     {
       id: 'swap',
