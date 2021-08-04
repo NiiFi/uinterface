@@ -14,6 +14,7 @@ import AppBody from '../AppBody'
 import Web3Status from 'components/Web3Status'
 import TabPanel from 'components/tab/TabPanel'
 import DashboardAssetsTable from 'components/Table/Dashboard/Assets'
+import DashboardHistoryTable from 'components/Table/Dashboard/History'
 import { ButtonPrimary } from 'components/Button'
 import { AutoColumn } from 'components/Column'
 import { useCurrency } from 'hooks/Tokens'
@@ -133,7 +134,7 @@ export default function Dashboard() {
                 <DashboardAssetsTable />
               </AppBody>
               <AppBody size="md">
-                <DashboardAssetsTable />
+                <DashboardHistoryTable />
               </AppBody>
             </ResponsiveRow>
             <ResponsiveRow>
