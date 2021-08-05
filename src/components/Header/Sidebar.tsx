@@ -256,7 +256,7 @@ export default function Header() {
       title: t`Discover`,
       Icon: DiscoverIcon,
       link: '/discover',
-      disable: true,
+      disable: false,
     },
     {
       id: 'dashboard',

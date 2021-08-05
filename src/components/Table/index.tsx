@@ -46,6 +46,8 @@ interface EnhancedTableProps {
   headCellsBefore?: (props: any) => unknown
   renderToolbar?: (props: RenderToolBarProps) => any
   showDisclaimer?: boolean
+  defaultOrder?: Order
+  defaultOrderBy?: string
 }
 interface EnhancedTableHeadProps {
   classes: ReturnType<typeof useStyles>
@@ -144,7 +146,7 @@ const useStyles = makeStyles(() =>
 )
 
 export default function EnhancedTable({ hideHeader = false, ...props }: EnhancedTableProps) {
-  const { renderToolbar } = props
+  const { renderToolbar, defaultOrder, defaultOrderBy } = props
   const theme = useTheme()
   const classes = useStyles()
   const [tableData, setTableData] = React.useState<Array<TableDataTypes>>([])
@@ -156,6 +158,14 @@ export default function EnhancedTable({ hideHeader = false, ...props }: Enhanced
   useEffect(() => {
     setTableData(props.data)
   }, [props.data, setTableData])
+
+  useEffect(() => {
+    if (defaultOrderBy !== undefined) {
+      setOrderBy(defaultOrderBy)
+      setOrder(defaultOrder || 'asc')
+      setPage(0)
+    }
+  }, [defaultOrder, defaultOrderBy])
 
   const handleRequestSort = (event: React.MouseEvent<unknown>, property: string) => {
     const isAsc = orderBy === property && order === 'asc'

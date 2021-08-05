@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { t } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
@@ -7,7 +8,7 @@ import Percent from 'components/Percent'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { TYPE, RowWrapper, BaseCurrencyView } from '../../theme'
 import { SampleResponse } from './sample-tokens'
-import Table from './index'
+import Table, { Order } from './index'
 
 const CustomTableRow = (
   row: any,
@@ -32,7 +33,7 @@ const CustomTableRow = (
       </TableCell>
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper>
-          <CurrencyAvatar symbol={'ETH'} containerStyle={{ padding: '0.3125rem' }} hideSymbol={true} />
+          <CurrencyAvatar symbol={'ETH'} hideSymbol={true} />
           <TYPE.black fontWeight={400} style={{ padding: '8px 0 0 6px' }}>
             {row.symbol}
           </TYPE.black>
@@ -55,6 +56,20 @@ const CustomTableRow = (
 }
 
 export default function OverviewTable() {
+  const { state } = useLocation<any>() // FIXME: any
+  const [order, setOrder] = React.useState<Order>('asc')
+  const [orderBy, setOrderBy] = React.useState<string>()
+
+  useEffect(() => {
+    if (state?.type !== undefined) {
+      setOrderBy('priceUSDChange')
+      setOrder(state.type === 'looser' ? 'asc' : 'desc')
+    } else {
+      setOrderBy('symbol')
+      setOrder('asc')
+    }
+  }, [state])
+
   return (
     <Table
       title={t`Top Tokens`}
@@ -68,6 +83,8 @@ export default function OverviewTable() {
         { id: 'tvlUSD', numeric: true, disablePadding: false, label: t`TVL` },
       ]}
       row={CustomTableRow}
+      defaultOrder={order}
+      defaultOrderBy={orderBy}
     />
   )
 }

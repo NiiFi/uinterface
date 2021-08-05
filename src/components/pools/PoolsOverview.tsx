@@ -62,11 +62,12 @@ export const getTitle = (type: string): string => {
 
 type PoolsOverviewProps = {
   type: 'gainer' | 'looser' | 'new'
+  id?: string
   limit?: number
   style?: CSSProperties
 }
 
-export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps) {
+export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewProps) {
   const isSmallScreen = useBreakpoint(MEDIA_WIDTHS.upToSmall)
   const history = useHistory()
   const poolsData = useMemo(() => {
@@ -80,7 +81,7 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
 
   return (
     <>
-      <FlexColumn style={style}>
+      <FlexColumn id={id} style={style}>
         <Header>{getTitle(type)}</Header>
         <Link
           to={{

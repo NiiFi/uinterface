@@ -279,7 +279,6 @@ msgstr "تأكد دائماً من أن عنوان URL هو <0>app.uniswap.org</
 #~ msgstr "المبلغ"
 
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Amount to Invest"
 msgstr ""
@@ -360,7 +359,6 @@ msgstr ""
 #~ msgstr "الرجوع"
 
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 msgid "Balance"
 msgstr ""
 
@@ -583,7 +581,6 @@ msgstr "تأكيد هذه المعاملة في محفظتك"
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -949,7 +946,6 @@ msgid "INR"
 msgstr ""
 
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
 msgstr ""
 
@@ -1010,7 +1006,6 @@ msgid "Install Metamask"
 msgstr "تثبيت قناع التعريف"
 
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
@@ -1054,7 +1049,6 @@ msgstr "زوج غير صالح."
 msgid "Invalid recipient"
 msgstr "مستلم غير صالح"
 
-#: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1091,6 +1085,7 @@ msgstr ""
 #: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
 msgid "Liquidity"
 msgstr "السيولة"
 
@@ -1246,6 +1241,7 @@ msgid "Name"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
 msgid "New Pools"
 msgstr ""
 
@@ -1413,6 +1409,8 @@ msgstr ""
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/TokenDetails.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price"
@@ -1584,6 +1582,9 @@ msgid "Search name or paste address"
 msgstr "البحث عن اسم أو عنوان لصق"
 
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
 msgid "See all"
 msgstr ""
 
@@ -1784,6 +1785,7 @@ msgstr "هذه الرموز المميزة عادة ما تقترن مع الر�
 
 #: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
+#: src/pages/Discover/index.tsx
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
@@ -1843,12 +1845,24 @@ msgstr "الرموز"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "الرموز من القوائم غير النشطة. قم باستيراد الرموز المميزة المحددة أدناه أو انقر فوق \"إدارة\" لتنشيط المزيد من القوائم."
 
+#: src/pages/Discover/index.tsx
+msgid "Tools"
+msgstr ""
+
 #: src/components/pools/PoolsOverview.tsx
 msgid "Top Gainer Pools"
 msgstr ""
 
+#: src/pages/Discover/index.tsx
+msgid "Top Gainers"
+msgstr ""
+
 #: src/components/pools/PoolsOverview.tsx
 msgid "Top Looser Pools"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+msgid "Top Loosers"
 msgstr ""
 
 #: src/components/Table/overview.tsx
@@ -1899,6 +1913,11 @@ msgstr "الموعد النهائي للمعاملة"
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
+msgid "Trending tokens"
 msgstr ""
 
 #: src/components/WalletModal/PendingView.tsx

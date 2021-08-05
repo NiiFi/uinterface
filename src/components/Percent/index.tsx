@@ -38,6 +38,10 @@ export default function Percent({
     )
   }
 
+  if (typeof value === 'string') {
+    value = parseFloat(value)
+  }
+
   const arrowDown = <ArrowDownIcon style={{ marginLeft: '4px' }} width="12px" height="12px" color={theme.red2} />
 
   const arrowUp = <ArrowUpIcon style={{ marginLeft: '4px' }} width="12px" height="12px" color={theme.green2} />
