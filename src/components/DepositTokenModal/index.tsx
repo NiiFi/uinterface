@@ -1,8 +1,6 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import { Trans } from '@lingui/macro'
-import { Currency } from '@uniswap/sdk-core'
-import { ChevronDown } from 'react-feather'
 
 import { useCurrency } from 'hooks/Tokens'
 import { useActiveWeb3React } from 'hooks/web3'
@@ -10,12 +8,12 @@ import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import { ApplicationModal } from 'state/application/actions'
 import useFakeBuyTokenFlow from 'hooks/useFakeBuyTokenFlow'
 import { ReactComponent as Close } from 'assets/images/x.svg'
+import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE } from 'theme'
-import { useBuyTokenModalToggle, useModalOpen, useWalletModalToggle } from 'state/application/hooks'
+import { useDepositToNahmiiModalToggle, useModalOpen, useWalletModalToggle } from 'state/application/hooks'
 import { useEthereumToBaseCurrencyRatesAndApiState, useBaseCurrency } from 'state/user/hooks'
-import { ButtonPrimary } from 'components/Button'
+import { ButtonSuccess, ButtonPrimary } from 'components/Button'
 import { shortenDecimalValues } from 'utils'
-import useTheme from 'hooks/useTheme'
 import Row, { RowBetween } from 'components/Row'
 import Modal from '../Modal'
 
@@ -59,24 +57,17 @@ const Wrapper = styled.div`
   width: 100%;
 `
 
-export default function BuyTokenModal() {
-  const theme = useTheme()
+export default function DepositTokenModal() {
   const { account } = useActiveWeb3React()
   const { baseCurrencyDetail, baseCurrency } = useBaseCurrency()
   const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
-  const buyTokenModalOpen = useModalOpen(ApplicationModal.BUY_TOKEN)
-  const toggleBuyTokenModal = useBuyTokenModalToggle()
+  const buyTokenModalOpen = useModalOpen(ApplicationModal.DEPOSIT_TO_NAHMII)
+  const toggleDepositToNahmiiModal = useDepositToNahmiiModalToggle()
   const toggleWalletModal = useWalletModalToggle()
-  const { handleBuy } = useFakeBuyTokenFlow()
-  const [currencyTokenOne, setCurrencyTokenOne] = useState<Currency | null | undefined>(useCurrency('ETH'))
+  const { handleDeposit } = useFakeBuyTokenFlow()
+  const currencyTokenOne = useCurrency('ETH')
   const [currencyTokenOneValue, setCurrencyTokenOneValue] = useState<string>('')
   const [ethValue, setEthValue] = useState('0')
-  const onCurrencySelect = useCallback(
-    (token: any) => {
-      setCurrencyTokenOne(token)
-    },
-    [setCurrencyTokenOne]
-  )
 
   useEffect(() => {
     if (!buyTokenModalOpen) {
@@ -84,19 +75,20 @@ export default function BuyTokenModal() {
       setEthValue('0')
     }
   }, [buyTokenModalOpen])
+
   return (
-    <Modal isOpen={buyTokenModalOpen} onDismiss={toggleBuyTokenModal} minHeight={false} maxHeight={90}>
+    <Modal isOpen={buyTokenModalOpen} onDismiss={toggleDepositToNahmiiModal} minHeight={false} maxHeight={90}>
       <Wrapper>
         <UpperSection>
-          <CloseIcon onClick={toggleBuyTokenModal}>
+          <CloseIcon onClick={toggleDepositToNahmiiModal}>
             <CloseColor />
           </CloseIcon>
           <HeaderRow>
-            <Trans>Buy Tokens</Trans>
+            <Trans>Deposit Token To Nahmii</Trans>
           </HeaderRow>
           <RowBetween style={{ marginTop: '2rem', marginBottom: '0.5rem' }}>
             <TYPE.body color={`text2`} fontWeight={400} fontSize={14}>
-              <Trans>Token To Buy</Trans>
+              <Trans>Token To Deposit</Trans>
             </TYPE.body>
             <TYPE.body color={`text2`} fontWeight={400} fontSize={14}>
               <Trans>Amount</Trans>
@@ -104,55 +96,39 @@ export default function BuyTokenModal() {
           </RowBetween>
           <div>
             <CurrencyInputPanel
-              id="buy-tokenPool"
+              id="deposit-token"
               labelText={''}
               currency={currencyTokenOne}
               otherCurrency={null}
               showMaxButton={false}
-              postfix={baseCurrencyDetail.symbol}
               hideBalance={true}
               value={currencyTokenOneValue}
-              onCurrencySelect={onCurrencySelect}
               onUserInput={(value) => {
                 setCurrencyTokenOneValue(value)
                 const valueInNumber = Number(value)
                 if (!isNaN(valueInNumber) && rates?.[baseCurrency]) {
-                  setEthValue(shortenDecimalValues(`${valueInNumber / rates[baseCurrency]}`, '0.[000]'))
+                  setEthValue(
+                    shortenDecimalValues(`${valueInNumber * rates[baseCurrency]}`, TOKEN_VALUE_CURRENCY_FORMAT)
+                  )
                 }
               }}
             />
           </div>
-          <TYPE.body color={theme.text2} fontWeight={400} fontSize={14} textAlign={'right'}>
-            {`≈ ${ethValue} ${currencyTokenOne?.symbol || 'ETH'}`}
+          <TYPE.body color={`text2`} fontWeight={400} fontSize={14} textAlign={'right'}>
+            {`≈ ${baseCurrencyDetail.symbol} ${ethValue} `}
           </TYPE.body>
-          <Row
-            marginTop="1rem"
-            style={{ borderTop: `1px solid ${theme.bg3}`, borderBottom: `1px solid ${theme.bg3}`, padding: '1rem 0px' }}
-          >
-            <RowBetween>
-              <TYPE.body color={theme.text1} fontWeight={'normal'} fontSize={'1rem'}>
-                <Trans>Payment Method</Trans>
-              </TYPE.body>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <TYPE.body color={theme.text1} fontWeight={'normal'} fontSize={'1rem'}>
-                  <Trans>VISA *5546</Trans>
-                </TYPE.body>
-                <ChevronDown />
-              </div>
-            </RowBetween>
-          </Row>
           <Row marginTop="1rem">
             {account ? (
-              <ButtonPrimary
+              <ButtonSuccess
                 disabled={!currencyTokenOneValue || Number(currencyTokenOneValue) <= 0}
                 style={{ textTransform: 'uppercase' }}
                 onClick={() => {
-                  handleBuy()
-                  toggleBuyTokenModal()
+                  handleDeposit()
+                  toggleDepositToNahmiiModal()
                 }}
               >
-                <Trans>Buy</Trans>
-              </ButtonPrimary>
+                <Trans>Deposit Token To Nahmii</Trans>
+              </ButtonSuccess>
             ) : (
               <ButtonPrimary onClick={toggleWalletModal}>
                 <Trans>Connect Wallet</Trans>

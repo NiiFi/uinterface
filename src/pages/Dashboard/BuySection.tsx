@@ -14,10 +14,11 @@ import { WalletItem } from 'components/Header/WalletList'
 import { TYPE, BaseCurrencyView } from 'theme'
 import { useUserWallets } from 'state/user/hooks'
 import { useActiveWeb3React } from 'hooks/web3'
-import { useWalletModalToggle, useBuyTokenModalToggle } from 'state/application/hooks'
+import { useWalletModalToggle, useBuyTokenModalToggle, useDepositToNahmiiModalToggle } from 'state/application/hooks'
 import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 import BuyTokenModal from 'components/BuyTokenModal'
+import DepositTokenModal from 'components/DepositTokenModal'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 
 const BuySectionAmountFigures = styled.div`
@@ -30,11 +31,12 @@ export default function BuySection() {
   const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const toggleWalletModal = useWalletModalToggle()
   const toggleBuyTokenModal = useBuyTokenModalToggle()
+  const toggleDepositToNahmiiModal = useDepositToNahmiiModalToggle()
   const { userWallets, userRecentWallet } = useUserWallets()
   const { account } = useActiveWeb3React()
   const { error } = useWeb3React()
   const inputCurrency = useCurrency('ETH')
-  const { buyState, handleDeposit } = useFakeBuyTokenFlow()
+  const { buyState } = useFakeBuyTokenFlow()
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency ?? undefined)
   const activeWallet =
     account && userWallets[account.toLowerCase()]
@@ -98,7 +100,11 @@ export default function BuySection() {
                   </ButtonProcess>
                 )}
                 {buyState === 'deposit' && (
-                  <ButtonSuccess fontSize={'0.875rem'} onClick={handleDeposit} style={{ textTransform: 'uppercase' }}>
+                  <ButtonSuccess
+                    fontSize={'0.875rem'}
+                    onClick={toggleDepositToNahmiiModal}
+                    style={{ textTransform: 'uppercase' }}
+                  >
                     <Trans>Deposit</Trans>
                   </ButtonSuccess>
                 )}
@@ -113,6 +119,7 @@ export default function BuySection() {
         </ResponsiveRow>
       </RowBetween>
       <BuyTokenModal />
+      <DepositTokenModal />
     </>
   )
 }
