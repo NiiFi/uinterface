@@ -278,7 +278,6 @@ msgstr "URLが<0> app.uniswap.org</0>であることを常に確認してくだ�
 #~ msgstr "数量"
 
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Amount to Invest"
 msgstr ""
@@ -359,7 +358,6 @@ msgstr ""
 #~ msgstr "戻る"
 
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 msgid "Balance"
 msgstr ""
 
@@ -582,7 +580,6 @@ msgstr "ウォレットで取引を確認する"
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -948,7 +945,6 @@ msgid "INR"
 msgstr ""
 
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 msgid "INVEST"
 msgstr ""
 
@@ -1009,7 +1005,6 @@ msgid "Install Metamask"
 msgstr "メタマスクのインストール"
 
 #: src/components/PoolInvest/index.tsx
-#: src/components/PoolInvestModal/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
@@ -1053,7 +1048,6 @@ msgstr "無効なペアです。"
 msgid "Invalid recipient"
 msgstr "受け取りアドレスが無効です"
 
-#: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1090,6 +1084,7 @@ msgstr ""
 #: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
 msgid "Liquidity"
 msgstr "流動性"
 
@@ -1245,6 +1240,7 @@ msgid "Name"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
 msgid "New Pools"
 msgstr ""
 
@@ -1412,6 +1408,8 @@ msgstr ""
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/TokenDetails.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price"
@@ -1583,6 +1581,9 @@ msgid "Search name or paste address"
 msgstr "トークン名、アドレス"
 
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
 msgid "See all"
 msgstr ""
 
@@ -1783,6 +1784,7 @@ msgstr "これらのトークンは一般的に他のトークンとペアにな
 
 #: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
+#: src/pages/Discover/index.tsx
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
@@ -1842,12 +1844,24 @@ msgstr "トークン"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "あなたが利用していないリストにあるトークンです。以下の特定のトークンをインポートするか、[管理] をクリックして他のリストを有効にしてください。"
 
+#: src/pages/Discover/index.tsx
+msgid "Tools"
+msgstr ""
+
 #: src/components/pools/PoolsOverview.tsx
 msgid "Top Gainer Pools"
 msgstr ""
 
+#: src/pages/Discover/index.tsx
+msgid "Top Gainers"
+msgstr ""
+
 #: src/components/pools/PoolsOverview.tsx
 msgid "Top Looser Pools"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+msgid "Top Loosers"
 msgstr ""
 
 #: src/components/Table/overview.tsx
@@ -1898,6 +1912,11 @@ msgstr "取引期限"
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
+msgid "Trending tokens"
 msgstr ""
 
 #: src/components/WalletModal/PendingView.tsx
