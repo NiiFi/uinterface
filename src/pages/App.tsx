@@ -14,6 +14,7 @@ import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import Discover from './Discover'
 import Swap from './Swap'
 import Pools from './Pool'
+import Dashboard from './Dashboard'
 import PoolDetail from './PoolDetail'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import { useToggleDrawer } from 'state/application/hooks'
@@ -101,6 +102,7 @@ export default function App() {
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/swap" component={Swap} />
+              <Route exact strict path="/dashboard" component={Dashboard} />
               <Route exact strict path="/pools/:page?" component={Pools} />
               <Route exact strict path="/pools/:token0/:token1" component={PoolDetail} />
               <Route component={Discover} />
