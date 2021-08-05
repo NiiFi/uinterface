@@ -273,9 +273,9 @@ msgstr ""
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
 msgstr "항상 URL이 <0> app.uniswap.org인지 확인하십시오.</0> -안전을 위해 북마크하십시오."
 
-#: 
-#~ msgid "Amount"
-#~ msgstr "양"
+#: src/components/BuyTokenModal/index.tsx
+msgid "Amount"
+msgstr "양"
 
 #: src/components/PoolInvest/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
@@ -324,6 +324,10 @@ msgstr "확실합니까?"
 #: 
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
 #~ msgstr "Uniswap 커뮤니티의 회원으로서 UNI가 투표 및 거버넌스에 사용된다고 주장 할 수 있습니다. <0/> <1/> <2> UN에 대해 자세히 알아보기</2>"
+
+#: src/components/Table/Dashboard/Assets.tsx
+msgid "Assets"
+msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -395,6 +399,15 @@ msgstr "차단 된 주소"
 
 #: src/constants/tokens.ts
 msgid "Brazilian Real"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Buy"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Buy Tokens"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
@@ -577,11 +590,13 @@ msgstr "스왑 확인"
 msgid "Confirm this transaction in your wallet"
 msgstr "지갑에서이 거래를 확인하세요"
 
+#: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -932,6 +947,10 @@ msgstr ""
 msgid "High Price Impact"
 msgstr "높은 가격 영향"
 
+#: src/components/Table/Dashboard/History.tsx
+msgid "History"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "Hong Kong Dollar"
 msgstr ""
@@ -1231,12 +1250,20 @@ msgstr "최소 수령"
 #~ msgid "More"
 #~ msgstr "더"
 
+#: src/pages/Dashboard/index.tsx
+msgid "NFTs Collection"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "NOK"
 msgstr ""
 
 #: src/components/Table/overview.tsx
 msgid "Name"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Net Worth"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
@@ -1630,6 +1657,10 @@ msgstr "본인"
 msgid "Self Delegate"
 msgstr "자체 대리인"
 
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Send"
+msgstr ""
+
 #: 
 #: 
 #~ msgid "Set Price Range"
@@ -1834,6 +1865,10 @@ msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
 msgid "Token Stats"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Token To Buy"
 msgstr ""
 
 #: src/components/SearchModal/Manage.tsx
@@ -2152,6 +2187,10 @@ msgstr "확인을 기다리는 중"
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
 msgid "Wallet"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Wallet Balance"
 msgstr ""
 
 #: src/components/AccountDetails/index.tsx

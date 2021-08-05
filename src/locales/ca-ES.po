@@ -274,9 +274,9 @@ msgstr ""
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
 msgstr "Assegureu-vos sempre que l'URL sigui <0> app.uniswap.org</0> - Afegiu-lo a un marcador perquè sigui segur."
 
-#: 
-#~ msgid "Amount"
-#~ msgstr "Import"
+#: src/components/BuyTokenModal/index.tsx
+msgid "Amount"
+msgstr "Import"
 
 #: src/components/PoolInvest/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
@@ -325,6 +325,10 @@ msgstr "Estàs segur?"
 #: 
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
 #~ msgstr "Com a membre de la comunitat Uniswap, podeu reclamar que UNI s'utilitzi per votar i governar. <0/> <1/> <2> Llegiu més sobre UNI</2>"
+
+#: src/components/Table/Dashboard/Assets.tsx
+msgid "Assets"
+msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -396,6 +400,15 @@ msgstr "Adreça bloquejada"
 
 #: src/constants/tokens.ts
 msgid "Brazilian Real"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Buy"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Buy Tokens"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
@@ -578,11 +591,13 @@ msgstr "Confirmeu l'intercanvi"
 msgid "Confirm this transaction in your wallet"
 msgstr "Confirmeu aquesta transacció a la vostra cartera"
 
+#: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -933,6 +948,10 @@ msgstr ""
 msgid "High Price Impact"
 msgstr "Alt impacte en els preus"
 
+#: src/components/Table/Dashboard/History.tsx
+msgid "History"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "Hong Kong Dollar"
 msgstr ""
@@ -1232,12 +1251,20 @@ msgstr "Mínim rebut"
 #~ msgid "More"
 #~ msgstr "Més"
 
+#: src/pages/Dashboard/index.tsx
+msgid "NFTs Collection"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "NOK"
 msgstr ""
 
 #: src/components/Table/overview.tsx
 msgid "Name"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Net Worth"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
@@ -1635,6 +1662,10 @@ msgstr "Jo"
 msgid "Self Delegate"
 msgstr "Autodelegat"
 
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Send"
+msgstr ""
+
 #: 
 #: 
 #~ msgid "Set Price Range"
@@ -1843,6 +1874,10 @@ msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
 msgid "Token Stats"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Token To Buy"
 msgstr ""
 
 #: src/components/SearchModal/Manage.tsx
@@ -2162,6 +2197,10 @@ msgstr "Esperant la confirmació"
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
 msgid "Wallet"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Wallet Balance"
 msgstr ""
 
 #: src/components/AccountDetails/index.tsx
