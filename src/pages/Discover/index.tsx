@@ -213,7 +213,7 @@ export default function Discover() {
                     <TYPE.body>
                       <Trans>Trending tokens</Trans>
                     </TYPE.body>
-                    <TYPE.largeHeader fontWeight={400}>
+                    <TYPE.largeHeader fontWeight={400} lineHeight="2.250rem">
                       <Trans>Top Gainers</Trans>
                     </TYPE.largeHeader>
                   </div>
@@ -287,7 +287,7 @@ export default function Discover() {
                     <TYPE.body>
                       <Trans>Trending tokens</Trans>
                     </TYPE.body>
-                    <TYPE.largeHeader fontWeight={400}>
+                    <TYPE.largeHeader fontWeight={400} lineHeight="2.250rem">
                       <Trans>Top Loosers</Trans>
                     </TYPE.largeHeader>
                   </div>
