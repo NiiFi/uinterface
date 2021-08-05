@@ -274,6 +274,7 @@ msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be saf
 msgstr "Πάντα βεβαιωθείτε ότι το URL είναι<0>app.uniswap.org</0> - σελιδοδείκτη για να είναι ασφαλές."
 
 #: src/components/BuyTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 msgid "Amount"
 msgstr "Ποσό"
 
@@ -592,6 +593,7 @@ msgstr "Επιβεβαιώστε αυτή τη συναλλαγή στο πορ�
 
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
@@ -715,6 +717,7 @@ msgstr "Εκχώρηση ψήφων"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "Κατάθεση"
@@ -722,6 +725,11 @@ msgstr "Κατάθεση"
 #: 
 #~ msgid "Deposit Amounts"
 #~ msgstr "Ποσά Κατάθεσης"
+
+#: src/components/DepositTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Deposit Token To Nahmii"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit UNI-V2 LP Tokens"
@@ -1383,6 +1391,10 @@ msgstr ""
 msgid "Participating pools"
 msgstr "Συμμετέχουσες πισίνες"
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Payment Method"
+msgstr ""
+
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Period"
 msgstr ""
@@ -1871,6 +1883,10 @@ msgstr ""
 msgid "Token To Buy"
 msgstr ""
 
+#: src/components/DepositTokenModal/index.tsx
+msgid "Token To Deposit"
+msgstr ""
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Tokens"
 msgstr "Ενδείξεις"
@@ -2105,6 +2121,10 @@ msgstr "Χρήστης"
 #: 
 #~ msgid "V3 {0} Price:"
 #~ msgstr "V3 {0} Τιμή:"
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "VISA *5546"
+msgstr ""
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
@@ -2422,6 +2442,10 @@ msgstr "μέσω {0}"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "via {0} token list"
 msgstr "μέσω {0} λίστας διακριτικών"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "waiting..."
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"

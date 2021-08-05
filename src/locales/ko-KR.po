@@ -274,6 +274,7 @@ msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be saf
 msgstr "항상 URL이 <0> app.uniswap.org인지 확인하십시오.</0> -안전을 위해 북마크하십시오."
 
 #: src/components/BuyTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 msgid "Amount"
 msgstr "양"
 
@@ -592,6 +593,7 @@ msgstr "지갑에서이 거래를 확인하세요"
 
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
@@ -715,6 +717,7 @@ msgstr "투표 위임"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "예금"
@@ -722,6 +725,11 @@ msgstr "예금"
 #: 
 #~ msgid "Deposit Amounts"
 #~ msgstr "입금액"
+
+#: src/components/DepositTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Deposit Token To Nahmii"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit UNI-V2 LP Tokens"
@@ -1383,6 +1391,10 @@ msgstr ""
 msgid "Participating pools"
 msgstr "참여 풀"
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Payment Method"
+msgstr ""
+
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Period"
 msgstr ""
@@ -1871,6 +1883,10 @@ msgstr ""
 msgid "Token To Buy"
 msgstr ""
 
+#: src/components/DepositTokenModal/index.tsx
+msgid "Token To Deposit"
+msgstr ""
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Tokens"
 msgstr "토큰"
@@ -2105,6 +2121,10 @@ msgstr "사용자"
 #: 
 #~ msgid "V3 {0} Price:"
 #~ msgstr "V3 {0} 가격 :"
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "VISA *5546"
+msgstr ""
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
@@ -2422,6 +2442,10 @@ msgstr "{0}통해"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "via {0} token list"
 msgstr "{0} 토큰 목록을 통해"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "waiting..."
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"

@@ -274,6 +274,7 @@ msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be saf
 msgstr "務必確保網址為<0>app.uniswap.org</0> - 將其加入書簽，以確保安全。"
 
 #: src/components/BuyTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 msgid "Amount"
 msgstr "數額"
 
@@ -592,6 +593,7 @@ msgstr "在您的錢包中確認這筆交易"
 
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
@@ -715,6 +717,7 @@ msgstr "委托投票"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "充值"
@@ -722,6 +725,11 @@ msgstr "充值"
 #: 
 #~ msgid "Deposit Amounts"
 #~ msgstr "充值數額"
+
+#: src/components/DepositTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Deposit Token To Nahmii"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit UNI-V2 LP Tokens"
@@ -1383,6 +1391,10 @@ msgstr ""
 msgid "Participating pools"
 msgstr "參與的流動池"
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Payment Method"
+msgstr ""
+
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Period"
 msgstr ""
@@ -1871,6 +1883,10 @@ msgstr ""
 msgid "Token To Buy"
 msgstr ""
 
+#: src/components/DepositTokenModal/index.tsx
+msgid "Token To Deposit"
+msgstr ""
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Tokens"
 msgstr "代幣"
@@ -2105,6 +2121,10 @@ msgstr "用戶"
 #: 
 #~ msgid "V3 {0} Price:"
 #~ msgstr "V3 {0} 兌換率："
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "VISA *5546"
+msgstr ""
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
@@ -2422,6 +2442,10 @@ msgstr "通過 {0}"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "via {0} token list"
 msgstr "從 {0} 代幣列表"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "waiting..."
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"
