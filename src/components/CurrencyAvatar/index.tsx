@@ -25,7 +25,6 @@ import {
   NOK,
   SGD,
   NIIIcon,
-  // HEXIIcon,
 } from 'components/Icons'
 type Props = {
   symbol: TokenName
@@ -70,7 +69,6 @@ const CurrencyIconMap: { [currency in TokenName]: (props: IconProps) => JSX.Elem
   NOK,
   SGD,
   NII: NIIIcon,
-  // HEX: HEXIIcon,
 }
 export const CurrencyAvatar = ({ symbol, iconProps, containerStyle, rootStyle, hideSymbol }: Props) => {
   const Icon = CurrencyIconMap[symbol]

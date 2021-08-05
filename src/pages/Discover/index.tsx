@@ -8,7 +8,6 @@ import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
 import AppBar from 'components/AppBar'
 import { DefaultCard } from 'components/Card'
-import { RowFixed } from 'components/Row'
 import SimpleTable from 'components/Table/Simple'
 import { ArrowDownIcon, ArrowUpIcon, BoxIcon, GearIcon, NIILogo } from 'components/Icons'
 import { IconProps } from 'components/Icons/types'
@@ -29,7 +28,6 @@ import { BodyPanel } from '../styled'
 import { getPoolsData } from 'components/Table/sample-pools'
 
 import TableCell from '@material-ui/core/TableCell'
-import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import Percent from 'components/Percent'
@@ -273,7 +271,7 @@ export default function Discover() {
                 <LinkWrapper>
                   <Link
                     to={{
-                      pathname: '/swap#overview',
+                      pathname: '/swap',
                       state: { activeTab: 1, type: 'gainer' },
                     }}
                   >
@@ -347,7 +345,7 @@ export default function Discover() {
                 <LinkWrapper>
                   <Link
                     to={{
-                      pathname: '/pools/search?type=looser',
+                      pathname: '/swap',
                       state: { activeTab: 1, type: 'looser' },
                     }}
                   >
@@ -428,8 +426,8 @@ export default function Discover() {
                 <LinkWrapper>
                   <Link
                     to={{
-                      pathname: '/pools/search?type=new',
-                      state: { activeTab: 1, type: 'new' },
+                      pathname: '/pools/overview',
+                      state: { activeTab: 0, type: 'new' },
                     }}
                   >
                     <Trans>See all</Trans>

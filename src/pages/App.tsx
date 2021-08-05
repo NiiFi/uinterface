@@ -98,13 +98,12 @@ export default function App() {
           <TopLevelModals />
           <Web3ReactManager>
             <Switch>
-              <Route exact strict path="/discover" component={Discover} />
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/swap" component={Swap} />
               <Route exact strict path="/pools/:page?" component={Pools} />
               <Route exact strict path="/pools/:token0/:token1" component={PoolDetail} />
-              <Route component={RedirectPathToSwapOnly} />
+              <Route component={Discover} />
             </Switch>
           </Web3ReactManager>
         </BodyWrapper>

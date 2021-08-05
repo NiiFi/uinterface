@@ -50,6 +50,15 @@ export default function Pool() {
 
   useEffect(() => {
     setActiveTab(state?.activeTab || activeTab)
+
+    if (state?.activeTab !== 0) {
+      return
+    }
+
+    const scrollToTop = setTimeout(() => document.querySelector('#new-pools')?.scrollIntoView())
+    return () => {
+      clearTimeout(scrollToTop)
+    }
   }, [state, activeTab])
 
   useEffect(() => {
@@ -95,7 +104,7 @@ export default function Pool() {
           </Disclaimer>
           <PoolsOverview type="gainer" />
           <PoolsOverview type="looser" style={{ paddingTop: '50px' }} />
-          <PoolsOverview type="new" style={{ paddingTop: '50px' }} />
+          <PoolsOverview id="new-pools" type="new" style={{ paddingTop: '50px' }} />
         </TabPanel>
         <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
           <AppBody size="lg">

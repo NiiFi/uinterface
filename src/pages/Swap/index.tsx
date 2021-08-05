@@ -11,7 +11,7 @@ import JSBI from 'jsbi'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { ChevronDown, ChevronUp, CheckCircle, HelpCircle, Info } from 'react-feather'
 import ReactGA from 'react-ga'
-import { RouteComponentProps } from 'react-router-dom'
+import { RouteComponentProps, useLocation } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled from 'styled-components'
 import AddressInputPanel from '../../components/AddressInputPanel'
@@ -85,6 +85,23 @@ const ArrowContainer = styled.div`
 export default function Swap({ history }: RouteComponentProps) {
   const [activeTab, setActiveTab] = useState<number>(0)
   const loadedUrlParams = useDefaultsFromURLSearch()
+  const { state } = useLocation<any>()
+
+  // TODO: implement more flexible solution
+  useEffect(() => {
+    if (!state?.activeTab) {
+      return
+    }
+
+    setActiveTab(state.activeTab)
+
+    const scrollTo = setTimeout(() =>
+      document.querySelector('#top-tokens-table')?.scrollIntoView({ behavior: 'smooth' })
+    )
+    return () => {
+      clearTimeout(scrollTo)
+    }
+  }, [state])
 
   // token warning stuff
   const [loadedInputCurrency, loadedOutputCurrency] = [
@@ -702,7 +719,7 @@ export default function Swap({ history }: RouteComponentProps) {
                 </FlexColumn>
               </DefaultCard>
             </ResponsiveRow>
-            <ResponsiveRow>
+            <ResponsiveRow id="top-tokens-table">
               <AppBody size="lg">
                 <OverviewTable />
               </AppBody>

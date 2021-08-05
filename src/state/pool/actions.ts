@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit'
 import { SupportedBaseCurrencies } from 'constants/tokens'
-export type TokenName = SupportedBaseCurrencies | 'NII' // | 'HEX'
+export type TokenName = SupportedBaseCurrencies | 'NII'
 export type PoolToken = {
   symbol: TokenName // TODO: NEED TO COME UP WITH A BETTER TYPE/INTERFACE
   address: string
