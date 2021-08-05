@@ -4,8 +4,9 @@ import { Trans } from '@lingui/macro'
 import { useWeb3React } from '@web3-react/core'
 
 import Web3Status from 'components/Web3Status'
-import { ButtonPrimary } from 'components/Button'
+import { ButtonPrimary, ButtonProcess, ButtonSuccess } from 'components/Button'
 
+import useFakeBuyTokenFlow from 'hooks/useFakeBuyTokenFlow'
 import { useCurrency } from 'hooks/Tokens'
 import { useCurrencyBalance } from 'state/wallet/hooks'
 import { ResponsiveRow, RowBetween } from 'components/Row'
@@ -33,6 +34,7 @@ export default function BuySection() {
   const { account } = useActiveWeb3React()
   const { error } = useWeb3React()
   const inputCurrency = useCurrency('ETH')
+  const { buyState, handleDeposit } = useFakeBuyTokenFlow()
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency ?? undefined)
   const activeWallet =
     account && userWallets[account.toLowerCase()]
@@ -81,13 +83,25 @@ export default function BuySection() {
           {account && (
             <>
               <div style={{ display: 'flex' }}>
-                <ButtonPrimary
-                  fontSize={'0.875rem'}
-                  onClick={toggleBuyTokenModal}
-                  style={{ textTransform: 'uppercase' }}
-                >
-                  <Trans>Buy Tokens</Trans>
-                </ButtonPrimary>
+                {buyState === 'buy' && (
+                  <ButtonPrimary
+                    fontSize={'0.875rem'}
+                    onClick={toggleBuyTokenModal}
+                    style={{ textTransform: 'uppercase' }}
+                  >
+                    <Trans>Buy Tokens</Trans>
+                  </ButtonPrimary>
+                )}
+                {buyState === 'process' && (
+                  <ButtonProcess fontSize={'0.875rem'} style={{ textTransform: 'uppercase' }}>
+                    <Trans>waiting...</Trans>
+                  </ButtonProcess>
+                )}
+                {buyState === 'deposit' && (
+                  <ButtonSuccess fontSize={'0.875rem'} onClick={handleDeposit} style={{ textTransform: 'uppercase' }}>
+                    <Trans>Deposit</Trans>
+                  </ButtonSuccess>
+                )}
               </div>
               <div style={{ display: 'flex' }}>
                 <ButtonPrimary fontSize={'0.875rem'} style={{ textTransform: 'uppercase' }}>

@@ -7,6 +7,7 @@ import { useCurrency } from 'hooks/Tokens'
 import { useActiveWeb3React } from 'hooks/web3'
 import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import { ApplicationModal } from 'state/application/actions'
+import useFakeBuyTokenFlow from 'hooks/useFakeBuyTokenFlow'
 import { ReactComponent as Close } from 'assets/images/x.svg'
 import { TYPE } from 'theme'
 import { useBuyTokenModalToggle, useModalOpen, useWalletModalToggle } from 'state/application/hooks'
@@ -63,6 +64,7 @@ export default function CreatePoolModal() {
   const buyTokenModalOpen = useModalOpen(ApplicationModal.BUY_TOKEN)
   const toggleBuyTokenModal = useBuyTokenModalToggle()
   const toggleWalletModal = useWalletModalToggle()
+  const { handleBuy } = useFakeBuyTokenFlow()
   const [currencyTokenOne, setCurrencyTokenOne] = useState<Currency | null | undefined>(useCurrency('ETH'))
   const [currencyTokenOneValue, setCurrencyTokenOneValue] = useState<string>('')
   const [ethValue, setEthValue] = useState('0')
@@ -116,7 +118,13 @@ export default function CreatePoolModal() {
           </TYPE.body>
           <Row marginTop="1rem">
             {account ? (
-              <ButtonPrimary style={{ textTransform: 'uppercase' }} onClick={toggleBuyTokenModal}>
+              <ButtonPrimary
+                style={{ textTransform: 'uppercase' }}
+                onClick={() => {
+                  handleBuy()
+                  toggleBuyTokenModal()
+                }}
+              >
                 <Trans>Buy</Trans>
               </ButtonPrimary>
             ) : (

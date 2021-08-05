@@ -23,7 +23,7 @@ export interface UserWallets {
   type: UserWalletTypes
   timestamp: number
 }
-
+export type BuyTokenStates = 'buy' | 'process' | 'deposit'
 export const updateMatchesDarkMode = createAction<{ matchesDarkMode: boolean }>('user/updateMatchesDarkMode')
 export const updateUserDarkMode = createAction<{ userDarkMode: boolean }>('user/updateUserDarkMode')
 export const updateUserExpertMode = createAction<{ userExpertMode: boolean }>('user/updateUserExpertMode')
@@ -49,3 +49,5 @@ export const setBaseCurrency = createAction<SupportedBaseCurrencies>('user/setBa
 export const setEthereumToBaseCurrencyRates = createAction<{ [key: string]: number }>(
   'user/setEthereumToBaseCurrencyRates'
 )
+
+export const setBuyTokenState = createAction<BuyTokenStates>('user/buyTokenState')
