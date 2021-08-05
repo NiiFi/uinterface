@@ -13,9 +13,10 @@ import { WalletItem } from 'components/Header/WalletList'
 import { TYPE, BaseCurrencyView } from 'theme'
 import { useUserWallets } from 'state/user/hooks'
 import { useActiveWeb3React } from 'hooks/web3'
-import { useWalletModalToggle } from 'state/application/hooks'
+import { useWalletModalToggle, useBuyTokenModalToggle } from 'state/application/hooks'
 import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
+import BuyTokenModal from 'components/BuyTokenModal'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 
 const BuySectionAmountFigures = styled.div`
@@ -27,6 +28,7 @@ const BuySectionAmountFigures = styled.div`
 export default function BuySection() {
   const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const toggleWalletModal = useWalletModalToggle()
+  const toggleBuyTokenModal = useBuyTokenModalToggle()
   const { userWallets, userRecentWallet } = useUserWallets()
   const { account } = useActiveWeb3React()
   const { error } = useWeb3React()
@@ -43,53 +45,60 @@ export default function BuySection() {
   }
   const balanceValue = balance && rates['USD'] ? Number(formatCurrencyAmount(balance, 4)) * rates['USD'] : 0
   return (
-    <RowBetween>
-      <ResponsiveRow style={{ width: 'auto' }}>
-        <WalletItem
-          style={{ marginBottom: '0px', width: 'auto', marginRight: '1rem' }}
-          name={activeWallet.name}
-          address={account || userRecentWallet || ''}
-        />
-        <BuySectionAmountFigures>
-          <TYPE.body>
-            <Trans>Wallet Balance</Trans>
-          </TYPE.body>
-          <TYPE.mediumHeader>
-            {<BaseCurrencyView value={balanceValue} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />}
-          </TYPE.mediumHeader>
-        </BuySectionAmountFigures>
-        <BuySectionAmountFigures>
-          <TYPE.body>
-            <Trans>Net Worth</Trans>
-          </TYPE.body>
-          <TYPE.mediumHeader>
-            <BaseCurrencyView value={balanceValue * 2} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
-          </TYPE.mediumHeader>
-        </BuySectionAmountFigures>
-      </ResponsiveRow>
-      <ResponsiveRow gap={'1.25rem'} style={{ width: 'auto', justifyContent: 'flex-end' }}>
-        {!account && (
-          <div style={{ display: 'flex' }}>
-            <ButtonPrimary fontSize={'0.875rem'} onClick={toggleWalletModal} style={{ textTransform: 'uppercase' }}>
-              <Trans>Connect Wallet</Trans>
-            </ButtonPrimary>
-          </div>
-        )}
-        {account && (
-          <>
+    <>
+      <RowBetween>
+        <ResponsiveRow style={{ width: 'auto' }}>
+          <WalletItem
+            style={{ marginBottom: '0px', width: 'auto', marginRight: '1rem' }}
+            name={activeWallet.name}
+            address={account || userRecentWallet || ''}
+          />
+          <BuySectionAmountFigures>
+            <TYPE.body>
+              <Trans>Wallet Balance</Trans>
+            </TYPE.body>
+            <TYPE.mediumHeader>
+              {<BaseCurrencyView value={balanceValue} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />}
+            </TYPE.mediumHeader>
+          </BuySectionAmountFigures>
+          <BuySectionAmountFigures>
+            <TYPE.body>
+              <Trans>Net Worth</Trans>
+            </TYPE.body>
+            <TYPE.mediumHeader>
+              <BaseCurrencyView value={balanceValue * 2} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
+            </TYPE.mediumHeader>
+          </BuySectionAmountFigures>
+        </ResponsiveRow>
+        <ResponsiveRow gap={'1.25rem'} style={{ width: 'auto', justifyContent: 'flex-end' }}>
+          {!account && (
             <div style={{ display: 'flex' }}>
-              <ButtonPrimary fontSize={'0.875rem'} style={{ textTransform: 'uppercase' }}>
-                <Trans>Buy Tokens</Trans>
+              <ButtonPrimary fontSize={'0.875rem'} onClick={toggleWalletModal} style={{ textTransform: 'uppercase' }}>
+                <Trans>Connect Wallet</Trans>
               </ButtonPrimary>
             </div>
-            <div style={{ display: 'flex' }}>
-              <ButtonPrimary fontSize={'0.875rem'} style={{ textTransform: 'uppercase' }}>
-                <Trans>Send</Trans>
-              </ButtonPrimary>
-            </div>
-          </>
-        )}
-      </ResponsiveRow>
-    </RowBetween>
+          )}
+          {account && (
+            <>
+              <div style={{ display: 'flex' }}>
+                <ButtonPrimary
+                  fontSize={'0.875rem'}
+                  onClick={toggleBuyTokenModal}
+                  style={{ textTransform: 'uppercase' }}
+                >
+                  <Trans>Buy Tokens</Trans>
+                </ButtonPrimary>
+              </div>
+              <div style={{ display: 'flex' }}>
+                <ButtonPrimary fontSize={'0.875rem'} style={{ textTransform: 'uppercase' }}>
+                  <Trans>Send</Trans>
+                </ButtonPrimary>
+              </div>
+            </>
+          )}
+        </ResponsiveRow>
+      </RowBetween>
+      <BuyTokenModal />
+    </>
   )
 }
