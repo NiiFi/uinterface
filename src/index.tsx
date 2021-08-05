@@ -18,7 +18,7 @@ import ApplicationUpdater from './state/application/updater'
 import ListsUpdater from './state/lists/updater'
 import MulticallUpdater from './state/multicall/updater'
 import TransactionUpdater from './state/transactions/updater'
-import UserUpdater from './state/user/updater'
+import UserUpdater, { BaseCurrencyRatesUpdater } from './state/user/updater'
 import ThemeProvider, { ThemedGlobalStyle } from './theme'
 import getLibrary from './utils/getLibrary'
 
@@ -67,6 +67,7 @@ function Updaters() {
     <>
       <ListsUpdater />
       <UserUpdater />
+      <BaseCurrencyRatesUpdater />
       <ApplicationUpdater />
       <TransactionUpdater />
       <MulticallUpdater />

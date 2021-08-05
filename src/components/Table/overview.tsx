@@ -1,21 +1,21 @@
-import React from 'react'
-import useTheme from 'hooks/useTheme'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { t } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
+import { DefaultTheme } from 'styled-components'
 import Percent from 'components/Percent'
 import CurrencyAvatar from 'components/CurrencyAvatar'
-import { shortenDecimalValues } from '../../utils'
-import { TYPE, RowWrapper } from '../../theme'
+import { TYPE, RowWrapper, BaseCurrencyView } from '../../theme'
 import { SampleResponse } from './sample-tokens'
-import Table from './index'
+import Table, { Order } from './index'
 
 const CustomTableRow = (
   row: any,
   index: number,
+  theme: DefaultTheme,
   handleClick: (event: React.MouseEvent<unknown>, name: string) => void
 ) => {
-  const theme = useTheme()
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, fontSize: '16px' }
 
   return (
@@ -33,29 +33,43 @@ const CustomTableRow = (
       </TableCell>
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper>
-          <CurrencyAvatar symbol={'ETH'} containerStyle={{ padding: '0.3125rem' }} hideSymbol={true} />
+          <CurrencyAvatar symbol={'ETH'} hideSymbol={true} />
           <TYPE.black fontWeight={400} style={{ padding: '8px 0 0 6px' }}>
             {row.symbol}
           </TYPE.black>
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(row.priceUSD)}
+        <BaseCurrencyView type="symbol" numeralFormat={'0.[000]a'} value={row.priceUSD} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <Percent value={row.priceUSDChange} fontWeight={400} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        ${shortenDecimalValues(row.volumeUSD)}
+        <BaseCurrencyView type="symbol" numeralFormat={'0.[000]a'} value={row.volumeUSD} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        ${shortenDecimalValues(row.tvlUSD)}
+        <BaseCurrencyView type="symbol" numeralFormat={'0.[000]a'} value={row.tvlUSD} />
       </TableCell>
     </TableRow>
   )
 }
 
 export default function OverviewTable() {
+  const { state } = useLocation<any>() // FIXME: any
+  const [order, setOrder] = React.useState<Order>('asc')
+  const [orderBy, setOrderBy] = React.useState<string>()
+
+  useEffect(() => {
+    if (state?.type !== undefined) {
+      setOrderBy('priceUSDChange')
+      setOrder(state.type === 'looser' ? 'asc' : 'desc')
+    } else {
+      setOrderBy('symbol')
+      setOrder('asc')
+    }
+  }, [state])
+
   return (
     <Table
       title={t`Top Tokens`}
@@ -69,6 +83,8 @@ export default function OverviewTable() {
         { id: 'tvlUSD', numeric: true, disablePadding: false, label: t`TVL` },
       ]}
       row={CustomTableRow}
+      defaultOrder={order}
+      defaultOrderBy={orderBy}
     />
   )
 }

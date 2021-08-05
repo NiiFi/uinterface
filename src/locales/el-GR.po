@@ -171,6 +171,10 @@ msgstr "<0>🎉 </0>Καλώς ήρθατε στην ομάδα Unicorn :) <1>�
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "Απαιτείται ελάχιστο όριο 1% της συνολικής προσφοράς του Ο\"Ε για την υποβολή προτάσεων"
 
+#: src/constants/tokens.ts
+msgid "AUD"
+msgstr ""
+
 #: 
 #~ msgid "About"
 #~ msgstr "Σχετικά"
@@ -273,9 +277,13 @@ msgstr "Πάντα βεβαιωθείτε ότι το URL είναι<0>app.unisw
 #~ msgid "Amount"
 #~ msgstr "Ποσό"
 
-#: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Amount to Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Amount to Withdraw"
 msgstr ""
 
 #: 
@@ -321,6 +329,10 @@ msgstr "Είσαι σίγουρος?"
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
 #~ msgstr "Τουλάχιστον {0} {1} και {2} {3} θα επιστραφούν στο πορτοφόλι σας λόγω του επιλεγμένου εύρους τιμών."
 
+#: src/constants/tokens.ts
+msgid "Australian Dollar"
+msgstr ""
+
 #: src/components/TransactionSettings/index.tsx
 msgid "Auto"
 msgstr "Αυτόματο"
@@ -333,11 +345,19 @@ msgstr ""
 msgid "Available to deposit: {0}"
 msgstr "Διαθέσιμο για κατάθεση: {0}"
 
+#: src/constants/tokens.ts
+msgid "BRL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "BTC"
+msgstr ""
+
 #: 
 #~ msgid "Back"
 #~ msgstr "Πίσω"
 
-#: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolInvest/index.tsx
 msgid "Balance"
 msgstr ""
 
@@ -365,9 +385,17 @@ msgstr ""
 #~ msgid "Best for stable pairs."
 #~ msgstr "Καλύτερο για σταθερά ζευγάρια."
 
+#: src/constants/tokens.ts
+msgid "Bitcoin"
+msgstr ""
+
 #: src/components/Blocklist/index.tsx
 msgid "Blocked address"
 msgstr "Αποκλεισμένη διεύθυνση"
+
+#: src/constants/tokens.ts
+msgid "Brazilian Real"
+msgstr ""
 
 #: src/components/PositionCard/index.tsx
 msgid "By adding liquidity you'll earn 0.3% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
@@ -385,8 +413,24 @@ msgstr ""
 #~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
 #~ msgstr "Συνδέοντας ένα πορτοφόλι, συμφωνείτε με την Uniswap Labs’ <0>Terms of Service</0> και αναγνωρίζετε ότι έχετε διαβάσει και κατανοήσει το <1>Uniswap protocol disclaimer</1>."
 
+#: src/constants/tokens.ts
+msgid "CAD"
+msgstr ""
+
 #: src/components/AccountDetails/index.tsx
 msgid "CANCEL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CHF"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CNY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Canadian Dollar"
 msgstr ""
 
 #: 
@@ -400,6 +444,10 @@ msgstr "Διαγράμματα"
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
 msgstr "Ελέγξτε μας v3 LP διάβαση και τους οδηγούς μετανάστευσης."
+
+#: src/constants/tokens.ts
+msgid "Chinese Yuan"
+msgstr ""
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -531,7 +579,8 @@ msgstr "Επιβεβαιώστε αυτή τη συναλλαγή στο πορ�
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
-#: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolInvest/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -727,6 +776,10 @@ msgstr "Απόρριψη"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Μην βλέπετε μία από τις v2 θέσεις σας? <0>Εισαγωγή της.</0>"
 
+#: src/constants/tokens.ts
+msgid "ETH"
+msgstr ""
+
 #: src/components/LineChart/swap.tsx
 msgid "ETH-ANY Pair Stats (Dummy data)"
 msgstr ""
@@ -734,6 +787,10 @@ msgstr ""
 #: 
 #~ msgid "ETH-NII Transactions"
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "EUR"
+msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
@@ -796,6 +853,14 @@ msgstr "Σφάλμα εισαγωγής λίστας"
 msgid "Est. ROI"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "Ethereum"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "European Union Euro"
+msgstr ""
+
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
 msgstr "Εκτεταμένα αποτελέσματα από ανενεργές λίστες διακριτικών"
@@ -847,9 +912,17 @@ msgstr "Από"
 msgid "From (at most)"
 msgstr "Από (το πολύ)"
 
+#: src/constants/tokens.ts
+msgid "GBP"
+msgstr ""
+
 #: src/components/ErrorBoundary/index.tsx
 msgid "Get support on Discord"
 msgstr "Λάβετε υποστήριξη στο Discord"
+
+#: src/constants/tokens.ts
+msgid "HKD"
+msgstr ""
 
 #: 
 #~ msgid "Hide closed positions"
@@ -859,11 +932,19 @@ msgstr "Λάβετε υποστήριξη στο Discord"
 msgid "High Price Impact"
 msgstr "Επιπτώσεις Υψηλής Τιμής"
 
+#: src/constants/tokens.ts
+msgid "Hong Kong Dollar"
+msgstr ""
+
 #: src/components/SearchModal/ImportList.tsx
 msgid "I understand"
 msgstr "Κατανοώ"
 
-#: src/components/PoolInvestModal/index.tsx
+#: src/constants/tokens.ts
+msgid "INR"
+msgstr ""
+
+#: src/components/PoolInvest/index.tsx
 msgid "INVEST"
 msgstr ""
 
@@ -902,6 +983,10 @@ msgstr "Σε εμβέλεια"
 #~ msgid "Increase Liquidity"
 #~ msgstr "Αύξηση Ρευστότητας"
 
+#: src/constants/tokens.ts
+msgid "Indian Rupees"
+msgstr ""
+
 #: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "Αρχικές τιμές και μερίδιο αγοράς"
@@ -919,7 +1004,8 @@ msgstr "Η εισαγωγή έχει εκτιμηθεί. Θα πουλήσετε
 msgid "Install Metamask"
 msgstr "Εγκατάσταση Metamask"
 
-#: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolInvest/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
 
@@ -962,10 +1048,26 @@ msgstr "Μη έγκυρο ζευγάρι."
 msgid "Invalid recipient"
 msgstr "Μη έγκυρος παραλήπτης"
 
-#: src/components/PoolInvestModal/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Invest"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Invested"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "JPY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Japanese Yen"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "KRW"
 msgstr ""
 
 #: 
@@ -982,6 +1084,7 @@ msgstr ""
 #: src/components/Table/pools.tsx
 #: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
 msgid "Liquidity"
 msgstr "Ταχύτητα"
 
@@ -1010,6 +1113,10 @@ msgstr "Φορτώθηκε"
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Φόρτωση"
+
+#: src/constants/tokens.ts
+msgid "MXN"
+msgstr ""
 
 #: src/components/Header/URLWarning.tsx
 msgid "Make sure the URL is<0>app.uniswap.org</0>"
@@ -1069,6 +1176,10 @@ msgstr ""
 msgid "Maximum sent"
 msgstr "Μέγιστη αποστολή"
 
+#: src/constants/tokens.ts
+msgid "Mexican Peso"
+msgstr ""
+
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
@@ -1120,11 +1231,16 @@ msgstr "Ελάχιστο λαμβανόμενο"
 #~ msgid "More"
 #~ msgstr "Περισσότερα"
 
+#: src/constants/tokens.ts
+msgid "NOK"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Name"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
 msgid "New Pools"
 msgstr ""
 
@@ -1160,6 +1276,10 @@ msgstr "Δεν βρέθηκαν προτάσεις."
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
 msgstr "Δεν βρέθηκαν αποτελέσματα."
+
+#: src/constants/tokens.ts
+msgid "Norwegian Krone"
+msgstr ""
 
 #: src/components/Toggle/ListToggle.tsx
 msgid "OFF"
@@ -1224,8 +1344,12 @@ msgstr ""
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
+#: 
+#~ msgid "Pair Stats"
+#~ msgstr ""
+
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair Stats (Dummy data)"
 msgstr ""
 
 #: src/pages/Earn/index.tsx
@@ -1284,6 +1408,8 @@ msgstr ""
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/TokenDetails.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price"
@@ -1348,6 +1474,10 @@ msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
 msgid "ROI Simulator"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "RUB"
 msgstr ""
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
@@ -1429,6 +1559,18 @@ msgstr "Επιστροφή"
 msgid "Route"
 msgstr "Διαδρομή"
 
+#: src/constants/tokens.ts
+msgid "Russian Ruble"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SEK"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SGD"
+msgstr ""
+
 #: src/components/Table/SearchableTable.tsx
 #: src/pages/Pool/index.tsx
 msgid "Search"
@@ -1439,6 +1581,9 @@ msgid "Search name or paste address"
 msgstr "Αναζήτηση ονόματος ή επικόλλησης διεύθυνσης"
 
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
 msgid "See all"
 msgstr ""
 
@@ -1506,6 +1651,10 @@ msgstr "Μοιραστείτε την πισίνα:"
 msgid "Simple"
 msgstr "Απλό"
 
+#: src/constants/tokens.ts
+msgid "Singapore Dollar"
+msgstr ""
+
 #: src/components/swap/Slippage.tsx
 #: src/components/swap/Slippage.tsx
 msgid "Slippage Tolerance"
@@ -1523,6 +1672,10 @@ msgstr "Ορισμένα περιουσιακά στοιχεία δεν είνα
 #: src/components/ErrorBoundary/index.tsx
 msgid "Something went wrong"
 msgstr "Κάτι πήγε στραβά"
+
+#: src/constants/tokens.ts
+msgid "South Korean Won"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Step 1. Get UNI-V2 Liquidity tokens"
@@ -1561,6 +1714,18 @@ msgstr "Ανταλλαγή {0} {1} για {2} {3}"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Swaps"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Swedish Krona"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Swiss Franc"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "TRY"
 msgstr ""
 
 #: src/components/LineChart/overview.tsx
@@ -1619,6 +1784,7 @@ msgstr "Αυτά τα νομίσματα είναι συνήθως σε συνδ
 
 #: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
+#: src/pages/Discover/index.tsx
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
@@ -1678,12 +1844,24 @@ msgstr "Ενδείξεις"
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "Διακριτικά από ανενεργές λίστες. Εισαγάγετε συγκεκριμένα διακριτικά παρακάτω ή κάντε κλικ στην επιλογή Διαχείριση για να ενεργοποιήσετε περισσότερες λίστες."
 
+#: src/pages/Discover/index.tsx
+msgid "Tools"
+msgstr ""
+
 #: src/components/pools/PoolsOverview.tsx
 msgid "Top Gainer Pools"
 msgstr ""
 
+#: src/pages/Discover/index.tsx
+msgid "Top Gainers"
+msgstr ""
+
 #: src/components/pools/PoolsOverview.tsx
 msgid "Top Looser Pools"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+msgid "Top Loosers"
 msgstr ""
 
 #: src/components/Table/overview.tsx
@@ -1736,9 +1914,18 @@ msgstr "Προθεσμία συναλλαγής"
 msgid "Trending"
 msgstr ""
 
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
+msgid "Trending tokens"
+msgstr ""
+
 #: src/components/WalletModal/PendingView.tsx
 msgid "Try Again"
 msgstr "Δοκιμάστε Ξανά"
+
+#: src/constants/tokens.ts
+msgid "Turkish Lira"
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Turn On Expert Mode"
@@ -1772,8 +1959,11 @@ msgstr "Απαιτούνται διακριτικά UNI-V2 LP από τη στι
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: src/components/Dropdowns/CurrencyDropdown.tsx
-#: src/components/Dropdowns/CurrencyDropdown.tsx
+#: 
+#~ msgid "US$"
+#~ msgstr ""
+
+#: src/constants/tokens.ts
 msgid "USD"
 msgstr ""
 
@@ -1809,6 +1999,14 @@ msgstr "Εξόρυξη ρευστότητας"
 #: 
 #~ msgid "Uniswap migration contract↗"
 #~ msgstr "Αναίρεση ανταλλαγής σύμβασης μετανάστευσης↗"
+
+#: src/constants/tokens.ts
+msgid "United Kingdom Pound"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "United State Dollar"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "Unknown Source"
@@ -1943,6 +2141,10 @@ msgstr "Η ψηφοφορία έληξε {0}"
 msgid "Voting ends approximately {0}"
 msgstr "Η ψηφοφορία λήγει περίπου {0}"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "WITHDRAW"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "Αναμονή Επιβεβαίωσης"
@@ -1978,6 +2180,7 @@ msgstr "Όταν αποσύρετε, ο UNI σας διεκδικείται κα
 
 #: src/components/earn/UnstakingModal.tsx
 #: src/pages/Earn/Manage.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Ανάληψη"
 

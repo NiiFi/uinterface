@@ -2,16 +2,10 @@ import React, { useState, useContext, useMemo, useEffect } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import LineChart from './index'
-import { sumBy } from 'lodash'
 import getLineChartData from './data'
-import { TYPE } from '../../theme'
+import { TYPE, BaseCurrencyView } from '../../theme'
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
-import { AutoRow } from 'components/Row'
-import { AutoColumn } from 'components/Column'
-import { TextItemWrapper, TextLabel, TextValue } from 'components/pools/styled'
-import { MainCurrency, shortenDecimalValues } from 'utils'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 
 const StyleButtonOutlined = styled(ButtonOutlined)`
   margin: 12px;
@@ -54,6 +48,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0.5rem 0px;
   color: ${({ theme }) => theme.text5};
 `
 
@@ -65,51 +60,29 @@ const ControlWrapper = styled(Wrapper)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid rgba(228, 247, 245, 1);
+  margin-top: 10px;
 `
-const ChartRowColumnWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 2rem;
+
+const ButtonControlWrapper = styled(TYPE.main)`
+  padding-right: 1rem;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    gap: 0.625rem;
-    flex-direction: column;
+    padding-right: 0.5rem;
   `}
 `
-const ChartColumnItem = styled(AutoColumn)<{ flex?: string }>`
-  width: 100%;
-  flex: ${({ flex }) => (flex ? flex : '')};
 
-  :nth-child(1) {
-    border-right: 1px solid ${({ theme }) => theme.bg3};
-  }
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    flex: 1;
-    border-right: none;
-    :nth-child(1) {
-      border-right: none;
-      border-bottom: 1px solid ${({ theme }) => theme.bg3};
-    }
-  `}
-`
 const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string }) => {
   const theme = useContext(ThemeContext)
-  const [liquiditySum, setLiquiditySum] = useState<number | undefined>()
-  const [volumeSum, setVolumeSum] = useState<number | undefined>()
-  const [feesSum, setFeesSum] = useState<number | undefined>()
+  const [liquidityHover, setLiquidityHover] = useState<number | undefined>()
+  const [volumeHover, setVolumeHover] = useState<number | undefined>()
+  const [feesHover, setFeesHover] = useState<number | undefined>()
   const [currentChartValue, setCurrentChartValue] = useState<string>('value1')
   const [currentChartPeriod, setCurrentChartPeriod] = useState<string>('week')
 
   const lineChartData = useMemo(() => {
     return getLineChartData(currentChartPeriod)
   }, [currentChartPeriod])
-
-  useEffect(() => {
-    setLiquiditySum(sumBy(lineChartData, 'value1'))
-    setVolumeSum(sumBy(lineChartData, 'value2'))
-    setFeesSum(sumBy(lineChartData, 'value3'))
-  }, [lineChartData, setLiquiditySum, setVolumeSum, setFeesSum])
 
   const handleChartType = (e: string): void => {
     setCurrentChartValue(e)
@@ -121,64 +94,79 @@ const PoolDetailChart = ({ token0, token1 }: { token0: string; token1: string })
 
   const dateFormat = currentChartPeriod === 'all' ? 'MMM' : 'dd'
 
+  useEffect(() => {
+    if (!liquidityHover && lineChartData) {
+      setLiquidityHover(lineChartData[lineChartData.length - 1].value1)
+    }
+  }, [liquidityHover, lineChartData, currentChartPeriod])
+
+  useEffect(() => {
+    if (!volumeHover && lineChartData) {
+      setVolumeHover(lineChartData[lineChartData.length - 1].value2)
+    }
+  }, [volumeHover, lineChartData, currentChartPeriod])
+
+  useEffect(() => {
+    if (!feesHover && lineChartData) {
+      setFeesHover(lineChartData[lineChartData.length - 1].value3)
+    }
+  }, [feesHover, lineChartData, currentChartPeriod])
+
   return (
-    <ChartRowColumnWrapper>
-      <ChartColumnItem flex={'1'}>
-        <TYPE.mediumHeaderEllipsis marginBottom="1rem">
-          {`${token0}-${token1} `}
-          <Trans>Pair Stats</Trans>
-        </TYPE.mediumHeaderEllipsis>
-        <TextItemWrapper>
-          <TextLabel>
-            <Trans>Liquidity</Trans>
-          </TextLabel>
-          <TextValue>
-            {shortenDecimalValues(`${liquiditySum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
-          </TextValue>
-        </TextItemWrapper>
-        <TextItemWrapper>
-          <TextLabel>
-            <Trans>Volume</Trans>
-          </TextLabel>
-          <TextValue>
-            {shortenDecimalValues(`${volumeSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
-          </TextValue>
-        </TextItemWrapper>
-        <TextItemWrapper>
-          <TextLabel>
-            <Trans>Fees</Trans>
-          </TextLabel>
-          <TextValue>
-            {shortenDecimalValues(`${feesSum}`, TOKEN_VALUE_CURRENCY_FORMAT)} {MainCurrency}
-          </TextValue>
-        </TextItemWrapper>
-      </ChartColumnItem>
-      <ChartColumnItem flex={'2'}>
-        <ControlWrapper>
-          <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
-          <AutoRow justify={'flex-end'}>
-            <TYPE.main>
-              <CustomButton value="today" text="24H" current={currentChartPeriod} onClick={handleChartPeriod} />
-              <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
-              <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
-              <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
-            </TYPE.main>
-          </AutoRow>
-        </ControlWrapper>
-        <AutoRow>
-          <LineChart
-            data={lineChartData}
-            minHeight={158}
-            color={theme.orange1}
-            currentValue={currentChartValue}
-            dateFormat={dateFormat}
-            XAxisTickGap={100}
-            YAxisTick={{ fontSize: 14 }}
-            style={{ flexDirection: 'column', marginTop: '0.5rem' }}
-          />
-        </AutoRow>
-      </ChartColumnItem>
-    </ChartRowColumnWrapper>
+    <>
+      <TYPE.mediumHeaderEllipsis padding="18px 0">
+        {`${token0}-${token1} `}
+        <Trans>Pair Stats (Dummy data)</Trans>
+      </TYPE.mediumHeaderEllipsis>
+      <Wrapper>
+        <TYPE.black fontWeight={400}>
+          <Trans>Liquidity</Trans>
+        </TYPE.black>
+        <TYPE.black style={{ paddingRight: '20px' }}>
+          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={liquidityHover || 0} />
+        </TYPE.black>
+      </Wrapper>
+      <Wrapper>
+        <TYPE.black fontWeight={400}>
+          <Trans>Volume</Trans>
+        </TYPE.black>
+        <TYPE.black style={{ paddingRight: '20px' }}>
+          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={volumeHover || 0} />
+        </TYPE.black>
+      </Wrapper>
+      <Wrapper>
+        <TYPE.black fontWeight={400}>
+          <Trans>Fees</Trans>
+        </TYPE.black>
+        <TYPE.black style={{ paddingRight: '20px' }}>
+          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={feesHover || 0} />
+        </TYPE.black>
+      </Wrapper>
+      <ControlWrapper>
+        <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
+        <ButtonControlWrapper>
+          <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
+          <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
+          <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
+        </ButtonControlWrapper>
+      </ControlWrapper>
+      <LineChart
+        data={lineChartData}
+        minHeight={158}
+        color={theme.orange1}
+        value1={liquidityHover}
+        setValue1={setLiquidityHover}
+        value2={volumeHover}
+        setValue2={setVolumeHover}
+        value3={feesHover}
+        setValue3={setFeesHover}
+        currentValue={currentChartValue}
+        dateFormat={dateFormat}
+        XAxisTickGap={100}
+        YAxisTick={{ fontSize: 14 }}
+        style={{ flexDirection: 'column', marginTop: '0.5rem' }}
+      />
+    </>
   )
 }
 

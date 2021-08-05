@@ -1,6 +1,10 @@
 import React from 'react'
 import { MinusCircle, IconProps as RAIconProps } from 'react-feather'
-export type IconProps = React.SVGProps<SVGSVGElement>
+
+import { IconProps } from './types'
+
+export * from './Currencies'
+
 export function DiscordIcon({ width = 24, height = 24, color = 'currentColor', ...rest }: IconProps) {
   return (
     <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
@@ -138,19 +142,53 @@ export function LanguageIcon({ width = 24, height = 24, color = 'currentColor', 
 
 export function ArrowDownIcon({ width = 24, height = 24, color = 'currentColor', ...rest }: IconProps) {
   return (
-    <svg width={width} height={height} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+    <svg width={width} height={height} viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
       <path
-        d="M7 1L7 12.4035M7 12.4035L12 7.66667M7 12.4035L2 7.66667"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="square"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12.0501 0.312499L12.0501 22.7295L2.43221 13.6178L-0.000442033 16.1856L13.8186 29.2773L27.6377 16.1856L25.205 13.6178L15.5872 22.7295L15.5872 0.312499L12.0501 0.312499Z"
+        fill={color}
       />
     </svg>
   )
 }
 
 export function ArrowUpIcon(props: IconProps) {
-  return <ArrowDownIcon {...props} style={{ transform: 'rotate(180deg)' }} />
+  return <ArrowDownIcon {...props} style={{ ...props.style, transform: 'rotate(180deg)' }} />
+}
+
+export function BoxIcon({ width = 116, height = 133, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 116 133" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M57.7846 0L115.208 33.0483V99.8712L57.7846 132.919L0 99.8821V33.0374L57.7846 0ZM11.5208 46.3972L24.5926 54.0053L52.0147 69.7905V116.35L11.5208 93.1981V46.3972ZM63.5356 116.317L103.687 93.2091V46.3796L91.1347 53.6601L91.1212 53.6679L63.5356 69.7675V116.317ZM57.7552 59.8017L76.7201 48.7334L57.8113 37.9101L38.9529 48.9785L57.7552 59.8017ZM27.4781 42.3547L17.2883 36.4239L52.0147 16.5697V27.9537L27.4781 42.3547ZM63.5356 27.912L88.2122 42.0368L97.933 36.3987L63.5356 16.6023V27.912Z"
+        fill={color}
+      />
+    </svg>
+  )
+}
+
+export function GearIcon({ width = 121, height = 82, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 121 82" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M46.4052 0H74.5675L79.2433 16.7761C83.1824 18.3642 86.8498 20.4899 90.2371 23.1382L106.989 18.802L121 43.1628L108.729 55.8328C108.963 57.848 109.078 59.9043 109.078 62C109.078 64.096 108.963 66.1524 108.73 68.1672L121 80.8372L106.989 105.197L89.6121 100.704C86.4106 103.27 82.9638 105.362 79.2765 106.965L74.5792 124H46.3938L41.8765 106.963C38.171 105.364 34.6883 103.268 31.4316 100.697L14.0258 105.197L0 80.8111L12.2873 68.3049C12.0529 66.249 11.9373 64.1467 11.9373 62C11.9373 59.854 12.0529 57.7517 12.2874 55.6952L0 43.1889L14.0103 18.8301L30.698 23.0147C34.2059 20.4277 37.945 18.3414 41.9104 16.7719L46.4052 0ZM54.6768 10.7005L50.838 25.0245L48.0672 25.9289C43.5288 27.4103 39.2987 29.741 35.362 32.9701L33.2613 34.6932L19.2993 31.192L13.3766 41.4895L23.7462 52.0438L23.2905 54.7266C22.9009 57.0198 22.7012 59.4422 22.7012 62C22.7012 64.5597 22.901 66.9819 23.2904 69.2728L23.7464 71.9559L13.3766 82.5105L19.2838 92.7811L34.1994 88.9251L36.3487 90.8298C40.0266 94.0892 43.9762 96.4417 48.2074 97.9524L50.8711 98.9034L54.6881 113.299H66.3689L70.3388 98.903L72.9568 97.9585C77.1785 96.4354 81.0627 94.0902 84.625 90.8669L86.7808 88.9161L101.731 92.7811L107.654 82.4844L97.266 71.7586L97.7272 69.0912C98.1152 66.8477 98.3139 64.486 98.3139 62C98.3139 59.515 98.1152 57.1532 97.7272 54.9085L97.2661 52.2412L107.654 41.5156L101.732 31.2201L87.4841 34.9081L85.3347 33.0071C81.6498 29.7478 77.5796 27.4021 73.0978 25.9236L70.3729 25.0247L66.3806 10.7005H54.6768Z"
+        fill={color}
+        fillOpacity="0.38"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M60.5075 45.9493C51.5905 45.9493 44.3618 53.1354 44.3618 62C44.3618 70.8646 51.5905 78.0508 60.5075 78.0508C69.4246 78.0508 76.6533 70.8646 76.6533 62C76.6533 53.1354 69.4246 45.9493 60.5075 45.9493ZM33.5979 62C33.5979 47.2257 45.6458 35.2488 60.5075 35.2488C75.3693 35.2488 87.4172 47.2257 87.4172 62C87.4172 76.7744 75.3693 88.7513 60.5075 88.7513C45.6458 88.7513 33.5979 76.7744 33.5979 62Z"
+        fill={color}
+        fillOpacity="0.38"
+      />
+    </svg>
+  )
 }
 
 export function PencilIcon({ width = 23, height = 23, color = 'currentColor', ...rest }: IconProps) {
@@ -268,7 +306,8 @@ export function ETHIcon({ width = 24, height = 24, ...rest }: IconProps) {
   )
 }
 
-export function NIIIcon({ width = 34, height = 34, id = '0', ...rest }: IconProps) {
+export function NIIIcon({ width = 34, height = 34, ...rest }: IconProps) {
+  const id = 'niiicon' + Math.random()
   return (
     <svg
       width={width}

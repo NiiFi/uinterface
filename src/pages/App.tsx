@@ -11,6 +11,7 @@ import ErrorBoundary from '../components/ErrorBoundary'
 import { ApplicationModal } from '../state/application/actions'
 import { useModalOpen, useToggleModal } from '../state/application/hooks'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
+import Discover from './Discover'
 import Swap from './Swap'
 import Pools from './Pool'
 import PoolDetail from './PoolDetail'
@@ -102,7 +103,7 @@ export default function App() {
               <Route exact strict path="/swap" component={Swap} />
               <Route exact strict path="/pools/:page?" component={Pools} />
               <Route exact strict path="/pools/:token0/:token1" component={PoolDetail} />
-              <Route component={RedirectPathToSwapOnly} />
+              <Route component={Discover} />
             </Switch>
           </Web3ReactManager>
         </BodyWrapper>

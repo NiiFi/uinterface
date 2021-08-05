@@ -6,7 +6,12 @@ import { useCallback, useMemo } from 'react'
 import { shallowEqual } from 'react-redux'
 import { FACTORY_ADDRESSES } from '../../constants/addresses'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from '../../constants/routing'
-
+import {
+  SupportedBaseCurrencies,
+  SUPPORTED_BASE_CURRENCIES_MAP,
+  BaseCurrencyDetail,
+  DEFAULT_BASE_CURRENCY,
+} from 'constants/tokens'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useAllTokens } from '../../hooks/Tokens'
 import { AppState } from '../index'
@@ -27,6 +32,7 @@ import {
   UserWalletTypes,
   saveNewWallet,
   removeWallet,
+  setBaseCurrency as setBaseCurrencyAction,
   setRecentConnectedWallet,
   updateWallet,
 } from './actions'
@@ -381,4 +387,31 @@ export function useUserWallets() {
     setUserRecentWallet,
     removeUserWallet,
   }
+}
+
+export function useBaseCurrency(): {
+  baseCurrency: SupportedBaseCurrencies
+  baseCurrencyDetail: BaseCurrencyDetail
+  setBaseCurrency: (newCurrency: SupportedBaseCurrencies) => void
+} {
+  let { baseCurrency } = useAppSelector((state: AppState) => state.user)
+  baseCurrency = baseCurrency || DEFAULT_BASE_CURRENCY
+  const baseCurrencyDetail = useMemo(() => SUPPORTED_BASE_CURRENCIES_MAP[baseCurrency], [baseCurrency])
+  const dispatch = useAppDispatch()
+  const setBaseCurrency = useCallback(
+    (newCurrency: SupportedBaseCurrencies) => {
+      dispatch(setBaseCurrencyAction(newCurrency))
+    },
+    [dispatch]
+  )
+  return { baseCurrency, baseCurrencyDetail, setBaseCurrency }
+}
+
+export function useEthereumToBaseCurrencyRatesAndApiState() {
+  const {
+    application: { ethereumToBaseCurrencyRateApiState },
+    user: { ethereumToBaseCurrencyRates },
+  } = useAppSelector((state: AppState) => state)
+
+  return { ethereumToBaseCurrencyRateApiState, ethereumToBaseCurrencyRates: ethereumToBaseCurrencyRates || {} }
 }

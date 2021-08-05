@@ -8,12 +8,12 @@ import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
 import { MouseoverTooltip, MouseoverTooltipContent } from 'components/Tooltip'
 import JSBI from 'jsbi'
-import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { ChevronDown, ChevronUp, CheckCircle, HelpCircle, Info } from 'react-feather'
 import ReactGA from 'react-ga'
-import { RouteComponentProps } from 'react-router-dom'
+import { RouteComponentProps, useLocation } from 'react-router-dom'
 import { Text } from 'rebass'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
 import AddressInputPanel from '../../components/AddressInputPanel'
 import { ButtonConfirmed, ButtonError, ButtonPrimary } from '../../components/Button'
 import { DefaultCard, GreyCard } from '../../components/Card'
@@ -44,6 +44,7 @@ import { useSwapCallback } from '../../hooks/useSwapCallback'
 import { useUSDCValue } from '../../hooks/useUSDCPrice'
 import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
 import { useActiveWeb3React } from '../../hooks/web3'
+import useTheme from '../../hooks/useTheme'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { Field } from '../../state/swap/actions'
 import {
@@ -53,7 +54,7 @@ import {
   useSwapState,
 } from '../../state/swap/hooks'
 import { useExpertModeManager, useUserSingleHopOnly } from '../../state/user/hooks'
-import { BodyScroller, LinkStyledButton, TYPE, Disclaimer } from '../../theme'
+import { BodyScroller, LinkStyledButton, TYPE, Disclaimer, BaseCurrencyView, CurrencySelectWrapper } from '../../theme'
 import { computeFiatValuePriceImpact } from '../../utils/computeFiatValuePriceImpact'
 import { getTradeVersion } from '../../utils/getTradeVersion'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
@@ -81,16 +82,26 @@ const ArrowContainer = styled.div`
   position: relative;
   background-color: ${({ theme }) => theme.bg5};
 `
-const CurrencySelectWrapper = styled.div`
-  display: flex;
-  padding: 6px;
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-  display: none
-  `}
-`
 export default function Swap({ history }: RouteComponentProps) {
   const [activeTab, setActiveTab] = useState<number>(0)
   const loadedUrlParams = useDefaultsFromURLSearch()
+  const { state } = useLocation<any>()
+
+  // TODO: implement more flexible solution
+  useEffect(() => {
+    if (!state?.activeTab) {
+      return
+    }
+
+    setActiveTab(state.activeTab)
+
+    const scrollTo = setTimeout(() =>
+      document.querySelector('#top-tokens-table')?.scrollIntoView({ behavior: 'smooth' })
+    )
+    return () => {
+      clearTimeout(scrollTo)
+    }
+  }, [state])
 
   // token warning stuff
   const [loadedInputCurrency, loadedOutputCurrency] = [
@@ -115,7 +126,7 @@ export default function Swap({ history }: RouteComponentProps) {
     })
 
   const { account } = useActiveWeb3React()
-  const theme = useContext(ThemeContext)
+  const theme = useTheme()
 
   // toggle wallet when disconnected
   const toggleWalletModal = useWalletModalToggle()
@@ -679,7 +690,9 @@ export default function Swap({ history }: RouteComponentProps) {
                   <Trans>Volume 24H</Trans>
                 </TYPE.subHeader>
                 <FlexColumn style={{ padding: '5px 0' }}>
-                  <TYPE.mediumHeader color="text1">$1.24b</TYPE.mediumHeader>
+                  <TYPE.mediumHeader color="text1">
+                    <BaseCurrencyView type="symbol" value={1240000000} numeralFormat={'0.[00]a'} />
+                  </TYPE.mediumHeader>
                   <Percent value={7.258268337244848} fontWeight={400} />
                 </FlexColumn>
               </DefaultCard>
@@ -688,7 +701,9 @@ export default function Swap({ history }: RouteComponentProps) {
                   <Trans>Fees 24H</Trans>
                 </TYPE.subHeader>
                 <FlexColumn style={{ padding: '5px 0' }}>
-                  <TYPE.mediumHeader color="text1">$3.03m</TYPE.mediumHeader>
+                  <TYPE.mediumHeader color="text1">
+                    <BaseCurrencyView type="symbol" value={3030000} numeralFormat={'0.[00]a'} />
+                  </TYPE.mediumHeader>
                   <Percent value={7.858268337244848} fontWeight={400} />
                 </FlexColumn>
               </DefaultCard>
@@ -697,12 +712,14 @@ export default function Swap({ history }: RouteComponentProps) {
                   <Trans>TVL</Trans>
                 </TYPE.subHeader>
                 <FlexColumn style={{ padding: '5px 0' }}>
-                  <TYPE.mediumHeader color="text1">$1.75b</TYPE.mediumHeader>
+                  <TYPE.mediumHeader color="text1">
+                    <BaseCurrencyView type="symbol" value={1750000000} numeralFormat={'0.[00]a'} />
+                  </TYPE.mediumHeader>
                   <Percent value={-0.508268337244848} fontWeight={400} />
                 </FlexColumn>
               </DefaultCard>
             </ResponsiveRow>
-            <ResponsiveRow>
+            <ResponsiveRow id="top-tokens-table">
               <AppBody size="lg">
                 <OverviewTable />
               </AppBody>

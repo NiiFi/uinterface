@@ -6,19 +6,19 @@ import { t, Trans } from '@lingui/macro'
 
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
+import { DefaultTheme } from 'styled-components'
 import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
-import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper } from '../../theme'
+import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, BaseCurrencyView } from '../../theme'
 import { getPoolsData } from './sample-pools'
 import SearchableTable, { Order } from './SearchableTable'
 import Loader from 'components/Loader'
 import { PoolTableData } from '../Table/types'
-import InvestButton from 'components/pools/InvestButton'
-import { usePoolInvestModalToggle } from 'state/application/hooks'
-import PoolInvestModal from 'components/PoolInvestModal'
+import { ButtonOutlined } from 'components/Button'
 import { ArrowLeft, ArrowRight } from 'react-feather'
 import { Wrapper as DefaultToolBarWrapper, PagerWrapper as DefaultToolBarPagerWrapper } from './TableToolbar'
+import { History, LocationState } from 'history'
 
 const LoaderWrapper = styled.div`
   padding: 5rem;
@@ -28,18 +28,24 @@ const LoaderWrapper = styled.div`
   height: calc(100vh - 10rem);
 `
 
-const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHandler<HTMLButtonElement>) => {
-  const theme = useTheme()
+const CustomTableRow = (row: any, index: number, history: History<LocationState>, theme: DefaultTheme) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
-  const history = useHistory()
 
   const handleCellOnClick = () => {
     history.push('/pools/ETH/NII')
   }
 
   return (
-    <TableRow hover role="checkbox" aria-checked={false} tabIndex={-1} key={index} selected={false}>
-      <TableCell style={rowCellStyles} align="left" onClick={handleCellOnClick}>
+    <TableRow
+      hover
+      role="checkbox"
+      aria-checked={false}
+      tabIndex={-1}
+      key={index}
+      selected={false}
+      onClick={handleCellOnClick}
+    >
+      <TableCell style={rowCellStyles} align="left">
         <RowWrapper>
           <div style={{ position: 'relative' }}>
             <CurrencyAvatar
@@ -66,10 +72,10 @@ const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHa
           </ColumnWrapper>
         </RowWrapper>
       </TableCell>
-      <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
-        {shortenDecimalValues(row.liquidity, '$ 0.[00]a')}
+      <TableCell style={rowCellStyles} align="center">
+        <BaseCurrencyView type="symbol" value={row.liquidity} numeralFormat={'0.[00]a'} />
       </TableCell>
-      <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
+      <TableCell style={rowCellStyles} align="center">
         <ColumnWrapper>
           <div>
             {shortenDecimalValues(row.roiY, '0.[00]a')} (<Trans>1Y</Trans>)
@@ -79,29 +85,22 @@ const CustomTableRow = (row: any, index: number, handleClick: React.MouseEventHa
           </TYPE.small>
         </ColumnWrapper>
       </TableCell>
-      <TableCell style={rowCellStyles} align="center" onClick={handleCellOnClick}>
+      <TableCell style={rowCellStyles} align="center">
         <ColumnWrapper>
           <div>
-            {row.trendingPercent > 0 && '+'}
+            {row.trendingPercent > 0 && '+ '}
             {shortenDecimalValues(row.trendingPercent, '0.[00]')}%
           </div>
           <TYPE.small color={'text2'}>
-            {row.trendingSum > 0 && '+'}
-            {shortenDecimalValues(row.trendingSum + '', '$0.[000]a')}
+            {row.trendingSum > 0 && '+ '}
+            <BaseCurrencyView type="symbol" value={row.trendingSum} numeralFormat={'0.[000]a'} />
           </TYPE.small>
         </ColumnWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <InvestButton
-          token0={{ symbol: 'ETH', address: '1234' }}
-          token1={{ symbol: 'NII', address: '1235' }}
-          type="outlined"
-          onClick={handleClick}
-          style={{ fontSize: '14px' }}
-          padding={'10px 14px'}
-        >
+        <ButtonOutlined style={{ fontSize: '14px' }} padding={'10px 14px'}>
           <Trans>Invest</Trans>
-        </InvestButton>
+        </ButtonOutlined>
       </TableCell>
     </TableRow>
   )
@@ -142,6 +141,8 @@ const PoolTableToolbar = ({
   )
 }
 export default function PoolsTable() {
+  const history = useHistory()
+  const theme = useTheme()
   const { state } = useLocation<any>() // FIXME: any
   const poolsData = useMemo(() => {
     return getPoolsData('new', 100)
@@ -149,8 +150,6 @@ export default function PoolsTable() {
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<string>()
   const [pools, setPools] = useState<PoolTableData[]>(poolsData)
-
-  const toggleInvestModal = usePoolInvestModalToggle()
 
   useEffect(() => {
     // TODO: implement sorting
@@ -206,13 +205,10 @@ export default function PoolsTable() {
             ...props,
           })
         }
-        row={(row: any, index: number) => {
-          return CustomTableRow(row, index, toggleInvestModal)
-        }}
+        row={(row: any, index: number) => CustomTableRow(row, index, history, theme)}
         defaultOrder={order}
         defaultOrderBy={orderBy}
       />
-      <PoolInvestModal />
     </>
   )
 }

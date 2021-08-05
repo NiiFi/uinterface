@@ -9,12 +9,10 @@ import { NIILogo } from 'components/Icons'
 import { FlexColumn } from 'components/Column'
 import { DefaultCard } from 'components/Card'
 import { getPoolsData } from 'components/Table/sample-pools'
-import { usePoolInvestModalToggle } from 'state/application/hooks'
-import PoolInvestModal from 'components/PoolInvestModal'
-import InvestButton from 'components/pools/InvestButton'
+import { ButtonOutlined } from 'components/Button'
 import { shortenDecimalValues } from '../../utils'
 import useBreakpoint from '../../hooks/useBreakpoint'
-import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, MEDIA_WIDTHS } from 'theme'
+import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, MEDIA_WIDTHS, BaseCurrencyView } from 'theme'
 
 const Header = styled(TYPE.mediumHeader)`
   padding: 0 0 10px 0;
@@ -64,18 +62,17 @@ export const getTitle = (type: string): string => {
 
 type PoolsOverviewProps = {
   type: 'gainer' | 'looser' | 'new'
+  id?: string
   limit?: number
   style?: CSSProperties
 }
 
-export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps) {
+export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewProps) {
   const isSmallScreen = useBreakpoint(MEDIA_WIDTHS.upToSmall)
   const history = useHistory()
   const poolsData = useMemo(() => {
     return getPoolsData(type, limit)
   }, [type, limit])
-
-  const toggleInvestModal = usePoolInvestModalToggle()
 
   const handleCardOnClick = (e: any) => {
     e.preventDefault()
@@ -84,7 +81,7 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
 
   return (
     <>
-      <FlexColumn style={style}>
+      <FlexColumn id={id} style={style}>
         <Header>{getTitle(type)}</Header>
         <Link
           to={{
@@ -127,14 +124,9 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
                     </ColumnWrapper>
                   </RowWrapper>
                   <RowWrapper>
-                    <InvestButton
-                      token0={{ symbol: 'ETH', address: '1234' }}
-                      token1={{ symbol: 'NII', address: '1235' }}
-                      type="outlined"
-                      onClick={toggleInvestModal}
-                    >
+                    <ButtonOutlined>
                       <Trans>Invest</Trans>
-                    </InvestButton>
+                    </ButtonOutlined>
                   </RowWrapper>
                 </RowWrapper>
                 <FlexColumn style={{ padding: '18px 0 0 0' }}>
@@ -143,7 +135,7 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
                       <Trans>Liquidity</Trans>
                     </TYPE.subHeader>
                     <TYPE.mediumHeader fontSize="16" paddingTop="5px">
-                      {shortenDecimalValues(item.liquidity, '$ 0.[00]a')}
+                      <BaseCurrencyView type="symbol" value={Number(item.liquidity)} numeralFormat={'0.[00]a'} />
                     </TYPE.mediumHeader>
                   </div>
                   <div>
@@ -169,7 +161,6 @@ export default function PoolsOverview({ type, limit, style }: PoolsOverviewProps
           )
         })}
       </Grid>
-      <PoolInvestModal />
     </>
   )
 }

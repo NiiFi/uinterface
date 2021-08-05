@@ -1,6 +1,7 @@
 import { DEFAULT_DEADLINE_FROM_NOW } from '../../constants/misc'
 import { createReducer } from '@reduxjs/toolkit'
 import { updateVersion } from '../global/actions'
+import { SupportedBaseCurrencies, DEFAULT_BASE_CURRENCY } from 'constants/tokens'
 import {
   addSerializedPair,
   addSerializedToken,
@@ -22,6 +23,8 @@ import {
   removeWallet,
   setRecentConnectedWallet,
   UserWallets,
+  setBaseCurrency,
+  setEthereumToBaseCurrencyRates,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
 
@@ -70,6 +73,10 @@ export interface UserState {
 
   timestamp: number
   URLWarningVisible: boolean
+  readonly baseCurrency: SupportedBaseCurrencies
+  ethereumToBaseCurrencyRates: {
+    [key: string]: number
+  } | null
 }
 
 function pairKey(token0Address: string, token1Address: string) {
@@ -92,6 +99,8 @@ export const initialState: UserState = {
   pairs: {},
   timestamp: currentTimestamp(),
   URLWarningVisible: true,
+  baseCurrency: DEFAULT_BASE_CURRENCY,
+  ethereumToBaseCurrencyRates: null,
 }
 
 export default createReducer(initialState, (builder) =>
@@ -221,5 +230,11 @@ export default createReducer(initialState, (builder) =>
     })
     .addCase(setRecentConnectedWallet, (state, { payload: { address } }) => {
       state.userRecentWallet = address
+    })
+    .addCase(setBaseCurrency, (state, { payload }) => {
+      state.baseCurrency = payload
+    })
+    .addCase(setEthereumToBaseCurrencyRates, (state, { payload }) => {
+      state.ethereumToBaseCurrencyRates = payload
     })
 )

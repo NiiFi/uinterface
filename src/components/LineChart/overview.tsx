@@ -3,8 +3,7 @@ import { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
-import { TYPE } from '../../theme'
-import { shortenDecimalValues } from '../../utils'
+import { TYPE, BaseCurrencyView } from '../../theme'
 import LineChart from './index'
 import getLineChartData from './data'
 
@@ -36,7 +35,9 @@ const OverviewChart = () => {
       <TYPE.subHeader fontSize="16px" style={{ margin: '12px 0 6px 0' }}>
         <Trans>TVL</Trans>
       </TYPE.subHeader>
-      <TYPE.mediumHeader>{shortenDecimalValues(String(amount), '$0.[00]a')}</TYPE.mediumHeader>
+      <TYPE.mediumHeader>
+        {amount && !isNaN(amount) && <BaseCurrencyView type="symbol" value={amount} numeralFormat={'0.[00]a'} />}
+      </TYPE.mediumHeader>
       <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
         {time || '-'}
       </TYPE.body>

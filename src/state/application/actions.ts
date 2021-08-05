@@ -19,7 +19,6 @@ export enum ApplicationModal {
   VOTE,
   POOL_OVERVIEW_OPTIONS,
   MANAGE_WALLET_LIST,
-  POOL_INVEST,
   CREATE_POOL,
 }
 
@@ -29,3 +28,6 @@ export const addPopup =
   createAction<{ key?: string; removeAfterMs?: number | null; content: PopupContent }>('application/addPopup')
 export const removePopup = createAction<{ key: string }>('application/removePopup')
 export const showDrawer = createAction<{ showDrawer: boolean }>('application/showDrawer')
+export const setEthereumToBaseCurrencyRateApiState = createAction<{ error: any; loading: boolean }>(
+  'application/setEthereumToBaseCurrencyRateApiState'
+)

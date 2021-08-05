@@ -3,10 +3,11 @@ import useTheme from 'hooks/useTheme'
 import { t, Trans } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
+import { DefaultTheme } from 'styled-components'
 import SwapTableDropdown from '../Dropdowns/SwapTableDropdown'
 import { mapTransactionListDataToTableData } from '../../utils/dataMapping'
 import { shortenAddress, shortenDecimalValues, formatTimeStamp } from '../../utils'
-import { ExternalLink } from '../../theme'
+import { ExternalLink, BaseCurrencyView } from 'theme'
 import { SampleResponse } from './sample-transactions'
 import Table from './index'
 
@@ -23,9 +24,9 @@ function mapTransactionTypeToWords(type: string) {
 const CustomTableRow = (
   row: any,
   index: number,
+  theme: DefaultTheme,
   handleClick: (event: React.MouseEvent<unknown>, name: string) => void
 ) => {
-  const theme = useTheme()
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
 
   return (
@@ -46,7 +47,7 @@ const CustomTableRow = (
         </ExternalLink>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(row.amountUSD)} USD
+        <BaseCurrencyView type="id" value={row.amountUSD} numeralFormat={'0.[000]a'} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         {shortenDecimalValues(row.amount0)} {row.pair.token0.symbol}
