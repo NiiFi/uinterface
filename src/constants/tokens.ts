@@ -91,7 +91,7 @@ export const SUPPORTED_BASE_CURRENCIES_MAP: { [currency in SupportedBaseCurrenci
   USD: {
     label: t`United State Dollar`,
     id: t`USD` as SupportedBaseCurrencies,
-    symbol: 'US$',
+    symbol: '$',
   },
   ETH: {
     label: t`Ethereum`,

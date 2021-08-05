@@ -34,7 +34,9 @@ interface EnhancedTableProps {
   title?: any
   onClick?: (props: any) => unknown
   data: Array<TableDataTypes>
+  hideHeader?: boolean
   headCells: HeadCell[]
+  rowsPerPage?: number
   row: (
     row: any,
     index: number,
@@ -125,9 +127,7 @@ const useStyles = makeStyles(() =>
     paper: {
       width: '100%',
     },
-    table: {
-      minWidth: 750,
-    },
+    table: {},
     headerWrap: {
       padding: '16px 16px 0 16px',
     },
@@ -145,7 +145,7 @@ const useStyles = makeStyles(() =>
   })
 )
 
-export default function EnhancedTable(props: EnhancedTableProps) {
+export default function EnhancedTable({ hideHeader = false, ...props }: EnhancedTableProps) {
   const { renderToolbar, defaultOrder, defaultOrderBy } = props
   const theme = useTheme()
   const classes = useStyles()
@@ -154,7 +154,7 @@ export default function EnhancedTable(props: EnhancedTableProps) {
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<string>('amountUSD')
   const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(25)
+  const [rowsPerPage, setRowsPerPage] = React.useState(props.rowsPerPage || 25)
   useEffect(() => {
     setTableData(props.data)
   }, [props.data, setTableData])
@@ -235,17 +235,19 @@ export default function EnhancedTable(props: EnhancedTableProps) {
       </div>
       <TableContainer>
         <Table className={classes.table} size={'medium'} style={{ width: '100%', tableLayout: 'auto' }}>
-          <EnhancedTableHead
-            classes={classes}
-            order={order}
-            orderBy={orderBy}
-            onRequestSort={handleRequestSort}
-            onTransactionTypeChange={setTransactionType}
-            transactionType={transactionType}
-            rowCount={tableData.length}
-            headCells={props.headCells}
-            cellsBefore={props.headCellsBefore}
-          />
+          {!hideHeader && (
+            <EnhancedTableHead
+              classes={classes}
+              order={order}
+              orderBy={orderBy}
+              onRequestSort={handleRequestSort}
+              onTransactionTypeChange={setTransactionType}
+              transactionType={transactionType}
+              rowCount={tableData.length}
+              headCells={props.headCells}
+              cellsBefore={props.headCellsBefore}
+            />
+          )}
           <TableBody>
             {tableData &&
               lodashOrderBy(
