@@ -239,6 +239,10 @@ msgstr "Ajouter de la liquidité {0}/{1}"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Ajouter des liquidités V3 {0}/{1}"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "Ajouté {0}"
@@ -1082,9 +1086,9 @@ msgstr "Destinataire invalide"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

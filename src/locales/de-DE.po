@@ -239,6 +239,10 @@ msgstr "{0}-{1} Liquidität hinzufügen"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "{0}/{1} V3 Liquidität hinzufügen"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "{0} hinzugefügt"
@@ -1082,9 +1086,9 @@ msgstr "Ungültiger Empfänger"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

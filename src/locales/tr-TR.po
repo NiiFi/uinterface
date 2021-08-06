@@ -239,6 +239,10 @@ msgstr "Ekle {0}-{1} likiditeyi"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Ekle {0}/{1} V3 likiditesini"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "{0}eklendi"
@@ -1082,9 +1086,9 @@ msgstr "Geçersiz alıcı"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

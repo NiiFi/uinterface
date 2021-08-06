@@ -239,6 +239,10 @@ msgstr "추가 {0}-{1} 유동성"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "추가 {0}/{1} V3 유동성"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "추가됨 {0}"
@@ -1082,9 +1086,9 @@ msgstr "잘못된 수신자"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

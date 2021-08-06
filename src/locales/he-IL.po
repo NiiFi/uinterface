@@ -239,6 +239,10 @@ msgstr "הוסף {0}-{1} נזילות"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "להוסיף {0}/{1} נזילות V3"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "נוסף {0}"
@@ -1082,9 +1086,9 @@ msgstr "נמען לא חוקי"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

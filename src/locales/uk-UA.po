@@ -239,6 +239,10 @@ msgstr "Додати {0}-{1} ліквідність"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Додати {0}/{1} V3 ліквідність"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "Додано {0}"
@@ -1082,9 +1086,9 @@ msgstr "Недійсний одержувач"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

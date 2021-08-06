@@ -239,6 +239,10 @@ msgstr "註入 {0}-{1} 流動資金"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "註入 {0}/{1} V3 流動資金"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "已添加 {0}"
@@ -1082,9 +1086,9 @@ msgstr "無效的接收方"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

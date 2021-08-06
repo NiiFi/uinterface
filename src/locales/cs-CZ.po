@@ -239,6 +239,10 @@ msgstr "Přidat {0}-{1} likviditu"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Přidat {0}/{1} V3 likviditu"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "Přidáno {0}"
@@ -1082,9 +1086,9 @@ msgstr "Neplatný příjemce"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

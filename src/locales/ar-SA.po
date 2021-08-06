@@ -240,6 +240,10 @@ msgstr "إضافة {0}-{1} سيولة"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "إضافة سيولة {0}/{1} V3"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "تم إضافة {0}"
@@ -1083,9 +1087,9 @@ msgstr "مستلم غير صالح"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

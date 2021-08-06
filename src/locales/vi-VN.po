@@ -239,6 +239,10 @@ msgstr "Thêm {0}-{1} thanh khoản"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Thêm {0}/{1} thanh khoản V3"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "Đã thêm {0}"
@@ -1082,9 +1086,9 @@ msgstr "Người nhận không hợp lệ"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

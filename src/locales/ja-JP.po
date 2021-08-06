@@ -239,6 +239,10 @@ msgstr "{0}-{1} の流動性を追加"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "{0}/{1} V3の流動性を追加"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "{0} を追加"
@@ -1082,9 +1086,9 @@ msgstr "受け取りアドレスが無効です"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

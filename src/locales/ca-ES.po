@@ -240,6 +240,10 @@ msgstr "Afegir {0}-{1} liquiditat"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Afegir {0}/{1} liquiditat V3"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "Afegit {0}"
@@ -1083,9 +1087,9 @@ msgstr "Destinatari no vàlid"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

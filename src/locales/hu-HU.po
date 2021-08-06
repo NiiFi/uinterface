@@ -239,6 +239,10 @@ msgstr "Adjon hozzá {0}-{1} likviditást"
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Hozzá {0}/{1} V3 likviditási"
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "Hozzáadva {0}"
@@ -1082,9 +1086,9 @@ msgstr "érvénytelen címzett"
 #~ msgid "Invest"
 #~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
