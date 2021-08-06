@@ -99,7 +99,7 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <ButtonOutlined style={{ fontSize: '14px' }} padding={'10px 14px'}>
-          <Trans>Invest</Trans>
+          <Trans>Add Liquidity</Trans>
         </ButtonOutlined>
       </TableCell>
     </TableRow>

@@ -18,8 +18,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "$-"
 #~ msgstr "$-"
 
@@ -39,7 +39,7 @@ msgstr "(Massimo)"
 msgid "(claim)"
 msgstr "(claim)"
 
-#: 
+#:
 #~ msgid "(clear all)"
 #~ msgstr "(cancella tutto)"
 
@@ -47,7 +47,7 @@ msgstr "(claim)"
 msgid "(edit)"
 msgstr "(modifica)"
 
-#: 
+#:
 #~ msgid "+{feeAmountFormatted}%"
 #~ msgstr "+{feeAmountFormatted}%"
 
@@ -55,7 +55,7 @@ msgstr "(modifica)"
 msgid "- Remove send"
 msgstr "- Rimuovi invio"
 
-#: 
+#:
 #~ msgid "-{feeAmountFormatted}%"
 #~ msgstr "-{feeAmountFormatted}%"
 
@@ -66,11 +66,11 @@ msgstr "- Rimuovi invio"
 msgid "0 UNI / week"
 msgstr "0 UNI / settimana"
 
-#: 
+#:
 #~ msgid "0.05% fee"
 #~ msgstr "commissione dello 0,05%"
 
-#: 
+#:
 #~ msgid "0.3% fee"
 #~ msgstr "commissione di 0,3%"
 
@@ -86,7 +86,7 @@ msgstr ""
 msgid "1 Year"
 msgstr ""
 
-#: 
+#:
 #~ msgid "1% fee"
 #~ msgstr "commissione 1%"
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "24h Low / 24h High"
 msgstr ""
 
-#: 
+#:
 #~ msgid "25%"
 #~ msgstr "25%"
 
@@ -114,11 +114,11 @@ msgstr ""
 msgid "3%"
 msgstr ""
 
-#: 
+#:
 #~ msgid "50%"
 #~ msgstr "50%"
 
-#: 
+#:
 #~ msgid "75%"
 #~ msgstr "75%"
 
@@ -131,15 +131,15 @@ msgstr "<0/> Tutte Le Proposte"
 msgid "<0/> Votes"
 msgstr "<0/> Voti"
 
-#: 
+#:
 #~ msgid "<0> ↗ </0>"
 #~ msgstr ""
 
-#: 
+#:
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
 #~ msgstr "<0>Analisi account e commissioni maturate</0><1> ↗ </1>"
 
-#: 
+#:
 #~ msgid "<0>Back to </0>V3"
 #~ msgstr "<0>Torna a</0> V3"
 
@@ -151,7 +151,7 @@ msgstr "<0>Suggerimento:</0> Rimuovere i token pool converte la tua posizione in
 msgid "<0>Tip:</0> Use this tool to find pools that don't automatically appear in the interface."
 msgstr ""
 
-#: 
+#:
 #~ msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
 #~ msgstr "<0>Suggerimento:</0> Usa questo strumento per trovare i pool v2 che non vengono visualizzati automaticamente nell'interfaccia."
 
@@ -171,11 +171,15 @@ msgstr "<0>🎉 </0>Benvenuto nel team Unicorn :) <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "Per presentare proposte è necessaria una soglia minima dell’1% dell’offerta totale delle Nazioni Unite"
 
+#: src/components/PoolInvest/index.tsx
+msgid "ADD LIQUIDITY"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "AUD"
 msgstr ""
 
-#: 
+#:
 #~ msgid "About"
 #~ msgstr "Informazioni"
 
@@ -201,16 +205,22 @@ msgstr "Aggiungi Delegato +"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "Aggiungi Liquidità"
 
-#: 
+#: src/pages/PoolFinder/index.tsx
+msgid "Add Liquidity."
+msgstr ""
+
+#:
 #~ msgid "Add V2 Liquidity"
 #~ msgstr "Aggiungi Liquidità V2"
 
-#: src/pages/PoolFinder/index.tsx
-msgid "Add liquidity."
-msgstr "Aggiungere liquidità."
+#:
+#~ msgid "Add liquidity."
+#~ msgstr "Aggiungere liquidità."
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -225,9 +235,13 @@ msgstr "Aggiungi {0} {1} e {2} {3}"
 msgid "Add {0}-{1} liquidity"
 msgstr "Aggiungi liquidità {0}-{1}"
 
-#: 
+#:
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Aggiungi liquidità {0}/{1} V3"
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
@@ -249,7 +263,7 @@ msgstr "Contro"
 msgid "All"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Allow LP token migration"
 #~ msgstr "Consenti la migrazione del token LP"
 
@@ -261,11 +275,11 @@ msgstr "Consenti scambi ad alto impatto sui prezzi e salta la schermata di confe
 msgid "Allow the Niifi to use your {0}"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Allow the Uniswap Protocol to use your {0}"
 #~ msgstr "Permetti al Protocollo Uniswap di utilizzare il tuo {0}"
 
-#: 
+#:
 #~ msgid "Allowed"
 #~ msgstr "Consentito"
 
@@ -273,25 +287,29 @@ msgstr ""
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
 msgstr "Assicurarsi sempre che l'URL sia <0>app.uniswap.org</0> - segnalibro per essere sicuro."
 
-#: src/components/BuyTokenModal/index.tsx
-#: src/components/DepositTokenModal/index.tsx
-msgid "Amount"
-msgstr "Importo"
+#:
+#~ msgid "Amount"
+#~ msgstr "Importo"
 
-#: src/components/PoolInvest/index.tsx
-#: src/pages/PoolDetail/ROISimulator.tsx
-msgid "Amount to Invest"
-msgstr ""
+#:
+#:
+#~ msgid "Amount to Invest"
+#~ msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "Amount to Withdraw"
 msgstr ""
 
-#: 
+#: src/components/PoolInvest/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to add"
+msgstr ""
+
+#:
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Si è verificato un errore durante il tentativo di eseguire questo scambio. Potrebbe essere necessario aumentare la tolleranza allo slittamento. Se non funziona, potrebbe esserci un'incompatibilità con il token che stai scambiando. Nota la commissione sui token di trasferimento e rebase non sono compatibili con Uniswap V3."
 
-#: 
+#:
 #~ msgid "Analytics"
 #~ msgstr "Analisi"
 
@@ -322,7 +340,7 @@ msgstr "Approvazione di {0}"
 msgid "Are you sure?"
 msgstr "Sei sicuro?"
 
-#: 
+#:
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
 #~ msgstr "Come membro della comunità Uniswap puoi pretendere che l'UNI sia usato per votare e governance.<0/><1/><2>Leggi di più su UNI</2>"
 
@@ -330,7 +348,7 @@ msgstr "Sei sicuro?"
 msgid "Assets"
 msgstr ""
 
-#: 
+#:
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
 #~ msgstr "Almeno {0} {1} e {2} {3} saranno rimborsati al tuo portafoglio a causa dell'intervallo di prezzo selezionato."
 
@@ -358,7 +376,7 @@ msgstr ""
 msgid "BTC"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Back"
 #~ msgstr "Indietro"
 
@@ -374,19 +392,19 @@ msgstr "Saldo:"
 msgid "Balance: {0}"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Balance: {0} {1}"
 #~ msgstr "Bilanciamento: {0} {1}"
 
-#: 
+#:
 #~ msgid "Best for exotic pairs."
 #~ msgstr "Ideale per coppie esotiche."
 
-#: 
+#:
 #~ msgid "Best for most pairs."
 #~ msgstr "Ideale per la maggior parte delle coppie."
 
-#: 
+#:
 #~ msgid "Best for stable pairs."
 #~ msgstr "Ideale per coppie stabili."
 
@@ -402,11 +420,6 @@ msgstr "Indirizzo bloccato"
 msgid "Brazilian Real"
 msgstr ""
 
-#: src/components/BuyTokenModal/index.tsx
-msgid "Buy"
-msgstr ""
-
-#: src/components/BuyTokenModal/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Buy Tokens"
 msgstr ""
@@ -423,7 +436,7 @@ msgstr "Aggiungendo questa lista ti senti implicitamente che i dati siano corret
 msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
 msgstr ""
 
-#: 
+#:
 #~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
 #~ msgstr "Collegando un portafoglio, accetti i <0>Termini di servizio di Uniswap Labs</0> e riconosci di aver letto e compreso il <1>Disclaimer del protocollo Uniswap</1>."
 
@@ -447,7 +460,7 @@ msgstr ""
 msgid "Canadian Dollar"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Change"
 #~ msgstr "Cambia"
 
@@ -486,7 +499,7 @@ msgstr "Claim UNI Token"
 msgid "Claim accumulated UNI rewards"
 msgstr "Richiedi ricompense UNI accumulate"
 
-#: 
+#:
 #~ msgid "Claim fees"
 #~ msgstr "Diritti di rivendicazione"
 
@@ -517,7 +530,7 @@ msgstr "Rivendicazione UNI"
 msgid "Claiming {0} UNI"
 msgstr "Reclama {0} UNI"
 
-#: 
+#:
 #~ msgid "Clear All"
 #~ msgstr "Cancella Tutto"
 
@@ -533,36 +546,36 @@ msgstr "Chiudi"
 msgid "Closed"
 msgstr "Chiuso"
 
-#: 
+#:
 #~ msgid "Code"
 #~ msgstr "Codice"
 
-#: 
+#:
 #~ msgid "Collect"
 #~ msgstr "Raccogli"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Collect as WETH"
 #~ msgstr "Raccogli come WETH"
 
-#: 
+#:
 #~ msgid "Collect fees"
 #~ msgstr "Raccogli commissioni"
 
-#: 
+#:
 #~ msgid "Collected"
 #~ msgstr "Raccolti"
 
-#: 
+#:
 #~ msgid "Collecting"
 #~ msgstr "Raccolta"
 
-#: 
+#:
 #~ msgid "Collecting fees"
 #~ msgstr "Raccolta delle commissioni"
 
-#: 
+#:
 #~ msgid "Collecting fees will withdraw currently available fees for you."
 #~ msgstr "La riscossione delle commissioni preleverà le commissioni attualmente disponibili per te."
 
@@ -591,9 +604,7 @@ msgstr "Conferma lo scambio"
 msgid "Confirm this transaction in your wallet"
 msgstr "Conferma questa transazione nel tuo portafoglio"
 
-#: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
-#: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
@@ -623,11 +634,11 @@ msgstr "Connettiti a un portafoglio"
 msgid "Connect to a wallet to find pools"
 msgstr "Connettiti a un portafoglio per trovare piscine"
 
-#: 
+#:
 #~ msgid "Connect to a wallet to view your V2 liquidity."
 #~ msgstr "Connettiti a un portafoglio per visualizzare la tua liquidità V2."
 
-#: 
+#:
 #~ msgid "Connect to a wallet to view your liquidity."
 #~ msgstr "Connettiti a un portafoglio per visualizzare la tua liquidità."
 
@@ -640,7 +651,7 @@ msgstr "Collega portafoglio"
 msgid "Connected"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Connected with {name}"
 #~ msgstr "Connesso con {name}"
 
@@ -669,7 +680,7 @@ msgstr "Crea Piscina E Fornitura"
 msgid "Create a pair"
 msgstr "Crea una coppia"
 
-#: 
+#:
 #~ msgid "Create a pool"
 #~ msgstr "Crea una piscina"
 
@@ -677,7 +688,7 @@ msgstr "Crea una coppia"
 msgid "Create an issue on GitHub"
 msgstr "Crea un problema su GitHub"
 
-#: 
+#:
 #~ msgid "Create pool and add {0}/{1} V3 liquidity"
 #~ msgstr "Crea pool e aggiungi liquidità {0}/{1} V3"
 
@@ -685,16 +696,16 @@ msgstr "Crea un problema su GitHub"
 msgid "Create pool."
 msgstr "Crea piscina."
 
-#: 
+#:
 #~ msgid "Current Price"
 #~ msgstr "Prezzo attuale"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Current price"
 #~ msgstr "Prezzo corrente"
 
-#: 
+#:
 #~ msgid "Current {0} Price:"
 #~ msgstr "Prezzo {0} attuale:"
 
@@ -717,19 +728,13 @@ msgstr "Voti delegati"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
-#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "Deposito"
 
-#: 
+#:
 #~ msgid "Deposit Amounts"
 #~ msgstr "Importi Di Deposito"
-
-#: src/components/DepositTokenModal/index.tsx
-#: src/components/DepositTokenModal/index.tsx
-msgid "Deposit Token To Nahmii"
-msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit UNI-V2 LP Tokens"
@@ -771,7 +776,7 @@ msgstr "Dettagli"
 msgid "Disable Multihops"
 msgstr "Disabilita Multihops"
 
-#: 
+#:
 #~ msgid "Disconnect"
 #~ msgstr "Disconnetti"
 
@@ -779,7 +784,7 @@ msgstr "Disabilita Multihops"
 msgid "Disconnect Wallet"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Discord"
 #~ msgstr "Discord"
 
@@ -791,11 +796,11 @@ msgstr ""
 msgid "Dismiss"
 msgstr "Ignora"
 
-#: 
+#:
 #~ msgid "Docs"
 #~ msgstr "Documenti"
 
-#: 
+#:
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr "Non vedi una delle tue posizioni v2? <0>Importala.</0>"
 
@@ -807,7 +812,7 @@ msgstr ""
 msgid "ETH-ANY Pair Stats (Dummy data)"
 msgstr ""
 
-#: 
+#:
 #~ msgid "ETH-NII Transactions"
 #~ msgstr ""
 
@@ -815,7 +820,7 @@ msgstr ""
 msgid "EUR"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
 #~ msgstr "I token UNI guadagnati rappresentano le quote di voto nella governance di Uniswap."
 
@@ -900,7 +905,7 @@ msgstr "Esplora piscine popolari su Uniswap Analytics."
 msgid "Farm"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Fee Tier"
 #~ msgstr "Livello Di Tariffa"
 
@@ -922,7 +927,7 @@ msgstr ""
 msgid "For"
 msgstr "Per"
 
-#: 
+#:
 #~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
 #~ msgstr "Per ogni pool mostrato di seguito, fare clic su migrare per rimuovere la liquidità da Uniswap V2 e depositarlo in Uniswap V3."
 
@@ -947,7 +952,7 @@ msgstr "Ottieni supporto su Discord"
 msgid "HKD"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Hide closed positions"
 #~ msgstr "Nascondi posizioni chiuse"
 
@@ -971,9 +976,9 @@ msgstr "Io capisco"
 msgid "INR"
 msgstr ""
 
-#: src/components/PoolInvest/index.tsx
-msgid "INVEST"
-msgstr ""
+#:
+#~ msgid "INVEST"
+#~ msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
@@ -990,7 +995,7 @@ msgstr "Importa"
 msgid "Import List"
 msgstr "Importa Lista"
 
-#: 
+#:
 #~ msgid "Import Pool"
 #~ msgstr "Importa Pool"
 
@@ -1006,7 +1011,7 @@ msgstr "Importa a tuo rischio"
 msgid "In range"
 msgstr "Nell'intervallo"
 
-#: 
+#:
 #~ msgid "Increase Liquidity"
 #~ msgstr "Aumenta La Liquidità"
 
@@ -1062,12 +1067,12 @@ msgstr "Coppia non valida"
 msgid "Invalid pair."
 msgstr "Coppia non valida."
 
-#: 
+#:
 #~ msgid "Invalid price input"
 #~ msgstr "Input di prezzo non valido"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Invalid range selected. The min price must be lower than the max price."
 #~ msgstr "Intervallo selezionato non valido. Il prezzo minimo deve essere inferiore al prezzo massimo."
 
@@ -1075,15 +1080,15 @@ msgstr "Coppia non valida."
 msgid "Invalid recipient"
 msgstr "Destinatario non valido"
 
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
-#: src/pages/PoolDetail/index.tsx
-msgid "Invest"
-msgstr ""
+#:
+#:
+#:
+#~ msgid "Invest"
+#~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#:
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1097,7 +1102,7 @@ msgstr ""
 msgid "KRW"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Learn"
 #~ msgstr "Impara"
 
@@ -1112,6 +1117,7 @@ msgstr ""
 #: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr "Liquidità"
 
@@ -1119,11 +1125,11 @@ msgstr "Liquidità"
 msgid "Liquidity Provider Fee"
 msgstr "Commissione del fornitore di liquidità"
 
-#: 
+#:
 #~ msgid "Liquidity provider rewards"
 #~ msgstr "Ricompense fornitore di liquidità"
 
-#: 
+#:
 #~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 #~ msgstr "I fornitori di liquidità guadagnano una commissione dello 0,3% su tutte le operazioni proporzionale alla loro quota del pool. Le tasse vengono aggiunte alla piscina, maturano in tempo reale e possono essere rivendicate ritirando la vostra liquidità."
 
@@ -1182,20 +1188,20 @@ msgstr "Gestisci questa piscina."
 msgid "Market Cap"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Max"
 #~ msgstr "Max"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Max Price"
 #~ msgstr "Prezzo Massimo"
 
-#: 
+#:
 #~ msgid "Max price"
 #~ msgstr "Prezzo massimo"
 
-#: 
+#:
 #~ msgid "Max:"
 #~ msgstr "Max:"
 
@@ -1212,41 +1218,41 @@ msgstr ""
 msgid "Migrate"
 msgstr "Migra"
 
-#: 
+#:
 #~ msgid "Migrate Liquidity"
 #~ msgstr "Migra Liquidità"
 
-#: 
+#:
 #~ msgid "Migrate Liquidity to V3"
 #~ msgstr "Migra la liquidità a V3"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Migrate V2 Liquidity"
 #~ msgstr "Migra Liquidità V2"
 
-#: 
+#:
 #~ msgid "Migrate V2 liquidity"
 #~ msgstr "Migra liquidità V2"
 
-#: 
+#:
 #~ msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
 #~ msgstr "Migra i tuoi token di liquidità da Uniswap V2 a Uniswap V3."
 
-#: 
+#:
 #~ msgid "Migrating"
 #~ msgstr "Migrazione"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Min Price"
 #~ msgstr "Prezzo Minimo"
 
-#: 
+#:
 #~ msgid "Min price"
 #~ msgstr "Prezzo minimo"
 
-#: 
+#:
 #~ msgid "Min:"
 #~ msgstr "Min:"
 
@@ -1254,7 +1260,7 @@ msgstr "Migra"
 msgid "Minimum received"
 msgstr "Minimo ricevuto"
 
-#: 
+#:
 #~ msgid "More"
 #~ msgstr "Altro"
 
@@ -1279,7 +1285,7 @@ msgstr ""
 msgid "New Pools"
 msgstr ""
 
-#: 
+#:
 #~ msgid "New Position"
 #~ msgstr "Nuova Posizione"
 
@@ -1287,7 +1293,7 @@ msgstr ""
 msgid "Niifi available in: <0>{0}</0>"
 msgstr ""
 
-#: 
+#:
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "Nessuna liquidità V2 trovata."
 
@@ -1296,7 +1302,7 @@ msgstr ""
 msgid "No active pools"
 msgstr "Nessun pool attivo"
 
-#: 
+#:
 #~ msgid "No liquidity found."
 #~ msgstr "Nessuna liquidità trovata."
 
@@ -1370,7 +1376,7 @@ msgstr "L'output verrà inviato a <0>{0}</0>"
 msgid "Overview"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Owner"
 #~ msgstr "Proprietario"
 
@@ -1379,7 +1385,7 @@ msgstr ""
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Pair Stats"
 #~ msgstr ""
 
@@ -1390,10 +1396,6 @@ msgstr ""
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
 msgstr "Banche partecipanti"
-
-#: src/components/BuyTokenModal/index.tsx
-msgid "Payment Method"
-msgstr ""
 
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Period"
@@ -1441,7 +1443,7 @@ msgstr "Unisci {0}:"
 msgid "Pools"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Pools Overview"
 #~ msgstr "Panoramica Piscine"
 
@@ -1458,7 +1460,7 @@ msgstr "Prezzo"
 msgid "Price Change"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Price Difference:"
 #~ msgstr "Differenza Di Prezzo:"
 
@@ -1474,8 +1476,8 @@ msgstr "Impatto Prezzo Troppo Alto"
 msgid "Price Updated"
 msgstr "Prezzo Aggiornato"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Price range"
 #~ msgstr "Intervallo di prezzo"
 
@@ -1531,7 +1533,7 @@ msgstr "Leggi tutto su UNI"
 msgid "Read more about Uniswap governance"
 msgstr "Per saperne di più sulla governance di Uniswap"
 
-#: 
+#:
 #~ msgid "Read more about providing liquidity"
 #~ msgstr "Per saperne di più sulla fornitura di liquidità"
 
@@ -1574,7 +1576,7 @@ msgstr "Rimuovi elenco"
 msgid "Remove {0} {1} and {2} {3}"
 msgstr "Rimuovi {0} {1} e {2} {3}"
 
-#: 
+#:
 #~ msgid "Remove {0}/{1} V3 liquidity"
 #~ msgstr "Rimuovi {0}/{1} V3 liquidità"
 
@@ -1626,7 +1628,7 @@ msgstr "Cerca nome o incolla indirizzo"
 msgid "See all"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Select Pool"
 #~ msgstr "Seleziona Piscina"
 
@@ -1634,7 +1636,7 @@ msgstr ""
 msgid "Select a Token"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Select a pool type based on your preferred liquidity provider fee."
 #~ msgstr "Seleziona un tipo di pool in base alla commissione preferita del provider di liquidità."
 
@@ -1649,15 +1651,15 @@ msgstr "Seleziona un token"
 msgid "Select a token to find your liquidity."
 msgstr ""
 
-#: 
+#:
 #~ msgid "Select a token to find your v2 liquidity."
 #~ msgstr "Seleziona un token per trovare la tua liquidità v2."
 
-#: 
+#:
 #~ msgid "Select pair"
 #~ msgstr "Seleziona coppia"
 
-#: 
+#:
 #~ msgid "Selected Range"
 #~ msgstr "Range Selezionato"
 
@@ -1673,12 +1675,12 @@ msgstr "Auto-Delegato"
 msgid "Send"
 msgstr ""
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Set Price Range"
 #~ msgstr "Imposta Intervallo Di Prezzo"
 
-#: 
+#:
 #~ msgid "Set Starting Price"
 #~ msgstr "Imposta Prezzo Di Inizio"
 
@@ -1686,7 +1688,7 @@ msgstr ""
 msgid "Share of Pool:"
 msgstr "Quota del pool:"
 
-#: 
+#:
 #~ msgid "Show Portis"
 #~ msgstr "Show Portis"
 
@@ -1777,7 +1779,7 @@ msgstr ""
 msgid "TVL"
 msgstr ""
 
-#: 
+#:
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Grazie per far parte della community di Uniswap <0/>"
 
@@ -1801,7 +1803,7 @@ msgstr "Il prezzo di mercato è al di fuori della tua fascia di prezzo specifica
 msgid "The output token cannot be transferred. There may be an issue with the output token."
 msgstr "Il token di output non può essere trasferito. Potrebbe esserci un problema con il token di output."
 
-#: 
+#:
 #~ msgid "The output token cannot be transferred. There may be an issue with the output token. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Il token di output non può essere trasferito. Potrebbe esserci un problema con il token di output. Nota la commissione sui token di trasferimento e rebase non sono compatibili con Uniswap V3."
 
@@ -1837,11 +1839,11 @@ msgstr ""
 msgid "This token doesn't appear on the active token list(s). Make sure this is the token that you want to trade."
 msgstr "Questo token non viene visualizzato negli elenchi di token attivi. Assicurati che questo sia il token che vuoi scambiare."
 
-#: 
+#:
 #~ msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
 #~ msgstr "Questo strumento migrerà in modo sicuro la tua liquidità {0} a V3. Il processo è completamente affidabile grazie alla"
 
-#: 
+#:
 #~ msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Questa transazione non avrà esito positivo a causa del movimento dei prezzi. Prova ad aumentare la tua tolleranza allo slittamento. Nota la commissione sui token di trasferimento e rebase non sono compatibili con Uniswap V3."
 
@@ -1877,14 +1879,6 @@ msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
 msgid "Token Stats"
-msgstr ""
-
-#: src/components/BuyTokenModal/index.tsx
-msgid "Token To Buy"
-msgstr ""
-
-#: src/components/DepositTokenModal/index.tsx
-msgid "Token To Deposit"
 msgstr ""
 
 #: src/components/SearchModal/Manage.tsx
@@ -2010,7 +2004,7 @@ msgstr "Sono richiesti token LP UNI-V2. Una volta che hai aggiunto liquidità al
 msgid "UNI-V2 {0}-{1}"
 msgstr "UNI-V2 {0}-{1}"
 
-#: 
+#:
 #~ msgid "US$"
 #~ msgstr ""
 
@@ -2023,7 +2017,7 @@ msgstr ""
 msgid "Unclaimed UNI"
 msgstr "UNI Non Reclamata"
 
-#: 
+#:
 #~ msgid "Unclaimed fees"
 #~ msgstr "Commissioni non richieste"
 
@@ -2039,7 +2033,7 @@ msgstr "Uniswap Governance"
 msgid "Uniswap V3 is here!"
 msgstr "Uniswap V3 è qui!"
 
-#: 
+#:
 #~ msgid "Uniswap available in: <0>{0}</0>"
 #~ msgstr "Uniswap disponibile in: <0>{0}</0>"
 
@@ -2047,7 +2041,7 @@ msgstr "Uniswap V3 è qui!"
 msgid "Uniswap liquidity mining"
 msgstr "Uniswap attività minerarie di liquidità"
 
-#: 
+#:
 #~ msgid "Uniswap migration contract↗"
 #~ msgstr "Contratto di migrazione Uniswap↗"
 
@@ -2067,7 +2061,7 @@ msgstr "Fonte sconosciuta"
 msgid "Unknown error{0}."
 msgstr ""
 
-#: 
+#:
 #~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Errore sconosciuto{0}. Prova ad aumentare la tua tolleranza allo slittamento. Nota la commissione sui token di trasferimento e rebase non sono compatibili con Uniswap V3."
 
@@ -2109,28 +2103,24 @@ msgstr "Aggiorna elenco"
 msgid "User"
 msgstr "Utente"
 
-#: 
+#:
 #~ msgid "V2 liquidity"
 #~ msgstr "V2 liquidità"
 
-#: 
+#:
 #~ msgid "V3"
 #~ msgstr "V3"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "V3 {0} Price:"
 #~ msgstr "V3 {0} Prezzo:"
-
-#: src/components/BuyTokenModal/index.tsx
-msgid "VISA *5546"
-msgstr ""
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
 msgstr "Visualizza Analisi Uni"
 
-#: 
+#:
 #~ msgid "View V2 Liquidity"
 #~ msgstr "Visualizza Liquidità V2"
 
@@ -2274,7 +2264,7 @@ msgstr "Rete Errata"
 msgid "You are creating a pool"
 msgstr "Stai creando un pool"
 
-#: 
+#:
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
 #~ msgstr "Sei il primo fornitore di liquidità per questo pool di Uniswap V3. La tua liquidità migrerà al prezzo corrente di {0}."
 
@@ -2294,11 +2284,11 @@ msgstr "Ora puoi scambiare {0}"
 msgid "You don’t have liquidity in this pool yet."
 msgstr "Non hai ancora liquidità in questo pool."
 
-#: 
+#:
 #~ msgid "You must connect an account."
 #~ msgstr "Devi collegare un account."
 
-#: 
+#:
 #~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
 #~ msgstr "Devi dare il permesso agli smart contract Uniswap di utilizzare il tuo {0}. Devi farlo solo una volta per token."
 
@@ -2306,11 +2296,11 @@ msgstr "Non hai ancora liquidità in questo pool."
 msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
 msgstr ""
 
-#: 
+#:
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
 #~ msgstr "Dovresti depositare solo liquidità in Uniswap V3 ad un prezzo che credi sia corretto. <0/>Se il prezzo sembra errato, puoi fare uno swap per spostare il prezzo o aspettare che qualcun altro lo faccia."
 
-#: 
+#:
 #~ msgid "You will also collect fees earned from this position."
 #~ msgstr "Raccoglierai anche le commissioni guadagnate da questa posizione."
 
@@ -2323,15 +2313,15 @@ msgstr "Riceverai"
 msgid "Your UNI Breakdown"
 msgstr "La Tua Ripartizione Uni"
 
-#: 
+#:
 #~ msgid "Your V2 liquidity"
 #~ msgstr "La tua liquidità V2"
 
-#: 
+#:
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr "Le tue posizioni di liquidità V3 appariranno qui."
 
-#: 
+#:
 #~ msgid "Your liquidity"
 #~ msgstr ""
 
@@ -2339,7 +2329,7 @@ msgstr "La Tua Ripartizione Uni"
 msgid "Your liquidity deposits"
 msgstr "I tuoi depositi di liquidità"
 
-#: 
+#:
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
 #~ msgstr "La tua liquidità guadagnerà commissioni solo quando il prezzo di mercato della coppia rientra nel tuo intervallo. <0> Hai bisogno di aiuto per scegliere un intervallo?</0>"
 
@@ -2357,23 +2347,23 @@ msgstr "La tua posizione"
 msgid "Your position has 0 liquidity, and is not earning fees."
 msgstr "La tua posizione ha 0 liquidità, e non sta guadagnando commissioni."
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Your position will be 100% composed of {0} at this price"
 #~ msgstr "La tua posizione sarà composta al 100% da {0} a questo prezzo"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Your position will be 100% {0} at this price."
 #~ msgstr "La tua posizione sarà al 100% {0} a questo prezzo."
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Your position will not earn fees or be used in trades until the market price moves into your range."
 #~ msgstr "La tua posizione non guadagnerà commissioni o sarà utilizzata nelle operazioni fino a quando il prezzo di mercato non si sposterà nella tua gamma."
 
-#: 
-#: 
+#:
+#:
 #~ msgid "Your positions"
 #~ msgstr "Le tue posizioni"
 
@@ -2386,7 +2376,7 @@ msgstr "Il tuo tasso"
 msgid "Your total pool tokens:"
 msgstr "I tuoi token totali:"
 
-#: 
+#:
 #~ msgid "Your transaction cost will be much higher as it includes the gas to create the pool."
 #~ msgstr "Il costo della transazione sarà molto più alto in quanto include il gas per creare il pool."
 
@@ -2406,7 +2396,7 @@ msgstr "La tua transazione verrà ripristinata se è in attesa per più di quest
 msgid "Your transaction will revert if the price changes unfavorably by more than this percentage."
 msgstr "La transazione verrà ripristinata se il prezzo cambia sfavorevolmente di più di questa percentuale."
 
-#: 
+#:
 #~ msgid "Your transactions will appear here..."
 #~ msgstr "Le tue transazioni appariranno qui..."
 
@@ -2443,10 +2433,6 @@ msgstr "via {0}"
 msgid "via {0} token list"
 msgstr "tramite {0} elenco token"
 
-#: src/pages/Dashboard/BuySection.tsx
-msgid "waiting..."
-msgstr ""
-
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {Importa token} other {Importa token}}"
@@ -2463,8 +2449,8 @@ msgstr ""
 msgid "{0} %"
 msgstr "{0} %"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "{0} <0/> per <1/>"
 #~ msgstr "{0} <0/> per <1/>"
 
@@ -2485,9 +2471,9 @@ msgstr "{0} ETH"
 msgid "{0} ETHs"
 msgstr ""
 
-#: 
-#: 
-#: 
+#:
+#:
+#:
 #~ msgid "{0} Fees Earned:"
 #~ msgstr "{0} Commissioni Guadagnate:"
 
@@ -2524,12 +2510,12 @@ msgstr "{0} token LP UNI-V2 disponibili"
 msgid "{0} Votes"
 msgstr "{0} Voti"
 
-#: 
-#: 
-#: 
-#: 
-#: 
-#: 
+#:
+#:
+#:
+#:
+#:
+#:
 #~ msgid "{0} per {1}"
 #~ msgstr "{0} per {1}"
 
@@ -2544,8 +2530,8 @@ msgstr "{0} prezzo"
 msgid "{0} tokens"
 msgstr "{0} token"
 
-#: 
-#: 
+#:
+#:
 #~ msgid "{0} {1} Price:"
 #~ msgstr "{0} {1} Prezzo:"
 
@@ -2566,11 +2552,11 @@ msgstr "{0}%"
 msgid "{0}-{1} Liquidity Mining"
 msgstr "{0}-{1} Estrazione di liquidità"
 
-#: 
+#:
 #~ msgid "{0}/{1} LP NFT"
 #~ msgstr "{0}/{1} LP NFT"
 
-#: 
+#:
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} LP Tokens"
 
@@ -2586,7 +2572,7 @@ msgstr "{USER_AMOUNT} UNI"
 msgid "{labelText}"
 msgstr ""
 
-#: 
+#:
 #~ msgid "{percentForSlider}%"
 #~ msgstr "{percentForSlider}%"
 
@@ -2599,7 +2585,7 @@ msgstr ""
 msgid "{title}"
 msgstr ""
 
-#: 
+#:
 #~ msgid "{tokenB} per {tokenA}"
 #~ msgstr "{tokenB} per {tokenA}"
 
@@ -2607,6 +2593,6 @@ msgstr ""
 msgid "~$ <0/>"
 msgstr "~$ <0/>"
 
-#: 
+#:
 #~ msgid "← Back to Pools Overview"
 #~ msgstr "← Torna alla panoramica delle piscine"

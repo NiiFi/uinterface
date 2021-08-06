@@ -176,7 +176,7 @@ export default function PoolFinder() {
                   </Text>
                   <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                     <Text textAlign="center">
-                      <Trans>Add liquidity.</Trans>
+                      <Trans>Add Liquidity.</Trans>
                     </Text>
                   </StyledInternalLink>
                 </AutoColumn>

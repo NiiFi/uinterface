@@ -63,7 +63,7 @@ export default function PoolInvest() {
       <UpperSection>
         <RowBetween>
           <TYPE.subHeader color="text6">
-            <Trans>Amount to Invest</Trans>
+            <Trans>Amount to add</Trans>
           </TYPE.subHeader>
           <TYPE.subHeader color="text6">
             {balance ? (
@@ -101,7 +101,7 @@ export default function PoolInvest() {
         </RowBetween>
         {account ? (
           <ButtonPrimary disabled={!sufficientBalance && hasInputAmount} marginTop="2rem">
-            <Trans>INVEST</Trans>
+            <Trans>ADD LIQUIDITY</Trans>
           </ButtonPrimary>
         ) : (
           <ButtonPrimary marginTop="2rem" onClick={toggleWalletModal}>
