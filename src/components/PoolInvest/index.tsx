@@ -100,8 +100,12 @@ export default function PoolInvest() {
           <Slippage placement={'left'} />
         </RowBetween>
         {account ? (
-          <ButtonPrimary disabled={!sufficientBalance && hasInputAmount} marginTop="2rem">
-            <Trans>ADD LIQUIDITY</Trans>
+          <ButtonPrimary
+            style={{ textTransform: 'uppercase' }}
+            disabled={!sufficientBalance && hasInputAmount}
+            marginTop="2rem"
+          >
+            <Trans>Add Liquidity</Trans>
           </ButtonPrimary>
         ) : (
           <ButtonPrimary marginTop="2rem" onClick={toggleWalletModal}>
