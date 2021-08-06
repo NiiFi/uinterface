@@ -164,7 +164,7 @@ export default function PoolDetails({
                 <Tabs value={activeTab} onChange={TabChangeHandler}>
                   <Tab
                     key={`tab-0`}
-                    label={t`Invest`}
+                    label={t`Liquidity`}
                     style={{ backgroundColor: 'transparent', minWidth: '50%', paddingRight: '0px', marginRight: '0px' }}
                     wrapperStyles={wrapperStyle}
                   />

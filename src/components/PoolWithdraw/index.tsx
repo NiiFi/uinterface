@@ -81,7 +81,7 @@ export default function PoolWithdraw() {
           <TYPE.subHeader color="text6">
             {balance ? (
               <>
-                <Trans>Invested</Trans>
+                <Trans>Added</Trans>
                 {` ${formatCurrencyAmount(balance, 4)}`}
               </>
             ) : (

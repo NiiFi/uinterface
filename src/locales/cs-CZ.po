@@ -171,6 +171,10 @@ msgstr "<0>🎉 </0>Vítejte v týmu Unicorn :) <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "Předkládání návrhů je vyžadováno minimální prahovou hodnotou 1 % celkové dodávky UNI."
 
+#: src/components/PoolInvest/index.tsx
+msgid "ADD LIQUIDITY"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "AUD"
 msgstr ""
@@ -201,16 +205,22 @@ msgstr "Přidat delegát +"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "Přidat likviditu"
+
+#: src/pages/PoolFinder/index.tsx
+msgid "Add Liquidity."
+msgstr ""
 
 #: 
 #~ msgid "Add V2 Liquidity"
 #~ msgstr "Přidat V2 likviditu"
 
-#: src/pages/PoolFinder/index.tsx
-msgid "Add liquidity."
-msgstr "Přidat likviditu."
+#: 
+#~ msgid "Add liquidity."
+#~ msgstr "Přidat likviditu."
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -228,6 +238,10 @@ msgstr "Přidat {0}-{1} likviditu"
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Přidat {0}/{1} V3 likviditu"
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
@@ -277,13 +291,18 @@ msgstr "Vždy se ujistěte, že URL je<0>app.uniswap.org</0> - záložka je bezp
 #~ msgid "Amount"
 #~ msgstr "Částka, která má být získána"
 
-#: src/components/PoolInvest/index.tsx
-#: src/pages/PoolDetail/ROISimulator.tsx
-msgid "Amount to Invest"
-msgstr ""
+#: 
+#: 
+#~ msgid "Amount to Invest"
+#~ msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "Amount to Withdraw"
+msgstr ""
+
+#: src/components/PoolInvest/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to add"
 msgstr ""
 
 #: 
@@ -324,6 +343,10 @@ msgstr "Jste si jisti?"
 #: 
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
 #~ msgstr "Jako člen komunity Uniswap můžete tvrdit, že UNI bude použita pro hlasování a správu věcí veřejných.<0/><1/><2>Přečtěte si více o UNI</2>"
+
+#: src/components/Table/Dashboard/Assets.tsx
+msgid "Assets"
+msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -395,6 +418,10 @@ msgstr "Blokovaná adresa"
 
 #: src/constants/tokens.ts
 msgid "Brazilian Real"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Buy Tokens"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
@@ -582,6 +609,7 @@ msgstr "Potvrďte tuto transakci ve Vaší peněžence"
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -932,6 +960,10 @@ msgstr ""
 msgid "High Price Impact"
 msgstr "Vysoký dopad na cenu"
 
+#: src/components/Table/Dashboard/History.tsx
+msgid "History"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "Hong Kong Dollar"
 msgstr ""
@@ -944,9 +976,9 @@ msgstr "Chápu"
 msgid "INR"
 msgstr ""
 
-#: src/components/PoolInvest/index.tsx
-msgid "INVEST"
-msgstr ""
+#: 
+#~ msgid "INVEST"
+#~ msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
@@ -1048,15 +1080,15 @@ msgstr "Neplatný pár."
 msgid "Invalid recipient"
 msgstr "Neplatný příjemce"
 
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
-#: src/pages/PoolDetail/index.tsx
-msgid "Invest"
-msgstr ""
+#: 
+#: 
+#: 
+#~ msgid "Invest"
+#~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1085,6 +1117,7 @@ msgstr ""
 #: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr "Likvidita"
 
@@ -1231,12 +1264,20 @@ msgstr "Minimum přijato"
 #~ msgid "More"
 #~ msgstr "Více"
 
+#: src/pages/Dashboard/index.tsx
+msgid "NFTs Collection"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "NOK"
 msgstr ""
 
 #: src/components/Table/overview.tsx
 msgid "Name"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Net Worth"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
@@ -1629,6 +1670,10 @@ msgstr "Sám"
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
 msgstr "Samostatná delegace"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Send"
+msgstr ""
 
 #: 
 #: 
@@ -2152,6 +2197,10 @@ msgstr "Čekání na potvrzení"
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
 msgid "Wallet"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Wallet Balance"
 msgstr ""
 
 #: src/components/AccountDetails/index.tsx

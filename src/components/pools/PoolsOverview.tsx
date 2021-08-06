@@ -125,7 +125,7 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                   </RowWrapper>
                   <RowWrapper>
                     <ButtonOutlined>
-                      <Trans>Invest</Trans>
+                      <Trans>Add Liquidity</Trans>
                     </ButtonOutlined>
                   </RowWrapper>
                 </RowWrapper>

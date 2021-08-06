@@ -171,6 +171,10 @@ msgstr "<0>🎉 </0>Вітаємо в Unicorn команди :) <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "Мінімальна межа у 1% від загальної пропозиції UNI потрібна для пропозиції"
 
+#: src/components/PoolInvest/index.tsx
+msgid "ADD LIQUIDITY"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "AUD"
 msgstr ""
@@ -201,16 +205,22 @@ msgstr "Додати Делегат +"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "Додати ліквідність"
+
+#: src/pages/PoolFinder/index.tsx
+msgid "Add Liquidity."
+msgstr ""
 
 #: 
 #~ msgid "Add V2 Liquidity"
 #~ msgstr "Додати V2 ліквідність"
 
-#: src/pages/PoolFinder/index.tsx
-msgid "Add liquidity."
-msgstr "Додайте ліквідність."
+#: 
+#~ msgid "Add liquidity."
+#~ msgstr "Додайте ліквідність."
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -228,6 +238,10 @@ msgstr "Додати {0}-{1} ліквідність"
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Додати {0}/{1} V3 ліквідність"
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
@@ -277,13 +291,18 @@ msgstr "Завжди переконайтеся, що URL для<0>app.uniswap.o
 #~ msgid "Amount"
 #~ msgstr "Сума"
 
-#: src/components/PoolInvest/index.tsx
-#: src/pages/PoolDetail/ROISimulator.tsx
-msgid "Amount to Invest"
-msgstr ""
+#: 
+#: 
+#~ msgid "Amount to Invest"
+#~ msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "Amount to Withdraw"
+msgstr ""
+
+#: src/components/PoolInvest/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to add"
 msgstr ""
 
 #: 
@@ -324,6 +343,10 @@ msgstr "Ви впевнені?"
 #: 
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
 #~ msgstr "Як учасник спільноти Uniswap ви можете стверджувати, що UNI слід використовувати для голосування та управління. <0><2>Прочитайте більше про UNI</2>"
+
+#: src/components/Table/Dashboard/Assets.tsx
+msgid "Assets"
+msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -395,6 +418,10 @@ msgstr "Адреса заблокована"
 
 #: src/constants/tokens.ts
 msgid "Brazilian Real"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Buy Tokens"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
@@ -582,6 +609,7 @@ msgstr "Підтвердіть транзакцію у вашому гаманц
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -932,6 +960,10 @@ msgstr ""
 msgid "High Price Impact"
 msgstr "Високий вплив на ціну"
 
+#: src/components/Table/Dashboard/History.tsx
+msgid "History"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "Hong Kong Dollar"
 msgstr ""
@@ -944,9 +976,9 @@ msgstr "Я розумію"
 msgid "INR"
 msgstr ""
 
-#: src/components/PoolInvest/index.tsx
-msgid "INVEST"
-msgstr ""
+#: 
+#~ msgid "INVEST"
+#~ msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
@@ -1048,15 +1080,15 @@ msgstr "Недійсна пара."
 msgid "Invalid recipient"
 msgstr "Недійсний одержувач"
 
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
-#: src/pages/PoolDetail/index.tsx
-msgid "Invest"
-msgstr ""
+#: 
+#: 
+#: 
+#~ msgid "Invest"
+#~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1085,6 +1117,7 @@ msgstr ""
 #: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr "Ліквідність"
 
@@ -1231,12 +1264,20 @@ msgstr "Мінімум отриманих"
 #~ msgid "More"
 #~ msgstr "Більше"
 
+#: src/pages/Dashboard/index.tsx
+msgid "NFTs Collection"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "NOK"
 msgstr ""
 
 #: src/components/Table/overview.tsx
 msgid "Name"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Net Worth"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
@@ -1629,6 +1670,10 @@ msgstr "Я сам"
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
 msgstr "Власний делегат"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Send"
+msgstr ""
 
 #: 
 #: 
@@ -2152,6 +2197,10 @@ msgstr "Очікується підтвердження"
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
 msgid "Wallet"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Wallet Balance"
 msgstr ""
 
 #: src/components/AccountDetails/index.tsx
