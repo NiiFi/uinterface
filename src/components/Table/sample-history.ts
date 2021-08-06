@@ -21,7 +21,7 @@ export const SampleHistoryResponse: any = {
       },
       {
         type: 'amount-out',
-        title: 'Invest in Pool',
+        title: 'Add Liquidity to Pool',
         date: '2021-06-10T15:20:41+00:00',
         valueInETH: 1,
       },
@@ -45,7 +45,7 @@ export const SampleHistoryResponse: any = {
       },
       {
         type: 'amount-out',
-        title: 'Invest in Pool',
+        title: 'Add Liquidity to Pool',
         date: '2021-06-10T15:20:41+00:00',
         valueInETH: 1,
       },
@@ -69,7 +69,7 @@ export const SampleHistoryResponse: any = {
       },
       {
         type: 'amount-out',
-        title: 'Invest in Pool',
+        title: 'Add Liquidity to Pool',
         date: '2021-06-10T15:20:41+00:00',
         valueInETH: 1,
       },
@@ -93,7 +93,7 @@ export const SampleHistoryResponse: any = {
       },
       {
         type: 'amount-out',
-        title: 'Invest in Pool',
+        title: 'Add Liquidity to Pool',
         date: '2021-06-10T15:20:41+00:00',
         valueInETH: 1,
       },
@@ -117,7 +117,7 @@ export const SampleHistoryResponse: any = {
       },
       {
         type: 'amount-out',
-        title: 'Invest in Pool',
+        title: 'Add Liquidity to Pool',
         date: '2021-06-10T15:20:41+00:00',
         valueInETH: 1,
       },
@@ -141,7 +141,7 @@ export const SampleHistoryResponse: any = {
       },
       {
         type: 'amount-out',
-        title: 'Invest in Pool',
+        title: 'Add Liquidity to Pool',
         date: '2021-06-10T15:20:41+00:00',
         valueInETH: 1,
       },
@@ -165,7 +165,7 @@ export const SampleHistoryResponse: any = {
       },
       {
         type: 'amount-out',
-        title: 'Invest in Pool',
+        title: 'Add Liquidity to Pool',
         date: '2021-06-10T15:20:41+00:00',
         valueInETH: 1,
       },
@@ -189,7 +189,7 @@ export const SampleHistoryResponse: any = {
       },
       {
         type: 'amount-out',
-        title: 'Invest in Pool',
+        title: 'Add Liquidity to Pool',
         date: '2021-06-10T15:20:41+00:00',
         valueInETH: 1,
       },
@@ -213,7 +213,7 @@ export const SampleHistoryResponse: any = {
       },
       {
         type: 'amount-out',
-        title: 'Invest in Pool',
+        title: 'Add Liquidity to Pool',
         date: '2021-06-10T15:20:41+00:00',
         valueInETH: 1,
       },

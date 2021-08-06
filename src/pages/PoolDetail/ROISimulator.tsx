@@ -53,7 +53,7 @@ export default function ROISimulator({ token0, token1 }: { token0: string; token
   return (
     <>
       <TYPE.subHeader color="text6" marginBottom={'0.75rem'}>
-        <Trans>Amount to Invest</Trans>
+        <Trans>Amount to add</Trans>
       </TYPE.subHeader>
       <TokenPairInputPanel
         onChange={handlePairOnChange}
