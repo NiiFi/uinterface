@@ -171,6 +171,10 @@ msgstr "<0>🎉 </0>欢迎加入Unicorn（独角兽）团队 :) <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "提交提案的最低门槛为 UNI 代币总供应量的1％。"
 
+#: src/components/PoolInvest/index.tsx
+msgid "ADD LIQUIDITY"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "AUD"
 msgstr ""
@@ -201,16 +205,22 @@ msgstr "添加委托 +"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "注入流动资金"
+
+#: src/pages/PoolFinder/index.tsx
+msgid "Add Liquidity."
+msgstr ""
 
 #: 
 #~ msgid "Add V2 Liquidity"
 #~ msgstr "注入 V2 流动资金"
 
-#: src/pages/PoolFinder/index.tsx
-msgid "Add liquidity."
-msgstr "注入流动资金。"
+#: 
+#~ msgid "Add liquidity."
+#~ msgstr "注入流动资金。"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -228,6 +238,10 @@ msgstr "注入 {0}-{1} 流动资金"
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "注入 {0}/{1} V3 流动资金"
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
@@ -277,13 +291,18 @@ msgstr "务必确保网址为<0>app.uniswap.org</0> - 将其加入书签，以�
 #~ msgid "Amount"
 #~ msgstr "数额"
 
-#: src/components/PoolInvest/index.tsx
-#: src/pages/PoolDetail/ROISimulator.tsx
-msgid "Amount to Invest"
-msgstr ""
+#: 
+#: 
+#~ msgid "Amount to Invest"
+#~ msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "Amount to Withdraw"
+msgstr ""
+
+#: src/components/PoolInvest/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to add"
 msgstr ""
 
 #: 
@@ -324,6 +343,10 @@ msgstr "您确定吗？"
 #: 
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
 #~ msgstr "作为Uniswap社区的成员，您可以认领 UNI 代币，用于投票和治理。<0/><1/><2>阅读更多关于 UNI 代币信息</2>"
+
+#: src/components/Table/Dashboard/Assets.tsx
+msgid "Assets"
+msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -395,6 +418,10 @@ msgstr "已屏蔽地址"
 
 #: src/constants/tokens.ts
 msgid "Brazilian Real"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Buy Tokens"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
@@ -582,6 +609,7 @@ msgstr "在您的钱包中确认这笔交易"
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -932,6 +960,10 @@ msgstr ""
 msgid "High Price Impact"
 msgstr "对兑换率有高度影响"
 
+#: src/components/Table/Dashboard/History.tsx
+msgid "History"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "Hong Kong Dollar"
 msgstr ""
@@ -944,9 +976,9 @@ msgstr "我已知悉"
 msgid "INR"
 msgstr ""
 
-#: src/components/PoolInvest/index.tsx
-msgid "INVEST"
-msgstr ""
+#: 
+#~ msgid "INVEST"
+#~ msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
@@ -1048,15 +1080,15 @@ msgstr "无效的币对。"
 msgid "Invalid recipient"
 msgstr "无效的接收方"
 
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
-#: src/pages/PoolDetail/index.tsx
-msgid "Invest"
-msgstr ""
+#: 
+#: 
+#: 
+#~ msgid "Invest"
+#~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1085,6 +1117,7 @@ msgstr ""
 #: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr "流动资金"
 
@@ -1231,12 +1264,20 @@ msgstr "收到的最低数额"
 #~ msgid "More"
 #~ msgstr "更多"
 
+#: src/pages/Dashboard/index.tsx
+msgid "NFTs Collection"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "NOK"
 msgstr ""
 
 #: src/components/Table/overview.tsx
 msgid "Name"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Net Worth"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
@@ -1629,6 +1670,10 @@ msgstr "自身"
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
 msgstr "自我代表"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Send"
+msgstr ""
 
 #: 
 #: 
@@ -2152,6 +2197,10 @@ msgstr "等待确认"
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
 msgid "Wallet"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Wallet Balance"
 msgstr ""
 
 #: src/components/AccountDetails/index.tsx

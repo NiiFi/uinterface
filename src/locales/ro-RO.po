@@ -171,6 +171,10 @@ msgstr "<0>🎉 </0>Bine ai venit la echipa Unicorn :) <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "Este necesar un prag minim de 1 % din totalul ofertei UNI pentru prezentarea de propuneri"
 
+#: src/components/PoolInvest/index.tsx
+msgid "ADD LIQUIDITY"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "AUD"
 msgstr ""
@@ -201,16 +205,22 @@ msgstr "Adaugă Delegat +"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "Adaugă lichiditate"
+
+#: src/pages/PoolFinder/index.tsx
+msgid "Add Liquidity."
+msgstr ""
 
 #: 
 #~ msgid "Add V2 Liquidity"
 #~ msgstr "Adaugă lichiditate V2"
 
-#: src/pages/PoolFinder/index.tsx
-msgid "Add liquidity."
-msgstr "Adaugă lichiditate."
+#: 
+#~ msgid "Add liquidity."
+#~ msgstr "Adaugă lichiditate."
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -228,6 +238,10 @@ msgstr "Adaugă {0}-{1} lichiditate"
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr "Adaugă lichiditate {0}/{1} V3"
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
@@ -277,13 +291,18 @@ msgstr "Asigurați-vă întotdeauna că URL-ul este<0>app.uniswap.org</0> - marc
 #~ msgid "Amount"
 #~ msgstr "Sumă"
 
-#: src/components/PoolInvest/index.tsx
-#: src/pages/PoolDetail/ROISimulator.tsx
-msgid "Amount to Invest"
-msgstr ""
+#: 
+#: 
+#~ msgid "Amount to Invest"
+#~ msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "Amount to Withdraw"
+msgstr ""
+
+#: src/components/PoolInvest/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to add"
 msgstr ""
 
 #: 
@@ -324,6 +343,10 @@ msgstr "Ești sigur?"
 #: 
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
 #~ msgstr "Ca membru al comunității Uniswap puteți pretinde UNI că este folosită pentru vot și guvernanță.<0/><1/><2>Citește mai multe despre UNI</2>"
+
+#: src/components/Table/Dashboard/Assets.tsx
+msgid "Assets"
+msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
@@ -395,6 +418,10 @@ msgstr "Adresa blocată"
 
 #: src/constants/tokens.ts
 msgid "Brazilian Real"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Buy Tokens"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
@@ -582,6 +609,7 @@ msgstr "Confirmați această tranzacție în portofel"
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -932,6 +960,10 @@ msgstr ""
 msgid "High Price Impact"
 msgstr "Impact preț mare"
 
+#: src/components/Table/Dashboard/History.tsx
+msgid "History"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "Hong Kong Dollar"
 msgstr ""
@@ -944,9 +976,9 @@ msgstr "Am înțeles"
 msgid "INR"
 msgstr ""
 
-#: src/components/PoolInvest/index.tsx
-msgid "INVEST"
-msgstr ""
+#: 
+#~ msgid "INVEST"
+#~ msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
@@ -1048,15 +1080,15 @@ msgstr "Asociere invalidă."
 msgid "Invalid recipient"
 msgstr "Destinatar nevalid"
 
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
-#: src/pages/PoolDetail/index.tsx
-msgid "Invest"
-msgstr ""
+#: 
+#: 
+#: 
+#~ msgid "Invest"
+#~ msgstr ""
 
-#: src/components/PoolWithdraw/index.tsx
-msgid "Invested"
-msgstr ""
+#: 
+#~ msgid "Invested"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1085,6 +1117,7 @@ msgstr ""
 #: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr "Lichiditate"
 
@@ -1231,12 +1264,20 @@ msgstr "Minim primit"
 #~ msgid "More"
 #~ msgstr "Mai"
 
+#: src/pages/Dashboard/index.tsx
+msgid "NFTs Collection"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "NOK"
 msgstr ""
 
 #: src/components/Table/overview.tsx
 msgid "Name"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Net Worth"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
@@ -1629,6 +1670,10 @@ msgstr "Propriu"
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
 msgstr "Auto-delegare"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Send"
+msgstr ""
 
 #: 
 #: 
@@ -2152,6 +2197,10 @@ msgstr "Aşteptare pentru confirmare"
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
 msgid "Wallet"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Wallet Balance"
 msgstr ""
 
 #: src/components/AccountDetails/index.tsx
