@@ -8,6 +8,7 @@ import CreatePoolButton from 'components/pools/CreatePoolButton'
 import { PoolAppBar } from 'pages/Pool/styleds'
 import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
+import { ResponsiveRow } from 'components/Row'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
 import { BodyScroller, TYPE, BarTitle, CurrencySelectWrapper } from 'theme'
@@ -76,7 +77,7 @@ const PoolDetailChartWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0px 2rem;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
     gap: 1rem;
@@ -159,7 +160,7 @@ export default function PoolDetails({
       <BodyScroller>
         <BodyPanel>
           <Wrapper>
-            <RowColumn>
+            <ResponsiveRow>
               <AppBody size="md" style={{ minHeight: '440px' }}>
                 <Tabs value={activeTab} onChange={TabChangeHandler}>
                   <Tab
@@ -187,7 +188,7 @@ export default function PoolDetails({
                   <PoolDetailChart token0={token0} token1={token1} />
                 </PoolDetailChartWrapper>
               </AppBody>
-            </RowColumn>
+            </ResponsiveRow>
             <RowColumn>
               <TokenStatsWrapper>
                 <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>

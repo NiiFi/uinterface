@@ -35,9 +35,6 @@ const UpperSection = styled.div`
     margin-top: 0;
     font-weight: 500;
   }
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 1.5rem;
-  `}
 `
 
 export default function PoolInvest() {
