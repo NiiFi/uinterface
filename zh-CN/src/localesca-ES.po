@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File-ID: 13\n"
 "Project-Id-Version: niifi\n"
 "Language-Team: Chinese Simplified\n"
-"PO-Revision-Date: 2021-08-09 09:45\n"
+"PO-Revision-Date: 2021-08-09 13:56\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 
@@ -172,9 +172,9 @@ msgstr ""
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr ""
 
-#: src/components/PoolInvest/index.tsx
-msgid "ADD LIQUIDITY"
-msgstr ""
+#: 
+#~ msgid "ADD LIQUIDITY"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "AUD"
@@ -206,6 +206,7 @@ msgstr ""
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
@@ -288,9 +289,10 @@ msgstr ""
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
 msgstr ""
 
-#: 
-#~ msgid "Amount"
-#~ msgstr "Import"
+#: src/components/BuyTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Amount"
+msgstr ""
 
 #: 
 #: 
@@ -421,6 +423,11 @@ msgstr ""
 msgid "Brazilian Real"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Buy"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Buy Tokens"
 msgstr ""
@@ -605,7 +612,9 @@ msgstr ""
 msgid "Confirm this transaction in your wallet"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
@@ -729,6 +738,7 @@ msgstr ""
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr ""
@@ -736,6 +746,11 @@ msgstr ""
 #: 
 #~ msgid "Deposit Amounts"
 #~ msgstr "Quantitats de dipòsit"
+
+#: src/components/DepositTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Deposit Token To Nahmii"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit UNI-V2 LP Tokens"
@@ -910,6 +925,7 @@ msgstr ""
 #~ msgid "Fee Tier"
 #~ msgstr "Nivell de tarifa"
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -1111,6 +1127,7 @@ msgstr ""
 msgid "Lend"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -1400,6 +1417,10 @@ msgstr ""
 
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Payment Method"
 msgstr ""
 
 #: src/pages/PoolDetail/ROISimulator.tsx
@@ -1890,6 +1911,14 @@ msgstr ""
 msgid "Token Stats"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Token To Buy"
+msgstr ""
+
+#: src/components/DepositTokenModal/index.tsx
+msgid "Token To Deposit"
+msgstr ""
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Tokens"
 msgstr ""
@@ -2126,6 +2155,10 @@ msgstr ""
 #~ msgid "V3 {0} Price:"
 #~ msgstr "V3 {0} Preu:"
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "VISA *5546"
+msgstr ""
+
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
 msgstr ""
@@ -2154,6 +2187,7 @@ msgstr ""
 msgid "View transaction on Explorer"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -2441,6 +2475,10 @@ msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "via {0} token list"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "waiting..."
 msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
