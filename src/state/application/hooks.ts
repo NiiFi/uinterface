@@ -35,6 +35,14 @@ export function useWalletModalToggle(): () => void {
   return useToggleModal(ApplicationModal.WALLET)
 }
 
+export function useBuyTokenModalToggle(): () => void {
+  return useToggleModal(ApplicationModal.BUY_TOKEN)
+}
+
+export function useDepositToNahmiiModalToggle(): () => void {
+  return useToggleModal(ApplicationModal.DEPOSIT_TO_NAHMII)
+}
+
 export function useManageWalletListModalToggle(): () => void {
   return useToggleModal(ApplicationModal.MANAGE_WALLET_LIST)
 }

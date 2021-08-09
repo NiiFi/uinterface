@@ -25,12 +25,15 @@ import {
   UserWallets,
   setBaseCurrency,
   setEthereumToBaseCurrencyRates,
+  BuyTokenStates,
+  setBuyTokenState,
 } from './actions'
 import { SupportedLocale } from 'constants/locales'
 
 const currentTimestamp = () => new Date().getTime()
 
 export interface UserState {
+  buyTokenState: BuyTokenStates
   // the timestamp of the last updateVersion action
   lastUpdateVersionTimestamp?: number
 
@@ -84,6 +87,7 @@ function pairKey(token0Address: string, token1Address: string) {
 }
 
 export const initialState: UserState = {
+  buyTokenState: 'buy',
   userDarkMode: null,
   matchesDarkMode: false,
   userExpertMode: false,
@@ -236,5 +240,8 @@ export default createReducer(initialState, (builder) =>
     })
     .addCase(setEthereumToBaseCurrencyRates, (state, { payload }) => {
       state.ethereumToBaseCurrencyRates = payload
+    })
+    .addCase(setBuyTokenState, (state, { payload }) => {
+      state.buyTokenState = payload
     })
 )

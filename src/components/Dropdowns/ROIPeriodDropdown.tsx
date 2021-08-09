@@ -61,9 +61,9 @@ export default function ROIPeriodDropdown({
     onItemSelect(value)
   }
   const OptionsMap: { [key: string]: string } = {
-    oneWeek: '1 Week',
-    oneMonth: '1 Month',
-    oneYear: '1 Year',
+    oneWeek: t`1 Week`,
+    oneMonth: t`1 Month`,
+    oneYear: t`1 Year`,
   }
   return (
     <Wrapper>

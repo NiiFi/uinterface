@@ -171,9 +171,9 @@ msgstr "<0>🎉 </0>欢迎加入Unicorn（独角兽）团队 :) <1>🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "提交提案的最低门槛为 UNI 代币总供应量的1％。"
 
-#: src/components/PoolInvest/index.tsx
-msgid "ADD LIQUIDITY"
-msgstr ""
+#: 
+#~ msgid "ADD LIQUIDITY"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "AUD"
@@ -205,6 +205,7 @@ msgstr "添加委托 +"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
@@ -287,9 +288,10 @@ msgstr ""
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
 msgstr "务必确保网址为<0>app.uniswap.org</0> - 将其加入书签，以确保安全。"
 
-#: 
-#~ msgid "Amount"
-#~ msgstr "数额"
+#: src/components/BuyTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Amount"
+msgstr "数额"
 
 #: 
 #: 
@@ -420,6 +422,11 @@ msgstr "已屏蔽地址"
 msgid "Brazilian Real"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Buy"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Buy Tokens"
 msgstr ""
@@ -604,7 +611,9 @@ msgstr "确认兑换"
 msgid "Confirm this transaction in your wallet"
 msgstr "在您的钱包中确认这笔交易"
 
+#: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
@@ -728,6 +737,7 @@ msgstr "委托投票"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "充值"
@@ -735,6 +745,11 @@ msgstr "充值"
 #: 
 #~ msgid "Deposit Amounts"
 #~ msgstr "充值数额"
+
+#: src/components/DepositTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Deposit Token To Nahmii"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit UNI-V2 LP Tokens"
@@ -909,6 +924,7 @@ msgstr ""
 #~ msgid "Fee Tier"
 #~ msgstr "手续费级别"
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -1110,6 +1126,7 @@ msgstr ""
 msgid "Lend"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -1396,6 +1413,10 @@ msgstr ""
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
 msgstr "参与的流动池"
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Payment Method"
+msgstr ""
 
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Period"
@@ -1881,6 +1902,14 @@ msgstr ""
 msgid "Token Stats"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Token To Buy"
+msgstr ""
+
+#: src/components/DepositTokenModal/index.tsx
+msgid "Token To Deposit"
+msgstr ""
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Tokens"
 msgstr "代币"
@@ -2116,6 +2145,10 @@ msgstr "用户"
 #~ msgid "V3 {0} Price:"
 #~ msgstr "V3 {0} 兑换率："
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "VISA *5546"
+msgstr ""
+
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
 msgstr "查看 UNI 代币分析"
@@ -2144,6 +2177,7 @@ msgstr "在以太坊资源浏览器上查看"
 msgid "View transaction on Explorer"
 msgstr "在以太坊资源浏览器上查看交易"
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -2432,6 +2466,10 @@ msgstr "通过 {0}"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "via {0} token list"
 msgstr "从 {0} 代币列表"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "waiting..."
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"

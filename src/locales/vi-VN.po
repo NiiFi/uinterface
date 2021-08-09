@@ -171,9 +171,9 @@ msgstr "<0> 🎉</0> Chào mừng đến với đội Unicorn :) <1> 🎉</1>"
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "Yêu cầu ngưỡng tối thiểu 1% tổng nguồn cung cấp UNI để gửi đề xuất"
 
-#: src/components/PoolInvest/index.tsx
-msgid "ADD LIQUIDITY"
-msgstr ""
+#: 
+#~ msgid "ADD LIQUIDITY"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "AUD"
@@ -205,6 +205,7 @@ msgstr "Thêm đại biểu +"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
@@ -287,9 +288,10 @@ msgstr ""
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
 msgstr "Luôn đảm bảo URL là <0> app.uniswap.org</0> - đánh dấu nó để được an toàn."
 
-#: 
-#~ msgid "Amount"
-#~ msgstr "Số tiền"
+#: src/components/BuyTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Amount"
+msgstr "Số tiền"
 
 #: 
 #: 
@@ -420,6 +422,11 @@ msgstr "Địa chỉ bị chặn"
 msgid "Brazilian Real"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Buy"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Buy Tokens"
 msgstr ""
@@ -604,7 +611,9 @@ msgstr "Xác nhận Hoán đổi"
 msgid "Confirm this transaction in your wallet"
 msgstr "Xác nhận giao dịch này trong ví của bạn"
 
+#: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
@@ -728,6 +737,7 @@ msgstr "Ủy quyền phiếu bầu"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "Tiền gửi"
@@ -735,6 +745,11 @@ msgstr "Tiền gửi"
 #: 
 #~ msgid "Deposit Amounts"
 #~ msgstr "Số tiền đặt cọc"
+
+#: src/components/DepositTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Deposit Token To Nahmii"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit UNI-V2 LP Tokens"
@@ -909,6 +924,7 @@ msgstr ""
 #~ msgid "Fee Tier"
 #~ msgstr "Bậc phí"
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -1110,6 +1126,7 @@ msgstr ""
 msgid "Lend"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -1396,6 +1413,10 @@ msgstr ""
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
 msgstr "Nhóm tham gia"
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Payment Method"
+msgstr ""
 
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Period"
@@ -1881,6 +1902,14 @@ msgstr ""
 msgid "Token Stats"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Token To Buy"
+msgstr ""
+
+#: src/components/DepositTokenModal/index.tsx
+msgid "Token To Deposit"
+msgstr ""
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Tokens"
 msgstr "Mã thông báo"
@@ -2116,6 +2145,10 @@ msgstr "Người dùng"
 #~ msgid "V3 {0} Price:"
 #~ msgstr "V3 {0} Giá:"
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "VISA *5546"
+msgstr ""
+
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
 msgstr "Xem UNI Analytics"
@@ -2144,6 +2177,7 @@ msgstr "Xem trên Explorer"
 msgid "View transaction on Explorer"
 msgstr "Xem giao dịch trên Explorer"
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -2432,6 +2466,10 @@ msgstr "qua {0}"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "via {0} token list"
 msgstr "thông qua {0} mã thông báo"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "waiting..."
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"

@@ -171,9 +171,9 @@ msgstr "<0> 🎉</0> Добродошли у тим Уницорн :) <1> 🎉</
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
 msgstr "За подношење предлога потребан је минимални праг од 1% укупне УНИ понуде"
 
-#: src/components/PoolInvest/index.tsx
-msgid "ADD LIQUIDITY"
-msgstr ""
+#: 
+#~ msgid "ADD LIQUIDITY"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "AUD"
@@ -205,6 +205,7 @@ msgstr "Додајте делегата +"
 
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
@@ -287,9 +288,10 @@ msgstr ""
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
 msgstr "Увек се уверите да је УРЛ <0> апп.унисвап.орг</0> - обележи да буде сигурно."
 
-#: 
-#~ msgid "Amount"
-#~ msgstr "Износ"
+#: src/components/BuyTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Amount"
+msgstr "Износ"
 
 #: 
 #: 
@@ -420,6 +422,11 @@ msgstr "Блокирана адреса"
 msgid "Brazilian Real"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Buy"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Buy Tokens"
 msgstr ""
@@ -604,7 +611,9 @@ msgstr "Потврдите размену"
 msgid "Confirm this transaction in your wallet"
 msgstr "Потврдите ову трансакцију у новчанику"
 
+#: src/components/BuyTokenModal/index.tsx
 #: src/components/CreatePoolModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
@@ -728,6 +737,7 @@ msgstr "Делегирање гласова"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "Депозит"
@@ -735,6 +745,11 @@ msgstr "Депозит"
 #: 
 #~ msgid "Deposit Amounts"
 #~ msgstr "Износи депозита"
+
+#: src/components/DepositTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Deposit Token To Nahmii"
+msgstr ""
 
 #: src/pages/Earn/Manage.tsx
 msgid "Deposit UNI-V2 LP Tokens"
@@ -909,6 +924,7 @@ msgstr ""
 #~ msgid "Fee Tier"
 #~ msgstr "Ниво накнаде"
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -1110,6 +1126,7 @@ msgstr ""
 msgid "Lend"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -1396,6 +1413,10 @@ msgstr ""
 #: src/pages/Earn/index.tsx
 msgid "Participating pools"
 msgstr "Базени који учествују"
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Payment Method"
+msgstr ""
 
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Period"
@@ -1881,6 +1902,14 @@ msgstr ""
 msgid "Token Stats"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Token To Buy"
+msgstr ""
+
+#: src/components/DepositTokenModal/index.tsx
+msgid "Token To Deposit"
+msgstr ""
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Tokens"
 msgstr "Жетони"
@@ -2116,6 +2145,10 @@ msgstr "Корисник"
 #~ msgid "V3 {0} Price:"
 #~ msgstr "В3 {0} Цена:"
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "VISA *5546"
+msgstr ""
+
 #: src/components/Header/UniBalanceContent.tsx
 msgid "View UNI Analytics"
 msgstr "Погледајте УНИ аналитику"
@@ -2144,6 +2177,7 @@ msgstr "Поглед на Екплореру"
 msgid "View transaction on Explorer"
 msgstr "Погледајте трансакцију у Екплореру"
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -2432,6 +2466,10 @@ msgstr "преко {0}"
 #: src/components/SearchModal/ImportToken.tsx
 msgid "via {0} token list"
 msgstr "преко листе {0}"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "waiting..."
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"
