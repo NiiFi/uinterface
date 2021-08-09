@@ -35,9 +35,9 @@ msgstr "${0} ETH"
 msgid "(Max)"
 msgstr "(Max)"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr "(követelés)"
+#: 
+#~ msgid "(claim)"
+#~ msgstr "(követelés)"
 
 #: 
 #~ msgid "(clear all)"
@@ -166,9 +166,9 @@ msgstr "<0> Tipp:</0> A likviditás hozzáadásakor pool-tokeneket kap, amelyek 
 msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0> Feloldja a szavazást</0> felkészülni a következő javaslatra."
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0> 🎉</0> Üdvözöljük az Unicorn csapatában :) <1> 🎉</1>"
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr "<0> 🎉</0> Üdvözöljük az Unicorn csapatában :) <1> 🎉</1>"
 
 #: src/pages/Vote/index.tsx
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
@@ -251,9 +251,9 @@ msgstr ""
 msgid "Added {0}"
 msgstr "Hozzáadva {0}"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr "A címnek nincs elérhető követelése"
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr "A címnek nincs elérhető követelése"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
@@ -389,9 +389,9 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr "Egyensúly:"
+#: 
+#~ msgid "Balance:"
+#~ msgstr "Egyensúly:"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -474,9 +474,9 @@ msgstr ""
 #~ msgid "Change"
 #~ msgstr "változás"
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr "Diagramok"
+#: 
+#~ msgid "Charts"
+#~ msgstr "Diagramok"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -492,17 +492,17 @@ msgstr ""
 msgid "Claim"
 msgstr "Követelés"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr "Állítsa az UNI-t"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr "Állítsa az UNI-t"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr "Igényelje az UNI tokent"
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr "Igényelje az UNI tokent"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -513,27 +513,27 @@ msgstr "Felhalmozott UNI jutalmak követelése"
 #~ msgid "Claim fees"
 #~ msgstr "Követelési díjak"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr "Igényelje UNI-jeleit"
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr "Igényelje UNI-jeleit"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr "Azt állította"
+#: 
+#~ msgid "Claimed"
+#~ msgstr "Azt állította"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "Azt állította, hogy UNI!"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr "Igénylés"
+#: 
+#~ msgid "Claiming"
+#~ msgstr "Igénylés"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr "Az UNI igénye"
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr "Az UNI igénye"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -608,8 +608,6 @@ msgstr "Erősítse meg a Csere lehetőséget"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "Erősítse meg ezt a tranzakciót a pénztárcájában"
@@ -721,7 +719,7 @@ msgstr "Készítsen poolot."
 #~ msgid "Current {0} Price:"
 #~ msgstr "Jelenlegi {0} ár:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -806,7 +804,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr "Viszály"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -854,9 +852,9 @@ msgstr "Írja be a címzettet"
 msgid "Enter a valid slippage percentage"
 msgstr "Adjon meg érvényes csúszási százalékot"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr "Adjon meg egy címet az UNI igénylés kiváltásához. Ha a címnek van igényelhető UNI-je, elküldik nekik benyújtáskor."
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr "Adjon meg egy címet az UNI igénylés kiváltásához. Ha a címnek van igényelhető UNI-je, elküldik nekik benyújtáskor."
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -919,7 +917,7 @@ msgstr "A szakértői mód kikapcsolja a tranzakció megerősítését, és lehe
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "Fedezze fel az Uniswap Analytics népszerű gyűjteményeit."
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -1125,7 +1123,7 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr "Tanul"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
@@ -1134,7 +1132,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1433,7 +1430,6 @@ msgstr "Kérjük, csatlakozzon a megfelelő Ethereum hálózathoz."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Írja be a \"{confirmWord}\" szót a szakértői mód engedélyezéséhez."
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1463,7 +1459,7 @@ msgstr "Pool tokenek a jutalomban:"
 msgid "Pooled {0}:"
 msgstr "Összevont {0}:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1762,7 +1758,6 @@ msgstr "Kínálat"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "{0} {1} és {2} {3}megadása"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
@@ -1807,9 +1802,9 @@ msgstr ""
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Köszönjük, hogy tagja az Uniswap közösségnek <0 />"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
+#: 
+#~ msgid "Thanks for being part of the community <0/>"
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1949,9 +1944,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "Felső medencék"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr "Teljes ellátás"
+#: 
+#~ msgid "Total Supply"
+#~ msgstr "Teljes ellátás"
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -2008,17 +2003,17 @@ msgstr ""
 msgid "Turn On Expert Mode"
 msgstr "Kapcsolja be a Szakértő módot"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr "Megérkezett az UNI"
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr "Megérkezett az UNI"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr "Forgalomban lévő UNI:"
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr "Forgalomban lévő UNI:"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr "UNI ár:"
+#: 
+#~ msgid "UNI price:"
+#~ msgstr "UNI ár:"
 
 #: src/pages/Vote/index.tsx
 msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
@@ -2053,9 +2048,9 @@ msgstr "Nem igényelt UNI"
 #~ msgid "Unclaimed fees"
 #~ msgstr "Nem igényelt díjak"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr "Nem igényelt:"
+#: 
+#~ msgid "Unclaimed:"
+#~ msgstr "Nem igényelt:"
 
 #: src/pages/Vote/index.tsx
 msgid "Uniswap Governance"
@@ -2131,9 +2126,9 @@ msgstr "Delegálás frissítése"
 msgid "Update list"
 msgstr "Lista frissítése"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr "Felhasználó"
+#: 
+#~ msgid "User"
+#~ msgstr "Felhasználó"
 
 #: 
 #~ msgid "V2 liquidity"
@@ -2152,9 +2147,9 @@ msgstr "Felhasználó"
 msgid "VISA *5546"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr "Az UNI Analytics megtekintése"
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr "Az UNI Analytics megtekintése"
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -2174,8 +2169,6 @@ msgid "View on Explorer"
 msgstr "Megtekintés az Intézőben"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Tranzakció megtekintése az Intézőben"
@@ -2193,9 +2186,9 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr "Szavazás"
+#: 
+#~ msgid "Vote"
+#~ msgstr "Szavazás"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "Vote Against"
@@ -2248,9 +2241,9 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "Heti jutalmak"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr "Üdvözöljük az Unicorn csapatban :)"
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr "Üdvözöljük az Unicorn csapatban :)"
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "When you claim without withdrawing your liquidity remains in the mining pool."
@@ -2346,9 +2339,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Kapni fogsz"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr "Az Ön UNI-bontása"
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr "Az Ön UNI-bontása"
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2445,9 +2438,9 @@ msgstr "Nem igényelt UNI"
 msgid "confirm"
 msgstr "megerősít"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr "{0}"
+#: 
+#~ msgid "for {0}"
+#~ msgstr "{0}"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2504,9 +2497,9 @@ msgstr "{0} egyedi token"
 msgid "{0} Deposited"
 msgstr "{0} Letétbe helyezve"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr "{0} ETH"
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr "{0} ETH"
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2523,13 +2516,13 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} függőben van"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr "{0} UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr "{0} UNI"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -2601,13 +2594,13 @@ msgstr "{0}-{1} Likviditásbányászat"
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} LP zseton"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr "{SOCKS_AMOUNT} UNI"
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr "{SOCKS_AMOUNT} UNI"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr "{USER_AMOUNT} UNI"
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr "{USER_AMOUNT} UNI"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2622,7 +2615,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 

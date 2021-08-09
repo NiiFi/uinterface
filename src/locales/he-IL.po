@@ -35,9 +35,9 @@ msgstr "${0} ETH"
 msgid "(Max)"
 msgstr "(מקסימום)"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr "(תְבִיעָה)"
+#: 
+#~ msgid "(claim)"
+#~ msgstr "(תְבִיעָה)"
 
 #: 
 #~ msgid "(clear all)"
@@ -166,9 +166,9 @@ msgstr "<0> טיפ:</0> כשתוסיף נזילות, תקבל אסימונים �
 msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0> בטל את ההצבעה</0> להתכונן להצעה הבאה."
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0> 🎉</0> ברוך הבא לצוות חד קרן :) <1> 🎉</1>"
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr "<0> 🎉</0> ברוך הבא לצוות חד קרן :) <1> 🎉</1>"
 
 #: src/pages/Vote/index.tsx
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
@@ -251,9 +251,9 @@ msgstr ""
 msgid "Added {0}"
 msgstr "נוסף {0}"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr "לכתובת אין כל תביעה זמינה"
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr "לכתובת אין כל תביעה זמינה"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
@@ -389,9 +389,9 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr "איזון:"
+#: 
+#~ msgid "Balance:"
+#~ msgstr "איזון:"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -474,9 +474,9 @@ msgstr ""
 #~ msgid "Change"
 #~ msgstr "שינוי"
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr "תרשימים"
+#: 
+#~ msgid "Charts"
+#~ msgstr "תרשימים"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -492,17 +492,17 @@ msgstr ""
 msgid "Claim"
 msgstr "תְבִיעָה"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr "תבע את UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr "תבע את UNI"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr "תבע את אסימון UNI"
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr "תבע את אסימון UNI"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -513,27 +513,27 @@ msgstr "התביעה צברה תגמולים של UNI"
 #~ msgid "Claim fees"
 #~ msgstr "דמי תביעה"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr "תבע את אסימוני ה- UNI שלך"
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr "תבע את אסימוני ה- UNI שלך"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr "נִתבָּע"
+#: 
+#~ msgid "Claimed"
+#~ msgstr "נִתבָּע"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "תבעה UNI!"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr "בטענה"
+#: 
+#~ msgid "Claiming"
+#~ msgstr "בטענה"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr "טוענים ל- UNI"
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr "טוענים ל- UNI"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -608,8 +608,6 @@ msgstr "אשר החלפה"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "אשר את העסקה בארנק שלך"
@@ -721,7 +719,7 @@ msgstr "צור בריכה."
 #~ msgid "Current {0} Price:"
 #~ msgstr "מחיר {0} נוכחי:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -806,7 +804,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr "מַחֲלוֹקֶת"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -854,9 +852,9 @@ msgstr "הזן נמען"
 msgid "Enter a valid slippage percentage"
 msgstr "הזן אחוז החלקה חוקי"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr "הזן כתובת להפעלת תביעה של UNI. אם לכתובת יש UNI כלשהו הניתן לתביעה, היא תישלח אליהם בהגשה."
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr "הזן כתובת להפעלת תביעה של UNI. אם לכתובת יש UNI כלשהו הניתן לתביעה, היא תישלח אליהם בהגשה."
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -919,7 +917,7 @@ msgstr "מצב מומחה מכבה את בקשת האישור לעסקה ומא�
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "חקור בריכות פופולריות ב- Uniswap Analytics."
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -1125,7 +1123,7 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr "לִלמוֹד"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
@@ -1134,7 +1132,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1433,7 +1430,6 @@ msgstr "אנא התחבר לרשת Ethereum המתאימה."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "אנא הקלד את המילה \"{confirmWord}\" כדי להפעיל מצב מומחה."
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1463,7 +1459,7 @@ msgstr "אסימונים לבריכה בבריכת תגמולים:"
 msgid "Pooled {0}:"
 msgstr "מאוגד {0}:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1762,7 +1758,6 @@ msgstr "לְסַפֵּק"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "אספקת {0} {1} ו {2} {3}"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
@@ -1807,9 +1802,9 @@ msgstr ""
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "תודה שהיית חלק מקהילת Uniswap <0 />"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
+#: 
+#~ msgid "Thanks for being part of the community <0/>"
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1949,9 +1944,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "בריכות מובילות"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr "סך ההיצע"
+#: 
+#~ msgid "Total Supply"
+#~ msgstr "סך ההיצע"
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -2008,17 +2003,17 @@ msgstr ""
 msgid "Turn On Expert Mode"
 msgstr "הפעל את מצב המומחה"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr "UNI הגיע"
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr "UNI הגיע"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr "UNI במחזור:"
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr "UNI במחזור:"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr "מחיר UNI:"
+#: 
+#~ msgid "UNI price:"
+#~ msgstr "מחיר UNI:"
 
 #: src/pages/Vote/index.tsx
 msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
@@ -2053,9 +2048,9 @@ msgstr "UNI ללא תביעות"
 #~ msgid "Unclaimed fees"
 #~ msgstr "עמלות שלא נדרשו"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr "ללא דרישה:"
+#: 
+#~ msgid "Unclaimed:"
+#~ msgstr "ללא דרישה:"
 
 #: src/pages/Vote/index.tsx
 msgid "Uniswap Governance"
@@ -2131,9 +2126,9 @@ msgstr "עדכן משלחת"
 msgid "Update list"
 msgstr "רשימת עדכונים"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr "מִשׁתַמֵשׁ"
+#: 
+#~ msgid "User"
+#~ msgstr "מִשׁתַמֵשׁ"
 
 #: 
 #~ msgid "V2 liquidity"
@@ -2152,9 +2147,9 @@ msgstr "מִשׁתַמֵשׁ"
 msgid "VISA *5546"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr "צפה ב- UNI Analytics"
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr "צפה ב- UNI Analytics"
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -2174,8 +2169,6 @@ msgid "View on Explorer"
 msgstr "צפה ב- Explorer"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "צפה בעסקה ב- Explorer"
@@ -2193,9 +2186,9 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr "הַצבָּעָה"
+#: 
+#~ msgid "Vote"
+#~ msgstr "הַצבָּעָה"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "Vote Against"
@@ -2248,9 +2241,9 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "תגמולים שבועיים"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr "ברוך הבא לצוות חד קרן :)"
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr "ברוך הבא לצוות חד קרן :)"
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "When you claim without withdrawing your liquidity remains in the mining pool."
@@ -2346,9 +2339,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "אתה תקבל"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr "התמוטטות של ה- UNI שלך"
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr "התמוטטות של ה- UNI שלך"
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2445,9 +2438,9 @@ msgstr "האו\"ם הלא מתבקש שלך"
 msgid "confirm"
 msgstr "לְאַשֵׁר"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr "עבור {0}"
+#: 
+#~ msgid "for {0}"
+#~ msgstr "עבור {0}"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2504,9 +2497,9 @@ msgstr "{0} אסימונים בהתאמה אישית"
 msgid "{0} Deposited"
 msgstr "{0} מופקד"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr "{0} ETH"
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr "{0} ETH"
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2523,13 +2516,13 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} בהמתנה"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr "{0} UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr "{0} UNI"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -2601,13 +2594,13 @@ msgstr "{0}-{1} כריית נזילות"
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} אסימוני LP"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr "{SOCKS_AMOUNT} UNI"
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr "{SOCKS_AMOUNT} UNI"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr "{USER_AMOUNT} UNI"
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr "{USER_AMOUNT} UNI"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2622,7 +2615,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 

@@ -35,9 +35,9 @@ msgstr "${0} ETH"
 msgid "(Max)"
 msgstr "(最大值)"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr "(领取)"
+#: 
+#~ msgid "(claim)"
+#~ msgstr "(领取)"
 
 #: 
 #~ msgid "(clear all)"
@@ -166,9 +166,9 @@ msgstr "<0>提示：</0>当您注入流动资金时，您将收到代表您份�
 msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0>解锁投票</0>，以准备下一个提案。"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0>🎉 </0>欢迎加入Unicorn（独角兽）团队 :) <1>🎉</1>"
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr "<0>🎉 </0>欢迎加入Unicorn（独角兽）团队 :) <1>🎉</1>"
 
 #: src/pages/Vote/index.tsx
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
@@ -251,9 +251,9 @@ msgstr ""
 msgid "Added {0}"
 msgstr "已添加 {0}"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr "地址没有可领取的代币"
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr "地址没有可领取的代币"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
@@ -389,9 +389,9 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr "余额："
+#: 
+#~ msgid "Balance:"
+#~ msgstr "余额："
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -474,9 +474,9 @@ msgstr ""
 #~ msgid "Change"
 #~ msgstr "更改"
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr "图表"
+#: 
+#~ msgid "Charts"
+#~ msgstr "图表"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -492,17 +492,17 @@ msgstr ""
 msgid "Claim"
 msgstr "领取"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr "领取 UNI 代币"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr "领取 UNI 代币"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr "领取 UNI 代币"
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr "领取 UNI 代币"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -513,27 +513,27 @@ msgstr "领取累积的 UNI 代币奖励"
 #~ msgid "Claim fees"
 #~ msgstr "领取已累积的手续费"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr "领取您的 UNI 代币"
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr "领取您的 UNI 代币"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr "已领取"
+#: 
+#~ msgid "Claimed"
+#~ msgstr "已领取"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "已领取 UNI 代币！"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr "领取中"
+#: 
+#~ msgid "Claiming"
+#~ msgstr "领取中"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr "正在领取 UNI 代币"
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr "正在领取 UNI 代币"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -608,8 +608,6 @@ msgstr "确认兑换"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "在您的钱包中确认这笔交易"
@@ -721,7 +719,7 @@ msgstr "创建流动池。"
 #~ msgid "Current {0} Price:"
 #~ msgstr "当前 {0} 兑换率："
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -806,7 +804,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr "Discord"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -854,9 +852,9 @@ msgstr "输入接收者"
 msgid "Enter a valid slippage percentage"
 msgstr "输入有效的兑换率滑点百分比"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr "输入地址来查看领取 UNI 代币的资质。如果地址有任何可领取的 UNI，代币将在提交领取申请后自动发送。"
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr "输入地址来查看领取 UNI 代币的资质。如果地址有任何可领取的 UNI，代币将在提交领取申请后自动发送。"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -919,7 +917,7 @@ msgstr "“专家模式”将解除确认交易的提示，并允许兑换率高
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "在 Uniswap 数据分析中探索较受欢迎的流动池。"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -1125,7 +1123,7 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr "学习"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
@@ -1134,7 +1132,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1433,7 +1430,6 @@ msgstr "请连接到适当的以太坊网络。"
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "请输入单词 \"{confirmWord}\" 以启用专家模式。"
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1463,7 +1459,7 @@ msgstr "奖励池中的流动池代币："
 msgid "Pooled {0}:"
 msgstr "流动池汇集 {0}:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1762,7 +1758,6 @@ msgstr "供应"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "提供 {0} {1} 和 {2} {3}"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
@@ -1807,9 +1802,9 @@ msgstr ""
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "感谢您加入 Uniswap 社区 <0/>"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
+#: 
+#~ msgid "Thanks for being part of the community <0/>"
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1949,9 +1944,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "较活跃的流动池"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr "总供应量"
+#: 
+#~ msgid "Total Supply"
+#~ msgstr "总供应量"
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -2008,17 +2003,17 @@ msgstr ""
 msgid "Turn On Expert Mode"
 msgstr "开启专家模式"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr "UNI 代币已到账"
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr "UNI 代币已到账"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr "流通中的 UNI 代币："
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr "流通中的 UNI 代币："
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr "UNI 代币兑换率："
+#: 
+#~ msgid "UNI price:"
+#~ msgstr "UNI 代币兑换率："
 
 #: src/pages/Vote/index.tsx
 msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
@@ -2053,9 +2048,9 @@ msgstr "未被领取的 UNI 代币"
 #~ msgid "Unclaimed fees"
 #~ msgstr "未领取的手续费"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr "未领取："
+#: 
+#~ msgid "Unclaimed:"
+#~ msgstr "未领取："
 
 #: src/pages/Vote/index.tsx
 msgid "Uniswap Governance"
@@ -2131,9 +2126,9 @@ msgstr "更新投票权委托"
 msgid "Update list"
 msgstr "更新代币列表"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr "用户"
+#: 
+#~ msgid "User"
+#~ msgstr "用户"
 
 #: 
 #~ msgid "V2 liquidity"
@@ -2152,9 +2147,9 @@ msgstr "用户"
 msgid "VISA *5546"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr "查看 UNI 代币分析"
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr "查看 UNI 代币分析"
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -2174,8 +2169,6 @@ msgid "View on Explorer"
 msgstr "在以太坊资源浏览器上查看"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "在以太坊资源浏览器上查看交易"
@@ -2193,9 +2186,9 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr "投票"
+#: 
+#~ msgid "Vote"
+#~ msgstr "投票"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "Vote Against"
@@ -2248,9 +2241,9 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "每周奖励"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr "欢迎来到 Unicorn （独角兽）团队 :)"
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr "欢迎来到 Unicorn （独角兽）团队 :)"
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "When you claim without withdrawing your liquidity remains in the mining pool."
@@ -2346,9 +2339,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "您将收到"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr "您的 UNI 代币明细表"
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr "您的 UNI 代币明细表"
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2445,9 +2438,9 @@ msgstr "您未领取的 UNI 代币"
 msgid "confirm"
 msgstr "确认"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr "为 {0}"
+#: 
+#~ msgid "for {0}"
+#~ msgstr "为 {0}"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2504,9 +2497,9 @@ msgstr "{0} 自定义代币"
 msgid "{0} Deposited"
 msgstr "注入 {0}"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr "{0} ETH"
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr "{0} ETH"
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2523,13 +2516,13 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} 待处理"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr "{0} UNI 代币"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr "{0} UNI 代币"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -2601,13 +2594,13 @@ msgstr "{0}-{1} 流动资金采矿"
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} 流动池代币"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr "{SOCKS_AMOUNT} UNI 代币"
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr "{SOCKS_AMOUNT} UNI 代币"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr "{USER_AMOUNT} UNI 代币"
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr "{USER_AMOUNT} UNI 代币"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2622,7 +2615,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 

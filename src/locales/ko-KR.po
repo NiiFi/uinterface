@@ -35,9 +35,9 @@ msgstr "${0} ETH"
 msgid "(Max)"
 msgstr "(최대)"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr "(청구)"
+#: 
+#~ msgid "(claim)"
+#~ msgstr "(청구)"
 
 #: 
 #~ msgid "(clear all)"
@@ -166,9 +166,9 @@ msgstr "<0> 팁 :</0> 유동성을 추가하면 귀하의 포지션을 나타내
 msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0> 투표 잠금 해제</0> 다음 제안을 준비합니다."
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0> 🎉</0> Unicorn 팀에 오신 것을 환영합니다. :) <1> 🎉</1>"
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr "<0> 🎉</0> Unicorn 팀에 오신 것을 환영합니다. :) <1> 🎉</1>"
 
 #: src/pages/Vote/index.tsx
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
@@ -251,9 +251,9 @@ msgstr ""
 msgid "Added {0}"
 msgstr "추가됨 {0}"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr "주소에 사용 가능한 소유권 주장이 없습니다."
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr "주소에 사용 가능한 소유권 주장이 없습니다."
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
@@ -389,9 +389,9 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr "밸런스:"
+#: 
+#~ msgid "Balance:"
+#~ msgstr "밸런스:"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -474,9 +474,9 @@ msgstr ""
 #~ msgid "Change"
 #~ msgstr "변화"
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr "차트"
+#: 
+#~ msgid "Charts"
+#~ msgstr "차트"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -492,17 +492,17 @@ msgstr ""
 msgid "Claim"
 msgstr "청구"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr "UNI 청구"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr "UNI 청구"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr "UNI 토큰 청구"
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr "UNI 토큰 청구"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -513,27 +513,27 @@ msgstr "누적 된 UNI 보상 청구"
 #~ msgid "Claim fees"
 #~ msgstr "청구 수수료"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr "UNI 토큰 받기"
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr "UNI 토큰 받기"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr "청구 됨"
+#: 
+#~ msgid "Claimed"
+#~ msgstr "청구 됨"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "UNI 획득!"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr "청구"
+#: 
+#~ msgid "Claiming"
+#~ msgstr "청구"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr "UNI 청구"
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr "UNI 청구"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -608,8 +608,6 @@ msgstr "스왑 확인"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "지갑에서이 거래를 확인하세요"
@@ -721,7 +719,7 @@ msgstr "풀을 만듭니다."
 #~ msgid "Current {0} Price:"
 #~ msgstr "현재 {0} 가격 :"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -806,7 +804,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr "불일치"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -854,9 +852,9 @@ msgstr "수신자를 입력하세요."
 msgid "Enter a valid slippage percentage"
 msgstr "유효한 미끄러짐 비율을 입력하세요."
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr "UNI 클레임을 트리거 할 주소를 입력하십시오. 주소에 청구 가능한 UNI가 있으면 제출시 전송됩니다."
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr "UNI 클레임을 트리거 할 주소를 입력하십시오. 주소에 청구 가능한 UNI가 있으면 제출시 전송됩니다."
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -919,7 +917,7 @@ msgstr "전문가 모드는 거래 확인 프롬프트를 끄고 종종 나쁜 �
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "Uniswap Analytics에서 인기있는 풀을 살펴보십시오."
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -1125,7 +1123,7 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr "배우다"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
@@ -1134,7 +1132,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1433,7 +1430,6 @@ msgstr "적절한 이더 리움 네트워크에 연결하십시오."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "전문가 모드를 사용하려면{confirmWord}\"이라는 단어를 입력하십시오."
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1463,7 +1459,7 @@ msgstr "보상 풀의 풀 토큰 :"
 msgid "Pooled {0}:"
 msgstr "풀링 됨 {0}:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1762,7 +1758,6 @@ msgstr "공급"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "{0} {1} 및 {2} {3}공급"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
@@ -1807,9 +1802,9 @@ msgstr ""
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Uniswap 커뮤니티에 참여해 주셔서 감사합니다. <0 />"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
+#: 
+#~ msgid "Thanks for being part of the community <0/>"
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1949,9 +1944,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "최고 수영장"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr "총 공급"
+#: 
+#~ msgid "Total Supply"
+#~ msgstr "총 공급"
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -2008,17 +2003,17 @@ msgstr ""
 msgid "Turn On Expert Mode"
 msgstr "전문가 모드 켜기"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr "UNI가 도착했습니다"
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr "UNI가 도착했습니다"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr "유통중인 UNI :"
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr "유통중인 UNI :"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr "UNI 가격 :"
+#: 
+#~ msgid "UNI price:"
+#~ msgstr "UNI 가격 :"
 
 #: src/pages/Vote/index.tsx
 msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
@@ -2053,9 +2048,9 @@ msgstr "미 청구 UNI"
 #~ msgid "Unclaimed fees"
 #~ msgstr "청구되지 않은 수수료"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr "미 청구 :"
+#: 
+#~ msgid "Unclaimed:"
+#~ msgstr "미 청구 :"
 
 #: src/pages/Vote/index.tsx
 msgid "Uniswap Governance"
@@ -2131,9 +2126,9 @@ msgstr "위임 업데이트"
 msgid "Update list"
 msgstr "목록 업데이트"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr "사용자"
+#: 
+#~ msgid "User"
+#~ msgstr "사용자"
 
 #: 
 #~ msgid "V2 liquidity"
@@ -2152,9 +2147,9 @@ msgstr "사용자"
 msgid "VISA *5546"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr "UNI 분석보기"
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr "UNI 분석보기"
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -2174,8 +2169,6 @@ msgid "View on Explorer"
 msgstr "Explorer에서보기"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Explorer에서 거래보기"
@@ -2193,9 +2186,9 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr "투표"
+#: 
+#~ msgid "Vote"
+#~ msgstr "투표"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "Vote Against"
@@ -2248,9 +2241,9 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "주간 보상"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr "Team Unicorn에 오신 것을 환영합니다. :)"
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr "Team Unicorn에 오신 것을 환영합니다. :)"
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "When you claim without withdrawing your liquidity remains in the mining pool."
@@ -2346,9 +2339,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "당신은 받게 될 것입니다"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr "UNI 고장"
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr "UNI 고장"
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2445,9 +2438,9 @@ msgstr "귀하의 미 청구 UNI"
 msgid "confirm"
 msgstr "확인"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr "{0}"
+#: 
+#~ msgid "for {0}"
+#~ msgstr "{0}"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2504,9 +2497,9 @@ msgstr "{0} 사용자 지정 토큰"
 msgid "{0} Deposited"
 msgstr "{0} 입금"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr "{0} ETH"
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr "{0} ETH"
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2523,13 +2516,13 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} 보류 중"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr "{0} UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr "{0} UNI"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -2601,13 +2594,13 @@ msgstr "{0}-{1} 유동성 광업"
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} LP 토큰"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr "{SOCKS_AMOUNT} UNI"
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr "{SOCKS_AMOUNT} UNI"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr "{USER_AMOUNT} UNI"
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr "{USER_AMOUNT} UNI"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2622,7 +2615,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 

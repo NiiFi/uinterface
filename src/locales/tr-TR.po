@@ -35,9 +35,9 @@ msgstr "${0} ETH"
 msgid "(Max)"
 msgstr "(Maks.)"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr "(İddia)"
+#: 
+#~ msgid "(claim)"
+#~ msgstr "(İddia)"
 
 #: 
 #~ msgid "(clear all)"
@@ -166,9 +166,9 @@ msgstr "<0> İpucu:</0> Likidite eklediğinizde, pozisyonunuzu temsil eden havuz
 msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0> Oylamanın kilidini aç</0> bir sonraki teklife hazırlanmak için."
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0> 🎉</0> Unicorn takımına hoş geldiniz :) <1> 🎉</1>"
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr "<0> 🎉</0> Unicorn takımına hoş geldiniz :) <1> 🎉</1>"
 
 #: src/pages/Vote/index.tsx
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
@@ -251,9 +251,9 @@ msgstr ""
 msgid "Added {0}"
 msgstr "{0}eklendi"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr "Adreste herhangi bir hak talebi yok"
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr "Adreste herhangi bir hak talebi yok"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
@@ -389,9 +389,9 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr "Denge:"
+#: 
+#~ msgid "Balance:"
+#~ msgstr "Denge:"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -474,9 +474,9 @@ msgstr ""
 #~ msgid "Change"
 #~ msgstr "Değişiklik"
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr "Grafikler"
+#: 
+#~ msgid "Charts"
+#~ msgstr "Grafikler"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -492,17 +492,17 @@ msgstr ""
 msgid "Claim"
 msgstr "İddia"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr "UNI talep et"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr "UNI talep et"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr "UNI Jetonunu talep edin"
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr "UNI Jetonunu talep edin"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -513,27 +513,27 @@ msgstr "Hak talebi birikmiş UNI ödülleri"
 #~ msgid "Claim fees"
 #~ msgstr "Talep ücretleri"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr "UNI jetonlarınızı talep edin"
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr "UNI jetonlarınızı talep edin"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr "Hak talebinde bulunuldu"
+#: 
+#~ msgid "Claimed"
+#~ msgstr "Hak talebinde bulunuldu"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "İddia Edilen UNI!"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr "Talep ediliyor"
+#: 
+#~ msgid "Claiming"
+#~ msgstr "Talep ediliyor"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr "UNI talep ediliyor"
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr "UNI talep ediliyor"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -608,8 +608,6 @@ msgstr "Değiştirmeyi Onaylayın"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "Cüzdanınızda bu işlemi onaylayın"
@@ -721,7 +719,7 @@ msgstr "Havuz oluşturun."
 #~ msgid "Current {0} Price:"
 #~ msgstr "Güncel {0} Fiyatı:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -806,7 +804,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr "Uyuşmazlık"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -854,9 +852,9 @@ msgstr "Bir alıcı girin"
 msgid "Enter a valid slippage percentage"
 msgstr "Geçerli bir kayma yüzdesi girin"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr "Bir UNI talebini tetiklemek için bir adres girin. Adreste herhangi bir iddia edilebilir UNI varsa, teslim edildiğinde onlara gönderilecektir."
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr "Bir UNI talebini tetiklemek için bir adres girin. Adreste herhangi bir iddia edilebilir UNI varsa, teslim edildiğinde onlara gönderilecektir."
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -919,7 +917,7 @@ msgstr "Uzman modu, işlem onayı istemini kapatır ve genellikle düşük oranl
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "Uniswap Analytics'teki popüler havuzları keşfedin."
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -1125,7 +1123,7 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr "Öğrenin"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
@@ -1134,7 +1132,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1433,7 +1430,6 @@ msgstr "Lütfen uygun Ethereum ağına bağlanın."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Uzman modunu etkinleştirmek için lütfen \"{confirmWord}"
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1463,7 +1459,7 @@ msgstr "Ödül havuzundaki havuz jetonları:"
 msgid "Pooled {0}:"
 msgstr "Havuza alınmış {0}:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1762,7 +1758,6 @@ msgstr "Arz"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "{0} {1} ve {2} {3}temini"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
@@ -1807,9 +1802,9 @@ msgstr ""
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Uniswap topluluğunun bir parçası olduğunuz için teşekkürler <0/>"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
+#: 
+#~ msgid "Thanks for being part of the community <0/>"
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1949,9 +1944,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "En iyi havuzlar"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr "Toplam Arz"
+#: 
+#~ msgid "Total Supply"
+#~ msgstr "Toplam Arz"
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -2008,17 +2003,17 @@ msgstr ""
 msgid "Turn On Expert Mode"
 msgstr "Uzman Modunu Açın"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr "UNI geldi"
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr "UNI geldi"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr "Dolaşımdaki UNI:"
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr "Dolaşımdaki UNI:"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr "UNI fiyatı:"
+#: 
+#~ msgid "UNI price:"
+#~ msgstr "UNI fiyatı:"
 
 #: src/pages/Vote/index.tsx
 msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
@@ -2053,9 +2048,9 @@ msgstr "Sahipsiz UNI"
 #~ msgid "Unclaimed fees"
 #~ msgstr "Talep edilmeyen ücretler"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr "Sahipsiz:"
+#: 
+#~ msgid "Unclaimed:"
+#~ msgstr "Sahipsiz:"
 
 #: src/pages/Vote/index.tsx
 msgid "Uniswap Governance"
@@ -2131,9 +2126,9 @@ msgstr "Yetkilendirmeyi Güncelle"
 msgid "Update list"
 msgstr "Güncelleme listesi"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr "Kullanıcı"
+#: 
+#~ msgid "User"
+#~ msgstr "Kullanıcı"
 
 #: 
 #~ msgid "V2 liquidity"
@@ -2152,9 +2147,9 @@ msgstr "Kullanıcı"
 msgid "VISA *5546"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr "UNI Analytics'i görüntüleyin"
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr "UNI Analytics'i görüntüleyin"
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -2174,8 +2169,6 @@ msgid "View on Explorer"
 msgstr "Explorer'da Görüntüle"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "İşlemi Explorer'da görüntüle"
@@ -2193,9 +2186,9 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr "Oy"
+#: 
+#~ msgid "Vote"
+#~ msgstr "Oy"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "Vote Against"
@@ -2248,9 +2241,9 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "Haftalık Ödüller"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr "Unicorn takımına hoş geldiniz :)"
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr "Unicorn takımına hoş geldiniz :)"
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "When you claim without withdrawing your liquidity remains in the mining pool."
@@ -2346,9 +2339,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Alacaksın"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr "UNI Dökümünüz"
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr "UNI Dökümünüz"
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2445,9 +2438,9 @@ msgstr "Sahipsiz UNI'niz"
 msgid "confirm"
 msgstr "onaylamak"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr "{0}"
+#: 
+#~ msgid "for {0}"
+#~ msgstr "{0}"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2504,9 +2497,9 @@ msgstr "{0} Özel Jeton"
 msgid "{0} Deposited"
 msgstr "{0} Yatırıldı"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr "{0} ETH"
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr "{0} ETH"
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2523,13 +2516,13 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} Beklemede"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr "{0} UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr "{0} UNI"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -2601,13 +2594,13 @@ msgstr "{0}-{1} Likidite Madencilik"
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} LP Jetonlar"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr "{SOCKS_AMOUNT} UNI"
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr "{SOCKS_AMOUNT} UNI"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr "{USER_AMOUNT} UNI"
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr "{USER_AMOUNT} UNI"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2622,7 +2615,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 

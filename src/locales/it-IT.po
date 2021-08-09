@@ -35,9 +35,9 @@ msgstr "${0} ETH"
 msgid "(Max)"
 msgstr "(Massimo)"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr "(claim)"
+#: 
+#~ msgid "(claim)"
+#~ msgstr "(claim)"
 
 #: 
 #~ msgid "(clear all)"
@@ -166,9 +166,9 @@ msgstr "<0>Suggerimento:</0> Quando aggiungi liquidità, riceverai i token di po
 msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0>Sblocca il voto</0> per preparare la prossima proposta."
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0>🎉 </0>Benvenuto nel team Unicorn :) <1>🎉</1>"
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr "<0>🎉 </0>Benvenuto nel team Unicorn :) <1>🎉</1>"
 
 #: src/pages/Vote/index.tsx
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
@@ -251,9 +251,9 @@ msgstr ""
 msgid "Added {0}"
 msgstr "Aggiunto {0}"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr "L'indirizzo non ha alcun reclamo disponibile"
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr "L'indirizzo non ha alcun reclamo disponibile"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
@@ -389,9 +389,9 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr "Saldo:"
+#: 
+#~ msgid "Balance:"
+#~ msgstr "Saldo:"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -474,9 +474,9 @@ msgstr ""
 #~ msgid "Change"
 #~ msgstr "Cambia"
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr "Grafici"
+#: 
+#~ msgid "Charts"
+#~ msgstr "Grafici"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -492,17 +492,17 @@ msgstr ""
 msgid "Claim"
 msgstr "Claim"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr "Claim UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr "Claim UNI"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr "Claim UNI Token"
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr "Claim UNI Token"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -513,27 +513,27 @@ msgstr "Richiedi ricompense UNI accumulate"
 #~ msgid "Claim fees"
 #~ msgstr "Diritti di rivendicazione"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr "Richiedi i tuoi token UNI"
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr "Richiedi i tuoi token UNI"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr "Richiesto"
+#: 
+#~ msgid "Claimed"
+#~ msgstr "Richiesto"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "Uni Richiestati!"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr "Rivendicazione"
+#: 
+#~ msgid "Claiming"
+#~ msgstr "Rivendicazione"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr "Rivendicazione UNI"
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr "Rivendicazione UNI"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -608,8 +608,6 @@ msgstr "Conferma lo scambio"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "Conferma questa transazione nel tuo portafoglio"
@@ -721,7 +719,7 @@ msgstr "Crea piscina."
 #~ msgid "Current {0} Price:"
 #~ msgstr "Prezzo {0} attuale:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -806,7 +804,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr "Discord"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -854,9 +852,9 @@ msgstr "Inserisci un destinatario"
 msgid "Enter a valid slippage percentage"
 msgstr "Inserisci una percentuale di slittamento valida"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr "Inserisci un indirizzo per attivare un reclamo UNI. Se l'indirizzo ha un qualsiasi UNI rivendicabile, verrà inviato loro al momento dell'invio."
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr "Inserisci un indirizzo per attivare un reclamo UNI. Se l'indirizzo ha un qualsiasi UNI rivendicabile, verrà inviato loro al momento dell'invio."
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -919,7 +917,7 @@ msgstr "La modalità Esperto disattiva il prompt delle transazioni di conferma e
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "Esplora piscine popolari su Uniswap Analytics."
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -1125,7 +1123,7 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr "Impara"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
@@ -1134,7 +1132,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1433,7 +1430,6 @@ msgstr "Si prega di connettersi alla rete Ethereum appropriata."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Si prega di digitare la parola \"{confirmWord}\" per abilitare la modalità esperti."
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1463,7 +1459,7 @@ msgstr "Pool token nel pool di ricompense:"
 msgid "Pooled {0}:"
 msgstr "Unisci {0}:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1762,7 +1758,6 @@ msgstr "Fornitura"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Fornendo {0} {1} e {2} {3}"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
@@ -1807,9 +1802,9 @@ msgstr ""
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Grazie per far parte della community di Uniswap <0/>"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
+#: 
+#~ msgid "Thanks for being part of the community <0/>"
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1949,9 +1944,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "Piscine top"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr "Totale Fornitura"
+#: 
+#~ msgid "Total Supply"
+#~ msgstr "Totale Fornitura"
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -2008,17 +2003,17 @@ msgstr ""
 msgid "Turn On Expert Mode"
 msgstr "Attiva Modalità Esperto"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr "È arrivata l'UNI"
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr "È arrivata l'UNI"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr "UNI in circolazione:"
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr "UNI in circolazione:"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr "Prezzo UNI:"
+#: 
+#~ msgid "UNI price:"
+#~ msgstr "Prezzo UNI:"
 
 #: src/pages/Vote/index.tsx
 msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
@@ -2053,9 +2048,9 @@ msgstr "UNI Non Reclamata"
 #~ msgid "Unclaimed fees"
 #~ msgstr "Commissioni non richieste"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr "Non Richiesto:"
+#: 
+#~ msgid "Unclaimed:"
+#~ msgstr "Non Richiesto:"
 
 #: src/pages/Vote/index.tsx
 msgid "Uniswap Governance"
@@ -2131,9 +2126,9 @@ msgstr "Aggiorna Delega"
 msgid "Update list"
 msgstr "Aggiorna elenco"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr "Utente"
+#: 
+#~ msgid "User"
+#~ msgstr "Utente"
 
 #: 
 #~ msgid "V2 liquidity"
@@ -2152,9 +2147,9 @@ msgstr "Utente"
 msgid "VISA *5546"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr "Visualizza Analisi Uni"
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr "Visualizza Analisi Uni"
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -2174,8 +2169,6 @@ msgid "View on Explorer"
 msgstr "Visualizza su Explorer"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Visualizza transazione su Explorer"
@@ -2193,9 +2186,9 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr "VOTAZIONI"
+#: 
+#~ msgid "Vote"
+#~ msgstr "VOTAZIONI"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "Vote Against"
@@ -2248,9 +2241,9 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "Ricompense Settimanale"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr "Benvenuto nel team Unicorn :)"
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr "Benvenuto nel team Unicorn :)"
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "When you claim without withdrawing your liquidity remains in the mining pool."
@@ -2346,9 +2339,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Riceverai"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr "La Tua Ripartizione Uni"
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr "La Tua Ripartizione Uni"
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2445,9 +2438,9 @@ msgstr "La tua UNI non rivendicata"
 msgid "confirm"
 msgstr "conferma"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr "per {0}"
+#: 
+#~ msgid "for {0}"
+#~ msgstr "per {0}"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2504,9 +2497,9 @@ msgstr "{0} gettoni personalizzati"
 msgid "{0} Deposited"
 msgstr "{0} Depositato"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr "{0} ETH"
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr "{0} ETH"
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2523,13 +2516,13 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} in attesa"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr "{0} UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr "{0} UNI"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -2601,13 +2594,13 @@ msgstr "{0}-{1} Estrazione di liquidità"
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} LP Tokens"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr "{SOCKS_AMOUNT} UNI"
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr "{SOCKS_AMOUNT} UNI"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr "{USER_AMOUNT} UNI"
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr "{USER_AMOUNT} UNI"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2622,7 +2615,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 

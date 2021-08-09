@@ -35,9 +35,9 @@ msgstr "${0} ETH"
 msgid "(Max)"
 msgstr "(Tối đa)"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr "(yêu cầu)"
+#: 
+#~ msgid "(claim)"
+#~ msgstr "(yêu cầu)"
 
 #: 
 #~ msgid "(clear all)"
@@ -166,9 +166,9 @@ msgstr "<0> Mẹo:</0> Khi bạn thêm thanh khoản, bạn sẽ nhận được
 msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0> Mở khóa biểu quyết</0> để chuẩn bị cho đề xuất tiếp theo."
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0> 🎉</0> Chào mừng đến với đội Unicorn :) <1> 🎉</1>"
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr "<0> 🎉</0> Chào mừng đến với đội Unicorn :) <1> 🎉</1>"
 
 #: src/pages/Vote/index.tsx
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
@@ -251,9 +251,9 @@ msgstr ""
 msgid "Added {0}"
 msgstr "Đã thêm {0}"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr "Địa chỉ không có yêu cầu"
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr "Địa chỉ không có yêu cầu"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
@@ -389,9 +389,9 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr "Thăng bằng:"
+#: 
+#~ msgid "Balance:"
+#~ msgstr "Thăng bằng:"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -474,9 +474,9 @@ msgstr ""
 #~ msgid "Change"
 #~ msgstr "Thay đổi"
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr "Biểu đồ"
+#: 
+#~ msgid "Charts"
+#~ msgstr "Biểu đồ"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -492,17 +492,17 @@ msgstr ""
 msgid "Claim"
 msgstr "Yêu cầu"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr "Yêu cầu UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr "Yêu cầu UNI"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr "Yêu cầu mã thông báo UNI"
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr "Yêu cầu mã thông báo UNI"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -513,27 +513,27 @@ msgstr "Yêu cầu phần thưởng UNI tích lũy"
 #~ msgid "Claim fees"
 #~ msgstr "Yêu cầu phí"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr "Yêu cầu mã thông báo UNI của bạn"
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr "Yêu cầu mã thông báo UNI của bạn"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr "Đã yêu cầu bồi thường"
+#: 
+#~ msgid "Claimed"
+#~ msgstr "Đã yêu cầu bồi thường"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "Đã xác nhận UNI!"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr "Yêu cầu bồi thường"
+#: 
+#~ msgid "Claiming"
+#~ msgstr "Yêu cầu bồi thường"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr "Yêu cầu UNI"
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr "Yêu cầu UNI"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -608,8 +608,6 @@ msgstr "Xác nhận Hoán đổi"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "Xác nhận giao dịch này trong ví của bạn"
@@ -721,7 +719,7 @@ msgstr "Tạo hồ bơi."
 #~ msgid "Current {0} Price:"
 #~ msgstr "Giá {0} hiện tại:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -806,7 +804,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr "Bất hòa"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -854,9 +852,9 @@ msgstr "Nhập người nhận"
 msgid "Enter a valid slippage percentage"
 msgstr "Nhập phần trăm trượt giá hợp lệ"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr "Nhập địa chỉ để kích hoạt khiếu nại UNI. Nếu địa chỉ có bất kỳ UNI nào có thể xác nhận quyền sở hữu, địa chỉ đó sẽ được gửi cho họ khi gửi."
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr "Nhập địa chỉ để kích hoạt khiếu nại UNI. Nếu địa chỉ có bất kỳ UNI nào có thể xác nhận quyền sở hữu, địa chỉ đó sẽ được gửi cho họ khi gửi."
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -919,7 +917,7 @@ msgstr "Chế độ chuyên gia tắt nhắc nhở xác nhận giao dịch và c
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "Khám phá các nhóm phổ biến trên Uniswap Analytics."
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -1125,7 +1123,7 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr "Học hỏi"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
@@ -1134,7 +1132,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1433,7 +1430,6 @@ msgstr "Vui lòng kết nối với mạng Ethereum thích hợp."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Vui lòng nhập từ \"{confirmWord}\" để bật chế độ chuyên gia."
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1463,7 +1459,7 @@ msgstr "Nhóm mã thông báo trong nhóm phần thưởng:"
 msgid "Pooled {0}:"
 msgstr "Nhóm {0}:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1762,7 +1758,6 @@ msgstr "Cung cấp"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Cung cấp {0} {1} và {2} {3}"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
@@ -1807,9 +1802,9 @@ msgstr ""
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Cảm ơn bạn đã tham gia cộng đồng Uniswap <0 />"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
+#: 
+#~ msgid "Thanks for being part of the community <0/>"
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1949,9 +1944,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "Hồ bơi hàng đầu"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr "Tổng cung"
+#: 
+#~ msgid "Total Supply"
+#~ msgstr "Tổng cung"
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -2008,17 +2003,17 @@ msgstr ""
 msgid "Turn On Expert Mode"
 msgstr "Bật Chế độ chuyên gia"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr "UNI đã đến"
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr "UNI đã đến"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr "UNI đang lưu hành:"
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr "UNI đang lưu hành:"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr "Giá UNI:"
+#: 
+#~ msgid "UNI price:"
+#~ msgstr "Giá UNI:"
 
 #: src/pages/Vote/index.tsx
 msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
@@ -2053,9 +2048,9 @@ msgstr "UNI vô thừa nhận"
 #~ msgid "Unclaimed fees"
 #~ msgstr "Phí chưa xác nhận"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr "Không có người nhận:"
+#: 
+#~ msgid "Unclaimed:"
+#~ msgstr "Không có người nhận:"
 
 #: src/pages/Vote/index.tsx
 msgid "Uniswap Governance"
@@ -2131,9 +2126,9 @@ msgstr "Cập nhật ủy quyền"
 msgid "Update list"
 msgstr "Cập nhật danh sách"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr "Người dùng"
+#: 
+#~ msgid "User"
+#~ msgstr "Người dùng"
 
 #: 
 #~ msgid "V2 liquidity"
@@ -2152,9 +2147,9 @@ msgstr "Người dùng"
 msgid "VISA *5546"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr "Xem UNI Analytics"
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr "Xem UNI Analytics"
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -2174,8 +2169,6 @@ msgid "View on Explorer"
 msgstr "Xem trên Explorer"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Xem giao dịch trên Explorer"
@@ -2193,9 +2186,9 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr "Bỏ phiếu"
+#: 
+#~ msgid "Vote"
+#~ msgstr "Bỏ phiếu"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "Vote Against"
@@ -2248,9 +2241,9 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "Phần thưởng hàng tuần"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr "Chào mừng đến với đội Unicorn :)"
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr "Chào mừng đến với đội Unicorn :)"
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "When you claim without withdrawing your liquidity remains in the mining pool."
@@ -2346,9 +2339,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Bạn sẽ nhận"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr "Sự cố UNI của bạn"
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr "Sự cố UNI của bạn"
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2445,9 +2438,9 @@ msgstr "UNI chưa được xác nhận của bạn"
 msgid "confirm"
 msgstr "xác nhận"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr "cho {0}"
+#: 
+#~ msgid "for {0}"
+#~ msgstr "cho {0}"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2504,9 +2497,9 @@ msgstr "{0} tùy chỉnh"
 msgid "{0} Deposited"
 msgstr "{0} gửi 0"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr "{0} ETH"
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr "{0} ETH"
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2523,13 +2516,13 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} Đang chờ xử lý"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr "{0} UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr "{0} UNI"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -2601,13 +2594,13 @@ msgstr "{0}-{1} Thanh khoản Mining"
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} LP Tokens"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr "{SOCKS_AMOUNT} UNI"
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr "{SOCKS_AMOUNT} UNI"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr "{USER_AMOUNT} UNI"
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr "{USER_AMOUNT} UNI"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2622,7 +2615,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 

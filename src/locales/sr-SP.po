@@ -35,9 +35,9 @@ msgstr "${0} ЕТХ"
 msgid "(Max)"
 msgstr "(Мак)"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr "(потраживање)"
+#: 
+#~ msgid "(claim)"
+#~ msgstr "(потраживање)"
 
 #: 
 #~ msgid "(clear all)"
@@ -166,9 +166,9 @@ msgstr "<0> Савет:</0> Када додате ликвидност, доби
 msgid "<0>Unlock voting</0> to prepare for the next proposal."
 msgstr "<0> Откључајте гласање</0> да се припреми за следећи предлог."
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0> 🎉</0> Добродошли у тим Уницорн :) <1> 🎉</1>"
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr "<0> 🎉</0> Добродошли у тим Уницорн :) <1> 🎉</1>"
 
 #: src/pages/Vote/index.tsx
 msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
@@ -251,9 +251,9 @@ msgstr ""
 msgid "Added {0}"
 msgstr "Додато {0}"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr "Адреса нема доступно полагање права"
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr "Адреса нема доступно полагање права"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
@@ -389,9 +389,9 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr "Стање:"
+#: 
+#~ msgid "Balance:"
+#~ msgstr "Стање:"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -474,9 +474,9 @@ msgstr ""
 #~ msgid "Change"
 #~ msgstr "Промена"
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr "Графикони"
+#: 
+#~ msgid "Charts"
+#~ msgstr "Графикони"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -492,17 +492,17 @@ msgstr ""
 msgid "Claim"
 msgstr "Потраживање"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr "Преузми УНИ"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr "Преузми УНИ"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr "Преузми УНИ жетон"
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr "Преузми УНИ жетон"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/ClaimRewardModal.tsx
@@ -513,27 +513,27 @@ msgstr "Потраживања сакупила УНИ награде"
 #~ msgid "Claim fees"
 #~ msgstr "Накнаде за потраживање"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr "Затражите своје УНИ токене"
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr "Затражите своје УНИ токене"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr "Положено право"
+#: 
+#~ msgid "Claimed"
+#~ msgstr "Положено право"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "Захтевано УНИ!"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr "Полагање права"
+#: 
+#~ msgid "Claiming"
+#~ msgstr "Полагање права"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr "Полагање права на УНИ"
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr "Полагање права на УНИ"
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -608,8 +608,6 @@ msgstr "Потврдите размену"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "Потврдите ову трансакцију у новчанику"
@@ -721,7 +719,7 @@ msgstr "Направите базен."
 #~ msgid "Current {0} Price:"
 #~ msgstr "Тренутна {0} цена:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -806,7 +804,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr "Неслога"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -854,9 +852,9 @@ msgstr "Унесите примаоца"
 msgid "Enter a valid slippage percentage"
 msgstr "Унесите важећи проценат клизања"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr "Унесите адресу да бисте покренули УНИ захтев. Ако адреса има УНИ који се може захтевати, она ће им бити послата по предаји."
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr "Унесите адресу да бисте покренули УНИ захтев. Ако адреса има УНИ који се може захтевати, она ће им бити послата по предаји."
 
 #: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
@@ -919,7 +917,7 @@ msgstr "Експертни режим искључује упит за потв�
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "Истражите популарне базене на Унисвап Аналитицс."
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -1125,7 +1123,7 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr "Научи"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
@@ -1134,7 +1132,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1433,7 +1430,6 @@ msgstr "Повежите се са одговарајућом мрежом Ет�
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Унесите реч „{confirmWord}“ да бисте омогућили експертни режим."
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1463,7 +1459,7 @@ msgstr "Удружени жетони у наградном фонду:"
 msgid "Pooled {0}:"
 msgstr "Скупљено {0}:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1762,7 +1758,6 @@ msgstr "Снабдевање"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Снабдевање {0} {1} и {2} {3}"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
@@ -1807,9 +1802,9 @@ msgstr ""
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Хвала вам што сте део заједнице Унисвап <0 />"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
+#: 
+#~ msgid "Thanks for being part of the community <0/>"
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1949,9 +1944,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "Врхунски базени"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr "Укупна понуда"
+#: 
+#~ msgid "Total Supply"
+#~ msgstr "Укупна понуда"
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -2008,17 +2003,17 @@ msgstr ""
 msgid "Turn On Expert Mode"
 msgstr "Укључите експертни режим"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr "УНИ је стигао"
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr "УНИ је стигао"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr "УНИ у оптицају:"
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr "УНИ у оптицају:"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr "УНИ цена:"
+#: 
+#~ msgid "UNI price:"
+#~ msgstr "УНИ цена:"
 
 #: src/pages/Vote/index.tsx
 msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
@@ -2053,9 +2048,9 @@ msgstr "УНИ без захтева"
 #~ msgid "Unclaimed fees"
 #~ msgstr "Ненаплаћене накнаде"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr "Неповрат:"
+#: 
+#~ msgid "Unclaimed:"
+#~ msgstr "Неповрат:"
 
 #: src/pages/Vote/index.tsx
 msgid "Uniswap Governance"
@@ -2131,9 +2126,9 @@ msgstr "Ажурирање делегације"
 msgid "Update list"
 msgstr "Ажурирај листу"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr "Корисник"
+#: 
+#~ msgid "User"
+#~ msgstr "Корисник"
 
 #: 
 #~ msgid "V2 liquidity"
@@ -2152,9 +2147,9 @@ msgstr "Корисник"
 msgid "VISA *5546"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr "Погледајте УНИ аналитику"
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr "Погледајте УНИ аналитику"
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -2174,8 +2169,6 @@ msgid "View on Explorer"
 msgstr "Поглед на Екплореру"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Погледајте трансакцију у Екплореру"
@@ -2193,9 +2186,9 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr "Гласајте"
+#: 
+#~ msgid "Vote"
+#~ msgstr "Гласајте"
 
 #: src/pages/Vote/VotePage.tsx
 msgid "Vote Against"
@@ -2248,9 +2241,9 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "Недељне награде"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr "Добродошли у тим Уницорн :)"
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr "Добродошли у тим Уницорн :)"
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "When you claim without withdrawing your liquidity remains in the mining pool."
@@ -2346,9 +2339,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Добићете"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr "Ваша УНИ анализа"
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr "Ваша УНИ анализа"
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2445,9 +2438,9 @@ msgstr "Ваш непотраживани УНИ"
 msgid "confirm"
 msgstr "Потврди"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr "за {0}"
+#: 
+#~ msgid "for {0}"
+#~ msgstr "за {0}"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2504,9 +2497,9 @@ msgstr "{0} Прилагођени жетони"
 msgid "{0} Deposited"
 msgstr "{0} Депоновано"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr "{0} ЕТХ"
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr "{0} ЕТХ"
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2523,13 +2516,13 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} чекању"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr "{0} УНИ"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr "{0} УНИ"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -2601,13 +2594,13 @@ msgstr "{0}-{1} Рударство ликвидности"
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} ЛП Токени"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr "{SOCKS_AMOUNT} УНИ"
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr "{SOCKS_AMOUNT} УНИ"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr "{USER_AMOUNT} УНИ"
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr "{USER_AMOUNT} УНИ"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2622,7 +2615,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 
