@@ -75,13 +75,16 @@ msgstr "0 UNI 代幣 / 每周"
 #~ msgstr "0.3% 手續費"
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
 msgstr ""
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Week"
 msgstr ""
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Year"
 msgstr ""
