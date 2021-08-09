@@ -35,9 +35,6 @@ const UpperSection = styled.div`
     margin-top: 0;
     font-weight: 500;
   }
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 1.5rem;
-  `}
 `
 
 export default function PoolInvest() {
@@ -103,8 +100,12 @@ export default function PoolInvest() {
           <Slippage placement={'left'} />
         </RowBetween>
         {account ? (
-          <ButtonPrimary disabled={!sufficientBalance && hasInputAmount} marginTop="2rem">
-            <Trans>ADD LIQUIDITY</Trans>
+          <ButtonPrimary
+            style={{ textTransform: 'uppercase' }}
+            disabled={!sufficientBalance && hasInputAmount}
+            marginTop="2rem"
+          >
+            <Trans>Add Liquidity</Trans>
           </ButtonPrimary>
         ) : (
           <ButtonPrimary marginTop="2rem" onClick={toggleWalletModal}>

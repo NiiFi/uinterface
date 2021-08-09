@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsReporter'
 import AddressClaimModal from '../components/claim/AddressClaimModal'
@@ -105,7 +105,8 @@ export default function App() {
               <Route exact strict path="/dashboard" component={Dashboard} />
               <Route exact strict path="/pools/:page?" component={Pools} />
               <Route exact strict path="/pools/:token0/:token1" component={PoolDetail} />
-              <Route component={Discover} />
+              <Route exact strict path="/discover" component={Discover} />
+              <Redirect to="/discover" />
             </Switch>
           </Web3ReactManager>
         </BodyWrapper>

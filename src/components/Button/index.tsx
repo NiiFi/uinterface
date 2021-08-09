@@ -82,6 +82,24 @@ export const ButtonPrimary = styled(Base)`
     opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? '0.5' : '0.4')};
   }
 `
+export const ButtonSuccess = styled(ButtonPrimary)`
+  background-color: ${({ theme }) => theme.green2};
+  &:focus {
+    box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.green2)};
+    background-color: ${({ theme }) => darken(0.05, theme.green2)};
+  }
+  &:hover {
+    background-color: ${({ theme }) => darken(0.05, theme.green2)};
+  }
+  &:active {
+    box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.green2)};
+    background-color: ${({ theme }) => darken(0.1, theme.green2)};
+  }
+  &:disabled {
+    background-color: ${({ theme, altDisabledStyle, disabled }) =>
+      altDisabledStyle ? (disabled ? theme.green2 : theme.green2) : theme.green2};
+  }
+`
 
 export const ButtonLight = styled(Base)`
   background-color: ${({ theme }) => theme.primary5};
@@ -124,6 +142,21 @@ export const ButtonGray = styled(Base)`
   }
   &:active {
     background-color: ${({ theme, disabled }) => !disabled && darken(0.1, theme.bg2)};
+  }
+`
+
+export const ButtonProcess = styled(ButtonPrimary)`
+  background-color: ${({ theme }) => theme.text6};
+  color: #ffffff;
+  cursor: progress;
+  &:focus {
+    background-color: ${({ theme, disabled }) => !disabled && darken(0.05, theme.text6)};
+  }
+  &:hover {
+    background-color: ${({ theme, disabled }) => !disabled && darken(0.05, theme.text6)};
+  }
+  &:active {
+    background-color: ${({ theme, disabled }) => !disabled && darken(0.1, theme.text6)};
   }
 `
 
