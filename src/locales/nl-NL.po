@@ -35,17 +35,17 @@ msgstr "${0} ETH"
 msgid "(Max)"
 msgstr "(Max)"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr "(claim)"
+#: 
+#~ msgid "(claim)"
+#~ msgstr "(claim)"
 
 #: 
 #~ msgid "(clear all)"
 #~ msgstr "(alles wissen)"
 
-#: src/pages/Vote/index.tsx
-msgid "(edit)"
-msgstr "(bewerken)"
+#: 
+#~ msgid "(edit)"
+#~ msgstr "(bewerken)"
 
 #: 
 #~ msgid "+{feeAmountFormatted}%"
@@ -61,8 +61,6 @@ msgstr "- Verwijder verzending"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI / week"
 
@@ -75,13 +73,16 @@ msgstr "0 UNI / week"
 #~ msgstr "0,3% vergoeding"
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
 msgstr ""
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Week"
 msgstr ""
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Year"
 msgstr ""
@@ -122,14 +123,14 @@ msgstr ""
 #~ msgid "75%"
 #~ msgstr "75%"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0/> All Proposals"
-msgstr "<0/> Alle voorstellen"
+#: 
+#~ msgid "<0/> All Proposals"
+#~ msgstr "<0/> Alle voorstellen"
 
-#: src/pages/Vote/index.tsx
-#: src/pages/Vote/index.tsx
-msgid "<0/> Votes"
-msgstr "<0/> stemmen"
+#: 
+#: 
+#~ msgid "<0/> Votes"
+#~ msgstr "<0/> stemmen"
 
 #: 
 #~ msgid "<0> ↗ </0>"
@@ -159,17 +160,17 @@ msgstr ""
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Tip:</0> Wanneer je liquiditeit toevoegt, ontvang je tokens die je positie vertegenwoordigen. Deze tokens verdienen automatisch kosten in verhouding tot uw aandeel in de pool, en kunnen op elk moment worden ingewisseld."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0>Unlock voting</0> to prepare for the next proposal."
-msgstr "<0>Ontgrendel het stemmen </0> om het volgende voorstel voor te bereiden."
+#: 
+#~ msgid "<0>Unlock voting</0> to prepare for the next proposal."
+#~ msgstr "<0>Ontgrendel het stemmen </0> om het volgende voorstel voor te bereiden."
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr "<0>🎉 </0>Welkom bij team Unicorn :) <1>🎉</1>"
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr "<0>🎉 </0>Welkom bij team Unicorn :) <1>🎉</1>"
 
-#: src/pages/Vote/index.tsx
-msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
-msgstr "Een minimumdrempel van 1% van de totale UNI-voorraad is vereist om voorstellen in te dienen"
+#: 
+#~ msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
+#~ msgstr "Een minimumdrempel van 1% van de totale UNI-voorraad is vereist om voorstellen in te dienen"
 
 #: 
 #~ msgid "ADD LIQUIDITY"
@@ -232,9 +233,9 @@ msgstr "{0} toevoegen aan Metamask <0/>"
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Voeg {0} {1} en {2} {3} toe"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Add {0}-{1} liquidity"
-msgstr "Voeg {0}-{1} liquiditeit toe"
+#: 
+#~ msgid "Add {0}-{1} liquidity"
+#~ msgstr "Voeg {0}-{1} liquiditeit toe"
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
@@ -248,17 +249,17 @@ msgstr ""
 msgid "Added {0}"
 msgstr "Toegevoegd {0}"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr "Adres heeft geen beschikbare vordering"
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr "Adres heeft geen beschikbare vordering"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Against"
-msgstr "Tegen"
+#: 
+#~ msgid "Against"
+#~ msgstr "Tegen"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
@@ -386,9 +387,9 @@ msgstr ""
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr "Saldo:"
+#: 
+#~ msgid "Balance:"
+#~ msgstr "Saldo:"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -471,9 +472,9 @@ msgstr ""
 #~ msgid "Change"
 #~ msgstr "Veranderen"
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr "Grafieken"
+#: 
+#~ msgid "Charts"
+#~ msgstr "Grafieken"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -483,56 +484,54 @@ msgstr "Bekijk onze v3 LP handleidingen en migratiegidsen."
 msgid "Chinese Yuan"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/pages/Earn/Manage.tsx
-msgid "Claim"
-msgstr "Claim"
+#: 
+#: 
+#: 
+#~ msgid "Claim"
+#~ msgstr "Claim"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr "Claim UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr "Claim UNI"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr "Claim UNI Token"
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr "Claim UNI Token"
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Claim accumulated UNI rewards"
-msgstr "Claim verzamelde UNI beloningen"
+#: 
+#: 
+#~ msgid "Claim accumulated UNI rewards"
+#~ msgstr "Claim verzamelde UNI beloningen"
 
 #: 
 #~ msgid "Claim fees"
 #~ msgstr "Kosten voor vordering"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr "Claim je UNI-tokens"
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr "Claim je UNI-tokens"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr "Opgeëist"
+#: 
+#~ msgid "Claimed"
+#~ msgstr "Opgeëist"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "Opgeëist UNI!"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr "Opeisen"
+#: 
+#~ msgid "Claiming"
+#~ msgstr "Opeisen"
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr "UNI claimen"
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr "UNI claimen"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claiming {0} UNI"
 msgstr "Opeisen van {0} UNI"
@@ -605,8 +604,6 @@ msgstr "Bevestig Swap"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "Bevestig deze transactie in uw portemonnee"
@@ -651,9 +648,9 @@ msgstr "Verbind met een portemonnee om pools te vinden"
 #~ msgid "Connect to a wallet to view your liquidity."
 #~ msgstr "Maak verbinding met een portemonnee om uw liquiditeit te bekijken."
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Connect wallet"
-msgstr "Verbind portemonnee"
+#: 
+#~ msgid "Connect wallet"
+#~ msgstr "Verbind portemonnee"
 
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/ManageWalletListModal/index.tsx
@@ -718,7 +715,7 @@ msgstr "Creëer zwembad."
 #~ msgid "Current {0} Price:"
 #~ msgstr "Huidige {0} prijs:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -726,9 +723,9 @@ msgstr ""
 msgid "Delegate Votes"
 msgstr "Stemmen overdragen"
 
-#: src/pages/Vote/index.tsx
-msgid "Delegated to:"
-msgstr "Toegewezen aan:"
+#: 
+#~ msgid "Delegated to:"
+#~ msgstr "Toegewezen aan:"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Delegating votes"
@@ -738,7 +735,6 @@ msgstr "Overdragen van stemmen"
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/pages/Dashboard/BuySection.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "Storting"
 
@@ -751,17 +747,17 @@ msgstr "Storting"
 msgid "Deposit Token To Nahmii"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Deposit UNI-V2 LP Tokens"
-msgstr "Storten van UNI-V2 LP Tokens"
+#: 
+#~ msgid "Deposit UNI-V2 LP Tokens"
+#~ msgstr "Storten van UNI-V2 LP Tokens"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposit liquidity"
 msgstr "Stort liquiditeit"
 
-#: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr "Plaats je Liquidity Provider tokens om UNI te ontvangen, de Uniswap protocol governance token."
+#: 
+#~ msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
+#~ msgstr "Plaats je Liquidity Provider tokens om UNI te ontvangen, de Uniswap protocol governance token."
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -775,17 +771,17 @@ msgstr "Afgeschreven {0} UNI-V2"
 msgid "Depositing Liquidity"
 msgstr "Schitterende Liquidity"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Description"
-msgstr "Beschrijving"
+#: 
+#~ msgid "Description"
+#~ msgstr "Beschrijving"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Detailed"
 msgstr "Gedetailleerd"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Details"
-msgstr "Beschrijving"
+#: 
+#~ msgid "Details"
+#~ msgstr "Beschrijving"
 
 #: src/components/Settings/index.tsx
 msgid "Disable Multihops"
@@ -803,7 +799,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr "Onenigheid"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -851,11 +847,10 @@ msgstr "Voer een ontvanger in"
 msgid "Enter a valid slippage percentage"
 msgstr "Voer een geldig slippage percentage in"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr "Voer een adres in om UNI claim. Als het adres claibel UNI heeft, wordt het verstuurd bij indiening."
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr "Voer een adres in om UNI claim. Als het adres claibel UNI heeft, wordt het verstuurd bij indiening."
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
@@ -916,7 +911,7 @@ msgstr "Expert modus schakelt de bevestigings transactie prompt uit en laat hoge
 msgid "Explore popular pools on Uniswap Analytics."
 msgstr "Verken populaire pools op Uniswap Analytics."
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -939,9 +934,9 @@ msgstr ""
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "For"
-msgstr "Voor"
+#: 
+#~ msgid "For"
+#~ msgstr "Voor"
 
 #: 
 #~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
@@ -1122,7 +1117,7 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr "Leren"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
@@ -1131,7 +1126,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
@@ -1314,10 +1308,10 @@ msgstr ""
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "Geen V2-liquiditeit gevonden."
 
-#: src/pages/Earn/index.tsx
-#: src/pages/Earn/index.tsx
-msgid "No active pools"
-msgstr "Geen actieve pools"
+#: 
+#: 
+#~ msgid "No active pools"
+#~ msgstr "Geen actieve pools"
 
 #: 
 #~ msgid "No liquidity found."
@@ -1327,9 +1321,9 @@ msgstr "Geen actieve pools"
 msgid "No pool found."
 msgstr "Geen pool gevonden."
 
-#: src/pages/Vote/index.tsx
-msgid "No proposals found."
-msgstr "Geen voorstellen gevonden."
+#: 
+#~ msgid "No proposals found."
+#~ msgstr "Geen voorstellen gevonden."
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
@@ -1363,9 +1357,9 @@ msgstr "Aan"
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Zodra u tevreden bent met de koers klik om deze te bekijken."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
-msgstr "Alleen UNI-stemmen die zelf zijn gedelegeerd of gedelegeerd aan een ander adres voordat blok {0} in aanmerking komt voor stemming."
+#: 
+#~ msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
+#~ msgstr "Alleen UNI-stemmen die zelf zijn gedelegeerd of gedelegeerd aan een ander adres voordat blok {0} in aanmerking komt voor stemming."
 
 #: src/components/Web3ReactManager/index.tsx
 msgid "Oops! An unknown error occurred. Please refresh the page, or visit from another browser or device."
@@ -1410,9 +1404,9 @@ msgstr ""
 msgid "Pair Stats (Dummy data)"
 msgstr ""
 
-#: src/pages/Earn/index.tsx
-msgid "Participating pools"
-msgstr "Deelnemende pools"
+#: 
+#~ msgid "Participating pools"
+#~ msgstr "Deelnemende pools"
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "Payment Method"
@@ -1430,7 +1424,6 @@ msgstr "Verbind met het juiste Ethereum-netwerk."
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "Typ het woord \"{confirmWord}\" om expert modus in te schakelen."
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1440,9 +1433,9 @@ msgstr "Zwembad"
 msgid "Pool Found!"
 msgstr "Zwembad gevonden!"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Pool Rate"
-msgstr "Pool tarief"
+#: 
+#~ msgid "Pool Rate"
+#~ msgstr "Pool tarief"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Pool rate"
@@ -1460,7 +1453,7 @@ msgstr "Zwembad tokens in beloningenpool:"
 msgid "Pooled {0}:"
 msgstr "Gemaakt {0}:"
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1510,17 +1503,17 @@ msgstr "Prijs:"
 msgid "Prices and pool share"
 msgstr "Prijzen en aandelen pool"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals"
-msgstr "Voorstellen"
+#: 
+#~ msgid "Proposals"
+#~ msgstr "Voorstellen"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals submitted by community members will appear here."
-msgstr "Voorstellen die zijn ingediend door gemeenschapsleden zullen hier verschijnen."
+#: 
+#~ msgid "Proposals submitted by community members will appear here."
+#~ msgstr "Voorstellen die zijn ingediend door gemeenschapsleden zullen hier verschijnen."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Proposer"
-msgstr "Voorstel"
+#: 
+#~ msgid "Proposer"
+#~ msgstr "Voorstel"
 
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
@@ -1546,13 +1539,13 @@ msgstr ""
 msgid "Rates"
 msgstr "Prijzen"
 
-#: src/pages/Earn/index.tsx
-msgid "Read more about UNI"
-msgstr "Lees meer over UNI"
+#: 
+#~ msgid "Read more about UNI"
+#~ msgstr "Lees meer over UNI"
 
-#: src/pages/Vote/index.tsx
-msgid "Read more about Uniswap governance"
-msgstr "Lees meer over Uniswap governance"
+#: 
+#~ msgid "Read more about Uniswap governance"
+#~ msgstr "Lees meer over Uniswap governance"
 
 #: 
 #~ msgid "Read more about providing liquidity"
@@ -1684,9 +1677,9 @@ msgstr ""
 #~ msgid "Selected Range"
 #~ msgstr "Geselecteerde Bereik"
 
-#: src/pages/Vote/index.tsx
-msgid "Self"
-msgstr "Eigen"
+#: 
+#~ msgid "Self"
+#~ msgstr "Eigen"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
@@ -1743,9 +1736,9 @@ msgstr "Er is iets fout gegaan"
 msgid "South Korean Won"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Step 1. Get UNI-V2 Liquidity tokens"
-msgstr "Stap 1. Verkrijg UNI-V2 Liquidity-tokens"
+#: 
+#~ msgid "Step 1. Get UNI-V2 Liquidity tokens"
+#~ msgstr "Stap 1. Verkrijg UNI-V2 Liquidity-tokens"
 
 #: src/components/vote/VoteModal.tsx
 msgid "Submitting Vote"
@@ -1759,7 +1752,6 @@ msgstr "Befúvás"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "{0} {1} en {2} {3} aanbieden"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
@@ -1804,9 +1796,9 @@ msgstr ""
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
 #~ msgstr "Bedankt dat je deel uitmaakt van de Uniswap-gemeenschap <0/>"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
+#: 
+#~ msgid "Thanks for being part of the community <0/>"
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
@@ -1934,8 +1926,12 @@ msgstr ""
 msgid "Top Looser Pools"
 msgstr ""
 
+#: 
+#~ msgid "Top Loosers"
+#~ msgstr ""
+
 #: src/pages/Discover/index.tsx
-msgid "Top Loosers"
+msgid "Top Losers"
 msgstr ""
 
 #: src/components/Table/overview.tsx
@@ -1946,9 +1942,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "Top pools"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr "Totale Voorraad"
+#: 
+#~ msgid "Total Supply"
+#~ msgstr "Totale Voorraad"
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -1958,9 +1954,9 @@ msgstr ""
 msgid "Total deposited"
 msgstr "Totaal gestort"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Total deposits"
-msgstr "Totale inkomsten"
+#: 
+#~ msgid "Total deposits"
+#~ msgstr "Totale inkomsten"
 
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
@@ -1971,7 +1967,6 @@ msgid "Transaction Settings"
 msgstr "Transactie instellingen"
 
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/components/vote/DelegateModal.tsx
@@ -2005,33 +2000,33 @@ msgstr ""
 msgid "Turn On Expert Mode"
 msgstr "Zet Expert modus aan"
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr "UNI is gearriveerd"
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr "UNI is gearriveerd"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr "UNI circuleert:"
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr "UNI circuleert:"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr "UNI prijs:"
+#: 
+#~ msgid "UNI price:"
+#~ msgstr "UNI prijs:"
 
-#: src/pages/Vote/index.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr "UNI tokens vertegenwoordigen stemaandelen in het bestuur van Uniswap. Je kunt zelf over elk voorstel stemmen of je stemmen aan een derde partij."
+#: 
+#~ msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
+#~ msgstr "UNI tokens vertegenwoordigen stemaandelen in het bestuur van Uniswap. Je kunt zelf over elk voorstel stemmen of je stemmen aan een derde partij."
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
 msgstr "UNI {0}/{1} verbrand"
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
-msgstr "UNI-V2 LP tokens zijn vereist. Zodra je liquiditeit aan de {0}-{1} pool hebt toegevoegd, kan je je liquiditeitstokens op deze pagina staken."
+#: 
+#~ msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
+#~ msgstr "UNI-V2 LP tokens zijn vereist. Zodra je liquiditeit aan de {0}-{1} pool hebt toegevoegd, kan je je liquiditeitstokens op deze pagina staken."
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 {0}-{1}"
-msgstr "UNI-V2 {0}-{1}"
+#: 
+#~ msgid "UNI-V2 {0}-{1}"
+#~ msgstr "UNI-V2 {0}-{1}"
 
 #: 
 #~ msgid "US$"
@@ -2041,7 +2036,6 @@ msgstr "UNI-V2 {0}-{1}"
 msgid "USD"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Unclaimed UNI"
 msgstr "Onopgeëiste UNI"
@@ -2050,13 +2044,13 @@ msgstr "Onopgeëiste UNI"
 #~ msgid "Unclaimed fees"
 #~ msgstr "Niet-opgeëiste kosten"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr "Niet-geclaimd:"
+#: 
+#~ msgid "Unclaimed:"
+#~ msgstr "Niet-geclaimd:"
 
-#: src/pages/Vote/index.tsx
-msgid "Uniswap Governance"
-msgstr "Uniswap governance"
+#: 
+#~ msgid "Uniswap Governance"
+#~ msgstr "Uniswap governance"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Uniswap V3 is here!"
@@ -2066,9 +2060,9 @@ msgstr "Uniswap V3 is er!"
 #~ msgid "Uniswap available in: <0>{0}</0>"
 #~ msgstr "Uniswap beschikbaar in: <0>{0}</0>"
 
-#: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
-msgstr "Oplopende liquiditeit minen"
+#: 
+#~ msgid "Uniswap liquidity mining"
+#~ msgstr "Oplopende liquiditeit minen"
 
 #: 
 #~ msgid "Uniswap migration contract↗"
@@ -2094,14 +2088,14 @@ msgstr ""
 #~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Onbekende fout{0}. Probeer uw sliptolerantie te vergroten. Let op: kosten voor transfer- en rebase-tokens zijn niet compatibel met Uniswap V3."
 
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/index.tsx
-msgid "Unlock Votes"
-msgstr "Ontgrendel Stemmen"
+#: 
+#: 
+#~ msgid "Unlock Votes"
+#~ msgstr "Ontgrendel Stemmen"
 
-#: src/pages/Vote/index.tsx
-msgid "Unlock Voting"
-msgstr "Ontgrendel de stemming"
+#: 
+#~ msgid "Unlock Voting"
+#~ msgstr "Ontgrendel de stemming"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Unlocking Votes"
@@ -2120,17 +2114,17 @@ msgstr "Niet-ondersteunde Assets"
 msgid "Unwrap"
 msgstr "Unwrap"
 
-#: src/pages/Vote/index.tsx
-msgid "Update Delegation"
-msgstr "Werk Delegatie bij"
+#: 
+#~ msgid "Update Delegation"
+#~ msgstr "Werk Delegatie bij"
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Update list"
 msgstr "Update lijst"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr "Gebruiker"
+#: 
+#~ msgid "User"
+#~ msgstr "Gebruiker"
 
 #: 
 #~ msgid "V2 liquidity"
@@ -2149,9 +2143,9 @@ msgstr "Gebruiker"
 msgid "VISA *5546"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr "Bekijk UNI Analytics"
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr "Bekijk UNI Analytics"
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -2171,8 +2165,6 @@ msgid "View on Explorer"
 msgstr "Weergeven op Verkenner"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Bekijk transactie op Explorer"
@@ -2190,17 +2182,17 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr "Stemming"
+#: 
+#~ msgid "Vote"
+#~ msgstr "Stemming"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote Against"
-msgstr "Stem tegen"
+#: 
+#~ msgid "Vote Against"
+#~ msgstr "Stem tegen"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote For"
-msgstr "Stem voor"
+#: 
+#~ msgid "Vote For"
+#~ msgstr "Stem voor"
 
 #: src/components/vote/VoteModal.tsx
 #: src/components/vote/VoteModal.tsx
@@ -2212,13 +2204,13 @@ msgstr "Stem tegen voorstel {proposalId}"
 msgid "Vote for proposal {proposalId}"
 msgstr "Stem op voorstel {proposalId}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ended {0}"
-msgstr "Stemmen beëindigd {0}"
+#: 
+#~ msgid "Voting ended {0}"
+#~ msgstr "Stemmen beëindigd {0}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ends approximately {0}"
-msgstr "Stemmen eindigt ongeveer {0}"
+#: 
+#~ msgid "Voting ends approximately {0}"
+#~ msgstr "Stemmen eindigt ongeveer {0}"
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "WITHDRAW"
@@ -2245,24 +2237,23 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "Wekelijkse Beloningen"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr "Welkom bij team Eenhoorn :)"
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr "Welkom bij team Eenhoorn :)"
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "When you claim without withdrawing your liquidity remains in the mining pool."
-msgstr "Wanneer je claimt zonder je liquiditeit terug te trekken, blijf je in de mining pool."
+#: 
+#~ msgid "When you claim without withdrawing your liquidity remains in the mining pool."
+#~ msgstr "Wanneer je claimt zonder je liquiditeit terug te trekken, blijf je in de mining pool."
 
-#: src/pages/Earn/Manage.tsx
-msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
-msgstr "Als je het terugneemt, zal het contract automatisch UNI namens jou claimen!"
+#: 
+#~ msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
+#~ msgstr "Als je het terugneemt, zal het contract automatisch UNI namens jou claimen!"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "When you withdraw, your UNI is claimed and your liquidity is removed from the mining pool."
 msgstr "Wanneer u zich terugtrekt, wordt uw UNI geclaimd en wordt uw liquiditeit verwijderd uit de mining pool."
 
 #: src/components/earn/UnstakingModal.tsx
-#: src/pages/Earn/Manage.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Intrekken"
@@ -2343,9 +2334,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Je zult ontvangen"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr "Uw UNI verdeling"
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr "Uw UNI verdeling"
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2359,9 +2350,9 @@ msgstr "Uw UNI verdeling"
 #~ msgid "Your liquidity"
 #~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your liquidity deposits"
-msgstr "Uw liquiditeitsstortingen"
+#: 
+#~ msgid "Your liquidity deposits"
+#~ msgstr "Uw liquiditeitsstortingen"
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
@@ -2434,17 +2425,17 @@ msgstr "Uw transactie zal terugdraaien als de prijs onvoordelig met meer dan dit
 #~ msgid "Your transactions will appear here..."
 #~ msgstr "Uw transacties zullen hier verschijnen..."
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your unclaimed UNI"
-msgstr "Je niet-opgeëiste UNI"
+#: 
+#~ msgid "Your unclaimed UNI"
+#~ msgstr "Je niet-opgeëiste UNI"
 
 #: src/components/Settings/index.tsx
 msgid "confirm"
 msgstr "Bevestigen"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr "voor {0}"
+#: 
+#~ msgid "for {0}"
+#~ msgstr "voor {0}"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2482,8 +2473,6 @@ msgid "{0}"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/VotePage.tsx
 msgid "{0} %"
 msgstr "{0} %"
 
@@ -2501,9 +2490,9 @@ msgstr "{0} aangepaste tokens"
 msgid "{0} Deposited"
 msgstr "{0} opgeschort"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr "{0} ETH"
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr "{0} ETH"
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2520,19 +2509,17 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} in behandeling"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr "{0} UNI"
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr "{0} UNI"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "{0} UNI / week"
 msgstr "{0} UNI / week"
 
@@ -2540,9 +2527,9 @@ msgstr "{0} UNI / week"
 msgid "{0} UNI-V2"
 msgstr "{0} UNI-V2"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0} UNI-V2 LP tokens available"
-msgstr "{0} UNI-V2 LP tokens beschikbaar"
+#: 
+#~ msgid "{0} UNI-V2 LP tokens available"
+#~ msgstr "{0} UNI-V2 LP tokens beschikbaar"
 
 #: src/components/vote/VoteModal.tsx
 msgid "{0} Votes"
@@ -2586,9 +2573,9 @@ msgstr "{0} • Toegevoegd door gebruiker"
 msgid "{0}%"
 msgstr "{0}%"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0}-{1} Liquidity Mining"
-msgstr "{0}-{1} Liquidity Mijnbouw"
+#: 
+#~ msgid "{0}-{1} Liquidity Mining"
+#~ msgstr "{0}-{1} Liquidity Mijnbouw"
 
 #: 
 #~ msgid "{0}/{1} LP NFT"
@@ -2598,13 +2585,13 @@ msgstr "{0}-{1} Liquidity Mijnbouw"
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr "{0}/{1} LP Tokens"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr "{SOCKS_AMOUNT} UNI"
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr "{SOCKS_AMOUNT} UNI"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr "{USER_AMOUNT} UNI"
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr "{USER_AMOUNT} UNI"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2619,7 +2606,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 
