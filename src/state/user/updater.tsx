@@ -39,6 +39,47 @@ export default function Updater(): null {
 }
 
 export function BaseCurrencyRatesUpdater() {
+  const RefetchIntervalDelay = 1000 * 60 * 5 /* 5 minutes */
+  /**
+   * @description
+   * Purpose of this Component is to refetch the Currency Rates from the API.
+   * At this point we are using "coingecko"
+   * @see https://www.coingecko.com/en/api/documentation
+   *
+   * This task runs every 5 minutes.(see: useInterval hook below) It sets the latest results in the user's reducer of
+   * redux store. Which eventually gets saved in the localStorage.
+   * State Object looks something like this.
+   * {
+   *    "ethereumToBaseCurrencyRates": {
+   *       "<CURRENCY_SYMBOL>": Number
+   *    }
+   *
+   * }
+   * @example
+   * {
+   *    "ethereumToBaseCurrencyRates": {
+   *      "USD": 2201.10,
+   *      "GBP": 1004.01
+   *    }
+   * }
+   *
+   * Reason for storing these values in the localStorage is to avoid unexpected behavior
+   * on the UI.
+   * @warning this could result in old data sometimes especially when api is
+   * returning OR getting into error state.
+   * @suggestion We can resolve this by indicating an icon depending
+   * on the lastFetch date and indicate to the user that rates might be old. @see https://github.com/NiiFi/uinterface/issues/79
+   *
+   *
+   * ================================
+   * Possible Error cases seen so far.
+   * ================================
+   *
+   * 1 - I have noticed that I was getting CORS and 403 error while calling this API.
+   * It turns out that it was because of the internet provider was running some sort of
+   * proxy OR VPN.
+   *
+   */
   const dispatch = useAppDispatch()
   const [baseCurrencyFetch, { data, error, loading }] =
     useLazyFetch<BASE_CURRENCY_RATES_RESPONSE>(BASE_CURRENCY_RATES_URL)
@@ -50,7 +91,7 @@ export function BaseCurrencyRatesUpdater() {
 
   useInterval(() => {
     baseCurrencyFetch()
-  }, 1000 * 60 * 5 /* 5 minutes */)
+  }, RefetchIntervalDelay)
 
   useEffect(() => {
     if (data && data.ethereum) {
