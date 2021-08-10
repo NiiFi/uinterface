@@ -10,8 +10,8 @@ msgstr ""
 "X-Crowdin-Project: niifi\n"
 "X-Crowdin-Project-ID: 468584\n"
 "X-Crowdin-Language: en\n"
-"X-Crowdin-File: /dev/src/locales/es-ES.po\n"
-"X-Crowdin-File-ID: 23\n"
+"X-Crowdin-File: /dev/src/locales/zh-TW.po\n"
+"X-Crowdin-File-ID: 67\n"
 "Project-Id-Version: niifi\n"
 "Language-Team: English\n"
 "PO-Revision-Date: 2021-08-10 09:20\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: 
 #~ msgid "(clear all)"
-#~ msgstr "(limpiar todo)"
+#~ msgstr "(全部清除)"
 
 #: src/pages/Vote/index.tsx
 msgid "(edit)"
@@ -57,7 +57,7 @@ msgstr ""
 
 #: 
 #~ msgid "-{feeAmountFormatted}%"
-#~ msgstr "-{feeAmountFormatted}%"
+#~ msgstr "{feeAmountFormatted}%"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -68,11 +68,11 @@ msgstr ""
 
 #: 
 #~ msgid "0.05% fee"
-#~ msgstr "0,05% de cuota"
+#~ msgstr "0.05% 手續費"
 
 #: 
 #~ msgid "0.3% fee"
-#~ msgstr "0,3% de cuota"
+#~ msgstr "0.3% 手續費"
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: 
 #~ msgid "1% fee"
-#~ msgstr "1% de comisión"
+#~ msgstr "1% 手續費"
 
 #: src/components/Table/pools.tsx
 msgid "1W"
@@ -137,12 +137,11 @@ msgstr ""
 
 #: 
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-#~ msgstr "<0>Análisis de cuentas y comisiones acumuladas</0><1> ↗ </1>"
+#~ msgstr "<0>賬戶分析和已累積的手續費</0><1>↗</1>"
 
 #: 
-#: 
 #~ msgid "<0>Back to </0>V3"
-#~ msgstr "<0> Volver a</0> V3"
+#~ msgstr "<0>返回</0>V3"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
@@ -154,7 +153,7 @@ msgstr ""
 
 #: 
 #~ msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
-#~ msgstr "<0> Consejo:</0> Utilice esta herramienta para encontrar grupos v2 que no aparecen automáticamente en la interfaz."
+#~ msgstr "<0>提示：</0>使用此工具可查找未自動出現在界面中的 v2 池。"
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -182,7 +181,7 @@ msgstr ""
 
 #: 
 #~ msgid "About"
-#~ msgstr "Acerca de"
+#~ msgstr "關於"
 
 #: src/components/swap/SwapModalHeader.tsx
 msgid "Accept"
@@ -218,11 +217,11 @@ msgstr ""
 
 #: 
 #~ msgid "Add V2 Liquidity"
-#~ msgstr "Añadir liquidez V2"
+#~ msgstr "註入 V2 流動資金"
 
 #: 
 #~ msgid "Add liquidity."
-#~ msgstr "Añadir liquidez."
+#~ msgstr "註入流動資金。"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -239,7 +238,7 @@ msgstr ""
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
-#~ msgstr "Sumar liquidez {0}/{1} V3"
+#~ msgstr "註入 {0}/{1} V3 流動資金"
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "Added"
@@ -267,7 +266,7 @@ msgstr ""
 
 #: 
 #~ msgid "Allow LP token migration"
-#~ msgstr "Permitir migración de token LP"
+#~ msgstr "允許流動池代幣遷移"
 
 #: src/components/Settings/index.tsx
 msgid "Allow high price impact trades and skip the confirm screen. Use at your own risk."
@@ -279,11 +278,11 @@ msgstr ""
 
 #: 
 #~ msgid "Allow the Uniswap Protocol to use your {0}"
-#~ msgstr "Permitir que el protocolo Uniswap use su {0}"
+#~ msgstr "允許 Uniswap 調用您的 {0}"
 
 #: 
 #~ msgid "Allowed"
-#~ msgstr "Permitido"
+#~ msgstr "已允許"
 
 #: src/components/Header/URLWarning.tsx
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
@@ -310,11 +309,11 @@ msgstr ""
 
 #: 
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "Se produjo un error al intentar ejecutar este intercambio. Es posible que deba aumentar su tolerancia al deslizamiento. Si eso no funciona, puede haber una incompatibilidad con el token que está negociando. Tenga en cuenta que la tarifa de transferencia y rebase de tokens es incompatible con Uniswap V3."
+#~ msgstr "嘗試執行此兌換時發生錯誤。您可能需要增加滑點限製。如果還是不行，則可能是您正在交易的代幣與 Uniswap 不兼容。註：轉賬時帶扣除費用（fee-on-transfer）的代幣和會自動重新定價（rebase）的代幣都與Uniswap V3不兼容。"
 
 #: 
 #~ msgid "Analytics"
-#~ msgstr "Analíticas"
+#~ msgstr "數據分析"
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -345,7 +344,7 @@ msgstr ""
 
 #: 
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-#~ msgstr "Como miembro de la comunidad de Uniswap, puedes reclamar que UNI sea utilizado para votar y gobernanza.<0/><1/><2>Lee más sobre UNI</2>"
+#~ msgstr "作為 Uniswap 社群的成員，您可以認領 UNI 代幣，用於投票和治理。<0/><1/><2>閱讀更多關於 UNI 代幣的訊息</2>"
 
 #: src/components/Table/Dashboard/Assets.tsx
 msgid "Assets"
@@ -353,7 +352,7 @@ msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
-#~ msgstr "Al menos {0} {1} y {2} {3} serán reembolsados a su cartera debido al rango de precios seleccionado."
+#~ msgstr "根據選定的兌換率範圍，至少會有 {0} {1} 和 {2} {3} 將退還到您的錢包。"
 
 #: src/constants/tokens.ts
 msgid "Australian Dollar"
@@ -381,7 +380,7 @@ msgstr ""
 
 #: 
 #~ msgid "Back"
-#~ msgstr "Atrás"
+#~ msgstr "返回"
 
 #: src/components/PoolInvest/index.tsx
 msgid "Balance"
@@ -397,19 +396,19 @@ msgstr ""
 
 #: 
 #~ msgid "Balance: {0} {1}"
-#~ msgstr "Saldo: {0} {1}"
+#~ msgstr "余額：{0} {1}"
 
 #: 
 #~ msgid "Best for exotic pairs."
-#~ msgstr "Lo mejor para parejas exóticas."
+#~ msgstr "較適合低交易量的幣對。"
 
 #: 
 #~ msgid "Best for most pairs."
-#~ msgstr "Lo mejor para la mayoría de pares."
+#~ msgstr "較適合大部分幣對。"
 
 #: 
 #~ msgid "Best for stable pairs."
-#~ msgstr "Lo mejor para parejas estables."
+#~ msgstr "較適合穩定代幣幣對。"
 
 #: src/constants/tokens.ts
 msgid "Bitcoin"
@@ -446,7 +445,7 @@ msgstr ""
 
 #: 
 #~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-#~ msgstr "Al conectar una cartera, usted acepta los <0>Términos de servicio</0> de Uniswap Labs y reconoce que ha leído y comprendido la <1>exención de responsabilidad del protocolo Uniswap</1>."
+#~ msgstr "通過連接錢包，您同意接受 Uniswap 實驗室的<0>服務條款</0>，並確認您已閱讀和理解<1>Uniswap協議免責聲明</1>。"
 
 #: src/constants/tokens.ts
 msgid "CAD"
@@ -470,7 +469,7 @@ msgstr ""
 
 #: 
 #~ msgid "Change"
-#~ msgstr "Cambiar"
+#~ msgstr "更改"
 
 #: src/components/Header/index.tsx
 msgid "Charts"
@@ -509,7 +508,7 @@ msgstr ""
 
 #: 
 #~ msgid "Claim fees"
-#~ msgstr "Reclamar honorarios"
+#~ msgstr "領取已累積的手續費"
 
 #: src/components/Popups/ClaimPopup.tsx
 msgid "Claim your UNI tokens"
@@ -540,7 +539,7 @@ msgstr ""
 
 #: 
 #~ msgid "Clear All"
-#~ msgstr "Limpiar todo"
+#~ msgstr "全部清除"
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "Clear all"
@@ -556,36 +555,36 @@ msgstr ""
 
 #: 
 #~ msgid "Code"
-#~ msgstr "Código"
+#~ msgstr "代碼"
 
 #: 
 #~ msgid "Collect"
-#~ msgstr "Recoger"
+#~ msgstr "收取"
 
 #: 
 #: 
 #~ msgid "Collect as WETH"
-#~ msgstr "Recoger como WETH"
+#~ msgstr "以 WETH 方式收取"
 
 #: 
 #~ msgid "Collect fees"
-#~ msgstr "Cargos de cobro"
+#~ msgstr "收取手續費"
 
 #: 
 #~ msgid "Collected"
-#~ msgstr "Recogido"
+#~ msgstr "已收取"
 
 #: 
 #~ msgid "Collecting"
-#~ msgstr "Recolectando"
+#~ msgstr "收取中"
 
 #: 
 #~ msgid "Collecting fees"
-#~ msgstr "Cargos de cobro"
+#~ msgstr "收取手續費"
 
 #: 
 #~ msgid "Collecting fees will withdraw currently available fees for you."
-#~ msgstr "Las comisiones de cobro retirarán las tarifas disponibles actualmente para usted."
+#~ msgstr "收取手續費的操作將為您提取您當前已累積的手續費。"
 
 #: src/components/SearchModal/CommonBases.tsx
 msgid "Common bases"
@@ -646,11 +645,11 @@ msgstr ""
 
 #: 
 #~ msgid "Connect to a wallet to view your V2 liquidity."
-#~ msgstr "Conéctese a una cartera para ver su liquidez V2."
+#~ msgstr "連接到錢包以查看您的 V2 流動資金。"
 
 #: 
 #~ msgid "Connect to a wallet to view your liquidity."
-#~ msgstr "Conéctese a una cartera para ver su liquidez."
+#~ msgstr "連接到錢包以查看您的流動資金。"
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "Connect wallet"
@@ -663,7 +662,7 @@ msgstr ""
 
 #: 
 #~ msgid "Connected with {name}"
-#~ msgstr "Conectado con {name}"
+#~ msgstr "已與 {name} 連接"
 
 #: src/components/AccountDetails/Copy.tsx
 msgid "Copied"
@@ -692,7 +691,7 @@ msgstr ""
 
 #: 
 #~ msgid "Create a pool"
-#~ msgstr "Crear un grupo"
+#~ msgstr "創建流動池"
 
 #: src/components/ErrorBoundary/index.tsx
 msgid "Create an issue on GitHub"
@@ -700,7 +699,7 @@ msgstr ""
 
 #: 
 #~ msgid "Create pool and add {0}/{1} V3 liquidity"
-#~ msgstr "Crear piscina y sumar {0}/{1} liquidez V3"
+#~ msgstr "創建流動池並註入 {0}/{1} V3 流動資金"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Create pool."
@@ -708,16 +707,16 @@ msgstr ""
 
 #: 
 #~ msgid "Current Price"
-#~ msgstr "Precio actual"
+#~ msgstr "當前兌換率"
 
 #: 
 #: 
 #~ msgid "Current price"
-#~ msgstr "Precio actual"
+#~ msgstr "當前兌換率"
 
 #: 
 #~ msgid "Current {0} Price:"
-#~ msgstr "Precio {0} actual:"
+#~ msgstr "當前 {0} 兌換率："
 
 #: src/components/Header/Sidebar.tsx
 msgid "Dashboard"
@@ -745,7 +744,7 @@ msgstr ""
 
 #: 
 #~ msgid "Deposit Amounts"
-#~ msgstr "Importes del depósito"
+#~ msgstr "充值數額"
 
 #: src/components/DepositTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
@@ -794,7 +793,7 @@ msgstr ""
 
 #: 
 #~ msgid "Disconnect"
-#~ msgstr "Desconectar"
+#~ msgstr "斷開"
 
 #: src/components/AccountDetails/index.tsx
 msgid "Disconnect Wallet"
@@ -802,7 +801,7 @@ msgstr ""
 
 #: 
 #~ msgid "Discord"
-#~ msgstr "Discordia"
+#~ msgstr "Discord"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Discover"
@@ -814,11 +813,11 @@ msgstr ""
 
 #: 
 #~ msgid "Docs"
-#~ msgstr "Documentos"
+#~ msgstr "文檔"
 
 #: 
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
-#~ msgstr "¿No ves una de tus posiciones v2? <0>Importarlo.</0>"
+#~ msgstr "看不到您的一些 v2 流動資金嗎？<0>將它手動導入。</0>"
 
 #: src/constants/tokens.ts
 msgid "ETH"
@@ -838,7 +837,7 @@ msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-#~ msgstr "Las fichas ganadas de UNI representan acciones de voto en la gobernancia de Uniswap."
+#~ msgstr "已賺取的 UNI 代幣代表了 Uniswap 治理中的投票份額。"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Earned tokens represent voting shares in governance."
@@ -923,7 +922,7 @@ msgstr ""
 
 #: 
 #~ msgid "Fee Tier"
-#~ msgstr "Cuota de nivel"
+#~ msgstr "手續費級別"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -946,7 +945,7 @@ msgstr ""
 
 #: 
 #~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
-#~ msgstr "Para cada piscina mostrada a continuación, haga clic en migrar para quitar su liquidez de Uniswap V2 y depositarla en Uniswap V3."
+#~ msgstr "對於下面顯示的每個流動池，單擊“遷移”以從 Uniswap V2 贖回您的流動資金，並將其註入到 Uniswap V3。"
 
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Swap/index.tsx
@@ -971,7 +970,7 @@ msgstr ""
 
 #: 
 #~ msgid "Hide closed positions"
-#~ msgstr "Ocultar posiciones cerradas"
+#~ msgstr "隱藏已關閉的流動資金倉位"
 
 #: src/pages/Swap/index.tsx
 msgid "High Price Impact"
@@ -1014,7 +1013,7 @@ msgstr ""
 
 #: 
 #~ msgid "Import Pool"
-#~ msgstr "Importar Pool"
+#~ msgstr "導入流動池"
 
 #: src/components/NavigationTabs/index.tsx
 msgid "Import V2 Pool"
@@ -1030,7 +1029,7 @@ msgstr ""
 
 #: 
 #~ msgid "Increase Liquidity"
-#~ msgstr "Aumentar liquidez"
+#~ msgstr "增加流動資金"
 
 #: src/constants/tokens.ts
 msgid "Indian Rupees"
@@ -1086,12 +1085,12 @@ msgstr ""
 
 #: 
 #~ msgid "Invalid price input"
-#~ msgstr "Entrada de precio no válida"
+#~ msgstr "無效的兌換率輸入"
 
 #: 
 #: 
 #~ msgid "Invalid range selected. The min price must be lower than the max price."
-#~ msgstr "Rango seleccionado no válido. El precio mínimo debe ser inferior al precio máximo."
+#~ msgstr "選擇的範圍無效。最小兌換率必須低於最大兌換率。"
 
 #: src/state/swap/hooks.ts
 msgid "Invalid recipient"
@@ -1121,7 +1120,7 @@ msgstr ""
 
 #: 
 #~ msgid "Learn"
-#~ msgstr "Aprender"
+#~ msgstr "學習"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Lend"
@@ -1145,11 +1144,11 @@ msgstr ""
 
 #: 
 #~ msgid "Liquidity provider rewards"
-#~ msgstr "Premios del proveedor de liquidez"
+#~ msgstr "流動資金提供者獎勵"
 
 #: 
 #~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
-#~ msgstr "Los proveedores de liquidez ganan una cuota del 0,3% en todas las operaciones proporcionales a su participación en el pozo. Las tarifas se añaden a la piscina, se acumulan en tiempo real y se pueden reclamar retirando su liquidez."
+#~ msgstr "流動資金提供者在所有交易中按其在流動池中的份額獲得0.3%的手續費。手續費按實時累計方式添加到流動池中，可與流動資金一起贖回。"
 
 #: src/components/SearchModal/Manage.tsx
 msgid "Lists"
@@ -1208,20 +1207,20 @@ msgstr ""
 
 #: 
 #~ msgid "Max"
-#~ msgstr "Máx"
+#~ msgstr "最大值"
 
 #: 
 #: 
 #~ msgid "Max Price"
-#~ msgstr "Precio máximo"
+#~ msgstr "最高兌換率"
 
 #: 
 #~ msgid "Max price"
-#~ msgstr "Precio máximo"
+#~ msgstr "最高兌換率"
 
 #: 
 #~ msgid "Max:"
-#~ msgstr "Máx:"
+#~ msgstr "最大值："
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Maximum sent"
@@ -1238,41 +1237,41 @@ msgstr ""
 
 #: 
 #~ msgid "Migrate Liquidity"
-#~ msgstr "Migrar liquidez"
+#~ msgstr "遷移流動資金"
 
 #: 
 #~ msgid "Migrate Liquidity to V3"
-#~ msgstr "Migrar liquidez a V3"
+#~ msgstr "將流動資金遷移到V3"
 
 #: 
 #: 
 #~ msgid "Migrate V2 Liquidity"
-#~ msgstr "Migrar liquidez V2"
+#~ msgstr "遷移 V2 流動資金"
 
 #: 
 #~ msgid "Migrate V2 liquidity"
-#~ msgstr "Migrar liquidez V2"
+#~ msgstr "遷移 V2 流動資金"
 
 #: 
 #~ msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
-#~ msgstr "Migre sus fichas de liquidez desde Uniswap V2 a Uniswap V3."
+#~ msgstr "將您的流動資金從 Uniswap V2 遷移到 Uniswap V3。"
 
 #: 
 #~ msgid "Migrating"
-#~ msgstr "Migración"
+#~ msgstr "正在遷移"
 
 #: 
 #: 
 #~ msgid "Min Price"
-#~ msgstr "Precio mínimo"
+#~ msgstr "最低兌換率"
 
 #: 
 #~ msgid "Min price"
-#~ msgstr "Precio mínimo"
+#~ msgstr "最低兌換率"
 
 #: 
 #~ msgid "Min:"
-#~ msgstr "Mín:"
+#~ msgstr "最小值："
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Minimum received"
@@ -1280,7 +1279,7 @@ msgstr ""
 
 #: 
 #~ msgid "More"
-#~ msgstr "Más"
+#~ msgstr "更多"
 
 #: src/pages/Dashboard/index.tsx
 msgid "NFTs Collection"
@@ -1305,7 +1304,7 @@ msgstr ""
 
 #: 
 #~ msgid "New Position"
-#~ msgstr "Nueva posición"
+#~ msgstr "新倉位"
 
 #: src/components/SwitchLocaleLink/index.tsx
 msgid "Niifi available in: <0>{0}</0>"
@@ -1313,7 +1312,7 @@ msgstr ""
 
 #: 
 #~ msgid "No V2 Liquidity found."
-#~ msgstr "No se encontró liquidez V2."
+#~ msgstr "找不到V2流動資金。"
 
 #: src/pages/Earn/index.tsx
 #: src/pages/Earn/index.tsx
@@ -1322,7 +1321,7 @@ msgstr ""
 
 #: 
 #~ msgid "No liquidity found."
-#~ msgstr "No se encontró liquidez."
+#~ msgstr "未找到流動資金。"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
@@ -1396,7 +1395,7 @@ msgstr ""
 
 #: 
 #~ msgid "Owner"
-#~ msgstr "Propietario"
+#~ msgstr "擁有者"
 
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
@@ -1467,7 +1466,7 @@ msgstr ""
 
 #: 
 #~ msgid "Pools Overview"
-#~ msgstr "Vista general de piscinas"
+#~ msgstr "流動池概覽"
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
@@ -1484,7 +1483,7 @@ msgstr ""
 
 #: 
 #~ msgid "Price Difference:"
-#~ msgstr "Diferencia de precios:"
+#~ msgstr "兌換率差異："
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Price Impact"
@@ -1501,7 +1500,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Price range"
-#~ msgstr "Rango de precios"
+#~ msgstr "兌換率範圍"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price:"
@@ -1557,7 +1556,7 @@ msgstr ""
 
 #: 
 #~ msgid "Read more about providing liquidity"
-#~ msgstr "Lea más acerca de proporcionar liquidez"
+#~ msgstr "閱讀有關提供流動資金的更多信息"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
@@ -1600,7 +1599,7 @@ msgstr ""
 
 #: 
 #~ msgid "Remove {0}/{1} V3 liquidity"
-#~ msgstr "Eliminar {0}/{1} liquidez V3"
+#~ msgstr "去除 {0}/{1} V3 流動資金"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Removes"
@@ -1652,7 +1651,7 @@ msgstr ""
 
 #: 
 #~ msgid "Select Pool"
-#~ msgstr "Seleccionar herramienta"
+#~ msgstr "選擇流動池"
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Select a Token"
@@ -1660,7 +1659,7 @@ msgstr ""
 
 #: 
 #~ msgid "Select a pool type based on your preferred liquidity provider fee."
-#~ msgstr "Seleccione un tipo de piscina basado en la tarifa de su proveedor de liquidez preferida."
+#~ msgstr "根據您首選的手續費率來選擇流動池類型。"
 
 #: src/components/CurrencyInputPanel/index.tsx
 #: src/pages/PoolFinder/index.tsx
@@ -1675,15 +1674,15 @@ msgstr ""
 
 #: 
 #~ msgid "Select a token to find your v2 liquidity."
-#~ msgstr "Seleccione un token para encontrar su liquidez v2."
+#~ msgstr "選擇代幣以查找您的 v2 流動資金。"
 
 #: 
 #~ msgid "Select pair"
-#~ msgstr "Seleccionar par"
+#~ msgstr "選擇幣對"
 
 #: 
 #~ msgid "Selected Range"
-#~ msgstr "Rango seleccionado"
+#~ msgstr "選定範圍"
 
 #: src/pages/Vote/index.tsx
 msgid "Self"
@@ -1700,11 +1699,11 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Set Price Range"
-#~ msgstr "Establecer rango de precio"
+#~ msgstr "設置兌換率範圍"
 
 #: 
 #~ msgid "Set Starting Price"
-#~ msgstr "Fijar precio inicial"
+#~ msgstr "設置起始兌換率"
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
@@ -1712,7 +1711,7 @@ msgstr ""
 
 #: 
 #~ msgid "Show Portis"
-#~ msgstr "Show Portis"
+#~ msgstr "顯示 Portis"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Simple"
@@ -1803,7 +1802,7 @@ msgstr ""
 
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
-#~ msgstr "Gracias por ser parte de la comunidad Uniswap <0 />"
+#~ msgstr "感謝您加入 Uniswap 社區 <0/>"
 
 #: src/components/Popups/ClaimPopup.tsx
 msgid "Thanks for being part of the community <0/>"
@@ -1827,7 +1826,7 @@ msgstr ""
 
 #: 
 #~ msgid "The output token cannot be transferred. There may be an issue with the output token. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "El token de salida no se puede transferir. Puede haber un problema con el token de salida. Tenga en cuenta que la tarifa de transferencia y rebase de tokens es incompatible con Uniswap V3."
+#~ msgstr "輸出代幣無法進行轉賬。輸出代幣可能有些問題。註：轉賬時帶扣除費用（fee-on-transfer）的代幣和會自動重新定價（rebase）的代幣都與Uniswap V3不兼容。"
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1863,11 +1862,11 @@ msgstr ""
 
 #: 
 #~ msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
-#~ msgstr "Esta herramienta migrará su liquidez {0} a V3. El proceso es completamente sin confianza gracias a la"
+#~ msgstr "該工具將安全地將您的 {0} 流動資金遷移到 V3。該過程完全不依賴任何信任需求"
 
 #: 
 #~ msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "Esta transacción no se realizará correctamente debido al movimiento de precios. Intente aumentar su tolerancia al deslizamiento. Tenga en cuenta que la tarifa de transferencia y rebase de tokens es incompatible con Uniswap V3."
+#~ msgstr "由於兌換率變動，該交易將不會成功。請嘗試增加滑點容差。註：轉賬時帶扣除費用（fee-on-transfer）的代幣和會自動重新定價（rebase）的代幣都與Uniswap V3不兼容。"
 
 #: src/hooks/useSwapCallback.ts
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
@@ -2049,7 +2048,7 @@ msgstr ""
 
 #: 
 #~ msgid "Unclaimed fees"
-#~ msgstr "Tarifas no reclamadas"
+#~ msgstr "未領取的手續費"
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Unclaimed:"
@@ -2065,7 +2064,7 @@ msgstr ""
 
 #: 
 #~ msgid "Uniswap available in: <0>{0}</0>"
-#~ msgstr "Uniswap disponible en: <0>{0}</0>"
+#~ msgstr "Uniswap 可選語言：<0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -2073,7 +2072,7 @@ msgstr ""
 
 #: 
 #~ msgid "Uniswap migration contract↗"
-#~ msgstr "Contrato de migración Uniswap"
+#~ msgstr "Uniswap 遷移合約↗"
 
 #: src/constants/tokens.ts
 msgid "United Kingdom Pound"
@@ -2093,7 +2092,7 @@ msgstr ""
 
 #: 
 #~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "Error desconocido{0}. Intente aumentar su tolerancia al deslizamiento. Tenga en cuenta que la tarifa de transferencia y rebase de tokens es incompatible con Uniswap V3."
+#~ msgstr "未知錯誤{0}。請嘗試增加滑點容差。註：轉賬時帶扣除費用（fee-on-transfer）的代幣和會自動重新定價（rebase）的代幣都與Uniswap V3不兼容。"
 
 #: src/pages/Vote/VotePage.tsx
 #: src/pages/Vote/index.tsx
@@ -2135,9 +2134,8 @@ msgstr ""
 
 #: 
 #~ msgid "V2 liquidity"
-#~ msgstr "Liquidez V2"
+#~ msgstr "V2 流動資金"
 
-#: 
 #: 
 #~ msgid "V3"
 #~ msgstr "V3"
@@ -2145,7 +2143,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "V3 {0} Price:"
-#~ msgstr "Precio V3 {0}:"
+#~ msgstr "V3 {0} 兌換率："
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "VISA *5546"
@@ -2157,7 +2155,7 @@ msgstr ""
 
 #: 
 #~ msgid "View V2 Liquidity"
-#~ msgstr "Ver liquidez V2"
+#~ msgstr "查看 V2 流動資金"
 
 #: src/components/PositionCard/index.tsx
 msgid "View accrued fees and analytics<0>↗</0>"
@@ -2302,7 +2300,7 @@ msgstr ""
 
 #: 
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-#~ msgstr "Usted es el primer proveedor de liquidez para este grupo de Uniswap V3. Su liquidez migrará al precio actual de {0}."
+#~ msgstr "您是此 Uniswap V3 流動池的第一個流動資金提供者。您的流動資金將以當前的 {0} 兌換率遷移。"
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
@@ -2322,11 +2320,11 @@ msgstr ""
 
 #: 
 #~ msgid "You must connect an account."
-#~ msgstr "Debes conectar una cuenta."
+#~ msgstr "您必須連接帳戶。"
 
 #: 
 #~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-#~ msgstr "Debes dar permiso a los contratos inteligentes de Uniswap para usar tu {0}. Solo tienes que hacerlo una vez por token."
+#~ msgstr "您必須授予 Uniswap 智能合約使用您的 {0} 的權限。每個代幣只需要授權一次。"
 
 #: src/pages/Swap/index.tsx
 msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
@@ -2334,11 +2332,11 @@ msgstr ""
 
 #: 
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-#~ msgstr "Usted sólo debe depositar liquidez en Uniswap V3 a un precio que usted considere correcto. <0/>Si el precio parece incorrecto, puedes hacer un intercambio para mover el precio o esperar a que alguien lo haga."
+#~ msgstr "請確保以您認為是正確的兌換率來將流動資金註入到 Uniswap V3。 <0/>如果兌換率看起來不正確，您可以進行兌換交易以移動兌換率，或者等待別人進行此操作。"
 
 #: 
 #~ msgid "You will also collect fees earned from this position."
-#~ msgstr "También cobrará las comisiones ganadas por esta posición."
+#~ msgstr "您還將從此倉位中領取已賺取的手續費。"
 
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -2351,11 +2349,11 @@ msgstr ""
 
 #: 
 #~ msgid "Your V2 liquidity"
-#~ msgstr "Tu liquidez V2"
+#~ msgstr "您的V2流動資金"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
-#~ msgstr "Las posiciones de liquidez de V3 aparecerán aquí."
+#~ msgstr "您的 V3 流動資金將在此顯示。"
 
 #: 
 #~ msgid "Your liquidity"
@@ -2367,7 +2365,7 @@ msgstr ""
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
-#~ msgstr "Su liquidez solo generará comisiones cuando el precio de mercado del par esté dentro de su rango. <0> ¿Necesita ayuda para elegir un rango?</0>"
+#~ msgstr "只有當代幣的市場兌換率在您設置的範圍內時，您的流動資金才會賺取手續費。 <0>需要幫助選擇範圍設置嗎？</0>"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
@@ -2386,22 +2384,22 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Your position will be 100% composed of {0} at this price"
-#~ msgstr "Tu posición será 100% compuesta por {0} a este precio"
+#~ msgstr "在達到此兌換率時，您的倉位流動資金將 100% 由 {0} 代幣所組成。"
 
 #: 
 #: 
 #~ msgid "Your position will be 100% {0} at this price."
-#~ msgstr "Tu posición será 100% {0} a este precio."
+#~ msgstr "在達到此兌換率時，您的倉位流動資金將 100% 由 {0} 代幣所組成。"
 
 #: 
 #: 
 #~ msgid "Your position will not earn fees or be used in trades until the market price moves into your range."
-#~ msgstr "Su posición no ganará comisiones ni se utilizará en operaciones hasta que el precio del mercado se encuentre dentro de su rango."
+#~ msgstr "您的倉位在市場兌換率變化進入到您設置的範圍內之前不會賺取手續費或被用於進行兌換交易。"
 
 #: 
 #: 
 #~ msgid "Your positions"
-#~ msgstr "Tus posiciones"
+#~ msgstr "您的倉位"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Your rate"
@@ -2414,7 +2412,7 @@ msgstr ""
 
 #: 
 #~ msgid "Your transaction cost will be much higher as it includes the gas to create the pool."
-#~ msgstr "Su costo de transacción será mucho más alto ya que incluye el gas para crear la piscina."
+#~ msgstr "由於需包含創建流動池的 gas 費用，您的此交易成本將高出許多。"
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Your transaction may be frontrun"
@@ -2434,7 +2432,7 @@ msgstr ""
 
 #: 
 #~ msgid "Your transactions will appear here..."
-#~ msgstr "Tus transacciones aparecerán aquí..."
+#~ msgstr "您的交易將出現在這裏..."
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your unclaimed UNI"
@@ -2492,7 +2490,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} <0/> per <1/>"
-#~ msgstr "{0} <0/> por <1/>"
+#~ msgstr "{0} <0/> 每 <1/>"
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "{0} Custom Tokens"
@@ -2515,7 +2513,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} Fees Earned:"
-#~ msgstr "{0} comisiones ganadas:"
+#~ msgstr "{0} 已賺取手續費："
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2557,7 +2555,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} per {1}"
-#~ msgstr "{0} por {1}"
+#~ msgstr "{0} 每 {1}"
 
 #: src/components/RateToggle/index.tsx
 #: src/components/RateToggle/index.tsx
@@ -2573,7 +2571,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} {1} Price:"
-#~ msgstr "Precio {0} {1}:"
+#~ msgstr "{0} {1} 兌換率："
 
 #: src/components/Table/swap.tsx
 msgid "{0} {1} for {2}"
@@ -2594,11 +2592,11 @@ msgstr ""
 
 #: 
 #~ msgid "{0}/{1} LP NFT"
-#~ msgstr "{0}/{1} NFT LP"
+#~ msgstr "{0}/{1} 流動池 NFT 代幣"
 
 #: 
 #~ msgid "{0}/{1} LP Tokens"
-#~ msgstr "{0}/{1} tokens LP"
+#~ msgstr "{0}{1} 流動池代幣"
 
 #: src/components/claim/ClaimModal.tsx
 msgid "{SOCKS_AMOUNT} UNI"
@@ -2627,7 +2625,7 @@ msgstr ""
 
 #: 
 #~ msgid "{tokenB} per {tokenA}"
-#~ msgstr "{tokenB} por {tokenA}"
+#~ msgstr "{tokenB} 每 {tokenA}"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
@@ -2635,5 +2633,5 @@ msgstr ""
 
 #: 
 #~ msgid "← Back to Pools Overview"
-#~ msgstr "← Volver a la vista general de las piscinas"
+#~ msgstr "← 返回流動池概述"
 
