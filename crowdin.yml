@@ -1,6 +1,5 @@
 project_id: "468584"
-branch: "dev"
-api_token: "apiToken" //generate yours apiToken
+branch: "dev" //generate yours apiToken and add as api_token: "apiToken"
 files:
   - source: 'src/locales/en-US.po'
     translation: 'src/locales/%locale%.po'
