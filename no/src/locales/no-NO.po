@@ -10,8 +10,8 @@ msgstr ""
 "X-Crowdin-Project: niifi\n"
 "X-Crowdin-Project-ID: 468584\n"
 "X-Crowdin-Language: no\n"
-"X-Crowdin-File: /dev/src/locales/ca-ES.po\n"
-"X-Crowdin-File-ID: 13\n"
+"X-Crowdin-File: /dev/src/locales/ar-SA.po\n"
+"X-Crowdin-File-ID: 11\n"
 "Project-Id-Version: niifi\n"
 "Language-Team: Norwegian\n"
 "PO-Revision-Date: 2021-08-10 09:19\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "$-"
-#~ msgstr "$ -"
+#~ msgstr "$-"
 
 #: src/components/earn/PoolCard.tsx
 msgid "${0}"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: 
 #~ msgid "(clear all)"
-#~ msgstr "(esborra-ho tot)"
+#~ msgstr "(مسح الكل)"
 
 #: src/pages/Vote/index.tsx
 msgid "(edit)"
@@ -68,11 +68,11 @@ msgstr ""
 
 #: 
 #~ msgid "0.05% fee"
-#~ msgstr "Comissió del 0,05%"
+#~ msgstr "رسم 0.05٪"
 
 #: 
 #~ msgid "0.3% fee"
-#~ msgstr "Comissió del 0,3%"
+#~ msgstr "رسم 0.3%"
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: 
 #~ msgid "1% fee"
-#~ msgstr "1% de quota"
+#~ msgstr "1% رسوم"
 
 #: src/components/Table/pools.tsx
 msgid "1W"
@@ -137,12 +137,12 @@ msgstr ""
 
 #: 
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-#~ msgstr "<0> Anàlisi del compte i comissions acumulades</0> <1> ↗</1>"
+#~ msgstr "<0>تحليلات الحساب والرسوم المتراكمة</0><1> ↗ </1>"
 
 #: 
 #: 
 #~ msgid "<0>Back to </0>V3"
-#~ msgstr "<0> Torna a</0> V3"
+#~ msgstr "<0> رجوع إلى</0> V3"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
@@ -154,7 +154,7 @@ msgstr ""
 
 #: 
 #~ msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
-#~ msgstr "<0> Consell:</0> Utilitzeu aquesta eina per trobar grups de v2 que no apareixen automàticament a la interfície."
+#~ msgstr "<0> نصيحة:</0> استخدم هذه الأداة للبحث عن تجمعات v2 التي لا تظهر تلقائيًا في الواجهة."
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -182,7 +182,7 @@ msgstr ""
 
 #: 
 #~ msgid "About"
-#~ msgstr "Sobre"
+#~ msgstr "حول"
 
 #: src/components/swap/SwapModalHeader.tsx
 msgid "Accept"
@@ -218,11 +218,11 @@ msgstr ""
 
 #: 
 #~ msgid "Add V2 Liquidity"
-#~ msgstr "Afegiu liquiditat V2"
+#~ msgstr "إضافة سيولة V2"
 
 #: 
 #~ msgid "Add liquidity."
-#~ msgstr "Afegiu liquiditat."
+#~ msgstr "إضافة سيولة."
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -239,7 +239,7 @@ msgstr ""
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
-#~ msgstr "Afegir {0}/{1} liquiditat V3"
+#~ msgstr "إضافة سيولة {0}/{1} V3"
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "Added"
@@ -267,7 +267,7 @@ msgstr ""
 
 #: 
 #~ msgid "Allow LP token migration"
-#~ msgstr "Permet la migració de token LP"
+#~ msgstr "السماح بترحيل رمز LP"
 
 #: src/components/Settings/index.tsx
 msgid "Allow high price impact trades and skip the confirm screen. Use at your own risk."
@@ -279,11 +279,11 @@ msgstr ""
 
 #: 
 #~ msgid "Allow the Uniswap Protocol to use your {0}"
-#~ msgstr "Permetre que el protocol Uniswap utilitzi el vostre {0}"
+#~ msgstr "السماح لبروتوكول Uniswap باستخدام {0} الخاص بك"
 
 #: 
 #~ msgid "Allowed"
-#~ msgstr "Es permet"
+#~ msgstr "مسموح"
 
 #: src/components/Header/URLWarning.tsx
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
@@ -310,11 +310,11 @@ msgstr ""
 
 #: 
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "S'ha produït un error en intentar executar aquest intercanvi. És possible que hàgiu d'augmentar la tolerància a la relliscada. Si això no funciona, és possible que hi hagi una incompatibilitat amb el testimoni que esteu negociant. La tarifa de nota en els tokens de transferència i rebase no és compatible amb Uniswap V3."
+#~ msgstr "حدث خطأ أثناء محاولة تنفيذ هذا التبادل. قد تحتاج إلى زيادة تحملك للانزلاق. إذا لم يفلح ذلك ، فقد يكون هناك عدم توافق مع الرمز المميز الذي تتداوله. رسوم الملاحظات على الرموز المميزة للنقل وإعادة التسمية غير متوافقة مع Uniswap V3."
 
 #: 
 #~ msgid "Analytics"
-#~ msgstr "Analítica"
+#~ msgstr "التحليلات"
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -345,7 +345,7 @@ msgstr ""
 
 #: 
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-#~ msgstr "Com a membre de la comunitat Uniswap, podeu reclamar que UNI s'utilitzi per votar i governar. <0/> <1/> <2> Llegiu més sobre UNI</2>"
+#~ msgstr "كعضو في مجتمع Uniswap ، يمكنك أن تدعي أن الأمم المتحدة تستخدم في التصويت والحكم. <0/><1/><2>اقرأ المزيد عن UNI</2>."
 
 #: src/components/Table/Dashboard/Assets.tsx
 msgid "Assets"
@@ -353,7 +353,7 @@ msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
-#~ msgstr "Es {0} {1} i {2} {3} a la cartera a causa de l'interval de preus seleccionat."
+#~ msgstr "سيتم استرداد {0} {1} و {2} {3} على الأقل إلى محفظتك بسبب نطاق السعر المحدد."
 
 #: src/constants/tokens.ts
 msgid "Australian Dollar"
@@ -381,7 +381,7 @@ msgstr ""
 
 #: 
 #~ msgid "Back"
-#~ msgstr "esquena"
+#~ msgstr "الرجوع"
 
 #: src/components/PoolInvest/index.tsx
 msgid "Balance"
@@ -397,19 +397,19 @@ msgstr ""
 
 #: 
 #~ msgid "Balance: {0} {1}"
-#~ msgstr "Saldo: {0} {1}"
+#~ msgstr "التوازن: {0} {1}"
 
 #: 
 #~ msgid "Best for exotic pairs."
-#~ msgstr "El millor per a parelles exòtiques."
+#~ msgstr "أفضل للأزواج الغريبة."
 
 #: 
 #~ msgid "Best for most pairs."
-#~ msgstr "El millor per a la majoria de parelles."
+#~ msgstr "الأفضل لمعظم الأزواج."
 
 #: 
 #~ msgid "Best for stable pairs."
-#~ msgstr "El millor per a parelles estables."
+#~ msgstr "الأفضل لأزواج مستقرة."
 
 #: src/constants/tokens.ts
 msgid "Bitcoin"
@@ -446,7 +446,7 @@ msgstr ""
 
 #: 
 #~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-#~ msgstr "En connectar una cartera, accepteu les Condicions del servei <0> d'Uniswap Labs</0> i reconegueu que heu llegit i entès la renúncia de responsabilitat del protocol <U> Uniswap</1> ."
+#~ msgstr "بتوصيل محفظة، فإنك توافق على شروط خدمة Uniswap Labs<0>، وتقر بأنك قرأت وفهمت <1>تنزيل بروتوكول Uniswap </1>."
 
 #: src/constants/tokens.ts
 msgid "CAD"
@@ -470,7 +470,7 @@ msgstr ""
 
 #: 
 #~ msgid "Change"
-#~ msgstr "Canvi"
+#~ msgstr "تغيير"
 
 #: src/components/Header/index.tsx
 msgid "Charts"
@@ -509,7 +509,7 @@ msgstr ""
 
 #: 
 #~ msgid "Claim fees"
-#~ msgstr "Taxes de reclamació"
+#~ msgstr "المطالبة بالرسوم"
 
 #: src/components/Popups/ClaimPopup.tsx
 msgid "Claim your UNI tokens"
@@ -540,7 +540,7 @@ msgstr ""
 
 #: 
 #~ msgid "Clear All"
-#~ msgstr "Esborra-ho tot"
+#~ msgstr "مسح الكل"
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "Clear all"
@@ -556,36 +556,36 @@ msgstr ""
 
 #: 
 #~ msgid "Code"
-#~ msgstr "Codi"
+#~ msgstr "الكود"
 
 #: 
 #~ msgid "Collect"
-#~ msgstr "Recollir"
+#~ msgstr "اجمع"
 
 #: 
 #: 
 #~ msgid "Collect as WETH"
-#~ msgstr "Recollir com a WETH"
+#~ msgstr "اجمع كـ WETH"
 
 #: 
 #~ msgid "Collect fees"
-#~ msgstr "Cobra les taxes"
+#~ msgstr "تحصيل الرسوم"
 
 #: 
 #~ msgid "Collected"
-#~ msgstr "Recollit"
+#~ msgstr "جمعت"
 
 #: 
 #~ msgid "Collecting"
-#~ msgstr "Col·leccionisme"
+#~ msgstr "جمع"
 
 #: 
 #~ msgid "Collecting fees"
-#~ msgstr "Cobrament de taxes"
+#~ msgstr "رسوم التحصيل"
 
 #: 
 #~ msgid "Collecting fees will withdraw currently available fees for you."
-#~ msgstr "Les taxes de cobrament us retiraran les taxes disponibles actualment."
+#~ msgstr "رسوم الجمع سوف تسحب الرسوم المتاحة لك حالياً."
 
 #: src/components/SearchModal/CommonBases.tsx
 msgid "Common bases"
@@ -646,11 +646,11 @@ msgstr ""
 
 #: 
 #~ msgid "Connect to a wallet to view your V2 liquidity."
-#~ msgstr "Connecteu-vos a una cartera per veure la vostra liquiditat V2."
+#~ msgstr "اتصل بالمحفظة لعرض سيولة V2 الخاصة بك."
 
 #: 
 #~ msgid "Connect to a wallet to view your liquidity."
-#~ msgstr "Connecteu-vos a una cartera per veure la vostra liquiditat."
+#~ msgstr "اتصل بالمحفظة لعرض السيولة الخاصة بك."
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "Connect wallet"
@@ -663,7 +663,7 @@ msgstr ""
 
 #: 
 #~ msgid "Connected with {name}"
-#~ msgstr "Connectat amb {name}"
+#~ msgstr "متصل مع {name}"
 
 #: src/components/AccountDetails/Copy.tsx
 msgid "Copied"
@@ -692,7 +692,7 @@ msgstr ""
 
 #: 
 #~ msgid "Create a pool"
-#~ msgstr "Crea una piscina"
+#~ msgstr "إنشاء مخزن"
 
 #: src/components/ErrorBoundary/index.tsx
 msgid "Create an issue on GitHub"
@@ -700,7 +700,7 @@ msgstr ""
 
 #: 
 #~ msgid "Create pool and add {0}/{1} V3 liquidity"
-#~ msgstr "Crear piscina i afegiu {0}/{1} liquiditat V3"
+#~ msgstr "إنشاء مخزن وإضافة {0}/{1} V3 السيولة"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Create pool."
@@ -708,16 +708,16 @@ msgstr ""
 
 #: 
 #~ msgid "Current Price"
-#~ msgstr "Preu actual"
+#~ msgstr "السعر الحالي"
 
 #: 
 #: 
 #~ msgid "Current price"
-#~ msgstr "Preu actual"
+#~ msgstr "السعر الحالي"
 
 #: 
 #~ msgid "Current {0} Price:"
-#~ msgstr "Preu actual {0}"
+#~ msgstr "السعر {0} الحالي:"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Dashboard"
@@ -745,7 +745,7 @@ msgstr ""
 
 #: 
 #~ msgid "Deposit Amounts"
-#~ msgstr "Quantitats de dipòsit"
+#~ msgstr "مبالغ الإيداع"
 
 #: src/components/DepositTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
@@ -794,7 +794,7 @@ msgstr ""
 
 #: 
 #~ msgid "Disconnect"
-#~ msgstr "Desconnecta"
+#~ msgstr "قطع الاتصال"
 
 #: src/components/AccountDetails/index.tsx
 msgid "Disconnect Wallet"
@@ -802,7 +802,7 @@ msgstr ""
 
 #: 
 #~ msgid "Discord"
-#~ msgstr "Discòrdia"
+#~ msgstr "ديسكورد"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Discover"
@@ -814,11 +814,11 @@ msgstr ""
 
 #: 
 #~ msgid "Docs"
-#~ msgstr "Documents"
+#~ msgstr "الوثائق"
 
 #: 
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
-#~ msgstr "No veieu cap de les vostres posicions v2? <0> Importeu-lo.</0>"
+#~ msgstr "لا ترى أحد مواقع v2 الخاصة بك؟ <0>استيرادها.</0>"
 
 #: src/constants/tokens.ts
 msgid "ETH"
@@ -838,7 +838,7 @@ msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-#~ msgstr "Els tokens UNI obtinguts representen accions de vot en la governança Uniswap."
+#~ msgstr "وتمثل الرموز المميزة التي حصلت عليها الأمم المتحدة حصص التصويت في إدارة يونيسباد."
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Earned tokens represent voting shares in governance."
@@ -923,7 +923,7 @@ msgstr ""
 
 #: 
 #~ msgid "Fee Tier"
-#~ msgstr "Nivell de tarifa"
+#~ msgstr "مستوى الرسوم"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -946,7 +946,7 @@ msgstr ""
 
 #: 
 #~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
-#~ msgstr "Per a cada grup que es mostra a continuació, feu clic a Migra per eliminar la liquiditat d'Uniswap V2 i dipositar-la a Uniswap V3."
+#~ msgstr "لكل مخزن موضح أدناه، انقر فوق الهجرة لإزالة السيولة الخاصة بك من Uniswap V2 وإيداعها في Uniswap V3."
 
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Swap/index.tsx
@@ -971,7 +971,7 @@ msgstr ""
 
 #: 
 #~ msgid "Hide closed positions"
-#~ msgstr "Amaga les posicions tancades"
+#~ msgstr "إخفاء المواقع المغلقة"
 
 #: src/pages/Swap/index.tsx
 msgid "High Price Impact"
@@ -1014,7 +1014,7 @@ msgstr ""
 
 #: 
 #~ msgid "Import Pool"
-#~ msgstr "Importa el grup"
+#~ msgstr "استيراد مخزن"
 
 #: src/components/NavigationTabs/index.tsx
 msgid "Import V2 Pool"
@@ -1030,7 +1030,7 @@ msgstr ""
 
 #: 
 #~ msgid "Increase Liquidity"
-#~ msgstr "Augmenta la liquiditat"
+#~ msgstr "زيادة السيولة"
 
 #: src/constants/tokens.ts
 msgid "Indian Rupees"
@@ -1086,12 +1086,12 @@ msgstr ""
 
 #: 
 #~ msgid "Invalid price input"
-#~ msgstr "Entrada de preu no vàlida"
+#~ msgstr "إدخال سعر غير صالح"
 
 #: 
 #: 
 #~ msgid "Invalid range selected. The min price must be lower than the max price."
-#~ msgstr "L'interval no és vàlid. El preu mínim ha de ser inferior al preu màxim."
+#~ msgstr "النطاق المحدد غير صالح. يجب أن يكون الحد الأدنى للسعر أقل من الحد الأقصى للسعر."
 
 #: src/state/swap/hooks.ts
 msgid "Invalid recipient"
@@ -1121,7 +1121,7 @@ msgstr ""
 
 #: 
 #~ msgid "Learn"
-#~ msgstr "Aprendre"
+#~ msgstr "تعلم"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Lend"
@@ -1145,11 +1145,11 @@ msgstr ""
 
 #: 
 #~ msgid "Liquidity provider rewards"
-#~ msgstr "Recompenses del proveïdor de liquiditat"
+#~ msgstr "مكافآت موفر السيولة"
 
 #: 
 #~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
-#~ msgstr "Els proveïdors de liquiditat guanyen una comissió del 0,3% en tots els negocis proporcional a la seva quota de fons. Les comissions s’afegeixen al fons, s’acumulen en temps real i es poden reclamar retirant la vostra liquiditat."
+#~ msgstr "ويحصل مقدمو خدمات السيولة على رسم بنسبة 0.3٪ من جميع المهن يتناسب مع نصيبهم من المجمع. تضاف الرسوم إلى المجمع، تتراكم في الوقت الحقيقي ويمكن المطالبة بها بسحب السيولة الخاصة بك."
 
 #: src/components/SearchModal/Manage.tsx
 msgid "Lists"
@@ -1208,20 +1208,20 @@ msgstr ""
 
 #: 
 #~ msgid "Max"
-#~ msgstr "Màx"
+#~ msgstr "الحد الأقصى"
 
 #: 
 #: 
 #~ msgid "Max Price"
-#~ msgstr "Preu màxim"
+#~ msgstr "الحد الأقصى للسعر"
 
 #: 
 #~ msgid "Max price"
-#~ msgstr "Preu màxim"
+#~ msgstr "السعر الأقصى"
 
 #: 
 #~ msgid "Max:"
-#~ msgstr "Màx.:"
+#~ msgstr "الحد الأقصى:"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Maximum sent"
@@ -1238,41 +1238,41 @@ msgstr ""
 
 #: 
 #~ msgid "Migrate Liquidity"
-#~ msgstr "Migrar la liquiditat"
+#~ msgstr "ترحيل السيولة"
 
 #: 
 #~ msgid "Migrate Liquidity to V3"
-#~ msgstr "Migreu la liquiditat a la V3"
+#~ msgstr "ترحيل السيولة إلى V3"
 
 #: 
 #: 
 #~ msgid "Migrate V2 Liquidity"
-#~ msgstr "Migrar la liquiditat V2"
+#~ msgstr "ترحيل السيولة V2"
 
 #: 
 #~ msgid "Migrate V2 liquidity"
-#~ msgstr "Migrar liquiditat V2"
+#~ msgstr "ترحيل السيولة V2"
 
 #: 
 #~ msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
-#~ msgstr "Migreu els vostres tokens de liquiditat des d'Uniswap V2 a Uniswap V3."
+#~ msgstr "نقل رموز السيولة الخاصة بك من Uniswap V2 إلى Uniswap V3."
 
 #: 
 #~ msgid "Migrating"
-#~ msgstr "Migrant"
+#~ msgstr "هجرة"
 
 #: 
 #: 
 #~ msgid "Min Price"
-#~ msgstr "Preu mínim"
+#~ msgstr "الحد الأدنى للسعر"
 
 #: 
 #~ msgid "Min price"
-#~ msgstr "Preu mínim"
+#~ msgstr "الحد الأدنى للسعر"
 
 #: 
 #~ msgid "Min:"
-#~ msgstr "Min:"
+#~ msgstr "دقيقة:"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Minimum received"
@@ -1280,7 +1280,7 @@ msgstr ""
 
 #: 
 #~ msgid "More"
-#~ msgstr "Més"
+#~ msgstr "المزيد"
 
 #: src/pages/Dashboard/index.tsx
 msgid "NFTs Collection"
@@ -1305,7 +1305,7 @@ msgstr ""
 
 #: 
 #~ msgid "New Position"
-#~ msgstr "Nova posició"
+#~ msgstr "موضع جديد"
 
 #: src/components/SwitchLocaleLink/index.tsx
 msgid "Niifi available in: <0>{0}</0>"
@@ -1313,7 +1313,7 @@ msgstr ""
 
 #: 
 #~ msgid "No V2 Liquidity found."
-#~ msgstr "No s'ha trobat cap liquiditat V2."
+#~ msgstr "لم يتم العثور على سيولة V2."
 
 #: src/pages/Earn/index.tsx
 #: src/pages/Earn/index.tsx
@@ -1322,7 +1322,7 @@ msgstr ""
 
 #: 
 #~ msgid "No liquidity found."
-#~ msgstr "No s'ha trobat cap liquiditat."
+#~ msgstr "لم يتم العثور على سيولة."
 
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
@@ -1396,16 +1396,12 @@ msgstr ""
 
 #: 
 #~ msgid "Owner"
-#~ msgstr "Propietari"
+#~ msgstr "المالك"
 
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
-
-#: 
-#~ msgid "Page {currentPage} of {totalPages}"
-#~ msgstr ""
 
 #: 
 #~ msgid "Pair Stats"
@@ -1471,7 +1467,7 @@ msgstr ""
 
 #: 
 #~ msgid "Pools Overview"
-#~ msgstr "Visió general de les piscines"
+#~ msgstr "نظرة عامة للمتجمعات"
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
@@ -1488,7 +1484,7 @@ msgstr ""
 
 #: 
 #~ msgid "Price Difference:"
-#~ msgstr "Diferència de preu:"
+#~ msgstr "اختلاف السعر:"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Price Impact"
@@ -1505,7 +1501,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Price range"
-#~ msgstr "Gamma de preus"
+#~ msgstr "نطاق السعر"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price:"
@@ -1561,7 +1557,7 @@ msgstr ""
 
 #: 
 #~ msgid "Read more about providing liquidity"
-#~ msgstr "Obteniu més informació sobre com proporcionar liquiditat"
+#~ msgstr "اقرأ المزيد عن توفير السيولة"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
@@ -1604,7 +1600,7 @@ msgstr ""
 
 #: 
 #~ msgid "Remove {0}/{1} V3 liquidity"
-#~ msgstr "Traieu {0}/{1} liquiditat V3"
+#~ msgstr "إزالة سيولة {0}/{1} V3"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Removes"
@@ -1656,7 +1652,7 @@ msgstr ""
 
 #: 
 #~ msgid "Select Pool"
-#~ msgstr "Seleccioneu Piscina"
+#~ msgstr "حدد المخزن"
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Select a Token"
@@ -1664,7 +1660,7 @@ msgstr ""
 
 #: 
 #~ msgid "Select a pool type based on your preferred liquidity provider fee."
-#~ msgstr "Seleccioneu un tipus de grup basat en la comissió del vostre proveïdor de liquiditat preferit."
+#~ msgstr "حدد نوع المجمع استنادًا إلى رسوم موفر السيولة المفضلة لديك."
 
 #: src/components/CurrencyInputPanel/index.tsx
 #: src/pages/PoolFinder/index.tsx
@@ -1679,15 +1675,15 @@ msgstr ""
 
 #: 
 #~ msgid "Select a token to find your v2 liquidity."
-#~ msgstr "Seleccioneu un testimoni per trobar la vostra liquiditat v2."
+#~ msgstr "حدد رمزًا مميزًا للعثور على سيولة v2 الخاصة بك."
 
 #: 
 #~ msgid "Select pair"
-#~ msgstr "Selecciona un parell"
+#~ msgstr "حدد زوج"
 
 #: 
 #~ msgid "Selected Range"
-#~ msgstr "Interval seleccionat"
+#~ msgstr "نطاق محدد"
 
 #: src/pages/Vote/index.tsx
 msgid "Self"
@@ -1704,11 +1700,11 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Set Price Range"
-#~ msgstr "Estableix l'interval de preus"
+#~ msgstr "تعيين نطاق السعر"
 
 #: 
 #~ msgid "Set Starting Price"
-#~ msgstr "Estableix el preu inicial"
+#~ msgstr "تعيين سعر البدء"
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
@@ -1716,7 +1712,7 @@ msgstr ""
 
 #: 
 #~ msgid "Show Portis"
-#~ msgstr "Mostra Portis"
+#~ msgstr "Show Portis"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Simple"
@@ -1779,10 +1775,6 @@ msgstr ""
 msgid "Swap Anyway"
 msgstr ""
 
-#: 
-#~ msgid "Swap ETH for NII"
-#~ msgstr ""
-
 #: src/components/swap/ConfirmSwapModal.tsx
 msgid "Swapping {0} {1} for {2} {3}"
 msgstr ""
@@ -1811,7 +1803,7 @@ msgstr ""
 
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
-#~ msgstr "Gràcies per formar part de la comunitat Uniswap <0 />"
+#~ msgstr "نشكرك على كونك جزءًا من مجتمع Uniswap <0 />"
 
 #: src/components/Popups/ClaimPopup.tsx
 msgid "Thanks for being part of the community <0/>"
@@ -1835,7 +1827,7 @@ msgstr ""
 
 #: 
 #~ msgid "The output token cannot be transferred. There may be an issue with the output token. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "El testimoni de sortida no es pot transferir. Pot haver-hi un problema amb el testimoni de sortida. La tarifa de nota en els tokens de transferència i rebase no és compatible amb Uniswap V3."
+#~ msgstr "لا يمكن نقل رمز الإخراج. قد تكون هناك مشكلة في رمز الإخراج. رسوم الملاحظات على الرموز المميزة للنقل وإعادة التسمية غير متوافقة مع Uniswap V3."
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1871,11 +1863,11 @@ msgstr ""
 
 #: 
 #~ msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
-#~ msgstr "Aquesta eina migrarà de manera segura la vostra {0} a V3. El procés és completament desconfiat gràcies a"
+#~ msgstr "هذه الأداة سوف تنقل سيولتك {0} إلى V3. العملية غير موثوق بها تماما بفضل"
 
 #: 
 #~ msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "Aquesta transacció no tindrà èxit a causa del moviment dels preus. Proveu d'augmentar la tolerància al lliscament. La tarifa de nota en els tokens de transferència i rebase no és compatible amb Uniswap V3."
+#~ msgstr "لن تنجح هذه الصفقة بسبب حركة السعر. حاول زيادة تحملك للانزلاق. رسوم الملاحظات على الرموز المميزة للنقل وإعادة التسمية غير متوافقة مع Uniswap V3."
 
 #: src/hooks/useSwapCallback.ts
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
@@ -2057,7 +2049,7 @@ msgstr ""
 
 #: 
 #~ msgid "Unclaimed fees"
-#~ msgstr "Tarifes no reclamades"
+#~ msgstr "الرسوم غير المطالب بها"
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Unclaimed:"
@@ -2073,7 +2065,7 @@ msgstr ""
 
 #: 
 #~ msgid "Uniswap available in: <0>{0}</0>"
-#~ msgstr "Uniswap disponible a: <0>{0}</0>"
+#~ msgstr "Uniswap متاح في: <0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -2081,7 +2073,7 @@ msgstr ""
 
 #: 
 #~ msgid "Uniswap migration contract↗"
-#~ msgstr "Contracte de migració Uniswap↗"
+#~ msgstr "عقد ترحيل Uniswap ↗"
 
 #: src/constants/tokens.ts
 msgid "United Kingdom Pound"
@@ -2101,7 +2093,7 @@ msgstr ""
 
 #: 
 #~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "Error desconegut{0}. Proveu d'augmentar la tolerància al lliscament. La tarifa de nota en els tokens de transferència i rebase no és compatible amb Uniswap V3."
+#~ msgstr "خطأ غير معروف{0}. حاول زيادة تحملك للانزلاق. رسوم الملاحظات على الرموز المميزة للنقل وإعادة التسمية غير متوافقة مع Uniswap V3."
 
 #: src/pages/Vote/VotePage.tsx
 #: src/pages/Vote/index.tsx
@@ -2143,7 +2135,7 @@ msgstr ""
 
 #: 
 #~ msgid "V2 liquidity"
-#~ msgstr "Liquiditat V2"
+#~ msgstr "سيولة V2"
 
 #: 
 #: 
@@ -2153,7 +2145,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "V3 {0} Price:"
-#~ msgstr "V3 {0} Preu:"
+#~ msgstr "سعر V3 {0}:"
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "VISA *5546"
@@ -2165,7 +2157,7 @@ msgstr ""
 
 #: 
 #~ msgid "View V2 Liquidity"
-#~ msgstr "Veure liquiditat V2"
+#~ msgstr "عرض السيولة V2"
 
 #: src/components/PositionCard/index.tsx
 msgid "View accrued fees and analytics<0>↗</0>"
@@ -2310,7 +2302,7 @@ msgstr ""
 
 #: 
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-#~ msgstr "Sou el primer proveïdor de liquiditat d’aquest grup Uniswap V3. La vostra liquiditat migrarà al preu {0}"
+#~ msgstr "أنت أول موفر للسيولة لمجمع Uniswap V3 هذا. ستنتقل السيولة الخاصة بك بسعر {0} الحالي."
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
@@ -2330,11 +2322,11 @@ msgstr ""
 
 #: 
 #~ msgid "You must connect an account."
-#~ msgstr "Heu de connectar un compte."
+#~ msgstr "يجب عليك توصيل حساب."
 
 #: 
 #~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-#~ msgstr "Heu de donar permís als contractes intel·ligents Uniswap per utilitzar el vostre {0}. Només heu de fer-ho una vegada per fitxa."
+#~ msgstr "يجب عليك منح العقود الذكية لـ Uniswap الإذن لاستخدام {0}الخاص بك. يجب عليك القيام بذلك مرة واحدة فقط لكل رمز."
 
 #: src/pages/Swap/index.tsx
 msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
@@ -2342,11 +2334,11 @@ msgstr ""
 
 #: 
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-#~ msgstr "Només heu de dipositar liquiditat a Uniswap V3 a un preu que creieu correcte. <0/> Si el preu sembla incorrecte, podeu canviar el preu o esperar que algú ho faci."
+#~ msgstr "يجب عليك إيداع السيولة فقط في Uniswap V3 بسعر تعتقد أنه صحيح. <0/>إذا بدا السعر غير صحيح، يمكنك إما مقايضة لتحريك السعر أو الانتظار حتى يقوم شخص آخر بذلك."
 
 #: 
 #~ msgid "You will also collect fees earned from this position."
-#~ msgstr "També cobrarà els honoraris obtinguts per aquesta posició."
+#~ msgstr "سوف تحصل أيضا على الرسوم المكتسبة من هذه الوظيفة."
 
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -2359,11 +2351,11 @@ msgstr ""
 
 #: 
 #~ msgid "Your V2 liquidity"
-#~ msgstr "La vostra liquiditat V2"
+#~ msgstr "سيولتك V2"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
-#~ msgstr "Les vostres posicions de liquiditat V3 apareixeran aquí."
+#~ msgstr "ستظهر هنا حالة سيولة V3 الخاصة بك."
 
 #: 
 #~ msgid "Your liquidity"
@@ -2375,7 +2367,7 @@ msgstr ""
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
-#~ msgstr "La vostra liquiditat només obtindrà comissions quan el preu de mercat del parell estigui dins del vostre abast. <0> Necessiteu ajuda per escollir un interval?</0>"
+#~ msgstr "سيكسب السيولة الخاصة بك رسومًا فقط عندما يكون سعر السوق للزوج ضمن النطاق الخاص بك. <0> هل تحتاج إلى مساعدة في اختيار النطاق؟</0>"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
@@ -2394,22 +2386,22 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Your position will be 100% composed of {0} at this price"
-#~ msgstr "La vostra posició serà 100% composta per {0} a aquest preu"
+#~ msgstr "موقعك سيكون 100% مؤلفاً من {0} بهذا السعر"
 
 #: 
 #: 
 #~ msgid "Your position will be 100% {0} at this price."
-#~ msgstr "La vostra posició serà del 100% {0} a aquest preu."
+#~ msgstr "موقعك سيكون 100% {0} بهذا السعر."
 
 #: 
 #: 
 #~ msgid "Your position will not earn fees or be used in trades until the market price moves into your range."
-#~ msgstr "La vostra posició no guanyarà comissions ni s’utilitzarà en operacions fins que el preu de mercat no passi al vostre rang."
+#~ msgstr "موقعك لن يكسب رسوماً أو يستخدم في التداول حتى ينتقل سعر السوق إلى نطاقك."
 
 #: 
 #: 
 #~ msgid "Your positions"
-#~ msgstr "Les vostres posicions"
+#~ msgstr "مواقفك"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Your rate"
@@ -2422,7 +2414,7 @@ msgstr ""
 
 #: 
 #~ msgid "Your transaction cost will be much higher as it includes the gas to create the pool."
-#~ msgstr "El cost de la vostra transacció serà molt més elevat, ja que inclou el gas per crear la piscina."
+#~ msgstr "ستكون تكلفة معاملتك أعلى بكثير، حيث أنها تشمل الغاز لإنشاء المجمع."
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Your transaction may be frontrun"
@@ -2442,7 +2434,7 @@ msgstr ""
 
 #: 
 #~ msgid "Your transactions will appear here..."
-#~ msgstr "Les vostres transaccions apareixeran aquí ..."
+#~ msgstr "المعاملات الخاصة بك ستظهر هنا..."
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your unclaimed UNI"
@@ -2500,7 +2492,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} <0/> per <1/>"
-#~ msgstr "{0} <0/> per <1/>"
+#~ msgstr "{0} <0/> في <1/>"
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "{0} Custom Tokens"
@@ -2523,7 +2515,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} Fees Earned:"
-#~ msgstr "{0} Comissions guanyades:"
+#~ msgstr "{0} رسوم مكتسبة:"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2565,7 +2557,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} per {1}"
-#~ msgstr "{0} per {1}"
+#~ msgstr "{0} لكل {1}"
 
 #: src/components/RateToggle/index.tsx
 #: src/components/RateToggle/index.tsx
@@ -2581,7 +2573,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} {1} Price:"
-#~ msgstr "{0} {1} Preu:"
+#~ msgstr "{0} {1} السعر:"
 
 #: src/components/Table/swap.tsx
 msgid "{0} {1} for {2}"
@@ -2606,7 +2598,7 @@ msgstr ""
 
 #: 
 #~ msgid "{0}/{1} LP Tokens"
-#~ msgstr "{0}/{1} LP Tokens"
+#~ msgstr "{0}/{1} رمز LP"
 
 #: src/components/claim/ClaimModal.tsx
 msgid "{SOCKS_AMOUNT} UNI"
@@ -2635,7 +2627,7 @@ msgstr ""
 
 #: 
 #~ msgid "{tokenB} per {tokenA}"
-#~ msgstr "{tokenB} per {tokenA}"
+#~ msgstr "{tokenB} لكل {tokenA}"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
@@ -2643,5 +2635,5 @@ msgstr ""
 
 #: 
 #~ msgid "← Back to Pools Overview"
-#~ msgstr "← Torna a la descripció general de les piscines"
+#~ msgstr "← العودة إلى نظرة عامة للمتجمعات"
 
