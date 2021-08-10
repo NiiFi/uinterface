@@ -43,9 +43,9 @@ msgstr "(Max)"
 #~ msgid "(clear all)"
 #~ msgstr "(mindent kitöröl)"
 
-#: src/pages/Vote/index.tsx
-msgid "(edit)"
-msgstr "(szerkesztés)"
+#: 
+#~ msgid "(edit)"
+#~ msgstr "(szerkesztés)"
 
 #: 
 #~ msgid "+{feeAmountFormatted}%"
@@ -61,8 +61,6 @@ msgstr "- Távolítsa el a küldést"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI / hét"
 
@@ -125,14 +123,14 @@ msgstr ""
 #~ msgid "75%"
 #~ msgstr "75%"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0/> All Proposals"
-msgstr "<0 /> Minden javaslat"
+#: 
+#~ msgid "<0/> All Proposals"
+#~ msgstr "<0 /> Minden javaslat"
 
-#: src/pages/Vote/index.tsx
-#: src/pages/Vote/index.tsx
-msgid "<0/> Votes"
-msgstr "<0 /> Szavazatok"
+#: 
+#: 
+#~ msgid "<0/> Votes"
+#~ msgstr "<0 /> Szavazatok"
 
 #: 
 #~ msgid "<0> ↗ </0>"
@@ -162,17 +160,17 @@ msgstr ""
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0> Tipp:</0> A likviditás hozzáadásakor pool-tokeneket kap, amelyek a pozícióját képviselik. Ezek a tokenek automatikusan díjakat keresnek, a saját részarányával arányosan, és bármikor beválthatók."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0>Unlock voting</0> to prepare for the next proposal."
-msgstr "<0> Feloldja a szavazást</0> felkészülni a következő javaslatra."
+#: 
+#~ msgid "<0>Unlock voting</0> to prepare for the next proposal."
+#~ msgstr "<0> Feloldja a szavazást</0> felkészülni a következő javaslatra."
 
 #: 
 #~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
 #~ msgstr "<0> 🎉</0> Üdvözöljük az Unicorn csapatában :) <1> 🎉</1>"
 
-#: src/pages/Vote/index.tsx
-msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
-msgstr "A pályázatok benyújtásához a teljes UNI-kínálat minimum 1% -ának megfelelő küszöb szükséges"
+#: 
+#~ msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
+#~ msgstr "A pályázatok benyújtásához a teljes UNI-kínálat minimum 1% -ának megfelelő küszöb szükséges"
 
 #: 
 #~ msgid "ADD LIQUIDITY"
@@ -235,9 +233,9 @@ msgstr "Adjon {0} a Metamask <0 /> elemhez"
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Adjunk hozzá {0} {1} és {2} {3}"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Add {0}-{1} liquidity"
-msgstr "Adjon hozzá {0}-{1} likviditást"
+#: 
+#~ msgid "Add {0}-{1} liquidity"
+#~ msgstr "Adjon hozzá {0}-{1} likviditást"
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
@@ -259,9 +257,9 @@ msgstr "Hozzáadva {0}"
 msgid "Adds"
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Against"
-msgstr "Ellen"
+#: 
+#~ msgid "Against"
+#~ msgstr "Ellen"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
@@ -486,11 +484,11 @@ msgstr "Nézze meg v3 LP áttekintési és átállási útmutatóinkat."
 msgid "Chinese Yuan"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/pages/Earn/Manage.tsx
-msgid "Claim"
-msgstr "Követelés"
+#: 
+#: 
+#: 
+#~ msgid "Claim"
+#~ msgstr "Követelés"
 
 #: 
 #: 
@@ -504,10 +502,10 @@ msgstr "Követelés"
 #~ msgid "Claim UNI Token"
 #~ msgstr "Igényelje az UNI tokent"
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Claim accumulated UNI rewards"
-msgstr "Felhalmozott UNI jutalmak követelése"
+#: 
+#: 
+#~ msgid "Claim accumulated UNI rewards"
+#~ msgstr "Felhalmozott UNI jutalmak követelése"
 
 #: 
 #~ msgid "Claim fees"
@@ -521,7 +519,6 @@ msgstr "Felhalmozott UNI jutalmak követelése"
 #~ msgid "Claimed"
 #~ msgstr "Azt állította"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "Azt állította, hogy UNI!"
@@ -535,7 +532,6 @@ msgstr "Azt állította, hogy UNI!"
 #~ msgid "Claiming UNI"
 #~ msgstr "Az UNI igénye"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claiming {0} UNI"
 msgstr "{0} UNI igénylése"
@@ -652,9 +648,9 @@ msgstr "Csatlakozzon egy pénztárcához, hogy megtalálja a medencéket"
 #~ msgid "Connect to a wallet to view your liquidity."
 #~ msgstr "Csatlakozzon egy pénztárcához a likviditás megtekintéséhez."
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Connect wallet"
-msgstr "Csatlakoztassa a pénztárcát"
+#: 
+#~ msgid "Connect wallet"
+#~ msgstr "Csatlakoztassa a pénztárcát"
 
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/ManageWalletListModal/index.tsx
@@ -727,9 +723,9 @@ msgstr ""
 msgid "Delegate Votes"
 msgstr "Küldött szavazatok"
 
-#: src/pages/Vote/index.tsx
-msgid "Delegated to:"
-msgstr "Delegálva:"
+#: 
+#~ msgid "Delegated to:"
+#~ msgstr "Delegálva:"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Delegating votes"
@@ -739,7 +735,6 @@ msgstr "A szavazatok delegálása"
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/pages/Dashboard/BuySection.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "Letét"
 
@@ -752,17 +747,17 @@ msgstr "Letét"
 msgid "Deposit Token To Nahmii"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Deposit UNI-V2 LP Tokens"
-msgstr "Betét UNI-V2 LP tokenek"
+#: 
+#~ msgid "Deposit UNI-V2 LP Tokens"
+#~ msgstr "Betét UNI-V2 LP tokenek"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposit liquidity"
 msgstr "Betéti likviditás"
 
-#: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr "Tegye le a Likviditási Szolgáltató tokenjeit, hogy megkapja az UNI-t, az Uniswap protokoll irányítási tokent."
+#: 
+#~ msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
+#~ msgstr "Tegye le a Likviditási Szolgáltató tokenjeit, hogy megkapja az UNI-t, az Uniswap protokoll irányítási tokent."
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -776,17 +771,17 @@ msgstr "{0} UNI-V2 letétbe helyezve"
 msgid "Depositing Liquidity"
 msgstr "Betéti likviditás"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Description"
-msgstr "Leírás"
+#: 
+#~ msgid "Description"
+#~ msgstr "Leírás"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Detailed"
 msgstr "Részletes"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Details"
-msgstr "Részletek"
+#: 
+#~ msgid "Details"
+#~ msgstr "Részletek"
 
 #: src/components/Settings/index.tsx
 msgid "Disable Multihops"
@@ -856,7 +851,6 @@ msgstr "Adjon meg érvényes csúszási százalékot"
 #~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
 #~ msgstr "Adjon meg egy címet az UNI igénylés kiváltásához. Ha a címnek van igényelhető UNI-je, elküldik nekik benyújtáskor."
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
@@ -940,9 +934,9 @@ msgstr ""
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "For"
-msgstr "Mert"
+#: 
+#~ msgid "For"
+#~ msgstr "Mert"
 
 #: 
 #~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
@@ -1314,10 +1308,10 @@ msgstr ""
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "Nem található V2 likviditás."
 
-#: src/pages/Earn/index.tsx
-#: src/pages/Earn/index.tsx
-msgid "No active pools"
-msgstr "Nincs aktív medence"
+#: 
+#: 
+#~ msgid "No active pools"
+#~ msgstr "Nincs aktív medence"
 
 #: 
 #~ msgid "No liquidity found."
@@ -1327,9 +1321,9 @@ msgstr "Nincs aktív medence"
 msgid "No pool found."
 msgstr "Nincs medence."
 
-#: src/pages/Vote/index.tsx
-msgid "No proposals found."
-msgstr "Nem található javaslat."
+#: 
+#~ msgid "No proposals found."
+#~ msgstr "Nem található javaslat."
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
@@ -1363,9 +1357,9 @@ msgstr "Tovább"
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Ha elégedett az árfolyamra, kattintson az áttekintésre."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
-msgstr "Csak azok az UNI-szavazatok jogosultak szavazni, amelyeket a {0} blokk előtt önállóan vagy más címre delegáltak."
+#: 
+#~ msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
+#~ msgstr "Csak azok az UNI-szavazatok jogosultak szavazni, amelyeket a {0} blokk előtt önállóan vagy más címre delegáltak."
 
 #: src/components/Web3ReactManager/index.tsx
 msgid "Oops! An unknown error occurred. Please refresh the page, or visit from another browser or device."
@@ -1410,9 +1404,9 @@ msgstr ""
 msgid "Pair Stats (Dummy data)"
 msgstr ""
 
-#: src/pages/Earn/index.tsx
-msgid "Participating pools"
-msgstr "Részt vevő medencék"
+#: 
+#~ msgid "Participating pools"
+#~ msgstr "Részt vevő medencék"
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "Payment Method"
@@ -1439,9 +1433,9 @@ msgstr "Medence"
 msgid "Pool Found!"
 msgstr "Medence megtalálva!"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Pool Rate"
-msgstr "Medence ár"
+#: 
+#~ msgid "Pool Rate"
+#~ msgstr "Medence ár"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Pool rate"
@@ -1509,17 +1503,17 @@ msgstr "Ár:"
 msgid "Prices and pool share"
 msgstr "Az árak és a medence részesedése"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals"
-msgstr "Javaslatok"
+#: 
+#~ msgid "Proposals"
+#~ msgstr "Javaslatok"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals submitted by community members will appear here."
-msgstr "A közösség tagjai által benyújtott javaslatok itt jelennek meg."
+#: 
+#~ msgid "Proposals submitted by community members will appear here."
+#~ msgstr "A közösség tagjai által benyújtott javaslatok itt jelennek meg."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Proposer"
-msgstr "Javaslattevő"
+#: 
+#~ msgid "Proposer"
+#~ msgstr "Javaslattevő"
 
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
@@ -1545,13 +1539,13 @@ msgstr ""
 msgid "Rates"
 msgstr "Árak"
 
-#: src/pages/Earn/index.tsx
-msgid "Read more about UNI"
-msgstr "További információ az UNI-ról"
+#: 
+#~ msgid "Read more about UNI"
+#~ msgstr "További információ az UNI-ról"
 
-#: src/pages/Vote/index.tsx
-msgid "Read more about Uniswap governance"
-msgstr "További információ az Uniswap irányításáról"
+#: 
+#~ msgid "Read more about Uniswap governance"
+#~ msgstr "További információ az Uniswap irányításáról"
 
 #: 
 #~ msgid "Read more about providing liquidity"
@@ -1683,9 +1677,9 @@ msgstr ""
 #~ msgid "Selected Range"
 #~ msgstr "Kiválasztott tartomány"
 
-#: src/pages/Vote/index.tsx
-msgid "Self"
-msgstr "Maga"
+#: 
+#~ msgid "Self"
+#~ msgstr "Maga"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
@@ -1742,9 +1736,9 @@ msgstr "Valami elromlott"
 msgid "South Korean Won"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Step 1. Get UNI-V2 Liquidity tokens"
-msgstr "1. lépés: Szerezzen be UNI-V2 likviditási tokeneket"
+#: 
+#~ msgid "Step 1. Get UNI-V2 Liquidity tokens"
+#~ msgstr "1. lépés: Szerezzen be UNI-V2 likviditási tokeneket"
 
 #: src/components/vote/VoteModal.tsx
 msgid "Submitting Vote"
@@ -1932,8 +1926,12 @@ msgstr ""
 msgid "Top Looser Pools"
 msgstr ""
 
+#: 
+#~ msgid "Top Loosers"
+#~ msgstr ""
+
 #: src/pages/Discover/index.tsx
-msgid "Top Loosers"
+msgid "Top Losers"
 msgstr ""
 
 #: src/components/Table/overview.tsx
@@ -1956,9 +1954,9 @@ msgstr ""
 msgid "Total deposited"
 msgstr "Betét összesen"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Total deposits"
-msgstr "Betétek összesen"
+#: 
+#~ msgid "Total deposits"
+#~ msgstr "Betétek összesen"
 
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
@@ -1969,7 +1967,6 @@ msgid "Transaction Settings"
 msgstr "Tranzakció beállításai"
 
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/components/vote/DelegateModal.tsx
@@ -2015,21 +2012,21 @@ msgstr "Kapcsolja be a Szakértő módot"
 #~ msgid "UNI price:"
 #~ msgstr "UNI ár:"
 
-#: src/pages/Vote/index.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr "Az UNI tokenek a szavazati jogokat képviselik az Uniswap irányításában. Az egyes javaslatokról saját maga szavazhat, vagy átruházhatja szavazatait harmadik félre."
+#: 
+#~ msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
+#~ msgstr "Az UNI tokenek a szavazati jogokat képviselik az Uniswap irányításában. Az egyes javaslatokról saját maga szavazhat, vagy átruházhatja szavazatait harmadik félre."
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
 msgstr "UNI {0}/{1} Leégett"
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
-msgstr "UNI-V2 LP tokenek szükségesek. Miután hozzáadta a likviditást a {0}-{1} készlethez, ezen az oldalon elhelyezheti likviditási zsetonjait."
+#: 
+#~ msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
+#~ msgstr "UNI-V2 LP tokenek szükségesek. Miután hozzáadta a likviditást a {0}-{1} készlethez, ezen az oldalon elhelyezheti likviditási zsetonjait."
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 {0}-{1}"
-msgstr "UNI-V2 {0}-{1}"
+#: 
+#~ msgid "UNI-V2 {0}-{1}"
+#~ msgstr "UNI-V2 {0}-{1}"
 
 #: 
 #~ msgid "US$"
@@ -2039,7 +2036,6 @@ msgstr "UNI-V2 {0}-{1}"
 msgid "USD"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Unclaimed UNI"
 msgstr "Nem igényelt UNI"
@@ -2052,9 +2048,9 @@ msgstr "Nem igényelt UNI"
 #~ msgid "Unclaimed:"
 #~ msgstr "Nem igényelt:"
 
-#: src/pages/Vote/index.tsx
-msgid "Uniswap Governance"
-msgstr "Irányítás visszavonása"
+#: 
+#~ msgid "Uniswap Governance"
+#~ msgstr "Irányítás visszavonása"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Uniswap V3 is here!"
@@ -2064,9 +2060,9 @@ msgstr "Itt van az Uniswap V3!"
 #~ msgid "Uniswap available in: <0>{0}</0>"
 #~ msgstr "A visszavonás itt érhető el: <0>{0}</0>"
 
-#: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
-msgstr "A likviditásbányászat feloldása"
+#: 
+#~ msgid "Uniswap liquidity mining"
+#~ msgstr "A likviditásbányászat feloldása"
 
 #: 
 #~ msgid "Uniswap migration contract↗"
@@ -2092,14 +2088,14 @@ msgstr ""
 #~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Ismeretlen hiba{0}. Próbáld meg növelni a csúszástűrést. Az átviteli és újrabázis-tokenek díja nem kompatibilis az Uniswap V3 verzióval."
 
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/index.tsx
-msgid "Unlock Votes"
-msgstr "Nyissa meg a szavazatokat"
+#: 
+#: 
+#~ msgid "Unlock Votes"
+#~ msgstr "Nyissa meg a szavazatokat"
 
-#: src/pages/Vote/index.tsx
-msgid "Unlock Voting"
-msgstr "Szavazás feloldása"
+#: 
+#~ msgid "Unlock Voting"
+#~ msgstr "Szavazás feloldása"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Unlocking Votes"
@@ -2118,9 +2114,9 @@ msgstr "Nem támogatott eszközök"
 msgid "Unwrap"
 msgstr "Kibont"
 
-#: src/pages/Vote/index.tsx
-msgid "Update Delegation"
-msgstr "Delegálás frissítése"
+#: 
+#~ msgid "Update Delegation"
+#~ msgstr "Delegálás frissítése"
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Update list"
@@ -2190,13 +2186,13 @@ msgstr ""
 #~ msgid "Vote"
 #~ msgstr "Szavazás"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote Against"
-msgstr "Szavazás ellen"
+#: 
+#~ msgid "Vote Against"
+#~ msgstr "Szavazás ellen"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote For"
-msgstr "Szavaz rá"
+#: 
+#~ msgid "Vote For"
+#~ msgstr "Szavaz rá"
 
 #: src/components/vote/VoteModal.tsx
 #: src/components/vote/VoteModal.tsx
@@ -2208,13 +2204,13 @@ msgstr "Szavazás a {proposalId}"
 msgid "Vote for proposal {proposalId}"
 msgstr "Szavazás a {proposalId}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ended {0}"
-msgstr "A szavazás {0}"
+#: 
+#~ msgid "Voting ended {0}"
+#~ msgstr "A szavazás {0}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ends approximately {0}"
-msgstr "A szavazás körülbelül {0}"
+#: 
+#~ msgid "Voting ends approximately {0}"
+#~ msgstr "A szavazás körülbelül {0}"
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "WITHDRAW"
@@ -2245,20 +2241,19 @@ msgstr "Heti jutalmak"
 #~ msgid "Welcome to team Unicorn :)"
 #~ msgstr "Üdvözöljük az Unicorn csapatban :)"
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "When you claim without withdrawing your liquidity remains in the mining pool."
-msgstr "Ha visszavonás nélkül igényel, a likviditása a bányászati készletben marad."
+#: 
+#~ msgid "When you claim without withdrawing your liquidity remains in the mining pool."
+#~ msgstr "Ha visszavonás nélkül igényel, a likviditása a bányászati készletben marad."
 
-#: src/pages/Earn/Manage.tsx
-msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
-msgstr "Amikor visszalép, a szerződés automatikusan az UNI-t követeli meg az Ön nevében!"
+#: 
+#~ msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
+#~ msgstr "Amikor visszalép, a szerződés automatikusan az UNI-t követeli meg az Ön nevében!"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "When you withdraw, your UNI is claimed and your liquidity is removed from the mining pool."
 msgstr "Amikor kilép, az UNI-t igényli, és likviditását eltávolítja a bányászati készletből."
 
 #: src/components/earn/UnstakingModal.tsx
-#: src/pages/Earn/Manage.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Visszavonás"
@@ -2355,9 +2350,9 @@ msgstr "Kapni fogsz"
 #~ msgid "Your liquidity"
 #~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your liquidity deposits"
-msgstr "Likviditási betétei"
+#: 
+#~ msgid "Your liquidity deposits"
+#~ msgstr "Likviditási betétei"
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
@@ -2430,9 +2425,9 @@ msgstr "Tranzakciója visszaáll, ha az ár ennél a százaléknál kedvezőtlen
 #~ msgid "Your transactions will appear here..."
 #~ msgstr "A tranzakcióid itt jelennek meg ..."
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your unclaimed UNI"
-msgstr "Nem igényelt UNI"
+#: 
+#~ msgid "Your unclaimed UNI"
+#~ msgstr "Nem igényelt UNI"
 
 #: src/components/Settings/index.tsx
 msgid "confirm"
@@ -2478,8 +2473,6 @@ msgid "{0}"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/VotePage.tsx
 msgid "{0} %"
 msgstr "{0} %"
 
@@ -2527,8 +2520,6 @@ msgstr "{0} függőben van"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "{0} UNI / week"
 msgstr "{0} UNI / hét"
 
@@ -2536,9 +2527,9 @@ msgstr "{0} UNI / hét"
 msgid "{0} UNI-V2"
 msgstr "{0} UNI-V2"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0} UNI-V2 LP tokens available"
-msgstr "{0} UNI-V2 LP token érhető el"
+#: 
+#~ msgid "{0} UNI-V2 LP tokens available"
+#~ msgstr "{0} UNI-V2 LP token érhető el"
 
 #: src/components/vote/VoteModal.tsx
 msgid "{0} Votes"
@@ -2582,9 +2573,9 @@ msgstr "{0} • Felhasználó hozzáadta"
 msgid "{0}%"
 msgstr "{0}%"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0}-{1} Liquidity Mining"
-msgstr "{0}-{1} Likviditásbányászat"
+#: 
+#~ msgid "{0}-{1} Liquidity Mining"
+#~ msgstr "{0}-{1} Likviditásbányászat"
 
 #: 
 #~ msgid "{0}/{1} LP NFT"

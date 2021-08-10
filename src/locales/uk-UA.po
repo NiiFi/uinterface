@@ -43,9 +43,9 @@ msgstr "(Максимум)"
 #~ msgid "(clear all)"
 #~ msgstr "(очистити все)"
 
-#: src/pages/Vote/index.tsx
-msgid "(edit)"
-msgstr "(редагувати)"
+#: 
+#~ msgid "(edit)"
+#~ msgstr "(редагувати)"
 
 #: 
 #~ msgid "+{feeAmountFormatted}%"
@@ -61,8 +61,6 @@ msgstr "- Видалити відправку"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI / тиждень"
 
@@ -125,14 +123,14 @@ msgstr ""
 #~ msgid "75%"
 #~ msgstr "75%"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0/> All Proposals"
-msgstr "<0/> Всі пропозиції"
+#: 
+#~ msgid "<0/> All Proposals"
+#~ msgstr "<0/> Всі пропозиції"
 
-#: src/pages/Vote/index.tsx
-#: src/pages/Vote/index.tsx
-msgid "<0/> Votes"
-msgstr "<0/> Голосів"
+#: 
+#: 
+#~ msgid "<0/> Votes"
+#~ msgstr "<0/> Голосів"
 
 #: 
 #~ msgid "<0> ↗ </0>"
@@ -162,17 +160,17 @@ msgstr ""
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Порада:</0> При додаванні рідини, ви отримаєте токени пулу, що представляє вашу позицію. Ці токени автоматично заробляють плату пропорційно вашій вкладці басейну, і можуть бути викуплені в будь-який час."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0>Unlock voting</0> to prepare for the next proposal."
-msgstr "<0>Розблокуйте голос</0> для підготовки до наступної пропозиції."
+#: 
+#~ msgid "<0>Unlock voting</0> to prepare for the next proposal."
+#~ msgstr "<0>Розблокуйте голос</0> для підготовки до наступної пропозиції."
 
 #: 
 #~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
 #~ msgstr "<0>🎉 </0>Вітаємо в Unicorn команди :) <1>🎉</1>"
 
-#: src/pages/Vote/index.tsx
-msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
-msgstr "Мінімальна межа у 1% від загальної пропозиції UNI потрібна для пропозиції"
+#: 
+#~ msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
+#~ msgstr "Мінімальна межа у 1% від загальної пропозиції UNI потрібна для пропозиції"
 
 #: 
 #~ msgid "ADD LIQUIDITY"
@@ -235,9 +233,9 @@ msgstr "Додати {0} до Metamask <0/>"
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Додати {0} {1} і {2} {3}"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Add {0}-{1} liquidity"
-msgstr "Додати {0}-{1} ліквідність"
+#: 
+#~ msgid "Add {0}-{1} liquidity"
+#~ msgstr "Додати {0}-{1} ліквідність"
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
@@ -259,9 +257,9 @@ msgstr "Додано {0}"
 msgid "Adds"
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Against"
-msgstr "Проти"
+#: 
+#~ msgid "Against"
+#~ msgstr "Проти"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
@@ -486,11 +484,11 @@ msgstr "Ознайомтеся з нашим прогулянком v3 LP та �
 msgid "Chinese Yuan"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/pages/Earn/Manage.tsx
-msgid "Claim"
-msgstr "Claim"
+#: 
+#: 
+#: 
+#~ msgid "Claim"
+#~ msgstr "Claim"
 
 #: 
 #: 
@@ -504,10 +502,10 @@ msgstr "Claim"
 #~ msgid "Claim UNI Token"
 #~ msgstr "Claim UNI Token"
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Claim accumulated UNI rewards"
-msgstr "Забрати накопичені винагороди ЮНІ"
+#: 
+#: 
+#~ msgid "Claim accumulated UNI rewards"
+#~ msgstr "Забрати накопичені винагороди ЮНІ"
 
 #: 
 #~ msgid "Claim fees"
@@ -521,7 +519,6 @@ msgstr "Забрати накопичені винагороди ЮНІ"
 #~ msgid "Claimed"
 #~ msgstr "Задоволений"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "Твердили ЮНІ!"
@@ -535,7 +532,6 @@ msgstr "Твердили ЮНІ!"
 #~ msgid "Claiming UNI"
 #~ msgstr "Захоплення ЮНІ"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claiming {0} UNI"
 msgstr "Захоплення {0} UNI"
@@ -652,9 +648,9 @@ msgstr "Під'єднайтеся до гаманця для пошуку бас
 #~ msgid "Connect to a wallet to view your liquidity."
 #~ msgstr "Підключіться до гаманця для перегляду вашої ліквідності."
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Connect wallet"
-msgstr "Підключіть гаманець"
+#: 
+#~ msgid "Connect wallet"
+#~ msgstr "Підключіть гаманець"
 
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/ManageWalletListModal/index.tsx
@@ -727,9 +723,9 @@ msgstr ""
 msgid "Delegate Votes"
 msgstr "Делегувати голосування"
 
-#: src/pages/Vote/index.tsx
-msgid "Delegated to:"
-msgstr "Делеговані до:"
+#: 
+#~ msgid "Delegated to:"
+#~ msgstr "Делеговані до:"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Delegating votes"
@@ -739,7 +735,6 @@ msgstr "Делегуючі голоси"
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/pages/Dashboard/BuySection.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "Поповнити"
 
@@ -752,17 +747,17 @@ msgstr "Поповнити"
 msgid "Deposit Token To Nahmii"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Deposit UNI-V2 LP Tokens"
-msgstr "Токени для поповнення на UNI-V2"
+#: 
+#~ msgid "Deposit UNI-V2 LP Tokens"
+#~ msgstr "Токени для поповнення на UNI-V2"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposit liquidity"
 msgstr "Вторинна ліквідність"
 
-#: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr "Вкладіть свої токени ліквідації щоб отримати UNI, токен управління Uniswap протоколом."
+#: 
+#~ msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
+#~ msgstr "Вкладіть свої токени ліквідації щоб отримати UNI, токен управління Uniswap протоколом."
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -776,17 +771,17 @@ msgstr "Зараховано {0} UNI-V2"
 msgid "Depositing Liquidity"
 msgstr "Зарахування ліквідності"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Description"
-msgstr "Опис"
+#: 
+#~ msgid "Description"
+#~ msgstr "Опис"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Detailed"
 msgstr "Докладно"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Details"
-msgstr "Подробиці"
+#: 
+#~ msgid "Details"
+#~ msgstr "Подробиці"
 
 #: src/components/Settings/index.tsx
 msgid "Disable Multihops"
@@ -856,7 +851,6 @@ msgstr "Введіть дійсний відсоток диспуту"
 #~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
 #~ msgstr "Введіть адресу для запуску запиту «UNI». Якщо у адреси є будь-яка особиста адреса UNI, вона буде відправлена до них з питань сабміту."
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
@@ -940,9 +934,9 @@ msgstr ""
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "For"
-msgstr "Для"
+#: 
+#~ msgid "For"
+#~ msgstr "Для"
 
 #: 
 #~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
@@ -1314,10 +1308,10 @@ msgstr ""
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "Не знайдено ліквідності V2."
 
-#: src/pages/Earn/index.tsx
-#: src/pages/Earn/index.tsx
-msgid "No active pools"
-msgstr "Немає активних басейнів"
+#: 
+#: 
+#~ msgid "No active pools"
+#~ msgstr "Немає активних басейнів"
 
 #: 
 #~ msgid "No liquidity found."
@@ -1327,9 +1321,9 @@ msgstr "Немає активних басейнів"
 msgid "No pool found."
 msgstr "Пул не знайдено."
 
-#: src/pages/Vote/index.tsx
-msgid "No proposals found."
-msgstr "Пропозиції не знайдено."
+#: 
+#~ msgid "No proposals found."
+#~ msgstr "Пропозиції не знайдено."
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
@@ -1363,9 +1357,9 @@ msgstr "Увімкнено"
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Як тільки ви будете задоволені швидким натисканням на пропозицію, щоб переглянути."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
-msgstr "Голоси ЮНІ, які були делеговані або делеговані на іншу адресу перед блокуванням {0} мають право голосувати."
+#: 
+#~ msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
+#~ msgstr "Голоси ЮНІ, які були делеговані або делеговані на іншу адресу перед блокуванням {0} мають право голосувати."
 
 #: src/components/Web3ReactManager/index.tsx
 msgid "Oops! An unknown error occurred. Please refresh the page, or visit from another browser or device."
@@ -1410,9 +1404,9 @@ msgstr ""
 msgid "Pair Stats (Dummy data)"
 msgstr ""
 
-#: src/pages/Earn/index.tsx
-msgid "Participating pools"
-msgstr "Брати участь у басейнах"
+#: 
+#~ msgid "Participating pools"
+#~ msgstr "Брати участь у басейнах"
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "Payment Method"
@@ -1439,9 +1433,9 @@ msgstr "Пул"
 msgid "Pool Found!"
 msgstr "Знайдена пул!"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Pool Rate"
-msgstr "Швидкість пула"
+#: 
+#~ msgid "Pool Rate"
+#~ msgstr "Швидкість пула"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Pool rate"
@@ -1509,17 +1503,17 @@ msgstr "Ціна:"
 msgid "Prices and pool share"
 msgstr "Ціни і акції пулу"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals"
-msgstr "Пропозиції"
+#: 
+#~ msgid "Proposals"
+#~ msgstr "Пропозиції"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals submitted by community members will appear here."
-msgstr "Пропозиції, представлені членами спільноти, з'являться тут."
+#: 
+#~ msgid "Proposals submitted by community members will appear here."
+#~ msgstr "Пропозиції, представлені членами спільноти, з'являться тут."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Proposer"
-msgstr "Пропозиція"
+#: 
+#~ msgid "Proposer"
+#~ msgstr "Пропозиція"
 
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
@@ -1545,13 +1539,13 @@ msgstr ""
 msgid "Rates"
 msgstr "Курсы"
 
-#: src/pages/Earn/index.tsx
-msgid "Read more about UNI"
-msgstr "Детальніше про UNI"
+#: 
+#~ msgid "Read more about UNI"
+#~ msgstr "Детальніше про UNI"
 
-#: src/pages/Vote/index.tsx
-msgid "Read more about Uniswap governance"
-msgstr "Прочитайте більше про управління Uniswap"
+#: 
+#~ msgid "Read more about Uniswap governance"
+#~ msgstr "Прочитайте більше про управління Uniswap"
 
 #: 
 #~ msgid "Read more about providing liquidity"
@@ -1683,9 +1677,9 @@ msgstr ""
 #~ msgid "Selected Range"
 #~ msgstr "Обраний діапазон"
 
-#: src/pages/Vote/index.tsx
-msgid "Self"
-msgstr "Я сам"
+#: 
+#~ msgid "Self"
+#~ msgstr "Я сам"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
@@ -1742,9 +1736,9 @@ msgstr "Щось пішло не так"
 msgid "South Korean Won"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Step 1. Get UNI-V2 Liquidity tokens"
-msgstr "Крок 1. Отримати токени ліквідності UNI-V2"
+#: 
+#~ msgid "Step 1. Get UNI-V2 Liquidity tokens"
+#~ msgstr "Крок 1. Отримати токени ліквідності UNI-V2"
 
 #: src/components/vote/VoteModal.tsx
 msgid "Submitting Vote"
@@ -1932,8 +1926,12 @@ msgstr ""
 msgid "Top Looser Pools"
 msgstr ""
 
+#: 
+#~ msgid "Top Loosers"
+#~ msgstr ""
+
 #: src/pages/Discover/index.tsx
-msgid "Top Loosers"
+msgid "Top Losers"
 msgstr ""
 
 #: src/components/Table/overview.tsx
@@ -1956,9 +1954,9 @@ msgstr ""
 msgid "Total deposited"
 msgstr "Всього нараховано"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Total deposits"
-msgstr "Всього депозитів"
+#: 
+#~ msgid "Total deposits"
+#~ msgstr "Всього депозитів"
 
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
@@ -1969,7 +1967,6 @@ msgid "Transaction Settings"
 msgstr "Параметри транзакції"
 
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/components/vote/DelegateModal.tsx
@@ -2015,21 +2012,21 @@ msgstr "Увімкнути Експертний режим"
 #~ msgid "UNI price:"
 #~ msgstr "Ціна UNI:"
 
-#: src/pages/Vote/index.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr "Знаки UNI представляють акції голосування в управлінні Uniswap адміністрації. Ви можете голосувати за кожну пропозицію самостійно або делегувати ваші голоси третім особам."
+#: 
+#~ msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
+#~ msgstr "Знаки UNI представляють акції голосування в управлінні Uniswap адміністрації. Ви можете голосувати за кожну пропозицію самостійно або делегувати ваші голоси третім особам."
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
 msgstr "UNI {0}/{1} Спалено"
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
-msgstr "Необхідні PRO-токени UNI-V2. Після того, як ви додали ліквідність до {0}- бал{1} ви можете поставити на цій сторінці маркери ліквідності."
+#: 
+#~ msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
+#~ msgstr "Необхідні PRO-токени UNI-V2. Після того, як ви додали ліквідність до {0}- бал{1} ви можете поставити на цій сторінці маркери ліквідності."
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 {0}-{1}"
-msgstr "UNI-V2 {0}-{1}"
+#: 
+#~ msgid "UNI-V2 {0}-{1}"
+#~ msgstr "UNI-V2 {0}-{1}"
 
 #: 
 #~ msgid "US$"
@@ -2039,7 +2036,6 @@ msgstr "UNI-V2 {0}-{1}"
 msgid "USD"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Unclaimed UNI"
 msgstr "Не отримана UNI"
@@ -2052,9 +2048,9 @@ msgstr "Не отримана UNI"
 #~ msgid "Unclaimed:"
 #~ msgstr "Невирішено:"
 
-#: src/pages/Vote/index.tsx
-msgid "Uniswap Governance"
-msgstr "Об’єднати управління"
+#: 
+#~ msgid "Uniswap Governance"
+#~ msgstr "Об’єднати управління"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Uniswap V3 is here!"
@@ -2064,9 +2060,9 @@ msgstr "Uniswap V3 тут!"
 #~ msgid "Uniswap available in: <0>{0}</0>"
 #~ msgstr "Відміна доступна за: <0>{0}</0>"
 
-#: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
-msgstr "Обміняти видобуток ліквідності"
+#: 
+#~ msgid "Uniswap liquidity mining"
+#~ msgstr "Обміняти видобуток ліквідності"
 
 #: 
 #~ msgid "Uniswap migration contract↗"
@@ -2092,14 +2088,14 @@ msgstr ""
 #~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Невідома помилка{0}. Спробуйте збільшити свою толерантність до ковзання. Зверніть увагу, плата за перенесення та перебазування токенів несумісна з Uniswap V3."
 
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/index.tsx
-msgid "Unlock Votes"
-msgstr "Розблокувати голосування"
+#: 
+#: 
+#~ msgid "Unlock Votes"
+#~ msgstr "Розблокувати голосування"
 
-#: src/pages/Vote/index.tsx
-msgid "Unlock Voting"
-msgstr "Відкрити голосування"
+#: 
+#~ msgid "Unlock Voting"
+#~ msgstr "Відкрити голосування"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Unlocking Votes"
@@ -2118,9 +2114,9 @@ msgstr "Непідтримувані активи"
 msgid "Unwrap"
 msgstr "Unwrap"
 
-#: src/pages/Vote/index.tsx
-msgid "Update Delegation"
-msgstr "Оновити делегацію"
+#: 
+#~ msgid "Update Delegation"
+#~ msgstr "Оновити делегацію"
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Update list"
@@ -2190,13 +2186,13 @@ msgstr ""
 #~ msgid "Vote"
 #~ msgstr "Голосувати"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote Against"
-msgstr "Проголосувати проти"
+#: 
+#~ msgid "Vote Against"
+#~ msgstr "Проголосувати проти"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote For"
-msgstr "Голосувати за"
+#: 
+#~ msgid "Vote For"
+#~ msgstr "Голосувати за"
 
 #: src/components/vote/VoteModal.tsx
 #: src/components/vote/VoteModal.tsx
@@ -2208,13 +2204,13 @@ msgstr "Голосувати проти пропозиції {proposalId}"
 msgid "Vote for proposal {proposalId}"
 msgstr "Голосувати за пропозицію {proposalId}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ended {0}"
-msgstr "Голосування закінчилось {0}"
+#: 
+#~ msgid "Voting ended {0}"
+#~ msgstr "Голосування закінчилось {0}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ends approximately {0}"
-msgstr "Голосування закінчується приблизно {0}"
+#: 
+#~ msgid "Voting ends approximately {0}"
+#~ msgstr "Голосування закінчується приблизно {0}"
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "WITHDRAW"
@@ -2245,20 +2241,19 @@ msgstr "Щотижневі Нагороди"
 #~ msgid "Welcome to team Unicorn :)"
 #~ msgstr "Ласкаво просимо до командного Unicorn :)"
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "When you claim without withdrawing your liquidity remains in the mining pool."
-msgstr "Коли ви заявляєте без виведення вашої ліквідності залишається в пулі для видобування."
+#: 
+#~ msgid "When you claim without withdrawing your liquidity remains in the mining pool."
+#~ msgstr "Коли ви заявляєте без виведення вашої ліквідності залишається в пулі для видобування."
 
-#: src/pages/Earn/Manage.tsx
-msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
-msgstr "Коли Ви знімаєте, контракт автоматично вимагатиме повернення ООН від вашого імені!"
+#: 
+#~ msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
+#~ msgstr "Коли Ви знімаєте, контракт автоматично вимагатиме повернення ООН від вашого імені!"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "When you withdraw, your UNI is claimed and your liquidity is removed from the mining pool."
 msgstr "Коли ви знімаєте, ваш UNI заявляє, і ваша ліквідність видалена в пулі для видобування."
 
 #: src/components/earn/UnstakingModal.tsx
-#: src/pages/Earn/Manage.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Зняття коштів"
@@ -2355,9 +2350,9 @@ msgstr "Ви отримаєте"
 #~ msgid "Your liquidity"
 #~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your liquidity deposits"
-msgstr "Ваші депозити ліквідності"
+#: 
+#~ msgid "Your liquidity deposits"
+#~ msgstr "Ваші депозити ліквідності"
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
@@ -2430,9 +2425,9 @@ msgstr "Вашу транзакцію буде повернуто, якщо ця
 #~ msgid "Your transactions will appear here..."
 #~ msgstr "Ваші транзакції будуть відображені тут..."
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your unclaimed UNI"
-msgstr "Ваша неотримана UNI"
+#: 
+#~ msgid "Your unclaimed UNI"
+#~ msgstr "Ваша неотримана UNI"
 
 #: src/components/Settings/index.tsx
 msgid "confirm"
@@ -2478,8 +2473,6 @@ msgid "{0}"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/VotePage.tsx
 msgid "{0} %"
 msgstr "{0} %"
 
@@ -2527,8 +2520,6 @@ msgstr "{0} Pending"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "{0} UNI / week"
 msgstr "{0} ООН/тиждень"
 
@@ -2536,9 +2527,9 @@ msgstr "{0} ООН/тиждень"
 msgid "{0} UNI-V2"
 msgstr "{0} UNI-V2"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0} UNI-V2 LP tokens available"
-msgstr "{0} доступні UNI-V2 LP токени"
+#: 
+#~ msgid "{0} UNI-V2 LP tokens available"
+#~ msgstr "{0} доступні UNI-V2 LP токени"
 
 #: src/components/vote/VoteModal.tsx
 msgid "{0} Votes"
@@ -2582,9 +2573,9 @@ msgstr "{0} • Додано користувачем"
 msgid "{0}%"
 msgstr "{0}%"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0}-{1} Liquidity Mining"
-msgstr "{0}-{1} Видобуток ліквідності"
+#: 
+#~ msgid "{0}-{1} Liquidity Mining"
+#~ msgstr "{0}-{1} Видобуток ліквідності"
 
 #: 
 #~ msgid "{0}/{1} LP NFT"

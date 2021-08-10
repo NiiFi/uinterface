@@ -43,9 +43,9 @@ msgstr "(Μέγιστο)"
 #~ msgid "(clear all)"
 #~ msgstr "(καθαρισμός όλων)"
 
-#: src/pages/Vote/index.tsx
-msgid "(edit)"
-msgstr "(επεξεργασία)"
+#: 
+#~ msgid "(edit)"
+#~ msgstr "(επεξεργασία)"
 
 #: 
 #~ msgid "+{feeAmountFormatted}%"
@@ -61,8 +61,6 @@ msgstr "- Αφαίρεση αποστολής"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI / εβδομάδα"
 
@@ -125,14 +123,14 @@ msgstr ""
 #~ msgid "75%"
 #~ msgstr "75%"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0/> All Proposals"
-msgstr "<0/> Όλες Οι Προτάσεις"
+#: 
+#~ msgid "<0/> All Proposals"
+#~ msgstr "<0/> Όλες Οι Προτάσεις"
 
-#: src/pages/Vote/index.tsx
-#: src/pages/Vote/index.tsx
-msgid "<0/> Votes"
-msgstr "<0/> Ψηφοφορίες"
+#: 
+#: 
+#~ msgid "<0/> Votes"
+#~ msgstr "<0/> Ψηφοφορίες"
 
 #: 
 #~ msgid "<0> ↗ </0>"
@@ -162,17 +160,17 @@ msgstr ""
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Συμβουλή:</0> Όταν προσθέσετε ρευστότητα, θα λάβετε tokens πισίνας που αντιπροσωπεύουν τη θέση σας. Αυτές οι μάρκες κερδίζουν αυτόματα τέλη ανάλογα με το μερίδιό σας στην πισίνα, και μπορούν να εξαργυρωθούν ανά πάσα στιγμή."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0>Unlock voting</0> to prepare for the next proposal."
-msgstr "<0>Ξεκλειδώστε ψήφου</0> για να προετοιμαστείτε για την επόμενη πρόταση."
+#: 
+#~ msgid "<0>Unlock voting</0> to prepare for the next proposal."
+#~ msgstr "<0>Ξεκλειδώστε ψήφου</0> για να προετοιμαστείτε για την επόμενη πρόταση."
 
 #: 
 #~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
 #~ msgstr "<0>🎉 </0>Καλώς ήρθατε στην ομάδα Unicorn :) <1>🎉</1>"
 
-#: src/pages/Vote/index.tsx
-msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
-msgstr "Απαιτείται ελάχιστο όριο 1% της συνολικής προσφοράς του Ο\"Ε για την υποβολή προτάσεων"
+#: 
+#~ msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
+#~ msgstr "Απαιτείται ελάχιστο όριο 1% της συνολικής προσφοράς του Ο\"Ε για την υποβολή προτάσεων"
 
 #: 
 #~ msgid "ADD LIQUIDITY"
@@ -235,9 +233,9 @@ msgstr "Προσθήκη {0} στο Metamask <0/>"
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Προσθήκη {0} {1} και {2} {3}"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Add {0}-{1} liquidity"
-msgstr "Προσθήκη {0}-{1} ρευστότητας"
+#: 
+#~ msgid "Add {0}-{1} liquidity"
+#~ msgstr "Προσθήκη {0}-{1} ρευστότητας"
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
@@ -259,9 +257,9 @@ msgstr "Προστέθηκε {0}"
 msgid "Adds"
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Against"
-msgstr "Εναντίον"
+#: 
+#~ msgid "Against"
+#~ msgstr "Εναντίον"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
@@ -486,11 +484,11 @@ msgstr "Ελέγξτε μας v3 LP διάβαση και τους οδηγού�
 msgid "Chinese Yuan"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/pages/Earn/Manage.tsx
-msgid "Claim"
-msgstr "Claim"
+#: 
+#: 
+#: 
+#~ msgid "Claim"
+#~ msgstr "Claim"
 
 #: 
 #: 
@@ -504,10 +502,10 @@ msgstr "Claim"
 #~ msgid "Claim UNI Token"
 #~ msgstr "Claim UNI Token"
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Claim accumulated UNI rewards"
-msgstr "Ισχυρισμός των συσσωρευμένων ανταμοιβών UNI"
+#: 
+#: 
+#~ msgid "Claim accumulated UNI rewards"
+#~ msgstr "Ισχυρισμός των συσσωρευμένων ανταμοιβών UNI"
 
 #: 
 #~ msgid "Claim fees"
@@ -521,7 +519,6 @@ msgstr "Ισχυρισμός των συσσωρευμένων ανταμοιβ�
 #~ msgid "Claimed"
 #~ msgstr "Διεκδικείται"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "Ισχυρίστηκε UNI!"
@@ -535,7 +532,6 @@ msgstr "Ισχυρίστηκε UNI!"
 #~ msgid "Claiming UNI"
 #~ msgstr "Διεκδικώντας Το UNI"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claiming {0} UNI"
 msgstr "Διεκδικώντας {0} UNI"
@@ -652,9 +648,9 @@ msgstr "Συνδεθείτε σε ένα πορτοφόλι για να βρεί
 #~ msgid "Connect to a wallet to view your liquidity."
 #~ msgstr "Συνδεθείτε σε ένα πορτοφόλι για να δείτε την ρευστότητά σας."
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Connect wallet"
-msgstr "Σύνδεση πορτοφολιού"
+#: 
+#~ msgid "Connect wallet"
+#~ msgstr "Σύνδεση πορτοφολιού"
 
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/ManageWalletListModal/index.tsx
@@ -727,9 +723,9 @@ msgstr ""
 msgid "Delegate Votes"
 msgstr "Αντιπροσωπευτικές Ψηφοφορίες"
 
-#: src/pages/Vote/index.tsx
-msgid "Delegated to:"
-msgstr "Ανατέθηκε σε:"
+#: 
+#~ msgid "Delegated to:"
+#~ msgstr "Ανατέθηκε σε:"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Delegating votes"
@@ -739,7 +735,6 @@ msgstr "Εκχώρηση ψήφων"
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/pages/Dashboard/BuySection.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "Κατάθεση"
 
@@ -752,17 +747,17 @@ msgstr "Κατάθεση"
 msgid "Deposit Token To Nahmii"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Deposit UNI-V2 LP Tokens"
-msgstr "Κατάθεση Κωδικών UNI-V2 LP"
+#: 
+#~ msgid "Deposit UNI-V2 LP Tokens"
+#~ msgstr "Κατάθεση Κωδικών UNI-V2 LP"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposit liquidity"
 msgstr "Πληρωμή καταθέσεων"
 
-#: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr "Καταθέστε τα διακριτικά του παρόχου ρευστότητας για να λάβετε UNI, το διακριτικό διακυβέρνησης πρωτοκόλλου Uniswap."
+#: 
+#~ msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
+#~ msgstr "Καταθέστε τα διακριτικά του παρόχου ρευστότητας για να λάβετε UNI, το διακριτικό διακυβέρνησης πρωτοκόλλου Uniswap."
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -776,17 +771,17 @@ msgstr "Κατατέθηκε {0} UNI-V2"
 msgid "Depositing Liquidity"
 msgstr "Κατάθεση Ρευστότητας"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Description"
-msgstr "Περιγραφή"
+#: 
+#~ msgid "Description"
+#~ msgstr "Περιγραφή"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Detailed"
 msgstr "Λεπτομερής"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Details"
-msgstr "Λεπτομέρειες"
+#: 
+#~ msgid "Details"
+#~ msgstr "Λεπτομέρειες"
 
 #: src/components/Settings/index.tsx
 msgid "Disable Multihops"
@@ -856,7 +851,6 @@ msgstr "Εισάγετε ένα έγκυρο ποσοστό ολίσθησης"
 #~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
 #~ msgstr "Εισάγετε μια διεύθυνση για να προκαλέσετε μια αξίωση UNI. Εάν η διεύθυνση έχει οποιοδήποτε Δεικτό UNI θα αποσταλεί σε αυτούς κατά την υποβολή τους."
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
@@ -940,9 +934,9 @@ msgstr ""
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "For"
-msgstr "Για"
+#: 
+#~ msgid "For"
+#~ msgstr "Για"
 
 #: 
 #~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
@@ -1314,10 +1308,10 @@ msgstr ""
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "Δεν βρέθηκε ρευστότητα V2."
 
-#: src/pages/Earn/index.tsx
-#: src/pages/Earn/index.tsx
-msgid "No active pools"
-msgstr "Δεν υπάρχουν ενεργές πισίνες"
+#: 
+#: 
+#~ msgid "No active pools"
+#~ msgstr "Δεν υπάρχουν ενεργές πισίνες"
 
 #: 
 #~ msgid "No liquidity found."
@@ -1327,9 +1321,9 @@ msgstr "Δεν υπάρχουν ενεργές πισίνες"
 msgid "No pool found."
 msgstr "Δεν βρέθηκε πισίνα."
 
-#: src/pages/Vote/index.tsx
-msgid "No proposals found."
-msgstr "Δεν βρέθηκαν προτάσεις."
+#: 
+#~ msgid "No proposals found."
+#~ msgstr "Δεν βρέθηκαν προτάσεις."
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
@@ -1363,9 +1357,9 @@ msgstr "Επί"
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Μόλις είστε ευχαριστημένοι με το ποσοστό κάντε κλικ προμήθεια για να επανεξετάσετε."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
-msgstr "Μόνο οι ψήφοι των \"νωμένων Εθνών που ήταν αυτομεταβιβάσιμες ή μεταβιβάστηκαν σε άλλη διεύθυνση πριν το μπλοκ {0} είναι επιλέξιμες για ψηφοφορία."
+#: 
+#~ msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
+#~ msgstr "Μόνο οι ψήφοι των \"νωμένων Εθνών που ήταν αυτομεταβιβάσιμες ή μεταβιβάστηκαν σε άλλη διεύθυνση πριν το μπλοκ {0} είναι επιλέξιμες για ψηφοφορία."
 
 #: src/components/Web3ReactManager/index.tsx
 msgid "Oops! An unknown error occurred. Please refresh the page, or visit from another browser or device."
@@ -1410,9 +1404,9 @@ msgstr ""
 msgid "Pair Stats (Dummy data)"
 msgstr ""
 
-#: src/pages/Earn/index.tsx
-msgid "Participating pools"
-msgstr "Συμμετέχουσες πισίνες"
+#: 
+#~ msgid "Participating pools"
+#~ msgstr "Συμμετέχουσες πισίνες"
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "Payment Method"
@@ -1439,9 +1433,9 @@ msgstr "Πισίνα"
 msgid "Pool Found!"
 msgstr "Pool Found!"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Pool Rate"
-msgstr "Ρυθμός Συγκέντρωσης"
+#: 
+#~ msgid "Pool Rate"
+#~ msgstr "Ρυθμός Συγκέντρωσης"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Pool rate"
@@ -1509,17 +1503,17 @@ msgstr "Τιμή:"
 msgid "Prices and pool share"
 msgstr "Τιμές και μερίδιο πισίνας"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals"
-msgstr "Προτάσεις"
+#: 
+#~ msgid "Proposals"
+#~ msgstr "Προτάσεις"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals submitted by community members will appear here."
-msgstr "Προτάσεις που υποβάλλονται από τα μέλη της κοινότητας θα εμφανίζονται εδώ."
+#: 
+#~ msgid "Proposals submitted by community members will appear here."
+#~ msgstr "Προτάσεις που υποβάλλονται από τα μέλη της κοινότητας θα εμφανίζονται εδώ."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Proposer"
-msgstr "Προθέτης"
+#: 
+#~ msgid "Proposer"
+#~ msgstr "Προθέτης"
 
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
@@ -1545,13 +1539,13 @@ msgstr ""
 msgid "Rates"
 msgstr "Συντελεστές"
 
-#: src/pages/Earn/index.tsx
-msgid "Read more about UNI"
-msgstr "Διαβάστε περισσότερα για UNI"
+#: 
+#~ msgid "Read more about UNI"
+#~ msgstr "Διαβάστε περισσότερα για UNI"
 
-#: src/pages/Vote/index.tsx
-msgid "Read more about Uniswap governance"
-msgstr "Διαβάστε περισσότερα για τη διακυβέρνηση Uniswap"
+#: 
+#~ msgid "Read more about Uniswap governance"
+#~ msgstr "Διαβάστε περισσότερα για τη διακυβέρνηση Uniswap"
 
 #: 
 #~ msgid "Read more about providing liquidity"
@@ -1683,9 +1677,9 @@ msgstr ""
 #~ msgid "Selected Range"
 #~ msgstr "Επιλεγμένο Εύρος"
 
-#: src/pages/Vote/index.tsx
-msgid "Self"
-msgstr "Ίδιος"
+#: 
+#~ msgid "Self"
+#~ msgstr "Ίδιος"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
@@ -1742,9 +1736,9 @@ msgstr "Κάτι πήγε στραβά"
 msgid "South Korean Won"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Step 1. Get UNI-V2 Liquidity tokens"
-msgstr "Βήμα 1. Πάρτε τα διακριτικά ρευστότητας UNI-V2"
+#: 
+#~ msgid "Step 1. Get UNI-V2 Liquidity tokens"
+#~ msgstr "Βήμα 1. Πάρτε τα διακριτικά ρευστότητας UNI-V2"
 
 #: src/components/vote/VoteModal.tsx
 msgid "Submitting Vote"
@@ -1932,8 +1926,12 @@ msgstr ""
 msgid "Top Looser Pools"
 msgstr ""
 
+#: 
+#~ msgid "Top Loosers"
+#~ msgstr ""
+
 #: src/pages/Discover/index.tsx
-msgid "Top Loosers"
+msgid "Top Losers"
 msgstr ""
 
 #: src/components/Table/overview.tsx
@@ -1956,9 +1954,9 @@ msgstr ""
 msgid "Total deposited"
 msgstr "Συνολική κατάθεση"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Total deposits"
-msgstr "Συνολικές καταθέσεις"
+#: 
+#~ msgid "Total deposits"
+#~ msgstr "Συνολικές καταθέσεις"
 
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
@@ -1969,7 +1967,6 @@ msgid "Transaction Settings"
 msgstr "Ρυθμίσεις Συναλλαγής"
 
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/components/vote/DelegateModal.tsx
@@ -2015,21 +2012,21 @@ msgstr "Ενεργοποίηση Λειτουργίας Ειδικών"
 #~ msgid "UNI price:"
 #~ msgstr "Τιμή UNI:"
 
-#: src/pages/Vote/index.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr "Τα νομίσματα της UNI αντιπροσωπεύουν μετοχές ψήφου στη διακυβέρνηση Uniswap. Μπορείτε να ψηφίσετε μόνοι σας για κάθε πρόταση ή να αναθέσετε τις ψήφους σας σε ένα τρίτο μέρος."
+#: 
+#~ msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
+#~ msgstr "Τα νομίσματα της UNI αντιπροσωπεύουν μετοχές ψήφου στη διακυβέρνηση Uniswap. Μπορείτε να ψηφίσετε μόνοι σας για κάθε πρόταση ή να αναθέσετε τις ψήφους σας σε ένα τρίτο μέρος."
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
 msgstr "UNI {0}/{1} Έκαψαν"
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
-msgstr "Απαιτούνται διακριτικά UNI-V2 LP από τη στιγμή που έχετε προσθέσει ρευστότητα στο {0}-{1} pool μπορείτε να ποντάρετε τα διακριτικά ρευστότητας σας σε αυτή τη σελίδα."
+#: 
+#~ msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
+#~ msgstr "Απαιτούνται διακριτικά UNI-V2 LP από τη στιγμή που έχετε προσθέσει ρευστότητα στο {0}-{1} pool μπορείτε να ποντάρετε τα διακριτικά ρευστότητας σας σε αυτή τη σελίδα."
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 {0}-{1}"
-msgstr "UNI-V2 {0}-{1}"
+#: 
+#~ msgid "UNI-V2 {0}-{1}"
+#~ msgstr "UNI-V2 {0}-{1}"
 
 #: 
 #~ msgid "US$"
@@ -2039,7 +2036,6 @@ msgstr "UNI-V2 {0}-{1}"
 msgid "USD"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Unclaimed UNI"
 msgstr "Αζήτητο UNI"
@@ -2052,9 +2048,9 @@ msgstr "Αζήτητο UNI"
 #~ msgid "Unclaimed:"
 #~ msgstr "Αζήτητα:"
 
-#: src/pages/Vote/index.tsx
-msgid "Uniswap Governance"
-msgstr "Ανάκτηση Διακυβέρνησης"
+#: 
+#~ msgid "Uniswap Governance"
+#~ msgstr "Ανάκτηση Διακυβέρνησης"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Uniswap V3 is here!"
@@ -2064,9 +2060,9 @@ msgstr "Uniswap V3 είναι εδώ!"
 #~ msgid "Uniswap available in: <0>{0}</0>"
 #~ msgstr "Το Uniswap διατίθεται σε: <0>{0}</0>"
 
-#: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
-msgstr "Εξόρυξη ρευστότητας"
+#: 
+#~ msgid "Uniswap liquidity mining"
+#~ msgstr "Εξόρυξη ρευστότητας"
 
 #: 
 #~ msgid "Uniswap migration contract↗"
@@ -2092,14 +2088,14 @@ msgstr ""
 #~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Άγνωστο σφάλμα{0}. Δοκιμάστε να αυξήσετε την ανοχή ολίσθησης. Σημείωση τέλος για τα διακριτικά μεταφοράς και επαναφοράς δεν είναι συμβατά με το Uniswap V3."
 
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/index.tsx
-msgid "Unlock Votes"
-msgstr "Ξεκλείδωμα Ψηφοφοριών"
+#: 
+#: 
+#~ msgid "Unlock Votes"
+#~ msgstr "Ξεκλείδωμα Ψηφοφοριών"
 
-#: src/pages/Vote/index.tsx
-msgid "Unlock Voting"
-msgstr "Ξεκλείδωμα Ψηφοφορίας"
+#: 
+#~ msgid "Unlock Voting"
+#~ msgstr "Ξεκλείδωμα Ψηφοφορίας"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Unlocking Votes"
@@ -2118,9 +2114,9 @@ msgstr "Μη Υποστηριζόμενα Περιουσιακά Στοιχεί�
 msgid "Unwrap"
 msgstr "Unwrap"
 
-#: src/pages/Vote/index.tsx
-msgid "Update Delegation"
-msgstr "Ενημέρωση Αντιπροσωπείας"
+#: 
+#~ msgid "Update Delegation"
+#~ msgstr "Ενημέρωση Αντιπροσωπείας"
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Update list"
@@ -2190,13 +2186,13 @@ msgstr ""
 #~ msgid "Vote"
 #~ msgstr "Ψηφοφορίες"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote Against"
-msgstr "Ψηφοφορία Κατά"
+#: 
+#~ msgid "Vote Against"
+#~ msgstr "Ψηφοφορία Κατά"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote For"
-msgstr "Ψηφίζω για"
+#: 
+#~ msgid "Vote For"
+#~ msgstr "Ψηφίζω για"
 
 #: src/components/vote/VoteModal.tsx
 #: src/components/vote/VoteModal.tsx
@@ -2208,13 +2204,13 @@ msgstr "Ψηφίστε κατά της πρότασης {proposalId}"
 msgid "Vote for proposal {proposalId}"
 msgstr "Ψηφίστε για πρόταση {proposalId}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ended {0}"
-msgstr "Η ψηφοφορία έληξε {0}"
+#: 
+#~ msgid "Voting ended {0}"
+#~ msgstr "Η ψηφοφορία έληξε {0}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ends approximately {0}"
-msgstr "Η ψηφοφορία λήγει περίπου {0}"
+#: 
+#~ msgid "Voting ends approximately {0}"
+#~ msgstr "Η ψηφοφορία λήγει περίπου {0}"
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "WITHDRAW"
@@ -2245,20 +2241,19 @@ msgstr "Εβδομαδιαίες Ανταμοιβές"
 #~ msgid "Welcome to team Unicorn :)"
 #~ msgstr "Καλώς ήρθατε στην ομάδα Unicorn :)"
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "When you claim without withdrawing your liquidity remains in the mining pool."
-msgstr "Όταν διεκδικείτε χωρίς ανάληψη ρευστότητας σας παραμένει στην πισίνα εξόρυξης."
+#: 
+#~ msgid "When you claim without withdrawing your liquidity remains in the mining pool."
+#~ msgstr "Όταν διεκδικείτε χωρίς ανάληψη ρευστότητας σας παραμένει στην πισίνα εξόρυξης."
 
-#: src/pages/Earn/Manage.tsx
-msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
-msgstr "Όταν υπαναχωρήσετε, η σύμβαση θα διεκδικήσει αυτόματα UNI για λογαριασμό σας!"
+#: 
+#~ msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
+#~ msgstr "Όταν υπαναχωρήσετε, η σύμβαση θα διεκδικήσει αυτόματα UNI για λογαριασμό σας!"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "When you withdraw, your UNI is claimed and your liquidity is removed from the mining pool."
 msgstr "Όταν αποσύρετε, ο UNI σας διεκδικείται και η ρευστότητά σας αφαιρείται από την πισίνα εξόρυξης."
 
 #: src/components/earn/UnstakingModal.tsx
-#: src/pages/Earn/Manage.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Ανάληψη"
@@ -2355,9 +2350,9 @@ msgstr "Θα λάβετε"
 #~ msgid "Your liquidity"
 #~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your liquidity deposits"
-msgstr "Οι καταθέσεις ρευστότητας σας"
+#: 
+#~ msgid "Your liquidity deposits"
+#~ msgstr "Οι καταθέσεις ρευστότητας σας"
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
@@ -2430,9 +2425,9 @@ msgstr "Η συναλλαγή σας θα επανέλθει αν η τιμή α
 #~ msgid "Your transactions will appear here..."
 #~ msgstr "Οι συναλλαγές σας θα εμφανιστούν εδώ..."
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your unclaimed UNI"
-msgstr "Αζήτητη σας UNI"
+#: 
+#~ msgid "Your unclaimed UNI"
+#~ msgstr "Αζήτητη σας UNI"
 
 #: src/components/Settings/index.tsx
 msgid "confirm"
@@ -2478,8 +2473,6 @@ msgid "{0}"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/VotePage.tsx
 msgid "{0} %"
 msgstr "{0} %"
 
@@ -2527,8 +2520,6 @@ msgstr "{0} Εκκρεμεί"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "{0} UNI / week"
 msgstr "{0} UNI / εβδομάδα"
 
@@ -2536,9 +2527,9 @@ msgstr "{0} UNI / εβδομάδα"
 msgid "{0} UNI-V2"
 msgstr "{0} UNI-V2"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0} UNI-V2 LP tokens available"
-msgstr "{0} διαθέσιμα διακριτικά UNI-V2 LP"
+#: 
+#~ msgid "{0} UNI-V2 LP tokens available"
+#~ msgstr "{0} διαθέσιμα διακριτικά UNI-V2 LP"
 
 #: src/components/vote/VoteModal.tsx
 msgid "{0} Votes"
@@ -2582,9 +2573,9 @@ msgstr "{0} • Προστέθηκε από τον χρήστη"
 msgid "{0}%"
 msgstr "{0}%"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0}-{1} Liquidity Mining"
-msgstr "{0}-{1} Εξόρυξη ρευστότητας"
+#: 
+#~ msgid "{0}-{1} Liquidity Mining"
+#~ msgstr "{0}-{1} Εξόρυξη ρευστότητας"
 
 #: 
 #~ msgid "{0}/{1} LP NFT"

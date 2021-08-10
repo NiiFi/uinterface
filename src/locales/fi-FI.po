@@ -43,9 +43,9 @@ msgstr "(Max)"
 #~ msgid "(clear all)"
 #~ msgstr "(tyhjennä kaikki)"
 
-#: src/pages/Vote/index.tsx
-msgid "(edit)"
-msgstr "(muokkaa)"
+#: 
+#~ msgid "(edit)"
+#~ msgstr "(muokkaa)"
 
 #: 
 #~ msgid "+{feeAmountFormatted}%"
@@ -61,8 +61,6 @@ msgstr "- Poista lähetys"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI / viikko"
 
@@ -125,14 +123,14 @@ msgstr ""
 #~ msgid "75%"
 #~ msgstr "75%"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0/> All Proposals"
-msgstr "<0/> Kaikki Ehdotukset"
+#: 
+#~ msgid "<0/> All Proposals"
+#~ msgstr "<0/> Kaikki Ehdotukset"
 
-#: src/pages/Vote/index.tsx
-#: src/pages/Vote/index.tsx
-msgid "<0/> Votes"
-msgstr "<0/> Äänet"
+#: 
+#: 
+#~ msgid "<0/> Votes"
+#~ msgstr "<0/> Äänet"
 
 #: 
 #~ msgid "<0> ↗ </0>"
@@ -162,17 +160,17 @@ msgstr ""
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Vinkki:</0> Kun lisäät likviditeettiä, saat poolin poletteja, jotka edustavat sijaintiasi. Nämä rahakkeet automaattisesti ansaita palkkioita suhteessa osuutesi altaasta, ja voidaan lunastaa milloin tahansa."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0>Unlock voting</0> to prepare for the next proposal."
-msgstr "<0>Avaa äänestäminen</0> valmistautuaksesi seuraavaan ehdotukseen."
+#: 
+#~ msgid "<0>Unlock voting</0> to prepare for the next proposal."
+#~ msgstr "<0>Avaa äänestäminen</0> valmistautuaksesi seuraavaan ehdotukseen."
 
 #: 
 #~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
 #~ msgstr "<0>🎉 </0>Tervetuloa tiimiin Unicorn :) <1>🎉</1>"
 
-#: src/pages/Vote/index.tsx
-msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
-msgstr "Ehdotusten esittäminen edellyttää vähintään yhden prosentin raja-arvoa UNI:n kokonaistarjonnasta."
+#: 
+#~ msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
+#~ msgstr "Ehdotusten esittäminen edellyttää vähintään yhden prosentin raja-arvoa UNI:n kokonaistarjonnasta."
 
 #: 
 #~ msgid "ADD LIQUIDITY"
@@ -235,9 +233,9 @@ msgstr "Lisää {0} Metamaskiin <0/>"
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Lisää {0} {1} ja {2} {3}"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Add {0}-{1} liquidity"
-msgstr "Lisää {0}-{1} likviditeetti"
+#: 
+#~ msgid "Add {0}-{1} liquidity"
+#~ msgstr "Lisää {0}-{1} likviditeetti"
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
@@ -259,9 +257,9 @@ msgstr "Lisätty {0}"
 msgid "Adds"
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Against"
-msgstr "Vastaan"
+#: 
+#~ msgid "Against"
+#~ msgstr "Vastaan"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
@@ -486,11 +484,11 @@ msgstr "Tutustu meidän v3 LP kävely- ja muuttooppaita."
 msgid "Chinese Yuan"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/pages/Earn/Manage.tsx
-msgid "Claim"
-msgstr "Claim"
+#: 
+#: 
+#: 
+#~ msgid "Claim"
+#~ msgstr "Claim"
 
 #: 
 #: 
@@ -504,10 +502,10 @@ msgstr "Claim"
 #~ msgid "Claim UNI Token"
 #~ msgstr "Claim UNI Token"
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Claim accumulated UNI rewards"
-msgstr "Lunasta kertynyt UNI palkintoja"
+#: 
+#: 
+#~ msgid "Claim accumulated UNI rewards"
+#~ msgstr "Lunasta kertynyt UNI palkintoja"
 
 #: 
 #~ msgid "Claim fees"
@@ -521,7 +519,6 @@ msgstr "Lunasta kertynyt UNI palkintoja"
 #~ msgid "Claimed"
 #~ msgstr "Vaadittu"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "Vaadittu YK!"
@@ -535,7 +532,6 @@ msgstr "Vaadittu YK!"
 #~ msgid "Claiming UNI"
 #~ msgstr "UNI:n Vaatiminen"
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claiming {0} UNI"
 msgstr "Vaatii {0} UNI"
@@ -652,9 +648,9 @@ msgstr "Yhdistä lompakkoon löytääksesi altaita"
 #~ msgid "Connect to a wallet to view your liquidity."
 #~ msgstr "Yhdistä lompakkoon nähdäksesi sinun maksuvalmiutesi."
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Connect wallet"
-msgstr "Yhdistä lompakko"
+#: 
+#~ msgid "Connect wallet"
+#~ msgstr "Yhdistä lompakko"
 
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/ManageWalletListModal/index.tsx
@@ -727,9 +723,9 @@ msgstr ""
 msgid "Delegate Votes"
 msgstr "Delegoi Äänet"
 
-#: src/pages/Vote/index.tsx
-msgid "Delegated to:"
-msgstr "Delegoitu henkilölle:"
+#: 
+#~ msgid "Delegated to:"
+#~ msgstr "Delegoitu henkilölle:"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Delegating votes"
@@ -739,7 +735,6 @@ msgstr "Äänestysten poistaminen"
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/pages/Dashboard/BuySection.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "Deposit"
 msgstr "Talletus"
 
@@ -752,17 +747,17 @@ msgstr "Talletus"
 msgid "Deposit Token To Nahmii"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Deposit UNI-V2 LP Tokens"
-msgstr "Talletus UNI-V2 Lp Tokens"
+#: 
+#~ msgid "Deposit UNI-V2 LP Tokens"
+#~ msgstr "Talletus UNI-V2 Lp Tokens"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposit liquidity"
 msgstr "Talletusten likviditeetti"
 
-#: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr "Talleta Likviditeetin tarjoajan poletteja vastaanottamaan UNI, Uniswap protokollan hallintatoken."
+#: 
+#~ msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
+#~ msgstr "Talleta Likviditeetin tarjoajan poletteja vastaanottamaan UNI, Uniswap protokollan hallintatoken."
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -776,17 +771,17 @@ msgstr "Tallennettu {0} UNI-V2"
 msgid "Depositing Liquidity"
 msgstr "Likviditeetin Talletus"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Description"
-msgstr "Kuvaus"
+#: 
+#~ msgid "Description"
+#~ msgstr "Kuvaus"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Detailed"
 msgstr "Yksityiskohtainen"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Details"
-msgstr "Yksityiskohdat"
+#: 
+#~ msgid "Details"
+#~ msgstr "Yksityiskohdat"
 
 #: src/components/Settings/index.tsx
 msgid "Disable Multihops"
@@ -856,7 +851,6 @@ msgstr "Syötä kelvollinen lipsumisprosentti"
 #~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
 #~ msgstr "Syötä osoite, joka käynnistää UNI-vaatimuksen. Jos osoitteella on jokin tavoitettavissa oleva YKI-koodi, se lähetetään heille lähetettäessä."
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
@@ -940,9 +934,9 @@ msgstr ""
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "For"
-msgstr "Sillä"
+#: 
+#~ msgid "For"
+#~ msgstr "Sillä"
 
 #: 
 #~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
@@ -1314,10 +1308,10 @@ msgstr ""
 #~ msgid "No V2 Liquidity found."
 #~ msgstr "V2-likviditeettiä ei löytynyt."
 
-#: src/pages/Earn/index.tsx
-#: src/pages/Earn/index.tsx
-msgid "No active pools"
-msgstr "Ei aktiivisia altaita"
+#: 
+#: 
+#~ msgid "No active pools"
+#~ msgstr "Ei aktiivisia altaita"
 
 #: 
 #~ msgid "No liquidity found."
@@ -1327,9 +1321,9 @@ msgstr "Ei aktiivisia altaita"
 msgid "No pool found."
 msgstr "Ryhmää ei löytynyt."
 
-#: src/pages/Vote/index.tsx
-msgid "No proposals found."
-msgstr "Ehdotuksia ei löytynyt."
+#: 
+#~ msgid "No proposals found."
+#~ msgstr "Ehdotuksia ei löytynyt."
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
@@ -1363,9 +1357,9 @@ msgstr "Päällä"
 msgid "Once you are happy with the rate click supply to review."
 msgstr "Kun olet tyytyväinen korko klikkaa tarjonta tarkistaa."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
-msgstr "Ainoastaan UNI-äänet, jotka oli itse delegoitu tai siirretty toiseen osoitteeseen ennen kuin ryhmä {0} on oikeutettu äänestämään."
+#: 
+#~ msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
+#~ msgstr "Ainoastaan UNI-äänet, jotka oli itse delegoitu tai siirretty toiseen osoitteeseen ennen kuin ryhmä {0} on oikeutettu äänestämään."
 
 #: src/components/Web3ReactManager/index.tsx
 msgid "Oops! An unknown error occurred. Please refresh the page, or visit from another browser or device."
@@ -1410,9 +1404,9 @@ msgstr ""
 msgid "Pair Stats (Dummy data)"
 msgstr ""
 
-#: src/pages/Earn/index.tsx
-msgid "Participating pools"
-msgstr "Osallistuvat poolit"
+#: 
+#~ msgid "Participating pools"
+#~ msgstr "Osallistuvat poolit"
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "Payment Method"
@@ -1439,9 +1433,9 @@ msgstr "Uima-allas"
 msgid "Pool Found!"
 msgstr "Pool Löydetty!"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Pool Rate"
-msgstr "Poolin Hinta"
+#: 
+#~ msgid "Pool Rate"
+#~ msgstr "Poolin Hinta"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Pool rate"
@@ -1509,17 +1503,17 @@ msgstr "Hinta:"
 msgid "Prices and pool share"
 msgstr "Hinnat ja poolin osuus"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals"
-msgstr "Ehdotukset"
+#: 
+#~ msgid "Proposals"
+#~ msgstr "Ehdotukset"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals submitted by community members will appear here."
-msgstr "Yhteisön jäsenten tekemät ehdotukset näkyvät täällä."
+#: 
+#~ msgid "Proposals submitted by community members will appear here."
+#~ msgstr "Yhteisön jäsenten tekemät ehdotukset näkyvät täällä."
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Proposer"
-msgstr "Ehdottaja"
+#: 
+#~ msgid "Proposer"
+#~ msgstr "Ehdottaja"
 
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
@@ -1545,13 +1539,13 @@ msgstr ""
 msgid "Rates"
 msgstr "Hinnat"
 
-#: src/pages/Earn/index.tsx
-msgid "Read more about UNI"
-msgstr "Lue lisää UNI:stä"
+#: 
+#~ msgid "Read more about UNI"
+#~ msgstr "Lue lisää UNI:stä"
 
-#: src/pages/Vote/index.tsx
-msgid "Read more about Uniswap governance"
-msgstr "Lue lisää Uniswap hallinnosta"
+#: 
+#~ msgid "Read more about Uniswap governance"
+#~ msgstr "Lue lisää Uniswap hallinnosta"
 
 #: 
 #~ msgid "Read more about providing liquidity"
@@ -1683,9 +1677,9 @@ msgstr ""
 #~ msgid "Selected Range"
 #~ msgstr "Valittu Alue"
 
-#: src/pages/Vote/index.tsx
-msgid "Self"
-msgstr "Itsensä"
+#: 
+#~ msgid "Self"
+#~ msgstr "Itsensä"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
@@ -1742,9 +1736,9 @@ msgstr "Jotain meni pieleen"
 msgid "South Korean Won"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Step 1. Get UNI-V2 Liquidity tokens"
-msgstr "Vaihe 1. Hanki UNI-V2 Likviditeettikuponkia"
+#: 
+#~ msgid "Step 1. Get UNI-V2 Liquidity tokens"
+#~ msgstr "Vaihe 1. Hanki UNI-V2 Likviditeettikuponkia"
 
 #: src/components/vote/VoteModal.tsx
 msgid "Submitting Vote"
@@ -1932,8 +1926,12 @@ msgstr ""
 msgid "Top Looser Pools"
 msgstr ""
 
+#: 
+#~ msgid "Top Loosers"
+#~ msgstr ""
+
 #: src/pages/Discover/index.tsx
-msgid "Top Loosers"
+msgid "Top Losers"
 msgstr ""
 
 #: src/components/Table/overview.tsx
@@ -1956,9 +1954,9 @@ msgstr ""
 msgid "Total deposited"
 msgstr "Tallennetut yhteensä"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Total deposits"
-msgstr "Talletukset yhteensä"
+#: 
+#~ msgid "Total deposits"
+#~ msgstr "Talletukset yhteensä"
 
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
@@ -1969,7 +1967,6 @@ msgid "Transaction Settings"
 msgstr "Tapahtuman Asetukset"
 
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/components/vote/DelegateModal.tsx
@@ -2015,21 +2012,21 @@ msgstr "Ota Asiantuntijatila Käyttöön"
 #~ msgid "UNI price:"
 #~ msgstr "UNI:n hinta:"
 
-#: src/pages/Vote/index.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr "UNI-kuponkia edustavat Uniswapin hallinnon äänioikeutettuja osakkeita. Voit äänestää jokaisesta ehdotuksesta itse tai siirtää äänesi kolmannelle osapuolelle."
+#: 
+#~ msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
+#~ msgstr "UNI-kuponkia edustavat Uniswapin hallinnon äänioikeutettuja osakkeita. Voit äänestää jokaisesta ehdotuksesta itse tai siirtää äänesi kolmannelle osapuolelle."
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
 msgstr "UNI {0}/{1} Kirjoitettu"
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
-msgstr "UNI-V2 LP poletteja tarvitaan. Kun olet lisännyt likviditeettiä {0}-{1} pooliin, voit panostaa maksuvalmiutesi poletteihin tällä sivulla."
+#: 
+#~ msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
+#~ msgstr "UNI-V2 LP poletteja tarvitaan. Kun olet lisännyt likviditeettiä {0}-{1} pooliin, voit panostaa maksuvalmiutesi poletteihin tällä sivulla."
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 {0}-{1}"
-msgstr "UNI-V2 {0}-{1}"
+#: 
+#~ msgid "UNI-V2 {0}-{1}"
+#~ msgstr "UNI-V2 {0}-{1}"
 
 #: 
 #~ msgid "US$"
@@ -2039,7 +2036,6 @@ msgstr "UNI-V2 {0}-{1}"
 msgid "USD"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Unclaimed UNI"
 msgstr "Lunastamaton UNI"
@@ -2052,9 +2048,9 @@ msgstr "Lunastamaton UNI"
 #~ msgid "Unclaimed:"
 #~ msgstr "Vaatettamaton:"
 
-#: src/pages/Vote/index.tsx
-msgid "Uniswap Governance"
-msgstr "Uniswap Hallinto"
+#: 
+#~ msgid "Uniswap Governance"
+#~ msgstr "Uniswap Hallinto"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Uniswap V3 is here!"
@@ -2064,9 +2060,9 @@ msgstr "Uniswap V3 on täällä!"
 #~ msgid "Uniswap available in: <0>{0}</0>"
 #~ msgstr "Poistaminen käytettävissä: <0>{0}</0>"
 
-#: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
-msgstr "Irrota likviditeetin louhinta"
+#: 
+#~ msgid "Uniswap liquidity mining"
+#~ msgstr "Irrota likviditeetin louhinta"
 
 #: 
 #~ msgid "Uniswap migration contract↗"
@@ -2092,14 +2088,14 @@ msgstr ""
 #~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr "Tuntematon virhe{0}. Yritä lisätä liukastumistoleranssia. Huomautuspalkkio siirto- ja uudelleenasennustunnuksista ei ole yhteensopiva Uniswap V3: n kanssa."
 
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/index.tsx
-msgid "Unlock Votes"
-msgstr "Avaa Äänet"
+#: 
+#: 
+#~ msgid "Unlock Votes"
+#~ msgstr "Avaa Äänet"
 
-#: src/pages/Vote/index.tsx
-msgid "Unlock Voting"
-msgstr "Avaa Äänestys"
+#: 
+#~ msgid "Unlock Voting"
+#~ msgstr "Avaa Äänestys"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Unlocking Votes"
@@ -2118,9 +2114,9 @@ msgstr "Resursseja Ei Tueta"
 msgid "Unwrap"
 msgstr "Unwrap"
 
-#: src/pages/Vote/index.tsx
-msgid "Update Delegation"
-msgstr "Päivitä Delegointi"
+#: 
+#~ msgid "Update Delegation"
+#~ msgstr "Päivitä Delegointi"
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Update list"
@@ -2190,13 +2186,13 @@ msgstr ""
 #~ msgid "Vote"
 #~ msgstr "Äänestä"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote Against"
-msgstr "Äänestä Vastaan"
+#: 
+#~ msgid "Vote Against"
+#~ msgstr "Äänestä Vastaan"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote For"
-msgstr "Äänestää"
+#: 
+#~ msgid "Vote For"
+#~ msgstr "Äänestää"
 
 #: src/components/vote/VoteModal.tsx
 #: src/components/vote/VoteModal.tsx
@@ -2208,13 +2204,13 @@ msgstr "Äänestä ehdotusta vastaan {proposalId}"
 msgid "Vote for proposal {proposalId}"
 msgstr "Äänestä ehdotuksesta {proposalId}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ended {0}"
-msgstr "Äänestys päättynyt {0}"
+#: 
+#~ msgid "Voting ended {0}"
+#~ msgstr "Äänestys päättynyt {0}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ends approximately {0}"
-msgstr "Äänestys päättyy noin {0}"
+#: 
+#~ msgid "Voting ends approximately {0}"
+#~ msgstr "Äänestys päättyy noin {0}"
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "WITHDRAW"
@@ -2245,20 +2241,19 @@ msgstr "Viikoittaiset Palkinnot"
 #~ msgid "Welcome to team Unicorn :)"
 #~ msgstr "Tervetuloa Unicorn tiimiin :)"
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "When you claim without withdrawing your liquidity remains in the mining pool."
-msgstr "Kun lunastat nostamatta likviditeettiäsi jää kaivosaltaaseen."
+#: 
+#~ msgid "When you claim without withdrawing your liquidity remains in the mining pool."
+#~ msgstr "Kun lunastat nostamatta likviditeettiäsi jää kaivosaltaaseen."
 
-#: src/pages/Earn/Manage.tsx
-msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
-msgstr "Kun peruutat, sopimus lunastaa automaattisesti UNI:n sinun puolestasi!"
+#: 
+#~ msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
+#~ msgstr "Kun peruutat, sopimus lunastaa automaattisesti UNI:n sinun puolestasi!"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "When you withdraw, your UNI is claimed and your liquidity is removed from the mining pool."
 msgstr "Kun vetäydytte pois, UNI väitetään ja maksuvalmiutenne on poistettu kaivosaltaasta."
 
 #: src/components/earn/UnstakingModal.tsx
-#: src/pages/Earn/Manage.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Peruuta"
@@ -2355,9 +2350,9 @@ msgstr "Tulet vastaanottamaan"
 #~ msgid "Your liquidity"
 #~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your liquidity deposits"
-msgstr "Maksuvalmiutesi talletukset"
+#: 
+#~ msgid "Your liquidity deposits"
+#~ msgstr "Maksuvalmiutesi talletukset"
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
@@ -2430,9 +2425,9 @@ msgstr "Tapahtumasi palautuu, jos hinta muuttuu epäsuotuisasti enemmän kuin t�
 #~ msgid "Your transactions will appear here..."
 #~ msgstr "Tapahtumasi näkyvät täällä..."
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your unclaimed UNI"
-msgstr "Lunastamaton YKI"
+#: 
+#~ msgid "Your unclaimed UNI"
+#~ msgstr "Lunastamaton YKI"
 
 #: src/components/Settings/index.tsx
 msgid "confirm"
@@ -2478,8 +2473,6 @@ msgid "{0}"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/VotePage.tsx
 msgid "{0} %"
 msgstr "{0} %"
 
@@ -2527,8 +2520,6 @@ msgstr "{0} Odottaa"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "{0} UNI / week"
 msgstr "{0} UNI / viikko"
 
@@ -2536,9 +2527,9 @@ msgstr "{0} UNI / viikko"
 msgid "{0} UNI-V2"
 msgstr "{0} UNI-V2"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0} UNI-V2 LP tokens available"
-msgstr "{0} UNI-V2 LP-tokenia saatavilla"
+#: 
+#~ msgid "{0} UNI-V2 LP tokens available"
+#~ msgstr "{0} UNI-V2 LP-tokenia saatavilla"
 
 #: src/components/vote/VoteModal.tsx
 msgid "{0} Votes"
@@ -2582,9 +2573,9 @@ msgstr "{0} • Käyttäjän lisäämä"
 msgid "{0}%"
 msgstr "{0}%"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0}-{1} Liquidity Mining"
-msgstr "{0}-{1} Likviditeetin louhinta"
+#: 
+#~ msgid "{0}-{1} Liquidity Mining"
+#~ msgstr "{0}-{1} Likviditeetin louhinta"
 
 #: 
 #~ msgid "{0}/{1} LP NFT"
