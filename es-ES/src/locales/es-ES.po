@@ -10,8 +10,8 @@ msgstr ""
 "X-Crowdin-Project: niifi\n"
 "X-Crowdin-Project-ID: 468584\n"
 "X-Crowdin-Language: es-ES\n"
-"X-Crowdin-File: /dev/src/locales/he-IL.po\n"
-"X-Crowdin-File-ID: 29\n"
+"X-Crowdin-File: /dev/src/locales/fr-FR.po\n"
+"X-Crowdin-File-ID: 27\n"
 "Project-Id-Version: niifi\n"
 "Language-Team: Spanish\n"
 "PO-Revision-Date: 2021-08-10 09:19\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "$-"
-#~ msgstr "$ -"
+#~ msgstr "$-"
 
 #: src/components/earn/PoolCard.tsx
 msgid "${0}"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: 
 #~ msgid "(clear all)"
-#~ msgstr "(נקה הכל)"
+#~ msgstr "(tout effacer)"
 
 #: src/pages/Vote/index.tsx
 msgid "(edit)"
@@ -68,11 +68,11 @@ msgstr ""
 
 #: 
 #~ msgid "0.05% fee"
-#~ msgstr "עמלה של 0.05%"
+#~ msgstr "Frais de 0,05 %"
 
 #: 
 #~ msgid "0.3% fee"
-#~ msgstr "עמלה של 0.3%"
+#~ msgstr "Frais de 0,3 %"
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: 
 #~ msgid "1% fee"
-#~ msgstr "עמלה של 1%"
+#~ msgstr "Frais de 1 %"
 
 #: src/components/Table/pools.tsx
 msgid "1W"
@@ -137,11 +137,11 @@ msgstr ""
 
 #: 
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-#~ msgstr "<0> ניתוח חשבונות ועמלות שנצברו</0> <1> ↗</1>"
+#~ msgstr "<0>Analyses du compte et des frais accumulés</0><1> ↗ </1>"
 
 #: 
 #~ msgid "<0>Back to </0>V3"
-#~ msgstr "<0> חזרה אל</0> V3"
+#~ msgstr "<0> Retour à</0> V3"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
@@ -153,7 +153,7 @@ msgstr ""
 
 #: 
 #~ msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
-#~ msgstr "<0> טיפ:</0> השתמש בכלי זה כדי למצוא מאגרי v2 שלא מופיעים אוטומטית בממשק."
+#~ msgstr "<0>Conseil :</0> Utilisez cet outil pour rechercher les pools v2 qui n'apparaissent pas automatiquement dans l'interface."
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -181,7 +181,7 @@ msgstr ""
 
 #: 
 #~ msgid "About"
-#~ msgstr "על אודות"
+#~ msgstr "À propos"
 
 #: src/components/swap/SwapModalHeader.tsx
 msgid "Accept"
@@ -217,11 +217,11 @@ msgstr ""
 
 #: 
 #~ msgid "Add V2 Liquidity"
-#~ msgstr "הוסף נזילות V2"
+#~ msgstr "Ajouter de la liquidité V2"
 
 #: 
 #~ msgid "Add liquidity."
-#~ msgstr "הוסף נזילות."
+#~ msgstr "Ajouter de la liquidité."
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -238,7 +238,7 @@ msgstr ""
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
-#~ msgstr "להוסיף {0}/{1} נזילות V3"
+#~ msgstr "Ajouter des liquidités V3 {0}/{1}"
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "Added"
@@ -266,7 +266,7 @@ msgstr ""
 
 #: 
 #~ msgid "Allow LP token migration"
-#~ msgstr "אפשר העברת אסימון LP"
+#~ msgstr "Autoriser la migration des jetons LP"
 
 #: src/components/Settings/index.tsx
 msgid "Allow high price impact trades and skip the confirm screen. Use at your own risk."
@@ -278,11 +278,11 @@ msgstr ""
 
 #: 
 #~ msgid "Allow the Uniswap Protocol to use your {0}"
-#~ msgstr "אפשר לפרוטוקול Uniswap להשתמש ב- {0}"
+#~ msgstr "Autoriser le protocole Uniswap à utiliser vos {0}"
 
 #: 
 #~ msgid "Allowed"
-#~ msgstr "מוּתָר"
+#~ msgstr "Autorisé"
 
 #: src/components/Header/URLWarning.tsx
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
@@ -309,11 +309,11 @@ msgstr ""
 
 #: 
 #~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "אירעה שגיאה בניסיון לבצע החלפה זו. יתכן שתצטרך להגביר את סובלנות ההחלקה שלך. אם זה לא עובד, ייתכן שיש אי התאמה לאסימון שאתה סוחר בו. עמלת הערה על אסימוני העברה וריבוי בסיס אינם תואמים ל- Uniswap V3."
+#~ msgstr "Une erreur s'est produite lors de la tentative d'exécution de cet échange. Vous devrez peut-être augmenter votre acceptation du slippage. Si cela ne fonctionne pas, il peut y avoir une incompatibilité avec le jeton que vous échangez. Notez que les jeton déflationniste et de rebase sont incompatibles avec Uniswap V3."
 
 #: 
 #~ msgid "Analytics"
-#~ msgstr "ניתוח"
+#~ msgstr "Métriques"
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -344,7 +344,7 @@ msgstr ""
 
 #: 
 #~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-#~ msgstr "כחבר בקהילת Uniswap אתה יכול לטעון ש- UNI משמשת להצבעה ולממשל. <0 /> <1 /> <2> קרא עוד על UNI</2>"
+#~ msgstr "En tant que membre de la communauté Uniswap, vous pouvez réclamer que UNI soit utilisé pour le vote et la gouvernance.<0/><1/><2>En savoir plus sur UNI</2>"
 
 #: src/components/Table/Dashboard/Assets.tsx
 msgid "Assets"
@@ -352,7 +352,7 @@ msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
-#~ msgstr "לפחות {0} {1} ו {2} {3} יוחזרו לארנק שלך בגלל טווח המחירים שנבחר."
+#~ msgstr "Au moins {0} {1} et {2} {3} seront remboursés sur votre portefeuille en raison de la plage de prix sélectionnée."
 
 #: src/constants/tokens.ts
 msgid "Australian Dollar"
@@ -380,7 +380,7 @@ msgstr ""
 
 #: 
 #~ msgid "Back"
-#~ msgstr "חזור"
+#~ msgstr "Précédent"
 
 #: src/components/PoolInvest/index.tsx
 msgid "Balance"
@@ -396,19 +396,19 @@ msgstr ""
 
 #: 
 #~ msgid "Balance: {0} {1}"
-#~ msgstr "מאזן: {0} {1}"
+#~ msgstr "Solde: {0} {1}"
 
 #: 
 #~ msgid "Best for exotic pairs."
-#~ msgstr "הכי טוב לזוגות אקזוטיים."
+#~ msgstr "Idéal pour les paires exotiques."
 
 #: 
 #~ msgid "Best for most pairs."
-#~ msgstr "הטוב ביותר עבור רוב הזוגות."
+#~ msgstr "Idéal pour la plupart des paires."
 
 #: 
 #~ msgid "Best for stable pairs."
-#~ msgstr "הטוב ביותר לזוגות יציבים."
+#~ msgstr "Idéal pour des paires stables."
 
 #: src/constants/tokens.ts
 msgid "Bitcoin"
@@ -445,7 +445,7 @@ msgstr ""
 
 #: 
 #~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-#~ msgstr "על ידי חיבור ארנק אתה מסכים לתנאי השירות <0> של Uniswap Labs</0> והודה כי קראת והבנת את כתב הוויתור על פרוטוקול Uniswap</1> ."
+#~ msgstr "En vous connectant à un portefeuille, vous acceptez les <0>conditions de service</0> d’Uniswap et reconnaissez que vous avez lu et compris l’exclusion de responsabilité du <1>protocole Uniswap</1>."
 
 #: src/constants/tokens.ts
 msgid "CAD"
@@ -469,7 +469,7 @@ msgstr ""
 
 #: 
 #~ msgid "Change"
-#~ msgstr "שינוי"
+#~ msgstr "Changer"
 
 #: src/components/Header/index.tsx
 msgid "Charts"
@@ -508,7 +508,7 @@ msgstr ""
 
 #: 
 #~ msgid "Claim fees"
-#~ msgstr "דמי תביעה"
+#~ msgstr "Réclamer les frais"
 
 #: src/components/Popups/ClaimPopup.tsx
 msgid "Claim your UNI tokens"
@@ -539,7 +539,7 @@ msgstr ""
 
 #: 
 #~ msgid "Clear All"
-#~ msgstr "נקה הכל"
+#~ msgstr "Tout effacer"
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "Clear all"
@@ -555,36 +555,36 @@ msgstr ""
 
 #: 
 #~ msgid "Code"
-#~ msgstr "קוד"
+#~ msgstr "Code"
 
 #: 
 #~ msgid "Collect"
-#~ msgstr "לאסוף"
+#~ msgstr "Collecter"
 
 #: 
 #: 
 #~ msgid "Collect as WETH"
-#~ msgstr "אסוף כ- WETH"
+#~ msgstr "Collectionner en WETH"
 
 #: 
 #~ msgid "Collect fees"
-#~ msgstr "גבו עמלות"
+#~ msgstr "Recueillir des frais"
 
 #: 
 #~ msgid "Collected"
-#~ msgstr "נאסף"
+#~ msgstr "Collecté"
 
 #: 
 #~ msgid "Collecting"
-#~ msgstr "אוספים"
+#~ msgstr "Collecte en cours"
 
 #: 
 #~ msgid "Collecting fees"
-#~ msgstr "גביית עמלות"
+#~ msgstr "Frais de recouvrement"
 
 #: 
 #~ msgid "Collecting fees will withdraw currently available fees for you."
-#~ msgstr "דמי גבייה ימשכו עבורך את העמלות הזמינות."
+#~ msgstr "Les frais de perception retireront les frais actuellement disponibles pour vous."
 
 #: src/components/SearchModal/CommonBases.tsx
 msgid "Common bases"
@@ -645,11 +645,11 @@ msgstr ""
 
 #: 
 #~ msgid "Connect to a wallet to view your V2 liquidity."
-#~ msgstr "התחבר לארנק כדי להציג את נזילות V2 שלך."
+#~ msgstr "Connectez-vous à un portefeuille pour afficher vos liquidités V2."
 
 #: 
 #~ msgid "Connect to a wallet to view your liquidity."
-#~ msgstr "התחבר לארנק כדי להציג את הנזילות שלך."
+#~ msgstr "Connectez-vous à un portefeuille pour voir vos liquidités."
 
 #: src/components/earn/ClaimRewardModal.tsx
 msgid "Connect wallet"
@@ -662,7 +662,7 @@ msgstr ""
 
 #: 
 #~ msgid "Connected with {name}"
-#~ msgstr "מחובר עם {name}"
+#~ msgstr "Connecté avec {name}"
 
 #: src/components/AccountDetails/Copy.tsx
 msgid "Copied"
@@ -691,7 +691,7 @@ msgstr ""
 
 #: 
 #~ msgid "Create a pool"
-#~ msgstr "צור בריכה"
+#~ msgstr "Créer un pool"
 
 #: src/components/ErrorBoundary/index.tsx
 msgid "Create an issue on GitHub"
@@ -699,7 +699,7 @@ msgstr ""
 
 #: 
 #~ msgid "Create pool and add {0}/{1} V3 liquidity"
-#~ msgstr "צור ברכה ולהוסיף {0}/{1} נזילות V3"
+#~ msgstr "Créer un pool et ajouter {0}/{1} liquidités V3"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Create pool."
@@ -707,16 +707,16 @@ msgstr ""
 
 #: 
 #~ msgid "Current Price"
-#~ msgstr "מחיר נוכחי"
+#~ msgstr "Prix actuel"
 
 #: 
 #: 
 #~ msgid "Current price"
-#~ msgstr "מחיר נוכחי"
+#~ msgstr "Prix actuel"
 
 #: 
 #~ msgid "Current {0} Price:"
-#~ msgstr "מחיר {0} נוכחי:"
+#~ msgstr "Prix actuel de {0}:"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Dashboard"
@@ -744,7 +744,7 @@ msgstr ""
 
 #: 
 #~ msgid "Deposit Amounts"
-#~ msgstr "סכומי הפקדה"
+#~ msgstr "Montant du dépôt"
 
 #: src/components/DepositTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
@@ -793,7 +793,7 @@ msgstr ""
 
 #: 
 #~ msgid "Disconnect"
-#~ msgstr "לְנַתֵק"
+#~ msgstr "Déconnecter"
 
 #: src/components/AccountDetails/index.tsx
 msgid "Disconnect Wallet"
@@ -801,7 +801,7 @@ msgstr ""
 
 #: 
 #~ msgid "Discord"
-#~ msgstr "מַחֲלוֹקֶת"
+#~ msgstr "Discord"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Discover"
@@ -813,11 +813,11 @@ msgstr ""
 
 #: 
 #~ msgid "Docs"
-#~ msgstr "מסמכים"
+#~ msgstr "Documents"
 
 #: 
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
-#~ msgstr "אינך רואה את אחת מעמדות ה- v2 שלך? <0> ייבא אותו.</0>"
+#~ msgstr "Vous ne voyez pas une de vos positions v2 ? <0>Importez-la.</0>"
 
 #: src/constants/tokens.ts
 msgid "ETH"
@@ -837,7 +837,7 @@ msgstr ""
 
 #: 
 #~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-#~ msgstr "אסימונים של UNI שהושכרו מייצגים מניות הצבעה בממשל Uniswap."
+#~ msgstr "Les jetons UNI gagnés représentent les parts de vote dans la gouvernance d'Uniswap."
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Earned tokens represent voting shares in governance."
@@ -922,7 +922,7 @@ msgstr ""
 
 #: 
 #~ msgid "Fee Tier"
-#~ msgstr "שכבת עמלה"
+#~ msgstr "Niveau de frais"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -945,7 +945,7 @@ msgstr ""
 
 #: 
 #~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
-#~ msgstr "עבור כל מאגר המוצג למטה, לחץ על העבר כדי להסיר את הנזילות שלך מ- Uniswap V2 והפקד אותו ל- Uniswap V3."
+#~ msgstr "Pour chaque pool indiqué ci-dessous, cliquez sur migrer pour retirer votre liquidité de Uniswap V2 et déposez-la dans Uniswap V3."
 
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Swap/index.tsx
@@ -970,7 +970,7 @@ msgstr ""
 
 #: 
 #~ msgid "Hide closed positions"
-#~ msgstr "הסתר עמדות סגורות"
+#~ msgstr "Masquer les positions fermées"
 
 #: src/pages/Swap/index.tsx
 msgid "High Price Impact"
@@ -1013,7 +1013,7 @@ msgstr ""
 
 #: 
 #~ msgid "Import Pool"
-#~ msgstr "יבוא בריכה"
+#~ msgstr "Importer un groupe"
 
 #: src/components/NavigationTabs/index.tsx
 msgid "Import V2 Pool"
@@ -1029,7 +1029,7 @@ msgstr ""
 
 #: 
 #~ msgid "Increase Liquidity"
-#~ msgstr "הגדל את הנזילות"
+#~ msgstr "Augmente la liquidité"
 
 #: src/constants/tokens.ts
 msgid "Indian Rupees"
@@ -1085,12 +1085,12 @@ msgstr ""
 
 #: 
 #~ msgid "Invalid price input"
-#~ msgstr "קלט מחירים לא חוקי"
+#~ msgstr "Entrée de prix non valide"
 
 #: 
 #: 
 #~ msgid "Invalid range selected. The min price must be lower than the max price."
-#~ msgstr "נבחר טווח לא חוקי. המחיר המינימלי חייב להיות נמוך מהמחיר המקסימלי."
+#~ msgstr "Plage non valide sélectionnée. Le prix minimum doit être inférieur au prix maximum."
 
 #: src/state/swap/hooks.ts
 msgid "Invalid recipient"
@@ -1120,7 +1120,7 @@ msgstr ""
 
 #: 
 #~ msgid "Learn"
-#~ msgstr "לִלמוֹד"
+#~ msgstr "Apprendre"
 
 #: src/components/Header/Sidebar.tsx
 msgid "Lend"
@@ -1144,11 +1144,11 @@ msgstr ""
 
 #: 
 #~ msgid "Liquidity provider rewards"
-#~ msgstr "תגמולים של ספק נזילות"
+#~ msgstr "Récompenses du fournisseur de liquidité"
 
 #: 
 #~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
-#~ msgstr "ספקי נזילות מרוויחים עמלה של 0.3% על כל העסקאות שביחס לחלקם במאגר. העמלות מתווספות לבריכה, נצברות בזמן אמת וניתן לתבוע אותן באמצעות משיכת הנזילות שלך."
+#~ msgstr "Les fournisseurs de liquidités gagnent 0,3 % de frais sur tous les ordres proportionnels à leur part du pool. Les frais sont ajoutés à la pool, accumulés en temps réel et peuvent être réclamés en retirant votre liquidité."
 
 #: src/components/SearchModal/Manage.tsx
 msgid "Lists"
@@ -1207,20 +1207,20 @@ msgstr ""
 
 #: 
 #~ msgid "Max"
-#~ msgstr "מקסימום"
+#~ msgstr "Max"
 
 #: 
 #: 
 #~ msgid "Max Price"
-#~ msgstr "מקסימום מחיר"
+#~ msgstr "Prix max"
 
 #: 
 #~ msgid "Max price"
-#~ msgstr "מחיר מקסימלי"
+#~ msgstr "Prix maximum"
 
 #: 
 #~ msgid "Max:"
-#~ msgstr "מקסימום:"
+#~ msgstr "Max:"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Maximum sent"
@@ -1237,41 +1237,41 @@ msgstr ""
 
 #: 
 #~ msgid "Migrate Liquidity"
-#~ msgstr "העבר נזילות"
+#~ msgstr "Migrer la liquidité"
 
 #: 
 #~ msgid "Migrate Liquidity to V3"
-#~ msgstr "העבר נזילות ל- V3"
+#~ msgstr "Migrer la liquidité vers V3"
 
 #: 
 #: 
 #~ msgid "Migrate V2 Liquidity"
-#~ msgstr "העבר נזילות V2"
+#~ msgstr "Migrer la liquidité V2"
 
 #: 
 #~ msgid "Migrate V2 liquidity"
-#~ msgstr "העבר נזילות V2"
+#~ msgstr "Migrer la liquidité V2"
 
 #: 
 #~ msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
-#~ msgstr "העבר את אסימוני הנזילות שלך מ- Uniswap V2 ל- Uniswap V3."
+#~ msgstr "Migrez vos jetons de liquidité de Uniswap V2 vers Uniswap V3."
 
 #: 
 #~ msgid "Migrating"
-#~ msgstr "נודדים"
+#~ msgstr "Migration en cours"
 
 #: 
 #: 
 #~ msgid "Min Price"
-#~ msgstr "מחיר מינימלי"
+#~ msgstr "Prix minimum"
 
 #: 
 #~ msgid "Min price"
-#~ msgstr "מחיר מינימלי"
+#~ msgstr "Prix minimum"
 
 #: 
 #~ msgid "Min:"
-#~ msgstr "דקה:"
+#~ msgstr "Min:"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Minimum received"
@@ -1279,7 +1279,7 @@ msgstr ""
 
 #: 
 #~ msgid "More"
-#~ msgstr "יותר"
+#~ msgstr "En savoir plus"
 
 #: src/pages/Dashboard/index.tsx
 msgid "NFTs Collection"
@@ -1304,7 +1304,7 @@ msgstr ""
 
 #: 
 #~ msgid "New Position"
-#~ msgstr "תפקיד חדש"
+#~ msgstr "Nouvelle position"
 
 #: src/components/SwitchLocaleLink/index.tsx
 msgid "Niifi available in: <0>{0}</0>"
@@ -1312,7 +1312,7 @@ msgstr ""
 
 #: 
 #~ msgid "No V2 Liquidity found."
-#~ msgstr "לא נמצא נזילות V2."
+#~ msgstr "Aucune liquidité V2 trouvée."
 
 #: src/pages/Earn/index.tsx
 #: src/pages/Earn/index.tsx
@@ -1321,7 +1321,7 @@ msgstr ""
 
 #: 
 #~ msgid "No liquidity found."
-#~ msgstr "לא נמצא נזילות."
+#~ msgstr "Aucune liquidité trouvée."
 
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
@@ -1395,7 +1395,7 @@ msgstr ""
 
 #: 
 #~ msgid "Owner"
-#~ msgstr "בעלים"
+#~ msgstr "Propriétaire"
 
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
@@ -1466,7 +1466,7 @@ msgstr ""
 
 #: 
 #~ msgid "Pools Overview"
-#~ msgstr "סקירת בריכות"
+#~ msgstr "Vue d'ensemble des piscines"
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
@@ -1483,7 +1483,7 @@ msgstr ""
 
 #: 
 #~ msgid "Price Difference:"
-#~ msgstr "הבדל במחיר:"
+#~ msgstr "Différence de prix :"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Price Impact"
@@ -1500,7 +1500,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Price range"
-#~ msgstr "טווח מחירים"
+#~ msgstr "Gamme de prix"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price:"
@@ -1556,7 +1556,7 @@ msgstr ""
 
 #: 
 #~ msgid "Read more about providing liquidity"
-#~ msgstr "קרא עוד אודות מתן נזילות"
+#~ msgstr "En savoir plus sur la fourniture de liquidités"
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
@@ -1599,7 +1599,7 @@ msgstr ""
 
 #: 
 #~ msgid "Remove {0}/{1} V3 liquidity"
-#~ msgstr "הסר {0}/{1} נזילות V3"
+#~ msgstr "Supprimer la liquidité {0}/{1} V3"
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Removes"
@@ -1651,7 +1651,7 @@ msgstr ""
 
 #: 
 #~ msgid "Select Pool"
-#~ msgstr "בחר בריכה"
+#~ msgstr "Sélectionner le Groupement"
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Select a Token"
@@ -1659,7 +1659,7 @@ msgstr ""
 
 #: 
 #~ msgid "Select a pool type based on your preferred liquidity provider fee."
-#~ msgstr "בחר סוג בריכה על בסיס עמלת ספק הנזילות המועדפת עליך."
+#~ msgstr "Sélectionnez un type de pool en fonction des frais de fournisseur de liquidités que vous préférez."
 
 #: src/components/CurrencyInputPanel/index.tsx
 #: src/pages/PoolFinder/index.tsx
@@ -1674,15 +1674,15 @@ msgstr ""
 
 #: 
 #~ msgid "Select a token to find your v2 liquidity."
-#~ msgstr "בחר אסימון כדי למצוא את נזילות ה- v2 שלך."
+#~ msgstr "Sélectionnez un jeton pour trouver votre liquidité v2."
 
 #: 
 #~ msgid "Select pair"
-#~ msgstr "בחר זוג"
+#~ msgstr "Sélectionner une paire"
 
 #: 
 #~ msgid "Selected Range"
-#~ msgstr "טווח נבחר"
+#~ msgstr "Plage sélectionnée"
 
 #: src/pages/Vote/index.tsx
 msgid "Self"
@@ -1699,11 +1699,11 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Set Price Range"
-#~ msgstr "הגדר טווח מחירים"
+#~ msgstr "Fixer une fourchette de prix"
 
 #: 
 #~ msgid "Set Starting Price"
-#~ msgstr "קבע מחיר התחלתי"
+#~ msgstr "Définir le prix de départ"
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
@@ -1711,7 +1711,7 @@ msgstr ""
 
 #: 
 #~ msgid "Show Portis"
-#~ msgstr "הראה את פורטיס"
+#~ msgstr "Show Portis"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Simple"
@@ -1802,7 +1802,7 @@ msgstr ""
 
 #: 
 #~ msgid "Thanks for being part of the Uniswap community <0/>"
-#~ msgstr "תודה שהיית חלק מקהילת Uniswap <0 />"
+#~ msgstr "Merci de faire partie de la communauté Uniswap <0/>"
 
 #: src/components/Popups/ClaimPopup.tsx
 msgid "Thanks for being part of the community <0/>"
@@ -1826,7 +1826,7 @@ msgstr ""
 
 #: 
 #~ msgid "The output token cannot be transferred. There may be an issue with the output token. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "לא ניתן להעביר את אסימון הפלט. ייתכן שיש בעיה באסימן הפלט. עמלת הערה על אסימוני העברה וריבוי בסיס אינם תואמים ל- Uniswap V3."
+#~ msgstr "Le jeton de sortie ne peut pas être transféré. Il peut y avoir un problème avec le jeton de sortie. Notez que les frais de transfert et de rebase des jetons sont incompatibles avec Uniswap V3."
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1862,11 +1862,11 @@ msgstr ""
 
 #: 
 #~ msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
-#~ msgstr "כלי זה בבטחה יעבור שלך {0} נזילות כדי V3. התהליך חסר אמון לחלוטין בזכות"
+#~ msgstr "Cet outil va migrer en toute sécurité vos liquidités {0} vers V3. Le processus est complètement sans confiance grâce à la"
 
 #: 
 #~ msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "עסקה זו לא תצליח בגלל תנועת מחירים. נסה להגביר את סובלנות ההחלקה שלך. עמלת הערה על אסימוני העברה וריבוי בסיס אינם תואמים ל- Uniswap V3."
+#~ msgstr "Cette transaction échouera en raison du mouvement des prix. Essayez d'augmenter votre tolérance au glissement. Notez que les frais de transfert et de rebase des jetons sont incompatibles avec Uniswap V3."
 
 #: src/hooks/useSwapCallback.ts
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
@@ -2048,7 +2048,7 @@ msgstr ""
 
 #: 
 #~ msgid "Unclaimed fees"
-#~ msgstr "עמלות שלא נדרשו"
+#~ msgstr "Frais non réclamés"
 
 #: src/components/Header/UniBalanceContent.tsx
 msgid "Unclaimed:"
@@ -2064,7 +2064,7 @@ msgstr ""
 
 #: 
 #~ msgid "Uniswap available in: <0>{0}</0>"
-#~ msgstr "Uniswap זמין ב: <0>{0}</0>"
+#~ msgstr "Uniswap disponible en : <0>{0}</0>"
 
 #: src/pages/Earn/index.tsx
 msgid "Uniswap liquidity mining"
@@ -2072,7 +2072,7 @@ msgstr ""
 
 #: 
 #~ msgid "Uniswap migration contract↗"
-#~ msgstr "חוזה הגירה מביטול החלפה↗"
+#~ msgstr "Contrat de migration Uniswap↗"
 
 #: src/constants/tokens.ts
 msgid "United Kingdom Pound"
@@ -2092,7 +2092,7 @@ msgstr ""
 
 #: 
 #~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "שגיאה לא ידועה{0}. נסה להגביר את סובלנות ההחלקה שלך. עמלת הערה על אסימוני העברה וריבוי בסיס אינם תואמים ל- Uniswap V3."
+#~ msgstr "Erreur inconnue{0}. Essayez d'augmenter votre tolérance au glissement. Notez que les frais de transfert et de rebase des jetons sont incompatibles avec Uniswap V3."
 
 #: src/pages/Vote/VotePage.tsx
 #: src/pages/Vote/index.tsx
@@ -2134,7 +2134,7 @@ msgstr ""
 
 #: 
 #~ msgid "V2 liquidity"
-#~ msgstr "נזילות V2"
+#~ msgstr "liquidités V2"
 
 #: 
 #~ msgid "V3"
@@ -2143,7 +2143,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "V3 {0} Price:"
-#~ msgstr "מחיר V3 {0}"
+#~ msgstr "Prix V3 {0}:"
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "VISA *5546"
@@ -2155,7 +2155,7 @@ msgstr ""
 
 #: 
 #~ msgid "View V2 Liquidity"
-#~ msgstr "צפה בנזילות V2"
+#~ msgstr "Voir la liquidité V2"
 
 #: src/components/PositionCard/index.tsx
 msgid "View accrued fees and analytics<0>↗</0>"
@@ -2300,7 +2300,7 @@ msgstr ""
 
 #: 
 #~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-#~ msgstr "אתה ספק הנזילות הראשון לבריכת Uniswap V3 זו. הנזילות שלך תעבור במחיר {0} הנוכחי."
+#~ msgstr "Vous êtes le premier fournisseur de liquidités pour ce pool V3 d'Uniswap. Votre liquidité migrera au prix actuel de {0}."
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
@@ -2320,11 +2320,11 @@ msgstr ""
 
 #: 
 #~ msgid "You must connect an account."
-#~ msgstr "עליך לחבר חשבון."
+#~ msgstr "Vous devez connecter un compte."
 
 #: 
 #~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-#~ msgstr "עליך לתת לחוזים החכמים של Uniswap להשתמש ב- {0}שלך. אתה צריך לעשות זאת רק פעם אחת לכל אסימון."
+#~ msgstr "Vous devez autoriser les contrats intelligents Uniswap à utiliser votre {0}. Vous n'avez à le faire qu'une seule fois par jeton."
 
 #: src/pages/Swap/index.tsx
 msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
@@ -2332,11 +2332,11 @@ msgstr ""
 
 #: 
 #~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-#~ msgstr "עליכם להפקיד נזילות רק ב- Uniswap V3 במחיר שלדעתכם נכון. <0 /> אם נראה שהמחיר שגוי, באפשרותך להחליף כדי להזיז את המחיר או לחכות שמישהו אחר יעשה זאת."
+#~ msgstr "Vous ne devriez déposer de liquidité dans Uniswap V3 qu'à un prix que vous croyez correct. <0/>Si le prix semble incorrect, vous pouvez soit faire un swap pour déplacer le prix soit attendre que quelqu'un d'autre le fasse."
 
 #: 
 #~ msgid "You will also collect fees earned from this position."
-#~ msgstr "אתה גם יגבה עמלות שהרווחת מתפקיד זה."
+#~ msgstr "Vous percevrez également des frais provenant de ce poste."
 
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -2349,11 +2349,11 @@ msgstr ""
 
 #: 
 #~ msgid "Your V2 liquidity"
-#~ msgstr "נזילות ה- V2 שלך"
+#~ msgstr "Votre liquidité V2"
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
-#~ msgstr "עמדות הנזילות שלך ב- V3 יופיעו כאן."
+#~ msgstr "Vos positions de liquidité V3 apparaîtront ici."
 
 #: 
 #~ msgid "Your liquidity"
@@ -2365,7 +2365,7 @@ msgstr ""
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
-#~ msgstr "הנזילות שלך תרוויח עמלות רק כאשר מחיר השוק של הצמד נמצא בטווח שלך. <0> זקוק לעזרה בבחירת טווח?</0>"
+#~ msgstr "Votre liquidité ne rapportera des frais que lorsque le prix de marché de la paire se situe dans votre fourchette. <0> Besoin d'aide pour choisir une gamme?</0>"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
@@ -2384,22 +2384,22 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Your position will be 100% composed of {0} at this price"
-#~ msgstr "עמדתך תורכב ב 100% מ- {0} במחיר זה"
+#~ msgstr "Votre position sera composée à 100% de {0} à ce prix"
 
 #: 
 #: 
 #~ msgid "Your position will be 100% {0} at this price."
-#~ msgstr "עמדתך תהיה 100% {0} במחיר זה."
+#~ msgstr "Votre position sera à 100% {0} à ce prix."
 
 #: 
 #: 
 #~ msgid "Your position will not earn fees or be used in trades until the market price moves into your range."
-#~ msgstr "העמדה שלך לא תרוויח עמלות ולא תשמש בעסקאות עד שמחיר השוק יעבור לטווח שלך."
+#~ msgstr "Votre position ne gagnera pas de frais ni ne sera utilisée dans les transactions tant que le prix du marché n'entrera pas dans votre fourchette."
 
 #: 
 #: 
 #~ msgid "Your positions"
-#~ msgstr "העמדות שלך"
+#~ msgstr "Vos positions"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Your rate"
@@ -2412,7 +2412,7 @@ msgstr ""
 
 #: 
 #~ msgid "Your transaction cost will be much higher as it includes the gas to create the pool."
-#~ msgstr "עלות העסקה שלך תהיה גבוהה בהרבה מכיוון שהיא כוללת את הגז ליצירת הבריכה."
+#~ msgstr "Votre coût de transaction sera beaucoup plus élevé car il inclut le gaz pour créer le pool."
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Your transaction may be frontrun"
@@ -2432,7 +2432,7 @@ msgstr ""
 
 #: 
 #~ msgid "Your transactions will appear here..."
-#~ msgstr "העסקאות שלך יופיעו כאן ..."
+#~ msgstr "Vos transactions apparaîtront ici..."
 
 #: src/pages/Earn/Manage.tsx
 msgid "Your unclaimed UNI"
@@ -2490,7 +2490,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} <0/> per <1/>"
-#~ msgstr "{0} <0 /> לכל <1 />"
+#~ msgstr "{0} <0/> par <1/>"
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "{0} Custom Tokens"
@@ -2513,7 +2513,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} Fees Earned:"
-#~ msgstr "{0} עמלות שנצברו:"
+#~ msgstr "Frais de {0} gagnés :"
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2555,7 +2555,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} per {1}"
-#~ msgstr "{0} לכל {1}"
+#~ msgstr "{0} par {1}"
 
 #: src/components/RateToggle/index.tsx
 #: src/components/RateToggle/index.tsx
@@ -2571,7 +2571,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} {1} Price:"
-#~ msgstr "{0} {1} מחיר:"
+#~ msgstr "Prix {0} {1}:"
 
 #: src/components/Table/swap.tsx
 msgid "{0} {1} for {2}"
@@ -2596,7 +2596,7 @@ msgstr ""
 
 #: 
 #~ msgid "{0}/{1} LP Tokens"
-#~ msgstr "{0}/{1} אסימוני LP"
+#~ msgstr "Jetons de {0}/{1} LP"
 
 #: src/components/claim/ClaimModal.tsx
 msgid "{SOCKS_AMOUNT} UNI"
@@ -2625,7 +2625,7 @@ msgstr ""
 
 #: 
 #~ msgid "{tokenB} per {tokenA}"
-#~ msgstr "{tokenB} לכל {tokenA}"
+#~ msgstr "{tokenB} par {tokenA}"
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
@@ -2633,5 +2633,5 @@ msgstr ""
 
 #: 
 #~ msgid "← Back to Pools Overview"
-#~ msgstr "← חזרה לסקירת בריכות"
+#~ msgstr "Aperçu du retour aux pools"
 
