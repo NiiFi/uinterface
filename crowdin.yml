@@ -1,3 +1,5 @@
+project_id: "468584"
+api_token: "apiToken" //generate yours apiToken
 files:
   - source: 'src/locales/en-US.po'
     translation: 'src/locales/%locale%.po'
