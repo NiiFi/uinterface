@@ -1,3 +1,3 @@
 files:
-  - source: src/locales/
-    translation: src/locales/%locale%.po
+  - source: 'src/locales/en-US.po'
+    translation: 'src/locales/%locale%.po'
