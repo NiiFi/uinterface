@@ -1,55 +1,59 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-06-09 23:07+0000\n"
+"POT-Creation-Date: 2021-06-10 09:13+0300\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
-"X-Crowdin-Project: uniswap-interface\n"
-"X-Crowdin-Project-ID: 458284\n"
-"X-Crowdin-Language: ro\n"
-"X-Crowdin-File: en-US.po\n"
-"X-Crowdin-File-ID: 4\n"
-"Project-Id-Version: uniswap-interface\n"
-"Language-Team: Romanian\n"
-"PO-Revision-Date: 2021-06-10 00:10\n"
+"Project-Id-Version: niifi\n"
 "Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2021-08-10 14:43\n"
 "Last-Translator: \n"
+"Language-Team: Romanian\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
+"X-Crowdin-Project: niifi\n"
+"X-Crowdin-Project-ID: 468584\n"
+"X-Crowdin-Language: ro\n"
+"X-Crowdin-File: /src/locales/en-US.po\n"
+"X-Crowdin-File-ID: 73\n"
 
 #: 
 #: 
 #~ msgid "$-"
-#~ msgstr "$-"
+#~ msgstr ""
 
 #: src/components/earn/PoolCard.tsx
 msgid "${0}"
-msgstr "${0}"
+msgstr ""
 
 #: src/components/earn/PoolCard.tsx
 msgid "${0} ETH"
-msgstr "${0} ETH"
+msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
-msgstr "(Max)"
+msgstr ""
+
+#: 
+#~ msgid "(caim)"
+#~ msgstr ""
 
 #: 
 #~ msgid "(claim)"
-#~ msgstr "(claim)"
+#~ msgstr ""
 
 #: 
 #~ msgid "(clear all)"
-#~ msgstr "(curățat)"
+#~ msgstr ""
 
 #: 
 #~ msgid "(edit)"
-#~ msgstr "(editat)"
+#~ msgstr ""
 
 #: 
 #~ msgid "+{feeAmountFormatted}%"
-#~ msgstr "+{feeAmountFormatted}%"
+#~ msgstr ""
 
 #: src/pages/Swap/index.tsx
 msgid "- Remove send"
@@ -57,7 +61,7 @@ msgstr "- Eliminați trimiterile"
 
 #: 
 #~ msgid "-{feeAmountFormatted}%"
-#~ msgstr "-{feeAmountFormatted}%"
+#~ msgstr ""
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -66,11 +70,11 @@ msgstr "0 UNI / săptămână"
 
 #: 
 #~ msgid "0.05% fee"
-#~ msgstr "0,05% taxă"
+#~ msgstr ""
 
 #: 
 #~ msgid "0.3% fee"
-#~ msgstr "0.3% taxă"
+#~ msgstr ""
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
@@ -89,7 +93,7 @@ msgstr ""
 
 #: 
 #~ msgid "1% fee"
-#~ msgstr "1% taxă"
+#~ msgstr ""
 
 #: src/components/Table/pools.tsx
 msgid "1W"
@@ -109,7 +113,7 @@ msgstr ""
 
 #: 
 #~ msgid "25%"
-#~ msgstr "25%"
+#~ msgstr ""
 
 #: src/components/swap/Slippage.tsx
 msgid "3%"
@@ -117,32 +121,28 @@ msgstr ""
 
 #: 
 #~ msgid "50%"
-#~ msgstr "50%"
+#~ msgstr ""
 
 #: 
 #~ msgid "75%"
-#~ msgstr "75%"
+#~ msgstr ""
 
 #: 
 #~ msgid "<0/> All Proposals"
-#~ msgstr "<0/> Toate propunerile"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "<0/> Votes"
-#~ msgstr "Voturi <0/>"
-
-#: 
-#~ msgid "<0> ↗ </0>"
 #~ msgstr ""
 
 #: 
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
-#~ msgstr "<0>Statistici cont și taxe acumulate</0><1> :up-κ: </1>"
+#~ msgstr ""
 
 #: 
 #~ msgid "<0>Back to </0>V3"
-#~ msgstr "<0> Înapoi la</0> V3"
+#~ msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
@@ -154,7 +154,7 @@ msgstr ""
 
 #: 
 #~ msgid "<0>Tip:</0> Use this tool to find v2 pools that don't automatically appear in the interface."
-#~ msgstr "<0> Sfat:</0> Utilizați acest instrument pentru a găsi pool-uri v2 care nu apar automat în interfață."
+#~ msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
@@ -162,18 +162,14 @@ msgstr "<0>Sfat: </0> Când adaugi lichiditate, vei primi tokeni de rezervă car
 
 #: 
 #~ msgid "<0>Unlock voting</0> to prepare for the next proposal."
-#~ msgstr "<0>Deblochează votul </0> pentru a se pregăti pentru următoarea propunere."
+#~ msgstr ""
 
 #: 
 #~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-#~ msgstr "<0>🎉 </0>Bine ai venit la echipa Unicorn :) <1>🎉</1>"
+#~ msgstr ""
 
 #: 
 #~ msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
-#~ msgstr "Este necesar un prag minim de 1 % din totalul ofertei UNI pentru prezentarea de propuneri"
-
-#: 
-#~ msgid "ADD LIQUIDITY"
 #~ msgstr ""
 
 #: src/constants/tokens.ts
@@ -182,7 +178,7 @@ msgstr ""
 
 #: 
 #~ msgid "About"
-#~ msgstr "Despre"
+#~ msgstr ""
 
 #: src/components/swap/SwapModalHeader.tsx
 msgid "Accept"
@@ -218,11 +214,11 @@ msgstr ""
 
 #: 
 #~ msgid "Add V2 Liquidity"
-#~ msgstr "Adaugă lichiditate V2"
+#~ msgstr ""
 
 #: 
 #~ msgid "Add liquidity."
-#~ msgstr "Adaugă lichiditate."
+#~ msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -235,11 +231,11 @@ msgstr "Add {0} {1} and {2} {3} (Automatic Copy)"
 
 #: 
 #~ msgid "Add {0}-{1} liquidity"
-#~ msgstr "Adaugă {0}-{1} lichiditate"
+#~ msgstr ""
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
-#~ msgstr "Adaugă lichiditate {0}/{1} V3"
+#~ msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "Added"
@@ -251,7 +247,7 @@ msgstr "Adăugat {0}"
 
 #: 
 #~ msgid "Address has no available claim"
-#~ msgstr "Adresa nu are nici o cerere disponibilă"
+#~ msgstr ""
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
@@ -259,7 +255,7 @@ msgstr ""
 
 #: 
 #~ msgid "Against"
-#~ msgstr "Împotriva"
+#~ msgstr ""
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
@@ -267,7 +263,7 @@ msgstr ""
 
 #: 
 #~ msgid "Allow LP token migration"
-#~ msgstr "Permite migrarea token-ului LP"
+#~ msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Allow high price impact trades and skip the confirm screen. Use at your own risk."
@@ -278,12 +274,8 @@ msgid "Allow the Niifi to use your {0}"
 msgstr ""
 
 #: 
-#~ msgid "Allow the Uniswap Protocol to use your {0}"
-#~ msgstr "Permiteți Protocolului Uniswap să vă utilizeze {0}"
-
-#: 
 #~ msgid "Allowed"
-#~ msgstr "Permis"
+#~ msgstr ""
 
 #: src/components/Header/URLWarning.tsx
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
@@ -292,7 +284,7 @@ msgstr "Asigurați-vă întotdeauna că URL-ul este<0>app.uniswap.org</0> - marc
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
 msgid "Amount"
-msgstr "Sumă"
+msgstr ""
 
 #: 
 #: 
@@ -309,12 +301,8 @@ msgid "Amount to add"
 msgstr ""
 
 #: 
-#~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "A apărut o eroare la încercarea de a executa acest swap. Este posibil să fie nevoie să vă măriți toleranța la alunecare. Dacă acest lucru nu funcționează, poate exista o incompatibilitate cu jetonul pe care îl tranzacționați. Taxa de notă pentru jetoanele de transfer și rebase sunt incompatibile cu Uniswap V3."
-
-#: 
 #~ msgid "Analytics"
-#~ msgstr "Analize"
+#~ msgstr ""
 
 #: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -343,17 +331,13 @@ msgstr "Aprobare {0}"
 msgid "Are you sure?"
 msgstr "Ești sigur?"
 
-#: 
-#~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-#~ msgstr "Ca membru al comunității Uniswap puteți pretinde UNI că este folosită pentru vot și guvernanță.<0/><1/><2>Citește mai multe despre UNI</2>"
-
 #: src/components/Table/Dashboard/Assets.tsx
 msgid "Assets"
 msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
-#~ msgstr "Cel puțin {0} {1} și {2} {3} vor fi rambursați în portofelul dvs. datorită intervalului de preț selectat."
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Australian Dollar"
@@ -381,7 +365,7 @@ msgstr ""
 
 #: 
 #~ msgid "Back"
-#~ msgstr "Înapoi"
+#~ msgstr ""
 
 #: src/components/PoolInvest/index.tsx
 msgid "Balance"
@@ -389,7 +373,7 @@ msgstr ""
 
 #: 
 #~ msgid "Balance:"
-#~ msgstr "Balanță:"
+#~ msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -397,19 +381,23 @@ msgstr ""
 
 #: 
 #~ msgid "Balance: {0} {1}"
-#~ msgstr "Sold: {0} {1}"
+#~ msgstr ""
+
+#: 
+#~ msgid "Balanche:"
+#~ msgstr ""
 
 #: 
 #~ msgid "Best for exotic pairs."
-#~ msgstr "Cel mai bun pentru perechi exotice."
+#~ msgstr ""
 
 #: 
 #~ msgid "Best for most pairs."
-#~ msgstr "Cel mai bun pentru majoritatea perechilor."
+#~ msgstr ""
 
 #: 
 #~ msgid "Best for stable pairs."
-#~ msgstr "Cel mai bun pentru perechi stabile."
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Bitcoin"
@@ -444,10 +432,6 @@ msgstr "Prin adăugarea acestei liste sunteți implicit încrezător că datele 
 msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
 msgstr ""
 
-#: 
-#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-#~ msgstr "Prin conectarea unui portofel, sunteți de acord cu Uniswap Labs’ <0>Termenii de utilizare</0> și acceptați că ați citit și înțeles <1>Dislaimer-ul protocolului Uniswap </1>."
-
 #: src/constants/tokens.ts
 msgid "CAD"
 msgstr ""
@@ -470,11 +454,11 @@ msgstr ""
 
 #: 
 #~ msgid "Change"
-#~ msgstr "Schimbă"
+#~ msgstr ""
 
 #: 
 #~ msgid "Charts"
-#~ msgstr "Diagramele"
+#~ msgstr ""
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
@@ -488,7 +472,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Claim"
-#~ msgstr "Claim"
+#~ msgstr ""
 
 #: 
 #: 
@@ -496,28 +480,28 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Claim UNI"
-#~ msgstr "Claim UNI"
+#~ msgstr ""
 
 #: 
 #~ msgid "Claim UNI Token"
-#~ msgstr "Claim UNI Token"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Claim accumulated UNI rewards"
-#~ msgstr "Revendică recompense UNI acumulate"
+#~ msgstr ""
 
 #: 
 #~ msgid "Claim fees"
-#~ msgstr "Revendică taxe"
+#~ msgstr ""
 
 #: 
 #~ msgid "Claim your UNI tokens"
-#~ msgstr "Revendicați jetoanele UNI"
+#~ msgstr ""
 
 #: 
 #~ msgid "Claimed"
-#~ msgstr "Revendicat"
+#~ msgstr ""
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
@@ -525,12 +509,12 @@ msgstr "Pretins UNI!"
 
 #: 
 #~ msgid "Claiming"
-#~ msgstr "Revendicare"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Claiming UNI"
-#~ msgstr "Solicitare UNI"
+#~ msgstr ""
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claiming {0} UNI"
@@ -538,7 +522,7 @@ msgstr "Solicitare {0} UNI"
 
 #: 
 #~ msgid "Clear All"
-#~ msgstr "Șterge tot"
+#~ msgstr ""
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "Clear all"
@@ -554,36 +538,36 @@ msgstr "Închis"
 
 #: 
 #~ msgid "Code"
-#~ msgstr "Cod"
+#~ msgstr ""
 
 #: 
 #~ msgid "Collect"
-#~ msgstr "Colectează"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Collect as WETH"
-#~ msgstr "Colectează ca WETH"
+#~ msgstr ""
 
 #: 
 #~ msgid "Collect fees"
-#~ msgstr "Colectează taxe"
+#~ msgstr ""
 
 #: 
 #~ msgid "Collected"
-#~ msgstr "Colectat"
+#~ msgstr ""
 
 #: 
 #~ msgid "Collecting"
-#~ msgstr "Colectare"
+#~ msgstr ""
 
 #: 
 #~ msgid "Collecting fees"
-#~ msgstr "Colectarea taxelor"
+#~ msgstr ""
 
 #: 
 #~ msgid "Collecting fees will withdraw currently available fees for you."
-#~ msgstr "Colectarea taxelor va retrage taxele disponibile în prezent pentru tine."
+#~ msgstr ""
 
 #: src/components/SearchModal/CommonBases.tsx
 msgid "Common bases"
@@ -642,15 +626,15 @@ msgstr "Conectează-te la un portofel pentru a găsi pool-uri"
 
 #: 
 #~ msgid "Connect to a wallet to view your V2 liquidity."
-#~ msgstr "Conectează-te la un portofel pentru a vizualiza lichiditatea V2."
+#~ msgstr ""
 
 #: 
 #~ msgid "Connect to a wallet to view your liquidity."
-#~ msgstr "Conectează-te la un portofel pentru a vizualiza lichiditatea."
+#~ msgstr ""
 
 #: 
 #~ msgid "Connect wallet"
-#~ msgstr "Conectare portofel"
+#~ msgstr ""
 
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/ManageWalletListModal/index.tsx
@@ -659,7 +643,7 @@ msgstr ""
 
 #: 
 #~ msgid "Connected with {name}"
-#~ msgstr "Conectat cu {name}"
+#~ msgstr ""
 
 #: src/components/AccountDetails/Copy.tsx
 msgid "Copied"
@@ -668,6 +652,10 @@ msgstr "Copiat"
 #: src/components/AccountDetails/index.tsx
 msgid "Copy Address"
 msgstr "Copiază adresa"
+
+#: 
+#~ msgid "Covid"
+#~ msgstr ""
 
 #: src/components/CreatePoolModal/index.tsx
 msgid "Create New Pool"
@@ -688,7 +676,7 @@ msgstr "Creează o pereche"
 
 #: 
 #~ msgid "Create a pool"
-#~ msgstr "Creează o grupare"
+#~ msgstr ""
 
 #: src/components/ErrorBoundary/index.tsx
 msgid "Create an issue on GitHub"
@@ -696,7 +684,7 @@ msgstr "Creați o problemă pe GitHub"
 
 #: 
 #~ msgid "Create pool and add {0}/{1} V3 liquidity"
-#~ msgstr "Creați pool și adăugați {0}/{1} V3 lichiditate"
+#~ msgstr ""
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Create pool."
@@ -704,16 +692,16 @@ msgstr "Creare grupare."
 
 #: 
 #~ msgid "Current Price"
-#~ msgstr "Pretul curent"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Current price"
-#~ msgstr "Preț curent"
+#~ msgstr ""
 
 #: 
 #~ msgid "Current {0} Price:"
-#~ msgstr "Preț curent {0}:"
+#~ msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "Dashboard"
@@ -725,7 +713,7 @@ msgstr "Voturi delegate"
 
 #: 
 #~ msgid "Delegated to:"
-#~ msgstr "Delegat către:"
+#~ msgstr ""
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Delegating votes"
@@ -740,7 +728,7 @@ msgstr "Depozit"
 
 #: 
 #~ msgid "Deposit Amounts"
-#~ msgstr "Sume de depozit"
+#~ msgstr ""
 
 #: src/components/DepositTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
@@ -749,15 +737,11 @@ msgstr ""
 
 #: 
 #~ msgid "Deposit UNI-V2 LP Tokens"
-#~ msgstr "Depuneți jetoane UNI-V2 LP"
+#~ msgstr ""
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposit liquidity"
 msgstr "Lichiditate depozit"
-
-#: 
-#~ msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-#~ msgstr "Depuneți furnizorul dvs. de lichiditate jetoanele pentru a primi UNI, jetonul de guvernanță al protocolului Uniswap."
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -773,7 +757,7 @@ msgstr "Depunerea lichidității"
 
 #: 
 #~ msgid "Description"
-#~ msgstr "Descriere"
+#~ msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Detailed"
@@ -781,7 +765,7 @@ msgstr "Detaliat"
 
 #: 
 #~ msgid "Details"
-#~ msgstr "Detalii"
+#~ msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Disable Multihops"
@@ -789,7 +773,7 @@ msgstr "Dezactivează Multihops"
 
 #: 
 #~ msgid "Disconnect"
-#~ msgstr "Deconectare"
+#~ msgstr ""
 
 #: src/components/AccountDetails/index.tsx
 msgid "Disconnect Wallet"
@@ -797,7 +781,7 @@ msgstr ""
 
 #: 
 #~ msgid "Discord"
-#~ msgstr "Discord"
+#~ msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "Discover"
@@ -809,11 +793,11 @@ msgstr "Renunţaţi"
 
 #: 
 #~ msgid "Docs"
-#~ msgstr "Documente"
+#~ msgstr ""
 
 #: 
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
-#~ msgstr "Nu vezi una dintre pozițiile tale v2? <0>Importă-l.</0>"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "ETH"
@@ -825,15 +809,11 @@ msgstr ""
 
 #: 
 #~ msgid "ETH-NII Transactions"
-#~ msgstr ""
+#~ msgstr "ETH-NII Transactions"
 
 #: src/constants/tokens.ts
 msgid "EUR"
 msgstr ""
-
-#: 
-#~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-#~ msgstr "Tokeni UNI câștigați reprezintă acțiunile cu drept de vot în guvernanța Uniswap."
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Earned tokens represent voting shares in governance."
@@ -849,7 +829,7 @@ msgstr "Introduceți un procentaj valid de slippage"
 
 #: 
 #~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-#~ msgstr "Introduceți o adresă pentru a declanșa o cerere UNI. Dacă adresa are o UNI reclamantă, aceasta va fi trimisă la depunerea ei."
+#~ msgstr ""
 
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
@@ -908,8 +888,8 @@ msgid "Expert mode turns off the confirm transaction prompt and allows high slip
 msgstr "Modul Expert dezactivează prompt tranzacția de confirmare și permite tranzacțiile cu derapaje mari, care duc adesea la rate nefavorabile și la pierderi de fonduri."
 
 #: src/pages/Pool/CTACards.tsx
-msgid "Explore popular pools on Uniswap Analytics."
-msgstr "Explorează pool-uri populare pe Uniswap Analytics."
+msgid "Explore popular pools."
+msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "Farm"
@@ -917,7 +897,7 @@ msgstr ""
 
 #: 
 #~ msgid "Fee Tier"
-#~ msgstr "Nivelul Taxei"
+#~ msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -936,11 +916,7 @@ msgstr ""
 
 #: 
 #~ msgid "For"
-#~ msgstr "Pentru"
-
-#: 
-#~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
-#~ msgstr "Pentru fiecare grup indicat mai jos, faceți clic pe migrare pentru a elimina lichiditatea de la Uniswap V2 și depuneți-l în Uniswap V3."
+#~ msgstr ""
 
 #: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Swap/index.tsx
@@ -965,7 +941,7 @@ msgstr ""
 
 #: 
 #~ msgid "Hide closed positions"
-#~ msgstr "Ascunde pozițiile închise"
+#~ msgstr ""
 
 #: src/pages/Swap/index.tsx
 msgid "High Price Impact"
@@ -1008,11 +984,11 @@ msgstr "Listă de import"
 
 #: 
 #~ msgid "Import Pool"
-#~ msgstr "Importă grupa"
+#~ msgstr ""
 
 #: src/components/NavigationTabs/index.tsx
 msgid "Import V2 Pool"
-msgstr "Import V2 Pool"
+msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "Import at your own risk"
@@ -1024,7 +1000,7 @@ msgstr "În interval"
 
 #: 
 #~ msgid "Increase Liquidity"
-#~ msgstr "Crește lichiditatea"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Indian Rupees"
@@ -1080,12 +1056,12 @@ msgstr "Asociere invalidă."
 
 #: 
 #~ msgid "Invalid price input"
-#~ msgstr "Introducere de preț nevalidă"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Invalid range selected. The min price must be lower than the max price."
-#~ msgstr "Interval invalid selectat. Prețul minim trebuie să fie mai mic decât prețul maxim."
+#~ msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Invalid recipient"
@@ -1095,10 +1071,6 @@ msgstr "Destinatar nevalid"
 #: 
 #: 
 #~ msgid "Invest"
-#~ msgstr ""
-
-#: 
-#~ msgid "Invested"
 #~ msgstr ""
 
 #: src/constants/tokens.ts
@@ -1114,8 +1086,12 @@ msgid "KRW"
 msgstr ""
 
 #: 
+#~ msgid "Kiev"
+#~ msgstr ""
+
+#: 
 #~ msgid "Learn"
-#~ msgstr "Învață"
+#~ msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "Lend"
@@ -1138,11 +1114,14 @@ msgstr "Taxa furnizorului de lichiditate"
 
 #: 
 #~ msgid "Liquidity provider rewards"
-#~ msgstr "Recompense furnizor de lichidități"
+#~ msgstr ""
 
 #: 
 #~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
-#~ msgstr "Furnizorii de lichidități câștigă o taxă de 0,3 % pentru toate tranzacțiile proporționale cu cota lor din grupare. Taxele sunt adăugate în rezervă, acumulează în timp real şi pot fi revendicate prin retragerea lichidităţii."
+#~ msgstr ""
+
+#~ msgid "Lira"
+#~ msgstr "Lira"
 
 #: src/components/SearchModal/Manage.tsx
 msgid "Lists"
@@ -1161,10 +1140,6 @@ msgstr "Încărcare"
 #: src/constants/tokens.ts
 msgid "MXN"
 msgstr ""
-
-#: src/components/Header/URLWarning.tsx
-msgid "Make sure the URL is<0>app.uniswap.org</0>"
-msgstr "Asigurați-vă că URL-ul este<0>app.uniswap.org</0>"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
@@ -1201,20 +1176,20 @@ msgstr ""
 
 #: 
 #~ msgid "Max"
-#~ msgstr "Maxim"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Max Price"
-#~ msgstr "Preț maxim"
+#~ msgstr ""
 
 #: 
 #~ msgid "Max price"
-#~ msgstr "Preț maxim"
+#~ msgstr ""
 
 #: 
 #~ msgid "Max:"
-#~ msgstr "Max:"
+#~ msgstr ""
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Maximum sent"
@@ -1231,41 +1206,37 @@ msgstr "Migrare"
 
 #: 
 #~ msgid "Migrate Liquidity"
-#~ msgstr "Migrare lichiditate"
+#~ msgstr ""
 
 #: 
 #~ msgid "Migrate Liquidity to V3"
-#~ msgstr "Migrare lichiditate la V3"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Migrate V2 Liquidity"
-#~ msgstr "Migrare lichiditate V2"
+#~ msgstr ""
 
 #: 
 #~ msgid "Migrate V2 liquidity"
-#~ msgstr "Migrare lichiditate V2"
-
-#: 
-#~ msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
-#~ msgstr "Migrați jetoanele de lichiditate de la Uniswap V2 la Uniswap V3."
+#~ msgstr ""
 
 #: 
 #~ msgid "Migrating"
-#~ msgstr "Migrare"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Min Price"
-#~ msgstr "Preț minim"
+#~ msgstr ""
 
 #: 
 #~ msgid "Min price"
-#~ msgstr "Preț minim"
+#~ msgstr ""
 
 #: 
 #~ msgid "Min:"
-#~ msgstr "Min:"
+#~ msgstr ""
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Minimum received"
@@ -1273,7 +1244,7 @@ msgstr "Minim primit"
 
 #: 
 #~ msgid "More"
-#~ msgstr "Mai"
+#~ msgstr ""
 
 #: src/pages/Dashboard/index.tsx
 msgid "NFTs Collection"
@@ -1298,7 +1269,7 @@ msgstr ""
 
 #: 
 #~ msgid "New Position"
-#~ msgstr "Poziție nouă"
+#~ msgstr ""
 
 #: src/components/SwitchLocaleLink/index.tsx
 msgid "Niifi available in: <0>{0}</0>"
@@ -1306,16 +1277,16 @@ msgstr ""
 
 #: 
 #~ msgid "No V2 Liquidity found."
-#~ msgstr "Nu s-a găsit lichiditate V2."
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "No active pools"
-#~ msgstr "Nu există pool-uri active"
+#~ msgstr ""
 
 #: 
 #~ msgid "No liquidity found."
-#~ msgstr "Nici o lichiditate găsită."
+#~ msgstr ""
 
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
@@ -1323,7 +1294,7 @@ msgstr "Nici un pool găsit."
 
 #: 
 #~ msgid "No proposals found."
-#~ msgstr "Nicio propunere găsită."
+#~ msgstr ""
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
@@ -1359,7 +1330,7 @@ msgstr "Odată ce sunteți mulțumit de rata de schimb faceți clic pe ofertă p
 
 #: 
 #~ msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
-#~ msgstr "Doar voturile UNI care au fost auto-delegate sau delegate la o altă adresă înainte ca blocul {0} să fie eligibil pentru vot."
+#~ msgstr ""
 
 #: src/components/Web3ReactManager/index.tsx
 msgid "Oops! An unknown error occurred. Please refresh the page, or visit from another browser or device."
@@ -1389,7 +1360,7 @@ msgstr ""
 
 #: 
 #~ msgid "Owner"
-#~ msgstr "Proprietar"
+#~ msgstr ""
 
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
@@ -1406,7 +1377,7 @@ msgstr ""
 
 #: 
 #~ msgid "Participating pools"
-#~ msgstr "Grupuri participante"
+#~ msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "Payment Method"
@@ -1435,7 +1406,7 @@ msgstr "Rezervă găsită!"
 
 #: 
 #~ msgid "Pool Rate"
-#~ msgstr "Cota de gunoi"
+#~ msgstr ""
 
 #: src/components/earn/PoolCard.tsx
 msgid "Pool rate"
@@ -1453,13 +1424,17 @@ msgstr "Jetoane în bazinul de recompense:"
 msgid "Pooled {0}:"
 msgstr "Grupat {0}:"
 
+#: 
+#~ msgid "Pooler {0}:"
+#~ msgstr ""
+
 #: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
 #: 
 #~ msgid "Pools Overview"
-#~ msgstr "Prezentare generală culori"
+#~ msgstr ""
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
@@ -1476,7 +1451,7 @@ msgstr ""
 
 #: 
 #~ msgid "Price Difference:"
-#~ msgstr "Diferență de preț:"
+#~ msgstr ""
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Price Impact"
@@ -1493,7 +1468,7 @@ msgstr "Preț actualizat"
 #: 
 #: 
 #~ msgid "Price range"
-#~ msgstr "Intervalul de preț"
+#~ msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price:"
@@ -1505,15 +1480,15 @@ msgstr "Prețuri și partajare grup"
 
 #: 
 #~ msgid "Proposals"
-#~ msgstr "Propuneri"
+#~ msgstr ""
 
 #: 
 #~ msgid "Proposals submitted by community members will appear here."
-#~ msgstr "Propunerile depuse de membrii comunității vor apărea aici."
+#~ msgstr ""
 
 #: 
 #~ msgid "Proposer"
-#~ msgstr "Propunător"
+#~ msgstr ""
 
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
@@ -1541,15 +1516,11 @@ msgstr "Tarife"
 
 #: 
 #~ msgid "Read more about UNI"
-#~ msgstr "Citește mai multe despre UNI"
-
-#: 
-#~ msgid "Read more about Uniswap governance"
-#~ msgstr "Citește mai multe despre guvernanța Uniswap"
+#~ msgstr ""
 
 #: 
 #~ msgid "Read more about providing liquidity"
-#~ msgstr "Citește mai multe despre furnizarea de lichidități"
+#~ msgstr ""
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
@@ -1592,7 +1563,7 @@ msgstr "Elimină {0} {1} și {2} {3}"
 
 #: 
 #~ msgid "Remove {0}/{1} V3 liquidity"
-#~ msgstr "Șterge {0}/{1} V3 lichidități"
+#~ msgstr ""
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Removes"
@@ -1644,7 +1615,7 @@ msgstr ""
 
 #: 
 #~ msgid "Select Pool"
-#~ msgstr "Selectare grup"
+#~ msgstr ""
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Select a Token"
@@ -1652,7 +1623,7 @@ msgstr ""
 
 #: 
 #~ msgid "Select a pool type based on your preferred liquidity provider fee."
-#~ msgstr "Selectați un tip de grup pe baza taxei dvs. preferate de furnizor de lichidități."
+#~ msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
 #: src/pages/PoolFinder/index.tsx
@@ -1667,19 +1638,19 @@ msgstr ""
 
 #: 
 #~ msgid "Select a token to find your v2 liquidity."
-#~ msgstr "Selectați un simbol pentru a vă găsi lichiditatea v2."
+#~ msgstr ""
 
 #: 
 #~ msgid "Select pair"
-#~ msgstr "Selectează pereche"
+#~ msgstr ""
 
 #: 
 #~ msgid "Selected Range"
-#~ msgstr "Gama selectată"
+#~ msgstr ""
 
 #: 
 #~ msgid "Self"
-#~ msgstr "Propriu"
+#~ msgstr ""
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
@@ -1692,11 +1663,11 @@ msgstr ""
 #: 
 #: 
 #~ msgid "Set Price Range"
-#~ msgstr "Setează Interval de Preț"
+#~ msgstr ""
 
 #: 
 #~ msgid "Set Starting Price"
-#~ msgstr "Setează prețul de început"
+#~ msgstr ""
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
@@ -1738,7 +1709,7 @@ msgstr ""
 
 #: 
 #~ msgid "Step 1. Get UNI-V2 Liquidity tokens"
-#~ msgstr "Pasul 1. Obține jetoane de lichiditate UNI-V2"
+#~ msgstr ""
 
 #: src/components/vote/VoteModal.tsx
 msgid "Submitting Vote"
@@ -1793,20 +1764,16 @@ msgid "TVL"
 msgstr ""
 
 #: 
-#~ msgid "Thanks for being part of the Uniswap community <0/>"
-#~ msgstr "Vă mulțumim că faceți parte din comunitatea Uniswap <0 />"
-
-#: 
 #~ msgid "Thanks for being part of the community <0/>"
 #~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
-msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
-msgstr "Invariantul Uniswap x * y = k nu a fost satisfăcut de swap. Acest lucru înseamnă, de obicei, că unul dintre jetoanele pe care le schimbați încorporează un comportament personalizat la transfer."
-
-#: src/hooks/useSwapCallback.ts
 msgid "The input token cannot be transferred. There may be an issue with the input token."
 msgstr "Jetonul de intrare nu poate fi transferat. Este posibil să existe o problemă cu simbolul de intrare."
+
+#: src/hooks/useSwapCallback.ts
+msgid "The invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
+msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "The market price is outside your specified price range. Single-asset deposit only."
@@ -1815,10 +1782,6 @@ msgstr "Prețul de piață este în afara intervalului de preț specificat. Doar
 #: src/hooks/useSwapCallback.ts
 msgid "The output token cannot be transferred. There may be an issue with the output token."
 msgstr "Jetonul de ieșire nu poate fi transferat. S-ar putea să existe o problemă cu simbolul de ieșire."
-
-#: 
-#~ msgid "The output token cannot be transferred. There may be an issue with the output token. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "Jetonul de ieșire nu poate fi transferat. S-ar putea să existe o problemă cu simbolul de ieșire. Taxa de notă pentru jetoanele de transfer și rebase sunt incompatibile cu Uniswap V3."
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1854,11 +1817,7 @@ msgstr "Acest jeton nu apare pe lista (listele) de jetoane active. Asigurați-v�
 
 #: 
 #~ msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
-#~ msgstr "Acest instrument va migra în siguranță lichiditatea {0} în V3. Procesul este complet lipsit de încredere datorită"
-
-#: 
-#~ msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "Această tranzacție nu va reuși din cauza mișcării prețurilor. Încercați să vă măriți toleranța la alunecare. Taxa de notă pentru jetoanele de transfer și rebase sunt incompatibile cu Uniswap V3."
+#~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "This transaction will not succeed either due to price movement or fee on transfer. Try increasing your slippage tolerance."
@@ -1926,10 +1885,6 @@ msgstr ""
 msgid "Top Looser Pools"
 msgstr ""
 
-#: 
-#~ msgid "Top Loosers"
-#~ msgstr ""
-
 #: src/pages/Discover/index.tsx
 msgid "Top Losers"
 msgstr ""
@@ -1944,7 +1899,7 @@ msgstr "Top pool-uri"
 
 #: 
 #~ msgid "Total Supply"
-#~ msgstr "Total Aprovizionare"
+#~ msgstr ""
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -1956,7 +1911,7 @@ msgstr "Total depozitat"
 
 #: 
 #~ msgid "Total deposits"
-#~ msgstr "Depozite totale"
+#~ msgstr ""
 
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
@@ -2001,20 +1956,24 @@ msgid "Turn On Expert Mode"
 msgstr "Activează Modul Expert"
 
 #: 
+#~ msgid "UN in circulation:"
+#~ msgstr ""
+
+#: 
+#~ msgid "UN price:"
+#~ msgstr ""
+
+#: 
 #~ msgid "UNI has arrived"
-#~ msgstr "UNI a sosit"
+#~ msgstr ""
 
 #: 
 #~ msgid "UNI in circulation:"
-#~ msgstr "UNI în circulație:"
+#~ msgstr ""
 
 #: 
 #~ msgid "UNI price:"
-#~ msgstr "Preț UNI:"
-
-#: 
-#~ msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-#~ msgstr "Tokeni UNI reprezintă acțiunile cu drept de vot în guvernanța Uniswap. Puteți vota pentru fiecare propunere sau vă puteți delega voturile unei terțe părți."
+#~ msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
@@ -2022,14 +1981,10 @@ msgstr "UNI {0}/{1} ars"
 
 #: 
 #~ msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
-#~ msgstr "Sunt necesare jetoane UNI-V2. Odată ce ai adăugat lichiditate în rezerva {0}-{1} poți distribui tokenurile de lichiditate pe această pagină."
+#~ msgstr ""
 
 #: 
 #~ msgid "UNI-V2 {0}-{1}"
-#~ msgstr "UNI-V2 {0}-{1}"
-
-#: 
-#~ msgid "US$"
 #~ msgstr ""
 
 #: src/constants/tokens.ts
@@ -2042,31 +1997,11 @@ msgstr "UNI nesolicitate"
 
 #: 
 #~ msgid "Unclaimed fees"
-#~ msgstr "Taxe nesolicitate"
+#~ msgstr ""
 
 #: 
 #~ msgid "Unclaimed:"
-#~ msgstr "Nererevendicat:"
-
-#: 
-#~ msgid "Uniswap Governance"
-#~ msgstr "Guvernanță Uniswap"
-
-#: src/pages/Pool/CTACards.tsx
-msgid "Uniswap V3 is here!"
-msgstr "Uniswap V3 este aici!"
-
-#: 
-#~ msgid "Uniswap available in: <0>{0}</0>"
-#~ msgstr "Uniswap disponibil în: <0>{0}</0>"
-
-#: 
-#~ msgid "Uniswap liquidity mining"
-#~ msgstr "Minerit de lichidități uniswap"
-
-#: 
-#~ msgid "Uniswap migration contract↗"
-#~ msgstr "Contractul de migrare al uniswap:up-\"named@@0:"
+#~ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "United Kingdom Pound"
@@ -2085,17 +2020,17 @@ msgid "Unknown error{0}."
 msgstr ""
 
 #: 
-#~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr "Eroare{0}necunoscută. Încercați să vă măriți toleranța la alunecare. Taxa de notă pentru jetoanele de transfer și rebase sunt incompatibile cu Uniswap V3."
+#~ msgid "Unlaimed:"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Unlock Votes"
-#~ msgstr "Deblocare voturi"
+#~ msgstr ""
 
 #: 
 #~ msgid "Unlock Voting"
-#~ msgstr "Deblocare Votare"
+#~ msgstr ""
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Unlocking Votes"
@@ -2112,11 +2047,11 @@ msgstr "Active neacceptate"
 
 #: src/pages/Swap/index.tsx
 msgid "Unwrap"
-msgstr "Unwrap"
+msgstr ""
 
 #: 
 #~ msgid "Update Delegation"
-#~ msgstr "Actualizează Delegația"
+#~ msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Update list"
@@ -2124,32 +2059,36 @@ msgstr "Actualizare listă"
 
 #: 
 #~ msgid "User"
-#~ msgstr "Utilizator"
+#~ msgstr ""
 
 #: 
 #~ msgid "V2 liquidity"
-#~ msgstr "Lichiditate V2"
+#~ msgstr ""
 
 #: 
 #~ msgid "V3"
-#~ msgstr "V3"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "V3 {0} Price:"
-#~ msgstr "V3 {0} Preț:"
+#~ msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "VISA *5546"
 msgstr ""
 
 #: 
+#~ msgid "View UN Analytics"
+#~ msgstr ""
+
+#: 
 #~ msgid "View UNI Analytics"
-#~ msgstr "Vezi datele UNI Analytics"
+#~ msgstr ""
 
 #: 
 #~ msgid "View V2 Liquidity"
-#~ msgstr "Vezi lichiditatea V2"
+#~ msgstr ""
 
 #: src/components/PositionCard/index.tsx
 msgid "View accrued fees and analytics<0>↗</0>"
@@ -2184,15 +2123,15 @@ msgstr ""
 
 #: 
 #~ msgid "Vote"
-#~ msgstr "Votează"
+#~ msgstr ""
 
 #: 
 #~ msgid "Vote Against"
-#~ msgstr "Votează Împotriva"
+#~ msgstr ""
 
 #: 
 #~ msgid "Vote For"
-#~ msgstr "Vot pentru"
+#~ msgstr ""
 
 #: src/components/vote/VoteModal.tsx
 #: src/components/vote/VoteModal.tsx
@@ -2206,11 +2145,11 @@ msgstr "Votează propunerea {proposalId}"
 
 #: 
 #~ msgid "Voting ended {0}"
-#~ msgstr "Votarea s-a încheiat {0}"
+#~ msgstr ""
 
 #: 
 #~ msgid "Voting ends approximately {0}"
-#~ msgstr "Votarea se termină aproximativ {0}"
+#~ msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "WITHDRAW"
@@ -2239,15 +2178,15 @@ msgstr "Recompense Săptămânale"
 
 #: 
 #~ msgid "Welcome to team Unicorn :)"
-#~ msgstr "Bine ai venit la echipa Unicorn :)"
+#~ msgstr ""
 
 #: 
 #~ msgid "When you claim without withdrawing your liquidity remains in the mining pool."
-#~ msgstr "Când revendici fără să-ți retragi lichiditatea rămâne în rezerva de minere."
+#~ msgstr ""
 
 #: 
 #~ msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
-#~ msgstr "Când vă retrageți, contractul va solicita automat UNI în numele dvs.!"
+#~ msgstr ""
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "When you withdraw, your UNI is claimed and your liquidity is removed from the mining pool."
@@ -2289,10 +2228,6 @@ msgstr "Rețea greșită"
 msgid "You are creating a pool"
 msgstr "Creezi un pool"
 
-#: 
-#~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-#~ msgstr "Sunteți primul furnizor de lichidități pentru această placă Uniswap V3. Lichiditatea dvs. va migra la prețul actual de {0}."
-
 #: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "Sunteți primul furnizor de lichidități."
@@ -2311,23 +2246,15 @@ msgstr "Încă nu ai lichidități în acest pool"
 
 #: 
 #~ msgid "You must connect an account."
-#~ msgstr "Trebuie să conectați un cont."
-
-#: 
-#~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-#~ msgstr "Trebuie să dați permisiunea de a folosi {0}contractele Inteligente Uniswap . Trebuie să faceți acest lucru o singură dată pe token."
+#~ msgstr ""
 
 #: src/pages/Swap/index.tsx
 msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
 msgstr ""
 
 #: 
-#~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-#~ msgstr "Ar trebui să depozitați doar lichiditatea în Uniswap V3 la un preț pe care îl credeți corect. <0/>Dacă prețul pare incorect, poți face un swap pentru a muta prețul sau să aștepți ca altcineva să facă acest lucru."
-
-#: 
 #~ msgid "You will also collect fees earned from this position."
-#~ msgstr "De asemenea, veți colecta taxe câștigate din această poziție."
+#~ msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
@@ -2336,27 +2263,23 @@ msgstr "Vei primi"
 
 #: 
 #~ msgid "Your UNI Breakdown"
-#~ msgstr "Defalcarea UNI"
+#~ msgstr ""
 
 #: 
 #~ msgid "Your V2 liquidity"
-#~ msgstr "Lichiditatea dvs. V2"
+#~ msgstr ""
 
 #: 
 #~ msgid "Your V3 liquidity positions will appear here."
-#~ msgstr "Pozițiile tale de lichiditate V3 vor apărea aici."
-
-#: 
-#~ msgid "Your liquidity"
 #~ msgstr ""
 
 #: 
 #~ msgid "Your liquidity deposits"
-#~ msgstr "Depozitele tale de lichiditate"
+#~ msgstr ""
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
-#~ msgstr "Lichiditatea dvs. va câștiga comisioane numai atunci când prețul de piață al perechii se află în raza dvs. de acțiune. <0> Aveți nevoie de ajutor pentru a alege o gamă?</0>"
+#~ msgstr ""
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
@@ -2375,22 +2298,22 @@ msgstr "Poziţia ta are 0 lichidităţi şi nu plăteşte taxe."
 #: 
 #: 
 #~ msgid "Your position will be 100% composed of {0} at this price"
-#~ msgstr "Poziţia ta va fi 100% compusă din {0} la acest preţ"
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Your position will be 100% {0} at this price."
-#~ msgstr "Poziţia ta va fi de 100% {0} la acest preţ."
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Your position will not earn fees or be used in trades until the market price moves into your range."
-#~ msgstr "Poziția dvs. nu va câștiga taxe sau nu va fi utilizată în tranzacții până când prețul de piață nu se va muta în intervalul dvs."
+#~ msgstr ""
 
 #: 
 #: 
 #~ msgid "Your positions"
-#~ msgstr "Pozițiile dvs."
+#~ msgstr ""
 
 #: src/components/earn/PoolCard.tsx
 msgid "Your rate"
@@ -2403,7 +2326,7 @@ msgstr "Totalul token-ului tău:"
 
 #: 
 #~ msgid "Your transaction cost will be much higher as it includes the gas to create the pool."
-#~ msgstr "Costul tranzacției va fi mult mai mare deoarece include gazul necesar pentru a crea gruparea."
+#~ msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Your transaction may be frontrun"
@@ -2423,11 +2346,11 @@ msgstr "Tranzacția dvs. va reveni în cazul în care prețul se modifică nefav
 
 #: 
 #~ msgid "Your transactions will appear here..."
-#~ msgstr "Tranzacțiile vor apărea aici..."
+#~ msgstr ""
 
 #: 
 #~ msgid "Your unclaimed UNI"
-#~ msgstr "UNI nerevendicate"
+#~ msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "confirm"
@@ -2435,7 +2358,7 @@ msgstr "confirmă"
 
 #: 
 #~ msgid "for {0}"
-#~ msgstr "pentru {0}"
+#~ msgstr ""
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2474,12 +2397,12 @@ msgstr ""
 
 #: src/components/PositionCard/index.tsx
 msgid "{0} %"
-msgstr "{0} %"
+msgstr ""
 
 #: 
 #: 
 #~ msgid "{0} <0/> per <1/>"
-#~ msgstr "{0} <0/> pe <1/>"
+#~ msgstr ""
 
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "{0} Custom Tokens"
@@ -2492,7 +2415,7 @@ msgstr "{0} depozitat"
 
 #: 
 #~ msgid "{0} ETH"
-#~ msgstr "{0} ETH"
+#~ msgstr ""
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2502,7 +2425,7 @@ msgstr ""
 #: 
 #: 
 #~ msgid "{0} Fees Earned:"
-#~ msgstr "{0} Taxe Câștigate:"
+#~ msgstr ""
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2515,7 +2438,7 @@ msgstr "{0} în așteptare"
 #: 
 #: 
 #~ msgid "{0} UNI"
-#~ msgstr "{0} UNI"
+#~ msgstr ""
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
@@ -2525,11 +2448,11 @@ msgstr "{0} UNI / săptămână"
 
 #: src/components/earn/StakingModal.tsx
 msgid "{0} UNI-V2"
-msgstr "{0} UNI-V2"
+msgstr ""
 
 #: 
 #~ msgid "{0} UNI-V2 LP tokens available"
-#~ msgstr "{0} Tokeni UNI-V2 LP disponibili"
+#~ msgstr ""
 
 #: src/components/vote/VoteModal.tsx
 msgid "{0} Votes"
@@ -2542,7 +2465,7 @@ msgstr "{0} voturi"
 #: 
 #: 
 #~ msgid "{0} per {1}"
-#~ msgstr "{0} pe {1}"
+#~ msgstr ""
 
 #: src/components/RateToggle/index.tsx
 #: src/components/RateToggle/index.tsx
@@ -2558,7 +2481,7 @@ msgstr "{0} jetoane"
 #: 
 #: 
 #~ msgid "{0} {1} Price:"
-#~ msgstr "{0} {1} Preț:"
+#~ msgstr ""
 
 #: src/components/Table/swap.tsx
 msgid "{0} {1} for {2}"
@@ -2571,27 +2494,27 @@ msgstr "{0} • Adăugat de utilizator"
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
-msgstr "{0}%"
+msgstr ""
 
 #: 
 #~ msgid "{0}-{1} Liquidity Mining"
-#~ msgstr "{0}-{1} Minerit de lichiditate"
+#~ msgstr ""
 
 #: 
 #~ msgid "{0}/{1} LP NFT"
-#~ msgstr "{0}/{1} LP NFT"
+#~ msgstr ""
 
 #: 
 #~ msgid "{0}/{1} LP Tokens"
-#~ msgstr "{0}/{1} jetoane LP"
+#~ msgstr ""
 
 #: 
 #~ msgid "{SOCKS_AMOUNT} UNI"
-#~ msgstr "{SOCKS_AMOUNT} UNI"
+#~ msgstr ""
 
 #: 
 #~ msgid "{USER_AMOUNT} UNI"
-#~ msgstr "{USER_AMOUNT} UNI"
+#~ msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2599,7 +2522,7 @@ msgstr ""
 
 #: 
 #~ msgid "{percentForSlider}%"
-#~ msgstr "{percentForSlider}%"
+#~ msgstr ""
 
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -2612,12 +2535,13 @@ msgstr ""
 
 #: 
 #~ msgid "{tokenB} per {tokenA}"
-#~ msgstr "{tokenB} per {tokenA}"
+#~ msgstr ""
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
-msgstr "~$ <0/>"
+msgstr ""
 
 #: 
 #~ msgid "← Back to Pools Overview"
-#~ msgstr "Înapoi la panouri de ansamblu"
+#~ msgstr ""
+

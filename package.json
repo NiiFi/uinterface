@@ -1,6 +1,6 @@
 {
-  "name": "@uniswap/interface",
-  "description": "Uniswap Interface",
+  "name": "niifi_uinterface",
+  "description": "NiiFi Uinterface",
   "homepage": ".",
   "private": true,
   "devDependencies": {

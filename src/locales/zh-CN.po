@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: niifi\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-08-10 13:35\n"
+"PO-Revision-Date: 2021-08-10 14:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -39,17 +39,17 @@ msgstr "(最大值)"
 #~ msgid "(caim)"
 #~ msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "(claim)"
-msgstr ""
+#: 
+#~ msgid "(claim)"
+#~ msgstr ""
 
 #: 
 #~ msgid "(clear all)"
 #~ msgstr ""
 
-#: src/pages/Vote/index.tsx
-msgid "(edit)"
-msgstr ""
+#: 
+#~ msgid "(edit)"
+#~ msgstr ""
 
 #: 
 #~ msgid "+{feeAmountFormatted}%"
@@ -65,8 +65,6 @@ msgstr "-删除发送"
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI 代币 / 每周"
 
@@ -79,13 +77,16 @@ msgstr "0 UNI 代币 / 每周"
 #~ msgstr ""
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
 msgstr ""
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Week"
 msgstr ""
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Year"
 msgstr ""
@@ -126,14 +127,14 @@ msgstr ""
 #~ msgid "75%"
 #~ msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0/> All Proposals"
-msgstr ""
+#: 
+#~ msgid "<0/> All Proposals"
+#~ msgstr ""
 
-#: src/pages/Vote/index.tsx
-#: src/pages/Vote/index.tsx
-msgid "<0/> Votes"
-msgstr ""
+#: 
+#: 
+#~ msgid "<0/> Votes"
+#~ msgstr ""
 
 #: 
 #~ msgid "<0>Account analytics and accrued fees</0><1> ↗ </1>"
@@ -159,16 +160,20 @@ msgstr ""
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>提示：</0>当您注入流动资金时，您将收到代表您份额的流动池代币。这些代币将根据您在池中所占份额，自动赚取和累计相称的手续费，并且可以随时赎回流动池币对。"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "<0>Unlock voting</0> to prepare for the next proposal."
-msgstr ""
+#: 
+#~ msgid "<0>Unlock voting</0> to prepare for the next proposal."
+#~ msgstr ""
 
-#: src/components/claim/ClaimModal.tsx
-msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
-msgstr ""
+#: 
+#~ msgid "<0>🎉 </0>Welcome to team Unicorn :) <1>🎉</1>"
+#~ msgstr ""
 
-#: src/pages/Vote/index.tsx
-msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
+#: 
+#~ msgid "A minimum threshold of 1% of the total UNI supply is required to submit proposals"
+#~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "AUD"
 msgstr ""
 
 #: 
@@ -195,17 +200,25 @@ msgstr "添加"
 msgid "Add Delegate +"
 msgstr "添加委托 +"
 
+#: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/components/PoolInvest/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "注入流动资金"
+
+#: src/pages/PoolFinder/index.tsx
+msgid "Add Liquidity."
+msgstr ""
 
 #: 
 #~ msgid "Add V2 Liquidity"
 #~ msgstr ""
 
-#: src/pages/PoolFinder/index.tsx
-msgid "Add liquidity."
-msgstr ""
+#: 
+#~ msgid "Add liquidity."
+#~ msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Add {0} to Metamask <0/>"
@@ -216,29 +229,33 @@ msgstr "将 {0} 添加到 Metamask <0/>"
 msgid "Add {0} {1} and {2} {3}"
 msgstr "注入 {0} {1} 和 {2} {3}"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Add {0}-{1} liquidity"
-msgstr ""
+#: 
+#~ msgid "Add {0}-{1} liquidity"
+#~ msgstr ""
 
 #: 
 #~ msgid "Add {0}/{1} V3 liquidity"
 #~ msgstr ""
 
+#: src/components/PoolWithdraw/index.tsx
+msgid "Added"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Added {0}"
 msgstr "已添加 {0}"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Address has no available claim"
-msgstr ""
+#: 
+#~ msgid "Address has no available claim"
+#~ msgstr ""
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "Adds"
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Against"
-msgstr ""
+#: 
+#~ msgid "Against"
+#~ msgstr ""
 
 #: src/components/Dropdowns/SwapTableDropdown.tsx
 msgid "All"
@@ -257,33 +274,31 @@ msgid "Allow the Niifi to use your {0}"
 msgstr ""
 
 #: 
-#~ msgid "Allow the Uniswap Protocol to use your {0}"
-#~ msgstr ""
-
-#: 
 #~ msgid "Allowed"
-#~ msgstr ""
-
-#: 
-#~ msgid "Always <0>app.uniswap.org</0> - bookmark it to be safe."
 #~ msgstr ""
 
 #: src/components/Header/URLWarning.tsx
 msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
 msgstr "务必确保网址为<0>app.uniswap.org</0> - 将其加入书签，以确保安全。"
 
-#: 
-#~ msgid "Amount"
-#~ msgstr ""
-
-#: src/components/PoolInvestModal/index.tsx
-#: src/pages/PoolDetail/ROISimulator.tsx
-msgid "Amount to Invest"
+#: src/components/BuyTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Amount"
 msgstr ""
 
 #: 
-#~ msgid "An error occurred when trying to execute this swap. You may need to increase your slippage tolerance. If that does not work, there may be an incompatibility with the token you are trading. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
+#: 
+#~ msgid "Amount to Invest"
 #~ msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "Amount to Withdraw"
+msgstr ""
+
+#: src/components/PoolInvest/index.tsx
+#: src/pages/PoolDetail/ROISimulator.tsx
+msgid "Amount to add"
+msgstr ""
 
 #: 
 #~ msgid "Analytics"
@@ -316,13 +331,17 @@ msgstr "正在批准 {0}"
 msgid "Are you sure?"
 msgstr "您确定吗？"
 
-#: 
-#~ msgid "As a member of the Uniswap community you may claim UNI to be used for voting and governance.<0/><1/><2>Read more about UNI</2>"
-#~ msgstr ""
+#: src/components/Table/Dashboard/Assets.tsx
+msgid "Assets"
+msgstr ""
 
 #: 
 #~ msgid "At least {0} {1} and {2} {3} will be refunded to your wallet due to selected price range."
 #~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Australian Dollar"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Auto"
@@ -336,17 +355,25 @@ msgstr ""
 msgid "Available to deposit: {0}"
 msgstr "可调用的数额：{0}"
 
+#: src/constants/tokens.ts
+msgid "BRL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "BTC"
+msgstr ""
+
 #: 
 #~ msgid "Back"
 #~ msgstr ""
 
-#: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolInvest/index.tsx
 msgid "Balance"
 msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Balance:"
-msgstr ""
+#: 
+#~ msgid "Balance:"
+#~ msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "Balance: {0}"
@@ -372,9 +399,26 @@ msgstr ""
 #~ msgid "Best for stable pairs."
 #~ msgstr ""
 
+#: src/constants/tokens.ts
+msgid "Bitcoin"
+msgstr ""
+
 #: src/components/Blocklist/index.tsx
 msgid "Blocked address"
 msgstr "已屏蔽地址"
+
+#: src/constants/tokens.ts
+msgid "Brazilian Real"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Buy"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Buy Tokens"
+msgstr ""
 
 #: src/components/PositionCard/index.tsx
 msgid "By adding liquidity you'll earn 0.3% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
@@ -388,76 +432,90 @@ msgstr "添加此代币列表代表您信任其数据是正确的。任何人都
 msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
 msgstr ""
 
-#: 
-#~ msgid "By connecting a wallet, you agree to Uniswap Labs’ <0>Terms of Service</0> and acknowledge that you have read and understand the <1>Uniswap protocol disclaimer</1>."
-#~ msgstr ""
+#: src/constants/tokens.ts
+msgid "CAD"
+msgstr ""
 
 #: src/components/AccountDetails/index.tsx
 msgid "CANCEL"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CHF"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "CNY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Canadian Dollar"
 msgstr ""
 
 #: 
 #~ msgid "Change"
 #~ msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Charts"
-msgstr ""
+#: 
+#~ msgid "Charts"
+#~ msgstr ""
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
 msgstr "查看我们的 v3 流动池介绍和迁移指南。"
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/pages/Earn/Manage.tsx
-msgid "Claim"
+#: src/constants/tokens.ts
+msgid "Chinese Yuan"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "Claim UNI"
-msgstr ""
+#: 
+#: 
+#: 
+#~ msgid "Claim"
+#~ msgstr ""
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claim UNI Token"
-msgstr ""
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "Claim UNI"
+#~ msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Claim accumulated UNI rewards"
-msgstr ""
+#: 
+#~ msgid "Claim UNI Token"
+#~ msgstr ""
+
+#: 
+#: 
+#~ msgid "Claim accumulated UNI rewards"
+#~ msgstr ""
 
 #: 
 #~ msgid "Claim fees"
 #~ msgstr ""
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Claim your UNI tokens"
-msgstr ""
+#: 
+#~ msgid "Claim your UNI tokens"
+#~ msgstr ""
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claimed"
-msgstr ""
+#: 
+#~ msgid "Claimed"
+#~ msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claimed UNI!"
 msgstr "已领取 UNI 代币！"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Claiming"
-msgstr ""
+#: 
+#~ msgid "Claiming"
+#~ msgstr ""
 
-#: src/components/Header/Sidebar.tsx
-#: src/components/Header/index.tsx
-msgid "Claiming UNI"
-msgstr ""
+#: 
+#: 
+#~ msgid "Claiming UNI"
+#~ msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Claiming {0} UNI"
 msgstr "正在领取 {0} UNI 代币"
@@ -530,15 +588,18 @@ msgstr "确认兑换"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "在您的钱包中确认这笔交易"
 
+#: src/components/BuyTokenModal/index.tsx
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
-#: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolInvest/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
+#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -571,9 +632,9 @@ msgstr "连接到钱包以查找流动池"
 #~ msgid "Connect to a wallet to view your liquidity."
 #~ msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "Connect wallet"
-msgstr ""
+#: 
+#~ msgid "Connect wallet"
+#~ msgstr ""
 
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/ManageWalletListModal/index.tsx
@@ -595,6 +656,15 @@ msgstr "复制地址"
 #: 
 #~ msgid "Covid"
 #~ msgstr ""
+
+#: src/components/CreatePoolModal/index.tsx
+msgid "Create New Pool"
+msgstr ""
+
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/pools/CreatePoolButton.tsx
+msgid "Create Pool"
+msgstr ""
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Create Pool & Supply"
@@ -633,7 +703,7 @@ msgstr "创建流动池。"
 #~ msgid "Current {0} Price:"
 #~ msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Dashboard"
 msgstr ""
 
@@ -641,9 +711,9 @@ msgstr ""
 msgid "Delegate Votes"
 msgstr "委托投票"
 
-#: src/pages/Vote/index.tsx
-msgid "Delegated to:"
-msgstr ""
+#: 
+#~ msgid "Delegated to:"
+#~ msgstr ""
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Delegating votes"
@@ -652,7 +722,7 @@ msgstr "委托投票"
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/StakingModal.tsx
-#: src/pages/Earn/Manage.tsx
+#: src/pages/Dashboard/BuySection.tsx
 msgid "Deposit"
 msgstr "充值"
 
@@ -660,17 +730,18 @@ msgstr "充值"
 #~ msgid "Deposit Amounts"
 #~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Deposit UNI-V2 LP Tokens"
+#: src/components/DepositTokenModal/index.tsx
+#: src/components/DepositTokenModal/index.tsx
+msgid "Deposit Token To Nahmii"
 msgstr ""
+
+#: 
+#~ msgid "Deposit UNI-V2 LP Tokens"
+#~ msgstr ""
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposit liquidity"
 msgstr "充入流动资金"
-
-#: src/pages/Earn/index.tsx
-msgid "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token."
-msgstr ""
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
@@ -684,17 +755,17 @@ msgstr "已充入 {0} UNI-V2 流动池代币"
 msgid "Depositing Liquidity"
 msgstr "充入流动资金"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Description"
-msgstr ""
+#: 
+#~ msgid "Description"
+#~ msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Detailed"
 msgstr "详细信息"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Details"
-msgstr ""
+#: 
+#~ msgid "Details"
+#~ msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Disable Multihops"
@@ -712,7 +783,7 @@ msgstr ""
 #~ msgid "Discord"
 #~ msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Discover"
 msgstr ""
 
@@ -728,6 +799,10 @@ msgstr "关闭"
 #~ msgid "Don’t see one of your v2 positions? <0>Import it.</0>"
 #~ msgstr ""
 
+#: src/constants/tokens.ts
+msgid "ETH"
+msgstr ""
+
 #: src/components/LineChart/swap.tsx
 msgid "ETH-ANY Pair Stats (Dummy data)"
 msgstr ""
@@ -736,9 +811,9 @@ msgstr ""
 #~ msgid "ETH-NII Transactions"
 #~ msgstr "ETH-NII Transactions"
 
-#: 
-#~ msgid "Earned UNI tokens represent voting shares in Uniswap governance."
-#~ msgstr ""
+#: src/constants/tokens.ts
+msgid "EUR"
+msgstr ""
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Earned tokens represent voting shares in governance."
@@ -752,11 +827,10 @@ msgstr "输入接收者"
 msgid "Enter a valid slippage percentage"
 msgstr "输入有效的兑换率滑点百分比"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
-msgstr ""
+#: 
+#~ msgid "Enter an address to trigger a UNI claim. If the address has any claimable UNI it will be sent to them on submission."
+#~ msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
@@ -797,6 +871,14 @@ msgstr "导入列表出错"
 msgid "Est. ROI"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "Ethereum"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "European Union Euro"
+msgstr ""
+
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
 msgstr "从待用代币列表中扩展出的结果"
@@ -806,10 +888,10 @@ msgid "Expert mode turns off the confirm transaction prompt and allows high slip
 msgstr "“专家模式”将解除确认交易的提示，并允许兑换率高滑点的交易，从而可能导致较不利的兑换率和资金损失。"
 
 #: src/pages/Pool/CTACards.tsx
-msgid "Explore popular pools on Uniswap Analytics."
-msgstr "在 Uniswap 数据分析中探索较受欢迎的流动池。"
+msgid "Explore popular pools."
+msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Farm"
 msgstr ""
 
@@ -817,6 +899,7 @@ msgstr ""
 #~ msgid "Fee Tier"
 #~ msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -831,12 +914,8 @@ msgstr ""
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "For"
-msgstr ""
-
 #: 
-#~ msgid "For each pool shown below, click migrate to remove your liquidity from Uniswap V2 and deposit it into Uniswap V3."
+#~ msgid "For"
 #~ msgstr ""
 
 #: src/components/swap/SwapModalHeader.tsx
@@ -848,9 +927,17 @@ msgstr "源自"
 msgid "From (at most)"
 msgstr "来源 (最多为)"
 
+#: src/constants/tokens.ts
+msgid "GBP"
+msgstr ""
+
 #: src/components/ErrorBoundary/index.tsx
 msgid "Get support on Discord"
 msgstr "在 Discord 上寻求技术支持"
+
+#: src/constants/tokens.ts
+msgid "HKD"
+msgstr ""
 
 #: 
 #~ msgid "Hide closed positions"
@@ -860,13 +947,25 @@ msgstr "在 Discord 上寻求技术支持"
 msgid "High Price Impact"
 msgstr "对兑换率有高度影响"
 
+#: src/components/Table/Dashboard/History.tsx
+msgid "History"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Hong Kong Dollar"
+msgstr ""
+
 #: src/components/SearchModal/ImportList.tsx
 msgid "I understand"
 msgstr "我已知悉"
 
-#: src/components/PoolInvestModal/index.tsx
-msgid "INVEST"
+#: src/constants/tokens.ts
+msgid "INR"
 msgstr ""
+
+#: 
+#~ msgid "INVEST"
+#~ msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
@@ -903,6 +1002,10 @@ msgstr "在范围内"
 #~ msgid "Increase Liquidity"
 #~ msgstr ""
 
+#: src/constants/tokens.ts
+msgid "Indian Rupees"
+msgstr ""
+
 #: src/pages/AddLiquidity/index.tsx
 msgid "Initial prices and pool share"
 msgstr "初始兑换率和流动池份额"
@@ -920,7 +1023,8 @@ msgstr "输入数额仅为估值。您最多会售出<0>{0} {1}</0> 否则将还
 msgid "Install Metamask"
 msgstr "安装Metamask"
 
-#: src/components/PoolInvestModal/index.tsx
+#: src/components/PoolInvest/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 msgid "Insufficient Balance"
 msgstr ""
 
@@ -963,10 +1067,22 @@ msgstr "无效的币对。"
 msgid "Invalid recipient"
 msgstr "无效的接收方"
 
-#: src/components/PoolInvestModal/index.tsx
-#: src/components/Table/pools.tsx
-#: src/pages/PoolDetail/index.tsx
-msgid "Invest"
+#: 
+#: 
+#: 
+#~ msgid "Invest"
+#~ msgstr ""
+
+#: src/constants/tokens.ts
+msgid "JPY"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Japanese Yen"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "KRW"
 msgstr ""
 
 #: 
@@ -977,15 +1093,18 @@ msgstr ""
 #~ msgid "Learn"
 #~ msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "Lend"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 #: src/components/Table/pools.tsx
-#: src/components/claim/ClaimModal.tsx
+#: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr "流动资金"
 
@@ -1001,6 +1120,9 @@ msgstr "流动资金提供者手续费"
 #~ msgid "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity."
 #~ msgstr ""
 
+#~ msgid "Lira"
+#~ msgstr "Lira"
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Lists"
 msgstr "列表"
@@ -1015,9 +1137,9 @@ msgstr "已加载"
 msgid "Loading"
 msgstr "正在加载"
 
-#: src/components/Header/URLWarning.tsx
-msgid "Make sure the URL is<0>app.uniswap.org</0>"
-msgstr "请确认网页链接为<0>app.uniswap.org</0>"
+#: src/constants/tokens.ts
+msgid "MXN"
+msgstr ""
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
@@ -1073,6 +1195,10 @@ msgstr ""
 msgid "Maximum sent"
 msgstr "发送的最大值"
 
+#: src/constants/tokens.ts
+msgid "Mexican Peso"
+msgstr ""
+
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
@@ -1093,10 +1219,6 @@ msgstr "迁移"
 
 #: 
 #~ msgid "Migrate V2 liquidity"
-#~ msgstr ""
-
-#: 
-#~ msgid "Migrate your liquidity tokens from Uniswap V2 to Uniswap V3."
 #~ msgstr ""
 
 #: 
@@ -1124,8 +1246,25 @@ msgstr "收到的最低数额"
 #~ msgid "More"
 #~ msgstr ""
 
+#: src/pages/Dashboard/index.tsx
+msgid "NFTs Collection"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "NOK"
+msgstr ""
+
 #: src/components/Table/overview.tsx
 msgid "Name"
+msgstr ""
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Net Worth"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
+msgid "New Pools"
 msgstr ""
 
 #: 
@@ -1140,10 +1279,10 @@ msgstr ""
 #~ msgid "No V2 Liquidity found."
 #~ msgstr ""
 
-#: src/pages/Earn/index.tsx
-#: src/pages/Earn/index.tsx
-msgid "No active pools"
-msgstr ""
+#: 
+#: 
+#~ msgid "No active pools"
+#~ msgstr ""
 
 #: 
 #~ msgid "No liquidity found."
@@ -1153,13 +1292,17 @@ msgstr ""
 msgid "No pool found."
 msgstr "未找到流动池。"
 
-#: src/pages/Vote/index.tsx
-msgid "No proposals found."
-msgstr ""
+#: 
+#~ msgid "No proposals found."
+#~ msgstr ""
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
 msgstr "未找到任何结果。"
+
+#: src/constants/tokens.ts
+msgid "Norwegian Krone"
+msgstr ""
 
 #: src/components/Toggle/ListToggle.tsx
 msgid "OFF"
@@ -1185,9 +1328,9 @@ msgstr "开启"
 msgid "Once you are happy with the rate click supply to review."
 msgstr "对费率感到满意的话，请点击“供应”键，到审查步骤。"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
-msgstr ""
+#: 
+#~ msgid "Only UNI votes that were self delegated or delegated to another address before block {0} are eligible for voting."
+#~ msgstr ""
 
 #: src/components/Web3ReactManager/index.tsx
 msgid "Oops! An unknown error occurred. Please refresh the page, or visit from another browser or device."
@@ -1212,7 +1355,6 @@ msgstr "输出代币将发送至 <0>{0}</0>"
 
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Overview"
 msgstr ""
 
@@ -1225,12 +1367,20 @@ msgstr ""
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
+#: 
+#~ msgid "Pair Stats"
+#~ msgstr ""
+
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair Stats (Dummy data)"
 msgstr ""
 
-#: src/pages/Earn/index.tsx
-msgid "Participating pools"
+#: 
+#~ msgid "Participating pools"
+#~ msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
+msgid "Payment Method"
 msgstr ""
 
 #: src/pages/PoolDetail/ROISimulator.tsx
@@ -1245,7 +1395,6 @@ msgstr "请连接到适当的以太坊网络。"
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
 msgstr "请输入单词 \"{confirmWord}\" 以启用专家模式。"
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Pool"
@@ -1255,9 +1404,9 @@ msgstr "流动池"
 msgid "Pool Found!"
 msgstr "已找到流动池！"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Pool Rate"
-msgstr ""
+#: 
+#~ msgid "Pool Rate"
+#~ msgstr ""
 
 #: src/components/earn/PoolCard.tsx
 msgid "Pool rate"
@@ -1279,9 +1428,7 @@ msgstr "流动池汇集 {0}:"
 #~ msgid "Pooler {0}:"
 #~ msgstr ""
 
-#: src/components/Header/Sidebar.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Pool/index.tsx
+#: src/components/Header/index.tsx
 msgid "Pools"
 msgstr ""
 
@@ -1291,6 +1438,8 @@ msgstr ""
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/TokenDetails.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Price"
@@ -1329,17 +1478,17 @@ msgstr "兑换率："
 msgid "Prices and pool share"
 msgstr "兑换率和流动池份额"
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals"
-msgstr ""
+#: 
+#~ msgid "Proposals"
+#~ msgstr ""
 
-#: src/pages/Vote/index.tsx
-msgid "Proposals submitted by community members will appear here."
-msgstr ""
+#: 
+#~ msgid "Proposals submitted by community members will appear here."
+#~ msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Proposer"
-msgstr ""
+#: 
+#~ msgid "Proposer"
+#~ msgstr ""
 
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
@@ -1349,21 +1498,25 @@ msgstr ""
 msgid "ROI"
 msgstr ""
 
+#: src/components/pools/PoolsOverview.tsx
+msgid "ROI (1Y)"
+msgstr ""
+
 #: src/pages/PoolDetail/index.tsx
 msgid "ROI Simulator"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "RUB"
 msgstr ""
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr "费率"
 
-#: src/pages/Earn/index.tsx
-msgid "Read more about UNI"
-msgstr ""
-
-#: src/pages/Vote/index.tsx
-msgid "Read more about Uniswap governance"
-msgstr ""
+#: 
+#~ msgid "Read more about UNI"
+#~ msgstr ""
 
 #: 
 #~ msgid "Read more about providing liquidity"
@@ -1432,13 +1585,33 @@ msgstr "返回"
 msgid "Route"
 msgstr "途径"
 
+#: src/constants/tokens.ts
+msgid "Russian Ruble"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SEK"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "SGD"
+msgstr ""
+
 #: src/components/Table/SearchableTable.tsx
+#: src/pages/Pool/index.tsx
 msgid "Search"
 msgstr ""
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Search name or paste address"
 msgstr "搜索代币名称或粘贴代币合约地址"
+
+#: src/components/pools/PoolsOverview.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
+msgid "See all"
+msgstr ""
 
 #: 
 #~ msgid "Select Pool"
@@ -1475,13 +1648,17 @@ msgstr ""
 #~ msgid "Selected Range"
 #~ msgstr ""
 
-#: src/pages/Vote/index.tsx
-msgid "Self"
-msgstr ""
+#: 
+#~ msgid "Self"
+#~ msgstr ""
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Self Delegate"
 msgstr "自我代表"
+
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Send"
+msgstr ""
 
 #: 
 #: 
@@ -1504,6 +1681,10 @@ msgstr "流动池份额："
 msgid "Simple"
 msgstr "简单型"
 
+#: src/constants/tokens.ts
+msgid "Singapore Dollar"
+msgstr ""
+
 #: src/components/swap/Slippage.tsx
 #: src/components/swap/Slippage.tsx
 msgid "Slippage Tolerance"
@@ -1522,9 +1703,13 @@ msgstr "有些代币无法通过此界面使用，因为它们可能无法很好
 msgid "Something went wrong"
 msgstr "出问题了"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Step 1. Get UNI-V2 Liquidity tokens"
+#: src/constants/tokens.ts
+msgid "South Korean Won"
 msgstr ""
+
+#: 
+#~ msgid "Step 1. Get UNI-V2 Liquidity tokens"
+#~ msgstr ""
 
 #: src/components/vote/VoteModal.tsx
 msgid "Submitting Vote"
@@ -1538,11 +1723,9 @@ msgstr "供应"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "提供 {0} {1} 和 {2} {3}"
 
-#: src/components/Header/Sidebar.tsx
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/swap/SwapHeader.tsx
-#: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1562,6 +1745,18 @@ msgstr "将 {0} {1} 兑换为 {2} {3}"
 msgid "Swaps"
 msgstr ""
 
+#: src/constants/tokens.ts
+msgid "Swedish Krona"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "Swiss Franc"
+msgstr ""
+
+#: src/constants/tokens.ts
+msgid "TRY"
+msgstr ""
+
 #: src/components/LineChart/overview.tsx
 #: src/components/Table/overview.tsx
 #: src/pages/Swap/index.tsx
@@ -1569,20 +1764,16 @@ msgid "TVL"
 msgstr ""
 
 #: 
-#~ msgid "Thanks for being part of the Uniswap community <0/>"
+#~ msgid "Thanks for being part of the community <0/>"
 #~ msgstr ""
-
-#: src/components/Popups/ClaimPopup.tsx
-msgid "Thanks for being part of the community <0/>"
-msgstr ""
-
-#: src/hooks/useSwapCallback.ts
-msgid "The Uniswap invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
-msgstr "兑换交易不满足 Uniswap 不变量 X × Y = K 的要求。这通常意味着您要兑换的代币之一在代币转账过程中带有一些自定义代币合约特性。"
 
 #: src/hooks/useSwapCallback.ts
 msgid "The input token cannot be transferred. There may be an issue with the input token."
 msgstr "输入代币无法进行转账。输入代币可能有些问题。"
+
+#: src/hooks/useSwapCallback.ts
+msgid "The invariant x*y=k was not satisfied by the swap. This usually means one of the tokens you are swapping incorporates custom behavior on transfer."
+msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "The market price is outside your specified price range. Single-asset deposit only."
@@ -1591,10 +1782,6 @@ msgstr "市场兑换率超出您指定的范围。将只注入单项代币。"
 #: src/hooks/useSwapCallback.ts
 msgid "The output token cannot be transferred. There may be an issue with the output token."
 msgstr "输出代币无法进行转账。输出代币可能有些问题。"
-
-#: 
-#~ msgid "The output token cannot be transferred. There may be an issue with the output token. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr ""
 
 #: src/components/Badge/RangeBadge.tsx
 msgid "The price of this pool is outside of your selected range. Your position is not currently earning fees."
@@ -1618,6 +1805,8 @@ msgstr "这些代币通常与其他代币配对。"
 
 #: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
@@ -1628,10 +1817,6 @@ msgstr "此代币未出现在激活的代币列表中。请确保这是您想要
 
 #: 
 #~ msgid "This tool will safely migrate your {0} liquidity to V3. The process is completely trustless thanks to the"
-#~ msgstr ""
-
-#: 
-#~ msgid "This transaction will not succeed due to price movement. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
 #~ msgstr ""
 
 #: src/hooks/useSwapCallback.ts
@@ -1668,6 +1853,14 @@ msgstr ""
 msgid "Token Stats"
 msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "Token To Buy"
+msgstr ""
+
+#: src/components/DepositTokenModal/index.tsx
+msgid "Token To Deposit"
+msgstr ""
+
 #: src/components/SearchModal/Manage.tsx
 msgid "Tokens"
 msgstr "代币"
@@ -1675,6 +1868,26 @@ msgstr "代币"
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr "待用代币列表中的代币。在下面导入特定代币或单击“管理”以激活更多代币列表。"
+
+#: src/pages/Discover/index.tsx
+msgid "Tools"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Gainer Pools"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+msgid "Top Gainers"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "Top Looser Pools"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+msgid "Top Losers"
+msgstr ""
 
 #: src/components/Table/overview.tsx
 msgid "Top Tokens"
@@ -1684,9 +1897,9 @@ msgstr ""
 msgid "Top pools"
 msgstr "较活跃的流动池"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Total Supply"
-msgstr ""
+#: 
+#~ msgid "Total Supply"
+#~ msgstr ""
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
@@ -1696,9 +1909,9 @@ msgstr ""
 msgid "Total deposited"
 msgstr "存入总额"
 
-#: src/pages/Earn/Manage.tsx
-msgid "Total deposits"
-msgstr ""
+#: 
+#~ msgid "Total deposits"
+#~ msgstr ""
 
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
@@ -1709,7 +1922,6 @@ msgid "Transaction Settings"
 msgstr "交易设置"
 
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/StakingModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/components/vote/DelegateModal.tsx
@@ -1722,12 +1934,22 @@ msgid "Transaction deadline"
 msgstr "交易截止期限"
 
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+#: src/pages/Discover/index.tsx
+msgid "Trending tokens"
 msgstr ""
 
 #: src/components/WalletModal/PendingView.tsx
 msgid "Try Again"
 msgstr "再试一次"
+
+#: src/constants/tokens.ts
+msgid "Turkish Lira"
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Turn On Expert Mode"
@@ -1741,40 +1963,34 @@ msgstr "开启专家模式"
 #~ msgid "UN price:"
 #~ msgstr ""
 
-#: src/components/Popups/ClaimPopup.tsx
-msgid "UNI has arrived"
-msgstr ""
+#: 
+#~ msgid "UNI has arrived"
+#~ msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI in circulation:"
-msgstr ""
+#: 
+#~ msgid "UNI in circulation:"
+#~ msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "UNI price:"
-msgstr ""
-
-#: src/pages/Vote/index.tsx
-msgid "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party."
-msgstr ""
+#: 
+#~ msgid "UNI price:"
+#~ msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "UNI {0}/{1} Burned"
 msgstr "UNI {0}/{1} 被摧毁"
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
-msgstr ""
+#: 
+#~ msgid "UNI-V2 LP tokens are required. Once you've added liquidity to the {0}-{1} pool you can stake your liquidity tokens on this page."
+#~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "UNI-V2 {0}-{1}"
-msgstr ""
+#: 
+#~ msgid "UNI-V2 {0}-{1}"
+#~ msgstr ""
 
-#: src/components/Dropdowns/CurrencyDropdown.tsx
-#: src/components/Dropdowns/CurrencyDropdown.tsx
+#: src/constants/tokens.ts
 msgid "USD"
 msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
 #: src/components/earn/UnstakingModal.tsx
 msgid "Unclaimed UNI"
 msgstr "未被领取的 UNI 代币"
@@ -1783,29 +1999,17 @@ msgstr "未被领取的 UNI 代币"
 #~ msgid "Unclaimed fees"
 #~ msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Unclaimed:"
-msgstr ""
-
-#: src/pages/Vote/index.tsx
-msgid "Uniswap Governance"
-msgstr ""
-
-#: src/pages/Pool/CTACards.tsx
-msgid "Uniswap V3 is here!"
-msgstr "Uniswap V3 已发布！"
-
 #: 
-#~ msgid "Uniswap available in: <0>{0}</0>"
+#~ msgid "Unclaimed:"
 #~ msgstr ""
 
-#: src/pages/Earn/index.tsx
-msgid "Uniswap liquidity mining"
+#: src/constants/tokens.ts
+msgid "United Kingdom Pound"
 msgstr ""
 
-#: 
-#~ msgid "Uniswap migration contract↗"
-#~ msgstr ""
+#: src/constants/tokens.ts
+msgid "United State Dollar"
+msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
 msgid "Unknown Source"
@@ -1816,21 +2020,17 @@ msgid "Unknown error{0}."
 msgstr ""
 
 #: 
-#~ msgid "Unknown error{0}. Try increasing your slippage tolerance. Note fee on transfer and rebase tokens are incompatible with Uniswap V3."
-#~ msgstr ""
-
-#: 
 #~ msgid "Unlaimed:"
 #~ msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/index.tsx
-msgid "Unlock Votes"
-msgstr ""
+#: 
+#: 
+#~ msgid "Unlock Votes"
+#~ msgstr ""
 
-#: src/pages/Vote/index.tsx
-msgid "Unlock Voting"
-msgstr ""
+#: 
+#~ msgid "Unlock Voting"
+#~ msgstr ""
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Unlocking Votes"
@@ -1849,17 +2049,17 @@ msgstr "不支持的代币"
 msgid "Unwrap"
 msgstr "展开"
 
-#: src/pages/Vote/index.tsx
-msgid "Update Delegation"
-msgstr ""
+#: 
+#~ msgid "Update Delegation"
+#~ msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Update list"
 msgstr "更新代币列表"
 
-#: src/components/claim/ClaimModal.tsx
-msgid "User"
-msgstr ""
+#: 
+#~ msgid "User"
+#~ msgstr ""
 
 #: 
 #~ msgid "V2 liquidity"
@@ -1874,13 +2074,17 @@ msgstr ""
 #~ msgid "V3 {0} Price:"
 #~ msgstr ""
 
+#: src/components/BuyTokenModal/index.tsx
+msgid "VISA *5546"
+msgstr ""
+
 #: 
 #~ msgid "View UN Analytics"
 #~ msgstr ""
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "View UNI Analytics"
-msgstr ""
+#: 
+#~ msgid "View UNI Analytics"
+#~ msgstr ""
 
 #: 
 #~ msgid "View V2 Liquidity"
@@ -1900,12 +2104,11 @@ msgid "View on Explorer"
 msgstr "在以太坊资源浏览器上查看"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
 #: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "在以太坊资源浏览器上查看交易"
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
@@ -1918,17 +2121,17 @@ msgstr ""
 msgid "Volume 24H"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Vote"
-msgstr ""
+#: 
+#~ msgid "Vote"
+#~ msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote Against"
-msgstr ""
+#: 
+#~ msgid "Vote Against"
+#~ msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Vote For"
-msgstr ""
+#: 
+#~ msgid "Vote For"
+#~ msgstr ""
 
 #: src/components/vote/VoteModal.tsx
 #: src/components/vote/VoteModal.tsx
@@ -1940,12 +2143,16 @@ msgstr "投票反对提案 {proposalId}"
 msgid "Vote for proposal {proposalId}"
 msgstr "投票赞成提案 {proposalId}"
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ended {0}"
-msgstr ""
+#: 
+#~ msgid "Voting ended {0}"
+#~ msgstr ""
 
-#: src/pages/Vote/VotePage.tsx
-msgid "Voting ends approximately {0}"
+#: 
+#~ msgid "Voting ends approximately {0}"
+#~ msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "WITHDRAW"
 msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
@@ -1957,6 +2164,10 @@ msgstr "等待确认"
 msgid "Wallet"
 msgstr ""
 
+#: src/pages/Dashboard/BuySection.tsx
+msgid "Wallet Balance"
+msgstr ""
+
 #: src/components/AccountDetails/index.tsx
 msgid "Wallet Name"
 msgstr ""
@@ -1965,24 +2176,24 @@ msgstr ""
 msgid "Weekly Rewards"
 msgstr "每周奖励"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "Welcome to team Unicorn :)"
-msgstr ""
+#: 
+#~ msgid "Welcome to team Unicorn :)"
+#~ msgstr ""
 
-#: src/components/earn/ClaimRewardModal.tsx
-msgid "When you claim without withdrawing your liquidity remains in the mining pool."
-msgstr ""
+#: 
+#~ msgid "When you claim without withdrawing your liquidity remains in the mining pool."
+#~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
-msgstr ""
+#: 
+#~ msgid "When you withdraw, the contract will automagically claim UNI on your behalf!"
+#~ msgstr ""
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "When you withdraw, your UNI is claimed and your liquidity is removed from the mining pool."
 msgstr "当您赎回流动资金时，您的 UNI 代币将被领取，流动资金也将从矿池中移除。"
 
 #: src/components/earn/UnstakingModal.tsx
-#: src/pages/Earn/Manage.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "赎回"
 
@@ -2017,10 +2228,6 @@ msgstr "错误的网络"
 msgid "You are creating a pool"
 msgstr "您正在创建一个流动池"
 
-#: 
-#~ msgid "You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the current {0} price."
-#~ msgstr ""
-
 #: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "您是第一个流动资金提供者。"
@@ -2041,17 +2248,9 @@ msgstr "您在此流动池中还未有流动资金。"
 #~ msgid "You must connect an account."
 #~ msgstr ""
 
-#: 
-#~ msgid "You must give the Uniswap smart contracts permission to use your {0}. You only have to do this once per token."
-#~ msgstr ""
-
 #: src/pages/Swap/index.tsx
 msgid "You must give the smart contracts permission to use your {0}. You only have to do this once per token."
 msgstr ""
-
-#: 
-#~ msgid "You should only deposit liquidity into Uniswap V3 at a price you believe is correct. <0/>If the price seems incorrect, you can either make a swap to move the price or wait for someone else to do so."
-#~ msgstr ""
 
 #: 
 #~ msgid "You will also collect fees earned from this position."
@@ -2062,9 +2261,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "您将收到"
 
-#: src/components/Header/UniBalanceContent.tsx
-msgid "Your UNI Breakdown"
-msgstr ""
+#: 
+#~ msgid "Your UNI Breakdown"
+#~ msgstr ""
 
 #: 
 #~ msgid "Your V2 liquidity"
@@ -2074,9 +2273,9 @@ msgstr ""
 #~ msgid "Your V3 liquidity positions will appear here."
 #~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your liquidity deposits"
-msgstr ""
+#: 
+#~ msgid "Your liquidity deposits"
+#~ msgstr ""
 
 #: 
 #~ msgid "Your liquidity will only earn fees when the market price of the pair is within your range. <0>Need help picking a range?</0>"
@@ -2149,17 +2348,17 @@ msgstr "如果兑换率变动超过此百分比，则将还原该交易。"
 #~ msgid "Your transactions will appear here..."
 #~ msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "Your unclaimed UNI"
-msgstr ""
+#: 
+#~ msgid "Your unclaimed UNI"
+#~ msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "confirm"
 msgstr "确认"
 
-#: src/components/claim/AddressClaimModal.tsx
-msgid "for {0}"
-msgstr ""
+#: 
+#~ msgid "for {0}"
+#~ msgstr ""
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
@@ -2182,6 +2381,10 @@ msgstr "通过 {0}"
 msgid "via {0} token list"
 msgstr "从 {0} 代币列表"
 
+#: src/pages/Dashboard/BuySection.tsx
+msgid "waiting..."
+msgstr ""
+
 #: src/components/SearchModal/ImportToken.tsx
 msgid "{0, plural, one {Import token} other {Import tokens}}"
 msgstr "{0, plural, one {导入代币} other {导入代币}}"
@@ -2193,8 +2396,6 @@ msgid "{0}"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
-#: src/pages/Vote/VotePage.tsx
-#: src/pages/Vote/VotePage.tsx
 msgid "{0} %"
 msgstr ""
 
@@ -2212,9 +2413,9 @@ msgstr "{0} 自定义代币"
 msgid "{0} Deposited"
 msgstr "注入 {0}"
 
-#: src/components/Header/index.tsx
-msgid "{0} ETH"
-msgstr ""
+#: 
+#~ msgid "{0} ETH"
+#~ msgstr ""
 
 #: src/components/Web3Status/index.tsx
 msgid "{0} ETHs"
@@ -2231,19 +2432,17 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} 待处理"
 
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/AddressClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-#: src/components/claim/ClaimModal.tsx
-msgid "{0} UNI"
-msgstr ""
+#: 
+#: 
+#: 
+#: 
+#: 
+#~ msgid "{0} UNI"
+#~ msgstr ""
 
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/PoolCard.tsx
 #: src/components/earn/StakingModal.tsx
-#: src/pages/Earn/Manage.tsx
-#: src/pages/Earn/Manage.tsx
 msgid "{0} UNI / week"
 msgstr "{0} UNI 代币 / 每周"
 
@@ -2251,9 +2450,9 @@ msgstr "{0} UNI 代币 / 每周"
 msgid "{0} UNI-V2"
 msgstr "{0} UNI-V2 流动池代币"
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0} UNI-V2 LP tokens available"
-msgstr ""
+#: 
+#~ msgid "{0} UNI-V2 LP tokens available"
+#~ msgstr ""
 
 #: src/components/vote/VoteModal.tsx
 msgid "{0} Votes"
@@ -2297,9 +2496,9 @@ msgstr "{0} • 由用户添加"
 msgid "{0}%"
 msgstr ""
 
-#: src/pages/Earn/Manage.tsx
-msgid "{0}-{1} Liquidity Mining"
-msgstr ""
+#: 
+#~ msgid "{0}-{1} Liquidity Mining"
+#~ msgstr ""
 
 #: 
 #~ msgid "{0}/{1} LP NFT"
@@ -2309,13 +2508,13 @@ msgstr ""
 #~ msgid "{0}/{1} LP Tokens"
 #~ msgstr ""
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{SOCKS_AMOUNT} UNI"
-msgstr ""
+#: 
+#~ msgid "{SOCKS_AMOUNT} UNI"
+#~ msgstr ""
 
-#: src/components/claim/ClaimModal.tsx
-msgid "{USER_AMOUNT} UNI"
-msgstr ""
+#: 
+#~ msgid "{USER_AMOUNT} UNI"
+#~ msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "{labelText}"
@@ -2330,7 +2529,7 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
-#: src/components/Header/Sidebar.tsx
+#: src/components/Header/index.tsx
 msgid "{title}"
 msgstr ""
 
@@ -2346,5 +2545,3 @@ msgstr ""
 #~ msgid "← Back to Pools Overview"
 #~ msgstr ""
 
-#~ msgid "Lira"
-#~ msgstr "Lira"
