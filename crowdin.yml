@@ -1,4 +1,5 @@
 project_id: "468584"
+branch: "dev"
 api_token: "apiToken" //generate yours apiToken
 files:
   - source: 'src/locales/en-US.po'
