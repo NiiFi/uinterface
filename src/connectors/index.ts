@@ -7,7 +7,7 @@ import getLibrary from '../utils/getLibrary'
 
 import { FortmaticConnector } from './Fortmatic'
 import { NetworkConnector } from './NetworkConnector'
-import UNISWAP_LOGO_URL from '../assets/svg/logo.svg'
+import NIIFI_LOGO_URL from '../assets/svg/logo.svg'
 
 const INFURA_KEY = process.env.REACT_APP_INFURA_KEY
 const FORMATIC_KEY = process.env.REACT_APP_FORTMATIC_KEY
@@ -56,6 +56,6 @@ export const fortmatic = new FortmaticConnector({
 // mainnet only
 export const walletlink = new WalletLinkConnector({
   url: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
-  appName: 'Uniswap',
-  appLogoUrl: UNISWAP_LOGO_URL,
+  appName: 'Niifi Interface',
+  appLogoUrl: NIIFI_LOGO_URL,
 })

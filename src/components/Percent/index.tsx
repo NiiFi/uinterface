@@ -5,9 +5,15 @@ import useTheme from 'hooks/useTheme'
 import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 
 const Wrapper = styled(TYPE.main)<{ fontWeight: number; fontSize: string; negative: boolean; neutral: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ fontWeight }) => fontWeight};
   color: ${({ theme, negative }) => (negative ? theme.red2 : theme.green2)};
+  svg {
+    margin-right: 5px;
+  }
 `
 
 export interface LogoProps {
