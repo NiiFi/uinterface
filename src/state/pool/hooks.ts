@@ -36,6 +36,10 @@ export function useSetUnSetPoolInvestTokenPair() {
 }
 
 export function useFakePoolValuesCalculator() {
+  /**
+   * @description
+   * @see https://github.com/NiiFi/uinterface/issues/82
+   */
   const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const ONE_USD = 154
   const ONE_ETH_IN_USD = rates?.['USD'] || 500 * ONE_USD
