@@ -1276,11 +1276,11 @@ msgstr ""
 
 #: src/pages/Discover/index.tsx
 msgid "Top Losers"
-msgstr ""
+msgstr "Топ лузери"
 
 #: src/components/Table/overview.tsx
 msgid "Top Tokens"
-msgstr ""
+msgstr "Топові токени"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Top pools"
