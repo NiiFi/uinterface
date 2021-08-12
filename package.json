@@ -69,6 +69,7 @@
     "luxon": "^1.25.0",
     "multicodec": "^3.0.1",
     "multihashes": "^4.0.2",
+    "netlify-cli": "^6.2.3",
     "node-vibrant": "^3.1.5",
     "numeral": "^2.0.6",
     "polished": "^3.3.2",
@@ -121,7 +122,10 @@
     "start": "yarn compile-contract-types && react-scripts start",
     "i18n:gen": "yarn lingui extract && yarn i18n:compile",
     "lingui": "lingui",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "netlify": "netlify",
+    "deploy": "yarn build && yarn netlify deploy --dir=build",
+    "deploy:prod": "yarn build && yarn deploy --prod"
   },
   "eslintConfig": {
     "extends": "react-app",
