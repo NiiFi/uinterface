@@ -1,6 +1,6 @@
 project_id: "468584"
 branch: "dev"
-api_token_env: "CROWDIN_PERSONAL_TOKEN"
+api_token: "961d3348cab8f32e18194ba4db3abf0ed3cdf0315c60170ec5d072aabd13d98371fc85d29ed31408"
 preserve_hierarchy: true
 files:
   - source: 'src/locales/en-US.po'
