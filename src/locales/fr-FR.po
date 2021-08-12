@@ -2550,4 +2550,3 @@ msgstr ""
 #: 
 #~ msgid "← Back to Pools Overview"
 #~ msgstr ""
-
