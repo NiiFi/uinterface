@@ -47,22 +47,13 @@ import { t, Trans } from '@lingui/macro'
 const DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE = new Percent(50, 10_000)
 
 export default function AddLiquidity({
-  // match: {
-  //   params: { currencyIdA, currencyIdB },
-  // },
-  currencyIdA,
-  currencyIdB,
-}: // history,
-// }: RouteComponentProps<{ currencyIdA?: string; currencyIdB?: string }>) {
-{
-  currencyIdA?: string
-  currencyIdB?: string
-  // history: RouteComponentProps
-}) {
-  console.log([currencyIdA, currencyIdB])
+  match: {
+    params: { currencyIdA, currencyIdB },
+  },
+  history,
+}: RouteComponentProps<{ currencyIdA?: string; currencyIdB?: string }>) {
   const { account, chainId, library } = useActiveWeb3React()
   const theme = useContext(ThemeContext)
-  const history = useHistory()
 
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
@@ -72,6 +63,7 @@ export default function AddLiquidity({
       ((currencyA && currencyA.equals(WETH9_EXTENDED[chainId])) ||
         (currencyB && currencyB.equals(WETH9_EXTENDED[chainId])))
   )
+
   const toggleWalletModal = useWalletModalToggle() // toggle wallet when disconnected
 
   const expertMode = useIsExpertMode()

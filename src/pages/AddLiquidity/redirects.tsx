@@ -13,6 +13,5 @@ export function RedirectDuplicateTokenIds(props: RouteComponentProps<{ currencyI
     return <Redirect to={`/add/${currencyIdA}`} />
   }
 
-  // return <AddLiquidity {...props} />
-  return undefined
+  return <AddLiquidity {...props} />
 }
