@@ -1298,12 +1298,8 @@ msgid "Top Gainers"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
-msgid "Top Looser Pools"
+msgid "Top Loser Pools"
 msgstr ""
-
-#: 
-#~ msgid "Top Loosers"
-#~ msgstr ""
 
 #: src/pages/Discover/index.tsx
 msgid "Top Losers"
