@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Project-Id-Version: niifi\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-08-10 15:01\n"
+"PO-Revision-Date: 2021-08-12 11:58\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -18,39 +18,19 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US.po\n"
 "X-Crowdin-File-ID: 73\n"
 
-#: src/components/earn/PoolCard.tsx
-msgid "${0}"
-msgstr ""
-
-#: src/components/earn/PoolCard.tsx
-msgid "${0} ETH"
-msgstr ""
-
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
 msgstr "(Максимум)"
 
-#: src/pages/Swap/index.tsx
-msgid "- Remove send"
-msgstr "- Видалити відправку"
-
-#: src/components/earn/PoolCard.tsx
-#: src/components/earn/PoolCard.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI / тиждень"
 
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
-msgstr ""
+msgstr "1 Місяць"
 
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Week"
-msgstr ""
+msgstr "1 тиждень"
 
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Year"
 msgstr ""
 
@@ -74,7 +54,6 @@ msgstr ""
 msgid "3%"
 msgstr ""
 
-#: src/pages/RemoveLiquidity/index.tsx
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
 msgstr "<0>Порада:</0> Видалення токенів наповнення токенів перетворює вашу позицію в необхідну частину токену, пропорційно обміну басейну. Нараховані платежі включені в суми, які ви отримуєте."
 
@@ -110,11 +89,6 @@ msgstr "Додати"
 msgid "Add Delegate +"
 msgstr "Додати Делегат +"
 
-#: src/components/CreatePoolModal/index.tsx
-#: src/components/NavigationTabs/index.tsx
-#: src/components/PoolInvest/index.tsx
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "Додати ліквідність"
 
@@ -126,8 +100,6 @@ msgstr ""
 msgid "Add {0} to Metamask <0/>"
 msgstr "Додати {0} до Metamask <0/>"
 
-#: src/hooks/useAddLiquidity.ts
-#: src/hooks/useAddLiquidity.ts
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
@@ -438,11 +410,11 @@ msgstr ""
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposit liquidity"
-msgstr "Вторинна ліквідність"
+msgstr "Зарахування ліквідності"
 
 #: src/components/earn/UnstakingModal.tsx
 msgid "Deposited liquidity:"
-msgstr "Відкладена ліквідність:"
+msgstr "Зарахована ліквідність:"
 
 #: src/components/earn/StakingModal.tsx
 msgid "Deposited {0} UNI-V2"
@@ -482,7 +454,7 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "EUR"
-msgstr ""
+msgstr "EUR"
 
 #: src/components/vote/DelegateModal.tsx
 msgid "Earned tokens represent voting shares in governance."
@@ -534,15 +506,15 @@ msgstr "Помилка імпорту списку"
 
 #: src/pages/PoolDetail/ROISimulator.tsx
 msgid "Est. ROI"
-msgstr ""
+msgstr "Est. ROI"
 
 #: src/constants/tokens.ts
 msgid "Ethereum"
-msgstr ""
+msgstr "Ethereum"
 
 #: src/constants/tokens.ts
 msgid "European Union Euro"
-msgstr ""
+msgstr "Європейський Союз, Євро"
 
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "Expanded results from inactive Token Lists"
@@ -614,7 +586,7 @@ msgstr "Я розумію"
 
 #: src/constants/tokens.ts
 msgid "INR"
-msgstr ""
+msgstr "INR"
 
 #: src/components/SearchModal/ImportList.tsx
 msgid "If you purchase a token from this list, you may not be able to sell it back."
@@ -701,7 +673,7 @@ msgstr "Недійсний одержувач"
 
 #: src/constants/tokens.ts
 msgid "JPY"
-msgstr ""
+msgstr "JPY"
 
 #: src/constants/tokens.ts
 msgid "Japanese Yen"
@@ -709,7 +681,7 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "KRW"
-msgstr ""
+msgstr "KRW"
 
 #: src/components/Header/index.tsx
 msgid "Lend"
@@ -746,7 +718,7 @@ msgstr "Завантаження"
 
 #: src/constants/tokens.ts
 msgid "MXN"
-msgstr ""
+msgstr "MXN"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
@@ -759,7 +731,7 @@ msgstr "Керування"
 
 #: src/components/PositionCard/index.tsx
 msgid "Manage Liquidity in Rewards Pool"
-msgstr "Управління ліквідністю в басейні нагород"
+msgstr "Управління ліквідністю в пулі нагород"
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Manage Token Lists"
@@ -793,10 +765,6 @@ msgstr ""
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
 msgstr "Міграція"
-
-#: src/components/swap/AdvancedSwapDetails.tsx
-msgid "Minimum received"
-msgstr "Мінімум отриманих"
 
 #: src/pages/Dashboard/index.tsx
 msgid "NFTs Collection"
@@ -917,7 +885,7 @@ msgstr "Пул"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Pool Found!"
-msgstr "Знайдена пул!"
+msgstr "Знайдено пул!"
 
 #: src/components/earn/PoolCard.tsx
 msgid "Pool rate"
@@ -978,11 +946,11 @@ msgstr ""
 
 #: src/components/Table/pools.tsx
 msgid "ROI"
-msgstr ""
+msgstr "ROI"
 
 #: src/components/pools/PoolsOverview.tsx
 msgid "ROI (1Y)"
-msgstr ""
+msgstr "ROI (1Y)"
 
 #: src/pages/PoolDetail/index.tsx
 msgid "ROI Simulator"
@@ -990,7 +958,7 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "RUB"
-msgstr ""
+msgstr "RUB"
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
@@ -1061,7 +1029,7 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "SEK"
-msgstr ""
+msgstr "SEK"
 
 #: src/constants/tokens.ts
 msgid "SGD"
@@ -1085,7 +1053,7 @@ msgstr ""
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "Select a Token"
-msgstr ""
+msgstr "Обрати токен"
 
 #: src/components/CurrencyInputPanel/index.tsx
 #: src/pages/PoolFinder/index.tsx
@@ -1104,7 +1072,7 @@ msgstr "Власний делегат"
 
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Send"
-msgstr ""
+msgstr "Надіслати"
 
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Share of Pool:"
@@ -1308,11 +1276,11 @@ msgstr ""
 
 #: src/pages/Discover/index.tsx
 msgid "Top Losers"
-msgstr ""
+msgstr "Топ лузери"
 
 #: src/components/Table/overview.tsx
 msgid "Top Tokens"
-msgstr ""
+msgstr "Топові токени"
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Top pools"
@@ -1706,3 +1674,4 @@ msgstr ""
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr ""
+

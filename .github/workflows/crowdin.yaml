@@ -4,7 +4,7 @@ name: Crowdin Upload
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   synchronize-with-crowdin:
@@ -44,7 +44,7 @@ jobs:
         with:
           upload_sources: true
           download_translations: false
-          project_id: 458284
+          project_id: 468584
           token: ${{ secrets.CROWDIN_PERSONAL_TOKEN_SECRET }}
           source: 'src/locales/en-US.po'
           translation: 'src/locales/%locale%.po'

@@ -8,7 +8,7 @@ msgstr ""
 "Language: he\n"
 "Project-Id-Version: niifi\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-08-10 14:43\n"
+"PO-Revision-Date: 2021-08-12 11:58\n"
 "Last-Translator: \n"
 "Language-Team: Hebrew\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
@@ -18,39 +18,19 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US.po\n"
 "X-Crowdin-File-ID: 73\n"
 
-#: src/components/earn/PoolCard.tsx
-msgid "${0}"
-msgstr ""
-
-#: src/components/earn/PoolCard.tsx
-msgid "${0} ETH"
-msgstr ""
-
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
 msgstr "(מקסימום)"
 
-#: src/pages/Swap/index.tsx
-msgid "- Remove send"
-msgstr "- הסר שלח"
-
-#: src/components/earn/PoolCard.tsx
-#: src/components/earn/PoolCard.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI לשבוע"
 
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
 msgstr ""
 
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Week"
 msgstr ""
 
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
-#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Year"
 msgstr ""
 
@@ -74,7 +54,6 @@ msgstr ""
 msgid "3%"
 msgstr ""
 
-#: src/pages/RemoveLiquidity/index.tsx
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
 msgstr "<0> טיפ:</0> הסרת אסימונים לבריכה ממירה את עמדתך בחזרה לאסימונים בסיסיים בקצב הנוכחי, פרופורציונלי לחלקך בבריכה. העמלות שנצברו כלולות בסכומים שאתה מקבל."
 
@@ -110,11 +89,6 @@ msgstr "לְהוֹסִיף"
 msgid "Add Delegate +"
 msgstr "הוסף נציג +"
 
-#: src/components/CreatePoolModal/index.tsx
-#: src/components/NavigationTabs/index.tsx
-#: src/components/PoolInvest/index.tsx
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "הוסף נזילות"
 
@@ -126,8 +100,6 @@ msgstr ""
 msgid "Add {0} to Metamask <0/>"
 msgstr "הוסף {0} למטא-מסכה <0 />"
 
-#: src/hooks/useAddLiquidity.ts
-#: src/hooks/useAddLiquidity.ts
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
@@ -793,10 +765,6 @@ msgstr ""
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
 msgstr "להגר"
-
-#: src/components/swap/AdvancedSwapDetails.tsx
-msgid "Minimum received"
-msgstr "מינימום שהתקבל"
 
 #: src/pages/Dashboard/index.tsx
 msgid "NFTs Collection"
@@ -1706,3 +1674,4 @@ msgstr ""
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr "~ $ <0 />"
+
