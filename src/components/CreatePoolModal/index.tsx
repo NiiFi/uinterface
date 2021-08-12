@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import { Currency } from '@uniswap/sdk-core'
 import { t, Trans } from '@lingui/macro'
@@ -11,11 +11,13 @@ import { ApplicationModal } from 'state/application/actions'
 import { ReactComponent as Close } from 'assets/images/x.svg'
 import { useCurrency } from 'hooks/Tokens'
 import { useCreatePoolModalToggle, useModalOpen, useWalletModalToggle } from 'state/application/hooks'
+import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
 import Slippage from 'components/swap/Slippage'
 import Row from 'components/Row'
-import { useFakePoolValuesCalculator } from 'state/pool/hooks'
 import { ButtonPrimary } from 'components/Button'
 import Modal from '../Modal'
+import { Field } from 'state/mint/actions'
+import useAddLiquidity from 'hooks/useAddLiquidity'
 
 const HeaderRow = styled.div`
   font-weight: 500;
@@ -64,35 +66,35 @@ export default function CreatePoolModal() {
    * Integration of API and Actual Business logic in place.
    */
   const { account } = useActiveWeb3React()
+  const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const poolInvestModalOpen = useModalOpen(ApplicationModal.CREATE_POOL)
   const toggleCreatePoolModal = useCreatePoolModalToggle()
-  const { calculateTotalInvestmentInUSD } = useFakePoolValuesCalculator()
   const toggleWalletModal = useWalletModalToggle()
-  const [fakeInvestmentValue, setFakeInvestmentValue] = useState('')
+  const [investmentValue, setInvestmentValue] = useState(0)
   const [currencyTokenOne, setCurrencyTokenOne] = useState<Currency | null | undefined>(useCurrency('ETH'))
   const [currencyTokenTwo, setCurrencyTokenTwo] = useState<Currency | null | undefined>(null)
-  const [currencyTokenOneValue, setCurrencyTokenOneValue] = useState<string>('')
-  const [currencyTokenTwoValue, setCurrencyTokenTwoValue] = useState<string>('')
 
-  const handleTokenValueChange = useCallback(
-    ({ value1 = '0', value2 = '0' }: { value1?: string; value2?: string }) => {
-      setFakeInvestmentValue(
-        calculateTotalInvestmentInUSD({
-          token0: {
-            value: value1,
-            address: '1234',
-            symbol: 'ETH',
-          },
-          token1: {
-            value: value2,
-            address: '1234',
-            symbol: 'NII',
-          },
-        })
-      )
-    },
-    [setFakeInvestmentValue, calculateTotalInvestmentInUSD]
+  const { addLiquidity, currencies, formattedAmounts, onFieldAInput, onFieldBInput, error } = useAddLiquidity(
+    currencyTokenOne,
+    currencyTokenTwo
   )
+
+  // TODO: move to hoooks, e.g. useInvestmentCalculator
+  useEffect(() => {
+    if (!(formattedAmounts[Field.CURRENCY_A] && formattedAmounts[Field.CURRENCY_B])) {
+      return
+    }
+    let investment = 0
+    if (currencies[Field.CURRENCY_A].symbol === 'ETH') {
+      investment += formattedAmounts[Field.CURRENCY_A] * rates?.['USD']
+      investment += (formattedAmounts[Field.CURRENCY_B] / formattedAmounts[Field.CURRENCY_A]) * rates?.['USD']
+    } else if (currencies[Field.CURRENCY_B].symbol === 'ETH') {
+      investment += formattedAmounts[Field.CURRENCY_B] * rates?.['USD']
+      investment += (formattedAmounts[Field.CURRENCY_A] / formattedAmounts[Field.CURRENCY_B]) * rates?.['USD']
+    }
+    setInvestmentValue(investment)
+  }, [currencies, formattedAmounts, rates])
+
   return (
     <Modal isOpen={poolInvestModalOpen} onDismiss={toggleCreatePoolModal} minHeight={false} maxHeight={90}>
       <Wrapper>
@@ -107,48 +109,43 @@ export default function CreatePoolModal() {
             <CurrencyInputPanel
               id="pool-input"
               labelText={t`Add Liquidity`}
-              currency={currencyTokenOne}
-              otherCurrency={currencyTokenTwo}
+              currency={currencies[Field.CURRENCY_A]}
               showMaxButton={false}
-              value={currencyTokenOneValue}
               onCurrencySelect={(newToken) => setCurrencyTokenOne(newToken)}
-              onUserInput={(value) => {
-                setCurrencyTokenOneValue(value)
-                if (currencyTokenOne) {
-                  handleTokenValueChange({ value1: value, value2: currencyTokenTwoValue })
-                }
-              }}
+              value={formattedAmounts[Field.CURRENCY_A]}
+              onUserInput={onFieldAInput}
+              otherCurrency={currencies[Field.CURRENCY_B]}
             />
             <CurrencyInputPanel
               id="pool-output"
               showMaxButton={false}
-              currency={currencyTokenTwo}
-              otherCurrency={currencyTokenOne}
-              value={currencyTokenTwoValue}
+              currency={currencies[Field.CURRENCY_B]}
+              value={formattedAmounts[Field.CURRENCY_B]}
               hideBalance={true}
               onCurrencySelect={(newToken) => setCurrencyTokenTwo(newToken)}
-              onUserInput={(value) => {
-                setCurrencyTokenTwoValue(value)
-                if (currencyTokenTwo) {
-                  handleTokenValueChange({ value2: value, value1: currencyTokenOneValue })
-                }
-              }}
+              onUserInput={onFieldBInput}
+              otherCurrency={currencies[Field.CURRENCY_A]}
             />
           </div>
           <TYPE.body color={`text2`} fontWeight={400} fontSize={14} textAlign={'right'}>
             {`≈ `}
-            <BaseCurrencyView
-              type="id"
-              numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
-              value={Number(fakeInvestmentValue)}
-            />
+            <BaseCurrencyView type="id" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={Number(investmentValue)} />
           </TYPE.body>
           <Row marginTop="1rem">
             <Slippage placement="left" />
           </Row>
+          {error &&
+            currencies[Field.CURRENCY_A] &&
+            currencies[Field.CURRENCY_B] &&
+            formattedAmounts[Field.CURRENCY_A] &&
+            formattedAmounts[Field.CURRENCY_B] && (
+              <TYPE.error fontSize="0.875rem" fontWeight="normal" error={true} textAlign="left" paddingTop="1rem">
+                {error}
+              </TYPE.error>
+            )}
           <Row marginTop="1rem">
             {account ? (
-              <ButtonPrimary style={{ textTransform: 'uppercase' }} onClick={toggleCreatePoolModal}>
+              <ButtonPrimary style={{ textTransform: 'uppercase' }} onClick={addLiquidity} disabled={error}>
                 <Trans>Create Pool</Trans>
               </ButtonPrimary>
             ) : (

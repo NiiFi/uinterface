@@ -288,7 +288,7 @@ export default function Discover() {
                       <Trans>Trending tokens</Trans>
                     </TYPE.body>
                     <TYPE.largeHeader fontWeight={400} lineHeight="2.250rem">
-                      <Trans>Top Loosers</Trans>
+                      <Trans>Top Losers</Trans>
                     </TYPE.largeHeader>
                   </div>
                   <ArrowDownIconsGrouped

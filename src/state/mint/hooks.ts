@@ -16,7 +16,10 @@ import { useAppDispatch, useAppSelector } from 'state/hooks'
 const ZERO = JSBI.BigInt(0)
 
 export function useMintState(): AppState['mint'] {
-  return useAppSelector((state) => state.mint)
+  return useAppSelector((state) => {
+    // console.log(state)
+    return state.mint
+  })
 }
 
 export function useMintActionHandlers(noLiquidity: boolean | undefined): {
