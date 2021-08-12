@@ -314,10 +314,6 @@ msgstr ""
 msgid "Closed"
 msgstr ""
 
-#: src/components/SearchModal/CommonBases.tsx
-msgid "Common bases"
-msgstr ""
-
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Confirm"
 msgstr ""
@@ -399,16 +395,8 @@ msgstr ""
 msgid "Create a pair"
 msgstr ""
 
-#: src/components/ErrorBoundary/index.tsx
-msgid "Create an issue on GitHub"
-msgstr ""
-
 #: src/pages/PoolFinder/index.tsx
 msgid "Create pool."
-msgstr ""
-
-#: src/components/Header/index.tsx
-msgid "Dashboard"
 msgstr ""
 
 #: src/components/vote/DelegateModal.tsx
@@ -457,10 +445,6 @@ msgstr ""
 
 #: src/components/AccountDetails/index.tsx
 msgid "Disconnect Wallet"
-msgstr ""
-
-#: src/components/Header/index.tsx
-msgid "Discover"
 msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
@@ -539,20 +523,12 @@ msgstr ""
 msgid "European Union Euro"
 msgstr ""
 
-#: src/components/SearchModal/CurrencyList.tsx
-msgid "Expanded results from inactive Token Lists"
-msgstr ""
-
 #: src/components/Settings/index.tsx
 msgid "Expert mode turns off the confirm transaction prompt and allows high slippage trades that often result in bad rates and lost funds."
 msgstr ""
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Explore popular pools."
-msgstr ""
-
-#: src/components/Header/index.tsx
-msgid "Farm"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -581,10 +557,6 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "GBP"
-msgstr ""
-
-#: src/components/ErrorBoundary/index.tsx
-msgid "Get support on Discord"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -706,10 +678,6 @@ msgstr ""
 msgid "KRW"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Lend"
-msgstr ""
-
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
@@ -723,10 +691,6 @@ msgstr ""
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Liquidity Provider Fee"
-msgstr ""
-
-#: src/components/SearchModal/Manage.tsx
-msgid "Lists"
 msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
@@ -747,17 +711,12 @@ msgstr ""
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
-#: src/components/SearchModal/Manage.tsx
 #: src/components/earn/PoolCard.tsx
 msgid "Manage"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
 msgid "Manage Liquidity in Rewards Pool"
-msgstr ""
-
-#: src/components/SearchModal/CurrencySearch.tsx
-msgid "Manage Token Lists"
 msgstr ""
 
 #: src/components/Header/WalletListPopover.tsx
@@ -814,40 +773,16 @@ msgstr ""
 msgid "New Pools"
 msgstr ""
 
-#: src/components/SwitchLocaleLink/index.tsx
-msgid "Niifi available in: <0>{0}</0>"
-msgstr ""
-
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
-msgstr ""
-
-#: src/components/SearchModal/CurrencySearch.tsx
-msgid "No results found."
 msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Norwegian Krone"
 msgstr ""
 
-#: src/components/Toggle/ListToggle.tsx
-msgid "OFF"
-msgstr ""
-
-#: src/components/Toggle/ListToggle.tsx
-msgid "ON"
-msgstr ""
-
 #: src/components/Settings/index.tsx
 msgid "ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING."
-msgstr ""
-
-#: src/components/Toggle/index.tsx
-msgid "Off"
-msgstr ""
-
-#: src/components/Toggle/index.tsx
-msgid "On"
 msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
@@ -928,10 +863,6 @@ msgstr ""
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Pooled {0}:"
-msgstr ""
-
-#: src/components/Header/index.tsx
-msgid "Pools"
 msgstr ""
 
 #: src/components/Table/overview.tsx
@@ -1067,19 +998,11 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/components/SearchModal/CurrencySearch.tsx
-msgid "Search name or paste address"
-msgstr ""
-
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 msgid "See all"
-msgstr ""
-
-#: src/components/SearchModal/CurrencySearch.tsx
-msgid "Select a Token"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
@@ -1127,10 +1050,6 @@ msgstr ""
 msgid "Some assets are not available through this interface because they may not work well with the smart contracts or we are unable to allow trading for legal reasons."
 msgstr ""
 
-#: src/components/ErrorBoundary/index.tsx
-msgid "Something went wrong"
-msgstr ""
-
 #: src/constants/tokens.ts
 msgid "South Korean Won"
 msgstr ""
@@ -1147,9 +1066,7 @@ msgstr ""
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr ""
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
-#: src/components/swap/SwapHeader.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1219,10 +1136,6 @@ msgstr ""
 msgid "The transaction could not be sent because the deadline has passed. Please check that your transaction deadline is not too low."
 msgstr ""
 
-#: src/components/SearchModal/CommonBases.tsx
-msgid "These tokens are commonly paired with other tokens."
-msgstr ""
-
 #: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
 #: src/pages/Discover/index.tsx
@@ -1275,14 +1188,6 @@ msgstr ""
 
 #: src/components/DepositTokenModal/index.tsx
 msgid "Token To Deposit"
-msgstr ""
-
-#: src/components/SearchModal/Manage.tsx
-msgid "Tokens"
-msgstr ""
-
-#: src/components/SearchModal/CurrencyList.tsx
-msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr ""
 
 #: src/pages/Discover/index.tsx
@@ -1676,10 +1581,6 @@ msgstr ""
 msgid "{0} {1} for {2}"
 msgstr ""
 
-#: src/components/SearchModal/CurrencyList.tsx
-msgid "{0} • Added by user"
-msgstr ""
-
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
@@ -1692,10 +1593,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "{text}"
-msgstr ""
-
-#: src/components/Header/index.tsx
-msgid "{title}"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
