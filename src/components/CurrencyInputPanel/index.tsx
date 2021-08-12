@@ -149,6 +149,7 @@ interface CurrencyInputPanelProps {
   priceImpact?: Percent
   id: string
   showCommonBases?: boolean
+  postfix?: string
   renderBalance?: (amount: CurrencyAmount<Currency>) => ReactNode
   locked?: boolean
 }
@@ -167,6 +168,7 @@ export default function CurrencyInputPanel({
   renderBalance,
   fiatValue,
   priceImpact,
+  postfix = '',
   hideBalance = false,
   pair = null, // used for double token logo
   hideInput = false,
@@ -283,6 +285,7 @@ export default function CurrencyInputPanel({
                   onUserInput(val)
                 }}
               />
+              {postfix && <span style={{ color: theme.text1, fontSize: '24px' }}>{postfix}</span>}
             </>
           )}
         </InputRow>

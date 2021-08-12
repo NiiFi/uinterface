@@ -31,10 +31,6 @@ export default function URLWarning() {
     <PhishAlert isActive={showURLWarning}>
       <div style={{ display: 'flex' }}>
         <AlertTriangle style={{ marginRight: 6 }} size={12} />
-        <Trans>
-          Make sure the URL is
-          <code style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }}>app.uniswap.org</code>
-        </Trans>
       </div>
       <StyledClose size={12} onClick={toggleURLWarning} />
     </PhishAlert>

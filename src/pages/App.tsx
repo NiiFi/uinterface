@@ -1,15 +1,12 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsReporter'
-import AddressClaimModal from '../components/claim/AddressClaimModal'
-import Header from '../components/Header/Sidebar'
+import Header from '../components/Header'
 import Polling from '../components/Header/Polling'
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
 import ErrorBoundary from '../components/ErrorBoundary'
-import { ApplicationModal } from '../state/application/actions'
-import { useModalOpen, useToggleModal } from '../state/application/hooks'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import Discover from './Discover'
 import Swap from './Swap'
@@ -74,12 +71,6 @@ const HeaderWrapperBackDrop = styled.div`
   `}
 `
 
-function TopLevelModals() {
-  const open = useModalOpen(ApplicationModal.ADDRESS_CLAIM)
-  const toggle = useToggleModal(ApplicationModal.ADDRESS_CLAIM)
-  return <AddressClaimModal isOpen={open} onDismiss={toggle} />
-}
-
 export default function App() {
   const { showDrawer, setDrawerToggle } = useToggleDrawer()
   return (
@@ -96,7 +87,6 @@ export default function App() {
         <BodyWrapper>
           <Popups />
           <Polling />
-          <TopLevelModals />
           <Web3ReactManager>
             <Switch>
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
@@ -105,7 +95,8 @@ export default function App() {
               <Route exact strict path="/dashboard" component={Dashboard} />
               <Route exact strict path="/pools/:page?" component={Pools} />
               <Route exact strict path="/pools/:token0/:token1" component={PoolDetail} />
-              <Route component={Discover} />
+              <Route exact strict path="/discover" component={Discover} />
+              <Redirect to="/discover" />
             </Switch>
           </Web3ReactManager>
         </BodyWrapper>

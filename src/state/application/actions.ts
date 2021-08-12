@@ -11,15 +11,14 @@ export type PopupContent = {
 export enum ApplicationModal {
   WALLET,
   SETTINGS,
-  SELF_CLAIM,
-  ADDRESS_CLAIM,
-  CLAIM_POPUP,
   MENU,
   DELEGATE,
   VOTE,
   POOL_OVERVIEW_OPTIONS,
   MANAGE_WALLET_LIST,
   CREATE_POOL,
+  BUY_TOKEN,
+  DEPOSIT_TO_NAHMII,
 }
 
 export const updateBlockNumber = createAction<{ chainId: number; blockNumber: number }>('application/updateBlockNumber')

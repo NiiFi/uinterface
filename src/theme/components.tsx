@@ -334,18 +334,68 @@ export const CurrencySelectWrapper = styled.div`
   display: none
   `}
 `
-
+type BaseCurrencyViewProps = {
+  value: number
+  type?: Exclude<keyof BaseCurrencyDetail, 'label'>
+  format?: (detail: BaseCurrencyDetail, value: number) => string
+  numeralFormat?: string
+}
 export const BaseCurrencyView = ({
   type = 'symbol',
   format,
   value,
   numeralFormat = TOKEN_VALUE_CURRENCY_FORMAT,
-}: {
-  value: number
-  type?: Exclude<keyof BaseCurrencyDetail, 'label'>
-  format?: (detail: BaseCurrencyDetail, value: number) => string
-  numeralFormat?: string
-}) => {
+}: BaseCurrencyViewProps) => {
+  /**
+   * @description
+   * This Component is responsible for "Conversion" and  "Displaying" the FIAT values data
+   * into User selected BaseCurrency.
+   *
+   * * ==========
+   * * Conversion
+   * * ==========
+   *
+   * Conversion part is based on an assumption.
+   * @important It is being assumed that every value in the system coming from
+   * the API OR Balance is in US Dollar. That is why you would notice this piece of code down below
+   *
+   * -----------------------------------------------------------------------------
+   * @snippet
+   * const valueEquivalent = (value / rates['USD']) * rates[baseCurrencyDetail.id]
+   * -----------------------------------------------------------------------------
+   * What this code snippet does, it divide the value by the rate of USD.
+   * This give us the value in ethereum. then we multiply that ethereum equivalent with
+   * selected currency rate.
+   *
+   * @example
+   * * User selected baseCurrency is GBP and 1 ethereum in GBP is £450
+   * * Lets assume we pass the value of $3000
+   * * Rate of 1 ethereum in USD is $2000
+   *
+   * * so 3000 / 2000 = 1.5 ethereum
+   * * then to get the equivalent in GBP we do 1.5 * 450 = £675
+   *
+   * * ==========
+   * * Displaying
+   * * ==========
+   *
+   * Displaying part is pretty straight forward. It accept a prop called "type"
+   * - type === 'id'
+   *   This will output "<VALUE> <ID>"
+   *      @example "200 USD" OR "400 GBP"
+   * - type === 'symbol'
+   *   This will output "<SYMBOL> <VALUE>"
+   *      @example "$ 200" OR "£ 400"
+   *
+   * For Custom format you can pass the format prop which should be a function
+   * @see BaseCurrencyViewProps
+   *
+   * * ============
+   * * Improvements
+   * * ============
+   * 1. @see https://github.com/NiiFi/uinterface/issues/79
+   *
+   */
   const { baseCurrencyDetail } = useBaseCurrency()
   const {
     ethereumToBaseCurrencyRates: rates,

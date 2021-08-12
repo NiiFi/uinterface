@@ -54,7 +54,7 @@ export const getTitle = (type: string): string => {
     case 'gainer':
       return t`Top Gainer Pools`
     case 'looser':
-      return t`Top Looser Pools`
+      return t`Top Loser Pools`
   }
 
   return t`New Pools`

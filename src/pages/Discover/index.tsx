@@ -24,6 +24,7 @@ import {
   ColumnWrapper,
   CircleWrapper,
 } from 'theme'
+import { RowBetween } from 'components/Row'
 import { BodyPanel } from '../styled'
 import { getPoolsData } from 'components/Table/sample-pools'
 
@@ -188,10 +189,9 @@ export default function Discover() {
   return (
     <>
       <CustomAppBar>
-        <>
-          {!isSmallScreen && '\u00A0'}
+        <RowBetween>
           <ToggleDrawer />
-        </>
+        </RowBetween>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <CurrencySelectWrapper>
             <CurrencyDropdown />
@@ -288,7 +288,7 @@ export default function Discover() {
                       <Trans>Trending tokens</Trans>
                     </TYPE.body>
                     <TYPE.largeHeader fontWeight={400} lineHeight="2.250rem">
-                      <Trans>Top Loosers</Trans>
+                      <Trans>Top Losers</Trans>
                     </TYPE.largeHeader>
                   </div>
                   <ArrowDownIconsGrouped
