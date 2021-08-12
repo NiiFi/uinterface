@@ -241,6 +241,7 @@ export default function CurrencyList({
             isSelected={isSelected}
             onSelect={handleSelect}
             otherSelected={otherSelected}
+            key={index}
           />
         )
       } else {

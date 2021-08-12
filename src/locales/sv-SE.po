@@ -224,6 +224,8 @@ msgstr ""
 msgid "Add {0} to Metamask <0/>"
 msgstr "Lägg till {0} till Metamask <0/>"
 
+#: src/hooks/useAddLiquidity.ts
+#: src/hooks/useAddLiquidity.ts
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
@@ -1884,6 +1886,10 @@ msgstr ""
 #: src/components/pools/PoolsOverview.tsx
 msgid "Top Looser Pools"
 msgstr ""
+
+#: 
+#~ msgid "Top Loosers"
+#~ msgstr ""
 
 #: src/pages/Discover/index.tsx
 msgid "Top Losers"

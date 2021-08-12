@@ -15,7 +15,9 @@ export enum PairState {
   INVALID,
 }
 
-export function usePairs(currencies: [Currency | undefined, Currency | undefined][]): [PairState, Pair | null][] {
+export function usePairs(
+  currencies: [Currency | null | undefined, Currency | null | undefined][]
+): [PairState, Pair | null][] {
   const tokens = useMemo(
     () => currencies.map(([currencyA, currencyB]) => [currencyA?.wrapped, currencyB?.wrapped]),
     [currencies]
@@ -59,7 +61,10 @@ export function usePairs(currencies: [Currency | undefined, Currency | undefined
   }, [results, tokens])
 }
 
-export function usePair(tokenA?: Currency, tokenB?: Currency): [PairState, Pair | null] {
-  const inputs: [[Currency | undefined, Currency | undefined]] = useMemo(() => [[tokenA, tokenB]], [tokenA, tokenB])
+export function usePair(tokenA?: Currency | null, tokenB?: Currency | null): [PairState, Pair | null] {
+  const inputs: [[Currency | null | undefined, Currency | null | undefined]] = useMemo(
+    () => [[tokenA, tokenB]],
+    [tokenA, tokenB]
+  )
   return usePairs(inputs)[0]
 }
