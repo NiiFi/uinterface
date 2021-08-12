@@ -8,7 +8,7 @@ msgstr ""
 "Language: da\n"
 "Project-Id-Version: niifi\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-08-12 11:52\n"
+"PO-Revision-Date: 2021-08-12 11:58\n"
 "Last-Translator: \n"
 "Language-Team: Danish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -1271,7 +1271,7 @@ msgid "Top Gainers"
 msgstr ""
 
 #: src/components/pools/PoolsOverview.tsx
-msgid "Top Looser Pools"
+msgid "Top Loser Pools"
 msgstr ""
 
 #: src/pages/Discover/index.tsx
