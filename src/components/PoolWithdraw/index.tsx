@@ -1,4 +1,5 @@
 import React, { useCallback, useState, useMemo } from 'react'
+import { Currency } from '@uniswap/sdk-core'
 import styled from 'styled-components/macro'
 import { useWalletModalToggle } from 'state/application/hooks'
 import { Trans } from '@lingui/macro'
@@ -40,7 +41,7 @@ const UpperSection = styled.div`
   `}
 `
 
-export default function PoolWithdraw() {
+export default function PoolWithdraw({ currency0, currency1 }: { currency0: Currency; currency1: Currency }) {
   const { account } = useActiveWeb3React()
   const [token0Amount, setToken0Amount] = useState('')
   const [investmentValue, setInvestmentValue] = useState('')
@@ -94,11 +95,7 @@ export default function PoolWithdraw() {
           <Slider size={20} value={sliderValue} onChange={SliderChangeHandler} />
         </RowBetween>
         <AutoColumn style={{ paddingTop: '1rem' }}>
-          <TokenPairInputPanel
-            onChange={handlePairValueChange}
-            token0={{ symbol: 'ETH', address: '12345' }}
-            token1={{ symbol: 'NII', address: '12345' }}
-          />
+          <TokenPairInputPanel onChange={handlePairValueChange} currency0={currency0} currency1={currency1} />
         </AutoColumn>
         <RowBetween marginTop="0.5rem">
           <TYPE.error fontSize="0.875rem" fontWeight="normal" error={true} textAlign="left">
