@@ -94,7 +94,7 @@ const availableIcons = [
   'AUD',
   'NOK',
   'SGD',
-  'NIIIcon',
+  'NII',
 ]
 
 const renderImage = (src: string) => {

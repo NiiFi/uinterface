@@ -11,7 +11,7 @@ import { AutoColumn } from 'components/Column'
 import { ResponsiveRow } from 'components/Row'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
-import { BodyScroller, TYPE, BarTitle, CurrencySelectWrapper } from 'theme'
+import { BodyScroller, TYPE, BarTitle, CurrencySelectWrapper, Dots } from 'theme'
 import PoolInvest from 'components/PoolInvest'
 import PoolWithdraw from 'components/PoolWithdraw'
 import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
@@ -24,6 +24,7 @@ import TabPanel from '../../components/tab/TabPanel'
 import useTheme from '../../hooks/useTheme'
 import { useCurrency } from 'hooks/Tokens'
 import { TokenName } from 'state/pool/actions'
+import { Text } from 'rebass'
 
 const EmptySymbol = { symbol: undefined }
 
@@ -148,8 +149,18 @@ export default function PoolDetails({
   const { symbol: currency1Symbol } = currency1 || EmptySymbol
 
   const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
-  if (!currency0Symbol || !currency1Symbol) {
+  if (!token0 || !token1) {
     return <Redirect to={'/swap'} />
+  }
+  if (!currency0Symbol || !currency1Symbol) {
+    return (
+      <AutoColumn gap="sm" justify="center">
+        <Text textAlign="center">
+          <Trans>Loading</Trans>
+          <Dots />
+        </Text>
+      </AutoColumn>
+    )
   }
   return (
     <>
