@@ -51,15 +51,13 @@ const ZERO = JSBI.BigInt(0)
 export default function PoolInvest({ currency0, currency1 }: { currency0: Currency; currency1: Currency }) {
   const { account, chainId, library } = useActiveWeb3React()
   const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
-  const [active, setActive] = useState('')
   const [token0Amount, setToken0Amount] = useState('')
   const [token1Amount, setToken1Amount] = useState('')
   const [investmentValue, setInvestmentValue] = useState(0)
   const { calculateTotalInvestment } = useInvestmentCalculator()
   const toggleWalletModal = useWalletModalToggle()
   const handlePairValueChange = useCallback(
-    ({ token0, token1 }, active) => {
-      setActive(active)
+    ({ token0, token1 }) => {
       setToken0Amount(token0.value)
       setToken1Amount(token1.value)
       setInvestmentValue(calculateTotalInvestment(currency0, currency1, +token0.value, +token1.value, rates?.['USD']))
@@ -103,10 +101,10 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
   const router = useV2RouterContract()
   const parsedAmounts: { [field in Field]: CurrencyAmount<Currency> | undefined } = useMemo(() => {
     return {
-      [Field.CURRENCY_A]: active === 'token0' ? independentAmount : dependentAmount,
-      [Field.CURRENCY_B]: active === 'token0' ? dependentAmount : independentAmount,
+      [Field.CURRENCY_A]: independentAmount,
+      [Field.CURRENCY_B]: dependentAmount,
     }
-  }, [dependentAmount, independentAmount, active])
+  }, [dependentAmount, independentAmount])
 
   const balances = useCurrencyBalances(account ?? undefined, [
     currencies[Field.CURRENCY_A],
