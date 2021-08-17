@@ -12,7 +12,7 @@ import { Trans } from '@lingui/macro'
 
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useTokenBalance } from '../../state/wallet/hooks'
-import { ExternalLink, TYPE } from '../../theme'
+import { ExternalLink, TYPE, Dots } from '../../theme'
 import { currencyId } from '../../utils/currencyId'
 import { unwrappedToken } from '../../utils/unwrappedToken'
 import { ButtonPrimary, ButtonSecondary, ButtonEmpty } from '../Button'
@@ -26,7 +26,6 @@ import { AutoColumn } from '../Column'
 import CurrencyLogo from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
 import { RowBetween, RowFixed, AutoRow } from '../Row'
-import { Dots } from '../swap/styleds'
 import { BIG_INT_ZERO } from '../../constants/misc'
 
 export const FixedHeightRow = styled(RowBetween)`

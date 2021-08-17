@@ -11,7 +11,7 @@ import { AutoColumn } from 'components/Column'
 import { ResponsiveRow } from 'components/Row'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
-import { BodyScroller, TYPE, BarTitle, CurrencySelectWrapper } from 'theme'
+import { BodyScroller, TYPE, BarTitle, CurrencySelectWrapper, Dots } from 'theme'
 import PoolInvest from 'components/PoolInvest'
 import PoolWithdraw from 'components/PoolWithdraw'
 import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
@@ -22,6 +22,11 @@ import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
 import TabPanel from '../../components/tab/TabPanel'
 import useTheme from '../../hooks/useTheme'
+import { useCurrency } from 'hooks/Tokens'
+import { TokenName } from 'state/pool/actions'
+import { Text } from 'rebass'
+
+const EmptySymbol = { symbol: undefined }
 
 const TokenStatsWrapper = styled(BodyWrapper)`
   flex: 2;
@@ -130,7 +135,7 @@ export default function PoolDetails({
   match: {
     params: { token0, token1 },
   },
-}: RouteComponentProps<{ token0: string; token1: string }>) {
+}: RouteComponentProps<{ token0: TokenName; token1: TokenName }>) {
   const [activeTab, setActiveTab] = useState<number>(0)
   const history = useHistory()
   const theme = useTheme()
@@ -138,16 +143,31 @@ export default function PoolDetails({
   wrapperStyle.hover.borderBottomColor = theme.primary1
   wrapperStyle.selected.borderBottomColor = theme.primary1
 
+  const currency0 = useCurrency(token0)
+  const currency1 = useCurrency(token1)
+  const { symbol: currency0Symbol } = currency0 || EmptySymbol
+  const { symbol: currency1Symbol } = currency1 || EmptySymbol
+
   const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
   if (!token0 || !token1) {
     return <Redirect to={'/swap'} />
+  }
+  if (!currency0Symbol || !currency1Symbol) {
+    return (
+      <AutoColumn gap="sm" justify="center">
+        <Text textAlign="center">
+          <Trans>Loading</Trans>
+          <Dots />
+        </Text>
+      </AutoColumn>
+    )
   }
   return (
     <>
       <PoolAppBar>
         <BarTitle>
           <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
-          {`${token0} / ${token1} `}
+          {`${currency0Symbol} / ${currency1Symbol} `}
           {t`Pool`}
         </BarTitle>
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -177,15 +197,15 @@ export default function PoolDetails({
                   />
                 </Tabs>
                 <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
-                  <PoolInvest />
+                  {currency0 && currency1 && <PoolInvest currency0={currency0} currency1={currency1} />}
                 </TabPanel>
                 <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
-                  <PoolWithdraw />
+                  {currency0 && currency1 && <PoolWithdraw currency0={currency0} currency1={currency1} />}
                 </TabPanel>
               </AppBody>
               <AppBody size="md" style={{ minHeight: '440px' }}>
                 <PoolDetailChartWrapper>
-                  <PoolDetailChart token0={token0} token1={token1} />
+                  <PoolDetailChart token0={currency0Symbol} token1={currency1Symbol} />
                 </PoolDetailChartWrapper>
               </AppBody>
             </ResponsiveRow>
@@ -196,11 +216,23 @@ export default function PoolDetails({
                 </TYPE.mediumHeaderEllipsis>
                 <PoolCardRowColumn>
                   <PoolCardItem style={{ width: '100%' }}>
-                    <CurrencyAvatar symbol={'ETH'} rootStyle={{ marginBottom: '1rem' }} />
+                    {currency0 && (
+                      <CurrencyAvatar
+                        symbol={currency0Symbol}
+                        currency={currency0}
+                        rootStyle={{ marginBottom: '1rem' }}
+                      />
+                    )}
                     <TokenDetails />
                   </PoolCardItem>
                   <PoolCardItem style={{ width: '100%' }}>
-                    <CurrencyAvatar symbol={'NII'} rootStyle={{ marginBottom: '1rem' }} />
+                    {currency1 && (
+                      <CurrencyAvatar
+                        symbol={currency1Symbol}
+                        currency={currency1}
+                        rootStyle={{ marginBottom: '1rem' }}
+                      />
+                    )}
                     <TokenDetails />
                   </PoolCardItem>
                 </PoolCardRowColumn>
@@ -209,7 +241,7 @@ export default function PoolDetails({
                 <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
                   <Trans>ROI Simulator</Trans>
                 </TYPE.mediumHeaderEllipsis>
-                <ROISimulator token0={token0} token1={token1} />
+                {currency0 && currency1 && <ROISimulator currency0={currency0} currency1={currency1} />}
               </ROISimulatorWrapper>
             </RowColumn>
           </Wrapper>
