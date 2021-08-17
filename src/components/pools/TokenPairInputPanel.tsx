@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 import { PoolInvestPairValues } from 'state/pool/actions'
 import NumericalInput from 'components/NumericalInput'
@@ -11,11 +11,19 @@ import { usePair } from 'hooks/usePairs'
 export type TokenPairInputPanelProps = {
   currency0: Currency
   currency1: Currency
+  value0?: string
+  value1?: string
   onChange?: (values: PoolInvestPairValues, active?: string) => void
   hasError?: boolean
 }
 
-export default function TokenPairInputPanel({ currency0, currency1, onChange }: TokenPairInputPanelProps) {
+export default function TokenPairInputPanel({
+  currency0,
+  currency1,
+  value0,
+  value1,
+  onChange,
+}: TokenPairInputPanelProps) {
   const token0: PoolToken = {
     symbol: currency0.symbol as TokenName,
     address: currency0.isNative ? '' : currency0.address,
@@ -50,21 +58,27 @@ export default function TokenPairInputPanel({ currency0, currency1, onChange }: 
         .quote(valueParsed?.wrapped)
         .toExact())
 
-    if (valueCalculated) {
-      const value0 = isActiveToken0 ? value : valueCalculated
-      const value1 = !isActiveToken0 ? value : valueCalculated
-      setToken0Value(value0)
-      setToken1Value(value1)
-      onChange &&
-        onChange(
-          {
-            token0: { ...token0, value: value0 },
-            token1: { ...token1, value: value1 },
-          },
-          active
-        )
-    }
+    const value0 = isActiveToken0 ? value : valueCalculated
+    const value1 = !isActiveToken0 ? value : valueCalculated
+    setToken0Value(value0)
+    setToken1Value(value1)
+    onChange &&
+      onChange(
+        {
+          token0: { ...token0, value: value0 },
+          token1: { ...token1, value: value1 },
+        },
+        active
+      )
   }
+
+  useEffect(() => {
+    if (!value0 || !value1) {
+      return
+    }
+    setToken0Value(value0)
+    setToken1Value(value1)
+  }, [value0, value1])
 
   return (
     <>
