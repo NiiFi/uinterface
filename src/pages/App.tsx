@@ -94,7 +94,7 @@ export default function App() {
               <Route exact strict path="/swap" component={Swap} />
               <Route exact strict path="/dashboard" component={Dashboard} />
               <Route exact strict path="/pools/:page?" component={Pools} />
-              <Route exact strict path="/pools/:token0/:token1" component={PoolDetail} />
+              <Route exact strict path="/pool/:address" component={PoolDetail} />
               <Route exact strict path="/discover" component={Discover} />
               <Redirect to="/discover" />
             </Switch>

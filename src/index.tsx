@@ -19,6 +19,7 @@ import ListsUpdater from './state/lists/updater'
 import MulticallUpdater from './state/multicall/updater'
 import TransactionUpdater from './state/transactions/updater'
 import UserUpdater, { BaseCurrencyRatesUpdater } from './state/user/updater'
+import PoolsUpdater from './state/pools/updater'
 import ThemeProvider, { ThemedGlobalStyle } from './theme'
 import getLibrary from './utils/getLibrary'
 
@@ -71,6 +72,7 @@ function Updaters() {
       <ApplicationUpdater />
       <TransactionUpdater />
       <MulticallUpdater />
+      <PoolsUpdater />
     </>
   )
 }
@@ -83,13 +85,13 @@ ReactDOM.render(
           <Web3ReactProvider getLibrary={getLibrary}>
             <Web3ProviderNetwork getLibrary={getLibrary}>
               <Blocklist>
-                <Updaters />
-                <ThemeProvider>
-                  <ThemedGlobalStyle />
-                  <ApolloProvider client={client}>
+                <ApolloProvider client={client}>
+                  <Updaters />
+                  <ThemeProvider>
+                    <ThemedGlobalStyle />
                     <App />
-                  </ApolloProvider>
-                </ThemeProvider>
+                  </ThemeProvider>
+                </ApolloProvider>
               </Blocklist>
             </Web3ProviderNetwork>
           </Web3ReactProvider>

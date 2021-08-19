@@ -31,8 +31,8 @@ const LoaderWrapper = styled.div`
 const CustomTableRow = (row: any, index: number, history: History<LocationState>, theme: DefaultTheme) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
 
-  const handleCellOnClick = () => {
-    history.push('/pools/ETH/NII')
+  const handleCellOnClick = (id: string) => {
+    history.push(`/pool/${id}`)
   }
 
   return (
@@ -43,7 +43,7 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
       tabIndex={-1}
       key={index}
       selected={false}
-      onClick={handleCellOnClick}
+      onClick={() => handleCellOnClick(row.id)}
     >
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper>

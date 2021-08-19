@@ -125,7 +125,7 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
 // undefined if invalid or does not exist
 // null if loading
 // otherwise returns the token
-export function useToken(tokenAddress?: string): Token | undefined | null {
+export function useToken(tokenAddress?: string, tokenAlt?: any): Token | undefined | null {
   const { chainId } = useActiveWeb3React()
   const tokens = useAllTokens()
 
@@ -148,6 +148,9 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
 
   return useMemo(() => {
     if (token) return token
+    if (tokenAlt) {
+      return new Token(3, tokenAlt?.id, 18, tokenAlt?.symbol, tokenAlt?.name) // FIXME!!!
+    }
     if (!chainId || !address) return undefined
     if (decimals.loading || symbol.loading || tokenName.loading) return null
     if (decimals.result) {
@@ -172,14 +175,16 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
     tokenName.loading,
     tokenName.result,
     tokenNameBytes32.result,
+    tokenAlt,
   ])
 }
 
-export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
+export function useCurrency(currencyId: string | undefined, tokenAlt?: any): Currency | null | undefined {
   const { chainId } = useActiveWeb3React()
-  const isETH = currencyId?.toUpperCase() === 'ETH'
-  const token = useToken(isETH ? undefined : currencyId)
+  const isETH = currencyId?.toUpperCase() === 'ETH' || currencyId === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' // FIXME
+  const token = useToken(isETH ? undefined : currencyId, tokenAlt)
   const weth = chainId ? WETH9_EXTENDED[chainId] : undefined
   if (weth?.address?.toLowerCase() === currencyId?.toLowerCase()) return weth
+
   return isETH ? (chainId ? ExtendedEther.onChain(chainId) : undefined) : token
 }
