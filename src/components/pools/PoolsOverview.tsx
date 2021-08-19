@@ -74,9 +74,9 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
     return getPoolsData(type, limit)
   }, [type, limit])
 
-  const handleCardOnClick = (e: any) => {
+  const handleCardOnClick = (e: any, id: string) => {
     e.preventDefault()
-    history.push('/pools/ETH/NII')
+    history.push(`/pool/${id}`)
   }
 
   return (
@@ -96,7 +96,7 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
         {Object.entries(poolsData).map(([key, item]) => {
           return (
             <Grid item xs={isSmallScreen ? 12 : 4} key={key}>
-              <Card onClick={handleCardOnClick}>
+              <Card onClick={(e) => handleCardOnClick(e, item.id)}>
                 <RowWrapper style={{ justifyContent: 'space-between' }}>
                   <RowWrapper>
                     <div style={{ position: 'relative' }}>

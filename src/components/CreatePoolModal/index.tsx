@@ -18,6 +18,7 @@ import { ButtonPrimary } from 'components/Button'
 import Modal from '../Modal'
 import { Field } from 'state/mint/actions'
 import useAddLiquidity from 'hooks/useAddLiquidity'
+import { useInvestmentCalculator } from 'state/pool/hooks'
 
 const HeaderRow = styled.div`
   font-weight: 500;
@@ -73,27 +74,24 @@ export default function CreatePoolModal() {
   const [investmentValue, setInvestmentValue] = useState(0)
   const [currencyTokenOne, setCurrencyTokenOne] = useState<Currency | null | undefined>(useCurrency('ETH'))
   const [currencyTokenTwo, setCurrencyTokenTwo] = useState<Currency | null | undefined>(null)
+  const { calculateTotalInvestment } = useInvestmentCalculator()
 
   const { addLiquidity, currencies, formattedAmounts, onFieldAInput, onFieldBInput, error } = useAddLiquidity(
     currencyTokenOne,
     currencyTokenTwo
   )
 
-  // TODO: move to hoooks, e.g. useInvestmentCalculator
   useEffect(() => {
-    if (!(formattedAmounts[Field.CURRENCY_A] && formattedAmounts[Field.CURRENCY_B])) {
-      return
-    }
-    let investment = 0
-    if (currencies[Field.CURRENCY_A].symbol === 'ETH') {
-      investment += formattedAmounts[Field.CURRENCY_A] * rates?.['USD']
-      investment += (formattedAmounts[Field.CURRENCY_B] / formattedAmounts[Field.CURRENCY_A]) * rates?.['USD']
-    } else if (currencies[Field.CURRENCY_B].symbol === 'ETH') {
-      investment += formattedAmounts[Field.CURRENCY_B] * rates?.['USD']
-      investment += (formattedAmounts[Field.CURRENCY_A] / formattedAmounts[Field.CURRENCY_B]) * rates?.['USD']
-    }
-    setInvestmentValue(investment)
-  }, [currencies, formattedAmounts, rates])
+    setInvestmentValue(
+      calculateTotalInvestment(
+        currencies[Field.CURRENCY_A],
+        currencies[Field.CURRENCY_B],
+        formattedAmounts[Field.CURRENCY_A],
+        formattedAmounts[Field.CURRENCY_B],
+        rates?.['USD']
+      )
+    )
+  }, [currencies, formattedAmounts, rates, calculateTotalInvestment])
 
   return (
     <Modal isOpen={poolInvestModalOpen} onDismiss={toggleCreatePoolModal} minHeight={false} maxHeight={90}>

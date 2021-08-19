@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Slash } from 'react-feather'
 import styled from 'styled-components/macro'
-
+import { Currency } from '@uniswap/sdk-core'
 import { IconProps } from 'components/Icons/types'
 import { TokenName } from 'state/pool/actions'
+import { getTokenLogoURL } from 'components/CurrencyLogo'
 import {
   USD,
   ETH,
@@ -27,7 +29,8 @@ import {
   NIIIcon,
 } from 'components/Icons'
 type Props = {
-  symbol: TokenName
+  symbol: TokenName | string
+  currency?: Currency
   containerStyle?: React.CSSProperties
   rootStyle?: React.CSSProperties
   iconProps?: IconProps
@@ -70,14 +73,57 @@ const CurrencyIconMap: { [currency in TokenName]: (props: IconProps) => JSX.Elem
   SGD,
   NII: NIIIcon,
 }
-export const CurrencyAvatar = ({ symbol, iconProps, containerStyle, rootStyle, hideSymbol }: Props) => {
-  const Icon = CurrencyIconMap[symbol]
+const availableIcons = [
+  'USD',
+  'ETH',
+  'CAD',
+  'CHF',
+  'INR',
+  'HKD',
+  'BTC',
+  'EUR',
+  'CNY',
+  'GBP',
+  'RUB',
+  'MXN',
+  'KRW',
+  'TRY',
+  'JPY',
+  'BRL',
+  'SEK',
+  'AUD',
+  'NOK',
+  'SGD',
+  'NII',
+]
+
+const renderImage = (src: string) => {
+  return <img src={src} width="30" height="30" />
+}
+
+export const CurrencyAvatar = ({ symbol, currency, iconProps, containerStyle, rootStyle, hideSymbol }: Props) => {
+  const [logo, setLogo] = useState<any>() // TODO: set proper types
   const backgroundColor = symbol === 'NII' ? 'white' : 'transparent'
+
+  useEffect(() => {
+    const logo = new Image()
+    logo.src = (currency !== undefined && 'address' in currency && getTokenLogoURL(currency.address)) || ''
+    logo.onload = () => {
+      setLogo(renderImage(logo.src))
+    }
+    logo.onerror = () => {
+      if (availableIcons.indexOf(symbol as string) === -1) {
+        setLogo(<Slash {...iconProps} width={30} height={30} />)
+      } else {
+        const Icon = CurrencyIconMap[symbol as TokenName]
+        setLogo(<Icon {...iconProps} />)
+      }
+    }
+  }, [symbol, currency, iconProps, setLogo])
+
   return (
     <CurrencyAvatarWrapper style={rootStyle}>
-      <CurrencyLogoWrapper style={{ backgroundColor, ...containerStyle }}>
-        <Icon {...iconProps} />
-      </CurrencyLogoWrapper>
+      <CurrencyLogoWrapper style={{ backgroundColor, ...containerStyle }}>{logo}</CurrencyLogoWrapper>
       {!hideSymbol && <span>{symbol}</span>}
     </CurrencyAvatarWrapper>
   )

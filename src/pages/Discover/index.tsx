@@ -377,7 +377,7 @@ export default function Discover() {
                         <TableCell
                           style={{ ...rowCellStyles, paddingLeft: isSmallScreen ? '18px' : '34px', cursor: 'pointer' }}
                           align="left"
-                          onClick={() => history.push('/pools/ETH/NII')}
+                          onClick={() => history.push(`/pool/${row.id}`)}
                         >
                           <RowWrapper>
                             <div style={{ position: 'relative' }}>

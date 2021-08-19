@@ -1,4 +1,5 @@
 import { useCallback } from 'react'
+import { Currency } from '@uniswap/sdk-core'
 import { AppState } from '../index'
 
 import {
@@ -94,4 +95,31 @@ export function useFakePoolValuesCalculator() {
     }
   }
   return { calculateTotalInvestmentInUSD, getValueEquivalentTo, calculateEstimatedROI }
+}
+
+export function useInvestmentCalculator() {
+  // TODO: implement calculation
+  const calculateTotalInvestment = (
+    currency0: Currency,
+    currency1: Currency,
+    value0: number,
+    value1: number,
+    rate: number
+  ) => {
+    let investment = 0
+
+    if (!(value0 && value1)) {
+      return 0
+    }
+    if (currency0.symbol === 'ETH') {
+      investment += value0 * rate
+      investment += (value1 / value0) * rate
+    } else if (currency1.symbol === 'ETH') {
+      investment += value1 * rate
+      investment += (value0 / value1) * rate
+    }
+
+    return investment
+  }
+  return { calculateTotalInvestment }
 }
