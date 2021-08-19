@@ -18,19 +18,39 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US.po\n"
 "X-Crowdin-File-ID: 73\n"
 
+#: src/components/earn/PoolCard.tsx
+msgid "${0}"
+msgstr ""
+
+#: src/components/earn/PoolCard.tsx
+msgid "${0} ETH"
+msgstr ""
+
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
 msgstr "(最大)"
 
+#: src/pages/Swap/index.tsx
+msgid "- Remove send"
+msgstr ""
+
+#: src/components/earn/PoolCard.tsx
+#: src/components/earn/PoolCard.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI / 週"
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
 msgstr ""
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Week"
 msgstr ""
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Year"
 msgstr ""
 
@@ -54,6 +74,7 @@ msgstr ""
 msgid "3%"
 msgstr ""
 
+#: src/pages/RemoveLiquidity/index.tsx
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
 msgstr "<0>ヒント:</0> 流動性トークンを削除すると、プールのシェアに比例して現在の価格で元のトークンに戻ります。発生した報酬は受け取るトークンに含まれます。"
 
@@ -64,6 +85,10 @@ msgstr ""
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>ヒント:</0> 流動性を追加すると、そのポジションを表す流動性トークンを受け取ります。 流動性トークンはプールのシェアに応じて自動的に報酬を獲得します。また、流動性トークンはいつでも償還できます。"
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "APPROVE"
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "AUD"
@@ -89,6 +114,11 @@ msgstr "追加"
 msgid "Add Delegate +"
 msgstr "第三者に投票を委任する"
 
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/NavigationTabs/index.tsx
+#: src/components/PoolInvest/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "流動性を追加"
 
@@ -100,6 +130,8 @@ msgstr ""
 msgid "Add {0} to Metamask <0/>"
 msgstr "{0} をメタマスクに追加 <0/>"
 
+#: src/hooks/useAddLiquidity.ts
+#: src/hooks/useAddLiquidity.ts
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
@@ -319,6 +351,7 @@ msgstr "ウォレットで取引を確認する"
 #: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
@@ -468,6 +501,7 @@ msgstr "受取人を入力ください"
 msgid "Enter a valid slippage percentage"
 msgstr "有効なスリップページのパーセンテージを入力してください"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
@@ -636,11 +670,6 @@ msgstr "上記は概算です。最大で<0>{0} {1}</0>を売れなければ、�
 msgid "Install Metamask"
 msgstr "メタマスクのインストール"
 
-#: src/components/PoolInvest/index.tsx
-#: src/components/PoolWithdraw/index.tsx
-msgid "Insufficient Balance"
-msgstr ""
-
 #: src/pages/Swap/index.tsx
 msgid "Insufficient liquidity for this trade."
 msgstr "取引のための流動性が不足しています。"
@@ -649,6 +678,8 @@ msgstr "取引のための流動性が不足しています。"
 msgid "Insufficient liquidity for this trade. Try enabling multi-hop trades."
 msgstr "取引のための流動性が不足しています。マルチホップ取引を有効にしてください。"
 
+#: src/components/PoolInvest/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/state/mint/hooks.ts
 #: src/state/mint/hooks.ts
 #: src/state/swap/hooks.ts
@@ -659,6 +690,7 @@ msgstr "{0} の残高が足りません"
 msgid "Interface Settings"
 msgstr "インターフェイスの設定"
 
+#: src/components/PoolInvest/index.tsx
 #: src/state/mint/hooks.ts
 msgid "Invalid pair"
 msgstr "無効なペア"
@@ -712,6 +744,7 @@ msgstr "読み込まれました"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/pages/PoolDetail/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "読み込み中"
@@ -765,6 +798,10 @@ msgstr ""
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
 msgstr "移行"
+
+#: src/components/swap/AdvancedSwapDetails.tsx
+msgid "Minimum received"
+msgstr ""
 
 #: src/pages/Dashboard/index.tsx
 msgid "NFTs Collection"
@@ -998,6 +1035,8 @@ msgstr ""
 msgid "Remove list"
 msgstr "リストを削除"
 
+#: src/components/PoolWithdraw/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove {0} {1} and {2} {3}"
@@ -1674,4 +1713,3 @@ msgstr ""
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr ""
-

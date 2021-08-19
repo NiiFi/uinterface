@@ -18,19 +18,39 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US.po\n"
 "X-Crowdin-File-ID: 73\n"
 
+#: src/components/earn/PoolCard.tsx
+msgid "${0}"
+msgstr ""
+
+#: src/components/earn/PoolCard.tsx
+msgid "${0} ETH"
+msgstr ""
+
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
 msgstr "(Máx)"
 
+#: src/pages/Swap/index.tsx
+msgid "- Remove send"
+msgstr ""
+
+#: src/components/earn/PoolCard.tsx
+#: src/components/earn/PoolCard.tsx
 msgid "0 UNI / week"
 msgstr "0 UNI / semana"
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Month"
 msgstr ""
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Week"
 msgstr ""
 
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
+#: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Year"
 msgstr ""
 
@@ -54,6 +74,7 @@ msgstr ""
 msgid "3%"
 msgstr ""
 
+#: src/pages/RemoveLiquidity/index.tsx
 msgid "<0>Tip:</0> Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
 msgstr "<0>Consejo:</0> Los tokens del fondo de reservas de eliminación convierten su posición de vuelta en fichas subyacentes al precio actual, proporcional a su parte de la piscina. Las tasas acumuladas están incluidas en las cantidades que recibe."
 
@@ -64,6 +85,10 @@ msgstr ""
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
 msgstr "<0>Consejo:</0> Cuando añades liquidez, recibirás fichas de billar representando tu posición. Estos tokens automáticamente ganan comisiones proporcionales a su parte de la piscina, y pueden ser canjeados en cualquier momento."
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "APPROVE"
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "AUD"
@@ -89,6 +114,11 @@ msgstr "Añadir"
 msgid "Add Delegate +"
 msgstr "Añadir Delegate +"
 
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/NavigationTabs/index.tsx
+#: src/components/PoolInvest/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 msgid "Add Liquidity"
 msgstr "Añadir liquidez"
 
@@ -100,6 +130,8 @@ msgstr ""
 msgid "Add {0} to Metamask <0/>"
 msgstr "Añadir {0} a Metamask <0/>"
 
+#: src/hooks/useAddLiquidity.ts
+#: src/hooks/useAddLiquidity.ts
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
@@ -319,6 +351,7 @@ msgstr "Confirmar esta transacción en su cartera"
 #: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
@@ -468,6 +501,7 @@ msgstr "Ingrese un destinatario"
 msgid "Enter a valid slippage percentage"
 msgstr "Introduzca un porcentaje de deslizamiento válido"
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
@@ -636,11 +670,6 @@ msgstr "La entrada es estimada. Venderás como máximo <0>{0} {1}</0> o la trans
 msgid "Install Metamask"
 msgstr "Instalar Metamask"
 
-#: src/components/PoolInvest/index.tsx
-#: src/components/PoolWithdraw/index.tsx
-msgid "Insufficient Balance"
-msgstr ""
-
 #: src/pages/Swap/index.tsx
 msgid "Insufficient liquidity for this trade."
 msgstr "Falta liquidez suficiente para este comercio."
@@ -649,6 +678,8 @@ msgstr "Falta liquidez suficiente para este comercio."
 msgid "Insufficient liquidity for this trade. Try enabling multi-hop trades."
 msgstr "Falta liquidez suficiente para esta operación. Intenta habilitar las operaciones de varios saltos."
 
+#: src/components/PoolInvest/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/state/mint/hooks.ts
 #: src/state/mint/hooks.ts
 #: src/state/swap/hooks.ts
@@ -659,6 +690,7 @@ msgstr "Saldo {0} insuficiente"
 msgid "Interface Settings"
 msgstr "Ajustes de la interfaz"
 
+#: src/components/PoolInvest/index.tsx
 #: src/state/mint/hooks.ts
 msgid "Invalid pair"
 msgstr "Par inválido"
@@ -712,6 +744,7 @@ msgstr "Cargado"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/pages/PoolDetail/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Cargando"
@@ -765,6 +798,10 @@ msgstr ""
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
 msgstr "Migrar"
+
+#: src/components/swap/AdvancedSwapDetails.tsx
+msgid "Minimum received"
+msgstr ""
 
 #: src/pages/Dashboard/index.tsx
 msgid "NFTs Collection"
@@ -998,6 +1035,8 @@ msgstr ""
 msgid "Remove list"
 msgstr "Eliminar lista"
 
+#: src/components/PoolWithdraw/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove {0} {1} and {2} {3}"
@@ -1674,4 +1713,3 @@ msgstr ""
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr ""
-

@@ -39,7 +39,6 @@ export default function TokenPairInputPanel({
   const [, pair] = usePair(currency0, currency1)
 
   const getChangeHandler = (active: 'token0' | 'token1') => (value: string) => {
-    // FIXME: user can't enter 0 value
     if (!(value && pair && currency0 && currency1 && tokenA && tokenB)) {
       setToken0Value('')
       setToken1Value('')

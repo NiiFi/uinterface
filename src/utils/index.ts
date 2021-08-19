@@ -63,3 +63,9 @@ export function escapeRegExp(string: string): string {
 export function isTokenOnList(tokenAddressMap: TokenAddressMap, token?: Token): boolean {
   return Boolean(token?.isToken && tokenAddressMap[token.chainId]?.[token.address])
 }
+
+export const currentTimestamp = () => new Date().getTime()
+
+export function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
+  return value !== null && value !== undefined
+}
