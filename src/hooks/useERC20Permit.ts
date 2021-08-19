@@ -244,7 +244,7 @@ export function useERC20Permit(
 
 const REMOVE_LIQUIDITY_PERMIT_INFO: PermitInfo = {
   version: '1',
-  name: 'NiiFi',
+  name: 'Uniswap V2', // TODO: use NiiFi instead
   type: PermitType.AMOUNT,
 }
 

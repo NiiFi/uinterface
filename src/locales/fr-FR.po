@@ -24,6 +24,14 @@ msgstr ""
 msgid "${0} ETH"
 msgstr ""
 
+#: src/components/earn/PoolCard.tsx
+msgid "${0}"
+msgstr ""
+
+#: src/components/earn/PoolCard.tsx
+msgid "${0} ETH"
+msgstr ""
+
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
 msgstr ""
@@ -82,6 +90,10 @@ msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "<0>Tip:</0> When you add liquidity, you will receive pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time."
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "APPROVE"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -341,6 +353,7 @@ msgstr ""
 #: src/components/DepositTokenModal/index.tsx
 #: src/components/Header/WalletListPopover.tsx
 #: src/components/PoolInvest/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
@@ -478,6 +491,7 @@ msgstr ""
 msgid "Enter a valid slippage percentage"
 msgstr ""
 
+#: src/components/PoolInvest/index.tsx
 #: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
@@ -634,11 +648,6 @@ msgstr ""
 msgid "Install Metamask"
 msgstr ""
 
-#: src/components/PoolInvest/index.tsx
-#: src/components/PoolWithdraw/index.tsx
-msgid "Insufficient Balance"
-msgstr ""
-
 #: src/pages/Swap/index.tsx
 msgid "Insufficient liquidity for this trade."
 msgstr ""
@@ -647,6 +656,8 @@ msgstr ""
 msgid "Insufficient liquidity for this trade. Try enabling multi-hop trades."
 msgstr ""
 
+#: src/components/PoolInvest/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/state/mint/hooks.ts
 #: src/state/mint/hooks.ts
 #: src/state/swap/hooks.ts
@@ -657,6 +668,7 @@ msgstr ""
 msgid "Interface Settings"
 msgstr ""
 
+#: src/components/PoolInvest/index.tsx
 #: src/state/mint/hooks.ts
 msgid "Invalid pair"
 msgstr ""
@@ -702,6 +714,7 @@ msgstr ""
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/pages/PoolDetail/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr ""
@@ -749,6 +762,10 @@ msgstr ""
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Migrate"
+msgstr ""
+
+#: src/components/swap/AdvancedSwapDetails.tsx
+msgid "Minimum received"
 msgstr ""
 
 #: src/components/swap/AdvancedSwapDetails.tsx
@@ -959,6 +976,8 @@ msgstr ""
 msgid "Remove list"
 msgstr ""
 
+#: src/components/PoolWithdraw/index.tsx
+#: src/components/PoolWithdraw/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove {0} {1} and {2} {3}"
@@ -1601,4 +1620,3 @@ msgstr ""
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr ""
-
