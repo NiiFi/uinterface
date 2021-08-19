@@ -185,6 +185,6 @@ export function useCurrency(currencyId: string | undefined, tokenAlt?: any): Cur
   const token = useToken(isETH ? undefined : currencyId, tokenAlt)
   const weth = chainId ? WETH9_EXTENDED[chainId] : undefined
   if (weth?.address?.toLowerCase() === currencyId?.toLowerCase()) return weth
-  console.log(['TOKEN', token])
+
   return isETH ? (chainId ? ExtendedEther.onChain(chainId) : undefined) : token
 }
