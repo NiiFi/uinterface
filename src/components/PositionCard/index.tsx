@@ -1,6 +1,7 @@
 import JSBI from 'jsbi'
 import { Percent, CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { Pair } from '@uniswap/v2-sdk'
+import noise from '../../assets/images/noise.png'
 import { darken } from 'polished'
 import React, { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
@@ -17,7 +18,6 @@ import { currencyId } from '../../utils/currencyId'
 import { unwrappedToken } from '../../utils/unwrappedToken'
 import { ButtonPrimary, ButtonSecondary, ButtonEmpty } from '../Button'
 import { transparentize } from 'polished'
-import { CardNoise } from '../earn/styled'
 
 import { useColor } from '../../hooks/useColor'
 
@@ -27,6 +27,20 @@ import CurrencyLogo from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
 import { RowBetween, RowFixed, AutoRow } from '../Row'
 import { BIG_INT_ZERO } from '../../constants/misc'
+
+const CardNoise = styled.span`
+  background: url(${noise});
+  background-size: cover;
+  mix-blend-mode: overlay;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+`
 
 export const FixedHeightRow = styled(RowBetween)`
   height: 24px;
