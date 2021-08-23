@@ -2,6 +2,7 @@ import JSBI from 'jsbi'
 import React, { useState } from 'react'
 import { Percent, CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { Pair } from '@uniswap/v2-sdk'
+import noise from '../../assets/images/noise.png'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { Link } from 'react-router-dom'
 import { Text } from 'rebass'
@@ -15,7 +16,6 @@ import { currencyId } from '../../utils/currencyId'
 import { unwrappedToken } from '../../utils/unwrappedToken'
 import { ButtonPrimary, ButtonSecondary, ButtonEmpty } from '../Button'
 import { transparentize } from 'polished'
-import { CardNoise } from '../earn/styled'
 
 import { useColor } from '../../hooks/useColor'
 
@@ -27,6 +27,20 @@ import { RowBetween, RowFixed, AutoRow } from '../Row'
 import { Dots } from 'theme'
 import { BIG_INT_ZERO } from '../../constants/misc'
 import { FixedHeightRow } from '.'
+
+const CardNoise = styled.span`
+  background: url(${noise});
+  background-size: cover;
+  mix-blend-mode: overlay;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+`
 
 const StyledPositionCard = styled(LightCard)<{ bgColor: any }>`
   border: none;
