@@ -11,10 +11,6 @@ export type PopupContent = {
 export enum ApplicationModal {
   WALLET,
   SETTINGS,
-  MENU,
-  DELEGATE,
-  VOTE,
-  POOL_OVERVIEW_OPTIONS,
   MANAGE_WALLET_LIST,
   CREATE_POOL,
   BUY_TOKEN,
