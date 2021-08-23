@@ -117,7 +117,7 @@ function useSwapCallArguments(
  * This object seems to be undocumented by ethers.
  * @param error an error from the ethers provider
  */
-export function swapErrorToUserReadableMessage(error: any): string {
+function swapErrorToUserReadableMessage(error: any): string {
   let reason: string | undefined
   while (Boolean(error)) {
     reason = error.reason ?? error.message ?? reason
