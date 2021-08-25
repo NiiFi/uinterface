@@ -15,14 +15,8 @@ msgstr ""
 "Project-Id-Version: niifi\n"
 "Language-Team: Portuguese, Brazilian\n"
 "PO-Revision-Date: 2021-08-17 16:33\n"
-
-#: src/components/earn/PoolCard.tsx
-msgid "${0}"
-msgstr ""
-
-#: src/components/earn/PoolCard.tsx
-msgid "${0} ETH"
-msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
@@ -31,11 +25,6 @@ msgstr "(Máximo)"
 #: src/pages/Swap/index.tsx
 msgid "- Remove send"
 msgstr ""
-
-#: src/components/earn/PoolCard.tsx
-#: src/components/earn/PoolCard.tsx
-msgid "0 UNI / week"
-msgstr "0 UNI / semana"
 
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
@@ -108,10 +97,6 @@ msgstr "ativo"
 msgid "Add"
 msgstr "Adicionar"
 
-#: src/components/vote/DelegateModal.tsx
-msgid "Add Delegate +"
-msgstr "Adicionar Delegar +"
-
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/PoolInvest/index.tsx
@@ -159,10 +144,6 @@ msgstr "Permitir negociações de alto impacto nos preços e ignorar a tela de c
 msgid "Allow the Niifi to use your {0}"
 msgstr ""
 
-#: src/components/Header/URLWarning.tsx
-msgid "Always make sure the URL is<0>app.uniswap.org</0> - bookmark it to be safe."
-msgstr "Sempre certifique-se de que a URL é <0>app.uniswap.org</0> - marcá-la como segura."
-
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
 msgid "Amount"
@@ -177,7 +158,6 @@ msgstr ""
 msgid "Amount to add"
 msgstr ""
 
-#: src/components/earn/StakingModal.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Approve"
 msgstr "Aprovar"
@@ -219,10 +199,6 @@ msgstr "Automático"
 #: src/components/Table/pools.tsx
 msgid "Available Pools"
 msgstr ""
-
-#: src/components/earn/StakingModal.tsx
-msgid "Available to deposit: {0}"
-msgstr "Disponível para depositar: {0}"
 
 #: src/constants/tokens.ts
 msgid "BRL"
@@ -301,14 +277,6 @@ msgstr "Confira nossos guias de migração e caminhada v3 LP."
 msgid "Chinese Yuan"
 msgstr ""
 
-#: src/components/earn/UnstakingModal.tsx
-msgid "Claimed UNI!"
-msgstr "UNI reivindicado!"
-
-#: src/components/earn/UnstakingModal.tsx
-msgid "Claiming {0} UNI"
-msgstr "Reivindicando {0} UNI"
-
 #: src/components/SearchModal/ManageTokens.tsx
 msgid "Clear all"
 msgstr "Limpar tudo"
@@ -320,6 +288,10 @@ msgstr "FECHAR"
 #: src/components/Badge/RangeBadge.tsx
 msgid "Closed"
 msgstr "Fechadas"
+
+#: src/components/SearchModal/CommonBases.tsx
+msgid "Common bases"
+msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Confirm"
@@ -336,7 +308,6 @@ msgstr "Confirmar troca"
 
 #: src/components/ModalViews/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/vote/VoteModal.tsx
 msgid "Confirm this transaction in your wallet"
 msgstr "Confirme esta transação em sua carteira"
 
@@ -358,10 +329,6 @@ msgstr "Confirme esta transação em sua carteira"
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Conectar Carteira"
-
-#: src/components/earn/UnstakingModal.tsx
-msgid "Connect a wallet"
-msgstr "Conectar uma carteira"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
@@ -403,21 +370,18 @@ msgstr "Criar Pool e Oferta"
 msgid "Create a pair"
 msgstr "Criar um par"
 
+#: src/components/ErrorBoundary/index.tsx
+msgid "Create an issue on GitHub"
+msgstr ""
+
 #: src/pages/PoolFinder/index.tsx
 msgid "Create pool."
 msgstr "Criar pool."
 
-#: src/components/vote/DelegateModal.tsx
-msgid "Delegate Votes"
-msgstr "Delegar votos"
+#: src/components/Header/index.tsx
+msgid "Dashboard"
+msgstr ""
 
-#: src/components/vote/DelegateModal.tsx
-msgid "Delegating votes"
-msgstr "Delegando votos"
-
-#: src/components/earn/PoolCard.tsx
-#: src/components/earn/StakingModal.tsx
-#: src/components/earn/StakingModal.tsx
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Deposit"
 msgstr "Depósito"
@@ -426,22 +390,6 @@ msgstr "Depósito"
 #: src/components/DepositTokenModal/index.tsx
 msgid "Deposit Token To Nahmii"
 msgstr ""
-
-#: src/components/earn/StakingModal.tsx
-msgid "Deposit liquidity"
-msgstr "Depositar liquidez"
-
-#: src/components/earn/UnstakingModal.tsx
-msgid "Deposited liquidity:"
-msgstr "líquido depositado:"
-
-#: src/components/earn/StakingModal.tsx
-msgid "Deposited {0} UNI-V2"
-msgstr "Depósito {0} UNI-V2"
-
-#: src/components/earn/StakingModal.tsx
-msgid "Depositing Liquidity"
-msgstr "Depósito de Liquidez"
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Detailed"
@@ -453,6 +401,10 @@ msgstr "Desativar Multihops"
 
 #: src/components/AccountDetails/index.tsx
 msgid "Disconnect Wallet"
+msgstr ""
+
+#: src/components/Header/index.tsx
+msgid "Discover"
 msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
@@ -471,10 +423,6 @@ msgstr ""
 msgid "EUR"
 msgstr ""
 
-#: src/components/vote/DelegateModal.tsx
-msgid "Earned tokens represent voting shares in governance."
-msgstr ""
-
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
 msgstr "Insira um destinatário"
@@ -484,7 +432,6 @@ msgid "Enter a valid slippage percentage"
 msgstr "Digite uma porcentagem válida de slippage"
 
 #: src/components/PoolInvest/index.tsx
-#: src/components/earn/UnstakingModal.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
 #: src/state/stake/hooks.ts
@@ -532,12 +479,20 @@ msgstr ""
 msgid "European Union Euro"
 msgstr ""
 
+#: src/components/SearchModal/CurrencyList.tsx
+msgid "Expanded results from inactive Token Lists"
+msgstr ""
+
 #: src/components/Settings/index.tsx
 msgid "Expert mode turns off the confirm transaction prompt and allows high slippage trades that often result in bad rates and lost funds."
 msgstr "O modo Expert desativa o pedido de confirmação da transação e permite negociações de alto slippage que muitas vezes resultam em taxas ruins e fundos perdidos."
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Explore popular pools."
+msgstr ""
+
+#: src/components/Header/index.tsx
+msgid "Farm"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -566,6 +521,10 @@ msgstr "De (no máximo)"
 
 #: src/constants/tokens.ts
 msgid "GBP"
+msgstr ""
+
+#: src/components/ErrorBoundary/index.tsx
+msgid "Get support on Discord"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -685,6 +644,10 @@ msgstr ""
 msgid "KRW"
 msgstr ""
 
+#: src/components/Header/index.tsx
+msgid "Lend"
+msgstr ""
+
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
@@ -699,6 +662,10 @@ msgstr "Liquidez"
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Liquidity Provider Fee"
 msgstr "Taxa do provedor de liquidez"
+
+#: src/components/SearchModal/Manage.tsx
+msgid "Lists"
+msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Loaded"
@@ -719,13 +686,17 @@ msgstr ""
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
-#: src/components/earn/PoolCard.tsx
+#: src/components/SearchModal/Manage.tsx
 msgid "Manage"
 msgstr "Administrar"
 
 #: src/components/PositionCard/index.tsx
 msgid "Manage Liquidity in Rewards Pool"
 msgstr "Gerenciar Liquidez no Banco de Recompensas"
+
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "Manage Token Lists"
+msgstr ""
 
 #: src/components/Header/WalletListPopover.tsx
 msgid "Manage Wallet"
@@ -781,17 +752,41 @@ msgstr ""
 msgid "New Pools"
 msgstr ""
 
+#: src/components/SwitchLocaleLink/index.tsx
+msgid "Niifi available in: <0>{0}</0>"
+msgstr ""
+
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
 msgstr "Nenhum pool encontrado."
+
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "No results found."
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Norwegian Krone"
 msgstr ""
 
+#: src/components/Toggle/ListToggle.tsx
+msgid "OFF"
+msgstr ""
+
+#: src/components/Toggle/ListToggle.tsx
+msgid "ON"
+msgstr ""
+
 #: src/components/Settings/index.tsx
 msgid "ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING."
 msgstr "APENAS USAR ESTE MODO SE VOCÊ SABE O QUE VOCÊ ESTÁ DOING."
+
+#: src/components/Toggle/index.tsx
+msgid "Off"
+msgstr ""
+
+#: src/components/Toggle/index.tsx
+msgid "On"
+msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
@@ -857,10 +852,6 @@ msgstr "Piscina"
 msgid "Pool Found!"
 msgstr "Piscina encontrada!"
 
-#: src/components/earn/PoolCard.tsx
-msgid "Pool rate"
-msgstr "Taxa de piscina"
-
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 msgid "Pool tokens in rewards pool:"
@@ -872,6 +863,10 @@ msgstr "Pool tokens em conjunto de recompensas:"
 #: src/components/PositionCard/index.tsx
 msgid "Pooled {0}:"
 msgstr "Powered {0}:"
+
+#: src/components/Header/index.tsx
+msgid "Pools"
+msgstr ""
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
@@ -948,10 +943,6 @@ msgstr "Excluir"
 msgid "Remove Amount"
 msgstr "Remover Quantidade"
 
-#: src/components/vote/DelegateModal.tsx
-msgid "Remove Delegate"
-msgstr "Remover Delegar"
-
 #: src/components/NavigationTabs/index.tsx
 msgid "Remove Liquidity"
 msgstr "Remover Liquidez"
@@ -1008,11 +999,19 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "Search name or paste address"
+msgstr ""
+
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 msgid "See all"
+msgstr ""
+
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "Select a Token"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
@@ -1025,10 +1024,6 @@ msgstr "Selecione um token"
 #: src/pages/PoolFinder/index.tsx
 msgid "Select a token to find your liquidity."
 msgstr ""
-
-#: src/components/vote/DelegateModal.tsx
-msgid "Self Delegate"
-msgstr "Auto Delegado"
 
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Send"
@@ -1060,13 +1055,13 @@ msgstr "Tolerância do Slippage"
 msgid "Some assets are not available through this interface because they may not work well with the smart contracts or we are unable to allow trading for legal reasons."
 msgstr "Alguns ativos não estão disponíveis por esta interface porque eles podem não funcionar bem com os contratos inteligentes ou nós somos incapazes de permitir o trading por razões legais."
 
+#: src/components/ErrorBoundary/index.tsx
+msgid "Something went wrong"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "South Korean Won"
 msgstr ""
-
-#: src/components/vote/VoteModal.tsx
-msgid "Submitting Vote"
-msgstr "Enviando Voto"
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
@@ -1076,6 +1071,7 @@ msgstr "Fornecer"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Fornecimento de {0} {1} e {2} {3}"
 
+#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1146,6 +1142,10 @@ msgstr "A proporção de tokens adicionados definirá o preço deste pool."
 msgid "The transaction could not be sent because the deadline has passed. Please check that your transaction deadline is not too low."
 msgstr "A transação não pôde ser enviada porque o prazo expirou. Verifique se o prazo da transação não é muito baixo."
 
+#: src/components/SearchModal/CommonBases.tsx
+msgid "These tokens are commonly paired with other tokens."
+msgstr ""
+
 #: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
 #: src/pages/Discover/index.tsx
@@ -1200,6 +1200,14 @@ msgstr ""
 msgid "Token To Deposit"
 msgstr ""
 
+#: src/components/SearchModal/Manage.tsx
+msgid "Tokens"
+msgstr ""
+
+#: src/components/SearchModal/CurrencyList.tsx
+msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
+msgstr ""
+
 #: src/pages/Discover/index.tsx
 msgid "Tools"
 msgstr ""
@@ -1232,10 +1240,6 @@ msgstr "Melhores bancos"
 msgid "Total Value"
 msgstr ""
 
-#: src/components/earn/PoolCard.tsx
-msgid "Total deposited"
-msgstr "Total depositado"
-
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
 msgstr ""
@@ -1245,10 +1249,6 @@ msgid "Transaction Settings"
 msgstr "Configurações de transação"
 
 #: src/components/TransactionConfirmationModal/index.tsx
-#: src/components/earn/StakingModal.tsx
-#: src/components/earn/UnstakingModal.tsx
-#: src/components/vote/DelegateModal.tsx
-#: src/components/vote/VoteModal.tsx
 msgid "Transaction Submitted"
 msgstr "Transação Enviada"
 
@@ -1286,10 +1286,6 @@ msgstr "UNI {0}/{1} queimado"
 msgid "USD"
 msgstr ""
 
-#: src/components/earn/UnstakingModal.tsx
-msgid "Unclaimed UNI"
-msgstr "UNI Não Reivindicado"
-
 #: src/constants/tokens.ts
 msgid "United Kingdom Pound"
 msgstr ""
@@ -1305,10 +1301,6 @@ msgstr "Fonte desconhecida"
 #: src/hooks/useSwapCallback.ts
 msgid "Unknown error{0}."
 msgstr ""
-
-#: src/components/vote/DelegateModal.tsx
-msgid "Unlocking Votes"
-msgstr "Desbloqueando votos"
 
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1345,7 +1337,6 @@ msgid "View on Explorer"
 msgstr "Ver no Explorer"
 
 #: src/components/ModalViews/index.tsx
-#: src/components/vote/VoteModal.tsx
 msgid "View transaction on Explorer"
 msgstr "Ver transação no Explorer"
 
@@ -1361,16 +1352,6 @@ msgstr ""
 #: src/pages/Swap/index.tsx
 msgid "Volume 24H"
 msgstr ""
-
-#: src/components/vote/VoteModal.tsx
-#: src/components/vote/VoteModal.tsx
-msgid "Vote against proposal {proposalId}"
-msgstr "Vote contra a proposta {proposalId}"
-
-#: src/components/vote/VoteModal.tsx
-#: src/components/vote/VoteModal.tsx
-msgid "Vote for proposal {proposalId}"
-msgstr "Votar na proposta {proposalId}"
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "WITHDRAW"
@@ -1393,35 +1374,9 @@ msgstr ""
 msgid "Wallet Name"
 msgstr ""
 
-#: src/components/earn/StakingModal.tsx
-msgid "Weekly Rewards"
-msgstr "Recompensas Semanais"
-
-#: src/components/earn/UnstakingModal.tsx
-msgid "When you withdraw, your UNI is claimed and your liquidity is removed from the mining pool."
-msgstr "Quando você saque, a sua UNI é reivindicada e sua liquidez é removida do pool de mineração."
-
-#: src/components/earn/UnstakingModal.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "Sacar"
-
-#: src/components/earn/UnstakingModal.tsx
-msgid "Withdraw & Claim"
-msgstr "Sacar e Reivindicar"
-
-#: src/components/earn/UnstakingModal.tsx
-#: src/components/earn/UnstakingModal.tsx
-msgid "Withdraw deposited liquidity"
-msgstr "Retirar liquidez depositada"
-
-#: src/components/earn/UnstakingModal.tsx
-msgid "Withdrawing {0} UNI-V2"
-msgstr "Retirando {0} UNI-V2"
-
-#: src/components/earn/UnstakingModal.tsx
-msgid "Withdrew UNI-V2!"
-msgstr "Retirou a UNI-V2!"
 
 #: src/pages/Swap/index.tsx
 msgid "Wrap"
@@ -1440,10 +1395,6 @@ msgstr "Você está criando um pool"
 #: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "Você é o primeiro provedor de liquidez."
-
-#: src/components/vote/DelegateModal.tsx
-msgid "You can either vote on each proposal yourself or delegate your votes to a third party."
-msgstr "Pode votar cada uma das propostas ou delegar os seus votos num terceiro."
 
 #: src/pages/Swap/index.tsx
 msgid "You can now trade {0}"
@@ -1475,10 +1426,6 @@ msgstr "Sua posição"
 #: src/components/Badge/RangeBadge.tsx
 msgid "Your position has 0 liquidity, and is not earning fees."
 msgstr "A sua posição tem 0 liquidez e não está ganhando taxas."
-
-#: src/components/earn/PoolCard.tsx
-msgid "Your rate"
-msgstr "Sua avaliação"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
@@ -1562,25 +1509,6 @@ msgstr ""
 msgid "{0} Pending"
 msgstr "{0} Pendente"
 
-#: src/components/earn/PoolCard.tsx
-#: src/components/earn/PoolCard.tsx
-#: src/components/earn/StakingModal.tsx
-msgid "{0} UNI / week"
-msgstr "{0} UNI / semana"
-
-#: src/components/earn/StakingModal.tsx
-msgid "{0} UNI-V2"
-msgstr ""
-
-#: src/components/vote/VoteModal.tsx
-msgid "{0} Votes"
-msgstr "{0} votos"
-
-#: src/components/RateToggle/index.tsx
-#: src/components/RateToggle/index.tsx
-msgid "{0} price"
-msgstr "{0} preço"
-
 #: src/components/SearchModal/ImportList.tsx
 #: src/components/SearchModal/ManageLists.tsx
 #: src/components/SearchModal/ManageLists.tsx
@@ -1589,6 +1517,10 @@ msgstr ""
 
 #: src/components/Table/swap.tsx
 msgid "{0} {1} for {2}"
+msgstr ""
+
+#: src/components/SearchModal/CurrencyList.tsx
+msgid "{0} • Added by user"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
@@ -1605,7 +1537,10 @@ msgstr ""
 msgid "{text}"
 msgstr ""
 
+#: src/components/Header/index.tsx
+msgid "{title}"
+msgstr ""
+
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr ""
-
