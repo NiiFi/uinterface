@@ -20,7 +20,7 @@ export const SampleResponse: any = {
       },
       {
         exists: true,
-        address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+        address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
         name: 'USD Coin',
         symbol: 'USDC',
         volumeUSD: 624469510.3324661,
@@ -88,7 +88,7 @@ export const SampleResponse: any = {
       },
       {
         exists: true,
-        address: '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984',
+        address: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
         name: 'Uniswap',
         symbol: 'UNI',
         volumeUSD: 11873525.180911541,
