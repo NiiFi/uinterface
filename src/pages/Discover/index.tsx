@@ -382,13 +382,15 @@ export default function Discover() {
                           <RowWrapper>
                             <div style={{ position: 'relative' }}>
                               <CurrencyAvatar
-                                symbol={'ETH'}
+                                symbol={row.token0.symbol}
+                                address={row.token0.id}
                                 iconProps={{ width: '32', height: '32' }}
                                 containerStyle={{ zIndex: 1 }}
                                 hideSymbol={true}
                               />
                               <CurrencyAvatar
-                                symbol={'NII'}
+                                symbol={row.token1.symbol}
+                                address={row.token1.id}
                                 iconProps={{ width: '34', height: '34' }}
                                 containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
                                 hideSymbol={true}
