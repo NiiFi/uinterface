@@ -101,14 +101,16 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                   <RowWrapper>
                     <div style={{ position: 'relative' }}>
                       <CurrencyAvatar
-                        symbol={'ETH'}
+                        symbol={item.token0.symbol}
+                        address={item.token0.id}
                         iconProps={{ width: '32', height: '32' }}
                         containerStyle={{ zIndex: 1 }}
                         hideSymbol={true}
                       />
                       <CurrencyAvatar
-                        symbol={'NII'}
-                        iconProps={{ width: '32', height: '32', id: 'poolsNiiLogo' }}
+                        symbol={item.token1.symbol}
+                        address={item.token1.id}
+                        iconProps={{ width: '32', height: '32' }}
                         containerStyle={{ left: '22px', position: 'absolute', marginTop: '-34px' }}
                         hideSymbol={true}
                       />

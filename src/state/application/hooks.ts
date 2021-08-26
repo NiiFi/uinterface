@@ -21,16 +21,6 @@ export function useToggleModal(modal: ApplicationModal): () => void {
   return useCallback(() => dispatch(setOpenModal(open ? null : modal)), [dispatch, modal, open])
 }
 
-export function useOpenModal(modal: ApplicationModal): () => void {
-  const dispatch = useAppDispatch()
-  return useCallback(() => dispatch(setOpenModal(modal)), [dispatch, modal])
-}
-
-export function useCloseModals(): () => void {
-  const dispatch = useAppDispatch()
-  return useCallback(() => dispatch(setOpenModal(null)), [dispatch])
-}
-
 export function useWalletModalToggle(): () => void {
   return useToggleModal(ApplicationModal.WALLET)
 }
@@ -53,14 +43,6 @@ export function useCreatePoolModalToggle(): () => void {
 
 export function useToggleSettingsMenu(): () => void {
   return useToggleModal(ApplicationModal.SETTINGS)
-}
-
-export function useToggleDelegateModal(): () => void {
-  return useToggleModal(ApplicationModal.DELEGATE)
-}
-
-export function useToggleVoteModal(): () => void {
-  return useToggleModal(ApplicationModal.VOTE)
 }
 
 // returns a function that allows adding a popup
