@@ -106,7 +106,7 @@ export const CurrencyAvatar = ({ symbol, address, iconProps, containerStyle, roo
     <CurrencyAvatarWrapper style={rootStyle}>
       <CurrencyLogoWrapper style={{ backgroundColor, ...containerStyle }}>
         {symbol in CurrencyIconMap
-          ? CurrencyIconMap[symbol as TokenName](iconProps as IconProps)
+          ? CurrencyIconMap[symbol as TokenName]({ width: '28px', height: '28px', ...iconProps })
           : renderImage(getTokenLogoURL(address || ''), iconProps)}
       </CurrencyLogoWrapper>
       {!hideSymbol && <span>{symbol}</span>}
