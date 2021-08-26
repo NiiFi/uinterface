@@ -49,14 +49,16 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
         <RowWrapper>
           <div style={{ position: 'relative' }}>
             <CurrencyAvatar
-              symbol={'ETH'}
+              symbol={row.token0.symbol}
+              address={row.token0.id}
               iconProps={{ width: '32', height: '32' }}
               containerStyle={{ zIndex: 1 }}
               hideSymbol={true}
             />
             <CurrencyAvatar
-              symbol={'NII'}
-              iconProps={{ width: '34', height: '34' }}
+              symbol={row.token1.symbol}
+              address={row.token1.id}
+              iconProps={{ width: '32', height: '32' }}
               containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
               hideSymbol={true}
             />

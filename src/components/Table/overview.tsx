@@ -33,7 +33,12 @@ const CustomTableRow = (
       </TableCell>
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper>
-          <CurrencyAvatar symbol={'ETH'} hideSymbol={true} />
+          <CurrencyAvatar
+            symbol={row.symbol}
+            address={row.address}
+            iconProps={{ width: '30', height: '30' }}
+            hideSymbol={true}
+          />
           <TYPE.black fontWeight={400} style={{ padding: '8px 0 0 6px' }}>
             {row.symbol}
           </TYPE.black>

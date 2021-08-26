@@ -228,8 +228,9 @@ export default function PoolDetails({
                       {currency0 && (
                         <CurrencyAvatar
                           symbol={currency0Symbol}
-                          currency={currency0}
+                          address={currency0?.address}
                           rootStyle={{ marginBottom: '1rem' }}
+                          iconProps={{ width: '30', height: '30' }}
                         />
                       )}
                       {token0 && <TokenDetails token={poolData[0].token0} />}
@@ -238,8 +239,9 @@ export default function PoolDetails({
                       {currency1 && (
                         <CurrencyAvatar
                           symbol={currency1Symbol}
-                          currency={currency1}
+                          address={currency1?.address}
                           rootStyle={{ marginBottom: '1rem' }}
+                          iconProps={{ width: '30', height: '30' }}
                         />
                       )}
                       {token1 && <TokenDetails token={poolData[0].token1} />}

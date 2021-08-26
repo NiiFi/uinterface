@@ -82,7 +82,7 @@ export default function TokenPairInputPanel({
   return (
     <>
       <RowBetween marginBottom="1rem">
-        <CurrencyAvatar symbol={token0.symbol} currency={currency0} />
+        <CurrencyAvatar symbol={token0.symbol} address={token0.address} iconProps={{ width: '30', height: '30' }} />
         <NumericalInput
           style={{ maxWidth: '50%' }}
           fontSize="1.25rem"
@@ -91,7 +91,7 @@ export default function TokenPairInputPanel({
         />
       </RowBetween>
       <RowBetween>
-        <CurrencyAvatar symbol={token1.symbol} currency={currency1} />
+        <CurrencyAvatar symbol={token1.symbol} address={token1.address} iconProps={{ width: '30', height: '30' }} />
         <NumericalInput
           style={{ maxWidth: '50%' }}
           fontSize="1.25rem"
