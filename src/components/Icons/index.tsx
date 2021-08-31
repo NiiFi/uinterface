@@ -85,26 +85,26 @@ export function LendIcon({ width = 24, height = 24, color = 'currentColor', ...r
   )
 }
 
-export function PoolIcon({ width = 24, height = 24, color = 'currentColor', ...rest }: IconProps) {
+export function PoolIcon({ width = 24, height = 24, color = 'currentColor', opacity = '0.6', ...rest }: IconProps) {
   return (
     <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
       <path
         d="M17.3168 8.79882L21 6.66258M17.3168 8.79882L12.0297 5.77248M17.3168 8.79882L12.0297 11.8845M21 6.66258L12.0297 1.5M21 6.66258V17.1064L12.0297 22.269M12.0297 1.5V5.77248M12.0297 1.5L3 6.66258M12.0297 5.77248L6.77228 8.85816M12.0297 11.8845V22.269M12.0297 11.8845L6.77228 8.85816M12.0297 22.269L3 17.1064V6.66258M3 6.66258L6.77228 8.85816"
         stroke={color}
-        strokeOpacity="0.6"
+        strokeOpacity={opacity}
         strokeWidth="2"
         strokeLinecap="square"
       />
     </svg>
   )
 }
-export function FarmIcon({ width = 24, height = 24, color = 'currentColor', ...rest }: IconProps) {
+export function FarmIcon({ width = 24, height = 24, color = 'currentColor', opacity = '0.6', ...rest }: IconProps) {
   return (
     <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
       <path
         d="M12 15.8291C12 10.5724 8.325 8.05836 3 8.17264C3.15 13.7722 6.375 15.8291 12 15.8291ZM12 15.8291V9.65823M12 15.8291V22.0001M12 9.65823C12 4.38247 15.7125 1.92553 21 2.00172C20.8875 7.60125 17.625 9.65823 12 9.65823ZM5.08125 22.0001H12M12 22.0001H18.5625"
         stroke={color}
-        strokeOpacity="0.6"
+        strokeOpacity={opacity}
         strokeWidth="2"
         strokeLinecap="square"
       />
@@ -211,6 +211,25 @@ export function WalletIcon({ width = 21, height = 19, color = 'currentColor', ..
         fillRule="evenodd"
         clipRule="evenodd"
         d="M0 3C0 1.34315 1.34315 0 3 0H18V4H20V8H21V15H20V19H3C1.34315 19 0 17.6569 0 16V3ZM2 5.82929V16C2 16.5523 2.44772 17 3 17H18V15H15C13.3431 15 12 13.6569 12 12V11C12 9.34315 13.3431 8 15 8H18V6H3C2.64936 6 2.31278 5.93985 2 5.82929ZM2 3C2 3.55228 2.44772 4 3 4H16V2H3C2.44772 2 2 2.44772 2 3ZM15 10C14.4477 10 14 10.4477 14 11V12C14 12.5523 14.4477 13 15 13H19V10H15Z"
+        fill={color}
+      />
+    </svg>
+  )
+}
+
+export function NftIcon({ width = 20, height = 20, color = 'currentColor', ...rest }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0 20V0H20V20H0ZM2 2H18V12.5857L14 8.58569L9.00001 13.5857L6.00001 10.5857L2 14.5857V2ZM2 17.4141V18H18V15.4141L14 11.4141L9.00001 16.4141L6.00001 13.4141L2 17.4141Z"
+        fill={color}
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M7.5 5C6.67157 5 6 5.67157 6 6.5C6 7.32843 6.67157 8 7.5 8C8.32843 8 9 7.32843 9 6.5C9 5.67157 8.32843 5 7.5 5ZM4 6.5C4 4.567 5.567 3 7.5 3C9.433 3 11 4.567 11 6.5C11 8.433 9.433 10 7.5 10C5.567 10 4 8.433 4 6.5Z"
         fill={color}
       />
     </svg>
