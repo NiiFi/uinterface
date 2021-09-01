@@ -7,7 +7,6 @@ import { DefaultTheme } from 'styled-components'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, RowWrapper, BaseCurrencyView } from 'theme'
-import { DefaultCard } from 'components/Card'
 import CircleSvgSrc from '../../../assets/svg/circle.svg'
 import ArrowSvgSrc from '../../../assets/svg/arrow.svg'
 import MaterialUiTable from '@material-ui/core/Table'
@@ -22,9 +21,6 @@ const StyledTableRow = styled(TableRow)`
   border-bottom: 1px solid ${({ theme }) => theme.bg3};
   &:first-child {
     border-top: 1px solid ${({ theme }) => theme.bg3};
-  }
-  &:last-child {
-    border-bottom: none;
   }
 `
 
@@ -56,7 +52,7 @@ const ArrowSvgWrapper = styled.img`
 `
 
 // TODO: Move to shared component
-const Card = styled(DefaultCard)`
+const Card = styled.div`
   padding: 0;
   margin-bottom: 15px;
 `

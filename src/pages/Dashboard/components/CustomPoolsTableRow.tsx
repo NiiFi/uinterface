@@ -13,9 +13,6 @@ const StyledTableRow = styled(TableRow)`
   &:first-child {
     border-top: 1px solid ${({ theme }) => theme.bg3};
   }
-  &:last-child {
-    border-bottom: none;
-  }
 `
 
 export const CustomPoolsTableRow = (
