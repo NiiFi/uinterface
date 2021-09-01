@@ -185,6 +185,9 @@ msgid "Are you sure?"
 msgstr "您确定吗？"
 
 #: src/components/Table/Dashboard/Assets.tsx
+#: src/pages/Dashboard/subpages/Farm.tsx
+#: src/pages/Dashboard/subpages/Pools.tsx
+#: src/pages/Dashboard/subpages/Wallet.tsx
 msgid "Assets"
 msgstr ""
 
@@ -209,6 +212,13 @@ msgid "BTC"
 msgstr ""
 
 #: src/components/PoolInvest/index.tsx
+#: src/pages/Dashboard/subpages/Farm.tsx
+#: src/pages/Dashboard/subpages/Farm.tsx
+#: src/pages/Dashboard/subpages/Nfts.tsx
+#: src/pages/Dashboard/subpages/Pools.tsx
+#: src/pages/Dashboard/subpages/Pools.tsx
+#: src/pages/Dashboard/subpages/Wallet.tsx
+#: src/pages/Dashboard/subpages/Wallet.tsx
 msgid "Balance"
 msgstr ""
 
@@ -659,6 +669,10 @@ msgstr ""
 msgid "Liquidity"
 msgstr "流动资金"
 
+#: src/pages/Dashboard/subpages/index.tsx
+msgid "Liquidity Pools"
+msgstr ""
+
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Liquidity Provider Fee"
 msgstr "流动资金提供者手续费"
@@ -729,6 +743,10 @@ msgstr "迁移"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Minimum received"
+msgstr ""
+
+#: src/pages/Dashboard/subpages/index.tsx
+msgid "NFTs"
 msgstr ""
 
 #: src/pages/Dashboard/index.tsx
@@ -870,6 +888,8 @@ msgstr ""
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Dashboard/subpages/Nfts.tsx
+#: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/TokenDetails.tsx
@@ -1023,6 +1043,10 @@ msgstr "选择代币"
 
 #: src/pages/PoolFinder/index.tsx
 msgid "Select a token to find your liquidity."
+msgstr ""
+
+#: src/pages/Dashboard/subpages/Nfts.tsx
+msgid "Sell"
 msgstr ""
 
 #: src/pages/Dashboard/BuySection.tsx
@@ -1323,6 +1347,12 @@ msgstr "更新代币列表"
 msgid "VISA *5546"
 msgstr ""
 
+#: src/pages/Dashboard/subpages/Farm.tsx
+#: src/pages/Dashboard/subpages/Pools.tsx
+#: src/pages/Dashboard/subpages/Wallet.tsx
+msgid "Value"
+msgstr ""
+
 #: src/components/PositionCard/index.tsx
 msgid "View accrued fees and analytics<0>↗</0>"
 msgstr "查看已累积手续费和数据分析<0>↗</0>"
@@ -1363,6 +1393,7 @@ msgstr "等待确认"
 
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
+#: src/pages/Dashboard/subpages/index.tsx
 msgid "Wallet"
 msgstr ""
 
@@ -1387,6 +1418,10 @@ msgstr "换行"
 #: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "错误的网络"
+
+#: src/pages/Dashboard/subpages/index.tsx
+msgid "Yield Farming"
+msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "You are creating a pool"
