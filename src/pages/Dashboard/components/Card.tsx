@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import TableRow from '@material-ui/core/TableRow'
 import styled from 'styled-components/macro'
 import TableCell from '@material-ui/core/TableCell'
@@ -93,7 +94,7 @@ const CustomTableRow = (
   row: any,
   index: number,
   theme: DefaultTheme,
-  handleClick: (event: React.MouseEvent<unknown>, name: string) => void
+  handleClick: (event: React.MouseEvent<unknown>) => void
 ) => {
   const rowCellStyles = {
     color: theme.black,
@@ -104,7 +105,7 @@ const CustomTableRow = (
   return (
     <StyledTableRow
       hover
-      onClick={(event) => handleClick(event, row.id)}
+      onClick={(event) => handleClick(event)}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
@@ -138,29 +139,34 @@ const CustomTableRow = (
 
 export const CustomCard = ({ balance, svgIconSrc, data, titleName }: CustomCardProps) => {
   const theme = useTheme()
-  const handleRowClick = () => {
-    console.log('handled')
+  const history = useHistory()
+  const type: any = {
+    Wallet: 'wallet',
+    NFTs: 'nfts',
+    'Liquidity Pools': 'pools',
+    'Yield Farming': 'farm',
+  }
+  const handleClick = (e: any) => {
+    e.preventDefault()
+    history.push(`/dashboard/${type[titleName]}`)
   }
   let renderedTable
 
   switch (titleName) {
     case 'Wallet':
-      renderedTable = data && data.map((row: any, index: number) => CustomTableRow(row, index, theme, handleRowClick))
+      renderedTable = data && data.map((row: any, index: number) => CustomTableRow(row, index, theme, handleClick))
       break
     case 'NFTs':
-      renderedTable =
-        data && data.map((row: any, index: number) => CustomNFTsTableRow(row, index, theme, handleRowClick))
+      renderedTable = data && data.map((row: any, index: number) => CustomNFTsTableRow(row, index, theme, handleClick))
       break
     case 'Liquidity Pools':
-      renderedTable =
-        data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleRowClick))
+      renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
       break
     case 'Yield Farming':
-      renderedTable =
-        data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleRowClick))
+      renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
       break
     default:
-      renderedTable = data && data.map((row: any, index: number) => CustomTableRow(row, index, theme, handleRowClick))
+      renderedTable = data && data.map((row: any, index: number) => CustomTableRow(row, index, theme, handleClick))
   }
 
   // TODO: Add translation
@@ -174,7 +180,7 @@ export const CustomCard = ({ balance, svgIconSrc, data, titleName }: CustomCardP
             <BaseCurrencyView value={balance} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
           </TYPE.mediumHeader>
         </CardHeaderTitle>
-        <ArrowWrapper>
+        <ArrowWrapper onClick={(event) => handleClick(event)}>
           <CircleSvgWrapper src={CircleSvgSrc} />
           <ArrowSvgWrapper src={ArrowSvgSrc} />
         </ArrowWrapper>

@@ -22,7 +22,7 @@ export const CustomPoolsTableRow = (
   row: any,
   index: number,
   theme: DefaultTheme,
-  handleClick: (event: React.MouseEvent<unknown>, name: string) => void
+  handleClick: (event: React.MouseEvent<unknown>) => void
 ) => {
   const rowCellStyles = {
     color: theme.black,
@@ -33,7 +33,7 @@ export const CustomPoolsTableRow = (
   return (
     <StyledTableRow
       hover
-      onClick={(event) => handleClick(event, row.id)}
+      onClick={(event) => handleClick(event)}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
