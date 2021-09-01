@@ -4,19 +4,16 @@ import { Trans } from '@lingui/macro'
 import { useWeb3React } from '@web3-react/core'
 
 import Web3Status from 'components/Web3Status'
-import { ButtonPrimary, ButtonProcess, ButtonSuccess } from 'components/Button'
-
+import { ButtonPrimary, ButtonPrimaryDashboard, ButtonProcess, ButtonSuccess } from 'components/Button'
+import ProgressCircle from './ProgressCircle'
 import useFakeBuyTokenFlow from 'hooks/useFakeBuyTokenFlow'
-import { useCurrency } from 'hooks/Tokens'
-import { useCurrencyBalance } from 'state/wallet/hooks'
 import { ResponsiveRow, RowBetween } from 'components/Row'
 import { WalletItem } from 'components/Header/WalletList'
 import { TYPE, BaseCurrencyView } from 'theme'
 import { useUserWallets } from 'state/user/hooks'
-import { useActiveWeb3React } from 'hooks/web3'
+
 import { useWalletModalToggle, useBuyTokenModalToggle, useDepositToNahmiiModalToggle } from 'state/application/hooks'
-import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
-import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
+
 import BuyTokenModal from 'components/BuyTokenModal'
 import DepositTokenModal from 'components/DepositTokenModal'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
@@ -24,20 +21,29 @@ import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 const BuySectionAmountFigures = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0px 1rem;
-  border-left: 1px solid ${({ theme }) => theme.bg3};
+  padding: 1rem;
 `
-export default function BuySection() {
-  const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
+const BuySectionCircleDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+`
+
+const CircleWrapper = styled.div`
+  width: 38px;
+`
+
+// TODO: Add type to BuySectionProps
+export default function BuySection({ account, balanceValue }: any) {
   const toggleWalletModal = useWalletModalToggle()
   const toggleBuyTokenModal = useBuyTokenModalToggle()
   const toggleDepositToNahmiiModal = useDepositToNahmiiModalToggle()
   const { userWallets, userRecentWallet } = useUserWallets()
-  const { account } = useActiveWeb3React()
+
   const { error } = useWeb3React()
-  const inputCurrency = useCurrency('ETH')
+
   const { buyState } = useFakeBuyTokenFlow()
-  const balance = useCurrencyBalance(account ?? undefined, inputCurrency ?? undefined)
+
   const activeWallet =
     account && userWallets[account.toLowerCase()]
       ? userWallets[account.toLowerCase()]
@@ -47,7 +53,7 @@ export default function BuySection() {
   if (error || !activeWallet) {
     return <Web3Status />
   }
-  const balanceValue = balance && rates['USD'] ? Number(formatCurrencyAmount(balance, 4)) * rates['USD'] : 0
+
   return (
     <>
       <RowBetween>
@@ -57,22 +63,6 @@ export default function BuySection() {
             name={activeWallet.name}
             address={account || userRecentWallet || ''}
           />
-          <BuySectionAmountFigures>
-            <TYPE.body>
-              <Trans>Wallet Balance</Trans>
-            </TYPE.body>
-            <TYPE.mediumHeader>
-              {<BaseCurrencyView value={balanceValue} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />}
-            </TYPE.mediumHeader>
-          </BuySectionAmountFigures>
-          <BuySectionAmountFigures>
-            <TYPE.body>
-              <Trans>Net Worth</Trans>
-            </TYPE.body>
-            <TYPE.mediumHeader>
-              <BaseCurrencyView value={balanceValue * 2} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
-            </TYPE.mediumHeader>
-          </BuySectionAmountFigures>
         </ResponsiveRow>
         <ResponsiveRow gap={'1.25rem'} style={{ width: 'auto', justifyContent: 'flex-end' }}>
           {!account && (
@@ -86,13 +76,14 @@ export default function BuySection() {
             <>
               <div style={{ display: 'flex' }}>
                 {buyState === 'buy' && (
-                  <ButtonPrimary
+                  <ButtonPrimaryDashboard
                     fontSize={'0.875rem'}
                     onClick={toggleBuyTokenModal}
                     style={{ textTransform: 'uppercase' }}
                   >
-                    <Trans>Buy Tokens</Trans>
-                  </ButtonPrimary>
+                    {/* TODO: Add Trans */}
+                    <Trans>Buy Crypto</Trans>
+                  </ButtonPrimaryDashboard>
                 )}
                 {buyState === 'process' && (
                   <ButtonProcess fontSize={'0.875rem'} style={{ textTransform: 'uppercase' }}>
@@ -110,14 +101,60 @@ export default function BuySection() {
                 )}
               </div>
               <div style={{ display: 'flex' }}>
-                <ButtonPrimary fontSize={'0.875rem'} style={{ textTransform: 'uppercase' }}>
+                <ButtonPrimaryDashboard fontSize={'0.875rem'} style={{ textTransform: 'uppercase' }}>
                   <Trans>Send</Trans>
-                </ButtonPrimary>
+                </ButtonPrimaryDashboard>
               </div>
             </>
           )}
         </ResponsiveRow>
       </RowBetween>
+      <ResponsiveRow style={{ width: 'auto' }}>
+        <BuySectionAmountFigures>
+          <TYPE.body>
+            <Trans>Net Worth</Trans>
+          </TYPE.body>
+          <TYPE.mediumHeader>
+            <BaseCurrencyView value={balanceValue * 2} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
+          </TYPE.mediumHeader>
+        </BuySectionAmountFigures>
+        <div style={{ display: 'flex' }}>
+          <CircleWrapper>
+            <ProgressCircle percentage={45} color={'#9871F9'} />
+          </CircleWrapper>
+          <BuySectionCircleDescription>
+            <TYPE.subHeader>Wallet</TYPE.subHeader>
+            <TYPE.mediumHeader fontSize="14px">45%</TYPE.mediumHeader>
+          </BuySectionCircleDescription>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <CircleWrapper>
+            <ProgressCircle percentage={15} color={'#EF462F'} />
+          </CircleWrapper>
+          <BuySectionCircleDescription>
+            <TYPE.subHeader>Liquidity Pools</TYPE.subHeader>
+            <TYPE.mediumHeader fontSize="14px">15%</TYPE.mediumHeader>
+          </BuySectionCircleDescription>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <CircleWrapper>
+            <ProgressCircle percentage={10} color={'#09CF7C'} />
+          </CircleWrapper>
+          <BuySectionCircleDescription>
+            <TYPE.subHeader>Yield Farming</TYPE.subHeader>
+            <TYPE.mediumHeader fontSize="14px">10%</TYPE.mediumHeader>
+          </BuySectionCircleDescription>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <CircleWrapper>
+            <ProgressCircle percentage={20} color={'#F79942'} />
+          </CircleWrapper>
+          <BuySectionCircleDescription>
+            <TYPE.subHeader>NFTs</TYPE.subHeader>
+            <TYPE.mediumHeader fontSize="14px">20%</TYPE.mediumHeader>
+          </BuySectionCircleDescription>
+        </div>
+      </ResponsiveRow>
       <BuyTokenModal />
       <DepositTokenModal />
     </>
