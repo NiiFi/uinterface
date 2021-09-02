@@ -184,7 +184,6 @@ msgstr "מאשר {0}"
 msgid "Are you sure?"
 msgstr "האם אתה בטוח?"
 
-#: src/components/Table/Dashboard/Assets.tsx
 #: src/pages/Dashboard/subpages/Farm.tsx
 #: src/pages/Dashboard/subpages/Pools.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
@@ -242,8 +241,11 @@ msgstr ""
 msgid "Buy"
 msgstr ""
 
-#: src/components/BuyTokenModal/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
+msgid "Buy Crypto"
+msgstr ""
+
+#: src/components/BuyTokenModal/index.tsx
 msgid "Buy Tokens"
 msgstr ""
 
@@ -298,10 +300,6 @@ msgstr "סגור"
 #: src/components/Badge/RangeBadge.tsx
 msgid "Closed"
 msgstr "סָגוּר"
-
-#: src/components/SearchModal/CommonBases.tsx
-msgid "Common bases"
-msgstr ""
 
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Confirm"
@@ -380,17 +378,9 @@ msgstr "צור בריכה ואספקה"
 msgid "Create a pair"
 msgstr "צור זוג"
 
-#: src/components/ErrorBoundary/index.tsx
-msgid "Create an issue on GitHub"
-msgstr ""
-
 #: src/pages/PoolFinder/index.tsx
 msgid "Create pool."
 msgstr "צור בריכה."
-
-#: src/components/Header/index.tsx
-msgid "Dashboard"
-msgstr ""
 
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Deposit"
@@ -411,10 +401,6 @@ msgstr "השבת את Multihops"
 
 #: src/components/AccountDetails/index.tsx
 msgid "Disconnect Wallet"
-msgstr ""
-
-#: src/components/Header/index.tsx
-msgid "Discover"
 msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
@@ -489,20 +475,12 @@ msgstr ""
 msgid "European Union Euro"
 msgstr ""
 
-#: src/components/SearchModal/CurrencyList.tsx
-msgid "Expanded results from inactive Token Lists"
-msgstr ""
-
 #: src/components/Settings/index.tsx
 msgid "Expert mode turns off the confirm transaction prompt and allows high slippage trades that often result in bad rates and lost funds."
 msgstr "מצב מומחה מכבה את בקשת האישור לעסקה ומאפשר עסקאות החלקה גבוהות שלעתים קרובות גורמות לשיעורים גרועים ולאיבוד כספים."
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Explore popular pools."
-msgstr ""
-
-#: src/components/Header/index.tsx
-msgid "Farm"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -531,10 +509,6 @@ msgstr "מאת (לכל היותר)"
 
 #: src/constants/tokens.ts
 msgid "GBP"
-msgstr ""
-
-#: src/components/ErrorBoundary/index.tsx
-msgid "Get support on Discord"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -654,10 +628,6 @@ msgstr ""
 msgid "KRW"
 msgstr ""
 
-#: src/components/Header/index.tsx
-msgid "Lend"
-msgstr ""
-
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
@@ -676,10 +646,6 @@ msgstr ""
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Liquidity Provider Fee"
 msgstr "עמלת ספק נזילות"
-
-#: src/components/SearchModal/Manage.tsx
-msgid "Lists"
-msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Loaded"
@@ -700,17 +666,12 @@ msgstr ""
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
-#: src/components/SearchModal/Manage.tsx
 msgid "Manage"
 msgstr "לנהל"
 
 #: src/components/PositionCard/index.tsx
 msgid "Manage Liquidity in Rewards Pool"
 msgstr "נהל נזילות במאגר תגמולים"
-
-#: src/components/SearchModal/CurrencySearch.tsx
-msgid "Manage Token Lists"
-msgstr ""
 
 #: src/components/Header/WalletListPopover.tsx
 msgid "Manage Wallet"
@@ -749,10 +710,6 @@ msgstr ""
 msgid "NFTs"
 msgstr ""
 
-#: src/pages/Dashboard/index.tsx
-msgid "NFTs Collection"
-msgstr ""
-
 #: src/constants/tokens.ts
 msgid "NOK"
 msgstr ""
@@ -770,41 +727,17 @@ msgstr ""
 msgid "New Pools"
 msgstr ""
 
-#: src/components/SwitchLocaleLink/index.tsx
-msgid "Niifi available in: <0>{0}</0>"
-msgstr ""
-
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
 msgstr "לא נמצאה בריכה."
-
-#: src/components/SearchModal/CurrencySearch.tsx
-msgid "No results found."
-msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Norwegian Krone"
 msgstr ""
 
-#: src/components/Toggle/ListToggle.tsx
-msgid "OFF"
-msgstr ""
-
-#: src/components/Toggle/ListToggle.tsx
-msgid "ON"
-msgstr ""
-
 #: src/components/Settings/index.tsx
 msgid "ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING."
 msgstr "השתמש במצב זה בלבד אם אתה יודע מה אתה עושה."
-
-#: src/components/Toggle/index.tsx
-msgid "Off"
-msgstr ""
-
-#: src/components/Toggle/index.tsx
-msgid "On"
-msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
@@ -881,10 +814,6 @@ msgstr "אסימונים לבריכה בבריכת תגמולים:"
 #: src/components/PositionCard/index.tsx
 msgid "Pooled {0}:"
 msgstr "מאוגד {0}:"
-
-#: src/components/Header/index.tsx
-msgid "Pools"
-msgstr ""
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
@@ -1019,19 +948,11 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/components/SearchModal/CurrencySearch.tsx
-msgid "Search name or paste address"
-msgstr ""
-
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 msgid "See all"
-msgstr ""
-
-#: src/components/SearchModal/CurrencySearch.tsx
-msgid "Select a Token"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
@@ -1079,10 +1000,6 @@ msgstr "סובלנות להחלקה"
 msgid "Some assets are not available through this interface because they may not work well with the smart contracts or we are unable to allow trading for legal reasons."
 msgstr "חלק מהנכסים אינם זמינים דרך ממשק זה מכיוון שהם עשויים שלא לעבוד היטב עם החוזים החכמים או שאיננו יכולים לאפשר מסחר מסיבות משפטיות."
 
-#: src/components/ErrorBoundary/index.tsx
-msgid "Something went wrong"
-msgstr ""
-
 #: src/constants/tokens.ts
 msgid "South Korean Won"
 msgstr ""
@@ -1095,7 +1012,6 @@ msgstr "לְסַפֵּק"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "אספקת {0} {1} ו {2} {3}"
 
-#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1166,12 +1082,9 @@ msgstr "יחס האסימונים שתוסיף יקבע את מחיר הבריכ
 msgid "The transaction could not be sent because the deadline has passed. Please check that your transaction deadline is not too low."
 msgstr "לא ניתן היה לשלוח את העסקה מכיוון שהמועד האחרון חלף. אנא בדוק שמועד אחרון העסקה שלך אינו נמוך מדי."
 
-#: src/components/SearchModal/CommonBases.tsx
-msgid "These tokens are commonly paired with other tokens."
-msgstr ""
-
 #: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
+#: src/pages/Dashboard/index.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1222,14 +1135,6 @@ msgstr ""
 
 #: src/components/DepositTokenModal/index.tsx
 msgid "Token To Deposit"
-msgstr ""
-
-#: src/components/SearchModal/Manage.tsx
-msgid "Tokens"
-msgstr ""
-
-#: src/components/SearchModal/CurrencyList.tsx
-msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr ""
 
 #: src/pages/Discover/index.tsx
@@ -1397,10 +1302,6 @@ msgstr "מחכה לאישור"
 msgid "Wallet"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
-msgid "Wallet Balance"
-msgstr ""
-
 #: src/components/AccountDetails/index.tsx
 msgid "Wallet Name"
 msgstr ""
@@ -1554,10 +1455,6 @@ msgstr "{0} אסימונים"
 msgid "{0} {1} for {2}"
 msgstr ""
 
-#: src/components/SearchModal/CurrencyList.tsx
-msgid "{0} • Added by user"
-msgstr ""
-
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
@@ -1570,10 +1467,6 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "{text}"
-msgstr ""
-
-#: src/components/Header/index.tsx
-msgid "{title}"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
