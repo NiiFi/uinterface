@@ -301,6 +301,10 @@ msgstr "Tanca"
 msgid "Closed"
 msgstr "Tancat"
 
+#: src/components/SearchModal/CommonBases.tsx
+msgid "Common bases"
+msgstr ""
+
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Confirm"
 msgstr "Confirmeu"
@@ -378,9 +382,17 @@ msgstr "Creeu piscina i subministrament"
 msgid "Create a pair"
 msgstr "Crea un parell"
 
+#: src/components/ErrorBoundary/index.tsx
+msgid "Create an issue on GitHub"
+msgstr ""
+
 #: src/pages/PoolFinder/index.tsx
 msgid "Create pool."
 msgstr "Crea una piscina."
+
+#: src/components/Header/index.tsx
+msgid "Dashboard"
+msgstr ""
 
 #: src/pages/Dashboard/BuySection.tsx
 msgid "Deposit"
@@ -401,6 +413,10 @@ msgstr "Desactiva els Multihops"
 
 #: src/components/AccountDetails/index.tsx
 msgid "Disconnect Wallet"
+msgstr ""
+
+#: src/components/Header/index.tsx
+msgid "Discover"
 msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
@@ -475,12 +491,20 @@ msgstr ""
 msgid "European Union Euro"
 msgstr ""
 
+#: src/components/SearchModal/CurrencyList.tsx
+msgid "Expanded results from inactive Token Lists"
+msgstr ""
+
 #: src/components/Settings/index.tsx
 msgid "Expert mode turns off the confirm transaction prompt and allows high slippage trades that often result in bad rates and lost funds."
 msgstr "El mode expert desactiva la sol·licitud de confirmació de la transacció i permet operacions amb altes relliscades que sovint resulten en males taxes i en la pèrdua de fons."
 
 #: src/pages/Pool/CTACards.tsx
 msgid "Explore popular pools."
+msgstr ""
+
+#: src/components/Header/index.tsx
+msgid "Farm"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -509,6 +533,10 @@ msgstr "De (com a màxim)"
 
 #: src/constants/tokens.ts
 msgid "GBP"
+msgstr ""
+
+#: src/components/ErrorBoundary/index.tsx
+msgid "Get support on Discord"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -628,6 +656,10 @@ msgstr ""
 msgid "KRW"
 msgstr ""
 
+#: src/components/Header/index.tsx
+msgid "Lend"
+msgstr ""
+
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
@@ -646,6 +678,10 @@ msgstr ""
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Liquidity Provider Fee"
 msgstr "Comissió del proveïdor de liquiditat"
+
+#: src/components/SearchModal/Manage.tsx
+msgid "Lists"
+msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "Loaded"
@@ -666,12 +702,17 @@ msgstr ""
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/SearchModal/Manage.tsx
 msgid "Manage"
 msgstr "Gestiona"
 
 #: src/components/PositionCard/index.tsx
 msgid "Manage Liquidity in Rewards Pool"
 msgstr "Gestioneu la liquiditat a l'agrupació de recompenses"
+
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "Manage Token Lists"
+msgstr ""
 
 #: src/components/Header/WalletListPopover.tsx
 msgid "Manage Wallet"
@@ -727,17 +768,41 @@ msgstr ""
 msgid "New Pools"
 msgstr ""
 
+#: src/components/SwitchLocaleLink/index.tsx
+msgid "Niifi available in: <0>{0}</0>"
+msgstr ""
+
 #: src/pages/PoolFinder/index.tsx
 msgid "No pool found."
 msgstr "No s'ha trobat cap piscina."
+
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "No results found."
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Norwegian Krone"
 msgstr ""
 
+#: src/components/Toggle/ListToggle.tsx
+msgid "OFF"
+msgstr ""
+
+#: src/components/Toggle/ListToggle.tsx
+msgid "ON"
+msgstr ""
+
 #: src/components/Settings/index.tsx
 msgid "ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING."
 msgstr "ÚS AQUEST MODE NOMÉS SI SABEU EL QUE FEREU."
+
+#: src/components/Toggle/index.tsx
+msgid "Off"
+msgstr ""
+
+#: src/components/Toggle/index.tsx
+msgid "On"
+msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
 msgid "Once you are happy with the rate click supply to review."
@@ -814,6 +879,10 @@ msgstr "Fitxes de pool a la piscina de recompenses:"
 #: src/components/PositionCard/index.tsx
 msgid "Pooled {0}:"
 msgstr "Agrupat {0}:"
+
+#: src/components/Header/index.tsx
+msgid "Pools"
+msgstr ""
 
 #: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
@@ -948,11 +1017,19 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "Search name or paste address"
+msgstr ""
+
 #: src/components/pools/PoolsOverview.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 msgid "See all"
+msgstr ""
+
+#: src/components/SearchModal/CurrencySearch.tsx
+msgid "Select a Token"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/index.tsx
@@ -1000,6 +1077,10 @@ msgstr "Tolerància al lliscament"
 msgid "Some assets are not available through this interface because they may not work well with the smart contracts or we are unable to allow trading for legal reasons."
 msgstr "Alguns recursos no estan disponibles a través d’aquesta interfície perquè és possible que no funcionin bé amb els contractes intel·ligents o no podem permetre la negociació per motius legals."
 
+#: src/components/ErrorBoundary/index.tsx
+msgid "Something went wrong"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "South Korean Won"
 msgstr ""
@@ -1012,6 +1093,7 @@ msgstr "Subministrament"
 msgid "Supplying {0} {1} and {2} {3}"
 msgstr "Subministrant {0} {1} i {2} {3}"
 
+#: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1082,6 +1164,10 @@ msgstr "La proporció de fitxes que afegiu fixarà el preu d’aquest grup."
 msgid "The transaction could not be sent because the deadline has passed. Please check that your transaction deadline is not too low."
 msgstr "No s'ha pogut enviar la transacció perquè s'ha acabat el termini. Comproveu que el termini de transacció no sigui massa baix."
 
+#: src/components/SearchModal/CommonBases.tsx
+msgid "These tokens are commonly paired with other tokens."
+msgstr ""
+
 #: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
 #: src/pages/Dashboard/index.tsx
@@ -1135,6 +1221,14 @@ msgstr ""
 
 #: src/components/DepositTokenModal/index.tsx
 msgid "Token To Deposit"
+msgstr ""
+
+#: src/components/SearchModal/Manage.tsx
+msgid "Tokens"
+msgstr ""
+
+#: src/components/SearchModal/CurrencyList.tsx
+msgid "Tokens from inactive lists. Import specific tokens below or click Manage to activate more lists."
 msgstr ""
 
 #: src/pages/Discover/index.tsx
@@ -1455,6 +1549,10 @@ msgstr "{0} fitxes"
 msgid "{0} {1} for {2}"
 msgstr ""
 
+#: src/components/SearchModal/CurrencyList.tsx
+msgid "{0} • Added by user"
+msgstr ""
+
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "{0}%"
@@ -1467,6 +1565,10 @@ msgstr ""
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
 msgid "{text}"
+msgstr ""
+
+#: src/components/Header/index.tsx
+msgid "{title}"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
