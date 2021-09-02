@@ -12,7 +12,6 @@ import Discover from './Discover'
 import Swap from './Swap'
 import Pools from './Pool'
 import Dashboard from './Dashboard'
-import DashboardSubpages from './Dashboard/subpages/index'
 import PoolDetail from './PoolDetail'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import { useToggleDrawer } from 'state/application/hooks'
@@ -94,7 +93,6 @@ export default function App() {
               <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
               <Route exact strict path="/swap" component={Swap} />
               <Route exact strict path="/dashboard" component={Dashboard} />
-              <Route exact strict path="/dashboard/:type" component={DashboardSubpages} />
               <Route exact strict path="/pools/:page?" component={Pools} />
               <Route exact strict path="/pool/:address" component={PoolDetail} />
               <Route exact strict path="/discover" component={Discover} />

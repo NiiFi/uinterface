@@ -854,7 +854,3 @@ export const SampleResponse: any = {
     ],
   },
 }
-
-export function getTokensData(limit: number | undefined): any[] {
-  return SampleResponse.data.tokens.slice(0, limit || 6)
-}

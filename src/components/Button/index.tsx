@@ -9,9 +9,6 @@ import useTheme from 'hooks/useTheme'
 
 export type ButtonProps = Omit<ButtonPropsOriginal, 'css'>
 
-// TODO: Overview after redisign
-const dashboardPrimaryColor = 'rgba(12, 68, 63, 0.6)'
-
 const Base = styled(RebassButton)<
   {
     padding?: string
@@ -58,7 +55,7 @@ const Base = styled(RebassButton)<
     text-decoration: none;
   }
 `
-// TODO: Overview after redisign
+
 export const ButtonPrimary = styled(Base)`
   background-color: ${({ theme }) => theme.primary1};
   color: white;
@@ -85,38 +82,6 @@ export const ButtonPrimary = styled(Base)`
     opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? '0.5' : '0.4')};
   }
 `
-// TODO: Overview after redisign
-export const ButtonPrimaryDashboard = styled(Base)`
-  background-color: #fff;
-  color: ${dashboardPrimaryColor};
-  border: 1px solid ${dashboardPrimaryColor};
-  &:focus {
-    box-shadow: 0 0 0 1pt darken(0.05, ${dashboardPrimaryColor});
-    background-color: darken(0.05, ${dashboardPrimaryColor});
-    border: 1px solid darken(0.05, ${dashboardPrimaryColor});
-  }
-  &:hover {
-    background-color: darken(0.05, ${dashboardPrimaryColor});
-    border: 1px solid darken(0.05, ${dashboardPrimaryColor});
-  }
-  &:active {
-    box-shadow: 0 0 0 1pt darken(0.1, ${dashboardPrimaryColor});
-    background-color: darken(0.1, ${dashboardPrimaryColor});
-    border: 1px solid darken(0.1, ${dashboardPrimaryColor});
-  }
-  &:disabled {
-    background-color: ${({ altDisabledStyle, disabled }) =>
-      altDisabledStyle ? (disabled ? dashboardPrimaryColor : dashboardPrimaryColor) : dashboardPrimaryColor};
-    color: white;
-    cursor: auto;
-    box-shadow: none;
-    border: 1px solid transparent;
-    outline: none;
-    opacity: 0.4;
-    opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? '0.5' : '0.4')};
-  }
-`
-
 export const ButtonSuccess = styled(ButtonPrimary)`
   background-color: ${({ theme }) => theme.green2};
   &:focus {

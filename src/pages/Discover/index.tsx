@@ -43,7 +43,6 @@ export const CustomAppBar = styled(AppBar)`
     padding: 0.5rem 1rem;
   `}
 `
-// TODO: Move to shared component
 const CardHeader = styled.div`
   font-weight: 500;
   color: ${(props) => (props.color === 'blue' ? ({ theme }) => theme.primary1 : 'inherit')};

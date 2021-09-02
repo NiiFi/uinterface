@@ -22,7 +22,6 @@ export interface HeadCell {
   id: string
   label: string
   numeric: boolean
-  align?: 'inherit' | 'left' | 'center' | 'right' | 'justify'
 }
 
 interface RenderToolBarProps {
@@ -69,6 +68,7 @@ function EnhancedTableHead(props: EnhancedTableHeadProps) {
   const createSortHandler = (property: string) => (event: React.MouseEvent<unknown>) => {
     onRequestSort(event, property)
   }
+
   const renderCells =
     props.renderCells ||
     ((headCell: HeadCell) => {
@@ -76,7 +76,7 @@ function EnhancedTableHead(props: EnhancedTableHeadProps) {
         <TableCell
           style={{ color: `${theme.text4}`, borderBottom: `1px solid ${theme.bg3}` }}
           key={headCell.id}
-          align={headCell.align || 'center'}
+          align={'center'}
           padding={headCell.disablePadding ? 'none' : 'default'}
           sortDirection={orderBy === headCell.id ? order : false}
         >
@@ -123,9 +123,6 @@ const useStyles = makeStyles(() =>
   createStyles({
     root: {
       width: '100%',
-      '& .MuiTableCell-head.MuiTableCell-alignLeft:first-child': {
-        paddingLeft: '32px',
-      },
     },
     paper: {
       width: '100%',

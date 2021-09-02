@@ -147,7 +147,6 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "react-circular-progressbar": "^2.0.4",
     "react-hotjar": "^3.0.0"
   }
 }
