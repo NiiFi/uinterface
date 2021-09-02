@@ -1,23 +1,12 @@
 import React from 'react'
 import { DefaultTheme } from 'styled-components'
-import styled from 'styled-components/macro'
 import TableCell from '@material-ui/core/TableCell'
-import { RowWrapper, BaseCurrencyView } from 'theme'
+import { RowWrapper, BaseCurrencyView, TYPE } from 'theme'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
+import CurrencyAvatar from 'components/CurrencyAvatar'
 import { StyledTableRow } from './StyledTableRow'
 
-const StyledNFTIcon = styled.img`
-  height: 32px;
-  margin: 5px 0;
-`
-
-const StyledNFTsTitle = styled.div`
-  display: flex;
-  padding-left: 10px;
-  align-items: center;
-`
-
-export const CustomNFTsTableRow = (
+export const CustomWalletTableRow = (
   row: any,
   index: number,
   theme: DefaultTheme,
@@ -41,13 +30,24 @@ export const CustomNFTsTableRow = (
     >
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper style={{ width: 'fit-content' }}>
-          <StyledNFTIcon src={row.src} />
-          <StyledNFTsTitle>{row.title}</StyledNFTsTitle>
+          <CurrencyAvatar
+            symbol={row.symbol}
+            address={row.address}
+            iconProps={{ width: '30', height: '30' }}
+            rootStyle={{ width: 'auto' }}
+            hideSymbol={true}
+          />
+          <TYPE.black fontWeight={400} style={{ padding: '8px 0 0 6px', width: 'fit-content' }}>
+            {row.symbol}
+          </TYPE.black>
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="right">
-        <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.value} />
+        {index + 1} {row.symbol}
         <br />
+        <TYPE.subHeader color="text6" textAlign="right">
+          <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={(index + 1) * 100} />
+        </TYPE.subHeader>
       </TableCell>
     </StyledTableRow>
   )
