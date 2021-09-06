@@ -5,7 +5,7 @@ import { useWeb3React } from '@web3-react/core'
 
 import Web3Status from 'components/Web3Status'
 import { ButtonPrimary, ButtonPrimaryDashboard, ButtonProcess, ButtonSuccess } from 'components/Button'
-import ProgressCircle from './ProgressCircle'
+import ProgressCircle from './components/ProgressCircle'
 import useFakeBuyTokenFlow from 'hooks/useFakeBuyTokenFlow'
 import { ResponsiveRow, RowBetween } from 'components/Row'
 import { WalletItem } from 'components/Header/WalletList'
@@ -123,7 +123,9 @@ export default function BuySection({ account, balanceValue }: any) {
             <ProgressCircle percentage={45} color={'#9871F9'} />
           </CircleWrapper>
           <BuySectionCircleDescription>
-            <TYPE.subHeader>Wallet</TYPE.subHeader>
+            <TYPE.subHeader>
+              <Trans>Wallet</Trans>
+            </TYPE.subHeader>
             <TYPE.mediumHeader fontSize="14px">45%</TYPE.mediumHeader>
           </BuySectionCircleDescription>
         </div>
@@ -132,7 +134,9 @@ export default function BuySection({ account, balanceValue }: any) {
             <ProgressCircle percentage={15} color={'#EF462F'} />
           </CircleWrapper>
           <BuySectionCircleDescription>
-            <TYPE.subHeader>Liquidity Pools</TYPE.subHeader>
+            <TYPE.subHeader>
+              <Trans>Liquidity Pools</Trans>
+            </TYPE.subHeader>
             <TYPE.mediumHeader fontSize="14px">15%</TYPE.mediumHeader>
           </BuySectionCircleDescription>
         </div>
@@ -141,7 +145,9 @@ export default function BuySection({ account, balanceValue }: any) {
             <ProgressCircle percentage={10} color={'#09CF7C'} />
           </CircleWrapper>
           <BuySectionCircleDescription>
-            <TYPE.subHeader>Yield Farming</TYPE.subHeader>
+            <TYPE.subHeader>
+              <Trans>Yield Farming</Trans>
+            </TYPE.subHeader>
             <TYPE.mediumHeader fontSize="14px">10%</TYPE.mediumHeader>
           </BuySectionCircleDescription>
         </div>
@@ -150,7 +156,9 @@ export default function BuySection({ account, balanceValue }: any) {
             <ProgressCircle percentage={20} color={'#F79942'} />
           </CircleWrapper>
           <BuySectionCircleDescription>
-            <TYPE.subHeader>NFTs</TYPE.subHeader>
+            <TYPE.subHeader>
+              <Trans>NFTs</Trans>
+            </TYPE.subHeader>
             <TYPE.mediumHeader fontSize="14px">20%</TYPE.mediumHeader>
           </BuySectionCircleDescription>
         </div>

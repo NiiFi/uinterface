@@ -116,29 +116,19 @@ export default function Dashboard() {
             </ResponsiveRow>
             <ResponsiveRow gap="2rem">
               <AppBody size="md">
-                <CustomCard balance={balanceValue} svgIconSrc={WalletSvgSrc} data={sampleTokens} titleName={'Wallet'} />
+                <CustomCard balance={balanceValue} svgIconSrc={WalletSvgSrc} data={sampleTokens} type={'wallet'} />
               </AppBody>
               <AppBody size="md">
                 {/* TODO: add valid balance */}
-                <CustomCard
-                  balance={balanceValue}
-                  svgIconSrc={PoolsSvgSrc}
-                  data={newPools}
-                  titleName={'Liquidity Pools'}
-                />
+                <CustomCard balance={balanceValue} svgIconSrc={PoolsSvgSrc} data={newPools} type={'pools'} />
               </AppBody>
             </ResponsiveRow>
             <ResponsiveRow gap="2rem">
               <AppBody size="md">
-                <CustomCard
-                  balance={balanceValue}
-                  svgIconSrc={YieldSvgSrc}
-                  data={newPools}
-                  titleName={'Yield Farming'}
-                />
+                <CustomCard balance={balanceValue} svgIconSrc={YieldSvgSrc} data={newPools} type={'farm'} />
               </AppBody>
               <AppBody size="md">
-                <CustomCard balance={balanceValue} svgIconSrc={NFTsSvgSrc} data={SampleNFTData} titleName={'NFTs'} />
+                <CustomCard balance={balanceValue} svgIconSrc={NFTsSvgSrc} data={SampleNFTData} type={'nfts'} />
               </AppBody>
             </ResponsiveRow>
           </AutoColumn>

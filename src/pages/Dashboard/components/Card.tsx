@@ -1,12 +1,9 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import TableRow from '@material-ui/core/TableRow'
+import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components/macro'
-import TableCell from '@material-ui/core/TableCell'
-import { DefaultTheme } from 'styled-components'
-import CurrencyAvatar from 'components/CurrencyAvatar'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
-import { TYPE, RowWrapper, BaseCurrencyView } from 'theme'
+import { TYPE, BaseCurrencyView } from 'theme'
 import CircleSvgSrc from '../../../assets/svg/circle.svg'
 import ArrowSvgSrc from '../../../assets/svg/arrow.svg'
 import MaterialUiTable from '@material-ui/core/Table'
@@ -14,15 +11,11 @@ import MaterialUiBody from '@material-ui/core/TableBody'
 import MaterialUiTableContainer from '@material-ui/core/TableContainer'
 import { CustomNFTsTableRow } from './CustomNFTsTableRow'
 import { CustomPoolsTableRow } from './CustomPoolsTableRow'
+import { CustomWalletTableRow } from './CustomWalletTableRow'
+
 import useTheme from 'hooks/useTheme'
 
 // TODO: Move to shared
-const StyledTableRow = styled(TableRow)`
-  border-bottom: 1px solid ${({ theme }) => theme.bg3};
-  &:first-child {
-    border-top: 1px solid ${({ theme }) => theme.bg3};
-  }
-`
 
 const SvgIconWrapper = styled.img`
   height: 40px;
@@ -83,95 +76,52 @@ type CustomCardProps = {
   balance: number
   svgIconSrc: any
   data: Array<any>
-  titleName: string
+  type: string
 }
 
-const CustomTableRow = (
-  row: any,
-  index: number,
-  theme: DefaultTheme,
-  handleClick: (event: React.MouseEvent<unknown>) => void
-) => {
-  const rowCellStyles = {
-    color: theme.black,
-    borderBottom: 'none',
-    fontSize: '1rem',
-  }
-
-  return (
-    <StyledTableRow
-      hover
-      onClick={(event) => handleClick(event)}
-      role="checkbox"
-      aria-checked={false}
-      tabIndex={-1}
-      key={index}
-      selected={false}
-    >
-      <TableCell style={rowCellStyles} align="left">
-        <RowWrapper style={{ width: 'fit-content' }}>
-          <CurrencyAvatar
-            symbol={row.symbol}
-            address={row.address}
-            iconProps={{ width: '30', height: '30' }}
-            rootStyle={{ width: 'auto' }}
-            hideSymbol={true}
-          />
-          <TYPE.black fontWeight={400} style={{ padding: '8px 0 0 6px', width: 'fit-content' }}>
-            {row.symbol}
-          </TYPE.black>
-        </RowWrapper>
-      </TableCell>
-      <TableCell style={rowCellStyles} align="right">
-        {index + 1} {row.symbol}
-        <br />
-        <TYPE.subHeader color="text6" textAlign="right">
-          <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={(index + 1) * 100} />
-        </TYPE.subHeader>
-      </TableCell>
-    </StyledTableRow>
-  )
-}
-
-export const CustomCard = ({ balance, svgIconSrc, data, titleName }: CustomCardProps) => {
+export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps) => {
   const theme = useTheme()
   const history = useHistory()
-  const type: any = {
-    Wallet: 'wallet',
-    NFTs: 'nfts',
-    'Liquidity Pools': 'pools',
-    'Yield Farming': 'farm',
+  const types: { [type: string]: string } = {
+    wallet: t`Wallet`,
+    pools: t`Liquidity Pools`,
+    farm: t`Yield Farming`,
+    nfts: t`NFTs`,
   }
+
   const handleClick = (e: any) => {
     e.preventDefault()
-    history.push(`/dashboard/${type[titleName]}`)
+    history.push(`/dashboard/${type}`)
   }
   let renderedTable
 
-  switch (titleName) {
-    case 'Wallet':
-      renderedTable = data && data.map((row: any, index: number) => CustomTableRow(row, index, theme, handleClick))
+  switch (type) {
+    case 'wallet':
+      renderedTable =
+        data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
       break
-    case 'NFTs':
+    case 'nfts':
       renderedTable = data && data.map((row: any, index: number) => CustomNFTsTableRow(row, index, theme, handleClick))
       break
-    case 'Liquidity Pools':
+    case 'pools':
       renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
       break
-    case 'Yield Farming':
+    case 'farm':
       renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
       break
     default:
-      renderedTable = data && data.map((row: any, index: number) => CustomTableRow(row, index, theme, handleClick))
+      renderedTable =
+        data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
   }
 
-  // TODO: Add translation
   return (
     <Card>
       <CardHeader style={{ padding: '32px', justifyContent: 'start' }}>
         <SvgIconWrapper src={svgIconSrc} />
         <CardHeaderTitle>
-          <TYPE.subHeader>{titleName}</TYPE.subHeader>
+          <TYPE.subHeader>
+            <Trans>{types[type]}</Trans>
+          </TYPE.subHeader>
           <TYPE.mediumHeader fontSize="16px">
             <BaseCurrencyView value={balance} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
           </TYPE.mediumHeader>

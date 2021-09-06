@@ -9,7 +9,7 @@ import useTheme from 'hooks/useTheme'
 
 export type ButtonProps = Omit<ButtonPropsOriginal, 'css'>
 
-// TODO: Overview after redisign
+// TODO: Overview after redesign
 const dashboardPrimaryColor = 'rgba(12, 68, 63, 0.6)'
 
 const Base = styled(RebassButton)<
@@ -58,7 +58,7 @@ const Base = styled(RebassButton)<
     text-decoration: none;
   }
 `
-// TODO: Overview after redisign
+// TODO: Overview after redesign
 export const ButtonPrimary = styled(Base)`
   background-color: ${({ theme }) => theme.primary1};
   color: white;
@@ -85,7 +85,7 @@ export const ButtonPrimary = styled(Base)`
     opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? '0.5' : '0.4')};
   }
 `
-// TODO: Overview after redisign
+// TODO: Overview after redesign
 export const ButtonPrimaryDashboard = styled(Base)`
   background-color: #fff;
   color: ${dashboardPrimaryColor};
