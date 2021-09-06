@@ -89,9 +89,14 @@ export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps)
     nfts: t`NFTs`,
   }
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: React.MouseEvent<unknown>) => {
     e.preventDefault()
     history.push(`/dashboard/${type}`)
+  }
+
+  const handleRowClick = (e: React.MouseEvent<unknown>, rowId: string) => {
+    e.preventDefault()
+    history.push(`/pool/${rowId}`)
   }
   let renderedTable
 
@@ -104,7 +109,8 @@ export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps)
       renderedTable = data && data.map((row: any, index: number) => CustomNFTsTableRow(row, index, theme, handleClick))
       break
     case 'pools':
-      renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
+      renderedTable =
+        data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleRowClick))
       break
     case 'farm':
       renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
