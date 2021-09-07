@@ -39,6 +39,13 @@ const StyledAppBar = styled(AppBar)`
   `}
 `
 
+const StyledAppBody = styled(AppBody)`
+  padding: 1.5rem;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+  padding: 0.5rem;
+`}
+`
+
 const SampleNFTData = [
   {
     src: CollectionImage4,
@@ -110,9 +117,9 @@ export default function Dashboard() {
           </Disclaimer>
           <AutoColumn gap="lg">
             <ResponsiveRow>
-              <AppBody size="lg" style={{ padding: '1.5rem' }}>
+              <StyledAppBody size="lg">
                 <BuySection account={account} balanceValue={balanceValue} />
-              </AppBody>
+              </StyledAppBody>
             </ResponsiveRow>
             <ResponsiveRow gap="2rem">
               <AppBody size="md">
