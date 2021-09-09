@@ -236,7 +236,8 @@ msgstr ""
 msgid "Buy"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
 msgid "Buy Crypto"
 msgstr ""
 
@@ -389,7 +390,8 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
 msgid "Deposit"
 msgstr ""
 
@@ -666,6 +668,8 @@ msgstr ""
 msgid "Liquidity"
 msgstr ""
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Liquidity Pools"
 msgstr ""
@@ -742,6 +746,8 @@ msgstr ""
 msgid "Minimum received"
 msgstr ""
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "NFTs"
 msgstr ""
@@ -1381,12 +1387,18 @@ msgstr ""
 msgid "WITHDRAW"
 msgstr ""
 
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
+msgid "Waiting"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr ""
 
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Wallet"
 msgstr ""
@@ -1409,6 +1421,8 @@ msgstr ""
 msgid "Wrong Network"
 msgstr ""
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Yield Farming"
 msgstr ""
@@ -1498,7 +1512,7 @@ msgstr ""
 msgid "via {0} token list"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
 msgid "waiting..."
 msgstr ""
 
@@ -1509,6 +1523,7 @@ msgstr ""
 #: src/components/Dropdowns/LanguageDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/pages/Dashboard/components/Card.tsx
 msgid "{0}"
 msgstr ""
 
