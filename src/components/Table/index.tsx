@@ -33,7 +33,7 @@ interface RenderToolBarProps {
 }
 interface EnhancedTableProps {
   title?: any
-  onClick?: (props: any) => unknown
+  onClick?: (event: React.MouseEvent<unknown>, rowId: string) => unknown
   data: Array<TableDataTypes>
   hideHeader?: boolean
   headCells: HeadCell[]
@@ -176,8 +176,8 @@ export default function EnhancedTable({ hideHeader = false, ...props }: Enhanced
     setOrderBy(property)
     setPage(0)
   }
-  const handleClick = () => {
-    props.onClick && props.onClick('')
+  const handleClick = (event: React.MouseEvent<unknown>, rowId: string) => {
+    props.onClick && props.onClick(event, rowId)
   }
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage)
