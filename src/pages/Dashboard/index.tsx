@@ -39,6 +39,13 @@ const StyledAppBar = styled(AppBar)`
   `}
 `
 
+const StyledAppBody = styled(AppBody)`
+  padding: 1.5rem;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+  padding: 0.5rem;
+`}
+`
+
 const SampleNFTData = [
   {
     src: CollectionImage4,
@@ -110,35 +117,25 @@ export default function Dashboard() {
           </Disclaimer>
           <AutoColumn gap="lg">
             <ResponsiveRow>
-              <AppBody size="lg" style={{ padding: '1.5rem' }}>
+              <StyledAppBody size="lg">
                 <BuySection account={account} balanceValue={balanceValue} />
-              </AppBody>
+              </StyledAppBody>
             </ResponsiveRow>
             <ResponsiveRow gap="2rem">
               <AppBody size="md">
-                <CustomCard balance={balanceValue} svgIconSrc={WalletSvgSrc} data={sampleTokens} titleName={'Wallet'} />
+                <CustomCard balance={balanceValue} svgIconSrc={WalletSvgSrc} data={sampleTokens} type={'wallet'} />
               </AppBody>
               <AppBody size="md">
                 {/* TODO: add valid balance */}
-                <CustomCard
-                  balance={balanceValue}
-                  svgIconSrc={PoolsSvgSrc}
-                  data={newPools}
-                  titleName={'Liquidity Pools'}
-                />
+                <CustomCard balance={balanceValue} svgIconSrc={PoolsSvgSrc} data={newPools} type={'pools'} />
               </AppBody>
             </ResponsiveRow>
             <ResponsiveRow gap="2rem">
               <AppBody size="md">
-                <CustomCard
-                  balance={balanceValue}
-                  svgIconSrc={YieldSvgSrc}
-                  data={newPools}
-                  titleName={'Yield Farming'}
-                />
+                <CustomCard balance={balanceValue} svgIconSrc={YieldSvgSrc} data={newPools} type={'farm'} />
               </AppBody>
               <AppBody size="md">
-                <CustomCard balance={balanceValue} svgIconSrc={NFTsSvgSrc} data={SampleNFTData} titleName={'NFTs'} />
+                <CustomCard balance={balanceValue} svgIconSrc={NFTsSvgSrc} data={SampleNFTData} type={'nfts'} />
               </AppBody>
             </ResponsiveRow>
           </AutoColumn>

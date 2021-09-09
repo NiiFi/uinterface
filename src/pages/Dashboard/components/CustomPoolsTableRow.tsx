@@ -1,25 +1,17 @@
 import React from 'react'
 import { DefaultTheme } from 'styled-components'
-import TableRow from '@material-ui/core/TableRow'
-import styled from 'styled-components/macro'
 import TableCell from '@material-ui/core/TableCell'
 import { RowWrapper, BaseCurrencyView, CircleWrapper, ColumnWrapper, TYPE } from 'theme'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { NIILogo } from 'components/Icons'
-// TODO: move to shared
-const StyledTableRow = styled(TableRow)`
-  border-bottom: 1px solid ${({ theme }) => theme.bg3};
-  &:first-child {
-    border-top: 1px solid ${({ theme }) => theme.bg3};
-  }
-`
+import { StyledTableRow } from './StyledTableRow'
 
 export const CustomPoolsTableRow = (
   row: any,
   index: number,
   theme: DefaultTheme,
-  handleClick: (event: React.MouseEvent<unknown>) => void
+  handleRowClick: (e: React.MouseEvent<unknown>, rowId: string) => void
 ) => {
   const rowCellStyles = {
     color: theme.black,
@@ -30,7 +22,7 @@ export const CustomPoolsTableRow = (
   return (
     <StyledTableRow
       hover
-      onClick={(event) => handleClick(event)}
+      onClick={(event) => handleRowClick(event, row.id)}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { t, Trans } from '@lingui/macro'
 import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
@@ -75,6 +76,11 @@ const CustomTableRow = (
 export default function Pools() {
   const theme = useTheme()
   const balance = 8235.26
+  const history = useHistory()
+  const handleClick = (e: React.MouseEvent<unknown>, rowId: string) => {
+    e.preventDefault()
+    history.push(`/pool/${rowId}`)
+  }
   return (
     <Table
       headCells={[
@@ -82,6 +88,7 @@ export default function Pools() {
         { id: 'balance', numeric: true, disablePadding: false, label: t`Balance` },
         { id: 'token0Price', numeric: true, disablePadding: false, label: t`Value` },
       ]}
+      onClick={handleClick}
       rowsPerPage={8}
       title={
         <>
