@@ -1,12 +1,12 @@
 import React from 'react'
-import DashboardHistoryTable from 'components/Table/Dashboard/History'
-import AppBody from '../../AppBody'
+import HistoryTable from './components/HistoryTable'
+import AppBody from '../../../AppBody'
 
 export default function DashboardHistoryTab() {
   return (
     <>
       <AppBody size="lg">
-        <DashboardHistoryTable />
+        <HistoryTable />
       </AppBody>
     </>
   )
