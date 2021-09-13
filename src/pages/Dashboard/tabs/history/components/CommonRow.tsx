@@ -21,9 +21,7 @@ const SvgIconWrapper = styled.img`
 
 const StyledTableRow = styled(TableRow)`
   border-bottom: 1px solid ${({ theme }) => theme.bg3};
-  &:first-child {
-    border-top: 1px solid ${({ theme }) => theme.bg3};
-  }
+
   &:last-child {
     border-bottom: none;
   }
@@ -53,6 +51,11 @@ export function CommonRow({
     color: theme.black,
     borderBottom: 'none',
     fontSize: '1rem',
+  }
+  const dateRowCellStyles = {
+    ...rowCellStyles,
+    paddingTop: '36px',
+    fontWeight: 600,
   }
 
   const shortAdress = row.address && row.address.slice(0, 6).concat('...', row.address.slice(-4))
@@ -92,7 +95,7 @@ export function CommonRow({
         selected={false}
         showDate={showDate}
       >
-        <TableCell style={rowCellStyles} align="left">
+        <TableCell style={dateRowCellStyles} align="left">
           <RowWrapper style={{ width: 'fit-content', alignItems: 'center' }}>{dateRowValue}</RowWrapper>
         </TableCell>
       </DateWrapper>

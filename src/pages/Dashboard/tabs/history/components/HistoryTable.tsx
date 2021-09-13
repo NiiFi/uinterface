@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { DefaultTheme } from 'styled-components'
 import { RowWrapper } from 'theme'
 import { SampleHistoryResponse } from '../sample-history-response'
@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow'
 import { CommonRow } from './CommonRow'
 import { LiquidityRow } from './LiquidityRow'
 import { t } from '@lingui/macro'
+import { SearchComponent } from './SearchComponent'
 
 export const StyledTableRow = styled(TableRow)`
   border-bottom: 1px solid ${({ theme }) => theme.bg3};
@@ -29,13 +30,30 @@ export const allowedTypes: { [type: string]: string } = {
   swap: t`Swap`,
 }
 
+SampleHistoryResponse.data.history.sort((a: any, b: any): any => {
+  return new Date(b.date.split('T')[0]).valueOf() - new Date(a.date.split('T')[0]).valueOf()
+})
+let currentDate: string
+
 const CustomTableRow = (
   row: any,
   index: number,
   theme: DefaultTheme,
   handleClick: (event: React.MouseEvent<unknown>, name: string) => void
 ) => {
-  const showDate = index % 3 === 0
+  let showDate
+
+  if (index === 0) {
+    showDate = true
+    currentDate = row.date.split('T')[0]
+  } else {
+    if (currentDate !== row.date.split('T')[0]) {
+      showDate = true
+      currentDate = row.date.split('T')[0]
+    } else {
+      showDate = false
+    }
+  }
 
   switch (row.type) {
     case 'send':
@@ -50,13 +68,24 @@ const CustomTableRow = (
 }
 
 export default function HistoryTable() {
+  const [searchValue, setSearchValue] = useState('')
+
+  useEffect(() => {
+    SampleHistoryResponse.data.history = SampleHistoryResponse.data.history.filter((row: any) => {
+      return row.type.includes(searchValue)
+    })
+    console.log(SampleHistoryResponse.data.history)
+  }, [searchValue])
+
   return (
     <Table
       headCells={[]}
       rowsPerPage={8}
       title={
         <>
-          <RowWrapper style={{ padding: '16px' }}>Search Component</RowWrapper>
+          <RowWrapper style={{ padding: '16px' }}>
+            <SearchComponent searchValue={searchValue} setSearchValue={setSearchValue} />
+          </RowWrapper>
         </>
       }
       data={SampleHistoryResponse.data.history}
