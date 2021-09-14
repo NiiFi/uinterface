@@ -208,7 +208,7 @@ export const SampleHistoryResponse: any = {
           symbol: 'WDOGE',
           value: '+3.55',
         },
-        date: '2021-09-04T15:14:41+00:00',
+        date: '2021-09-05T15:14:41+00:00',
         fee: 0.28,
       },
       {
