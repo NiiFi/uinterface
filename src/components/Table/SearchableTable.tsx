@@ -44,6 +44,7 @@ interface EnhancedTableProps {
   debouncedSearchChange: (value: string) => void
   defaultOrder?: Order
   defaultOrderBy?: string
+  perPage?: number
 }
 interface EnhancedTableHeadProps {
   classes: ReturnType<typeof useStyles>
@@ -126,7 +127,7 @@ const useStyles = makeStyles(() => {
       minWidth: 750,
     },
     searchWrap: {
-      width: '65%',
+      width: '40%',
       fontWeight: 500,
       color: theme.text1,
       fontSize: '1.25rem',
@@ -162,13 +163,13 @@ const useStyles = makeStyles(() => {
 })
 
 export default function SearchableTable(props: EnhancedTableProps) {
-  const { renderToolbar, searchLabel, debouncedSearchChange, defaultOrder, defaultOrderBy } = props
+  const { renderToolbar, searchLabel, debouncedSearchChange, defaultOrder, defaultOrderBy, perPage } = props
   const classes = useStyles()
   const [tableData, setTableData] = React.useState<Array<TableDataTypes>>([])
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<string>('liquidity')
   const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(25)
+  const [rowsPerPage, setRowsPerPage] = React.useState(perPage || 25)
   const [query, setQuery] = React.useState<string>('')
   useEffect(() => {
     setTableData(props.data)
