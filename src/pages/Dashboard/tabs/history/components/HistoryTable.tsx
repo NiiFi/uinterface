@@ -63,11 +63,17 @@ const CustomTableRow = (
     case 'send':
     case 'receive':
     case 'swap':
-      return <CommonRow row={row} index={index} theme={theme} handleClick={handleClick} showDate={showDate} />
+      return (
+        <CommonRow key={index} row={row} index={index} theme={theme} handleClick={handleClick} showDate={showDate} />
+      )
     case 'liquidity':
-      return <LiquidityRow row={row} index={index} theme={theme} handleClick={handleClick} showDate={showDate} />
+      return (
+        <LiquidityRow key={index} row={row} index={index} theme={theme} handleClick={handleClick} showDate={showDate} />
+      )
     default:
-      return <CommonRow row={row} index={index} theme={theme} handleClick={handleClick} showDate={showDate} />
+      return (
+        <CommonRow key={index} row={row} index={index} theme={theme} handleClick={handleClick} showDate={showDate} />
+      )
   }
 }
 

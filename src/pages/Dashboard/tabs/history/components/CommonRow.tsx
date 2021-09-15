@@ -30,10 +30,6 @@ const StyledTableRow = styled(TableRow)`
   }
 `
 
-const DateWrapper = styled(StyledTableRow)<{ showDate: boolean }>`
-  display: ${(props) => (props.showDate ? 'flex' : 'none!important')};
-`
-
 export function CommonRow({
   row,
   index,
@@ -87,18 +83,18 @@ export function CommonRow({
   }
   return (
     <>
-      <DateWrapper
+      <StyledTableRow
         role="checkbox"
         aria-checked={false}
         tabIndex={-1}
-        key={row.date}
+        key={`${row.date}_${index}`}
         selected={false}
-        showDate={showDate}
+        style={{ display: showDate ? 'flex' : 'none' }}
       >
         <TableCell style={dateRowCellStyles} align="left">
           <RowWrapper style={{ width: 'fit-content', alignItems: 'center' }}>{dateRowValue}</RowWrapper>
         </TableCell>
-      </DateWrapper>
+      </StyledTableRow>
       <StyledTableRow
         hover
         onClick={(event) => handleClick(event, row.id)}
