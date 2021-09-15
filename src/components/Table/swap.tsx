@@ -69,6 +69,7 @@ const CustomTableRow = (
 
 export default function SwapTable() {
   const theme = useTheme()
+  console.log(mapTransactionListDataToTableData(SampleResponse.data))
   return (
     <Table
       title={t`Recent Transactions`}
