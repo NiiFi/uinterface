@@ -30,6 +30,10 @@ const StyledTableRow = styled(TableRow)`
   }
 `
 
+const DateStyledTableRow = styled(StyledTableRow)`
+  border-top: none;
+`
+
 export function LiquidityRow({
   row,
   index,
@@ -48,23 +52,28 @@ export function LiquidityRow({
     borderBottom: 'none',
     fontSize: '1rem',
   }
+  const dateRowCellStyles = {
+    ...rowCellStyles,
+    paddingTop: '36px',
+    fontWeight: 600,
+  }
 
   const dateRowValue = format(new Date(row.date), 'MMMM d, yyyy')
 
   return (
     <>
-      <StyledTableRow
+      <DateStyledTableRow
         role="checkbox"
         aria-checked={false}
         tabIndex={-1}
         key={row.date}
         selected={false}
-        style={{ display: showDate ? 'flex' : 'none' }}
+        style={{ display: showDate ? 'table-row' : 'none' }}
       >
-        <TableCell style={rowCellStyles} align="left">
+        <TableCell style={dateRowCellStyles} align="left">
           <RowWrapper style={{ width: 'fit-content', alignItems: 'center' }}>{dateRowValue}</RowWrapper>
         </TableCell>
-      </StyledTableRow>
+      </DateStyledTableRow>
       <StyledTableRow
         hover
         onClick={(event) => handleClick(event, row.id)}
