@@ -135,7 +135,7 @@ const useStyles = makeStyles(() => {
       // [theme.mediaWidth.upToSmall()]: {
       ['@media (max-width: 576px)']: {
         fontSize: '1rem',
-        width: '78%',
+        width: '60%',
       },
     },
     headerWrap: {
@@ -173,6 +173,7 @@ export default function SearchableTable(props: EnhancedTableProps) {
   const [query, setQuery] = React.useState<string>('')
   useEffect(() => {
     setTableData(props.data)
+    setPage(0)
   }, [props.data, setTableData])
   useEffect(() => {
     if (defaultOrderBy !== undefined) {
