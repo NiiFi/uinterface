@@ -21,13 +21,19 @@ const SvgIconWrapper = styled.img`
 
 const StyledTableRow = styled(TableRow)`
   border-bottom: 1px solid ${({ theme }) => theme.bg3};
-
+  &:first-child {
+    border-top: 1px solid ${({ theme }) => theme.bg3};
+  }
   &:last-child {
     border-bottom: none;
   }
   td:first-child {
     padding-left: 32px;
   }
+`
+
+const DateStyledTableRow = styled(StyledTableRow)`
+  border-top: none;
 `
 
 export function CommonRow({
@@ -83,18 +89,18 @@ export function CommonRow({
   }
   return (
     <>
-      <StyledTableRow
+      <DateStyledTableRow
         role="checkbox"
         aria-checked={false}
         tabIndex={-1}
         key={`${row.date}_${index}`}
         selected={false}
-        style={{ display: showDate ? 'flex' : 'none' }}
+        style={{ display: showDate ? 'table-row' : 'none' }}
       >
         <TableCell style={dateRowCellStyles} align="left">
           <RowWrapper style={{ width: 'fit-content', alignItems: 'center' }}>{dateRowValue}</RowWrapper>
         </TableCell>
-      </StyledTableRow>
+      </DateStyledTableRow>
       <StyledTableRow
         hover
         onClick={(event) => handleClick(event, row.id)}
