@@ -20,14 +20,14 @@ if (typeof INFURA_KEY === 'undefined') {
 const NETWORK_URLS: {
   [chainId in SupportedChainId]: string
 } = {
-  [SupportedChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
+  [SupportedChainId.ROPSTEN_NAHMII]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
 }
 
-const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.ROPSTEN]
+const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.ROPSTEN_NAHMII]
 
 export const network = new NetworkConnector({
   urls: NETWORK_URLS,
-  defaultChainId: 3,
+  defaultChainId: SupportedChainId.ROPSTEN_NAHMII,
 })
 
 let networkLibrary: Web3Provider | undefined

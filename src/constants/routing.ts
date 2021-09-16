@@ -21,7 +21,7 @@ type ChainCurrencyList = {
 //   '0x59A921Db27Dd6d4d974745B7FfC5c33932653442': [MIR, UST], // mGOOGL
 // }
 const WETH_ONLY: ChainTokenList = {
-  [SupportedChainId.ROPSTEN]: [WETH9_EXTENDED[SupportedChainId.ROPSTEN]],
+  [SupportedChainId.ROPSTEN_NAHMII]: [WETH9_EXTENDED[SupportedChainId.ROPSTEN_NAHMII]],
 }
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {

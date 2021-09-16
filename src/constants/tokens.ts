@@ -1,12 +1,26 @@
 import { WETH9, Token, Ether } from '@uniswap/sdk-core'
-import { UNI_ADDRESS } from './addresses'
+import { NIIFI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
 import { t } from '@lingui/macro'
-export const UNI: { [chainId: number]: Token } = {
-  [SupportedChainId.ROPSTEN]: new Token(SupportedChainId.ROPSTEN, UNI_ADDRESS[3], 18, 'UNI', 'Uniswap'),
+export const NII: { [chainId: number]: Token } = {
+  [SupportedChainId.ROPSTEN_NAHMII]: new Token(
+    SupportedChainId.ROPSTEN_NAHMII,
+    NIIFI_ADDRESS[SupportedChainId.ROPSTEN_NAHMII],
+    18,
+    'NII',
+    'NIIFI'
+  ),
 }
+
 export const WETH9_EXTENDED: { [chainId: number]: Token } = {
   ...WETH9,
+  [SupportedChainId.ROPSTEN_NAHMII]: new Token(
+    SupportedChainId.ROPSTEN_NAHMII,
+    '0x4200000000000000000000000000000000000006', // TODO: move to .env
+    18,
+    'WETH9',
+    'Wrapped Ether'
+  ),
 }
 
 export class ExtendedEther extends Ether {
