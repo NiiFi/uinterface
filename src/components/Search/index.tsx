@@ -41,6 +41,7 @@ const SearchBar = ({ placeholder, debouncedSearchChange, query, setQuery, ...res
       onChange={(event) => setSword(event.target.value)}
       {...rest}
       style={{
+        height: '48px',
         backgroundImage: `url('data:image/svg+xml;utf8,${encodeURIComponent(
           ReactDOMServer.renderToStaticMarkup(MagnifierIcon({ width: 24, height: 24, color: theme.text4 }))
         )}')`,
