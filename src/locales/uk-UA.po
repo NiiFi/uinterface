@@ -102,6 +102,8 @@ msgstr "Додати"
 #: src/components/PoolInvest/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Add Liquidity"
 msgstr "Додати ліквідність"
 
@@ -146,6 +148,7 @@ msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 msgid "Amount"
 msgstr ""
 
@@ -520,11 +523,16 @@ msgstr "Комісія"
 msgid "Fees 24H"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+msgid "Filter by Token, Protocol, Event ..."
+msgstr ""
+
 #: src/components/Table/pools.tsx
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 #: src/pages/Swap/index.tsx
 msgid "From"
 msgstr "Від"
@@ -842,6 +850,7 @@ msgstr ""
 
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
@@ -953,6 +962,10 @@ msgstr "Курс"
 msgid "Read more about unsupported assets"
 msgstr "Детальніше про непідтримувані активи"
 
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+msgid "Receive"
+msgstr ""
+
 #: src/components/Table/swap.tsx
 msgid "Recent Transactions"
 msgstr "Останні Транзакції"
@@ -1054,6 +1067,7 @@ msgid "Sell"
 msgstr ""
 
 #: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Send"
 msgstr "Надіслати"
 
@@ -1101,6 +1115,7 @@ msgstr "Постачання {0} {1} та {2} {3}"
 
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1200,6 +1215,8 @@ msgid "Tip: Custom tokens are stored locally in your browser"
 msgstr "Порада: користувацькі токени зберігаються локально в браузері"
 
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 #: src/pages/Swap/index.tsx
 msgid "To"
 msgstr "На"
@@ -1495,6 +1512,11 @@ msgstr "Вашу транзакцію буде повернуто, якщо ця
 #: src/components/Settings/index.tsx
 msgid "confirm"
 msgstr "підтвердити"
+
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
+msgid "fee"
+msgstr ""
 
 #: src/components/Web3Status/index.tsx
 #: src/components/Web3Status/indexOld.tsx
