@@ -340,15 +340,12 @@ msgstr "Cüzdanınızda bu işlemi onaylayın"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Cüzdanı Bağlayın"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Cüzdana bağlanın"
 
@@ -440,10 +437,6 @@ msgstr ""
 msgid "EUR"
 msgstr ""
 
-#: src/state/swap/hooks.ts
-msgid "Enter a recipient"
-msgstr "Bir alıcı girin"
-
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
 msgstr "Geçerli bir kayma yüzdesi girin"
@@ -451,8 +444,6 @@ msgstr "Geçerli bir kayma yüzdesi girin"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "Bir miktar girin"
@@ -467,7 +458,6 @@ msgstr "Geçerli jeton adresini girin"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Hata"
 
@@ -649,10 +639,6 @@ msgstr "Geçersiz çift"
 #: src/pages/PoolFinder/index.tsx
 msgid "Invalid pair."
 msgstr "Geçersiz çift."
-
-#: src/state/swap/hooks.ts
-msgid "Invalid recipient"
-msgstr "Geçersiz alıcı"
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1439,7 +1425,6 @@ msgstr "Paketlemek"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Yanlış Ağ"
 
@@ -1518,11 +1503,6 @@ msgstr "onaylamak"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "çorap emojisi var"
-
 #: src/components/SearchModal/ManageLists.tsx
 msgid "https:// or ipfs:// or ENS name"
 msgstr "https: // veya ipfs: // veya ENS adı"
@@ -1572,7 +1552,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} Beklemede"
 

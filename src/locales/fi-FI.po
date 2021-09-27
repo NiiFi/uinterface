@@ -340,15 +340,12 @@ msgstr "Vahvista tapahtuma lompakossasi"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Yhdistä Lompakko"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Yhdistä lompakkoon"
 
@@ -440,10 +437,6 @@ msgstr ""
 msgid "EUR"
 msgstr ""
 
-#: src/state/swap/hooks.ts
-msgid "Enter a recipient"
-msgstr "Kirjoita vastaanottaja"
-
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
 msgstr "Syötä kelvollinen lipsumisprosentti"
@@ -451,8 +444,6 @@ msgstr "Syötä kelvollinen lipsumisprosentti"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "Syötä summa"
@@ -467,7 +458,6 @@ msgstr "Syötä kelvollinen tunnus osoite"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Virhe"
 
@@ -649,10 +639,6 @@ msgstr "Virheellinen pari"
 #: src/pages/PoolFinder/index.tsx
 msgid "Invalid pair."
 msgstr "Virheellinen pari."
-
-#: src/state/swap/hooks.ts
-msgid "Invalid recipient"
-msgstr "Virheellinen vastaanottaja"
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1439,7 +1425,6 @@ msgstr "Rivitys"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Väärä Verkko"
 
@@ -1518,11 +1503,6 @@ msgstr "vahvista"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "on sukat emoji"
-
 #: src/components/SearchModal/ManageLists.tsx
 msgid "https:// or ipfs:// or ENS name"
 msgstr "https: // tai ipfs: // tai ENS-nimi"
@@ -1572,7 +1552,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} Odottaa"
 

@@ -340,15 +340,12 @@ msgstr "Potwierdź tę transakcję w swoim portfelu"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Połącz portfel"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Połącz z portfelem"
 
@@ -440,10 +437,6 @@ msgstr ""
 msgid "EUR"
 msgstr ""
 
-#: src/state/swap/hooks.ts
-msgid "Enter a recipient"
-msgstr "Wprowadź odbiorcę"
-
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
 msgstr "Wprowadź prawidłowy procent poślizgu"
@@ -451,8 +444,6 @@ msgstr "Wprowadź prawidłowy procent poślizgu"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "Wprowadź kwotę"
@@ -467,7 +458,6 @@ msgstr "Wprowadź prawidłowy adres tokenu"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Błąd"
 
@@ -649,10 +639,6 @@ msgstr "Nieprawidłowa para"
 #: src/pages/PoolFinder/index.tsx
 msgid "Invalid pair."
 msgstr "Nieprawidłowa para."
-
-#: src/state/swap/hooks.ts
-msgid "Invalid recipient"
-msgstr "Nieprawidłowy odbiorca"
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1439,7 +1425,6 @@ msgstr "Zawijanie"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Nieprawidłowa sieć"
 
@@ -1518,11 +1503,6 @@ msgstr "potwierdź"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "ma emoji skarpetki"
-
 #: src/components/SearchModal/ManageLists.tsx
 msgid "https:// or ipfs:// or ENS name"
 msgstr "https: // lub ipfs: // lub nazwa ENS"
@@ -1572,7 +1552,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} Oczekujące"
 

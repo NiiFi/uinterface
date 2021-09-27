@@ -340,15 +340,12 @@ msgstr "Підтвердіть цю транзакцію у своєму гам�
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Підключити Гаманець"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Підключення до гаманця"
 
@@ -440,10 +437,6 @@ msgstr "ETH-ANY Статистика пари (тестові дані)"
 msgid "EUR"
 msgstr "EUR"
 
-#: src/state/swap/hooks.ts
-msgid "Enter a recipient"
-msgstr "Введіть одержувача"
-
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
 msgstr "Введіть дійсний відсоток диспуту"
@@ -451,8 +444,6 @@ msgstr "Введіть дійсний відсоток диспуту"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "Введіть суму"
@@ -467,7 +458,6 @@ msgstr "Введіть коректну адресу маркера"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Помилка"
 
@@ -649,10 +639,6 @@ msgstr "Недійсна пара"
 #: src/pages/PoolFinder/index.tsx
 msgid "Invalid pair."
 msgstr "Недійсна пара."
-
-#: src/state/swap/hooks.ts
-msgid "Invalid recipient"
-msgstr "Недійсний одержувач"
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1439,7 +1425,6 @@ msgstr "Перенесення"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Некоректна мережа"
 
@@ -1518,11 +1503,6 @@ msgstr "підтвердити"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "має емодзі"
-
 #: src/components/SearchModal/ManageLists.tsx
 msgid "https:// or ipfs:// or ENS name"
 msgstr "https: // або ipfs: // або ім’я ENS"
@@ -1572,7 +1552,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr ""
 

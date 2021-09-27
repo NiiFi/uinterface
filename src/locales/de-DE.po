@@ -340,15 +340,12 @@ msgstr "Diese Transaktion in Ihrer Wallet bestätigen"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Wallet verbinden"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Mit einer Wallet verbinden"
 
@@ -440,10 +437,6 @@ msgstr ""
 msgid "EUR"
 msgstr ""
 
-#: src/state/swap/hooks.ts
-msgid "Enter a recipient"
-msgstr "Empfänger eingeben"
-
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
 msgstr "Geben Sie einen gültigen Schlupf-Prozentsatz ein"
@@ -451,8 +444,6 @@ msgstr "Geben Sie einen gültigen Schlupf-Prozentsatz ein"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "Betrag eingeben"
@@ -467,7 +458,6 @@ msgstr "Gültige Token-Adresse eingeben"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Fehler"
 
@@ -649,10 +639,6 @@ msgstr "Ungültiges Paar"
 #: src/pages/PoolFinder/index.tsx
 msgid "Invalid pair."
 msgstr "Ungültiges Paar."
-
-#: src/state/swap/hooks.ts
-msgid "Invalid recipient"
-msgstr "Ungültiger Empfänger"
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1439,7 +1425,6 @@ msgstr ""
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Falsches Netzwerk"
 
@@ -1518,11 +1503,6 @@ msgstr "bestätigen"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "hat \"socks\" Emoji"
-
 #: src/components/SearchModal/ManageLists.tsx
 msgid "https:// or ipfs:// or ENS name"
 msgstr "https: // oder ipfs: // oder ENS-Name"
@@ -1572,7 +1552,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} Ausstehend"
 
