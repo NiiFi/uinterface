@@ -21,4 +21,3 @@ export const ROUTER_ADDRESS: AddressMap = {
 export const GOVERNANCE_ADDRESS: AddressMap = constructSameAddressMap('0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F')
 export const MERKLE_DISTRIBUTOR_ADDRESS: AddressMap = {}
 export const ARGENT_WALLET_DETECTOR_ADDRESS: AddressMap = {}
-export const SOCKS_CONTROLLER_ADDRESSES: AddressMap = {}

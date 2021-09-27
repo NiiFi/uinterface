@@ -24,3 +24,12 @@ export const updateTokenBalances =
       [address: string]: string
     }
   }>('updateTokenBalances')
+
+export const updateEtherBalances =
+  createAction<{
+    chainId: number
+    blockNumber: number
+    etherBalances: {
+      [address: string]: string
+    }
+  }>('updateEtherBalances')

@@ -10,8 +10,6 @@ import ARGENT_WALLET_DETECTOR_ABI from 'abis/argent-wallet-detector.json'
 import ENS_PUBLIC_RESOLVER_ABI from 'abis/ens-public-resolver.json'
 import ERC20_ABI from 'abis/erc20.json'
 import ERC20_BYTES32_ABI from 'abis/erc20_bytes32.json'
-import { Unisocks } from 'abis/types/Unisocks'
-import UNISOCKS_ABI from 'abis/unisocks.json'
 import WETH_ABI from 'abis/weth.json'
 import EIP_2612 from 'abis/eip_2612.json'
 
@@ -20,7 +18,6 @@ import {
   GOVERNANCE_ADDRESS,
   MERKLE_DISTRIBUTOR_ADDRESS,
   ROUTER_ADDRESS,
-  SOCKS_CONTROLLER_ADDRESSES,
 } from 'constants/addresses'
 import { useMemo } from 'react'
 import { getContract } from 'utils'
@@ -99,8 +96,4 @@ export function useUniContract() {
 
 export function useStakingContract(stakingAddress?: string, withSignerIfPossible?: boolean) {
   return useContract(stakingAddress, STAKING_REWARDS_ABI, withSignerIfPossible)
-}
-
-export function useSocksController(): Unisocks | null {
-  return useContract<Unisocks>(SOCKS_CONTROLLER_ADDRESSES, UNISOCKS_ABI, false)
 }

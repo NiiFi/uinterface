@@ -1,19 +1,30 @@
 import { Currency, Token, CurrencyAmount, Ether } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
-import { useState, useEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
+import { useDispatch } from 'react-redux'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useAllTokens } from '../../hooks/Tokens'
 import { isAddress } from '../../utils'
 import { useAppSelector } from 'state/hooks'
 import { balanceKey } from 'state/wallet/reducer'
+import {
+  TokenBalanceListenerKey,
+  startListeningForBalance,
+  stopListeningForBalance,
+  startListeningForTokenBalances,
+  stopListeningForTokenBalances,
+} from 'state/wallet/actions'
+import { AppDispatch } from '../index'
 /**
  * Returns a map of the given addresses to their eventually consistent ETH balances.
  */
 export function useETHBalances(uncheckedAddresses?: (string | undefined)[]): {
   [address: string]: CurrencyAmount<Currency> | undefined
 } {
-  const [results, setResults] = <any[]>useState()
+  const dispatch = useDispatch<AppDispatch>()
   const { chainId } = useActiveWeb3React()
+
+  const balances = useAppSelector((state: any) => state.wallet.balances)
 
   const addresses: string[] = useMemo(
     () =>
@@ -26,29 +37,33 @@ export function useETHBalances(uncheckedAddresses?: (string | undefined)[]): {
     [uncheckedAddresses]
   )
 
-  const { account, library } = useActiveWeb3React()
+  // used so that we do a deep comparison in `useEffect`
+  const serializedAddresses = JSON.stringify(addresses)
 
-  useEffect((): any => {
-    if (!!account && !!library) {
-      library
-        .getBalance(account)
-        .then((balance: any) => {
-          setResults(balance)
-        })
-        .catch((e) => {
-          console.error(e)
-        })
+  // add the listeners on mount, remove them on dismount
+  useEffect(() => {
+    const addresses = JSON.parse(serializedAddresses)
+    if (addresses.length === 0) return
+
+    dispatch(startListeningForBalance({ addresses }))
+    return () => {
+      dispatch(stopListeningForBalance({ addresses }))
     }
-  }, [account, library, setResults])
+  }, [serializedAddresses, dispatch])
 
   return useMemo(
     () =>
       addresses.reduce<{ [address: string]: CurrencyAmount<Currency> }>((memo, address) => {
-        if (results && chainId)
-          memo[address] = CurrencyAmount.fromRawAmount(Ether.onChain(chainId), JSBI.BigInt(results.toString()))
+        if (balances && chainId) {
+          const key = balanceKey({ address, chainId })
+          const { value } = balances[key] ?? {}
+          if (value) {
+            memo[address] = CurrencyAmount.fromRawAmount(Ether.onChain(chainId), JSBI.BigInt(value))
+          }
+        }
         return memo
       }, {}),
-    [addresses, chainId, results]
+    [addresses, chainId, balances]
   )
 }
 
@@ -103,10 +118,34 @@ export function useCurrencyBalances(
   account?: string,
   currencies?: (Currency | undefined)[]
 ): (CurrencyAmount<Currency> | undefined)[] {
+  const dispatch = useDispatch<AppDispatch>()
   const tokens = useMemo(
     () => currencies?.filter((currency): currency is Token => currency?.isToken ?? false) ?? [],
     [currencies]
   )
+
+  // used so that we do a deep comparison in `useEffect`
+  const serializedCombos: string = useMemo(() => {
+    return JSON.stringify(
+      !account || tokens.length === 0
+        ? []
+        : tokens
+            .map((t: Token) => t.address)
+            .sort()
+            .map((tokenAddress: string) => ({ address: account, tokenAddress }))
+    )
+  }, [account, tokens])
+
+  // keep the listeners up to date
+  useEffect(() => {
+    const combos: TokenBalanceListenerKey[] = JSON.parse(serializedCombos)
+    if (combos.length === 0) return
+
+    dispatch(startListeningForTokenBalances(combos))
+    return () => {
+      dispatch(stopListeningForTokenBalances(combos))
+    }
+  }, [account, serializedCombos, dispatch])
 
   const tokenBalances = useTokenBalances(account, tokens)
   const containsETH: boolean = useMemo(() => currencies?.some((currency) => currency?.isNative) ?? false, [currencies])
