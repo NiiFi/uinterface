@@ -437,6 +437,10 @@ msgstr ""
 msgid "EUR"
 msgstr ""
 
+#: src/state/swap/hooks.ts
+msgid "Enter a recipient"
+msgstr ""
+
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
 msgstr "Geçerli bir kayma yüzdesi girin"
@@ -639,6 +643,10 @@ msgstr "Geçersiz çift"
 #: src/pages/PoolFinder/index.tsx
 msgid "Invalid pair."
 msgstr "Geçersiz çift."
+
+#: src/state/swap/hooks.ts
+msgid "Invalid recipient"
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"

@@ -437,6 +437,10 @@ msgstr ""
 msgid "EUR"
 msgstr ""
 
+#: src/state/swap/hooks.ts
+msgid "Enter a recipient"
+msgstr ""
+
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
 msgstr "Masukkan persentase selip yang valid"
@@ -639,6 +643,10 @@ msgstr "Pasangan tidak valid"
 #: src/pages/PoolFinder/index.tsx
 msgid "Invalid pair."
 msgstr "Pasangan tidak valid."
+
+#: src/state/swap/hooks.ts
+msgid "Invalid recipient"
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
