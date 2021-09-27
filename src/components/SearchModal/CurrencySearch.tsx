@@ -14,7 +14,7 @@ import Row, { RowBetween, RowFixed } from '../Row'
 import CommonBases from './CommonBases'
 import CurrencyList from './CurrencyList'
 import { filterTokens, useSortedTokensByQuery } from './filtering'
-// import { useTokenComparator } from './sorting'
+import { useTokenComparator } from './sorting'
 import { PaddedColumn, SearchInput, Separator } from './styleds'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import styled from 'styled-components/macro'
@@ -70,7 +70,7 @@ export function CurrencySearch({
   const [searchQuery, setSearchQuery] = useState<string>('')
   const debouncedQuery = useDebounce(searchQuery, 200)
 
-  // const [invertSearchOrder] = useState<boolean>(false)
+  const [invertSearchOrder] = useState<boolean>(false)
 
   const allTokens = useAllTokens()
 
@@ -92,17 +92,17 @@ export function CurrencySearch({
   }, [isAddressSearch])
 
   // FIXME:
-  // const tokenComparator = useTokenComparator(invertSearchOrder)
+  const tokenComparator = useTokenComparator(invertSearchOrder)
 
   const filteredTokens: Token[] = useMemo(() => {
     return filterTokens(Object.values(allTokens), debouncedQuery)
   }, [allTokens, debouncedQuery])
 
   const sortedTokens: Token[] = useMemo(() => {
-    return filteredTokens
-  }, [filteredTokens])
-  // return filteredTokens.sort(tokenComparator)
-  // }, [filteredTokens, tokenComparator])
+    //   return filteredTokens
+    // }, [filteredTokens])
+    return filteredTokens.sort(tokenComparator)
+  }, [filteredTokens, tokenComparator])
 
   const filteredSortedTokens = useSortedTokensByQuery(sortedTokens, debouncedQuery)
 

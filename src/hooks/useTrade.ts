@@ -9,7 +9,6 @@ import { PairState, usePairs } from './usePairs'
 function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
   const allCurrencyCombinations = useAllCurrencyCombinations(currencyA, currencyB)
   const allPairs = usePairs(allCurrencyCombinations)
-  console.log('PAIRS', allCurrencyCombinations, allPairs)
 
   // only pass along valid pairs, non-duplicated pairs
   return useMemo(

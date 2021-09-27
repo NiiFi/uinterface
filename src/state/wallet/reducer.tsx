@@ -44,7 +44,6 @@ const initialState: WalletState = {
 export default createReducer(initialState, (builder) =>
   builder.addCase(updateTokenBalances, (state, { payload: { chainId, address, blockNumber, tokenBalances } }) => {
     const checksummedAddress = isAddress(address)
-    // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>', address, tokenBalances, checksummedAddress, blockNumber)
     if (!checksummedAddress) return
     Object.keys(tokenBalances).forEach((tokenAddress) => {
       const checksummedTokenAddress = isAddress(tokenAddress)
@@ -52,15 +51,6 @@ export default createReducer(initialState, (builder) =>
       const balance = tokenBalances[checksummedTokenAddress]
       const key = balanceKey({ chainId, address: checksummedAddress, tokenAddress: checksummedTokenAddress })
       const data = state.balances[key]
-      console.log([
-        '>>>>>>>>>>>>>>>>>>>>>>>>>>>',
-        tokenBalances,
-        checksummedTokenAddress,
-        tokenBalances[checksummedTokenAddress],
-        balance,
-        data,
-        tokenAddress,
-      ])
       if (!data || data.blockNumber === undefined || data.blockNumber <= blockNumber) {
         state.balances[key] = { value: balance, blockNumber }
       }

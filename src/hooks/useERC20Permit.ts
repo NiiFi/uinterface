@@ -4,7 +4,7 @@ import { Trade } from '@uniswap/v2-sdk'
 import { splitSignature } from 'ethers/lib/utils'
 import { useMemo, useState } from 'react'
 import { NII } from '../constants/tokens'
-// import { useSingleCallResult } from '../state/multicall/hooks'
+// import { useSingleCallResult } from '../state/multicall/hooks' // TODO: think about replacement for this
 import { useActiveWeb3React } from './web3'
 import { useEIP2612Contract } from './useContract'
 import useTransactionDeadline from './useTransactionDeadline'
@@ -122,8 +122,8 @@ export function useERC20Permit(
     overridePermitInfo ?? (chainId && tokenAddress ? PERMITTABLE_TOKENS[chainId]?.[tokenAddress] : undefined)
   // eip2612Contract
   //   ?.nonces()
-  //   .then((test: any) => console.log('__---__', test))
-  //   .catch((e: any) => console.log('__---__E', e))
+  //   .then((param: any) => console.log(param))
+  //   .catch((e: any) => console.log(e))
   const [signatureData, setSignatureData] = useState<SignatureData | null>(null)
 
   return useMemo(() => {
