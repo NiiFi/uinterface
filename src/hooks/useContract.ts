@@ -11,7 +11,7 @@ import ENS_PUBLIC_RESOLVER_ABI from 'abis/ens-public-resolver.json'
 import ENS_ABI from 'abis/ens-registrar.json'
 import ERC20_ABI from 'abis/erc20.json'
 import ERC20_BYTES32_ABI from 'abis/erc20_bytes32.json'
-import MULTICALL_ABI from 'abis/multicall2.json'
+// import MULTICALL_ABI from 'abis/multicall2.json'
 import { Unisocks } from 'abis/types/Unisocks'
 import UNISOCKS_ABI from 'abis/unisocks.json'
 import WETH_ABI from 'abis/weth.json'
@@ -21,14 +21,14 @@ import {
   ARGENT_WALLET_DETECTOR_ADDRESS,
   GOVERNANCE_ADDRESS,
   MERKLE_DISTRIBUTOR_ADDRESS,
-  MULTICALL2_ADDRESSES,
+  // MULTICALL2_ADDRESSES,
   ROUTER_ADDRESS,
   ENS_REGISTRAR_ADDRESSES,
   SOCKS_CONTROLLER_ADDRESSES,
 } from 'constants/addresses'
 import { useMemo } from 'react'
 import { getContract } from 'utils'
-import { Erc20, ArgentWalletDetector, EnsPublicResolver, EnsRegistrar, Multicall2, Weth } from '../abis/types'
+import { Erc20, ArgentWalletDetector, EnsPublicResolver, EnsRegistrar, /*Multicall2,*/ Weth } from '../abis/types'
 import { NII, WETH9_EXTENDED } from '../constants/tokens'
 import { useActiveWeb3React } from './web3'
 
@@ -92,9 +92,9 @@ export function useV2RouterContract(): Contract | null {
   return useContract(ROUTER_ADDRESS, IUniswapV2Router02ABI, true)
 }
 
-export function useMulticall2Contract() {
-  return useContract<Multicall2>(MULTICALL2_ADDRESSES, MULTICALL_ABI, false) as Multicall2
-}
+// export function useMulticall2Contract() {
+//   return useContract<Multicall2>(MULTICALL2_ADDRESSES, MULTICALL_ABI, false) as Multicall2
+// }
 
 export function useMerkleDistributorContract() {
   return useContract(MERKLE_DISTRIBUTOR_ADDRESS, MERKLE_DISTRIBUTOR_ABI, true)

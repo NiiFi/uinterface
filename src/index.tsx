@@ -16,10 +16,10 @@ import store from './state'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import ApplicationUpdater from './state/application/updater'
 import ListsUpdater from './state/lists/updater'
-import MulticallUpdater from './state/multicall/updater'
 import TransactionUpdater from './state/transactions/updater'
 import UserUpdater, { BaseCurrencyRatesUpdater } from './state/user/updater'
 import PoolsUpdater from './state/pools/updater'
+import WalletUpdater from './state/wallet/updater'
 import ThemeProvider, { ThemedGlobalStyle } from './theme'
 import getLibrary from './utils/getLibrary'
 
@@ -71,8 +71,8 @@ function Updaters() {
       <BaseCurrencyRatesUpdater />
       <ApplicationUpdater />
       <TransactionUpdater />
-      <MulticallUpdater />
       <PoolsUpdater />
+      <WalletUpdater />
     </>
   )
 }

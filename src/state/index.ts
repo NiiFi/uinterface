@@ -11,7 +11,7 @@ import pools from './pools/reducer'
 import mint from './mint/reducer'
 import lists from './lists/reducer'
 import burn from './burn/reducer'
-import multicall from './multicall/reducer'
+import wallet from './wallet/reducer'
 
 const PERSISTED_KEYS: string[] = ['user', 'transactions', 'lists']
 
@@ -25,8 +25,8 @@ const store = configureStore({
     pools,
     mint,
     burn,
-    multicall,
     lists,
+    wallet,
   },
   middleware: [...getDefaultMiddleware({ thunk: false }), save({ states: PERSISTED_KEYS, debounce: 1000 })],
   preloadedState: load({ states: PERSISTED_KEYS }),

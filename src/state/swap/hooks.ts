@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import JSBI from 'jsbi'
-import useENS from '../../hooks/useENS'
 import { parseUnits } from '@ethersproject/units'
 import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
 import { Trade } from '@uniswap/v2-sdk'
@@ -130,8 +129,6 @@ export function useDerivedSwapInfo(): {
 
   const inputCurrency = useCurrency(inputCurrencyId)
   const outputCurrency = useCurrency(outputCurrencyId)
-  const recipientLookup = useENS(recipient ?? undefined)
-  const to: string | null = (recipient === null ? account : recipientLookup.address) ?? null
 
   const relevantTokenBalances = useCurrencyBalances(account ?? undefined, [
     inputCurrency ?? undefined,
@@ -171,19 +168,6 @@ export function useDerivedSwapInfo(): {
 
   if (!currencies[Field.INPUT] || !currencies[Field.OUTPUT]) {
     inputError = inputError ?? t`Select a token`
-  }
-
-  const formattedTo = isAddress(to)
-  if (!to || !formattedTo) {
-    inputError = inputError ?? t`Enter a recipient`
-  } else {
-    if (
-      BAD_RECIPIENT_ADDRESSES[formattedTo] ||
-      (bestTradeExactIn && involvesAddress(bestTradeExactIn, formattedTo)) ||
-      (bestTradeExactOut && involvesAddress(bestTradeExactOut, formattedTo))
-    ) {
-      inputError = inputError ?? t`Invalid recipient`
-    }
   }
 
   const toggledTrade = trade ?? undefined
