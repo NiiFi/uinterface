@@ -2,8 +2,8 @@ import useScrollPosition from '@react-hook/window-scroll'
 import React from 'react'
 
 import { NavLink } from 'react-router-dom'
-import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components/macro'
+import { Trans, t } from '@lingui/macro'
 import LanguageDropdown from '../Dropdowns/LanguageDropdown'
 
 import LightLogo from '../../assets/images/niifi-logo-light.png'
