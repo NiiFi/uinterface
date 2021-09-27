@@ -35,19 +35,7 @@ export default function Updater(): null {
 
   useEffect(() => {
     if (!account || !library || !chainId || !lastBlockNumber || ethBalancesNeedUpdate.length === 0) return
-    // getEtherBalances(library, ethBalancesNeedUpdate)
-    //   .then((balanceMap) => {
-    //     dispatch(
-    //       updateEtherBalances({
-    //         blockNumber: lastBlockNumber,
-    //         chainId,
-    //         etherBalances: convertBalanceMapValuesToString(balanceMap),
-    //       })
-    //     )
-    //   })
-    //   .catch((error) => {
-    //     console.error('balance fetch failed', ethBalancesNeedUpdate, error)
-    //   })
+
     library
       .getBalance(account)
       .then((balance: any) => {

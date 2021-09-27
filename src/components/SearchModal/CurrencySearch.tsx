@@ -91,7 +91,6 @@ export function CurrencySearch({
     }
   }, [isAddressSearch])
 
-  // FIXME:
   const tokenComparator = useTokenComparator(invertSearchOrder)
 
   const filteredTokens: Token[] = useMemo(() => {
@@ -99,8 +98,6 @@ export function CurrencySearch({
   }, [allTokens, debouncedQuery])
 
   const sortedTokens: Token[] = useMemo(() => {
-    //   return filteredTokens
-    // }, [filteredTokens])
     return filteredTokens.sort(tokenComparator)
   }, [filteredTokens, tokenComparator])
 

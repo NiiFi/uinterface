@@ -46,6 +46,22 @@
       "decimals": 18,
       "address": "0x0c7f69f66ab81bb257198baa7f42fd1469e002a6",
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x26c8AFBBFE1EBaca03C2bB082E69D0476Bffe099/logo.png"
+    },
+    {
+      "name": "Jan",
+      "chainId": 5553,
+      "symbol": "JAN",
+      "decimals": 18,
+      "address": "0x7e5948B5B67777FEb1432eA4a11712A94F68cC7C",
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x26c8AFBBFE1EBaca03C2bB082E69D0476Bffe099/logo.png"
+    },
+    {
+      "name": "KniightCoin",
+      "chainId": 5553,
+      "symbol": "KNII",
+      "decimals": 18,
+      "address": "0x148b4AB2cC4d88A9C1c8A09A691586F32FaB9741",
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x26c8AFBBFE1EBaca03C2bB082E69D0476Bffe099/logo.png"
     }
   ]
 }

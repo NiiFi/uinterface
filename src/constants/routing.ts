@@ -53,6 +53,7 @@ export const CUSTOM_BASES: { [chainId: number]: { [tokenAddress: string]: Token[
  */
 export const COMMON_BASES: ChainCurrencyList = {
   [3]: [ExtendedEther.onChain(3), WETH9_EXTENDED[3]],
+  [5553]: [ExtendedEther.onChain(3), WETH9_EXTENDED[5553]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend

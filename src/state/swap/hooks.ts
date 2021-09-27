@@ -129,6 +129,7 @@ export function useDerivedSwapInfo(): {
 
   const inputCurrency = useCurrency(inputCurrencyId)
   const outputCurrency = useCurrency(outputCurrencyId)
+  const to: string | null = (recipient || account) ?? null
 
   const relevantTokenBalances = useCurrencyBalances(account ?? undefined, [
     inputCurrency ?? undefined,
@@ -168,6 +169,19 @@ export function useDerivedSwapInfo(): {
 
   if (!currencies[Field.INPUT] || !currencies[Field.OUTPUT]) {
     inputError = inputError ?? t`Select a token`
+  }
+
+  const formattedTo = isAddress(to)
+  if (!to || !formattedTo) {
+    inputError = inputError ?? t`Enter a recipient`
+  } else {
+    if (
+      BAD_RECIPIENT_ADDRESSES[formattedTo] ||
+      (bestTradeExactIn && involvesAddress(bestTradeExactIn, formattedTo)) ||
+      (bestTradeExactOut && involvesAddress(bestTradeExactOut, formattedTo))
+    ) {
+      inputError = inputError ?? t`Invalid recipient`
+    }
   }
 
   const toggledTrade = trade ?? undefined
