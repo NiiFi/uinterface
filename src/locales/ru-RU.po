@@ -1507,7 +1507,7 @@ msgid "fee"
 msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
+msgid "https:// or ipfs://"
 msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
