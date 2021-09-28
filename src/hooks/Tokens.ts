@@ -173,7 +173,7 @@ export function useToken(tokenAddress?: string, tokenAlt?: any): Token | undefin
 
 export function useCurrency(currencyId: string | undefined, tokenAlt?: any): Currency | null | undefined {
   const { chainId } = useActiveWeb3React()
-  const isETH = currencyId?.toUpperCase() === 'ETH' || currencyId === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' // FIXME
+  const isETH = currencyId?.toUpperCase() === 'ETH' || currencyId === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' // TODO: check how to replace/remove this address
   const token = useToken(isETH ? undefined : currencyId, tokenAlt)
   const weth = chainId ? WETH9_EXTENDED[chainId] : undefined
   if (weth?.address?.toLowerCase() === currencyId?.toLowerCase()) return weth

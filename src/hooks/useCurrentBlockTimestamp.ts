@@ -3,7 +3,7 @@ import { useActiveWeb3React } from 'hooks/web3'
 import { BigNumber } from 'ethers'
 
 // gets the current timestamp from the blockchain
-export default function useCurrentBlockTimestamp() {
+export default function useCurrentBlockTimestamp(): BigNumber | undefined {
   const { library } = useActiveWeb3React()
   const [timestamp, setTimestamp] = useState(BigNumber.from(0))
 
