@@ -21,7 +21,7 @@ const NETWORK_URLS: {
   [chainId in SupportedChainId]: string
 } = {
   [SupportedChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.ROPSTEN_NAHMII]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
+  [SupportedChainId.ROPSTEN_NAHMII]: `https://l2.testnet.nahmii.io/`,
 }
 
 const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.ROPSTEN, SupportedChainId.ROPSTEN_NAHMII]

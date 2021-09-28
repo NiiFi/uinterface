@@ -155,7 +155,7 @@ export function useToken(tokenAddress?: string, tokenAlt?: any): Token | undefin
   return useMemo(() => {
     if (token) return token
     if (tokenAlt) {
-      return new Token(3, tokenAlt?.id, 18, tokenAlt?.symbol, tokenAlt?.name) // FIXME!!!
+      return new Token(3, tokenAlt?.id, 18, tokenAlt?.symbol, tokenAlt?.name) // TODO: fix with most elegant solution to avoid tokenAlt usage
     }
     if (!chainId || !address) return undefined
     if (decimals) {

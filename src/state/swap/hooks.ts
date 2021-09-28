@@ -17,6 +17,8 @@ import { Field, replaceSwapState, selectCurrency, setRecipient, switchCurrencies
 import { SwapState } from './reducer'
 import { useUserSingleHopOnly } from 'state/user/hooks'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
+import { SupportedChainId } from 'constants/chains'
+import { FACTORY_ADDRESSES, ROUTER_ADDRESS } from 'constants/addresses'
 
 export function useSwapState(): AppState['swap'] {
   return useAppSelector((state) => state.swap)
@@ -86,8 +88,8 @@ export function tryParseAmount<T extends Currency>(value?: string, currency?: T)
 }
 
 const BAD_RECIPIENT_ADDRESSES: { [address: string]: true } = {
-  '0x01a2aB72dd3A49700CFea8b87e9E6ba7Dfb64809': true, // v2 factory
-  '0x682E2F5C4ad4106154EC11F92E96F6CBd01128bC': true, // v2 router 02
+  [FACTORY_ADDRESSES[SupportedChainId.ROPSTEN_NAHMII]]: true, // v2 factory
+  [ROUTER_ADDRESS[SupportedChainId.ROPSTEN_NAHMII]]: true, // v2 router 02
 }
 
 /**

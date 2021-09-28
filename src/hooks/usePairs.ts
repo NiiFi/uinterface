@@ -37,7 +37,7 @@ export function usePairs(
   const contract = usePairContract(pairAddresses[0], false)
 
   useEffect(() => {
-    if (!contract || !tokens?.[0]?.[0] || !tokens?.[0]?.[1]) {
+    if (!contract) {
       return
     }
 

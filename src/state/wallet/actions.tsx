@@ -18,7 +18,7 @@ export const stopListeningForBalance = createAction<{ addresses: string[] }>('st
 export const updateTokenBalances =
   createAction<{
     chainId: number
-    blockNumber: any //number
+    blockNumber: number
     address: string
     tokenBalances: {
       [address: string]: string

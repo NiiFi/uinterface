@@ -8,7 +8,7 @@ import { useBlockNumber } from '../state/application/hooks'
 // or contract total supply cannot be fetched
 export function useTotalSupply(token?: Currency): CurrencyAmount<Token> | undefined {
   const contract = useTokenContract(token?.isToken ? token.address : undefined, false)
-  const [totalSupply, setTotalSupply] = useState<string>()
+  const [totalSupply, setTotalSupply] = useState<string | undefined>()
 
   const latestBlockNumber = useBlockNumber()
 
