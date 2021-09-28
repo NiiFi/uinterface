@@ -340,15 +340,12 @@ msgstr "Potvrďte tuto transakci ve Vaší peněžence"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Připojit peněženku"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Připojit k peněžence"
 
@@ -442,7 +439,7 @@ msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
-msgstr "Zadejte příjemce"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
@@ -451,8 +448,6 @@ msgstr "Zadejte platné procento skluzu"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "Zadejte částku"
@@ -467,7 +462,6 @@ msgstr "Zadejte platnou adresu tokenu"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Chyba"
 
@@ -652,7 +646,7 @@ msgstr "Neplatný pár."
 
 #: src/state/swap/hooks.ts
 msgid "Invalid recipient"
-msgstr "Neplatný příjemce"
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1439,7 +1433,6 @@ msgstr "Zalomit"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Špatná síť"
 
@@ -1518,14 +1511,9 @@ msgstr "potvrdit"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "má socký emoji"
-
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
-msgstr "https: // nebo ipfs: // nebo ENS name"
+msgid "https:// or ipfs://"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "minutes"
@@ -1572,7 +1560,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} čeká"
 

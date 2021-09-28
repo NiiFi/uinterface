@@ -36,33 +36,46 @@ export default async function getTokenList(
     urls = uriToHttp(`${translatedUri}${parsedENS.ensPath ?? ''}`)
   } else {
     urls = uriToHttp(listUrl)
+    if (!urls || !urls.length) {
+      urls = [listUrl]
+    }
   }
   for (let i = 0; i < urls.length; i++) {
     const url = urls[i]
     const isLast = i === urls.length - 1
-    let response
-    try {
-      response = await fetch(url, { credentials: 'omit' })
-    } catch (error) {
-      console.debug('Failed to fetch list', listUrl, error)
-      if (isLast) throw new Error(`Failed to download list ${listUrl}`)
-      continue
+    const isLocal = url.indexOf('//') === -1
+    let json
+
+    if (isLocal) {
+      const response = await import('constants/tokenLists/niifi-default.tokenlist.json') // FIXME: move to Web API?
+      json = response.default
+    } else {
+      let response
+      try {
+        response = await fetch(url, { credentials: 'omit' })
+      } catch (error) {
+        console.debug('Failed to fetch list', listUrl, error)
+        if (isLast) throw new Error(`Failed to download list ${listUrl}`)
+        continue
+      }
+
+      if (!response.ok) {
+        if (isLast) throw new Error(`Failed to download list ${listUrl}`)
+        continue
+      }
+
+      json = await response.json()
+
+      if (!tokenListValidator(json)) {
+        const validationErrors: string =
+          tokenListValidator.errors?.reduce<string>((memo, error) => {
+            const add = `${error.dataPath} ${error.message ?? ''}`
+            return memo.length > 0 ? `${memo}; ${add}` : `${add}`
+          }, '') ?? 'unknown error'
+        throw new Error(`Token list failed validation: ${validationErrors}`)
+      }
     }
 
-    if (!response.ok) {
-      if (isLast) throw new Error(`Failed to download list ${listUrl}`)
-      continue
-    }
-
-    const json = await response.json()
-    if (!tokenListValidator(json)) {
-      const validationErrors: string =
-        tokenListValidator.errors?.reduce<string>((memo, error) => {
-          const add = `${error.dataPath} ${error.message ?? ''}`
-          return memo.length > 0 ? `${memo}; ${add}` : `${add}`
-        }, '') ?? 'unknown error'
-      throw new Error(`Token list failed validation: ${validationErrors}`)
-    }
     return json
   }
   throw new Error('Unrecognized list URL protocol.')

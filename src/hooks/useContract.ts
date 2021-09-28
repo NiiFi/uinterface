@@ -8,12 +8,8 @@ import { abi as IUniswapV2Router02ABI } from '@uniswap/v2-periphery/build/IUnisw
 
 import ARGENT_WALLET_DETECTOR_ABI from 'abis/argent-wallet-detector.json'
 import ENS_PUBLIC_RESOLVER_ABI from 'abis/ens-public-resolver.json'
-import ENS_ABI from 'abis/ens-registrar.json'
 import ERC20_ABI from 'abis/erc20.json'
 import ERC20_BYTES32_ABI from 'abis/erc20_bytes32.json'
-import MULTICALL_ABI from 'abis/multicall2.json'
-import { Unisocks } from 'abis/types/Unisocks'
-import UNISOCKS_ABI from 'abis/unisocks.json'
 import WETH_ABI from 'abis/weth.json'
 import EIP_2612 from 'abis/eip_2612.json'
 
@@ -21,15 +17,12 @@ import {
   ARGENT_WALLET_DETECTOR_ADDRESS,
   GOVERNANCE_ADDRESS,
   MERKLE_DISTRIBUTOR_ADDRESS,
-  MULTICALL2_ADDRESSES,
   ROUTER_ADDRESS,
-  ENS_REGISTRAR_ADDRESSES,
-  SOCKS_CONTROLLER_ADDRESSES,
 } from 'constants/addresses'
 import { useMemo } from 'react'
 import { getContract } from 'utils'
-import { Erc20, ArgentWalletDetector, EnsPublicResolver, EnsRegistrar, Multicall2, Weth } from '../abis/types'
-import { UNI, WETH9_EXTENDED } from '../constants/tokens'
+import { Erc20, ArgentWalletDetector, EnsPublicResolver, Weth } from '../abis/types'
+import { NII, WETH9_EXTENDED } from '../constants/tokens'
 import { useActiveWeb3React } from './web3'
 
 // returns null on errors
@@ -68,10 +61,6 @@ export function useArgentWalletDetectorContract() {
   return useContract<ArgentWalletDetector>(ARGENT_WALLET_DETECTOR_ADDRESS, ARGENT_WALLET_DETECTOR_ABI, false)
 }
 
-export function useENSRegistrarContract(withSignerIfPossible?: boolean) {
-  return useContract<EnsRegistrar>(ENS_REGISTRAR_ADDRESSES, ENS_ABI, withSignerIfPossible)
-}
-
 export function useENSResolverContract(address: string | undefined, withSignerIfPossible?: boolean) {
   return useContract<EnsPublicResolver>(address, ENS_PUBLIC_RESOLVER_ABI, withSignerIfPossible)
 }
@@ -92,10 +81,6 @@ export function useV2RouterContract(): Contract | null {
   return useContract(ROUTER_ADDRESS, IUniswapV2Router02ABI, true)
 }
 
-export function useMulticall2Contract() {
-  return useContract<Multicall2>(MULTICALL2_ADDRESSES, MULTICALL_ABI, false) as Multicall2
-}
-
 export function useMerkleDistributorContract() {
   return useContract(MERKLE_DISTRIBUTOR_ADDRESS, MERKLE_DISTRIBUTOR_ABI, true)
 }
@@ -106,13 +91,9 @@ export function useGovernanceContract() {
 
 export function useUniContract() {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId ? UNI[chainId]?.address : undefined, UNI_ABI, true)
+  return useContract(chainId ? NII[chainId]?.address : undefined, UNI_ABI, true)
 }
 
 export function useStakingContract(stakingAddress?: string, withSignerIfPossible?: boolean) {
   return useContract(stakingAddress, STAKING_REWARDS_ABI, withSignerIfPossible)
-}
-
-export function useSocksController(): Unisocks | null {
-  return useContract<Unisocks>(SOCKS_CONTROLLER_ADDRESSES, UNISOCKS_ABI, false)
 }

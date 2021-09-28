@@ -340,15 +340,12 @@ msgstr "Konfirmasikan transaksi ini di dompet Anda"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Hubungkan Dompet"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Hubungkan ke dompet"
 
@@ -442,7 +439,7 @@ msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
-msgstr "Masukkan penerima"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
@@ -451,8 +448,6 @@ msgstr "Masukkan persentase selip yang valid"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "Masukkan jumlah"
@@ -467,7 +462,6 @@ msgstr "Masukkan alamat token yang valid"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Kesalahan"
 
@@ -652,7 +646,7 @@ msgstr "Pasangan tidak valid."
 
 #: src/state/swap/hooks.ts
 msgid "Invalid recipient"
-msgstr "Penerima tidak valid"
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1439,7 +1433,6 @@ msgstr "Membungkus"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Jaringan Salah"
 
@@ -1518,14 +1511,9 @@ msgstr "Konfirmasi"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "memiliki emoji kaus kaki"
-
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
-msgstr "https:// atau ipfs:// atau nama ENS"
+msgid "https:// or ipfs://"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "minutes"
@@ -1572,7 +1560,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} Menunggu keputusan"
 

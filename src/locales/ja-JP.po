@@ -340,15 +340,12 @@ msgstr "ウォレットで取引を確認する"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "ウォレットに接続"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "ウォレットに接続"
 
@@ -442,7 +439,7 @@ msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
-msgstr "受取人を入力ください"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
@@ -451,8 +448,6 @@ msgstr "有効なスリップページのパーセンテージを入力してく
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "数量を入力してください"
@@ -467,7 +462,6 @@ msgstr "有効なトークンアドレスを入力してください"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "エラー"
 
@@ -652,7 +646,7 @@ msgstr "無効なペアです。"
 
 #: src/state/swap/hooks.ts
 msgid "Invalid recipient"
-msgstr "受け取りアドレスが無効です"
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1439,7 +1433,6 @@ msgstr "ラップ"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "ネットワークが間違っています"
 
@@ -1518,14 +1511,9 @@ msgstr "確認する"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "靴下の絵文字があります"
-
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
-msgstr "https://, ipfs://, ENS"
+msgid "https:// or ipfs://"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "minutes"
@@ -1572,7 +1560,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} 保留中"
 

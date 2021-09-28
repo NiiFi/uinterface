@@ -1,24 +1,30 @@
 import { Currency, Token, CurrencyAmount, Ether } from '@uniswap/sdk-core'
 import JSBI from 'jsbi'
-import { useMemo } from 'react'
-import { UNI } from '../../constants/tokens'
+import { useEffect, useMemo } from 'react'
+import { useDispatch } from 'react-redux'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useAllTokens } from '../../hooks/Tokens'
-import { useMulticall2Contract } from '../../hooks/useContract'
 import { isAddress } from '../../utils'
-import { useMultipleContractSingleData, useSingleContractMultipleData } from '../multicall/hooks'
-import { useTotalUniEarned } from '../stake/hooks'
-import { Interface } from '@ethersproject/abi'
-import ERC20ABI from 'abis/erc20.json'
-import { Erc20Interface } from 'abis/types/Erc20'
+import { useAppSelector } from 'state/hooks'
+import { balanceKey } from 'state/wallet/reducer'
+import {
+  TokenBalanceListenerKey,
+  startListeningForBalance,
+  stopListeningForBalance,
+  startListeningForTokenBalances,
+  stopListeningForTokenBalances,
+} from 'state/wallet/actions'
+import { AppDispatch } from '../index'
 /**
  * Returns a map of the given addresses to their eventually consistent ETH balances.
  */
 export function useETHBalances(uncheckedAddresses?: (string | undefined)[]): {
   [address: string]: CurrencyAmount<Currency> | undefined
 } {
+  const dispatch = useDispatch<AppDispatch>()
   const { chainId } = useActiveWeb3React()
-  const multicallContract = useMulticall2Contract()
+
+  const balances = useAppSelector((state: any) => state.wallet.balances)
 
   const addresses: string[] = useMemo(
     () =>
@@ -31,21 +37,33 @@ export function useETHBalances(uncheckedAddresses?: (string | undefined)[]): {
     [uncheckedAddresses]
   )
 
-  const results = useSingleContractMultipleData(
-    multicallContract,
-    'getEthBalance',
-    addresses.map((address) => [address])
-  )
+  // used so that we do a deep comparison in `useEffect`
+  const serializedAddresses = JSON.stringify(addresses)
+
+  // add the listeners on mount, remove them on dismount
+  useEffect(() => {
+    const addresses = JSON.parse(serializedAddresses)
+    if (addresses.length === 0) return
+
+    dispatch(startListeningForBalance({ addresses }))
+    return () => {
+      dispatch(stopListeningForBalance({ addresses }))
+    }
+  }, [serializedAddresses, dispatch])
 
   return useMemo(
     () =>
-      addresses.reduce<{ [address: string]: CurrencyAmount<Currency> }>((memo, address, i) => {
-        const value = results?.[i]?.result?.[0]
-        if (value && chainId)
-          memo[address] = CurrencyAmount.fromRawAmount(Ether.onChain(chainId), JSBI.BigInt(value.toString()))
+      addresses.reduce<{ [address: string]: CurrencyAmount<Currency> }>((memo, address) => {
+        if (balances && chainId) {
+          const key = balanceKey({ address, chainId })
+          const { value } = balances[key] ?? {}
+          if (value) {
+            memo[address] = CurrencyAmount.fromRawAmount(Ether.onChain(chainId), JSBI.BigInt(value))
+          }
+        }
         return memo
       }, {}),
-    [addresses, chainId, results]
+    [addresses, chainId, balances]
   )
 }
 
@@ -61,35 +79,24 @@ export function useTokenBalancesWithLoadingIndicator(
     [tokens]
   )
 
-  const validatedTokenAddresses = useMemo(() => validatedTokens.map((vt) => vt.address), [validatedTokens])
-  const ERC20Interface = new Interface(ERC20ABI) as Erc20Interface
-  const balances = useMultipleContractSingleData(
-    validatedTokenAddresses,
-    ERC20Interface,
-    'balanceOf',
-    [address],
-    undefined,
-    100_000
-  )
+  const { chainId } = useActiveWeb3React()
 
-  const anyLoading: boolean = useMemo(() => balances.some((callState) => callState.loading), [balances])
+  const balances = useAppSelector((state: any) => state.wallet.balances)
 
   return [
     useMemo(
       () =>
-        address && validatedTokens.length > 0
-          ? validatedTokens.reduce<{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }>((memo, token, i) => {
-              const value = balances?.[i]?.result?.[0]
-              const amount = value ? JSBI.BigInt(value.toString()) : undefined
-              if (amount) {
-                memo[token.address] = CurrencyAmount.fromRawAmount(token, amount)
-              }
+        address && balances && chainId && validatedTokens.length > 0
+          ? validatedTokens.reduce<{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }>((memo, token) => {
+              const balance = balances?.[balanceKey({ chainId, address, tokenAddress: token.address })]
+              const amount = balance ? JSBI.BigInt(balance.value.toString()) : 0
+              memo[token.address] = CurrencyAmount.fromRawAmount(token, amount || 0)
               return memo
             }, {})
           : {},
-      [address, validatedTokens, balances]
+      [address, validatedTokens, balances, chainId]
     ),
-    anyLoading,
+    false,
   ]
 }
 
@@ -111,10 +118,34 @@ export function useCurrencyBalances(
   account?: string,
   currencies?: (Currency | undefined)[]
 ): (CurrencyAmount<Currency> | undefined)[] {
+  const dispatch = useDispatch<AppDispatch>()
   const tokens = useMemo(
     () => currencies?.filter((currency): currency is Token => currency?.isToken ?? false) ?? [],
     [currencies]
   )
+
+  // used so that we do a deep comparison in `useEffect`
+  const serializedCombos: string = useMemo(() => {
+    return JSON.stringify(
+      !account || tokens.length === 0
+        ? []
+        : tokens
+            .map((t: Token) => t.address)
+            .sort()
+            .map((tokenAddress: string) => ({ address: account, tokenAddress }))
+    )
+  }, [account, tokens])
+
+  // keep the listeners up to date
+  useEffect(() => {
+    const combos: TokenBalanceListenerKey[] = JSON.parse(serializedCombos)
+    if (combos.length === 0) return
+
+    dispatch(startListeningForTokenBalances(combos))
+    return () => {
+      dispatch(stopListeningForTokenBalances(combos))
+    }
+  }, [account, serializedCombos, dispatch])
 
   const tokenBalances = useTokenBalances(account, tokens)
   const containsETH: boolean = useMemo(() => currencies?.some((currency) => currency?.isNative) ?? false, [currencies])
@@ -143,21 +174,4 @@ export function useAllTokenBalances(): { [tokenAddress: string]: CurrencyAmount<
   const allTokensArray = useMemo(() => Object.values(allTokens ?? {}), [allTokens])
   const balances = useTokenBalances(account ?? undefined, allTokensArray)
   return balances ?? {}
-}
-
-// get the total owned, unclaimed, and unharvested UNI for account
-export function useAggregateUniBalance(): CurrencyAmount<Token> | undefined {
-  const { account, chainId } = useActiveWeb3React()
-
-  const uni = chainId ? UNI[chainId] : undefined
-
-  const uniBalance: CurrencyAmount<Token> | undefined = useTokenBalance(account ?? undefined, uni)
-  const uniUnHarvested: CurrencyAmount<Token> | undefined = useTotalUniEarned()
-
-  if (!uni) return undefined
-
-  return CurrencyAmount.fromRawAmount(
-    uni,
-    JSBI.add(uniBalance?.quotient ?? JSBI.BigInt(0), uniUnHarvested?.quotient ?? JSBI.BigInt(0))
-  )
 }

@@ -340,15 +340,12 @@ msgstr "تأكيد هذه المعاملة في محفظتك"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "توصيل المحفظة"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "الاتصال بالمحفظة"
 
@@ -442,7 +439,7 @@ msgstr ""
 
 #: src/state/swap/hooks.ts
 msgid "Enter a recipient"
-msgstr "أدخل المستلم"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "Enter a valid slippage percentage"
@@ -451,8 +448,6 @@ msgstr "أدخل نسبة انزلاق صحيحة"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "أدخل مبلغ"
@@ -467,7 +462,6 @@ msgstr "أدخل عنوان رمز صالح"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "خطأ"
 
@@ -652,7 +646,7 @@ msgstr "زوج غير صالح."
 
 #: src/state/swap/hooks.ts
 msgid "Invalid recipient"
-msgstr "مستلم غير صالح"
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "JPY"
@@ -1439,7 +1433,6 @@ msgstr "تغليف"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "شبكة خاطئة"
 
@@ -1518,14 +1511,9 @@ msgstr "تأكيد"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "لديه رمز تعبيري جوارب"
-
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
-msgstr "https: // أو ipfs: // أو اسم ENS"
+msgid "https:// or ipfs://"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "minutes"
@@ -1572,7 +1560,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} معلق"
 

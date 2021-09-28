@@ -7,6 +7,7 @@ import UNSUPPORTED_TOKEN_LIST from '../../constants/tokenLists/unsupported.token
 import { AppState } from '../index'
 import { UNSUPPORTED_LIST_URLS } from './../../constants/lists'
 import { WrappedTokenInfo } from './wrappedTokenInfo'
+import { SupportedChainId } from 'constants/chains'
 
 export type TokenAddressMap = Readonly<{
   [chainId: number]: Readonly<{ [tokenAddress: string]: { token: WrappedTokenInfo; list: TokenList } }>
@@ -53,6 +54,10 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
     [3]: { ...map1[3], ...map2[3] },
     [42]: { ...map1[42], ...map2[42] },
     [5]: { ...map1[5], ...map2[5] },
+    [SupportedChainId.ROPSTEN_NAHMII]: {
+      ...map1[SupportedChainId.ROPSTEN_NAHMII],
+      ...map2[SupportedChainId.ROPSTEN_NAHMII],
+    },
   }
 }
 

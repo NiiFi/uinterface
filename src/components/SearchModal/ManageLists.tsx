@@ -325,7 +325,7 @@ export function ManageLists({
           <SearchInput
             type="text"
             id="list-add-input"
-            placeholder={t`https:// or ipfs:// or ENS name`}
+            placeholder={t`https:// or ipfs://`}
             value={listUrlInput}
             onChange={handleInput}
           />
