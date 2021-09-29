@@ -110,8 +110,8 @@
   },
   "scripts": {
     "compile-contract-types": "yarn compile-external-abi-types && yarn compile-v2-contract-types",
-    "compile-external-abi-types": "typechain --target ethers-v5 --out-dir src/abis/types './src/abis/**/*.json'",
-    "compile-v2-contract-types": "typechain --target ethers-v5 --out-dir src/types/v2 './src/contracts/**/*.json'",
+    "compile-external-abi-types": "typechain --target ethers-v5 --out-dir src/abis/types \"./src/abis/**/*.json\"",
+    "compile-v2-contract-types": "typechain --target ethers-v5 --out-dir src/types/v2 \"./src/contracts/**/*.json\"",
     "prebuild": "yarn compile-contract-types && yarn i18n:gen",
     "build": "yarn prebuild && env-cmd -f .env react-scripts build",
     "build:staging": "yarn prebuild && env-cmd -f .env.staging react-scripts build",
