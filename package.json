@@ -50,8 +50,6 @@
     "@web3-react/core": "^6.0.9",
     "@web3-react/fortmatic-connector": "^6.0.9",
     "@web3-react/injected-connector": "^6.0.7",
-    "@web3-react/walletconnect-connector": "^6.2.0",
-    "@web3-react/walletlink-connector": "^6.2.0",
     "ajv": "^6.12.3",
     "cids": "^1.0.0",
     "copy-to-clipboard": "^3.2.0",
@@ -112,9 +110,12 @@
   },
   "scripts": {
     "compile-contract-types": "yarn compile-external-abi-types && yarn compile-v2-contract-types",
-    "compile-external-abi-types": "typechain --target ethers-v5 --out-dir src/abis/types './src/abis/**/*.json'",
-    "compile-v2-contract-types": "typechain --target ethers-v5 --out-dir src/types/v2 './src/contracts/**/*.json'",
-    "build": "yarn compile-contract-types && yarn i18n:gen && react-scripts build",
+    "compile-external-abi-types": "typechain --target ethers-v5 --out-dir src/abis/types \"./src/abis/**/*.json\"",
+    "compile-v2-contract-types": "typechain --target ethers-v5 --out-dir src/types/v2 \"./src/contracts/**/*.json\"",
+    "prebuild": "yarn compile-contract-types && yarn i18n:gen",
+    "build": "yarn prebuild && env-cmd -f .env react-scripts build",
+    "build:staging": "yarn prebuild && env-cmd -f .env.staging react-scripts build",
+    "build:production": "yarn prebuild && env-cmd -f .env.production react-scripts build",
     "i18n:extract": "lingui extract --locale en-US",
     "i18n:compile": "lingui compile",
     "integration-test": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
@@ -124,8 +125,8 @@
     "lingui": "lingui",
     "test": "react-scripts test --env=jsdom",
     "netlify": "netlify",
-    "deploy": "yarn build && yarn netlify deploy --dir=build",
-    "deploy:prod": "yarn build && yarn deploy --prod"
+    "deploy": "yarn build:production && yarn netlify deploy --dir=build",
+    "deploy:prod": "yarn build:production && yarn deploy --prod"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -147,6 +148,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "react-circular-progressbar": "^2.0.4",
     "react-hotjar": "^3.0.0"
   }

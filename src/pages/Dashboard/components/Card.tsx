@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components/macro'
+import { Trans, t } from '@lingui/macro'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, BaseCurrencyView } from 'theme'
 import CircleSvgSrc from '../../../assets/svg/circle.svg'

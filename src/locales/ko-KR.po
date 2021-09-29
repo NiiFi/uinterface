@@ -97,6 +97,8 @@ msgstr ""
 #: src/components/PoolInvest/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Add Liquidity"
 msgstr ""
 
@@ -141,6 +143,7 @@ msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 msgid "Amount"
 msgstr ""
 
@@ -236,7 +239,8 @@ msgstr ""
 msgid "Buy"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
 msgid "Buy Crypto"
 msgstr ""
 
@@ -331,15 +335,12 @@ msgstr ""
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr ""
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr ""
 
@@ -389,7 +390,8 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
 msgid "Deposit"
 msgstr ""
 
@@ -441,8 +443,6 @@ msgstr ""
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr ""
@@ -457,7 +457,6 @@ msgstr ""
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr ""
 
@@ -513,11 +512,16 @@ msgstr ""
 msgid "Fees 24H"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+msgid "Filter by Token, Protocol, Event ..."
+msgstr ""
+
 #: src/components/Table/pools.tsx
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 #: src/pages/Swap/index.tsx
 msgid "From"
 msgstr ""
@@ -666,6 +670,8 @@ msgstr ""
 msgid "Liquidity"
 msgstr ""
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Liquidity Pools"
 msgstr ""
@@ -742,6 +748,8 @@ msgstr ""
 msgid "Minimum received"
 msgstr ""
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "NFTs"
 msgstr ""
@@ -831,6 +839,7 @@ msgstr ""
 
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
@@ -942,6 +951,10 @@ msgstr ""
 msgid "Read more about unsupported assets"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+msgid "Receive"
+msgstr ""
+
 #: src/components/Table/swap.tsx
 msgid "Recent Transactions"
 msgstr ""
@@ -1043,6 +1056,7 @@ msgid "Sell"
 msgstr ""
 
 #: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Send"
 msgstr ""
 
@@ -1090,6 +1104,7 @@ msgstr ""
 
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1189,6 +1204,8 @@ msgid "Tip: Custom tokens are stored locally in your browser"
 msgstr ""
 
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 #: src/pages/Swap/index.tsx
 msgid "To"
 msgstr ""
@@ -1381,12 +1398,18 @@ msgstr ""
 msgid "WITHDRAW"
 msgstr ""
 
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
+msgid "Waiting"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr ""
 
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Wallet"
 msgstr ""
@@ -1405,10 +1428,11 @@ msgstr ""
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr ""
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Yield Farming"
 msgstr ""
@@ -1477,13 +1501,13 @@ msgstr ""
 msgid "confirm"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
+msgid "fee"
 msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
+msgid "https:// or ipfs://"
 msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
@@ -1498,7 +1522,7 @@ msgstr ""
 msgid "via {0} token list"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
 msgid "waiting..."
 msgstr ""
 
@@ -1509,6 +1533,7 @@ msgstr ""
 #: src/components/Dropdowns/LanguageDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/pages/Dashboard/components/Card.tsx
 msgid "{0}"
 msgstr ""
 
@@ -1530,7 +1555,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr ""
 

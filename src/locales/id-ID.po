@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-08-17 15:38+0000\n"
+"POT-Creation-Date: 2021-09-28 17:40+0000\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,9 +14,7 @@ msgstr ""
 "X-Crowdin-File-ID: 77\n"
 "Project-Id-Version: niifi\n"
 "Language-Team: Indonesian\n"
-"PO-Revision-Date: 2021-08-17 16:33\n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-09-28 18:25\n"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
@@ -102,6 +100,8 @@ msgstr "Menambahkan"
 #: src/components/PoolInvest/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Add Liquidity"
 msgstr "Tambahkan Likuiditas"
 
@@ -146,6 +146,7 @@ msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 msgid "Amount"
 msgstr ""
 
@@ -241,7 +242,8 @@ msgstr ""
 msgid "Buy"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
 msgid "Buy Crypto"
 msgstr ""
 
@@ -336,15 +338,12 @@ msgstr "Konfirmasikan transaksi ini di dompet Anda"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Hubungkan Dompet"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Hubungkan ke dompet"
 
@@ -394,7 +393,8 @@ msgstr "Buat pangkalan."
 msgid "Dashboard"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
 msgid "Deposit"
 msgstr "Menyetorkan"
 
@@ -446,8 +446,6 @@ msgstr "Masukkan persentase selip yang valid"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "Masukkan jumlah"
@@ -462,7 +460,6 @@ msgstr "Masukkan alamat token yang valid"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Kesalahan"
 
@@ -518,11 +515,16 @@ msgstr ""
 msgid "Fees 24H"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+msgid "Filter by Token, Protocol, Event ..."
+msgstr ""
+
 #: src/components/Table/pools.tsx
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 #: src/pages/Swap/index.tsx
 msgid "From"
 msgstr "Dari"
@@ -671,6 +673,8 @@ msgstr ""
 msgid "Liquidity"
 msgstr "Likuiditas"
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Liquidity Pools"
 msgstr ""
@@ -747,6 +751,8 @@ msgstr "Migrasi"
 msgid "Minimum received"
 msgstr ""
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "NFTs"
 msgstr ""
@@ -836,6 +842,7 @@ msgstr ""
 
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
@@ -947,6 +954,10 @@ msgstr "Tarif"
 msgid "Read more about unsupported assets"
 msgstr "Baca lebih lanjut tentang aset yang tidak didukung"
 
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+msgid "Receive"
+msgstr ""
+
 #: src/components/Table/swap.tsx
 msgid "Recent Transactions"
 msgstr "transaksi terkini"
@@ -1048,6 +1059,7 @@ msgid "Sell"
 msgstr ""
 
 #: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Send"
 msgstr ""
 
@@ -1095,6 +1107,7 @@ msgstr "Memasok {0} {1} dan {2} {3}"
 
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1194,6 +1207,8 @@ msgid "Tip: Custom tokens are stored locally in your browser"
 msgstr "Tip: Token khusus disimpan secara lokal di browser Anda"
 
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 #: src/pages/Swap/index.tsx
 msgid "To"
 msgstr "Untuk"
@@ -1386,12 +1401,18 @@ msgstr ""
 msgid "WITHDRAW"
 msgstr ""
 
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
+msgid "Waiting"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "Menunggu konfirmasi"
 
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Wallet"
 msgstr ""
@@ -1410,10 +1431,11 @@ msgstr "Membungkus"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Jaringan Salah"
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Yield Farming"
 msgstr ""
@@ -1482,14 +1504,14 @@ msgstr "Transaksi Anda akan dikembalikan jika harga berubah lebih dari persentas
 msgid "confirm"
 msgstr "Konfirmasi"
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "memiliki emoji kaus kaki"
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
+msgid "fee"
+msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
-msgstr "https:// atau ipfs:// atau nama ENS"
+msgid "https:// or ipfs://"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "minutes"
@@ -1503,7 +1525,7 @@ msgstr "melalui {0}"
 msgid "via {0} token list"
 msgstr "melalui {0} daftar token"
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
 msgid "waiting..."
 msgstr ""
 
@@ -1514,6 +1536,7 @@ msgstr "{0, plural, one {Impor tanda} other {Impor token}}"
 #: src/components/Dropdowns/LanguageDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/pages/Dashboard/components/Card.tsx
 msgid "{0}"
 msgstr ""
 
@@ -1535,7 +1558,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} Menunggu keputusan"
 
@@ -1574,3 +1596,4 @@ msgstr ""
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr "~ $ <0/>"
+

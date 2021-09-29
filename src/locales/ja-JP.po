@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-08-17 15:38+0000\n"
+"POT-Creation-Date: 2021-09-28 17:40+0000\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,9 +14,7 @@ msgstr ""
 "X-Crowdin-File-ID: 77\n"
 "Project-Id-Version: niifi\n"
 "Language-Team: Japanese\n"
-"PO-Revision-Date: 2021-08-17 16:33\n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-09-28 18:25\n"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
@@ -102,6 +100,8 @@ msgstr "追加"
 #: src/components/PoolInvest/index.tsx
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Add Liquidity"
 msgstr "流動性を追加"
 
@@ -146,6 +146,7 @@ msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 msgid "Amount"
 msgstr ""
 
@@ -241,7 +242,8 @@ msgstr ""
 msgid "Buy"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
 msgid "Buy Crypto"
 msgstr ""
 
@@ -336,15 +338,12 @@ msgstr "ウォレットで取引を確認する"
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "ウォレットに接続"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "ウォレットに接続"
 
@@ -394,7 +393,8 @@ msgstr "プールを作成"
 msgid "Dashboard"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
 msgid "Deposit"
 msgstr "入金"
 
@@ -446,8 +446,6 @@ msgstr "有効なスリップページのパーセンテージを入力してく
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "数量を入力してください"
@@ -462,7 +460,6 @@ msgstr "有効なトークンアドレスを入力してください"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "エラー"
 
@@ -518,11 +515,16 @@ msgstr ""
 msgid "Fees 24H"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+msgid "Filter by Token, Protocol, Event ..."
+msgstr ""
+
 #: src/components/Table/pools.tsx
 msgid "Filter by token, protocol, ..."
 msgstr ""
 
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 #: src/pages/Swap/index.tsx
 msgid "From"
 msgstr "売るトークン"
@@ -671,6 +673,8 @@ msgstr ""
 msgid "Liquidity"
 msgstr "流動性"
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Liquidity Pools"
 msgstr ""
@@ -747,6 +751,8 @@ msgstr "移行"
 msgid "Minimum received"
 msgstr ""
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "NFTs"
 msgstr ""
@@ -836,6 +842,7 @@ msgstr ""
 
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
@@ -947,6 +954,10 @@ msgstr "価格"
 msgid "Read more about unsupported assets"
 msgstr "サポートされていないアセットの詳細を見る"
 
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+msgid "Receive"
+msgstr ""
+
 #: src/components/Table/swap.tsx
 msgid "Recent Transactions"
 msgstr "最近の取引"
@@ -1048,6 +1059,7 @@ msgid "Sell"
 msgstr ""
 
 #: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Send"
 msgstr ""
 
@@ -1095,6 +1107,7 @@ msgstr "{0} {1} と {2} {3} を追加中"
 
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
@@ -1194,6 +1207,8 @@ msgid "Tip: Custom tokens are stored locally in your browser"
 msgstr "ヒント：カスタムトークンの設定はブラウザ内に保存されます"
 
 #: src/components/swap/SwapModalHeader.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
 #: src/pages/Swap/index.tsx
 msgid "To"
 msgstr "買うトークン"
@@ -1386,12 +1401,18 @@ msgstr ""
 msgid "WITHDRAW"
 msgstr ""
 
+#: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
+msgid "Waiting"
+msgstr ""
+
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "Waiting For Confirmation"
 msgstr "確認待ち"
 
 #: src/components/AccountDetails/index.tsx
 #: src/components/Header/WalletList.tsx
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Wallet"
 msgstr ""
@@ -1410,10 +1431,11 @@ msgstr "ラップ"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "ネットワークが間違っています"
 
+#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Yield Farming"
 msgstr ""
@@ -1482,14 +1504,14 @@ msgstr "価格が設定したパーセンテージよりも不利な価格に変
 msgid "confirm"
 msgstr "確認する"
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "靴下の絵文字があります"
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
+msgid "fee"
+msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
-msgstr "https://, ipfs://, ENS"
+msgid "https:// or ipfs://"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "minutes"
@@ -1503,7 +1525,7 @@ msgstr "{0} 経由で"
 msgid "via {0} token list"
 msgstr "{0} トークンリスト経由"
 
-#: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/components/BuyCryptoButton.tsx
 msgid "waiting..."
 msgstr ""
 
@@ -1514,6 +1536,7 @@ msgstr "{0, plural, one {トークンをインポート} other {トークンを�
 #: src/components/Dropdowns/LanguageDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/pages/Dashboard/components/Card.tsx
 msgid "{0}"
 msgstr ""
 
@@ -1535,7 +1558,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} 保留中"
 
@@ -1574,3 +1596,4 @@ msgstr ""
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr ""
+

@@ -1,18 +1,19 @@
 import { parseBytes32String } from '@ethersproject/strings'
 import { Currency, Token } from '@uniswap/sdk-core'
 import { arrayify } from 'ethers/lib/utils'
-import { useMemo } from 'react'
+import { useMemo, useEffect, useState } from 'react'
 import { createTokenFilterFunction } from '../components/SearchModal/filtering'
 import { ExtendedEther, WETH9_EXTENDED } from '../constants/tokens'
 import { useAllLists, useCombinedActiveList, useInactiveListUrls } from '../state/lists/hooks'
 import { WrappedTokenInfo } from '../state/lists/wrappedTokenInfo'
-import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
 import { useUserAddedTokens } from '../state/user/hooks'
 import { isAddress } from '../utils'
 import { TokenAddressMap, useUnsupportedTokenList } from './../state/lists/hooks'
 
 import { useActiveWeb3React } from './web3'
-import { useBytes32TokenContract, useTokenContract } from './useContract'
+
+import { getContract } from 'utils'
+import ERC20_ABI from 'abis/erc20.json'
 
 // reduce token map into standard address <-> Token mapping, optionally include user added tokens
 function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean): { [address: string]: Token } {
@@ -126,62 +127,53 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
 // null if loading
 // otherwise returns the token
 export function useToken(tokenAddress?: string, tokenAlt?: any): Token | undefined | null {
-  const { chainId } = useActiveWeb3React()
+  const { chainId, library, account } = useActiveWeb3React()
+  const [tokenName, setTokenName] = useState('')
+  const [symbol, setSymbol] = useState('')
+  const [decimals, setDecimals] = useState(0)
   const tokens = useAllTokens()
 
   const address = isAddress(tokenAddress)
 
-  const tokenContract = useTokenContract(address ? address : undefined, false)
-  const tokenContractBytes32 = useBytes32TokenContract(address ? address : undefined, false)
   const token: Token | undefined = address ? tokens[address] : undefined
 
-  const tokenName = useSingleCallResult(token ? undefined : tokenContract, 'name', undefined, NEVER_RELOAD)
-  const tokenNameBytes32 = useSingleCallResult(
-    token ? undefined : tokenContractBytes32,
-    'name',
-    undefined,
-    NEVER_RELOAD
-  )
-  const symbol = useSingleCallResult(token ? undefined : tokenContract, 'symbol', undefined, NEVER_RELOAD)
-  const symbolBytes32 = useSingleCallResult(token ? undefined : tokenContractBytes32, 'symbol', undefined, NEVER_RELOAD)
-  const decimals = useSingleCallResult(token ? undefined : tokenContract, 'decimals', undefined, NEVER_RELOAD)
+  useEffect(() => {
+    if (address && library && account) {
+      const tokenInst = getContract(address, ERC20_ABI, library, account)
+      ;(async () => {
+        try {
+          setTokenName(await tokenInst.name())
+          setSymbol(await tokenInst.symbol())
+          setDecimals(await tokenInst.decimals())
+        } catch (e) {
+          console.log(e)
+        }
+      })()
+    }
+  }, [address, library, account])
 
   return useMemo(() => {
     if (token) return token
     if (tokenAlt) {
-      return new Token(3, tokenAlt?.id, 18, tokenAlt?.symbol, tokenAlt?.name) // FIXME!!!
+      return new Token(3, tokenAlt?.id, 18, tokenAlt?.symbol, tokenAlt?.name) // TODO: fix with most elegant solution to avoid tokenAlt usage
     }
     if (!chainId || !address) return undefined
-    if (decimals.loading || symbol.loading || tokenName.loading) return null
-    if (decimals.result) {
+    if (decimals) {
       return new Token(
         chainId,
         address,
-        decimals.result[0],
-        parseStringOrBytes32(symbol.result?.[0], symbolBytes32.result?.[0], 'UNKNOWN'),
-        parseStringOrBytes32(tokenName.result?.[0], tokenNameBytes32.result?.[0], 'Unknown Token')
+        decimals,
+        parseStringOrBytes32(symbol, '', 'UNKNOWN'),
+        parseStringOrBytes32(tokenName, '', 'Unknown Token')
       )
     }
     return undefined
-  }, [
-    address,
-    chainId,
-    decimals.loading,
-    decimals.result,
-    symbol.loading,
-    symbol.result,
-    symbolBytes32.result,
-    token,
-    tokenName.loading,
-    tokenName.result,
-    tokenNameBytes32.result,
-    tokenAlt,
-  ])
+  }, [address, chainId, decimals, symbol, tokenName, token, tokenAlt])
 }
 
 export function useCurrency(currencyId: string | undefined, tokenAlt?: any): Currency | null | undefined {
   const { chainId } = useActiveWeb3React()
-  const isETH = currencyId?.toUpperCase() === 'ETH' || currencyId === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' // FIXME
+  const isETH = currencyId?.toUpperCase() === 'ETH' || currencyId === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' // TODO: check how to replace/remove this address
   const token = useToken(isETH ? undefined : currencyId, tokenAlt)
   const weth = chainId ? WETH9_EXTENDED[chainId] : undefined
   if (weth?.address?.toLowerCase() === currencyId?.toLowerCase()) return weth

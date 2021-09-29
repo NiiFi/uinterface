@@ -4,15 +4,12 @@ import { Router, Trade } from '@uniswap/v2-sdk'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { useMemo } from 'react'
 import { calculateGasMargin } from '../utils/calculateGasMargin'
-import approveAmountCalldata from '../utils/approveAmountCalldata'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { isAddress, shortenAddress } from '../utils'
 import isZero from '../utils/isZero'
 import { useActiveWeb3React } from './web3'
-import { useArgentWalletContract } from './useArgentWalletContract'
 import { useV2RouterContract } from './useContract'
 import useTransactionDeadline from './useTransactionDeadline'
-import useENS from './useENS'
 
 export enum SwapCallbackState {
   INVALID,
@@ -49,16 +46,14 @@ interface FailedCall extends SwapCallEstimate {
  */
 function useSwapCallArguments(
   trade: Trade<Currency, Currency, TradeType> | undefined, // trade to execute, required
-  allowedSlippage: Percent, // in bips
-  recipientAddressOrName: string | null // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
+  allowedSlippage: Percent //, // in bips
+  // recipientAddressOrName: string | null // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
 ): SwapCall[] {
   const { account, chainId, library } = useActiveWeb3React()
 
-  const { address: recipientAddress } = useENS(recipientAddressOrName)
-  const recipient = recipientAddressOrName === null ? account : recipientAddress
+  const recipient = account
   const deadline = useTransactionDeadline()
   const routerContract = useV2RouterContract()
-  const argentWalletContract = useArgentWalletContract()
 
   return useMemo(() => {
     if (!trade || !recipient || !library || !account || !chainId || !deadline) return []
@@ -86,30 +81,13 @@ function useSwapCallArguments(
       )
     }
     return swapMethods.map(({ methodName, args, value }) => {
-      if (argentWalletContract && trade.inputAmount.currency.isToken) {
-        return {
-          address: argentWalletContract.address,
-          calldata: argentWalletContract.interface.encodeFunctionData('wc_multiCall', [
-            [
-              approveAmountCalldata(trade.maximumAmountIn(allowedSlippage), routerContract.address),
-              {
-                to: routerContract.address,
-                value: value,
-                data: routerContract.interface.encodeFunctionData(methodName, args),
-              },
-            ],
-          ]),
-          value: '0x0',
-        }
-      } else {
-        return {
-          address: routerContract.address,
-          calldata: routerContract.interface.encodeFunctionData(methodName, args),
-          value,
-        }
+      return {
+        address: routerContract.address,
+        calldata: routerContract.interface.encodeFunctionData(methodName, args),
+        value,
       }
     })
-  }, [account, allowedSlippage, argentWalletContract, chainId, deadline, library, recipient, routerContract, trade])
+  }, [account, allowedSlippage, chainId, deadline, library, recipient, routerContract, trade])
 }
 
 /**
@@ -157,12 +135,11 @@ export function useSwapCallback(
 ): { state: SwapCallbackState; callback: null | (() => Promise<string>); error: string | null } {
   const { account, chainId, library } = useActiveWeb3React()
 
-  const swapCalls = useSwapCallArguments(trade, allowedSlippage, recipientAddressOrName)
+  const swapCalls = useSwapCallArguments(trade, allowedSlippage /*, recipientAddressOrName*/)
 
   const addTransaction = useTransactionAdder()
 
-  const { address: recipientAddress } = useENS(recipientAddressOrName)
-  const recipient = recipientAddressOrName === null ? account : recipientAddress
+  const recipient = account
 
   return useMemo(() => {
     if (!trade || !library || !account || !chainId) {
