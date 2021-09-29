@@ -5,10 +5,8 @@ import React, { useMemo } from 'react'
 import { Activity, ChevronDown } from 'react-feather'
 import { Trans } from '@lingui/macro'
 import styled, { css } from 'styled-components'
-import CoinbaseWalletIcon from '../../assets/images/coinbaseWalletIcon.svg'
 import FortmaticIcon from '../../assets/images/fortmaticIcon.png'
-import WalletConnectIcon from '../../assets/images/walletConnectIcon.svg'
-import { fortmatic, injected, walletconnect, walletlink } from '../../connectors'
+import { fortmatic, injected } from '../../connectors'
 import { NetworkContextName } from '../../constants/misc'
 import { useETHBalances } from '../../state/wallet/hooks'
 import { useWalletModalToggle } from '../../state/application/hooks'
@@ -136,18 +134,6 @@ function newTransactionsFirst(a: TransactionDetails, b: TransactionDetails) {
 function StatusIcon({ connector }: { connector: AbstractConnector }) {
   if (connector === injected) {
     return <Identicon />
-  } else if (connector === walletconnect) {
-    return (
-      <IconWrapper size={16}>
-        <img src={WalletConnectIcon} alt={'WalletConnect'} />
-      </IconWrapper>
-    )
-  } else if (connector === walletlink) {
-    return (
-      <IconWrapper size={16}>
-        <img src={CoinbaseWalletIcon} alt={'CoinbaseWallet'} />
-      </IconWrapper>
-    )
   } else if (connector === fortmatic) {
     return (
       <IconWrapper size={16}>

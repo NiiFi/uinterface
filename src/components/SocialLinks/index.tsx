@@ -10,17 +10,17 @@ type TSocialLink = {
 const SupportedSocialLinks: Array<TSocialLink> = [
   {
     Icon: TelegramIcon,
-    link: 'https://t.me/NiiFiDAO',
+    link: process.env.REACT_APP_TELEGRAM || 'https://t.me/NiiFiDAO',
     name: 'Telegram',
   },
   {
     Icon: TwitterIcon,
-    link: 'https://twitter.com/NiiFiDAO',
+    link: process.env.REACT_APP_TWITTER || 'https://twitter.com/NiiFiDAO',
     name: 'Twitter',
   },
   {
     Icon: DiscordIcon,
-    link: 'https://discord.gg/ssjzvjZX89',
+    link: process.env.REACT_APP_DISCORD || 'https://discord.gg/ssjzvjZX89',
     name: 'Discord',
   },
 ]
