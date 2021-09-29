@@ -86,7 +86,9 @@ export default class ErrorBoundary extends React.Component<unknown, ErrorBoundar
                 <LinkWrapper>
                   <ExternalLink
                     id="create-github-issue-link"
-                    href={`https://github.com/NiiFi/uinterface/issues/new?assignees=&labels=bug&body=${encodedBody}&title=${encodeURIComponent(
+                    href={`${
+                      process.env.REACT_APP_ISSUES_BASE
+                    }new?assignees=&labels=bug&body=${encodedBody}&title=${encodeURIComponent(
                       `Crash report: \`${error.name}${error.message && `: ${error.message}`}\``
                     )}`}
                     target="_blank"
@@ -98,7 +100,7 @@ export default class ErrorBoundary extends React.Component<unknown, ErrorBoundar
                   </ExternalLink>
                 </LinkWrapper>
                 <LinkWrapper>
-                  <ExternalLink id="get-support-on-discord" href="https://discord.gg/FCfyBSbCU5" target="_blank">
+                  <ExternalLink id="get-support-on-discord" href={process.env.REACT_APP_DISCORD || ''} target="_blank">
                     <TYPE.link fontSize={16}>
                       <Trans>Get support on Discord</Trans>
                       <span>↗</span>

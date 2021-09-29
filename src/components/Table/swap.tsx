@@ -11,7 +11,7 @@ import { ExternalLink, BaseCurrencyView } from 'theme'
 import { SampleResponse } from './sample-transactions'
 import Table from './index'
 
-const BASE_URL = 'https://explorer.testnet.nahmii.io/'
+const BASE_URL = process.env.REACT_APP_EXPLORER || 'https://explorer.testnet.nahmii.io/'
 
 function mapTransactionTypeToWords(type: string) {
   return {

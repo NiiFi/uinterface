@@ -7,8 +7,7 @@ import CurrencyAvatar from 'components/CurrencyAvatar'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import Logo from '../Logo'
 
-export const getTokenLogoURL = (address: string) =>
-  `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`
+export const getTokenLogoURL = (address: string) => `${process.env.REACT_APP_TOKEN_LOGO_BASE}${address}/logo.png`
 
 const StyledEthereumLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};
