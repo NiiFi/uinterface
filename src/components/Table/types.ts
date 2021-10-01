@@ -93,4 +93,14 @@ export type PoolTableData = {
   __typename: 'Pool'
 }
 
-export type TableDataTypes = TransactionTableData | PoolTableData // TODO: add top tokens type (overview)
+export type TopTokensTableData = {
+  address: string
+  priceUSD: string
+  priceUSDChange: string
+  symbol: string
+  tvlUSD: string
+  volumeUSD: string
+  url: string
+}
+
+export type TableDataTypes = TransactionTableData | PoolTableData | TopTokensTableData

@@ -22,7 +22,7 @@ export const CustomPoolsTableRow = (
   return (
     <StyledTableRow
       hover
-      onClick={(event) => handleRowClick(event, row.id)}
+      onClick={(event) => handleRowClick(event, row.address)}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
@@ -33,15 +33,15 @@ export const CustomPoolsTableRow = (
         <RowWrapper style={{ width: 'fit-content' }}>
           <div style={{ position: 'relative' }}>
             <CurrencyAvatar
-              symbol={row.token0.symbol}
-              address={row.token0.id}
+              symbol={row.symbol0}
+              address={row.token1Address}
               iconProps={{ width: '32', height: '32' }}
               containerStyle={{ zIndex: 1 }}
               hideSymbol={true}
             />
             <CurrencyAvatar
-              symbol={row.token1.symbol}
-              address={row.token1.id}
+              symbol={row.symbol1}
+              address={row.token2Address}
               iconProps={{ width: '34', height: '34' }}
               containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
               hideSymbol={true}
@@ -52,17 +52,17 @@ export const CustomPoolsTableRow = (
           </div>
           <ColumnWrapper style={{ marginLeft: '42px' }}>
             <TYPE.body fontWeight={500}>
-              {row.token0.symbol} / {row.token1.symbol}
+              {row.symbol0} / {row.symbol1}
             </TYPE.body>
             <TYPE.subHeader color={'text2'}>NiiFi</TYPE.subHeader>
           </ColumnWrapper>
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="right">
-        13 {row.token0.symbol} / 6 {row.token1.symbol}
+        {row.amount0} {row.symbol0} / {row.amount1} {row.symbol1}
         <br />
         <TYPE.subHeader color={'text2'} textAlign={'right'}>
-          <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={635.23} />
+          <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.amountUSD} />
         </TYPE.subHeader>
       </TableCell>
     </StyledTableRow>

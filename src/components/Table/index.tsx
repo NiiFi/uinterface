@@ -262,7 +262,9 @@ export default function EnhancedTable({ hideHeader = false, ...props }: Enhanced
                 },
                 [order]
               )
-                .filter((row) => (transactionType === 'All' ? true : transactionType === row.__typename))
+                .filter((row) =>
+                  transactionType === 'All' ? true : '__typename' in row ? transactionType === row.__typename : true
+                )
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => props.row(row, index, theme, handleClick))}
           </TableBody>

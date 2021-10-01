@@ -63,6 +63,7 @@ import OverviewChart from 'components/LineChart/overview'
 import BarChart from 'components/BarChart/overview'
 import AppBar from 'components/AppBar'
 import Percent from 'components/Percent'
+import { useApiStatsLocal } from 'hooks/useApi'
 
 const StyledAppBar = styled(AppBar)`
   padding: 0px 2rem;
@@ -91,6 +92,8 @@ export default function Swap({ history }: RouteComponentProps) {
   const [activeTab, setActiveTab] = useState<number>(0)
   const loadedUrlParams = useDefaultsFromURLSearch()
   const { state } = useLocation<any>()
+
+  const { data: statsData, loader: statsDataLoader } = useApiStatsLocal()
 
   // TODO: implement more flexible solution
   useEffect(() => {
@@ -672,39 +675,45 @@ export default function Swap({ history }: RouteComponentProps) {
               </AppBody>
             </ResponsiveRow>
             <ResponsiveRow gap="2rem">
-              <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
-                <TYPE.subHeader fontSize="16px">
-                  <Trans>Volume 24H</Trans>
-                </TYPE.subHeader>
-                <FlexColumn style={{ padding: '5px 0' }}>
-                  <TYPE.mediumHeader color="text1">
-                    <BaseCurrencyView type="symbol" value={1240000000} numeralFormat={'0.[00]a'} />
-                  </TYPE.mediumHeader>
-                  <Percent value={7.258268337244848} fontWeight={400} />
-                </FlexColumn>
-              </DefaultCard>
-              <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
-                <TYPE.subHeader fontSize="16px">
-                  <Trans>Fees 24H</Trans>
-                </TYPE.subHeader>
-                <FlexColumn style={{ padding: '5px 0' }}>
-                  <TYPE.mediumHeader color="text1">
-                    <BaseCurrencyView type="symbol" value={3030000} numeralFormat={'0.[00]a'} />
-                  </TYPE.mediumHeader>
-                  <Percent value={7.858268337244848} fontWeight={400} />
-                </FlexColumn>
-              </DefaultCard>
-              <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
-                <TYPE.subHeader fontSize="16px">
-                  <Trans>TVL</Trans>
-                </TYPE.subHeader>
-                <FlexColumn style={{ padding: '5px 0' }}>
-                  <TYPE.mediumHeader color="text1">
-                    <BaseCurrencyView type="symbol" value={1750000000} numeralFormat={'0.[00]a'} />
-                  </TYPE.mediumHeader>
-                  <Percent value={-0.508268337244848} fontWeight={400} />
-                </FlexColumn>
-              </DefaultCard>
+              {statsDataLoader ||
+                (statsData && (
+                  <>
+                    <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                      <TYPE.subHeader fontSize="16px">
+                        <Trans>Volume 24H</Trans>
+                      </TYPE.subHeader>
+                      <FlexColumn style={{ padding: '5px 0' }}>
+                        <TYPE.mediumHeader color="text1">
+                          <BaseCurrencyView type="symbol" value={statsData.volume_24} numeralFormat={'0.[00]a'} />
+                        </TYPE.mediumHeader>
+                        {/* TODO: add percentage when it'll be available in API */}
+                        <Percent value={7.258268337244848} fontWeight={400} />
+                      </FlexColumn>
+                    </DefaultCard>
+                    <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                      <TYPE.subHeader fontSize="16px">
+                        <Trans>Fees 24H</Trans>
+                      </TYPE.subHeader>
+                      <FlexColumn style={{ padding: '5px 0' }}>
+                        <TYPE.mediumHeader color="text1">
+                          <BaseCurrencyView type="symbol" value={statsData.fees_24} numeralFormat={'0.[00]a'} />
+                        </TYPE.mediumHeader>
+                        <Percent value={7.858268337244848} fontWeight={400} />
+                      </FlexColumn>
+                    </DefaultCard>
+                    <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                      <TYPE.subHeader fontSize="16px">
+                        <Trans>TVL</Trans>
+                      </TYPE.subHeader>
+                      <FlexColumn style={{ padding: '5px 0' }}>
+                        <TYPE.mediumHeader color="text1">
+                          <BaseCurrencyView type="symbol" value={statsData.tvl} numeralFormat={'0.[00]a'} />
+                        </TYPE.mediumHeader>
+                        <Percent value={-0.508268337244848} fontWeight={400} />
+                      </FlexColumn>
+                    </DefaultCard>
+                  </>
+                ))}
             </ResponsiveRow>
             <ResponsiveRow id="top-tokens-table">
               <AppBody size="lg">

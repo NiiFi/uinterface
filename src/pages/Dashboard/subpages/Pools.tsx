@@ -7,9 +7,12 @@ import CurrencyAvatar from 'components/CurrencyAvatar'
 import { PoolIcon, NIILogo } from 'components/Icons'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, RowWrapper, ColumnWrapper, BaseCurrencyView, CircleWrapper } from 'theme'
-import { SampleResponse } from 'components/Table/sample-pools'
+import { useApiUserPools } from 'hooks/useApi'
 import Table from 'components/Table'
+import { ButtonPrimary } from 'components/Button'
+import { useActiveWeb3React } from 'hooks/web3'
 import useTheme from 'hooks/useTheme'
+import { useWalletModalToggle } from 'state/application/hooks'
 import { StyledTableRow, LogoWrapper } from './styleds'
 
 const CustomTableRow = (
@@ -27,7 +30,7 @@ const CustomTableRow = (
   return (
     <StyledTableRow
       hover
-      onClick={(event) => handleClick(event, row.id)}
+      onClick={(event) => handleClick(event, row.address)}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
@@ -38,15 +41,15 @@ const CustomTableRow = (
         <RowWrapper>
           <div style={{ position: 'relative' }}>
             <CurrencyAvatar
-              symbol={row.token0.symbol}
-              address={row.token0.id}
+              symbol={row.symbol0}
+              address={row.token1Address}
               iconProps={{ width: '32', height: '32' }}
               containerStyle={{ zIndex: 1 }}
               hideSymbol={true}
             />
             <CurrencyAvatar
-              symbol={row.token1.symbol}
-              address={row.token1.id}
+              symbol={row.symbol1}
+              address={row.token2Address}
               iconProps={{ width: '32', height: '32' }}
               containerStyle={{ left: '22px', position: 'absolute', marginTop: '-34px' }}
               hideSymbol={true}
@@ -57,17 +60,17 @@ const CustomTableRow = (
           </div>
           <ColumnWrapper style={{ marginLeft: '40px' }}>
             <TYPE.body>
-              {row.token0.symbol} / {row.token1.symbol}
+              {row.symbol0} / {row.symbol1}
             </TYPE.body>
             <TYPE.subHeader color={'text2'}>NiiFi</TYPE.subHeader>
           </ColumnWrapper>
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {index + 2} {row.token0.symbol} / {index + 1} {row.token1.symbol}
+        {row.amount0} {row.symbol0} / {row.amount1} {row.symbol1}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.token0Price} />
+        <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.amountUSD} />
       </TableCell>
     </StyledTableRow>
   )
@@ -75,40 +78,54 @@ const CustomTableRow = (
 
 export default function Pools() {
   const theme = useTheme()
-  const balance = 8235.26
   const history = useHistory()
+  const toggleWalletModal = useWalletModalToggle()
+  const { account } = useActiveWeb3React()
+  const { data: userData, loader } = useApiUserPools(account)
   const handleClick = (e: React.MouseEvent<unknown>, rowId: string) => {
     e.preventDefault()
     history.push(`/pool/${rowId}`)
   }
+
   return (
-    <Table
-      headCells={[
-        { id: 'token0.symbol', numeric: false, align: 'left', disablePadding: false, label: t`Assets` },
-        { id: 'balance', numeric: true, disablePadding: false, label: t`Balance` },
-        { id: 'token0Price', numeric: true, disablePadding: false, label: t`Value` },
-      ]}
-      onClick={handleClick}
-      rowsPerPage={8}
-      title={
-        <>
-          <RowWrapper style={{ padding: '16px' }}>
-            <LogoWrapper style={{ backgroundColor: theme.error }}>
-              <PoolIcon color="#fff" opacity="0.8" />
-            </LogoWrapper>
-            <ColumnWrapper style={{ padding: '0 0 0 15px' }}>
-              <TYPE.body>
-                <Trans>Balance</Trans>
-              </TYPE.body>
-              <TYPE.mediumHeader>
-                <BaseCurrencyView type="symbol" value={balance} />
-              </TYPE.mediumHeader>
-            </ColumnWrapper>
-          </RowWrapper>
-        </>
-      }
-      data={SampleResponse.data.pools}
-      row={CustomTableRow}
-    />
+    <>
+      {account ? (
+        loader ||
+        (userData && (
+          <Table
+            headCells={[
+              { id: 'token0.symbol', numeric: false, align: 'left', disablePadding: false, label: t`Assets` },
+              { id: 'balance', numeric: true, disablePadding: false, label: t`Balance` },
+              { id: 'token0Price', numeric: true, disablePadding: false, label: t`Value` },
+            ]}
+            onClick={handleClick}
+            rowsPerPage={8}
+            title={
+              <>
+                <RowWrapper style={{ padding: '16px' }}>
+                  <LogoWrapper style={{ backgroundColor: theme.error }}>
+                    <PoolIcon color="#fff" opacity="0.8" />
+                  </LogoWrapper>
+                  <ColumnWrapper style={{ padding: '0 0 0 15px' }}>
+                    <TYPE.body>
+                      <Trans>Balance</Trans>
+                    </TYPE.body>
+                    <TYPE.mediumHeader>
+                      <BaseCurrencyView type="symbol" value={userData.balanceUSD} />
+                    </TYPE.mediumHeader>
+                  </ColumnWrapper>
+                </RowWrapper>
+              </>
+            }
+            data={userData.data}
+            row={CustomTableRow}
+          />
+        ))
+      ) : (
+        <ButtonPrimary onClick={toggleWalletModal}>
+          <Trans>Connect Wallet</Trans>
+        </ButtonPrimary>
+      )}
+    </>
   )
 }

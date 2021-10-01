@@ -6,8 +6,7 @@ import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
 import Percent from 'components/Percent'
 import CurrencyAvatar from 'components/CurrencyAvatar'
-import useLazyFetch from 'hooks/useLazyFetch'
-import { WEB_API_BASE } from 'constants/general'
+import { useApiTokens } from 'hooks/useApi'
 import { TYPE, RowWrapper, BaseCurrencyView } from '../../theme'
 import Table, { Order } from './index'
 
@@ -66,11 +65,7 @@ export default function OverviewTable() {
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<string>()
 
-  const [fetch, { data, error, loading }] = useLazyFetch<any[]>(`${WEB_API_BASE}tokens`)
-
-  useEffect(() => {
-    fetch()
-  }, [fetch])
+  const { data, loader } = useApiTokens()
 
   useEffect(() => {
     if (state?.type !== undefined) {
@@ -84,23 +79,24 @@ export default function OverviewTable() {
 
   return (
     <>
-      {data && (
-        <Table
-          title={t`Top Tokens`}
-          data={data}
-          headCells={[
-            { id: 'number', numeric: true, disablePadding: false, label: '#' },
-            { id: 'symbol', numeric: false, disablePadding: false, label: t`Name` },
-            { id: 'priceUSD', numeric: true, disablePadding: false, label: t`Price` },
-            { id: 'priceUSDChange', numeric: true, disablePadding: false, label: t`Price Change` },
-            { id: 'volumeUSD', numeric: true, disablePadding: false, label: t`Volume 24H` },
-            { id: 'tvlUSD', numeric: true, disablePadding: false, label: t`TVL` },
-          ]}
-          row={CustomTableRow}
-          defaultOrder={order}
-          defaultOrderBy={orderBy}
-        />
-      )}
+      {loader ||
+        (data && (
+          <Table
+            title={t`Top Tokens`}
+            data={data}
+            headCells={[
+              { id: 'number', numeric: true, disablePadding: false, label: '#' },
+              { id: 'symbol', numeric: false, disablePadding: false, label: t`Name` },
+              { id: 'priceUSD', numeric: true, disablePadding: false, label: t`Price` },
+              { id: 'priceUSDChange', numeric: true, disablePadding: false, label: t`Price Change` },
+              { id: 'volumeUSD', numeric: true, disablePadding: false, label: t`Volume 24H` },
+              { id: 'tvlUSD', numeric: true, disablePadding: false, label: t`TVL` },
+            ]}
+            row={CustomTableRow}
+            defaultOrder={order}
+            defaultOrderBy={orderBy}
+          />
+        ))}
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { t } from '@lingui/macro'
 import styled from 'styled-components'
@@ -18,7 +18,6 @@ import { AutoColumn } from 'components/Column'
 import { ResponsiveRow } from 'components/Row'
 import { BodyScroller, CurrencySelectWrapper, Disclaimer } from 'theme'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
-import { getPoolsData } from 'components/Table/sample-pools'
 // SVGs
 import WalletSvgSrc from '../../assets/svg/wallet.svg'
 import PoolsSvgSrc from '../../assets/svg/pools.svg'
@@ -29,7 +28,7 @@ import { useActiveWeb3React } from 'hooks/web3'
 import { useCurrencyBalance } from 'state/wallet/hooks'
 import { useCurrency } from 'hooks/Tokens'
 import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
-import { getTokensData } from 'components/Table/sample-tokens'
+import { useApiUserWallet, useApiUserAssets, useApiUserPools, useApiUserFarming } from 'hooks/useApi'
 import BuySection from './BuySection'
 
 const StyledAppBar = styled(AppBar)`
@@ -73,13 +72,11 @@ export default function Dashboard() {
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency ?? undefined)
   const balanceValue = balance && rates['USD'] ? Number(formatCurrencyAmount(balance, 4)) * rates['USD'] : 0
 
-  const newPools = useMemo(() => {
-    return getPoolsData('new', 3)
-  }, [])
+  const { data: userWallet, loader: userWalletLoader } = useApiUserWallet(account)
+  const { data: userPools, loader: userPoolsLoader } = useApiUserPools(account, 3)
+  const { data: userAssets, loader: userAssetsLoader } = useApiUserAssets(account, 3)
+  const { data: userFarming, loader: userFarmingLoader } = useApiUserFarming(account, 3)
 
-  const sampleTokens = useMemo(() => {
-    return getTokensData(3)
-  }, [])
   // TODO: implement more flexible solution
   useEffect(() => {
     if (!state?.activeTab) {
@@ -118,21 +115,45 @@ export default function Dashboard() {
           <AutoColumn gap="lg">
             <ResponsiveRow>
               <StyledAppBody size="lg">
-                <BuySection account={account} balanceValue={balanceValue} />
+                {userWalletLoader ||
+                  (userWallet && <BuySection account={account} balanceValue={balanceValue} data={userWallet} />)}
               </StyledAppBody>
             </ResponsiveRow>
             <ResponsiveRow gap="2rem">
               <AppBody size="md">
-                <CustomCard balance={balanceValue} svgIconSrc={WalletSvgSrc} data={sampleTokens} type={'wallet'} />
+                {userAssetsLoader ||
+                  (userAssets && (
+                    <CustomCard
+                      balance={userAssets.balanceUSD}
+                      svgIconSrc={WalletSvgSrc}
+                      data={userAssets.data.slice(0, 3)}
+                      type={'wallet'}
+                    />
+                  ))}
               </AppBody>
               <AppBody size="md">
-                {/* TODO: add valid balance */}
-                <CustomCard balance={balanceValue} svgIconSrc={PoolsSvgSrc} data={newPools} type={'pools'} />
+                {userPoolsLoader ||
+                  (userPools && (
+                    <CustomCard
+                      balance={userPools.balanceUSD}
+                      svgIconSrc={PoolsSvgSrc}
+                      data={userPools.data.slice(0, 3)}
+                      type={'pools'}
+                    />
+                  ))}
               </AppBody>
             </ResponsiveRow>
             <ResponsiveRow gap="2rem">
               <AppBody size="md">
-                <CustomCard balance={balanceValue} svgIconSrc={YieldSvgSrc} data={newPools} type={'farm'} />
+                {userFarmingLoader ||
+                  (userFarming && (
+                    <CustomCard
+                      balance={userFarming.balanceUSD}
+                      svgIconSrc={YieldSvgSrc}
+                      data={userFarming.data.slice(0, 3)}
+                      type={'farm'}
+                    />
+                  ))}
               </AppBody>
               <AppBody size="md">
                 <CustomCard balance={balanceValue} svgIconSrc={NFTsSvgSrc} data={SampleNFTData} type={'nfts'} />

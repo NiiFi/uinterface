@@ -11,23 +11,13 @@ import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
 import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, BaseCurrencyView } from '../../theme'
-import useLazyFetch from 'hooks/useLazyFetch'
-import { WEB_API_BASE } from 'constants/general'
+import { useApiPools } from 'hooks/useApi'
 import SearchableTable, { Order } from './SearchableTable'
-import Loader from 'components/Loader'
 import { PoolTableData } from '../Table/types'
 import { ButtonOutlined } from 'components/Button'
 import { ArrowLeft, ArrowRight } from 'react-feather'
 import { Wrapper as DefaultToolBarWrapper, PagerWrapper as DefaultToolBarPagerWrapper } from './TableToolbar'
 import { History, LocationState } from 'history'
-
-const LoaderWrapper = styled.div`
-  padding: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 10rem);
-`
 
 const CustomTableRow = (row: any, index: number, history: History<LocationState>, theme: DefaultTheme) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
@@ -147,7 +137,7 @@ export default function PoolsTable() {
   const history = useHistory()
   const theme = useTheme()
   const { state } = useLocation<any>() // FIXME: any
-  const [fetch, { data, error, loading }] = useLazyFetch<PoolTableData[]>(`${WEB_API_BASE}pools`)
+  const { data, loader } = useApiPools()
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<string>()
   const [pools, setPools] = useState<PoolTableData[]>()
@@ -155,10 +145,6 @@ export default function PoolsTable() {
   useEffect(() => {
     setPools(data)
   }, [data])
-
-  useEffect(() => {
-    fetch()
-  }, [fetch])
 
   useEffect(() => {
     // TODO: implement sorting
@@ -173,46 +159,43 @@ export default function PoolsTable() {
 
   return (
     <>
-      {data && pools ? (
-        <SearchableTable
-          title={''}
-          data={pools}
-          searchLabel={t`Filter by token, protocol, ...`}
-          debouncedSearchChange={(value: string) => {
-            setPools(
-              data.filter((pool: any) => {
-                const regex = new RegExp(`^${value}`, 'ig')
-                return (
-                  regex.test(pool.address) ||
-                  regex.test(pool.token1.symbol) ||
-                  regex.test(pool.token2.symbol) ||
-                  regex.test(pool.token1.address) ||
-                  regex.test(pool.token2.address)
-                )
+      {loader ||
+        (data && pools && (
+          <SearchableTable
+            title={''}
+            data={pools}
+            searchLabel={t`Filter by token, protocol, ...`}
+            debouncedSearchChange={(value: string) => {
+              setPools(
+                data.filter((pool: any) => {
+                  const regex = new RegExp(`^${value}`, 'ig')
+                  return (
+                    regex.test(pool.address) ||
+                    regex.test(pool.token1.symbol) ||
+                    regex.test(pool.token2.symbol) ||
+                    regex.test(pool.token1.address) ||
+                    regex.test(pool.token2.address)
+                  )
+                })
+              )
+            }}
+            headCells={[
+              { id: 'token0Address', numeric: false, disablePadding: false, label: t`Available Pools` },
+              { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
+              { id: 'roiY', numeric: false, disablePadding: false, label: t`ROI` },
+              { id: 'trendingPercentY', numeric: false, disablePadding: false, label: t`Trending` },
+              { id: '', numeric: false, disablePadding: false, label: '' },
+            ]}
+            renderToolbar={(props) =>
+              PoolTableToolbar({
+                ...props,
               })
-            )
-          }}
-          headCells={[
-            { id: 'token0Address', numeric: false, disablePadding: false, label: t`Available Pools` },
-            { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
-            { id: 'roiY', numeric: false, disablePadding: false, label: t`ROI` },
-            { id: 'trendingPercentY', numeric: false, disablePadding: false, label: t`Trending` },
-            { id: '', numeric: false, disablePadding: false, label: '' },
-          ]}
-          renderToolbar={(props) =>
-            PoolTableToolbar({
-              ...props,
-            })
-          }
-          row={(row: any, index: number) => CustomTableRow(row, index, history, theme)}
-          defaultOrder={order}
-          defaultOrderBy={orderBy}
-        />
-      ) : (
-        <LoaderWrapper>
-          <Loader size="2rem" />
-        </LoaderWrapper>
-      )}
+            }
+            row={(row: any, index: number) => CustomTableRow(row, index, history, theme)}
+            defaultOrder={order}
+            defaultOrderBy={orderBy}
+          />
+        ))}
     </>
   )
 }
