@@ -22,7 +22,7 @@ export default function TokenDetail(props: TokenDetailProps) {
   const { token } = props
   const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
 
-  const tokenUSD = token?.derivedETH ? token.derivedETH * rates?.['USD'] : 0
+  const tokenUSD = token?.price ? token.price * rates?.['USD'] : 0
 
   return (
     <>
@@ -38,20 +38,20 @@ export default function TokenDetail(props: TokenDetailProps) {
         <TextLabel>
           <Trans>Market Cap</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}> - </TextValue>
+        <TextValue fontSize={'1rem'}>{token?.mcap || ' - '}</TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
         <TextLabel>
           <Trans>Trading Volume</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}> - </TextValue>
+        <TextValue fontSize={'1rem'}>{token?.trading || ' - '}</TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
         <TextLabel>
           <Trans>24h Low / 24h High</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}> - </TextValue>
-        <TextValue fontSize={'1rem'}> - </TextValue>
+        <TextValue fontSize={'1rem'}>{token?.low_24h || ' - '}</TextValue>
+        <TextValue fontSize={'1rem'}>{token?.high_24h || ' - '}</TextValue>
       </TextItemWrapper>
     </>
   )
