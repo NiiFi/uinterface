@@ -2,7 +2,8 @@ import { useState, useCallback } from 'react'
 import { Dictionary } from 'utils'
 
 export default function useLazyFetch<T = Dictionary>(
-  url: string
+  url: string,
+  rootData?: boolean
 ): [(options?: any) => Promise<void>, { data: T | undefined; error: any; loading: boolean }] {
   const [data, setData] = useState<T>()
   const [error, setError] = useState<Dictionary>()
@@ -28,7 +29,7 @@ export default function useLazyFetch<T = Dictionary>(
           })
         } else {
           const responseData = await response.json()
-          setData(responseData)
+          setData(rootData ? responseData : responseData?.data || responseData)
         }
       } catch (e) {
         setError({
@@ -40,7 +41,7 @@ export default function useLazyFetch<T = Dictionary>(
         setLoading(false)
       }
     },
-    [url]
+    [url, rootData]
   )
 
   return [handler, { data, error, loading }]
