@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set env to staging
+        if: endsWith(github.ref, '/develop')
+        run: echo "ENVIRONMENT=staging" >> $GITHUB_ENV
+      - name: Set env to production
+        if: endsWith(github.ref, '/main')
+        run: echo "ENVIRONMENT=production" >> $GITHUB_ENV
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USER }}
+          key: ${{ secrets.AWS_KEY }}
+          script: sh /var/dulcet-dataflow/deploy.sh --$ENVIRONMENT
