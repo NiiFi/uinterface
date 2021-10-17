@@ -1,7 +1,7 @@
 import { t } from '@lingui/macro'
 import JSBI from 'jsbi'
 import { Token, Currency, Percent, CurrencyAmount } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
+import { Pair } from '@niifi/godzilla2-sdk'
 import { useCallback } from 'react'
 import { usePair } from '../../hooks/usePairs'
 import { useTotalSupply } from '../../hooks/useTotalSupply'
@@ -57,8 +57,8 @@ export function useDerivedBurnInfo(
     tokenA &&
     // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
     JSBI.greaterThanOrEqual(totalSupply.quotient, userLiquidity.quotient)
-      ? CurrencyAmount.fromRawAmount(tokenA, pair.getLiquidityValue(tokenA, totalSupply, userLiquidity, false).quotient)
-      : undefined
+    ? CurrencyAmount.fromRawAmount(tokenA, pair.getLiquidityValue(tokenA, totalSupply, userLiquidity, false).quotient)
+    : undefined
   const liquidityValueB =
     pair &&
     totalSupply &&
@@ -108,9 +108,9 @@ export function useDerivedBurnInfo(
     [Field.LIQUIDITY]:
       userLiquidity && percentToRemove && percentToRemove.greaterThan('0')
         ? CurrencyAmount.fromRawAmount(
-            userLiquidity.currency,
-            percentToRemove.multiply(userLiquidity.quotient).quotient
-          )
+          userLiquidity.currency,
+          percentToRemove.multiply(userLiquidity.quotient).quotient
+        )
         : undefined,
     [Field.CURRENCY_A]:
       tokenA && percentToRemove && percentToRemove.greaterThan('0') && liquidityValueA

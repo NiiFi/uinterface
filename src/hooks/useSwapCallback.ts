@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
-import { Router, Trade } from '@uniswap/v2-sdk'
+import { Router, Trade } from '@niifi/godzilla2-sdk'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { useMemo } from 'react'
 import { calculateGasMargin } from '../utils/calculateGasMargin'

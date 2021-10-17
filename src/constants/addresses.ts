@@ -1,4 +1,4 @@
-import { FACTORY_ADDRESS } from '@uniswap/v2-sdk'
+import { FACTORY_ADDRESS } from '@niifi/godzilla2-sdk'
 import { constructSameAddressMap } from '../utils/constructSameAddressMap'
 import { SupportedChainId } from './chains'
 
