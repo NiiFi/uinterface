@@ -1,4 +1,4 @@
-import { computePairAddress, Pair } from '@uniswap/v2-sdk'
+import { computePairAddress, Pair } from '@niifi/godzilla2-sdk'
 import { useMemo, useState, useEffect } from 'react'
 import { FACTORY_ADDRESSES } from '../constants/addresses'
 import { Currency, CurrencyAmount /*, Token*/ } from '@uniswap/sdk-core'

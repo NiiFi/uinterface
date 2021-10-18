@@ -3503,6 +3503,16 @@
     unixify "^1.0.0"
     yargs "^16.0.0"
 
+"@niifi/godzilla2-sdk@git+ssh://git@github.com:NiiFi/godzilla2-sdk.git":
+  version "0.1.0"
+  resolved "git+ssh://git@github.com:NiiFi/godzilla2-sdk.git#bfb781110fefeb19f663097adae42b632c35b059"
+  dependencies:
+    "@ethersproject/address" "^5.0.0"
+    "@ethersproject/solidity" "^5.0.0"
+    "@uniswap/sdk-core" "^3.0.0-alpha.3"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz"
@@ -5015,17 +5025,6 @@
   dependencies:
     "@uniswap/lib" "1.1.1"
     "@uniswap/v2-core" "1.0.0"
-
-"@uniswap/v2-sdk@^3.0.0-alpha.2":
-  version "3.0.0-alpha.2"
-  resolved "https://registry.npmjs.org/@uniswap/v2-sdk/-/v2-sdk-3.0.0-alpha.2.tgz"
-  integrity sha512-LkGGZMdJueIIC3OBzgiBMV/1GdZgzTTf2qGEgBAxJUuCSFf5wZQgWNU4KOkoaBrl/FlEctAGSgGh3j3BhWKL5Q==
-  dependencies:
-    "@ethersproject/address" "^5.0.0"
-    "@ethersproject/solidity" "^5.0.0"
-    "@uniswap/sdk-core" "^3.0.0-alpha.3"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
 
 "@walletconnect/browser-utils@^1.4.2-rc.2":
   version "1.4.2-rc.2"

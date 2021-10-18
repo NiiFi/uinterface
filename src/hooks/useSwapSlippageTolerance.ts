@@ -1,5 +1,5 @@
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
-import { Trade } from '@uniswap/v2-sdk'
+import { Trade } from '@niifi/godzilla2-sdk'
 import { useMemo } from 'react'
 import { useUserSlippageToleranceWithDefault } from '../state/user/hooks'
 
