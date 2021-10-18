@@ -17,4 +17,4 @@ jobs:
           host: ${{ secrets.AWS_HOST_STAGING }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY_STAGING }}
-          script: sh /var/uinterface/bin/deploy.sh --staging
+          script: bash /var/uinterface/bin/deploy.sh --staging
