@@ -29,6 +29,7 @@ export type LineChartProps = {
   setValue?: Dispatch<SetStateAction<number | undefined>> // used for value on hover
   setLabel?: Dispatch<SetStateAction<string | undefined>> // used for label of valye
   value?: number
+  valueName?: string
   label?: string
   topLeft?: ReactNode | undefined
   topRight?: ReactNode | undefined
@@ -62,6 +63,7 @@ const Chart = ({
   setValue,
   setLabel,
   value,
+  valueName,
   label,
   minHeight = DEFAULT_HEIGHT,
   ...rest
@@ -99,16 +101,16 @@ const Chart = ({
           <Tooltip
             cursor={{ fill: theme.bg2 }}
             contentStyle={{ display: 'none' }}
-            formatter={(value: number, name: string, props: { payload: { time: string; value: number } }) => {
-              if (setValue && parsedValue !== props.payload.value) {
-                setValue(props.payload.value)
+            formatter={(value: number, name: string, props: { payload: any }) => {
+              if (setValue && parsedValue !== props.payload[valueName || 'value']) {
+                setValue(props.payload[valueName || 'value'])
               }
               const formattedTime = dayjs(props.payload.time).format('MMM D, YYYY')
               if (setLabel && label !== formattedTime) setLabel(formattedTime)
             }}
           />
           <Bar
-            dataKey="value"
+            dataKey={valueName || 'value'}
             fill={color}
             shape={(props) => {
               return <CustomBar height={props.height} width={props.width} x={props.x} y={props.y} fill={color} />

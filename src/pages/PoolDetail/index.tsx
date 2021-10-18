@@ -165,8 +165,7 @@ export default function PoolDetails({
             <PoolAppBar>
               <BarTitle>
                 <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
-                {poolData.token1.symbol} / {poolData.token2.symbol}
-                {t`Pool`}
+                {poolData.token1.symbol} / {poolData.token2.symbol} {t`Pool`}
               </BarTitle>
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <CreatePoolButton />
@@ -213,7 +212,11 @@ export default function PoolDetails({
                     </AppBody>
                     <AppBody size="md" style={{ minHeight: '440px' }}>
                       <PoolDetailChartWrapper>
-                        <PoolDetailChart token0={poolData.token1.symbol} token1={poolData.token2.symbol} />
+                        <PoolDetailChart
+                          address={poolData.address}
+                          token0={poolData.token1.symbol}
+                          token1={poolData.token2.symbol}
+                        />
                       </PoolDetailChartWrapper>
                     </AppBody>
                   </ResponsiveRow>

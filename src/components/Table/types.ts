@@ -66,7 +66,7 @@ export type TransactionTableData = {
   amount0: string
   amount1: string
   amountUSD: string
-  __typename: TransactionTypes
+  type: TransactionTypes
 }
 
 export type TokenOutput = Token & {

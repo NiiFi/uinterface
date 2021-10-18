@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { t } from '@lingui/macro'
+import { t, Trans } from '@lingui/macro'
 import styled from 'styled-components'
 import Tab from 'components/tab/Tab'
 import Tabs from 'components/tab/Tabs'
@@ -13,6 +13,7 @@ import AppBar from 'components/AppBar'
 import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
 import AppBody from '../AppBody'
 import TabPanel from 'components/tab/TabPanel'
+import { ButtonPrimary } from 'components/Button'
 import { CustomCard } from './components/Card'
 import { AutoColumn } from 'components/Column'
 import { ResponsiveRow } from 'components/Row'
@@ -26,6 +27,7 @@ import NFTsSvgSrc from '../../assets/svg/nfts.svg'
 // HOOKS
 import { useActiveWeb3React } from 'hooks/web3'
 import { useCurrencyBalance } from 'state/wallet/hooks'
+import { useWalletModalToggle } from 'state/application/hooks'
 import { useCurrency } from 'hooks/Tokens'
 import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
 import { useApiUserWallet, useApiUserAssets, useApiUserPools, useApiUserFarming } from 'hooks/useApi'
@@ -71,7 +73,9 @@ export default function Dashboard() {
   const inputCurrency = useCurrency('ETH')
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency ?? undefined)
   const balanceValue = balance && rates['USD'] ? Number(formatCurrencyAmount(balance, 4)) * rates['USD'] : 0
+  const toggleWalletModal = useWalletModalToggle()
 
+  // TODO: create API request only with active account
   const { data: userWallet, loader: userWalletLoader } = useApiUserWallet(account)
   const { data: userPools, loader: userPoolsLoader } = useApiUserPools(account, 3)
   const { data: userAssets, loader: userAssetsLoader } = useApiUserAssets(account, 3)
@@ -99,7 +103,7 @@ export default function Dashboard() {
         <ToggleDrawer />
         <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={`Overview`} />
-          <Tab key={`tab-1`} label={`History`} />
+          {account && <Tab key={`tab-1`} label={`History`} />}
         </Tabs>
         <CurrencySelectWrapper>
           <CurrencyDropdown />
@@ -113,61 +117,73 @@ export default function Dashboard() {
             {t`This is Dummy Data`}
           </Disclaimer>
           <AutoColumn gap="lg">
-            <ResponsiveRow>
-              <StyledAppBody size="lg">
-                {userWalletLoader ||
-                  (userWallet && <BuySection account={account} balanceValue={balanceValue} data={userWallet} />)}
-              </StyledAppBody>
-            </ResponsiveRow>
-            <ResponsiveRow gap="2rem">
-              <AppBody size="md">
-                {userAssetsLoader ||
-                  (userAssets && (
-                    <CustomCard
-                      balance={userAssets.balanceUSD}
-                      svgIconSrc={WalletSvgSrc}
-                      data={userAssets.data.slice(0, 3)}
-                      type={'wallet'}
-                    />
-                  ))}
-              </AppBody>
-              <AppBody size="md">
-                {userPoolsLoader ||
-                  (userPools && (
-                    <CustomCard
-                      balance={userPools.balanceUSD}
-                      svgIconSrc={PoolsSvgSrc}
-                      data={userPools.data.slice(0, 3)}
-                      type={'pools'}
-                    />
-                  ))}
-              </AppBody>
-            </ResponsiveRow>
-            <ResponsiveRow gap="2rem">
-              <AppBody size="md">
-                {userFarmingLoader ||
-                  (userFarming && (
-                    <CustomCard
-                      balance={userFarming.balanceUSD}
-                      svgIconSrc={YieldSvgSrc}
-                      data={userFarming.data.slice(0, 3)}
-                      type={'farm'}
-                    />
-                  ))}
-              </AppBody>
-              <AppBody size="md">
-                <CustomCard balance={balanceValue} svgIconSrc={NFTsSvgSrc} data={SampleNFTData} type={'nfts'} />
-              </AppBody>
-            </ResponsiveRow>
+            {account ? (
+              <>
+                <ResponsiveRow>
+                  <StyledAppBody size="lg">
+                    {userWalletLoader ||
+                      (userWallet && (
+                        <BuySection account={account} balanceValue={balanceValue} data={userWallet.data} />
+                      ))}
+                  </StyledAppBody>
+                </ResponsiveRow>
+                <ResponsiveRow gap="2rem">
+                  <AppBody size="md">
+                    {userAssetsLoader ||
+                      (userAssets?.data && (
+                        <CustomCard
+                          balance={userAssets.balanceUSD}
+                          svgIconSrc={WalletSvgSrc}
+                          data={userAssets.data.slice(0, 3)}
+                          type={'wallet'}
+                        />
+                      ))}
+                  </AppBody>
+                  <AppBody size="md">
+                    {userPoolsLoader ||
+                      (userPools?.data && (
+                        <CustomCard
+                          balance={userPools.balanceUSD}
+                          svgIconSrc={PoolsSvgSrc}
+                          data={userPools.data.slice(0, 3)}
+                          type={'pools'}
+                        />
+                      ))}
+                  </AppBody>
+                </ResponsiveRow>
+                <ResponsiveRow gap="2rem">
+                  <AppBody size="md">
+                    {userFarmingLoader ||
+                      (userFarming?.data && (
+                        <CustomCard
+                          balance={userFarming.balanceUSD}
+                          svgIconSrc={YieldSvgSrc}
+                          data={userFarming.data.slice(0, 3)}
+                          type={'farm'}
+                        />
+                      ))}
+                  </AppBody>
+                  <AppBody size="md">
+                    <CustomCard balance={balanceValue} svgIconSrc={NFTsSvgSrc} data={SampleNFTData} type={'nfts'} />
+                  </AppBody>
+                </ResponsiveRow>
+              </>
+            ) : (
+              <ButtonPrimary onClick={toggleWalletModal}>
+                <Trans>Connect Wallet</Trans>
+              </ButtonPrimary>
+            )}
           </AutoColumn>
         </TabPanel>
-        <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
-          <AutoColumn gap="lg">
-            <ResponsiveRow id="history">
-              <DashboardHistoryTab />
-            </ResponsiveRow>
-          </AutoColumn>
-        </TabPanel>
+        {account && (
+          <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
+            <AutoColumn gap="lg">
+              <ResponsiveRow id="history">
+                <DashboardHistoryTab />
+              </ResponsiveRow>
+            </AutoColumn>
+          </TabPanel>
+        )}
       </BodyScroller>
     </>
   )

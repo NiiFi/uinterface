@@ -45,15 +45,15 @@ export default function SwapLineChartDropdown({
   const Options = [
     {
       label: t`Liquidity`,
-      value: 'value1',
+      value: 'liquidity',
     },
     {
       label: t`Volume`,
-      value: 'value2',
+      value: 'volume',
     },
     {
       label: t`Fees`,
-      value: 'value3',
+      value: 'fees',
     },
   ]
   const onClick = (value: string) => {
@@ -61,9 +61,9 @@ export default function SwapLineChartDropdown({
     onItemSelect(value)
   }
   const OptionsMap: { [key: string]: string } = {
-    value1: t`Liquidity`,
-    value2: t`Volume`,
-    value3: t`Fees`,
+    liquidity: t`Liquidity`,
+    volume: t`Volume`,
+    fees: t`Fees`,
   }
   return (
     <Wrapper>

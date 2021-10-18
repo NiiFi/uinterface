@@ -13,16 +13,23 @@ type Routes =
   | 'pools/new'
   | 'pools/gainers'
   | 'pools/losers'
-  | 'user/assets'
-  | 'user/pools'
-  | 'user/farming'
-  | 'stats-local'
-  | 'stats-local-volume'
-  | 'stats-local-tvl'
+  | 'wallets/assets'
+  | 'wallets/pools'
+  | 'wallets/farms'
+  | 'pools/stats-local'
+  | 'pools/stats-local-volume'
+  | 'pools/stats-local-tvl'
 
 type ApiParams = {
   route: Routes
   limit?: number
+  rootData?: boolean
+}
+
+const typeToSort: any = {
+  gainers: '-trendingPercentY',
+  losers: 'trendingPercentY',
+  //'new': '',  // TODO: define sort parameter after implementation on BE http://54.171.9.121/api/v1/doc/swagger.ui/#/Pool/get_pools
 }
 
 interface FetchInterface<T> {
@@ -32,11 +39,11 @@ interface FetchInterface<T> {
 
 export type PoolTypes = 'gainers' | 'losers' | 'new'
 
-export default function useApi({ route, limit }: ApiParams): FetchInterface<any> {
+export default function useApi({ route, limit, rootData }: ApiParams): FetchInterface<any> {
   // TODO: re-check limit usage with real API
   // const apiUrl = `${WEB_API_BASE}${route}` + (limit ? '?' + new URLSearchParams({ _limit: limit.toString() }) : '')
   const apiUrl = `${WEB_API_BASE}${route}`
-  const [fetch, { data, error, loading }] = useLazyFetch<any[]>(apiUrl)
+  const [fetch, { data, error, loading }] = useLazyFetch<any[]>(apiUrl, rootData)
 
   useEffect(() => {
     fetch()
@@ -62,15 +69,15 @@ export function useApiTokens(): FetchInterface<TopTokensTableData> {
 }
 // TODO: add correct return types instead of 'any' bellow
 export function useApiTokensGainers(): FetchInterface<any> {
-  return useApi({ route: 'tokens/gainers' })
+  return useApi({ route: 'tokens?sort=-priceUSDChange' as Routes })
 }
 
 export function useApiTokensLosers(): FetchInterface<any> {
-  return useApi({ route: 'tokens/losers' })
+  return useApi({ route: 'tokens?sort=priceUSDChange' as Routes })
 }
 
 export function useApiPools(type?: PoolTypes, limit?: number): FetchInterface<any> {
-  const route = ('pools' + (type ? `/${type}` : '')) as Routes
+  const route = ('pools' + (type && type in typeToSort ? `?sort=${typeToSort[type]}` : '')) as Routes
   return useApi({ route, limit })
 }
 
@@ -82,34 +89,48 @@ export function useApiPoolsDetail(address: string): any {
   return useApi({ route: `pools/${address}` as Routes })
 }
 
+export function useApiPoolStats(address: string, period: string): any {
+  return useApi({ route: `pools/stats/${address}/${period}` as Routes })
+}
+
 export function useApiUserWallet(address: string | null | undefined): any {
-  const route = `user/${address}` as Routes
-  return useApi({ route })
+  const route = `wallets/${address}` as Routes
+  return useApi({ route, rootData: true })
 }
 
 export function useApiUserAssets(address: string | null | undefined, limit?: number): any {
-  const route = `user/${address}/assets` as Routes
-  return useApi({ route, limit })
+  const route = `wallets/${address}/assets` as Routes
+  return useApi({ route, limit, rootData: true })
 }
 
 export function useApiUserPools(address: string | null | undefined, limit?: number): any {
-  const route = `user/${address}/pools` as Routes
-  return useApi({ route, limit })
+  const route = `wallets/${address}/pools` as Routes
+  return useApi({ route, limit, rootData: true })
 }
 
 export function useApiUserFarming(address: string | null | undefined, limit?: number): any {
-  const route = `user/${address}/farming` as Routes
-  return useApi({ route, limit })
+  const route = `wallets/${address}/farms` as Routes
+  return useApi({ route, limit, rootData: true })
+}
+
+export function useApiUserHistory(address: string | null | undefined): any {
+  return useApi({ route: `wallets/${address}/transactions` as Routes })
 }
 
 export function useApiStatsLocal(): any {
-  return useApi({ route: 'stats-local' })
+  return useApi({ route: 'pools/stats-local' })
 }
 
 export function useApiStatsLocalVolume(): any {
-  return useApi({ route: 'stats-local-volume' })
+  return useApi({ route: 'pools/stats-local-volume' })
 }
 
 export function useApiStatsLocalTvl(): any {
-  return useApi({ route: 'stats-local-tvl' })
+  // TODO: replace with 'pools/stats-local-tvl' after BE implementation
+  return useApiPoolStats('0x9928e4046d7c6513326ccea028cd3e7a91c7590a', 'week')
+  // return useApi({ route: 'pools/stats-local-tvl' })
+}
+
+export function useApiTransactions(): any {
+  return useApi({ route: 'wallets/0x0000000000000000000000000000000000000001/transactions' as Routes }) // TODO: replace with correct route after implementation
 }

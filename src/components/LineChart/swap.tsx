@@ -1,12 +1,12 @@
-import React, { useState, useContext, useMemo, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import LineChart from './index'
-import getLineChartData from './data'
 import { BaseCurrencyView, TYPE } from '../../theme'
 
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
+import { useApiPoolStats } from 'hooks/useApi'
 
 const CustomButton = ({
   value,
@@ -69,12 +69,13 @@ const SwapChart = () => {
   const [liquidityHover, setLiquidityHover] = useState<number | undefined>()
   const [volumeHover, setVolumeHover] = useState<number | undefined>()
   const [feesHover, setFeesHover] = useState<number | undefined>()
-  const [currentChartValue, setCurrentChartValue] = useState<string>('value1')
+  const [currentChartValue, setCurrentChartValue] = useState<string>('liquidity')
   const [currentChartPeriod, setCurrentChartPeriod] = useState<string>('week')
 
-  const lineChartData = useMemo(() => {
-    return getLineChartData(currentChartPeriod)
-  }, [currentChartPeriod])
+  const { data: lineChartData, loader: lineChartLoader } = useApiPoolStats(
+    process.env.REACT_APP_DEFAULT_CHART_ADDRESS || '0x9928e4046d7c6513326ccea028cd3e7a91c7590a',
+    currentChartPeriod
+  )
 
   const handleChartType = (e: string): void => {
     setCurrentChartValue(e)
@@ -90,20 +91,20 @@ const SwapChart = () => {
   const dateFormat = currentChartPeriod === 'all' ? 'MMM' : 'dd'
 
   useEffect(() => {
-    if (!liquidityHover && lineChartData) {
-      setLiquidityHover(lineChartData[lineChartData.length - 1].value1)
+    if (!liquidityHover && lineChartData && lineChartData.length) {
+      setLiquidityHover(lineChartData[lineChartData.length - 1].liquidity)
     }
   }, [liquidityHover, lineChartData, currentChartPeriod])
 
   useEffect(() => {
-    if (!volumeHover && lineChartData) {
-      setVolumeHover(lineChartData[lineChartData.length - 1].value2)
+    if (!volumeHover && lineChartData && lineChartData.length) {
+      setVolumeHover(lineChartData[lineChartData.length - 1].volume)
     }
   }, [volumeHover, lineChartData, currentChartPeriod])
 
   useEffect(() => {
-    if (!feesHover && lineChartData) {
-      setFeesHover(lineChartData[lineChartData.length - 1].value3)
+    if (!feesHover && lineChartData && lineChartData.length) {
+      setFeesHover(lineChartData[lineChartData.length - 1].fees)
     }
   }, [feesHover, lineChartData, currentChartPeriod])
 
@@ -144,22 +145,28 @@ const SwapChart = () => {
           <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
         </ButtonControlWrapper>
       </ControlWrapper>
-      <LineChart
-        data={lineChartData}
-        minHeight={158}
-        color={theme.orange1}
-        value1={liquidityHover}
-        setValue1={setLiquidityHover}
-        value2={volumeHover}
-        setValue2={setVolumeHover}
-        value3={feesHover}
-        setValue3={setFeesHover}
-        currentValue={currentChartValue}
-        dateFormat={dateFormat}
-        XAxisTickGap={100}
-        YAxisTick={{ fontSize: 14 }}
-        style={{ flexDirection: 'column', marginTop: '0.5rem' }}
-      />
+      {lineChartLoader ||
+        (lineChartData && (
+          <LineChart
+            data={lineChartData}
+            minHeight={158}
+            color={theme.orange1}
+            value1={liquidityHover}
+            setValue1={setLiquidityHover}
+            value2={volumeHover}
+            setValue2={setVolumeHover}
+            value3={feesHover}
+            setValue3={setFeesHover}
+            value1Name={'liquidity'}
+            value2Name={'volume'}
+            value3Name={'fees'}
+            currentValue={currentChartValue}
+            dateFormat={dateFormat}
+            XAxisTickGap={100}
+            YAxisTick={{ fontSize: 14 }}
+            style={{ flexDirection: 'column', marginTop: '0.5rem' }}
+          />
+        ))}
     </>
   )
 }

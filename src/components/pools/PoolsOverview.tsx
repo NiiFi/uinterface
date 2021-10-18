@@ -94,7 +94,7 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
       <Grid container direction="row" alignItems="flex-start" spacing={3}>
         {loader ||
           (data &&
-            Object.entries(data).map(([key, item]) => {
+            Object.entries(data.slice(0, 6)).map(([key, item]) => {
               return (
                 <Grid item xs={isSmallScreen ? 12 : 4} key={key}>
                   <Card onClick={(e) => handleCardOnClick(e, item.address)}>
@@ -103,14 +103,14 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                         <div style={{ position: 'relative' }}>
                           <CurrencyAvatar
                             symbol=""
-                            address={item.token1Address}
+                            address={item.token1.address}
                             iconProps={{ width: '32', height: '32' }}
                             containerStyle={{ zIndex: 1 }}
                             hideSymbol={true}
                           />
                           <CurrencyAvatar
                             symbol=""
-                            address={item.token2Address}
+                            address={item.token2.address}
                             iconProps={{ width: '32', height: '32' }}
                             containerStyle={{ left: '22px', position: 'absolute', marginTop: '-34px' }}
                             hideSymbol={true}
@@ -120,7 +120,9 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                           </CircleWrapper>
                         </div>
                         <ColumnWrapper style={{ marginLeft: '32px' }}>
-                          <TYPE.mediumHeader>{item.poolName}</TYPE.mediumHeader>
+                          <TYPE.mediumHeader>
+                            {item.token1.symbol} / {item.token2.symbol}
+                          </TYPE.mediumHeader>
                           <TYPE.subHeader color={'text2'}>NiiFi</TYPE.subHeader>
                         </ColumnWrapper>
                       </RowWrapper>

@@ -188,7 +188,7 @@ export default function Discover() {
                 {gainersLoader ||
                   (gainersData && (
                     <SimpleTable
-                      data={gainersData}
+                      data={gainersData.slice(0, 3)}
                       row={(row, index) => {
                         const amount = row.priceUSD
                         const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
@@ -277,7 +277,7 @@ export default function Discover() {
                 {losersLoader ||
                   (losersData && (
                     <SimpleTable
-                      data={losersData}
+                      data={losersData.slice(0, 3)}
                       row={(row, index) => {
                         const amount = row.priceUSD
                         const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
@@ -381,20 +381,20 @@ export default function Discover() {
                                 cursor: 'pointer',
                               }}
                               align="left"
-                              onClick={() => history.push(`/pool/${row.id}`)}
+                              onClick={() => history.push(`/pool/${row.address}`)}
                             >
                               <RowWrapper>
                                 <div style={{ position: 'relative' }}>
                                   <CurrencyAvatar
                                     symbol=""
-                                    address={row.token1Address}
+                                    address={row.token1.address}
                                     iconProps={{ width: '32', height: '32' }}
                                     containerStyle={{ zIndex: 1 }}
                                     hideSymbol={true}
                                   />
                                   <CurrencyAvatar
                                     symbol=""
-                                    address={row.token2Address}
+                                    address={row.token2.address}
                                     iconProps={{ width: '34', height: '34' }}
                                     containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
                                     hideSymbol={true}
@@ -404,7 +404,9 @@ export default function Discover() {
                                   </CircleWrapper>
                                 </div>
                                 <ColumnWrapper style={{ marginLeft: '42px' }}>
-                                  <TYPE.body fontWeight={500}>{row.poolName}</TYPE.body>
+                                  <TYPE.body fontWeight={500}>
+                                    {row.token1.symbol} / {row.token2.symbol}
+                                  </TYPE.body>
                                   <TYPE.subHeader color={'text2'}>NiiFi</TYPE.subHeader>
                                 </ColumnWrapper>
                               </RowWrapper>
