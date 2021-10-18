@@ -11,7 +11,7 @@
     "@lingui/react": "^3.9.0",
     "@material-ui/core": "^4.11.4",
     "@metamask/jazzicon": "^2.0.0",
-    "@niifi/godzilla2-sdk": "git+ssh://git@github.com:NiiFi/godzilla2-sdk.git",
+    "@niifi/godzilla2-sdk": "github:NiiFi/godzilla2-sdk",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",

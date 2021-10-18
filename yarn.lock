@@ -3479,9 +3479,9 @@
     unixify "^1.0.0"
     yargs "^16.0.0"
 
-"@niifi/godzilla2-sdk@git+ssh://git@github.com:NiiFi/godzilla2-sdk.git":
+"@niifi/godzilla2-sdk@github:NiiFi/godzilla2-sdk":
   version "0.1.0"
-  resolved "git+ssh://git@github.com:NiiFi/godzilla2-sdk.git#bfb781110fefeb19f663097adae42b632c35b059"
+  resolved "https://codeload.github.com/NiiFi/godzilla2-sdk/tar.gz/bfb781110fefeb19f663097adae42b632c35b059"
   dependencies:
     "@ethersproject/address" "^5.0.0"
     "@ethersproject/solidity" "^5.0.0"
