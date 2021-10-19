@@ -29,7 +29,7 @@ type ApiParams = {
 const typeToSort: any = {
   gainers: '-trendingPercentY',
   losers: 'trendingPercentY',
-  //'new': '',  // TODO: define sort parameter after implementation on BE http://54.171.9.121/api/v1/doc/swagger.ui/#/Pool/get_pools
+  new: '-timestamp',
 }
 
 interface FetchInterface<T> {
