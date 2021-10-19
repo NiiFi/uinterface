@@ -14,6 +14,7 @@ import { calculateGasMargin } from 'utils/calculateGasMargin'
 import { ZERO_PERCENT } from 'constants/misc'
 import useTransactionDeadline from 'hooks/useTransactionDeadline'
 import { useV2RouterContract } from 'hooks/useContract'
+import ReactGA from 'react-ga'
 
 export const DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE = new Percent(200, 10_000)
 
@@ -87,6 +88,14 @@ export const addLiquidityAsync = async (
         summary: t`Add ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${
           currencies[Field.CURRENCY_A]?.symbol
         } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencies[Field.CURRENCY_B]?.symbol}`,
+      })
+      ReactGA.event({
+        category: 'Pool',
+        action: 'Create/Add liquidity',
+        label: [
+          `${parsedAmounts[Field.CURRENCY_A]?.toSignificant(3)} ${currencies[Field.CURRENCY_A]?.symbol}`,
+          `${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencies[Field.CURRENCY_B]?.symbol}`,
+        ].join('/'),
       })
     })
   })
