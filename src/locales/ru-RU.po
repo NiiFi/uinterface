@@ -160,6 +160,9 @@ msgstr ""
 msgid "Approve"
 msgstr ""
 
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
@@ -331,6 +334,10 @@ msgstr ""
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/index.tsx
+#: src/pages/Dashboard/subpages/Farm.tsx
+#: src/pages/Dashboard/subpages/Pools.tsx
+#: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -690,7 +697,6 @@ msgstr ""
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/PoolDetail/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr ""

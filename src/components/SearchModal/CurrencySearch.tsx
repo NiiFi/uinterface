@@ -106,12 +106,14 @@ export function CurrencySearch({
   const ether = useMemo(() => chainId && ExtendedEther.onChain(chainId), [chainId])
 
   const filteredSortedTokensWithETH: Currency[] = useMemo(() => {
-    const s = debouncedQuery.toLowerCase().trim()
-    if (s === '' || s === 'e' || s === 'et' || s === 'eth') {
-      return ether ? [ether, ...filteredSortedTokens] : filteredSortedTokens
-    }
+    // TODO: fix this, ExtendedEther is not used because of addLiquidityETH problem on Nahmii router
+    // const s = debouncedQuery.toLowerCase().trim()
+    // if (s === '' || s === 'e' || s === 'et' || s === 'eth') {
+    //   return ether ? [ether, ...filteredSortedTokens] : filteredSortedTokens
+    // }
     return filteredSortedTokens
-  }, [debouncedQuery, ether, filteredSortedTokens])
+    // }, [debouncedQuery, ether, filteredSortedTokens])
+  }, [filteredSortedTokens])
 
   const handleCurrencySelect = useCallback(
     (currency: Currency) => {

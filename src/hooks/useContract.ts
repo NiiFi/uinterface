@@ -1,8 +1,4 @@
 import { Contract } from '@ethersproject/contracts'
-import { abi as GOVERNANCE_ABI } from '@uniswap/governance/build/GovernorAlpha.json'
-import { abi as UNI_ABI } from '@uniswap/governance/build/Uni.json'
-import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
-import { abi as MERKLE_DISTRIBUTOR_ABI } from '@uniswap/merkle-distributor/build/MerkleDistributor.json'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import { abi as IUniswapV2Router02ABI } from '@uniswap/v2-periphery/build/IUniswapV2Router02.json'
 
@@ -13,16 +9,11 @@ import ERC20_BYTES32_ABI from 'abis/erc20_bytes32.json'
 import WETH_ABI from 'abis/weth.json'
 import EIP_2612 from 'abis/eip_2612.json'
 
-import {
-  ARGENT_WALLET_DETECTOR_ADDRESS,
-  GOVERNANCE_ADDRESS,
-  MERKLE_DISTRIBUTOR_ADDRESS,
-  ROUTER_ADDRESS,
-} from 'constants/addresses'
+import { ARGENT_WALLET_DETECTOR_ADDRESS, ROUTER_ADDRESS } from 'constants/addresses'
 import { useMemo } from 'react'
 import { getContract } from 'utils'
 import { Erc20, ArgentWalletDetector, EnsPublicResolver, Weth } from '../abis/types'
-import { NII, WETH9_EXTENDED } from '../constants/tokens'
+import { WETH9_EXTENDED } from '../constants/tokens'
 import { useActiveWeb3React } from './web3'
 
 // returns null on errors
@@ -79,21 +70,4 @@ export function usePairContract(pairAddress?: string, withSignerIfPossible?: boo
 
 export function useV2RouterContract(): Contract | null {
   return useContract(ROUTER_ADDRESS, IUniswapV2Router02ABI, true)
-}
-
-export function useMerkleDistributorContract() {
-  return useContract(MERKLE_DISTRIBUTOR_ADDRESS, MERKLE_DISTRIBUTOR_ABI, true)
-}
-
-export function useGovernanceContract() {
-  return useContract(GOVERNANCE_ADDRESS, GOVERNANCE_ABI, true)
-}
-
-export function useUniContract() {
-  const { chainId } = useActiveWeb3React()
-  return useContract(chainId ? NII[chainId]?.address : undefined, UNI_ABI, true)
-}
-
-export function useStakingContract(stakingAddress?: string, withSignerIfPossible?: boolean) {
-  return useContract(stakingAddress, STAKING_REWARDS_ABI, withSignerIfPossible)
 }
