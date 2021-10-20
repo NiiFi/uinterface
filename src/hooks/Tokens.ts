@@ -3,7 +3,8 @@ import { Currency, Token } from '@uniswap/sdk-core'
 import { arrayify } from 'ethers/lib/utils'
 import { useMemo, useEffect, useState } from 'react'
 import { createTokenFilterFunction } from '../components/SearchModal/filtering'
-import { ExtendedEther, WETH9_EXTENDED } from '../constants/tokens'
+//import { ExtendedEther } from '../constants/tokens'
+import { ETH_ADDRESS } from '../constants/addresses'
 import { useAllLists, useCombinedActiveList, useInactiveListUrls } from '../state/lists/hooks'
 import { WrappedTokenInfo } from '../state/lists/wrappedTokenInfo'
 import { useUserAddedTokens } from '../state/user/hooks'
@@ -133,7 +134,8 @@ export function useToken(tokenAddress?: string, tokenAlt?: any): Token | undefin
   const [decimals, setDecimals] = useState(0)
   const tokens = useAllTokens()
 
-  const address = isAddress(tokenAddress)
+  // const address = isAddress(tokenAddress)
+  const address = isAddress(tokenAddress === 'ETH' && chainId ? ETH_ADDRESS[chainId] : tokenAddress)
 
   const token: Token | undefined = address ? tokens[address] : undefined
 
@@ -152,10 +154,12 @@ export function useToken(tokenAddress?: string, tokenAlt?: any): Token | undefin
     }
   }, [address, library, account])
 
+  // console.log('TOKEN', tokenAddress, address, tokenName, symbol)
+
   return useMemo(() => {
     if (token) return token
     if (tokenAlt) {
-      return new Token(3, tokenAlt?.address, 18, tokenAlt?.symbol, tokenAlt?.symbol) // TODO: fix with most elegant solution to avoid tokenAlt usage
+      return new Token(chainId || 3, tokenAlt?.address, 18, tokenAlt?.symbol, tokenAlt?.symbol) // TODO: fix with most elegant solution to avoid tokenAlt usage
     }
     if (!chainId || !address) return undefined
     if (decimals) {
@@ -173,10 +177,14 @@ export function useToken(tokenAddress?: string, tokenAlt?: any): Token | undefin
 
 export function useCurrency(currencyId: string | undefined, tokenAlt?: any): Currency | null | undefined {
   const { chainId } = useActiveWeb3React()
-  const isETH = currencyId?.toUpperCase() === 'ETH' || currencyId === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' // TODO: check how to replace/remove this address
-  const token = useToken(isETH ? undefined : currencyId, tokenAlt)
-  const weth = chainId ? WETH9_EXTENDED[chainId] : undefined
-  if (weth?.address?.toLowerCase() === currencyId?.toLowerCase()) return weth
+  // const isETH = currencyId?.toUpperCase() === 'ETH' || tokenAlt?.symbol === 'ETH'
+  // const token = useToken(isETH ? undefined : currencyId, tokenAlt)
+  // const weth = chainId ? ExtendedEther.onChain(chainId) : undefined
+  // // if (weth?.address?.toLowerCase() === currencyId?.toLowerCase()) return weth
 
-  return isETH ? (chainId ? ExtendedEther.onChain(chainId) : undefined) : token
+  // return isETH ? weth : token
+  return useToken(
+    (chainId && currencyId === 'ETH') || (chainId && tokenAlt?.symbol === 'ETH') ? ETH_ADDRESS[chainId] : currencyId,
+    tokenAlt
+  )
 }

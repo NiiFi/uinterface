@@ -76,10 +76,8 @@ export default function CreatePoolModal() {
   const [currencyTokenTwo, setCurrencyTokenTwo] = useState<Currency | null | undefined>(null)
   const { calculateTotalInvestment } = useInvestmentCalculator()
 
-  const { addLiquidity, currencies, formattedAmounts, onFieldAInput, onFieldBInput, error } = useAddLiquidity(
-    currencyTokenOne,
-    currencyTokenTwo
-  )
+  const { addLiquidity, currencies, formattedAmounts, onFieldAInput, onFieldBInput, error, approveA, approveB } =
+    useAddLiquidity(currencyTokenOne, currencyTokenTwo)
 
   useEffect(() => {
     setInvestmentValue(
@@ -141,6 +139,16 @@ export default function CreatePoolModal() {
                 {error}
               </TYPE.error>
             )}
+          {error && error === 'A_NOT_APPROVED' && (
+            <ButtonPrimary onClick={approveA.approveACallback}>
+              <Trans>Approve {currencies[Field.CURRENCY_A].symbol}</Trans>
+            </ButtonPrimary>
+          )}
+          {error && error === 'B_NOT_APPROVED' && (
+            <ButtonPrimary onClick={approveB.approveBCallback}>
+              <Trans>Approve {currencies[Field.CURRENCY_B].symbol}</Trans>
+            </ButtonPrimary>
+          )}
           <Row marginTop="1rem">
             {account ? (
               <ButtonPrimary style={{ textTransform: 'uppercase' }} onClick={addLiquidity} disabled={error}>

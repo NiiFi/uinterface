@@ -15,6 +15,8 @@ msgstr ""
 "Project-Id-Version: niifi\n"
 "Language-Team: Finnish\n"
 "PO-Revision-Date: 2021-09-28 18:25\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
@@ -163,6 +165,9 @@ msgstr ""
 msgid "Approve"
 msgstr "Hyväksy"
 
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
@@ -334,6 +339,10 @@ msgstr "Vahvista tapahtuma lompakossasi"
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/index.tsx
+#: src/pages/Dashboard/subpages/Farm.tsx
+#: src/pages/Dashboard/subpages/Pools.tsx
+#: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -693,7 +702,6 @@ msgstr "Ladattu"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/PoolDetail/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Ladataan"
@@ -1596,4 +1604,3 @@ msgstr ""
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr ""
-

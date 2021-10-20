@@ -1,6 +1,6 @@
 import { Currency, Percent } from '@uniswap/sdk-core'
 import { TransactionResponse } from '@ethersproject/providers'
-import { BigNumber } from '@ethersproject/bignumber'
+// import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'
 import { useCallback } from 'react'
 import { useActiveWeb3React } from 'hooks/web3'
@@ -8,6 +8,7 @@ import { useCurrency } from 'hooks/Tokens'
 import { useUserSlippageToleranceWithDefault } from 'state/user/hooks'
 import { useDerivedMintInfo, useMintState, useMintActionHandlers } from 'state/mint/hooks'
 import { useTransactionAdder } from 'state/transactions/hooks'
+import { useApproveCallback } from 'hooks/useApproveCallback'
 import { Field } from 'state/mint/actions'
 import { calculateSlippageAmount } from 'utils/calculateSlippageAmount'
 import { calculateGasMargin } from 'utils/calculateGasMargin'
@@ -46,38 +47,40 @@ export const addLiquidityAsync = async (
     [Field.CURRENCY_B]: calculateSlippageAmount(parsedAmountB, noLiquidity ? ZERO_PERCENT : allowedSlippage)[0],
   }
 
-  let estimate,
-    method: (...args: any) => Promise<TransactionResponse>,
-    args: Array<string | string[] | number>,
-    value: BigNumber | null
-  if (currencyA.isNative || currencyB.isNative) {
-    const tokenBIsETH = currencyB.isNative
-    estimate = router.estimateGas.addLiquidityETH
-    method = router.addLiquidityETH
-    args = [
-      (tokenBIsETH ? currencyA : currencyB)?.wrapped?.address ?? '',
-      (tokenBIsETH ? parsedAmountA : parsedAmountB).quotient.toString(),
-      amountsMin[tokenBIsETH ? Field.CURRENCY_A : Field.CURRENCY_B].toString(),
-      amountsMin[tokenBIsETH ? Field.CURRENCY_B : Field.CURRENCY_A].toString(),
-      account,
-      deadline.toHexString(),
-    ]
-    value = BigNumber.from((tokenBIsETH ? parsedAmountB : parsedAmountA).quotient.toString())
-  } else {
-    estimate = router.estimateGas.addLiquidity
-    method = router.addLiquidity
-    args = [
-      currencyA?.wrapped?.address ?? '',
-      currencyB?.wrapped?.address ?? '',
-      parsedAmountA.quotient.toString(),
-      parsedAmountB.quotient.toString(),
-      amountsMin[Field.CURRENCY_A].toString(),
-      amountsMin[Field.CURRENCY_B].toString(),
-      account,
-      deadline.toHexString(),
-    ]
-    value = null
-  }
+  // let estimate,
+  //   method: (...args: any) => Promise<TransactionResponse>,
+  //   args: Array<string | string[] | number>,
+  //   value: BigNumber | null
+  // if (currencyA.isNative || currencyB.isNative) {
+  //   const tokenBIsETH = currencyB.isNative
+  //   estimate = router.estimateGas.addLiquidityETH
+  //   method = router.addLiquidityETH
+  //   args = [
+  //     (tokenBIsETH ? currencyA : currencyB)?.wrapped?.address ?? '',
+  //     (tokenBIsETH ? parsedAmountA : parsedAmountB).quotient.toString(),
+  //     amountsMin[tokenBIsETH ? Field.CURRENCY_A : Field.CURRENCY_B].toString(),
+  //     amountsMin[tokenBIsETH ? Field.CURRENCY_B : Field.CURRENCY_A].toString(),
+  //     account,
+  //     deadline.toHexString(),
+  //   ]
+  //   value = BigNumber.from((tokenBIsETH ? parsedAmountB : parsedAmountA).quotient.toString())
+  // } else {
+  const estimate = router.estimateGas.addLiquidity
+  const method: (...args: any) => Promise<TransactionResponse> = router.addLiquidity
+  const args: Array<string | string[] | number> = [
+    currencyA?.wrapped?.address ?? '',
+    currencyB?.wrapped?.address ?? '',
+    parsedAmountA.quotient.toString(),
+    parsedAmountB.quotient.toString(),
+    amountsMin[Field.CURRENCY_A].toString(),
+    amountsMin[Field.CURRENCY_B].toString(),
+    account,
+    deadline.toHexString(),
+  ]
+  const value = null
+  // }
+
+  // console.log(['addLiquidity', args])
 
   await estimate(...args, value ? { value } : {}).then((estimatedGasLimit: any) => {
     method(...args, {
@@ -111,6 +114,8 @@ export default function useAddLiquidity(
   onFieldAInput: any
   onFieldBInput: any
   error: any
+  approveA: any
+  approveB: any
 } {
   const { account, chainId, library } = useActiveWeb3React()
   const router = useV2RouterContract()
@@ -137,6 +142,9 @@ export default function useAddLiquidity(
 
   const allowedSlippage = useUserSlippageToleranceWithDefault(DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE)
   const deadline = useTransactionDeadline()
+  // console.log([currencyTokenOne, currencyTokenTwo, parsedAmounts[Field.CURRENCY_A], parsedAmounts[Field.CURRENCY_B]])
+  const [approvalA, approveACallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_A], router?.address)
+  const [approvalB, approveBCallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_B], router?.address)
 
   const addTransaction = useTransactionAdder()
 
@@ -174,5 +182,15 @@ export default function useAddLiquidity(
     ]
   )
 
-  return { addLiquidity, currencies, formattedAmounts, onFieldAInput, onFieldBInput, error }
+  return {
+    addLiquidity,
+    currencies,
+    formattedAmounts,
+    onFieldAInput,
+    onFieldBInput,
+    error:
+      error || (approvalA === 'NOT_APPROVED' && 'A_' + approvalA) || (approvalB === 'NOT_APPROVED' && 'B_' + approvalB),
+    approveA: { approvalA, approveACallback },
+    approveB: { approvalB, approveBCallback },
+  }
 }

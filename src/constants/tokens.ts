@@ -25,7 +25,7 @@ export const WETH9_EXTENDED: { [chainId: number]: Token } = {
     SupportedChainId.ROPSTEN_NAHMII,
     '0x4200000000000000000000000000000000000006', // TODO: move to .env
     18,
-    'WETH9',
+    'ETH',
     'Wrapped Ether'
   ),
 }

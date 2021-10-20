@@ -48,20 +48,45 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x26c8AFBBFE1EBaca03C2bB082E69D0476Bffe099/logo.png"
     },
     {
-      "name": "Jan",
       "chainId": 5553,
-      "symbol": "JAN",
-      "decimals": 18,
-      "address": "0x7e5948B5B67777FEb1432eA4a11712A94F68cC7C",
-      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x26c8AFBBFE1EBaca03C2bB082E69D0476Bffe099/logo.png"
+      "address": "0xab151cD390C6b0eB41A4a45E1E372972C3067b1a",
+      "name": "Nahmii USD",
+      "symbol": "NUSD",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/hubiinetwork/marketing-external/master/img/nahmii/nahmii-token-2020-transparent-384x384.png",
+      "extensions": {
+          "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
     },
     {
-      "name": "KniightCoin",
       "chainId": 5553,
+      "address": "0xB59C984a529490fde6698702342b292840743bb8",
+      "name": "Nahmii EURO",
+      "symbol": "NEURO",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/hubiinetwork/marketing-external/master/img/nahmii/nahmii-token-2020-transparent-384x384.png",
+      "extensions": {
+          "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5553,
+      "address": "0xB68553758df8c253746d3cED96aA1De896F09470",
+      "name": "KniightCoin",
       "symbol": "KNII",
       "decimals": 18,
-      "address": "0x148b4AB2cC4d88A9C1c8A09A691586F32FaB9741",
-      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x26c8AFBBFE1EBaca03C2bB082E69D0476Bffe099/logo.png"
+      "logoURI": "https://raw.githubusercontent.com/hubiinetwork/marketing-external/master/img/nahmii/nahmii-token-2020-transparent-384x384.png",
+      "extensions": {
+          "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "name": "Ether",
+      "chainId": 5553,
+      "symbol": "ETH",
+      "decimals": 18,
+      "address": "0x4200000000000000000000000000000000000006",
+      "logoURI": "https://assets.trustwalletapp.com/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png"
     }
   ]
 }

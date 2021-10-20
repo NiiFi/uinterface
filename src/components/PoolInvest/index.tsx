@@ -18,6 +18,7 @@ import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
 import { useUserSlippageToleranceWithDefault, useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
 import { addLiquidityAsync, DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE } from 'hooks/useAddLiquidity'
+import { useApproveCallback } from 'hooks/useApproveCallback'
 import { useTransactionAdder } from 'state/transactions/hooks'
 import useTransactionDeadline from 'hooks/useTransactionDeadline'
 import { PairState, usePair } from 'hooks/usePairs'
@@ -115,6 +116,9 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
     [Field.CURRENCY_B]: balances[1],
   }
 
+  const [approvalA, approveACallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_A], router?.address)
+  const [approvalB, approveBCallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_B], router?.address)
+
   let error: string | undefined
   if (!account) {
     error = t`Connect Wallet`
@@ -167,7 +171,8 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
             {currencyBalances[Field.CURRENCY_A] ? (
               <>
                 <Trans>Balance</Trans>
-                {` ${formatCurrencyAmount(currencyBalances[Field.CURRENCY_A], 4)}`}
+                {` ${formatCurrencyAmount(currencyBalances[Field.CURRENCY_A], 4)}`} |
+                {` ${formatCurrencyAmount(currencyBalances[Field.CURRENCY_B], 4)}`}
               </>
             ) : (
               ''
@@ -195,14 +200,24 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
           <Slippage placement={'left'} />
         </RowBetween>
         {account ? (
-          <ButtonPrimary
-            style={{ textTransform: 'uppercase' }}
-            disabled={!!error}
-            marginTop="2rem"
-            onClick={addLiquidity}
-          >
-            <Trans>Add Liquidity</Trans>
-          </ButtonPrimary>
+          <>
+            {!error && currencies && (approvalA === 'NOT_APPROVED' || approvalB === 'NOT_APPROVED') && (
+              <ButtonPrimary onClick={approvalA === 'NOT_APPROVED' ? approveACallback : approveBCallback}>
+                <Trans>
+                  Approve {currencies[approvalA === 'NOT_APPROVED' ? Field.CURRENCY_A : Field.CURRENCY_B]?.symbol}
+                </Trans>
+              </ButtonPrimary>
+            )}
+
+            <ButtonPrimary
+              style={{ textTransform: 'uppercase' }}
+              disabled={!!error}
+              marginTop="2rem"
+              onClick={addLiquidity}
+            >
+              <Trans>Add Liquidity</Trans>
+            </ButtonPrimary>
+          </>
         ) : (
           <ButtonPrimary marginTop="2rem" onClick={toggleWalletModal}>
             <Trans>Connect Wallet</Trans>
