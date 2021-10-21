@@ -20,7 +20,7 @@ import useTheme from 'hooks/useTheme'
 import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
 import { usePair } from 'hooks/usePairs'
 import { useUserSlippageToleranceWithDefault, useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
-import { useTokenBalances } from 'state/wallet/hooks'
+// import { useTokenBalances } from 'state/wallet/hooks'
 import { useTotalSupply } from 'hooks/useTotalSupply'
 import { Field } from 'state/burn/actions'
 import { useInvestmentCalculator } from 'state/pool/hooks'
@@ -33,6 +33,8 @@ import { useApproveCallback, ApprovalState } from 'hooks/useApproveCallback'
 import { usePairContract, useV2RouterContract } from 'hooks/useContract'
 import { useLiquidityTokenPermit } from 'hooks/useERC20Permit'
 import JSBI from 'jsbi'
+import { getContract } from 'utils'
+import ERC20_ABI from 'abis/erc20.json'
 
 const UpperSection = styled.div`
   position: relative;
@@ -100,8 +102,28 @@ export default function PoolWithdraw({ currency0, currency1 }: { currency0: Curr
 
   const [, pair] = usePair(currency0, currency1)
 
-  const relevantTokenBalances = useTokenBalances(account ?? undefined, [pair?.liquidityToken])
-  const userLiquidity: undefined | CurrencyAmount<Token> = relevantTokenBalances?.[pair?.liquidityToken?.address ?? '']
+  // TODO: check useTokenBalances issue
+  const [userLiquidity, setUserLiquidity] = useState<undefined | CurrencyAmount<Token>>()
+
+  useEffect(() => {
+    ;(async () => {
+      if (!!account && !!library && !!chainId && !!pair?.liquidityToken?.address) {
+        const tokenInst = getContract(pair?.liquidityToken?.address, ERC20_ABI, library, account)
+        let balance = JSBI.BigInt(0)
+        try {
+          balance = await tokenInst.balanceOf(account)
+          setUserLiquidity(
+            CurrencyAmount.fromRawAmount(pair?.liquidityToken, balance ? JSBI.BigInt(balance.toString()) : 0)
+          )
+        } catch (e) {
+          console.log(e)
+        }
+      }
+    })()
+  }, [account, library, chainId, pair])
+
+  // const relevantTokenBalances = useTokenBalances(account ?? undefined, [pair?.liquidityToken])
+  // const userLiquidity: undefined | CurrencyAmount<Token> = relevantTokenBalances?.[pair?.liquidityToken?.address ?? '']
 
   const totalSupply = useTotalSupply(pair?.liquidityToken)
 
