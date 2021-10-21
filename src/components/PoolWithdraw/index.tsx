@@ -102,7 +102,7 @@ export default function PoolWithdraw({ currency0, currency1 }: { currency0: Curr
 
   const [, pair] = usePair(currency0, currency1)
 
-  // TODO: check useTokenBalances issue
+  // TODO: check useTokenBalances issue bellow
   const [userLiquidity, setUserLiquidity] = useState<undefined | CurrencyAmount<Token>>()
 
   useEffect(() => {
