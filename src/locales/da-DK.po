@@ -42,11 +42,7 @@ msgid "1 Year"
 msgstr ""
 
 #: src/components/Table/pools.tsx
-msgid "1W"
-msgstr ""
-
-#: src/components/Table/pools.tsx
-msgid "1Y"
+msgid "1D"
 msgstr ""
 
 #: src/components/swap/Slippage.tsx
@@ -75,6 +71,14 @@ msgstr "<0>Tip:</0> Når du tilføjer likviditet, vil du modtage pools tokens so
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "APPROVE"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "APY"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "APY (1D)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -307,6 +311,11 @@ msgstr "Luk"
 #: src/components/Badge/RangeBadge.tsx
 msgid "Closed"
 msgstr "Lukket"
+
+#: src/pages/Dashboard/components/Card.tsx
+#: src/pages/Discover/index.tsx
+msgid "Coming soon"
+msgstr ""
 
 #: src/components/SearchModal/CommonBases.tsx
 msgid "Common bases"
@@ -938,14 +947,6 @@ msgstr "Priser og poolandel"
 msgid "RENAME"
 msgstr ""
 
-#: src/components/Table/pools.tsx
-msgid "ROI"
-msgstr ""
-
-#: src/components/pools/PoolsOverview.tsx
-msgid "ROI (1Y)"
-msgstr ""
-
 #: src/pages/PoolDetail/index.tsx
 msgid "ROI Simulator"
 msgstr ""
@@ -1066,7 +1067,6 @@ msgstr ""
 msgid "Sell"
 msgstr ""
 
-#: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Send"
 msgstr ""
@@ -1189,12 +1189,8 @@ msgstr "Transaktionen kunne ikke sendes, fordi fristen er udløbet. Kontroller, 
 msgid "These tokens are commonly paired with other tokens."
 msgstr ""
 
-#: src/components/Table/SearchableTable.tsx
 #: src/components/Table/TableToolbar.tsx
 #: src/pages/Dashboard/index.tsx
-#: src/pages/Discover/index.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "This is Dummy Data"
 msgstr ""
 
