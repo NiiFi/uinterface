@@ -457,7 +457,7 @@ export default function Discover() {
                   />
                 </CardHeader>
                 <TYPE.body style={{ margin: '20px' }}>
-                  <Trans>Comming soon</Trans>
+                  <Trans>Coming soon</Trans>
                 </TYPE.body>
               </Card>
             </Grid>

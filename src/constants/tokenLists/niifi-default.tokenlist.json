@@ -16,38 +16,6 @@
   ],
   "tokens": [
     {
-      "name": "Dai Stablecoin",
-      "chainId": 3,
-      "symbol": "DAI",
-      "decimals": 18,
-      "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
-      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png"
-    },
-    {
-      "name": "Uni",
-      "chainId": 3,
-      "symbol": "UNI",
-      "decimals": 18,
-      "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
-      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png"
-    },
-    {
-      "name": "Amp",
-      "chainId": 3,
-      "symbol": "AMP",
-      "decimals": 18,
-      "address": "0xcd228c30d1258e7ecfc8f96fcb99054ada030d5e",
-      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x26c8AFBBFE1EBaca03C2bB082E69D0476Bffe099/logo.png"
-    },
-    {
-      "name": "Test",
-      "chainId": 3,
-      "symbol": "TEST",
-      "decimals": 18,
-      "address": "0x0c7f69f66ab81bb257198baa7f42fd1469e002a6",
-      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x26c8AFBBFE1EBaca03C2bB082E69D0476Bffe099/logo.png"
-    },
-    {
       "chainId": 5553,
       "address": "0xab151cD390C6b0eB41A4a45E1E372972C3067b1a",
       "name": "Nahmii USD",
