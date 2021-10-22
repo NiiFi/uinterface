@@ -100,7 +100,7 @@ export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps)
   }
   const renderedTable = () => (
     <TYPE.body style={{ margin: '20px' }}>
-      <Trans>Comming soon</Trans>
+      <Trans>Coming soon</Trans>
     </TYPE.body>
   )
 
