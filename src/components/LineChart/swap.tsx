@@ -109,7 +109,11 @@ const SwapChart = () => {
   }, [feesHover, lineChartData, currentChartPeriod])
 
   return (
-    <>
+    <div
+      style={{
+        opacity: 0.4,
+      }}
+    >
       <TYPE.mediumHeaderEllipsis padding="18px 0">
         <Trans>ETH-ANY Pair Stats (Dummy data)</Trans>
       </TYPE.mediumHeaderEllipsis>
@@ -167,7 +171,7 @@ const SwapChart = () => {
             style={{ flexDirection: 'column', marginTop: '0.5rem' }}
           />
         ))}
-    </>
+    </div>
   )
 }
 

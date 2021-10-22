@@ -258,13 +258,6 @@ export default function SearchableTable(props: EnhancedTableProps) {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </div>
-      <div className={classes.paddingsWrap}>
-        <Disclaimer>
-          <span>Disclaimer:</span>
-          {` `}
-          {t`This is Dummy Data`}
-        </Disclaimer>
-      </div>
       <TableContainer>
         <Table className={classes.table} size={'medium'} style={{ width: '100%', tableLayout: 'auto' }}>
           <EnhancedTableHead

@@ -111,7 +111,11 @@ const PoolDetailChart = ({ address, token0, token1 }: { address: string; token0:
   }, [feesHover, lineChartData, currentChartPeriod])
 
   return (
-    <>
+    <div
+      style={{
+        opacity: 0.4,
+      }}
+    >
       <TYPE.mediumHeaderEllipsis padding="18px 0">
         {`${token0}-${token1} `}
         <Trans>Pair Stats (Dummy data)</Trans>
@@ -170,7 +174,7 @@ const PoolDetailChart = ({ address, token0, token1 }: { address: string; token0:
             style={{ flexDirection: 'column', marginTop: '0.5rem' }}
           />
         ))}
-    </>
+    </div>
   )
 }
 

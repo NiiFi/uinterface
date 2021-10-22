@@ -161,11 +161,6 @@ export default function Discover() {
       </CustomAppBar>
       <BodyScroller>
         <BodyPanel>
-          <Disclaimer style={{ marginBottom: '24px' }}>
-            <span>Disclaimer:</span>
-            {` `}
-            {t`This is Dummy Data`}
-          </Disclaimer>
           <Grid container direction="row" alignItems="flex-start" spacing={3}>
             <Grid item xs={isSmallScreen ? 12 : 6}>
               <Card>
@@ -200,6 +195,8 @@ export default function Discover() {
                             tabIndex={-1}
                             key={index}
                             selected={false}
+                            onClick={() => window.open(row.url, '_blank')}
+                            style={{ cursor: 'pointer' }}
                           >
                             <TableCell
                               style={{
@@ -289,6 +286,8 @@ export default function Discover() {
                             tabIndex={-1}
                             key={index}
                             selected={false}
+                            onClick={() => window.open(row.url, '_blank')}
+                            style={{ cursor: 'pointer' }}
                           >
                             <TableCell
                               style={{
@@ -373,12 +372,14 @@ export default function Discover() {
                             tabIndex={-1}
                             key={index}
                             selected={false}
+                            style={{
+                              cursor: 'pointer',
+                            }}
                           >
                             <TableCell
                               style={{
                                 ...rowCellStyles,
                                 paddingLeft: isSmallScreen ? '18px' : '34px',
-                                cursor: 'pointer',
                               }}
                               align="left"
                               onClick={() => history.push(`/pool/${row.address}`)}
@@ -455,6 +456,9 @@ export default function Discover() {
                     style={{ marginRight: isSmallScreen ? '0' : '20px' }}
                   />
                 </CardHeader>
+                <TYPE.body style={{ margin: '20px' }}>
+                  <Trans>Comming soon</Trans>
+                </TYPE.body>
               </Card>
             </Grid>
           </Grid>

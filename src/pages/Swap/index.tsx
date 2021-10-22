@@ -655,14 +655,7 @@ export default function Swap({ history }: RouteComponentProps) {
         </TabPanel>
         <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
           <AutoColumn gap="lg">
-            <Wrapper style={{ padding: 0 }}>
-              <Disclaimer>
-                <span>Disclaimer:</span>
-                {` `}
-                {t`This is Dummy Data`}
-              </Disclaimer>
-            </Wrapper>
-            <ResponsiveRow gap="2rem">
+            {/* <ResponsiveRow gap="2rem">
               <AppBody size="md">
                 <Wrapper>
                   <OverviewChart />
@@ -673,7 +666,7 @@ export default function Swap({ history }: RouteComponentProps) {
                   <BarChart />
                 </Wrapper>
               </AppBody>
-            </ResponsiveRow>
+            </ResponsiveRow> */}
             <ResponsiveRow gap="2rem">
               {statsDataLoader ||
                 (statsData && (
@@ -687,7 +680,7 @@ export default function Swap({ history }: RouteComponentProps) {
                           <BaseCurrencyView type="symbol" value={statsData.volume_24} numeralFormat={'0.[00]a'} />
                         </TYPE.mediumHeader>
                         {/* TODO: add percentage when it'll be available in API */}
-                        <Percent value={7.258268337244848} fontWeight={400} />
+                        {/* <Percent value={7.258268337244848} fontWeight={400} /> */}
                       </FlexColumn>
                     </DefaultCard>
                     <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
@@ -698,7 +691,7 @@ export default function Swap({ history }: RouteComponentProps) {
                         <TYPE.mediumHeader color="text1">
                           <BaseCurrencyView type="symbol" value={statsData.fees_24} numeralFormat={'0.[00]a'} />
                         </TYPE.mediumHeader>
-                        <Percent value={7.858268337244848} fontWeight={400} />
+                        {/* <Percent value={7.858268337244848} fontWeight={400} /> */}
                       </FlexColumn>
                     </DefaultCard>
                     <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
@@ -709,7 +702,7 @@ export default function Swap({ history }: RouteComponentProps) {
                         <TYPE.mediumHeader color="text1">
                           <BaseCurrencyView type="symbol" value={statsData.tvl} numeralFormat={'0.[00]a'} />
                         </TYPE.mediumHeader>
-                        <Percent value={-0.508268337244848} fontWeight={400} />
+                        {/* <Percent value={-0.508268337244848} fontWeight={400} /> */}
                       </FlexColumn>
                     </DefaultCard>
                   </>
