@@ -7,7 +7,7 @@ cd $uinterface_path
 echo "Update interface from the Git"
 
 envv='production'
-# TODO: fix condition, seems like it is not working as expected
+# TODO: fix the condition, not working as expected
 if [[ $* == *--staging* ]]
 then
   envv='staging'
