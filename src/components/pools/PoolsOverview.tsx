@@ -143,7 +143,7 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                       </div>
                       <div>
                         <TYPE.subHeader color={'text1'}>
-                          <Trans>ROI (1Y)</Trans>
+                          <Trans>APY (1D)</Trans>
                         </TYPE.subHeader>
                         <TYPE.mediumHeader fontSize="16" paddingTop="5px">
                           {shortenDecimalValues(item.roiY, '0.[00]a')}

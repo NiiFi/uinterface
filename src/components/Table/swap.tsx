@@ -73,35 +73,41 @@ export default function SwapTable() {
     <>
       {loader ||
         (data && (
-          <Table
-            title={t`Recent Transactions`}
-            data={data}
-            headCells={[
-              { id: 'amountUSD', numeric: true, disablePadding: false, label: t`Total Value` },
-              { id: 'amount0', numeric: true, disablePadding: false, label: t`Token Amount` },
-              { id: 'amount1', numeric: true, disablePadding: false, label: t`Token Amount` },
-              { id: 'address', numeric: false, disablePadding: false, label: t`Account` },
-              { id: 'transaction.timestamp', numeric: false, disablePadding: false, label: t`Time` },
-            ]}
-            row={CustomTableRow}
-            headCellsBefore={({ transactionType, onTransactionTypeChange }) => (
-              <TableCell
-                style={{ borderBottom: `1px solid ${theme.bg3}`, paddingLeft: '10px' }}
-                key={'type'}
-                align={'left'}
-                padding={'none'}
-                sortDirection={false}
-              >
-                <SwapTableDropdown
-                  selectedItem={transactionType}
-                  onItemSelect={(value: string) => {
-                    onTransactionTypeChange(value)
-                  }}
-                />
-              </TableCell>
-            )}
-            showDisclaimer={true}
-          />
+          <div
+            style={{
+              opacity: 0.4,
+            }}
+          >
+            <Table
+              title={t`Recent Transactions`}
+              data={data}
+              headCells={[
+                { id: 'amountUSD', numeric: true, disablePadding: false, label: t`Total Value` },
+                { id: 'amount0', numeric: true, disablePadding: false, label: t`Token Amount` },
+                { id: 'amount1', numeric: true, disablePadding: false, label: t`Token Amount` },
+                { id: 'address', numeric: false, disablePadding: false, label: t`Account` },
+                { id: 'transaction.timestamp', numeric: false, disablePadding: false, label: t`Time` },
+              ]}
+              row={CustomTableRow}
+              headCellsBefore={({ transactionType, onTransactionTypeChange }) => (
+                <TableCell
+                  style={{ borderBottom: `1px solid ${theme.bg3}`, paddingLeft: '10px' }}
+                  key={'type'}
+                  align={'left'}
+                  padding={'none'}
+                  sortDirection={false}
+                >
+                  <SwapTableDropdown
+                    selectedItem={transactionType}
+                    onItemSelect={(value: string) => {
+                      onTransactionTypeChange(value)
+                    }}
+                  />
+                </TableCell>
+              )}
+              showDisclaimer={true}
+            />
+          </div>
         ))}
     </>
   )

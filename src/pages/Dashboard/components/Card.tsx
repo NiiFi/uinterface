@@ -98,27 +98,31 @@ export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps)
     e.preventDefault()
     history.push(`/pool/${rowId}`)
   }
-  let renderedTable
+  const renderedTable = () => (
+    <TYPE.body style={{ margin: '20px' }}>
+      <Trans>Comming soon</Trans>
+    </TYPE.body>
+  )
 
-  switch (type) {
-    case 'wallet':
-      renderedTable =
-        data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
-      break
-    case 'nfts':
-      renderedTable = data && data.map((row: any, index: number) => CustomNFTsTableRow(row, index, theme, handleClick))
-      break
-    case 'pools':
-      renderedTable =
-        data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleRowClick))
-      break
-    case 'farm':
-      renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
-      break
-    default:
-      renderedTable =
-        data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
-  }
+  // switch (type) {
+  //   case 'wallet':
+  //     renderedTable =
+  //       data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
+  //     break
+  //   case 'nfts':
+  //     renderedTable = data && data.map((row: any, index: number) => CustomNFTsTableRow(row, index, theme, handleClick))
+  //     break
+  //   case 'pools':
+  //     renderedTable =
+  //       data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleRowClick))
+  //     break
+  //   case 'farm':
+  //     renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
+  //     break
+  //   default:
+  //     renderedTable =
+  //       data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
+  // }
 
   return (
     <Card>
@@ -128,18 +132,18 @@ export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps)
           <TYPE.subHeader>
             <Trans>{types[type]}</Trans>
           </TYPE.subHeader>
-          <TYPE.mediumHeader fontSize="16px">
+          {/* <TYPE.mediumHeader fontSize="16px">
             <BaseCurrencyView value={balance} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
-          </TYPE.mediumHeader>
+          </TYPE.mediumHeader> */}
         </CardHeaderTitle>
-        <ArrowWrapper onClick={(event) => handleClick(event)}>
+        {/* <ArrowWrapper onClick={(event) => handleClick(event)}>
           <CircleSvgWrapper src={CircleSvgSrc} />
           <ArrowSvgWrapper src={ArrowSvgSrc} />
-        </ArrowWrapper>
+        </ArrowWrapper> */}
       </CardHeader>
       <MaterialUiTableContainer>
         <MaterialUiTable>
-          <MaterialUiBody>{renderedTable}</MaterialUiBody>
+          <MaterialUiBody>{renderedTable()}</MaterialUiBody>
         </MaterialUiTable>
       </MaterialUiTableContainer>
     </Card>

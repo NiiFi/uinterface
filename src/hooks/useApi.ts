@@ -16,7 +16,7 @@ type Routes =
   | 'wallets/assets'
   | 'wallets/pools'
   | 'wallets/farms'
-  | 'pools/stats-local'
+  | 'tokens/general-stats'
   | 'pools/stats-local-volume'
   | 'pools/stats-local-tvl'
 
@@ -118,7 +118,7 @@ export function useApiUserHistory(address: string | null | undefined): any {
 }
 
 export function useApiStatsLocal(): any {
-  return useApi({ route: 'pools/stats-local' })
+  return useApi({ route: 'tokens/general-stats' })
 }
 
 export function useApiStatsLocalVolume(): any {

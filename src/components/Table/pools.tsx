@@ -71,11 +71,11 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
       <TableCell style={rowCellStyles} align="center">
         <ColumnWrapper>
           <div>
-            {shortenDecimalValues(row.roiY, '0.[00]a')} (<Trans>1Y</Trans>)
+            {shortenDecimalValues(row.roiY, '0.[00]a')} (<Trans>1D</Trans>)
           </div>
-          <TYPE.small color={'text2'}>
+          {/* <TYPE.small color={'text2'}>
             {shortenDecimalValues(row.roiW, '0.[00]a')} (<Trans>1W</Trans>)
-          </TYPE.small>
+          </TYPE.small> */}
         </ColumnWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
@@ -84,10 +84,10 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
             {row.trendingPercentY > 0 && '+ '}
             {shortenDecimalValues(row.trendingPercentY, '0.[00]')}%
           </div>
-          <TYPE.small color={'text2'}>
+          {/* <TYPE.small color={'text2'}>
             {row.trendingPercentW > 0 && '+ '}
             <BaseCurrencyView type="symbol" value={row.trendingPercentW} numeralFormat={'0.[000]a'} />
-          </TYPE.small>
+          </TYPE.small> */}
         </ColumnWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
@@ -182,7 +182,7 @@ export default function PoolsTable() {
             headCells={[
               { id: 'token0Address', numeric: false, disablePadding: false, label: t`Available Pools` },
               { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
-              { id: 'roiY', numeric: false, disablePadding: false, label: t`ROI` },
+              { id: 'roiY', numeric: false, disablePadding: false, label: t`APY` },
               { id: 'trendingPercentY', numeric: false, disablePadding: false, label: t`Trending` },
               { id: '', numeric: false, disablePadding: false, label: '' },
             ]}

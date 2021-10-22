@@ -246,9 +246,13 @@ export default function PoolDetails({
                         </PoolCardItem>
                       </PoolCardRowColumn>
                     </TokenStatsWrapper>
-                    <ROISimulatorWrapper>
+                    <ROISimulatorWrapper
+                      style={{
+                        opacity: 0.4,
+                      }}
+                    >
                       <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
-                        <Trans>ROI Simulator</Trans>
+                        <Trans>ROI Simulator</Trans> (Dummy)
                       </TYPE.mediumHeaderEllipsis>
                       {currency0 && currency1 && <ROISimulator currency0={currency0} currency1={currency1} />}
                     </ROISimulatorWrapper>
