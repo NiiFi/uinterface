@@ -341,7 +341,7 @@ export default function WalletModal({
             <AutoRow style={{ flexWrap: 'nowrap' }}>
               <TYPE.main fontSize={14}>
                 <Trans>
-                  By connecting a wallet, you agree to Niifi{` `}
+                  By connecting a wallet, you agree to NiiFi{` `}
                   <ExternalLink href="http://example.com">Terms of Service(coming soon)</ExternalLink>
                 </Trans>
               </TYPE.main>

@@ -39,7 +39,7 @@ export function SwitchLocaleLink() {
     return (
       <Container>
         <Trans>
-          Niifi available in:{' '}
+          NiiFi available in:{' '}
           {
             <StyledInternalLink
               onClick={() => {
