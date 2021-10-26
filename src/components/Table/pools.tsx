@@ -149,7 +149,7 @@ export default function PoolsTable() {
   useEffect(() => {
     // TODO: implement sorting
     if (state?.type !== undefined) {
-      setOrderBy('roiY')
+      setOrderBy(state.type === 'new' ? 'roiY' : 'trendingPercentY')
       setOrder(state.type === 'losers' ? 'asc' : 'desc')
     } else {
       setOrderBy('poolName')

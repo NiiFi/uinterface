@@ -30,7 +30,7 @@ export function shortenAddress(address: string, chars = 4): string {
 }
 
 export function shortenDecimalValues(value: string, formatType = '0.[000]a'): string {
-  return numeral(Number(value)).format(formatType)
+  return numeral(parseInt(value)).format(formatType)
 }
 
 export function formatTimeStamp(value: string): string {

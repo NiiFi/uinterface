@@ -12,6 +12,7 @@ import MaterialUiTableContainer from '@material-ui/core/TableContainer'
 import { CustomNFTsTableRow } from './CustomNFTsTableRow'
 import { CustomPoolsTableRow } from './CustomPoolsTableRow'
 import { CustomWalletTableRow } from './CustomWalletTableRow'
+import MaintenanceBackground from '../../../assets/images/comingsoon-tile.png'
 
 import useTheme from 'hooks/useTheme'
 
@@ -77,9 +78,10 @@ type CustomCardProps = {
   svgIconSrc: any
   data: Array<any>
   type: string
+  maintenance?: boolean
 }
 
-export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps) => {
+export const CustomCard = ({ balance, svgIconSrc, data, type, maintenance }: CustomCardProps) => {
   const theme = useTheme()
   const history = useHistory()
   const types: { [type: string]: string } = {
@@ -91,59 +93,73 @@ export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps)
 
   const handleClick = (e: React.MouseEvent<unknown>) => {
     e.preventDefault()
-    history.push(`/dashboard/${type}`)
+    maintenance ? console.log('Coming Soon') : history.push(`/dashboard/${type}`)
   }
 
   const handleRowClick = (e: React.MouseEvent<unknown>, rowId: string) => {
     e.preventDefault()
     history.push(`/pool/${rowId}`)
   }
-  const renderedTable = () => (
-    <TYPE.body style={{ margin: '20px' }}>
-      <Trans>Coming soon</Trans>
-    </TYPE.body>
-  )
+  let renderedTable
 
-  // switch (type) {
-  //   case 'wallet':
-  //     renderedTable =
-  //       data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
-  //     break
-  //   case 'nfts':
-  //     renderedTable = data && data.map((row: any, index: number) => CustomNFTsTableRow(row, index, theme, handleClick))
-  //     break
-  //   case 'pools':
-  //     renderedTable =
-  //       data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleRowClick))
-  //     break
-  //   case 'farm':
-  //     renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
-  //     break
-  //   default:
-  //     renderedTable =
-  //       data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
-  // }
+  switch (type) {
+    case 'wallet':
+      renderedTable =
+        data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
+      break
+    case 'nfts':
+      renderedTable = data && data.map((row: any, index: number) => CustomNFTsTableRow(row, index, theme, handleClick))
+      break
+    case 'pools':
+      renderedTable =
+        data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleRowClick))
+      break
+    case 'farm':
+      renderedTable = data && data.map((row: any, index: number) => CustomPoolsTableRow(row, index, theme, handleClick))
+      break
+    default:
+      renderedTable =
+        data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
+  }
 
   return (
-    <Card>
+    <Card
+      style={{
+        backgroundImage: maintenance ? `url(${MaintenanceBackground})` : '',
+      }}
+    >
       <CardHeader style={{ padding: '32px', justifyContent: 'start' }}>
         <SvgIconWrapper src={svgIconSrc} />
         <CardHeaderTitle>
           <TYPE.subHeader>
             <Trans>{types[type]}</Trans>
           </TYPE.subHeader>
-          {/* <TYPE.mediumHeader fontSize="16px">
+          <TYPE.mediumHeader
+            fontSize="16px"
+            style={{
+              filter: maintenance ? 'blur(3px)' : '',
+            }}
+          >
             <BaseCurrencyView value={balance} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
-          </TYPE.mediumHeader> */}
+          </TYPE.mediumHeader>
         </CardHeaderTitle>
-        {/* <ArrowWrapper onClick={(event) => handleClick(event)}>
+        <ArrowWrapper
+          onClick={(event) => handleClick(event)}
+          style={{
+            filter: maintenance ? 'blur(3px)' : '',
+          }}
+        >
           <CircleSvgWrapper src={CircleSvgSrc} />
           <ArrowSvgWrapper src={ArrowSvgSrc} />
-        </ArrowWrapper> */}
+        </ArrowWrapper>
       </CardHeader>
-      <MaterialUiTableContainer>
+      <MaterialUiTableContainer
+        style={{
+          filter: maintenance ? 'blur(3px)' : '',
+        }}
+      >
         <MaterialUiTable>
-          <MaterialUiBody>{renderedTable()}</MaterialUiBody>
+          <MaterialUiBody>{renderedTable}</MaterialUiBody>
         </MaterialUiTable>
       </MaterialUiTableContainer>
     </Card>

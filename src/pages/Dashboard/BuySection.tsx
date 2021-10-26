@@ -93,7 +93,7 @@ export default function BuySection({ account, balanceValue, data }: any) {
           )}
           {account && (
             <>
-              {/* <BuyCryptoWrapper>
+              <BuyCryptoWrapper>
                 <div style={{ display: 'flex', marginRight: '20px' }}>
                   <BuyCryptoButton />
                 </div>
@@ -103,7 +103,7 @@ export default function BuySection({ account, balanceValue, data }: any) {
                   </ButtonPrimaryDashboard>
                 </div>
               </BuyCryptoWrapper>
-              <BuyCryptoDropdown /> */}
+              <BuyCryptoDropdown />
             </>
           )}
         </ResponsiveRow>
