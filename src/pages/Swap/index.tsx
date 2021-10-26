@@ -541,7 +541,7 @@ export default function Swap({ history }: RouteComponentProps) {
                                   signatureState === UseERC20PermitState.SIGNED ? (
                                     <Trans>You can now trade {currencies[Field.INPUT]?.symbol}</Trans>
                                   ) : (
-                                    <Trans>Allow the Niifi to use your {currencies[Field.INPUT]?.symbol}</Trans>
+                                    <Trans>Allow the NiiFi to use your {currencies[Field.INPUT]?.symbol}</Trans>
                                   )}
                                 </span>
                                 {approvalState === ApprovalState.PENDING ? (
