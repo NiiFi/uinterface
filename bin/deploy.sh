@@ -7,13 +7,15 @@ cd $uinterface_path
 echo "Update interface from the Git"
 
 envv='production'
-# TODO: fix condition, seems like it is not working as expected
+
+git fetch origin
+# TODO: fix the condition, not working as expected
 if [[ $* == *--staging* ]]
 then
   envv='staging'
-  git pull origin dev
+  git reset --hard origin/dev
 else
-  git pull origin main
+  git reset --hard origin/main
 fi
 
 echo environment: $envv
