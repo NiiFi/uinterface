@@ -15,7 +15,6 @@ import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 import TableToolBar from './TableToolbar'
 import { TableDataTypes } from './types'
 import SearchBar from 'components/Search'
-import { Disclaimer } from '../../theme'
 
 export type Order = 'asc' | 'desc'
 

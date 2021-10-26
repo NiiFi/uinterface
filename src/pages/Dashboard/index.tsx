@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { t, Trans } from '@lingui/macro'
+import { Trans } from '@lingui/macro'
 import styled from 'styled-components'
 import Tab from 'components/tab/Tab'
 import Tabs from 'components/tab/Tabs'
@@ -17,7 +17,7 @@ import { ButtonPrimary } from 'components/Button'
 import { CustomCard } from './components/Card'
 import { AutoColumn } from 'components/Column'
 import { ResponsiveRow } from 'components/Row'
-import { BodyScroller, CurrencySelectWrapper, Disclaimer } from 'theme'
+import { BodyScroller, CurrencySelectWrapper } from 'theme'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 // SVGs
 import WalletSvgSrc from '../../assets/svg/wallet.svg'
@@ -76,7 +76,7 @@ export default function Dashboard() {
   const toggleWalletModal = useWalletModalToggle()
 
   // TODO: create API request only with active account
-  const { data: userWallet, loader: userWalletLoader } = useApiUserWallet(account)
+  // const { data: userWallet, loader: userWalletLoader } = useApiUserWallet(account)
   const { data: userPools, loader: userPoolsLoader } = useApiUserPools(account, 3)
   const { data: userAssets, loader: userAssetsLoader } = useApiUserAssets(account, 3)
   const { data: userFarming, loader: userFarmingLoader } = useApiUserFarming(account, 3)
@@ -111,34 +111,18 @@ export default function Dashboard() {
       </StyledAppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
-          <Disclaimer style={{ marginBottom: '10px' }}>
-            <span>Disclaimer:</span>
-            {` `}
-            {t`This is Dummy Data`}
-          </Disclaimer>
           <AutoColumn gap="lg">
             {account ? (
               <>
-                <ResponsiveRow>
+                {/* <ResponsiveRow>
                   <StyledAppBody size="lg">
                     {userWalletLoader ||
                       (userWallet && (
                         <BuySection account={account} balanceValue={balanceValue} data={userWallet.data} />
                       ))}
                   </StyledAppBody>
-                </ResponsiveRow>
+                </ResponsiveRow> */}
                 <ResponsiveRow gap="2rem">
-                  <AppBody size="md">
-                    {userAssetsLoader ||
-                      (userAssets?.data && (
-                        <CustomCard
-                          balance={userAssets.balanceUSD}
-                          svgIconSrc={WalletSvgSrc}
-                          data={userAssets.data.slice(0, 3)}
-                          type={'wallet'}
-                        />
-                      ))}
-                  </AppBody>
                   <AppBody size="md">
                     {userPoolsLoader ||
                       (userPools?.data && (
@@ -150,8 +134,20 @@ export default function Dashboard() {
                         />
                       ))}
                   </AppBody>
+                  <AppBody size="md">
+                    {userAssetsLoader ||
+                      (userAssets?.data && (
+                        <CustomCard
+                          balance={userAssets.balanceUSD}
+                          svgIconSrc={WalletSvgSrc}
+                          data={userAssets.data.slice(0, 3)}
+                          type={'wallet'}
+                          maintenance={true}
+                        />
+                      ))}
+                  </AppBody>
                 </ResponsiveRow>
-                <ResponsiveRow gap="2rem">
+                {/* <ResponsiveRow gap="2rem">
                   <AppBody size="md">
                     {userFarmingLoader ||
                       (userFarming?.data && (
@@ -166,7 +162,7 @@ export default function Dashboard() {
                   <AppBody size="md">
                     <CustomCard balance={balanceValue} svgIconSrc={NFTsSvgSrc} data={SampleNFTData} type={'nfts'} />
                   </AppBody>
-                </ResponsiveRow>
+                </ResponsiveRow> */}
               </>
             ) : (
               <ButtonPrimary onClick={toggleWalletModal}>
