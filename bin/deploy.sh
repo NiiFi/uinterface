@@ -1,10 +1,10 @@
 #!/bin/bash
 
 uinterface_path="/var/uinterface/"
-echo "Jump to app "$uinterface_path
+echo "Jumping to app "$uinterface_path
 cd $uinterface_path
 
-echo "Update interface from the Git"
+echo "Updating uinterface from the github"
 
 envv='production'
 
