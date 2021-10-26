@@ -12,7 +12,9 @@ import MaterialUiTableContainer from '@material-ui/core/TableContainer'
 import { CustomNFTsTableRow } from './CustomNFTsTableRow'
 import { CustomPoolsTableRow } from './CustomPoolsTableRow'
 import { CustomWalletTableRow } from './CustomWalletTableRow'
-import MaintenanceBackground from '../../../assets/images/comingsoon-tile.png'
+import { useIsDarkMode } from 'state/user/hooks'
+import MaintenanceBackgroundLight from '../../../assets/images/comingsoon-tile-light.png'
+import MaintenanceBackgroundDark from '../../../assets/images/comingsoon-tile-dark.png'
 
 import useTheme from 'hooks/useTheme'
 
@@ -83,6 +85,7 @@ type CustomCardProps = {
 
 export const CustomCard = ({ balance, svgIconSrc, data, type, maintenance }: CustomCardProps) => {
   const theme = useTheme()
+  const darkMode = useIsDarkMode()
   const history = useHistory()
   const types: { [type: string]: string } = {
     wallet: t`Wallet`,
@@ -125,7 +128,8 @@ export const CustomCard = ({ balance, svgIconSrc, data, type, maintenance }: Cus
   return (
     <Card
       style={{
-        backgroundImage: maintenance ? `url(${MaintenanceBackground})` : '',
+        backgroundImage: maintenance ? `url(${darkMode ? MaintenanceBackgroundDark : MaintenanceBackgroundLight})` : '',
+        backgroundSize: '30%',
       }}
     >
       <CardHeader style={{ padding: '32px', justifyContent: 'start' }}>
