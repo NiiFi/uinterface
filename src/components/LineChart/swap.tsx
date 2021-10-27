@@ -109,69 +109,71 @@ const SwapChart = () => {
   }, [feesHover, lineChartData, currentChartPeriod])
 
   return (
-    <div
-      style={{
-        opacity: 0.4,
-      }}
-    >
+    <>
       <TYPE.mediumHeaderEllipsis padding="18px 0">
-        <Trans>ETH-ANY Pair Stats (Dummy data)</Trans>
+        <Trans>Graph</Trans>
       </TYPE.mediumHeaderEllipsis>
-      <Wrapper>
-        <TYPE.black fontWeight={400}>
-          <Trans>Liquidity</Trans>
-        </TYPE.black>
-        <TYPE.black style={{ paddingRight: '20px' }}>
-          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={liquidityHover || 0} />
-        </TYPE.black>
-      </Wrapper>
-      <Wrapper>
-        <TYPE.black fontWeight={400}>
-          <Trans>Volume</Trans>
-        </TYPE.black>
-        <TYPE.black style={{ paddingRight: '20px' }}>
-          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={volumeHover || 0} />
-        </TYPE.black>
-      </Wrapper>
-      <Wrapper>
-        <TYPE.black fontWeight={400}>
-          <Trans>Fees</Trans>
-        </TYPE.black>
-        <TYPE.black style={{ paddingRight: '20px' }}>
-          <BaseCurrencyView type="id" numeralFormat={'0,0'} value={feesHover || 0} />
-        </TYPE.black>
-      </Wrapper>
-      <ControlWrapper>
-        <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
-        <ButtonControlWrapper>
-          <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
-          <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
-          <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
-        </ButtonControlWrapper>
-      </ControlWrapper>
-      {lineChartLoader ||
-        (lineChartData && (
-          <LineChart
-            data={lineChartData}
-            minHeight={158}
-            color={theme.orange1}
-            value1={liquidityHover}
-            setValue1={setLiquidityHover}
-            value2={volumeHover}
-            setValue2={setVolumeHover}
-            value3={feesHover}
-            setValue3={setFeesHover}
-            value1Name={'liquidity'}
-            value2Name={'volume'}
-            value3Name={'fees'}
-            currentValue={currentChartValue}
-            dateFormat={dateFormat}
-            XAxisTickGap={100}
-            YAxisTick={{ fontSize: 14 }}
-            style={{ flexDirection: 'column', marginTop: '0.5rem' }}
-          />
-        ))}
-    </div>
+      <div
+        style={{
+          filter: 'blur(3px)',
+        }}
+      >
+        <Wrapper>
+          <TYPE.black fontWeight={400}>
+            <Trans>Liquidity</Trans>
+          </TYPE.black>
+          <TYPE.black style={{ paddingRight: '20px' }}>
+            <BaseCurrencyView type="id" numeralFormat={'0,0'} value={liquidityHover || 0} />
+          </TYPE.black>
+        </Wrapper>
+        <Wrapper>
+          <TYPE.black fontWeight={400}>
+            <Trans>Volume</Trans>
+          </TYPE.black>
+          <TYPE.black style={{ paddingRight: '20px' }}>
+            <BaseCurrencyView type="id" numeralFormat={'0,0'} value={volumeHover || 0} />
+          </TYPE.black>
+        </Wrapper>
+        <Wrapper>
+          <TYPE.black fontWeight={400}>
+            <Trans>Fees</Trans>
+          </TYPE.black>
+          <TYPE.black style={{ paddingRight: '20px' }}>
+            <BaseCurrencyView type="id" numeralFormat={'0,0'} value={feesHover || 0} />
+          </TYPE.black>
+        </Wrapper>
+        <ControlWrapper>
+          <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
+          <ButtonControlWrapper>
+            <CustomButton value="week" text="1W" current={currentChartPeriod} onClick={handleChartPeriod} />
+            <CustomButton value="month" text="1M" current={currentChartPeriod} onClick={handleChartPeriod} />
+            <CustomButton value="all" text="All" current={currentChartPeriod} onClick={handleChartPeriod} />
+          </ButtonControlWrapper>
+        </ControlWrapper>
+        {lineChartLoader ||
+          (lineChartData && (
+            <LineChart
+              data={lineChartData}
+              minHeight={158}
+              color={theme.orange1}
+              value1={liquidityHover}
+              setValue1={setLiquidityHover}
+              value2={volumeHover}
+              setValue2={setVolumeHover}
+              value3={feesHover}
+              setValue3={setFeesHover}
+              value1Name={'liquidity'}
+              value2Name={'volume'}
+              value3Name={'fees'}
+              currentValue={currentChartValue}
+              dateFormat={dateFormat}
+              XAxisTickGap={100}
+              YAxisTick={{ fontSize: 14 }}
+              style={{ flexDirection: 'column', marginTop: '0.5rem' }}
+            />
+          ))}
+      </div>
+    </>
   )
 }
 

@@ -54,6 +54,7 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
   const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const [token0Amount, setToken0Amount] = useState('')
   const [token1Amount, setToken1Amount] = useState('')
+  const [reset, setReset] = useState(false)
   const [investmentValue, setInvestmentValue] = useState(0)
   const { calculateTotalInvestment } = useInvestmentCalculator()
   const toggleWalletModal = useWalletModalToggle()
@@ -156,7 +157,11 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
       router,
       chainId,
       library,
-      parsedAmounts
+      parsedAmounts,
+      () => {
+        setReset(true)
+        setInvestmentValue(0)
+      }
     )
   }
 
@@ -180,7 +185,13 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
           </TYPE.subHeader>
         </RowBetween>
         <AutoColumn style={{ paddingTop: '2rem' }}>
-          <TokenPairInputPanel onChange={handlePairValueChange} currency0={currency0} currency1={currency1} />
+          <TokenPairInputPanel
+            onChange={handlePairValueChange}
+            currency0={currency0}
+            currency1={currency1}
+            reset={reset}
+            setReset={setReset}
+          />
         </AutoColumn>
         <RowBetween marginTop="0.5rem">
           <TYPE.error fontSize="0.875rem" fontWeight="normal" error={true} textAlign="left">

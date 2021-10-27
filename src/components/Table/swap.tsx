@@ -31,7 +31,7 @@ const CustomTableRow = (
   return (
     <TableRow
       hover
-      onClick={(event) => handleClick(event, row.transaction.id)}
+      onClick={(event) => handleClick(event, row.address)}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
@@ -75,7 +75,7 @@ export default function SwapTable() {
         (data && (
           <div
             style={{
-              opacity: 0.4,
+              filter: 'blur(3px)',
             }}
           >
             <Table
@@ -105,7 +105,6 @@ export default function SwapTable() {
                   />
                 </TableCell>
               )}
-              showDisclaimer={true}
             />
           </div>
         ))}

@@ -46,7 +46,6 @@ interface EnhancedTableProps {
   ) => unknown
   headCellsBefore?: (props: any) => unknown
   renderToolbar?: (props: RenderToolBarProps) => any
-  showDisclaimer?: boolean
   defaultOrder?: Order
   defaultOrderBy?: string
 }
@@ -228,7 +227,6 @@ export default function EnhancedTable({ hideHeader = false, ...props }: Enhanced
                     setPage(currentPage - 2)
                   }
                 }}
-                showDisclaimer={props.showDisclaimer}
               />
             )
           }
