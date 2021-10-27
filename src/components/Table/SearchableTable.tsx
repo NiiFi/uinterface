@@ -249,7 +249,6 @@ export default function SearchableTable(props: EnhancedTableProps) {
                     setPage(currentPage - 2)
                   }
                 }}
-                showDisclaimer={false}
               />
             )
           }

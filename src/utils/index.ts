@@ -30,7 +30,9 @@ export function shortenAddress(address: string, chars = 4): string {
 }
 
 export function shortenDecimalValues(value: string, formatType = '0.[000]a'): string {
-  return numeral(parseInt(value)).format(formatType)
+  const valueFormatted = numeral(Number(value)).format(formatType)
+  // workaround for small numbers and NaN https://github.com/adamwdraper/Numeral-js/issues/596
+  return valueFormatted !== 'NaN' ? valueFormatted : '0'
 }
 
 export function formatTimeStamp(value: string): string {

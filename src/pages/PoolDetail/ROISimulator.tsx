@@ -54,7 +54,11 @@ export default function ROISimulator({ currency0, currency1 }: { currency0: Curr
     [setROIPeriod, pairValues, updateUIValues]
   )
   return (
-    <>
+    <div
+      style={{
+        filter: 'blur(3px)',
+      }}
+    >
       <TYPE.subHeader color="text6" marginBottom={'0.75rem'}>
         <Trans>Amount to add</Trans>
       </TYPE.subHeader>
@@ -91,6 +95,6 @@ export default function ROISimulator({ currency0, currency1 }: { currency0: Curr
           value={roiValues.roiInUSD ? Number(roiValues.roiInUSD) : 0}
         />
       </TYPE.subHeader>
-    </>
+    </div>
   )
 }

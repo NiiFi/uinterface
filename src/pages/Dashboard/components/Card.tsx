@@ -129,7 +129,7 @@ export const CustomCard = ({ balance, svgIconSrc, data, type, maintenance }: Cus
     <Card
       style={{
         backgroundImage: maintenance ? `url(${darkMode ? MaintenanceBackgroundDark : MaintenanceBackgroundLight})` : '',
-        backgroundSize: '30%',
+        backgroundSize: '200px',
       }}
     >
       <CardHeader style={{ padding: '32px', justifyContent: 'start' }}>

@@ -33,7 +33,8 @@ export const addLiquidityAsync = async (
   router: any,
   chainId: any,
   library: any,
-  parsedAmounts: any
+  parsedAmounts: any,
+  callback?: any
 ) => {
   if (!chainId || !library || !account || !router || error) return
   const { [Field.CURRENCY_A]: parsedAmountA, [Field.CURRENCY_B]: parsedAmountB } = parsedAmounts
@@ -100,6 +101,7 @@ export const addLiquidityAsync = async (
           `${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currencies[Field.CURRENCY_B]?.symbol}`,
         ].join('/'),
       })
+      callback && callback()
     })
   })
 }

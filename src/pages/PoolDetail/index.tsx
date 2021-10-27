@@ -26,6 +26,9 @@ import { useCurrency } from 'hooks/Tokens'
 // TODO: remove usePoolDatas and all thegraph usage
 // import { usePoolDatas } from 'state/pools/hooks'
 import { useApiPoolsDetail } from 'hooks/useApi'
+import { useIsDarkMode } from 'state/user/hooks'
+import MaintenanceBackgroundLight from '../../assets/images/comingsoon-tile-light.png'
+import MaintenanceBackgroundDark from '../../assets/images/comingsoon-tile-dark.png'
 
 const TokenStatsWrapper = styled(BodyWrapper)`
   flex: 2;
@@ -140,6 +143,7 @@ export default function PoolDetails({
   const [token1, setToken1] = useState()
   const history = useHistory()
   const theme = useTheme()
+  const darkMode = useIsDarkMode()
   wrapperStyle.root.borderBottomColor = theme.bg3
   wrapperStyle.hover.borderBottomColor = theme.primary1
   wrapperStyle.selected.borderBottomColor = theme.primary1
@@ -210,7 +214,14 @@ export default function PoolDetails({
                         {currency0 && currency1 && <PoolWithdraw currency0={currency0} currency1={currency1} />}
                       </TabPanel>
                     </AppBody>
-                    <AppBody size="md" style={{ minHeight: '440px' }}>
+                    <AppBody
+                      size="md"
+                      style={{
+                        minHeight: '440px',
+                        backgroundImage: `url(${darkMode ? MaintenanceBackgroundDark : MaintenanceBackgroundLight})`,
+                        backgroundSize: '200px',
+                      }}
+                    >
                       <PoolDetailChartWrapper>
                         <PoolDetailChart
                           address={poolData.address}
@@ -248,11 +259,12 @@ export default function PoolDetails({
                     </TokenStatsWrapper>
                     <ROISimulatorWrapper
                       style={{
-                        opacity: 0.4,
+                        backgroundImage: `url(${darkMode ? MaintenanceBackgroundDark : MaintenanceBackgroundLight})`,
+                        backgroundSize: '200px',
                       }}
                     >
                       <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
-                        <Trans>ROI Simulator</Trans> (Dummy)
+                        <Trans>ROI Simulator</Trans>
                       </TYPE.mediumHeaderEllipsis>
                       {currency0 && currency1 && <ROISimulator currency0={currency0} currency1={currency1} />}
                     </ROISimulatorWrapper>

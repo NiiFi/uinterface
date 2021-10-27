@@ -15,6 +15,8 @@ export type TokenPairInputPanelProps = {
   value1?: string
   onChange?: (values: PoolInvestPairValues, active?: string) => void
   hasError?: boolean
+  reset?: boolean
+  setReset?: (reset: boolean) => void
 }
 
 export default function TokenPairInputPanel({
@@ -23,6 +25,8 @@ export default function TokenPairInputPanel({
   value0,
   value1,
   onChange,
+  reset,
+  setReset,
 }: TokenPairInputPanelProps) {
   const token0: PoolToken = {
     symbol: currency0.symbol as TokenName,
@@ -39,7 +43,7 @@ export default function TokenPairInputPanel({
   const [, pair] = usePair(currency0, currency1)
 
   const getChangeHandler = (active: 'token0' | 'token1') => (value: string) => {
-    if (!(value && pair && currency0 && currency1 && tokenA && tokenB)) {
+    if (!(value && pair && currency0 && currency1 && tokenA && tokenB) || reset) {
       setToken0Value('')
       setToken1Value('')
       onChange && onChange({ token0: { ...token0, value: '' }, token1: { ...token1, value: '' } })
@@ -70,6 +74,13 @@ export default function TokenPairInputPanel({
         active
       )
   }
+
+  useEffect(() => {
+    if (!reset || !setReset) return
+    setToken0Value('')
+    setToken1Value('')
+    setReset(false)
+  }, [reset, setReset])
 
   useEffect(() => {
     if (!value0 || !value1) {
