@@ -46,8 +46,8 @@ export default function useApi({ route, limit, rootData }: ApiParams): FetchInte
   const [fetch, { data, error, loading }] = useLazyFetch<any[]>(apiUrl, rootData)
 
   useEffect(() => {
-    fetch()
-  }, [fetch, limit])
+    route && fetch()
+  }, [route, fetch, limit])
 
   // TODO: add error handling
   useEffect(() => {
@@ -63,11 +63,15 @@ export default function useApi({ route, limit, rootData }: ApiParams): FetchInte
 
   return { loader: false, data }
 }
+// TODO: add correct return types instead of 'any' bellow
+export function useApiToken(address: string): any {
+  return useApi({ route: (address ? `tokens/${address}` : '') as Routes })
+}
 
 export function useApiTokens(): FetchInterface<TopTokensTableData> {
   return useApi({ route: 'tokens' })
 }
-// TODO: add correct return types instead of 'any' bellow
+
 export function useApiTokensGainers(): FetchInterface<any> {
   return useApi({ route: 'tokens?sort=-priceUSDChange' as Routes })
 }

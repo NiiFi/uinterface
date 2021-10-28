@@ -19,7 +19,7 @@ import Slider from 'components/Slider'
 import useTheme from 'hooks/useTheme'
 import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
 import { usePair } from 'hooks/usePairs'
-import { useUserSlippageToleranceWithDefault, useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
+import { useUserSlippageToleranceWithDefault } from 'state/user/hooks'
 // import { useTokenBalances } from 'state/wallet/hooks'
 import { useTotalSupply } from 'hooks/useTotalSupply'
 import { Field } from 'state/burn/actions'
@@ -62,9 +62,18 @@ const UpperSection = styled.div`
 
 const DEFAULT_REMOVE_LIQUIDITY_SLIPPAGE_TOLERANCE = new Percent(5, 100)
 
-export default function PoolWithdraw({ currency0, currency1 }: { currency0: Currency; currency1: Currency }) {
+export default function PoolWithdraw({
+  currency0,
+  currency1,
+  currency0Price,
+  currency1Price,
+}: {
+  currency0: Currency
+  currency1: Currency
+  currency0Price: string
+  currency1Price: string
+}) {
   const { account, chainId, library } = useActiveWeb3React()
-  const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const [active, setActive] = useState('')
   const [token0Amount, setToken0Amount] = useState('')
   const [token1Amount, setToken1Amount] = useState('')
@@ -191,17 +200,16 @@ export default function PoolWithdraw({ currency0, currency1 }: { currency0: Curr
     setToken0Amount(currencyA)
     setToken1Amount(currencyB)
 
-    setInvestmentValue(calculateTotalInvestment(currency0, currency1, +currencyA, +currencyB, rates?.['USD']))
+    setInvestmentValue(calculateTotalInvestment(currencyA, currencyB, currency0Price, currency1Price))
   }, [
     liquidityValueA,
     liquidityValueB,
     calculateTotalInvestment,
-    currency0,
-    currency1,
-    percentToRemove,
-    rates,
     tokenA,
     tokenB,
+    currency0Price,
+    currency1Price,
+    percentToRemove,
   ])
 
   const deadline = useTransactionDeadline()
