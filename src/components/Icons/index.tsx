@@ -1,5 +1,5 @@
 import React from 'react'
-import { MinusCircle, IconProps as RAIconProps } from 'react-feather'
+import { MinusCircle, IconProps as RAIconProps, Clock } from 'react-feather'
 
 import { IconProps } from './types'
 
@@ -413,4 +413,8 @@ export function GenericLogo({ width = 32, height = 32, ...rest }: IconProps) {
       </g>
     </svg>
   )
+}
+
+export function ClockIcon(props: IconProps) {
+  return <Clock {...props} />
 }

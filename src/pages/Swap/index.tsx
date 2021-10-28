@@ -52,7 +52,14 @@ import {
   useSwapState,
 } from '../../state/swap/hooks'
 import { useExpertModeManager, useUserSingleHopOnly } from '../../state/user/hooks'
-import { BodyScroller, LinkStyledButton, TYPE, BaseCurrencyView, CurrencySelectWrapper } from '../../theme'
+import {
+  BodyScroller,
+  LinkStyledButton,
+  TYPE,
+  BaseCurrencyView,
+  CurrencySelectWrapper,
+  ComingSoonOverlay,
+} from '../../theme'
 import { computeFiatValuePriceImpact } from '../../utils/computeFiatValuePriceImpact'
 import { getTradeVersion } from '../../utils/getTradeVersion'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
@@ -64,9 +71,6 @@ import SwapChart from 'components/LineChart/swap'
 import AppBar from 'components/AppBar'
 // import Percent from 'components/Percent'
 import { useApiStatsLocal } from 'hooks/useApi'
-import { useIsDarkMode } from 'state/user/hooks'
-import MaintenanceBackgroundLight from '../../assets/images/comingsoon-tile-light.png'
-import MaintenanceBackgroundDark from '../../assets/images/comingsoon-tile-dark.png'
 
 const StyledAppBar = styled(AppBar)`
   padding: 0px 2rem;
@@ -92,7 +96,6 @@ const ArrowContainer = styled.div`
   background-color: ${({ theme }) => theme.bg5};
 `
 export default function Swap({ history }: RouteComponentProps) {
-  const darkMode = useIsDarkMode()
   const [activeTab, setActiveTab] = useState<number>(0)
   const loadedUrlParams = useDefaultsFromURLSearch()
   const { state } = useLocation<any>()
@@ -644,23 +647,17 @@ export default function Swap({ history }: RouteComponentProps) {
                 size="md"
                 style={{
                   minHeight: '440px',
-                  backgroundImage: `url(${darkMode ? MaintenanceBackgroundDark : MaintenanceBackgroundLight})`,
-                  backgroundSize: '200px',
                 }}
               >
                 <Wrapper>
+                  <ComingSoonOverlay />
                   <SwapChart />
                 </Wrapper>
               </AppBody>
             </ResponsiveRow>
             <ResponsiveRow>
-              <AppBody
-                size="lg"
-                style={{
-                  backgroundImage: `url(${darkMode ? MaintenanceBackgroundDark : MaintenanceBackgroundLight})`,
-                  backgroundSize: '200px',
-                }}
-              >
+              <AppBody size="lg">
+                <ComingSoonOverlay />
                 <SwapTable />
               </AppBody>
             </ResponsiveRow>
