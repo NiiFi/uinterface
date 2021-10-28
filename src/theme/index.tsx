@@ -8,6 +8,9 @@ import styled, {
 } from 'styled-components'
 import { useIsDarkMode } from 'state/user/hooks'
 import { Colors } from './styled'
+import { Trans } from '@lingui/macro'
+import { BodyWrapper } from 'pages/AppBody'
+import { ClockIcon } from 'components/Icons'
 
 export * from './components'
 
@@ -287,3 +290,37 @@ export const Dots = styled.span`
     }
   }
 `
+
+const ComingSoonWrapper = styled(BodyWrapper)`
+  top: 45%;
+  left: 50%;
+  width: 320px;
+  height: 155px;
+  line-height: 22px;
+  text-align: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
+`
+
+export function ComingSoonOverlay() {
+  return (
+    <ComingSoonWrapper>
+      <ClockIcon style={{ marginBottom: '12px' }} />
+      <TYPE.body color={'bg4'} style={{ width: '55%' }}>
+        <Trans>This feature is under development and will be</Trans>
+        <TYPE.black>
+          <Trans>Coming Soon</Trans>
+        </TYPE.black>
+      </TYPE.body>
+    </ComingSoonWrapper>
+  )
+}

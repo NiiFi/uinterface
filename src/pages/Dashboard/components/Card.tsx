@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { Trans, t } from '@lingui/macro'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
-import { TYPE, BaseCurrencyView } from 'theme'
+import { TYPE, BaseCurrencyView, ComingSoonOverlay } from 'theme'
 import CircleSvgSrc from '../../../assets/svg/circle.svg'
 import ArrowSvgSrc from '../../../assets/svg/arrow.svg'
 import MaterialUiTable from '@material-ui/core/Table'
@@ -12,9 +12,6 @@ import MaterialUiTableContainer from '@material-ui/core/TableContainer'
 import { CustomNFTsTableRow } from './CustomNFTsTableRow'
 import { CustomPoolsTableRow } from './CustomPoolsTableRow'
 import { CustomWalletTableRow } from './CustomWalletTableRow'
-import { useIsDarkMode } from 'state/user/hooks'
-import MaintenanceBackgroundLight from '../../../assets/images/comingsoon-tile-light.png'
-import MaintenanceBackgroundDark from '../../../assets/images/comingsoon-tile-dark.png'
 
 import useTheme from 'hooks/useTheme'
 
@@ -85,7 +82,6 @@ type CustomCardProps = {
 
 export const CustomCard = ({ balance, svgIconSrc, data, type, maintenance }: CustomCardProps) => {
   const theme = useTheme()
-  const darkMode = useIsDarkMode()
   const history = useHistory()
   const types: { [type: string]: string } = {
     wallet: t`Wallet`,
@@ -126,12 +122,8 @@ export const CustomCard = ({ balance, svgIconSrc, data, type, maintenance }: Cus
   }
 
   return (
-    <Card
-      style={{
-        backgroundImage: maintenance ? `url(${darkMode ? MaintenanceBackgroundDark : MaintenanceBackgroundLight})` : '',
-        backgroundSize: '200px',
-      }}
-    >
+    <Card>
+      {maintenance && <ComingSoonOverlay />}
       <CardHeader style={{ padding: '32px', justifyContent: 'start' }}>
         <SvgIconWrapper src={svgIconSrc} />
         <CardHeaderTitle>

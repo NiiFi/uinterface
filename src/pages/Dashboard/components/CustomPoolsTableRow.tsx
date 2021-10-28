@@ -5,6 +5,7 @@ import { RowWrapper, BaseCurrencyView, CircleWrapper, ColumnWrapper, TYPE } from
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { NIILogo } from 'components/Icons'
+import { shortenDecimalValues } from 'utils'
 import { StyledTableRow } from './StyledTableRow'
 
 export const CustomPoolsTableRow = (
@@ -59,7 +60,8 @@ export const CustomPoolsTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="right">
-        {row.amount0} {row.symbol0} / {row.amount1} {row.symbol1}
+        {shortenDecimalValues(row.amount0, '0.[000]a')} {row.symbol0} / {shortenDecimalValues(row.amount1, '0.[000]a')}{' '}
+        {row.symbol1}
         <br />
         <TYPE.subHeader color={'text2'} textAlign={'right'}>
           <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.amountUSD} />

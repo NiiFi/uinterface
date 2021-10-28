@@ -11,7 +11,7 @@ import { AutoColumn } from 'components/Column'
 import { ResponsiveRow } from 'components/Row'
 import { BodyPanel } from '../styled'
 import PoolDetailChart from 'components/LineChart/PoolDetail'
-import { BodyScroller, TYPE, BarTitle, CurrencySelectWrapper } from 'theme'
+import { BodyScroller, TYPE, BarTitle, CurrencySelectWrapper, ComingSoonOverlay } from 'theme'
 import PoolInvest from 'components/PoolInvest'
 import PoolWithdraw from 'components/PoolWithdraw'
 import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
@@ -26,9 +26,6 @@ import { useCurrency } from 'hooks/Tokens'
 // TODO: remove usePoolDatas and all thegraph usage
 // import { usePoolDatas } from 'state/pools/hooks'
 import { useApiPoolsDetail, useApiToken } from 'hooks/useApi'
-import { useIsDarkMode } from 'state/user/hooks'
-import MaintenanceBackgroundLight from '../../assets/images/comingsoon-tile-light.png'
-import MaintenanceBackgroundDark from '../../assets/images/comingsoon-tile-dark.png'
 
 const TokenStatsWrapper = styled(BodyWrapper)`
   flex: 2;
@@ -143,7 +140,6 @@ export default function PoolDetails({
   const [token1, setToken1] = useState()
   const history = useHistory()
   const theme = useTheme()
-  const darkMode = useIsDarkMode()
   wrapperStyle.root.borderBottomColor = theme.bg3
   wrapperStyle.hover.borderBottomColor = theme.primary1
   wrapperStyle.selected.borderBottomColor = theme.primary1
@@ -232,14 +228,8 @@ export default function PoolDetails({
                         )}
                       </TabPanel>
                     </AppBody>
-                    <AppBody
-                      size="md"
-                      style={{
-                        minHeight: '440px',
-                        backgroundImage: `url(${darkMode ? MaintenanceBackgroundDark : MaintenanceBackgroundLight})`,
-                        backgroundSize: '200px',
-                      }}
-                    >
+                    <AppBody size="md">
+                      <ComingSoonOverlay />
                       <PoolDetailChartWrapper>
                         <PoolDetailChart
                           address={poolData.address}
@@ -275,12 +265,8 @@ export default function PoolDetails({
                         </PoolCardItem>
                       </PoolCardRowColumn>
                     </TokenStatsWrapper>
-                    <ROISimulatorWrapper
-                      style={{
-                        backgroundImage: `url(${darkMode ? MaintenanceBackgroundDark : MaintenanceBackgroundLight})`,
-                        backgroundSize: '200px',
-                      }}
-                    >
+                    <ROISimulatorWrapper>
+                      <ComingSoonOverlay />
                       <TYPE.mediumHeaderEllipsis marginBottom={'1rem'}>
                         <Trans>ROI Simulator</Trans>
                       </TYPE.mediumHeaderEllipsis>
