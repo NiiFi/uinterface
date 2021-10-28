@@ -25,7 +25,7 @@ import useTheme from '../../hooks/useTheme'
 import { useCurrency } from 'hooks/Tokens'
 // TODO: remove usePoolDatas and all thegraph usage
 // import { usePoolDatas } from 'state/pools/hooks'
-import { useApiPoolsDetail } from 'hooks/useApi'
+import { useApiPoolsDetail, useApiToken } from 'hooks/useApi'
 import { useIsDarkMode } from 'state/user/hooks'
 import MaintenanceBackgroundLight from '../../assets/images/comingsoon-tile-light.png'
 import MaintenanceBackgroundDark from '../../assets/images/comingsoon-tile-dark.png'
@@ -156,6 +156,10 @@ export default function PoolDetails({
     setToken1(poolData?.token2?.address)
   }, [poolData])
 
+  // TODO: move all token prices to redux after fetching tokens from BE
+  const { data: token0Data } = useApiToken(token0 || '')
+  const { data: token1Data } = useApiToken(token1 || '')
+
   const currency0 = useCurrency(token0, poolData?.token1)
   const currency1 = useCurrency(token1, poolData?.token2)
 
@@ -208,10 +212,24 @@ export default function PoolDetails({
                         />
                       </Tabs>
                       <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
-                        {currency0 && currency1 && <PoolInvest currency0={currency0} currency1={currency1} />}
+                        {currency0 && currency1 && token0Data && token1Data && (
+                          <PoolInvest
+                            currency0={currency0}
+                            currency1={currency1}
+                            currency0Price={token0Data.priceUSD}
+                            currency1Price={token1Data.priceUSD}
+                          />
+                        )}
                       </TabPanel>
                       <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
-                        {currency0 && currency1 && <PoolWithdraw currency0={currency0} currency1={currency1} />}
+                        {currency0 && currency1 && token0Data && token1Data && (
+                          <PoolWithdraw
+                            currency0={currency0}
+                            currency1={currency1}
+                            currency0Price={token0Data.priceUSD}
+                            currency1Price={token1Data.priceUSD}
+                          />
+                        )}
                       </TabPanel>
                     </AppBody>
                     <AppBody

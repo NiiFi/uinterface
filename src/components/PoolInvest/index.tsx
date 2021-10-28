@@ -16,7 +16,7 @@ import { tryParseAmount } from 'state/swap/hooks'
 import { ButtonPrimary } from 'components/Button'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { useUserSlippageToleranceWithDefault, useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
+import { useUserSlippageToleranceWithDefault } from 'state/user/hooks'
 import { addLiquidityAsync, DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE } from 'hooks/useAddLiquidity'
 import { useApproveCallback } from 'hooks/useApproveCallback'
 import { useTransactionAdder } from 'state/transactions/hooks'
@@ -49,9 +49,18 @@ const UpperSection = styled.div`
 const ZERO = JSBI.BigInt(0)
 
 // TODO: extract calculations to shared folder (hooks?)
-export default function PoolInvest({ currency0, currency1 }: { currency0: Currency; currency1: Currency }) {
+export default function PoolInvest({
+  currency0,
+  currency1,
+  currency0Price,
+  currency1Price,
+}: {
+  currency0: Currency
+  currency1: Currency
+  currency0Price: string
+  currency1Price: string
+}) {
   const { account, chainId, library } = useActiveWeb3React()
-  const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const [token0Amount, setToken0Amount] = useState('')
   const [token1Amount, setToken1Amount] = useState('')
   const [reset, setReset] = useState(false)
@@ -62,9 +71,9 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
     ({ token0, token1 }) => {
       setToken0Amount(token0.value)
       setToken1Amount(token1.value)
-      setInvestmentValue(calculateTotalInvestment(currency0, currency1, +token0.value, +token1.value, rates?.['USD']))
+      setInvestmentValue(calculateTotalInvestment(token0.value, token1.value, currency0Price, currency1Price))
     },
-    [setToken0Amount, setToken1Amount, calculateTotalInvestment, setInvestmentValue, currency0, currency1, rates]
+    [setToken0Amount, setToken1Amount, setInvestmentValue, currency0Price, currency1Price, calculateTotalInvestment]
   )
 
   const allowedSlippage = useUserSlippageToleranceWithDefault(DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE)
