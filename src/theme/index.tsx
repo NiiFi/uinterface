@@ -316,7 +316,7 @@ export function ComingSoonOverlay() {
     <ComingSoonWrapper>
       <ClockIcon style={{ marginBottom: '12px' }} />
       <TYPE.body color={'bg4'} style={{ width: '55%' }}>
-        <Trans>This feature is under development and will be</Trans>
+        <Trans>This feature is under testing and will be</Trans>
         <TYPE.black>
           <Trans>Coming Soon</Trans>
         </TYPE.black>
