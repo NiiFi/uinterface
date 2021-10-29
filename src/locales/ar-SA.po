@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-08-17 15:38+0000\n"
+"POT-Creation-Date: 2021-09-28 17:40+0000\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File-ID: 77\n"
 "Project-Id-Version: niifi\n"
 "Language-Team: Arabic, Saudi Arabia\n"
-"PO-Revision-Date: 2021-08-17 16:33\n"
+"PO-Revision-Date: 2021-09-28 18:25\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 
@@ -42,11 +42,7 @@ msgid "1 Year"
 msgstr ""
 
 #: src/components/Table/pools.tsx
-msgid "1W"
-msgstr ""
-
-#: src/components/Table/pools.tsx
-msgid "1Y"
+msgid "1D"
 msgstr ""
 
 #: src/components/swap/Slippage.tsx
@@ -75,6 +71,14 @@ msgstr "<0>نصيحة:</0> عندما تضيف السيولة، سوف تتلق�
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "APPROVE"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "APY"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "APY (1D)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -143,7 +147,7 @@ msgid "Allow high price impact trades and skip the confirm screen. Use at your o
 msgstr "السماح بتداول تأثير الأسعار المرتفعة وتخطي شاشة التأكيد. استخدم على مسؤوليتك الخاصة."
 
 #: src/pages/Swap/index.tsx
-msgid "Allow the Niifi to use your {0}"
+msgid "Allow the NiiFi to use your {0}"
 msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
@@ -165,6 +169,9 @@ msgstr ""
 msgid "Approve"
 msgstr "الموافقة"
 
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
@@ -262,7 +269,7 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "بإضافة هذه القائمة فإنك تثق ضمناً بأن البيانات صحيحة. ويمكن لأي شخص أن ينشئ قائمة، بما في ذلك إنشاء صيغ مزيفة من القوائم القائمة والقوائم التي تزعم أنها تمثل مشاريع لا تملك مشروعا."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgid "By connecting a wallet, you agree to NiiFi <0>Terms of Service(coming soon)</0>"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -305,6 +312,14 @@ msgstr "أغلق"
 msgid "Closed"
 msgstr "مغلق"
 
+#: src/theme/index.tsx
+msgid "Coming Soon"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+msgid "Coming soon"
+msgstr ""
+
 #: src/components/SearchModal/CommonBases.tsx
 msgid "Common bases"
 msgstr ""
@@ -336,19 +351,20 @@ msgstr "تأكيد هذه المعاملة في محفظتك"
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/index.tsx
+#: src/pages/Dashboard/subpages/Farm.tsx
+#: src/pages/Dashboard/subpages/Pools.tsx
+#: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "توصيل المحفظة"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "الاتصال بالمحفظة"
 
@@ -432,10 +448,6 @@ msgstr "تجاهل"
 msgid "ETH"
 msgstr ""
 
-#: src/components/LineChart/swap.tsx
-msgid "ETH-ANY Pair Stats (Dummy data)"
-msgstr ""
-
 #: src/constants/tokens.ts
 msgid "EUR"
 msgstr ""
@@ -451,8 +463,6 @@ msgstr "أدخل نسبة انزلاق صحيحة"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "أدخل مبلغ"
@@ -467,7 +477,6 @@ msgstr "أدخل عنوان رمز صالح"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "خطأ"
 
@@ -547,6 +556,10 @@ msgstr ""
 
 #: src/components/ErrorBoundary/index.tsx
 msgid "Get support on Discord"
+msgstr ""
+
+#: src/components/LineChart/swap.tsx
+msgid "Graph"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -701,7 +714,6 @@ msgstr "تحميل"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/PoolDetail/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "جاري التحميل"
@@ -783,7 +795,11 @@ msgid "New Pools"
 msgstr ""
 
 #: src/components/SwitchLocaleLink/index.tsx
-msgid "Niifi available in: <0>{0}</0>"
+msgid "NiiFi available in: <0>{0}</0>"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "No liquidity provided"
 msgstr ""
 
 #: src/pages/PoolFinder/index.tsx
@@ -855,7 +871,7 @@ msgid "Page {0} of {totalPages}"
 msgstr ""
 
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats (Dummy data)"
+msgid "Pair Stats"
 msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
@@ -936,14 +952,6 @@ msgstr "الأسعار وحصة المجمع"
 
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
-msgstr ""
-
-#: src/components/Table/pools.tsx
-msgid "ROI"
-msgstr ""
-
-#: src/components/pools/PoolsOverview.tsx
-msgid "ROI (1Y)"
 msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
@@ -1189,13 +1197,8 @@ msgstr "تعذر إرسال المعاملة لانتهاء الموعد الم�
 msgid "These tokens are commonly paired with other tokens."
 msgstr ""
 
-#: src/components/Table/SearchableTable.tsx
-#: src/components/Table/TableToolbar.tsx
-#: src/pages/Dashboard/index.tsx
-#: src/pages/Discover/index.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Swap/index.tsx
-msgid "This is Dummy Data"
+#: src/theme/index.tsx
+msgid "This feature is under development and will be"
 msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
@@ -1439,7 +1442,6 @@ msgstr "تغليف"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "شبكة خاطئة"
 
@@ -1518,14 +1520,9 @@ msgstr "تأكيد"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "لديه رمز تعبيري جوارب"
-
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
-msgstr "https: // أو ipfs: // أو اسم ENS"
+msgid "https:// or ipfs://"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "minutes"
@@ -1572,7 +1569,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr "{0} معلق"
 

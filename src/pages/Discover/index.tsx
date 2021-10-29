@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 import ReactDOMServer from 'react-dom/server'
 import styled from 'styled-components'
@@ -26,12 +26,12 @@ import {
 } from 'theme'
 import { RowBetween } from 'components/Row'
 import { BodyPanel } from '../styled'
-import { getPoolsData } from 'components/Table/sample-pools'
 
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import Percent from 'components/Percent'
+import { useApiTokensGainers, useApiTokensLosers, useApiPoolsNew } from 'hooks/useApi'
 
 const Card = styled(DefaultCard)`
   padding: 0;
@@ -136,49 +136,9 @@ export default function Discover() {
   const history = useHistory()
   const isSmallScreen = useBreakpoint(MEDIA_WIDTHS.upToSmall)
 
-  const gainersData = useMemo(() => {
-    return [
-      {
-        symbol: 'ETH',
-        volumeUSD: '25496.03',
-        trendingPercent: '21',
-      },
-      {
-        symbol: 'NII',
-        volumeUSD: '1728.15',
-        trendingPercent: '12',
-      },
-      {
-        symbol: 'ETH',
-        volumeUSD: '567.87',
-        trendingPercent: '5',
-      },
-    ]
-  }, [])
-
-  const loosersData = useMemo(() => {
-    return [
-      {
-        symbol: 'ETH',
-        volumeUSD: '25496.03',
-        trendingPercent: '21',
-      },
-      {
-        symbol: 'NII',
-        volumeUSD: '1728.15',
-        trendingPercent: '12',
-      },
-      {
-        symbol: 'ETH',
-        volumeUSD: '567.87',
-        trendingPercent: '5',
-      },
-    ]
-  }, [])
-
-  const newData = useMemo(() => {
-    return getPoolsData('new', 3)
-  }, [])
+  const { data: gainersData, loader: gainersLoader } = useApiTokensGainers()
+  const { data: losersData, loader: losersLoader } = useApiTokensLosers()
+  const { data: newPoolsData, loader: newPoolsLoader } = useApiPoolsNew()
 
   const rowCellStyles = {
     color: theme.black,
@@ -201,11 +161,6 @@ export default function Discover() {
       </CustomAppBar>
       <BodyScroller>
         <BodyPanel>
-          <Disclaimer style={{ marginBottom: '24px' }}>
-            <span>Disclaimer:</span>
-            {` `}
-            {t`This is Dummy Data`}
-          </Disclaimer>
           <Grid container direction="row" alignItems="flex-start" spacing={3}>
             <Grid item xs={isSmallScreen ? 12 : 6}>
               <Card>
@@ -225,50 +180,67 @@ export default function Discover() {
                     style={{ marginRight: isSmallScreen ? '0' : '20px' }}
                   />
                 </CardHeader>
-                <SimpleTable
-                  data={gainersData}
-                  row={(row, index) => {
-                    const amount = row.volumeUSD
-                    const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
-                    return (
-                      <TableRow hover role="checkbox" aria-checked={false} tabIndex={-1} key={index} selected={false}>
-                        <TableCell
-                          style={{ ...rowCellStyles, paddingLeft: isSmallScreen ? '18px' : '34px', paddingRight: 0 }}
-                          align="center"
-                        >
-                          #{index + 1}
-                        </TableCell>
-                        <TableCell style={{ ...rowCellStyles, width: '42%' }} align="left">
-                          <RowWrapper>
-                            <CurrencyAvatar
-                              symbol={row.symbol || 'ETH'}
-                              iconProps={{ width: '32', height: '32' }}
-                              hideSymbol={true}
-                            />
-                            <TYPE.black style={{ padding: '8px 0 0 6px' }}>{row.symbol}</TYPE.black>
-                          </RowWrapper>
-                        </TableCell>
-                        <TableCell style={{ ...rowCellStyles, width: '36%', padding: '6px 0' }} align="right">
-                          <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
-                            <Trans>Price</Trans>
-                          </TYPE.body>
-                          <TYPE.mediumHeader>
-                            {amount && !isNaN(amount) && (
-                              <>
-                                {'≈'}
-                                <BaseCurrencyView type="symbol" value={amount} numeralFormat={currencyFormat} />
-                              </>
-                            )}
-                          </TYPE.mediumHeader>
-                        </TableCell>
-                        <TableCell style={{ ...rowCellStyles, width: '20%' }} align="right">
-                          <>{'\u00A0'}</>
-                          <Percent value={row.trendingPercent} decimals={0} fontWeight={500} />
-                        </TableCell>
-                      </TableRow>
-                    )
-                  }}
-                />
+                {gainersLoader ||
+                  (gainersData && (
+                    <SimpleTable
+                      data={gainersData.slice(0, 3)}
+                      row={(row, index) => {
+                        const amount = row.priceUSD
+                        const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
+                        return (
+                          <TableRow
+                            hover
+                            role="checkbox"
+                            aria-checked={false}
+                            tabIndex={-1}
+                            key={index}
+                            selected={false}
+                            onClick={() => window.open(row.url, '_blank')}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <TableCell
+                              style={{
+                                ...rowCellStyles,
+                                paddingLeft: isSmallScreen ? '18px' : '34px',
+                                paddingRight: 0,
+                              }}
+                              align="center"
+                            >
+                              #{index + 1}
+                            </TableCell>
+                            <TableCell style={{ ...rowCellStyles, width: '42%' }} align="left">
+                              <RowWrapper>
+                                <CurrencyAvatar
+                                  symbol={row.symbol || 'ETH'}
+                                  address={row.address}
+                                  iconProps={{ width: '32', height: '32' }}
+                                  hideSymbol={true}
+                                />
+                                <TYPE.black style={{ padding: '8px 0 0 6px' }}>{row.symbol}</TYPE.black>
+                              </RowWrapper>
+                            </TableCell>
+                            <TableCell style={{ ...rowCellStyles, width: '36%', padding: '6px 0' }} align="right">
+                              <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
+                                <Trans>Price</Trans>
+                              </TYPE.body>
+                              <TYPE.mediumHeader>
+                                {amount && !isNaN(amount) && (
+                                  <>
+                                    {'≈'}
+                                    <BaseCurrencyView type="symbol" value={amount} numeralFormat={currencyFormat} />
+                                  </>
+                                )}
+                              </TYPE.mediumHeader>
+                            </TableCell>
+                            <TableCell style={{ ...rowCellStyles, width: '20%' }} align="right">
+                              <>{'\u00A0'}</>
+                              <Percent value={row.priceUSDChange} decimals={0} fontWeight={500} />
+                            </TableCell>
+                          </TableRow>
+                        )
+                      }}
+                    />
+                  ))}
                 <LinkWrapper>
                   <Link
                     to={{
@@ -299,50 +271,67 @@ export default function Discover() {
                     style={{ marginRight: isSmallScreen ? '0' : '20px' }}
                   />
                 </CardHeader>
-                <SimpleTable
-                  data={loosersData}
-                  row={(row, index) => {
-                    const amount = row.volumeUSD
-                    const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
-                    return (
-                      <TableRow hover role="checkbox" aria-checked={false} tabIndex={-1} key={index} selected={false}>
-                        <TableCell
-                          style={{ ...rowCellStyles, paddingLeft: isSmallScreen ? '18px' : '34px', paddingRight: 0 }}
-                          align="center"
-                        >
-                          #{index + 1}
-                        </TableCell>
-                        <TableCell style={{ ...rowCellStyles, width: '42%' }} align="left">
-                          <RowWrapper>
-                            <CurrencyAvatar
-                              symbol={row.symbol || 'ETH'}
-                              iconProps={{ width: '32', height: '32' }}
-                              hideSymbol={true}
-                            />
-                            <TYPE.black style={{ padding: '8px 0 0 6px' }}>{row.symbol}</TYPE.black>
-                          </RowWrapper>
-                        </TableCell>
-                        <TableCell style={{ ...rowCellStyles, width: '36%', padding: '6px 0' }} align="right">
-                          <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
-                            <Trans>Price</Trans>
-                          </TYPE.body>
-                          <TYPE.mediumHeader>
-                            {amount && !isNaN(amount) && (
-                              <>
-                                {'≈'}
-                                <BaseCurrencyView type="symbol" value={amount} numeralFormat={currencyFormat} />
-                              </>
-                            )}
-                          </TYPE.mediumHeader>
-                        </TableCell>
-                        <TableCell style={{ ...rowCellStyles, width: '20%' }} align="right">
-                          <>{'\u00A0'}</>
-                          <Percent value={row.trendingPercent * -1} decimals={0} fontWeight={500} />
-                        </TableCell>
-                      </TableRow>
-                    )
-                  }}
-                />
+                {losersLoader ||
+                  (losersData && (
+                    <SimpleTable
+                      data={losersData.slice(0, 3)}
+                      row={(row, index) => {
+                        const amount = row.priceUSD
+                        const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
+                        return (
+                          <TableRow
+                            hover
+                            role="checkbox"
+                            aria-checked={false}
+                            tabIndex={-1}
+                            key={index}
+                            selected={false}
+                            onClick={() => window.open(row.url, '_blank')}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <TableCell
+                              style={{
+                                ...rowCellStyles,
+                                paddingLeft: isSmallScreen ? '18px' : '34px',
+                                paddingRight: 0,
+                              }}
+                              align="center"
+                            >
+                              #{index + 1}
+                            </TableCell>
+                            <TableCell style={{ ...rowCellStyles, width: '42%' }} align="left">
+                              <RowWrapper>
+                                <CurrencyAvatar
+                                  symbol={row.symbol || 'ETH'}
+                                  address={row.address}
+                                  iconProps={{ width: '32', height: '32' }}
+                                  hideSymbol={true}
+                                />
+                                <TYPE.black style={{ padding: '8px 0 0 6px' }}>{row.symbol}</TYPE.black>
+                              </RowWrapper>
+                            </TableCell>
+                            <TableCell style={{ ...rowCellStyles, width: '36%', padding: '6px 0' }} align="right">
+                              <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
+                                <Trans>Price</Trans>
+                              </TYPE.body>
+                              <TYPE.mediumHeader>
+                                {amount && !isNaN(amount) && (
+                                  <>
+                                    {'≈'}
+                                    <BaseCurrencyView type="symbol" value={amount} numeralFormat={currencyFormat} />
+                                  </>
+                                )}
+                              </TYPE.mediumHeader>
+                            </TableCell>
+                            <TableCell style={{ ...rowCellStyles, width: '20%' }} align="right">
+                              <>{'\u00A0'}</>
+                              <Percent value={row.priceUSDChange} decimals={0} fontWeight={500} />
+                            </TableCell>
+                          </TableRow>
+                        )
+                      }}
+                    />
+                  ))}
                 <LinkWrapper>
                   <Link
                     to={{
@@ -368,64 +357,80 @@ export default function Discover() {
                     style={{ marginRight: isSmallScreen ? '0' : '20px' }}
                   />
                 </CardHeader>
-                <SimpleTable
-                  data={newData}
-                  row={(row, index) => {
-                    const amount = row.volumeUSD
-                    const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
-                    return (
-                      <TableRow hover role="checkbox" aria-checked={false} tabIndex={-1} key={index} selected={false}>
-                        <TableCell
-                          style={{ ...rowCellStyles, paddingLeft: isSmallScreen ? '18px' : '34px', cursor: 'pointer' }}
-                          align="left"
-                          onClick={() => history.push(`/pool/${row.id}`)}
-                        >
-                          <RowWrapper>
-                            <div style={{ position: 'relative' }}>
-                              <CurrencyAvatar
-                                symbol={row.token0.symbol}
-                                address={row.token0.id}
-                                iconProps={{ width: '32', height: '32' }}
-                                containerStyle={{ zIndex: 1 }}
-                                hideSymbol={true}
-                              />
-                              <CurrencyAvatar
-                                symbol={row.token1.symbol}
-                                address={row.token1.id}
-                                iconProps={{ width: '34', height: '34' }}
-                                containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
-                                hideSymbol={true}
-                              />
-                              <CircleWrapper style={{ left: '42px', position: 'absolute', marginTop: '-36px' }}>
-                                <NIILogo />
-                              </CircleWrapper>
-                            </div>
-                            <ColumnWrapper style={{ marginLeft: '42px' }}>
-                              <TYPE.body fontWeight={500}>
-                                {row.token0.symbol} / {row.token1.symbol}
+                {newPoolsLoader ||
+                  (newPoolsData && (
+                    <SimpleTable
+                      data={newPoolsData.slice(0, 3)}
+                      row={(row, index) => {
+                        const amount = row.liquidity
+                        const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
+                        return (
+                          <TableRow
+                            hover
+                            role="checkbox"
+                            aria-checked={false}
+                            tabIndex={-1}
+                            key={index}
+                            selected={false}
+                            style={{
+                              cursor: 'pointer',
+                            }}
+                          >
+                            <TableCell
+                              style={{
+                                ...rowCellStyles,
+                                paddingLeft: isSmallScreen ? '18px' : '34px',
+                              }}
+                              align="left"
+                              onClick={() => history.push(`/pool/${row.address}`)}
+                            >
+                              <RowWrapper>
+                                <div style={{ position: 'relative' }}>
+                                  <CurrencyAvatar
+                                    symbol=""
+                                    address={row.token1.address}
+                                    iconProps={{ width: '32', height: '32' }}
+                                    containerStyle={{ zIndex: 1 }}
+                                    hideSymbol={true}
+                                  />
+                                  <CurrencyAvatar
+                                    symbol=""
+                                    address={row.token2.address}
+                                    iconProps={{ width: '34', height: '34' }}
+                                    containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
+                                    hideSymbol={true}
+                                  />
+                                  <CircleWrapper style={{ left: '42px', position: 'absolute', marginTop: '-36px' }}>
+                                    <NIILogo />
+                                  </CircleWrapper>
+                                </div>
+                                <ColumnWrapper style={{ marginLeft: '42px' }}>
+                                  <TYPE.body fontWeight={500}>
+                                    {row.token1.symbol} / {row.token2.symbol}
+                                  </TYPE.body>
+                                  <TYPE.subHeader color={'text2'}>NiiFi</TYPE.subHeader>
+                                </ColumnWrapper>
+                              </RowWrapper>
+                            </TableCell>
+                            <TableCell style={{ ...rowCellStyles, width: '36%' }} align="right">
+                              <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
+                                <Trans>Liquidity</Trans>
                               </TYPE.body>
-                              <TYPE.subHeader color={'text2'}>NiiFi</TYPE.subHeader>
-                            </ColumnWrapper>
-                          </RowWrapper>
-                        </TableCell>
-                        <TableCell style={{ ...rowCellStyles, width: '36%' }} align="right">
-                          <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
-                            <Trans>Liquidity</Trans>
-                          </TYPE.body>
-                          <TYPE.mediumHeader>
-                            {amount && !isNaN(amount) && (
-                              <BaseCurrencyView type="symbol" value={amount} numeralFormat={currencyFormat} />
-                            )}
-                          </TYPE.mediumHeader>
-                        </TableCell>
-                        <TableCell style={rowCellStyles} align="right">
-                          <>{'\u00A0'}</>
-                          <Percent value={row.trendingPercent * -1} decimals={0} fontWeight={500} />
-                        </TableCell>
-                      </TableRow>
-                    )
-                  }}
-                />
+                              <TYPE.mediumHeader>
+                                {amount && !isNaN(amount) && (
+                                  <BaseCurrencyView type="symbol" value={amount} numeralFormat={currencyFormat} />
+                                )}
+                              </TYPE.mediumHeader>
+                            </TableCell>
+                            <TableCell style={rowCellStyles} align="right">
+                              <>{'\u00A0'}</>
+                              <Percent value={row.trendingPercentY} decimals={0} fontWeight={500} />
+                            </TableCell>
+                          </TableRow>
+                        )
+                      }}
+                    />
+                  ))}
                 <LinkWrapper>
                   <Link
                     to={{
@@ -451,6 +456,9 @@ export default function Discover() {
                     style={{ marginRight: isSmallScreen ? '0' : '20px' }}
                   />
                 </CardHeader>
+                <TYPE.body style={{ margin: '20px' }}>
+                  <Trans>Coming soon</Trans>
+                </TYPE.body>
               </Card>
             </Grid>
           </Grid>

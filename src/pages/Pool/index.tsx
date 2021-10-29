@@ -97,13 +97,8 @@ export default function Pool() {
       </PoolAppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
-          <Disclaimer>
-            <span>Disclaimer:</span>
-            {` `}
-            {t`This is Dummy Data`}
-          </Disclaimer>
-          <PoolsOverview type="gainer" />
-          <PoolsOverview type="looser" style={{ paddingTop: '50px' }} />
+          <PoolsOverview type="gainers" />
+          <PoolsOverview type="losers" style={{ paddingTop: '50px' }} />
           <PoolsOverview id="new-pools" type="new" style={{ paddingTop: '50px' }} />
         </TabPanel>
         <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>

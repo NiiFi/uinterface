@@ -2,14 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { t } from '@lingui/macro'
 import { ArrowLeft, ArrowRight } from 'react-feather'
-import { Disclaimer } from '../../theme'
 type TableToolBarProps = {
   title?: any
   currentPage: number
   totalPages: number
   onNext: (currentPage: number) => void
   onBack: (currentPage: number) => void
-  showDisclaimer?: boolean
 }
 export const Wrapper = styled.div`
   display: flex;
@@ -55,14 +53,7 @@ export const PagerWrapper = styled.div<{ currentPage: number; totalPages: number
     }
   `}
 `
-export default function TableToolBar({
-  title,
-  currentPage,
-  totalPages,
-  onNext,
-  onBack,
-  showDisclaimer,
-}: TableToolBarProps) {
+export default function TableToolBar({ title, currentPage, totalPages, onNext, onBack }: TableToolBarProps) {
   return (
     <>
       <Wrapper>
@@ -73,13 +64,6 @@ export default function TableToolBar({
           <ArrowRight onClick={() => onNext(currentPage)} />
         </PagerWrapper>
       </Wrapper>
-      {showDisclaimer && (
-        <Disclaimer>
-          <span>Disclaimer:</span>
-          {` `}
-          {t`This is Dummy Data`}
-        </Disclaimer>
-      )}
     </>
   )
 }

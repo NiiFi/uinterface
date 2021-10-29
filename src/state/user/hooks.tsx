@@ -1,5 +1,5 @@
 import { Percent, Token } from '@uniswap/sdk-core'
-import { computePairAddress, Pair } from '@uniswap/v2-sdk'
+import { computePairAddress, Pair } from '@niifi/godzilla2-sdk'
 import JSBI from 'jsbi'
 import { flatMap } from 'lodash'
 import { useCallback, useMemo } from 'react'

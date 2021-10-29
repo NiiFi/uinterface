@@ -19,8 +19,8 @@ import Slider from 'components/Slider'
 import useTheme from 'hooks/useTheme'
 import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
 import { usePair } from 'hooks/usePairs'
-import { useUserSlippageToleranceWithDefault, useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
-import { useTokenBalances } from 'state/wallet/hooks'
+import { useUserSlippageToleranceWithDefault } from 'state/user/hooks'
+// import { useTokenBalances } from 'state/wallet/hooks'
 import { useTotalSupply } from 'hooks/useTotalSupply'
 import { Field } from 'state/burn/actions'
 import { useInvestmentCalculator } from 'state/pool/hooks'
@@ -32,7 +32,11 @@ import { calculateGasMargin } from 'utils/calculateGasMargin'
 import { useApproveCallback, ApprovalState } from 'hooks/useApproveCallback'
 import { usePairContract, useV2RouterContract } from 'hooks/useContract'
 import { useLiquidityTokenPermit } from 'hooks/useERC20Permit'
+import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
+import ReactGA from 'react-ga'
 import JSBI from 'jsbi'
+import { getContract } from 'utils'
+import ERC20_ABI from 'abis/erc20.json'
 
 const UpperSection = styled.div`
   position: relative;
@@ -58,9 +62,18 @@ const UpperSection = styled.div`
 
 const DEFAULT_REMOVE_LIQUIDITY_SLIPPAGE_TOLERANCE = new Percent(5, 100)
 
-export default function PoolWithdraw({ currency0, currency1 }: { currency0: Currency; currency1: Currency }) {
+export default function PoolWithdraw({
+  currency0,
+  currency1,
+  currency0Price,
+  currency1Price,
+}: {
+  currency0: Currency
+  currency1: Currency
+  currency0Price: string
+  currency1Price: string
+}) {
   const { account, chainId, library } = useActiveWeb3React()
-  const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const [active, setActive] = useState('')
   const [token0Amount, setToken0Amount] = useState('')
   const [token1Amount, setToken1Amount] = useState('')
@@ -100,10 +113,34 @@ export default function PoolWithdraw({ currency0, currency1 }: { currency0: Curr
 
   const [, pair] = usePair(currency0, currency1)
 
-  const relevantTokenBalances = useTokenBalances(account ?? undefined, [pair?.liquidityToken])
-  const userLiquidity: undefined | CurrencyAmount<Token> = relevantTokenBalances?.[pair?.liquidityToken?.address ?? '']
-
   const totalSupply = useTotalSupply(pair?.liquidityToken)
+  const totalSupplyMemoized: any = useMemo(() => {
+    return totalSupply
+  }, [totalSupply])
+  const totalSupplyQuotient = totalSupplyMemoized?.quotient?.[0]
+
+  // TODO: check useTokenBalances issue bellow
+  const [userLiquidity, setUserLiquidity] = useState<undefined | CurrencyAmount<Token>>()
+
+  useEffect(() => {
+    ;(async () => {
+      if (!!account && !!library && !!chainId && !!pair?.liquidityToken?.address) {
+        const tokenInst = getContract(pair?.liquidityToken?.address, ERC20_ABI, library, account)
+        let balance = JSBI.BigInt(0)
+        try {
+          balance = await tokenInst.balanceOf(account)
+          setUserLiquidity(
+            CurrencyAmount.fromRawAmount(pair?.liquidityToken, balance ? JSBI.BigInt(balance.toString()) : 0)
+          )
+        } catch (e) {
+          console.log(e)
+        }
+      }
+    })()
+  }, [account, library, chainId, pair, totalSupplyQuotient])
+
+  // const relevantTokenBalances = useTokenBalances(account ?? undefined, [pair?.liquidityToken])
+  // const userLiquidity: undefined | CurrencyAmount<Token> = relevantTokenBalances?.[pair?.liquidityToken?.address ?? '']
 
   const liquidityValueA =
     pair &&
@@ -163,17 +200,16 @@ export default function PoolWithdraw({ currency0, currency1 }: { currency0: Curr
     setToken0Amount(currencyA)
     setToken1Amount(currencyB)
 
-    setInvestmentValue(calculateTotalInvestment(currency0, currency1, +currencyA, +currencyB, rates?.['USD']))
+    setInvestmentValue(calculateTotalInvestment(currencyA, currencyB, currency0Price, currency1Price))
   }, [
     liquidityValueA,
     liquidityValueB,
     calculateTotalInvestment,
-    currency0,
-    currency1,
-    percentToRemove,
-    rates,
     tokenA,
     tokenB,
+    currency0Price,
+    currency1Price,
+    percentToRemove,
   ])
 
   const deadline = useTransactionDeadline()
@@ -350,6 +386,18 @@ export default function PoolWithdraw({ currency0, currency1 }: { currency0: Curr
               currency0?.symbol
             } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(3)} ${currency1?.symbol}`,
           })
+
+          ReactGA.event({
+            category: 'Liquidity',
+            action: 'Remove',
+            label: [
+              parsedAmounts[Field.CURRENCY_A]?.toSignificant(3) + ' ' + currency0?.symbol,
+              parsedAmounts[Field.CURRENCY_B]?.toSignificant(3) + ' ' + currency1?.symbol,
+            ].join('/'),
+          })
+
+          setSliderValue(0)
+          setWithdrawValue(0)
         })
         .catch((error: Error) => {
           console.error(error)
@@ -361,75 +409,75 @@ export default function PoolWithdraw({ currency0, currency1 }: { currency0: Curr
 
   return (
     <>
-      <UpperSection>
-        <RowBetween>
-          <TYPE.subHeader color="text6">
-            <Trans>Amount to Withdraw</Trans>
-          </TYPE.subHeader>
-          <TYPE.subHeader color="text6">
-            {balance0 && balance1 ? (
-              <>
-                <Trans>Added</Trans>
-                {` `}
-                <BaseCurrencyView
-                  type="id"
-                  numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
-                  value={Number(balance0.toExact() + balance1.toExact())}
-                />
-              </>
-            ) : (
-              ''
-            )}
-          </TYPE.subHeader>
-        </RowBetween>
-        <RowBetween marginTop="1rem">{withdrawValue} %</RowBetween>
-        <RowBetween>
-          <Slider size={20} value={innerSliderValue} onChange={setDebouncedSliderValue} />
-        </RowBetween>
-        <AutoColumn style={{ paddingTop: '1rem' }}>
-          <TokenPairInputPanel
-            onChange={handlePairValueChange}
-            currency0={currency0}
-            currency1={currency1}
-            value0={token0Amount}
-            value1={token1Amount}
-          />
-        </AutoColumn>
-        <RowBetween marginTop="0.5rem">
-          <TYPE.error fontSize="0.875rem" fontWeight="normal" error={true} textAlign="left"></TYPE.error>
-          <TYPE.subHeader color="text6" textAlign="right" width="50%">
-            {`≈ `}
-            <BaseCurrencyView
-              type="id"
-              numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
-              value={investmentValue ? Number(investmentValue) : 0}
+      {liquidityValueA?.quotient?.toString() !== '0' && liquidityValueB?.quotient?.toString() !== '0' ? (
+        <UpperSection>
+          <RowBetween>
+            <TYPE.subHeader color="text6">
+              <Trans>Amount to Withdraw</Trans>
+            </TYPE.subHeader>
+            <TYPE.subHeader color="text6">
+              {balance0 && balance1 ? (
+                <>
+                  <Trans>Added</Trans>
+                  {` `}
+                  {formatCurrencyAmount(liquidityValueA, 4)} | {formatCurrencyAmount(liquidityValueB, 4)}
+                </>
+              ) : (
+                ''
+              )}
+            </TYPE.subHeader>
+          </RowBetween>
+          <RowBetween marginTop="1rem">{withdrawValue} %</RowBetween>
+          <RowBetween>
+            <Slider size={20} value={innerSliderValue} onChange={setDebouncedSliderValue} />
+          </RowBetween>
+          <AutoColumn style={{ paddingTop: '1rem' }}>
+            <TokenPairInputPanel
+              onChange={handlePairValueChange}
+              currency0={currency0}
+              currency1={currency1}
+              value0={token0Amount}
+              value1={token1Amount}
             />
-          </TYPE.subHeader>
-        </RowBetween>
-        <RowBetween
-          marginTop="1.5rem"
-          style={{ borderTopStyle: 'solid', borderTopWidth: '1px', borderTopColor: theme.bg3 }}
-        ></RowBetween>
-        {account ? (
-          <ButtonPrimary
-            disabled={!investmentValue}
-            marginTop="2rem"
-            onClick={
-              approval === ApprovalState.APPROVED || signatureData !== null ? removeLiquidity : onAttemptToApprove
-            }
-          >
-            {approval === ApprovalState.APPROVED || signatureData !== null ? (
-              <Trans>WITHDRAW</Trans>
-            ) : (
-              <Trans>APPROVE</Trans>
-            )}
-          </ButtonPrimary>
-        ) : (
-          <ButtonPrimary marginTop="2rem" onClick={toggleWalletModal}>
-            <Trans>Connect Wallet</Trans>
-          </ButtonPrimary>
-        )}
-      </UpperSection>
+          </AutoColumn>
+          <RowBetween marginTop="0.5rem">
+            <TYPE.error fontSize="0.875rem" fontWeight="normal" error={true} textAlign="left"></TYPE.error>
+            <TYPE.subHeader color="text6" textAlign="right" width="50%">
+              {`≈ `}
+              <BaseCurrencyView
+                type="id"
+                numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
+                value={investmentValue ? Number(investmentValue) : 0}
+              />
+            </TYPE.subHeader>
+          </RowBetween>
+          <RowBetween
+            marginTop="1.5rem"
+            style={{ borderTopStyle: 'solid', borderTopWidth: '1px', borderTopColor: theme.bg3 }}
+          ></RowBetween>
+          {account ? (
+            <ButtonPrimary
+              disabled={!investmentValue}
+              marginTop="2rem"
+              onClick={
+                approval === ApprovalState.APPROVED || signatureData !== null ? removeLiquidity : onAttemptToApprove
+              }
+            >
+              {approval === ApprovalState.APPROVED || signatureData !== null ? (
+                <Trans>WITHDRAW</Trans>
+              ) : (
+                <Trans>APPROVE</Trans>
+              )}
+            </ButtonPrimary>
+          ) : (
+            <ButtonPrimary marginTop="2rem" onClick={toggleWalletModal}>
+              <Trans>Connect Wallet</Trans>
+            </ButtonPrimary>
+          )}
+        </UpperSection>
+      ) : (
+        <Trans>No liquidity provided</Trans>
+      )}
     </>
   )
 }

@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
 import { Currency, TradeType } from '@uniswap/sdk-core'
-import { Trade } from '@uniswap/v2-sdk'
+import { Trade } from '@niifi/godzilla2-sdk'
 
 import React, { ReactNode } from 'react'
 import { Text } from 'rebass'

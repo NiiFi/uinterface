@@ -1,14 +1,14 @@
 import JSBI from 'jsbi'
 import { Percent, CurrencyAmount, Currency, TradeType, Token } from '@uniswap/sdk-core'
-import { Trade } from '@uniswap/v2-sdk'
+import { Trade } from '@niifi/godzilla2-sdk'
 import { splitSignature } from 'ethers/lib/utils'
 import { useMemo, useState } from 'react'
-import { UNI } from '../constants/tokens'
-import { useSingleCallResult } from '../state/multicall/hooks'
+import { NII } from '../constants/tokens'
+// import { useSingleCallResult } from '../state/multicall/hooks' // TODO: think about replacement for this
 import { useActiveWeb3React } from './web3'
 import { useEIP2612Contract } from './useContract'
-import useIsArgentWallet from './useIsArgentWallet'
 import useTransactionDeadline from './useTransactionDeadline'
+import { SupportedChainId } from 'constants/chains'
 
 enum PermitType {
   AMOUNT = 1,
@@ -31,11 +31,15 @@ const PERMITTABLE_TOKENS: {
     [checksummedTokenAddress: string]: PermitInfo
   }
 } = {
-  [3]: {
+  [SupportedChainId.ROPSTEN]: {
     // [USDC.address]: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' },
     // [DAI.address]: { type: PermitType.ALLOWED, name: 'Dai Stablecoin', version: '1' },
-    [UNI[3].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
+    [NII[SupportedChainId.ROPSTEN].address]: { type: PermitType.AMOUNT, name: 'NiiFi' },
     ['0x07865c6E87B9F70255377e024ace6630C1Eaa37F']: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' },
+  },
+  [SupportedChainId.ROPSTEN_NAHMII]: {
+    [NII[SupportedChainId.ROPSTEN_NAHMII].address]: { type: PermitType.AMOUNT, name: 'NiiFi' },
+    ['0x07865c6E87B9F70255377e024ace6630C1Eaa37F']: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' }, // TODO: check if this token is still actual in Nahmii
   },
 }
 
@@ -112,24 +116,25 @@ export function useERC20Permit(
   const transactionDeadline = useTransactionDeadline()
   const tokenAddress = currencyAmount?.currency?.isToken ? currencyAmount.currency.address : undefined
   const eip2612Contract = useEIP2612Contract(tokenAddress)
-  const isArgentWallet = useIsArgentWallet()
-  const nonceInputs = useMemo(() => [account ?? undefined], [account])
-  const tokenNonceState = useSingleCallResult(eip2612Contract, 'nonces', nonceInputs)
+  // const nonceInputs = useMemo(() => [account ?? undefined], [account])
+  // const tokenNonceState = useSingleCallResult(eip2612Contract, 'nonces', nonceInputs)
   const permitInfo =
     overridePermitInfo ?? (chainId && tokenAddress ? PERMITTABLE_TOKENS[chainId]?.[tokenAddress] : undefined)
-
+  // eip2612Contract
+  //   ?.nonces()
+  //   .then((param: any) => console.log(param))
+  //   .catch((e: any) => console.log(e))
   const [signatureData, setSignatureData] = useState<SignatureData | null>(null)
 
   return useMemo(() => {
     if (
-      isArgentWallet ||
       !currencyAmount ||
       !eip2612Contract ||
       !account ||
       !chainId ||
       !transactionDeadline ||
       !library ||
-      !tokenNonceState.valid ||
+      // !tokenNonceState.valid ||
       !tokenAddress ||
       !spender ||
       !permitInfo
@@ -141,21 +146,21 @@ export function useERC20Permit(
       }
     }
 
-    const nonceNumber = tokenNonceState.result?.[0]?.toNumber()
-    if (tokenNonceState.loading || typeof nonceNumber !== 'number') {
-      return {
-        state: UseERC20PermitState.LOADING,
-        signatureData: null,
-        gatherPermitSignature: null,
-      }
-    }
+    // const nonceNumber = tokenNonceState.result?.[0]?.toNumber()
+    // if (tokenNonceState.loading || typeof nonceNumber !== 'number') {
+    //   return {
+    //     state: UseERC20PermitState.LOADING,
+    //     signatureData: null,
+    //     gatherPermitSignature: null,
+    //   }
+    // }
 
     const isSignatureDataValid =
       signatureData &&
       signatureData.owner === account &&
       signatureData.deadline >= transactionDeadline.toNumber() &&
       signatureData.tokenAddress === tokenAddress &&
-      signatureData.nonce === nonceNumber &&
+      // signatureData.nonce === nonceNumber &&
       signatureData.spender === spender &&
       ('allowed' in signatureData || JSBI.equal(JSBI.BigInt(signatureData.amount), currencyAmount.quotient))
 
@@ -172,14 +177,14 @@ export function useERC20Permit(
               holder: account,
               spender,
               allowed,
-              nonce: nonceNumber,
+              // nonce: nonceNumber,
               expiry: signatureDeadline,
             }
           : {
               owner: account,
               spender,
               value,
-              nonce: nonceNumber,
+              // nonce: nonceNumber,
               deadline: signatureDeadline,
             }
         const domain = permitInfo.version
@@ -214,7 +219,7 @@ export function useERC20Permit(
               s: signature.s,
               deadline: signatureDeadline,
               ...(allowed ? { allowed } : { amount: value }),
-              nonce: nonceNumber,
+              nonce: 0, //nonceNumber,
               chainId,
               owner: account,
               spender,
@@ -229,12 +234,11 @@ export function useERC20Permit(
     eip2612Contract,
     account,
     chainId,
-    isArgentWallet,
     transactionDeadline,
     library,
-    tokenNonceState.loading,
-    tokenNonceState.valid,
-    tokenNonceState.result,
+    // tokenNonceState.loading,
+    // tokenNonceState.valid,
+    // tokenNonceState.result,
     tokenAddress,
     spender,
     permitInfo,

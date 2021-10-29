@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { TYPE, BaseCurrencyView } from '../../theme'
 import BarChart from './index'
-import dummyData from './data'
+import { useApiStatsLocalVolume } from 'hooks/useApi'
 
 dayjs.extend(utc)
 
@@ -14,17 +14,19 @@ const OverviewChart = () => {
   const [amount, setAmount] = useState<number | undefined>()
   const [time, setTime] = useState<string | undefined>()
 
-  useEffect(() => {
-    if (!time && dummyData) {
-      setTime(dayjs(dummyData[dummyData.length - 1].time).format('MMM D, YYYY'))
-    }
-  }, [time])
+  const { data, loader } = useApiStatsLocalVolume()
 
   useEffect(() => {
-    if (!amount && dummyData) {
-      setAmount(dummyData[dummyData.length - 1].value)
+    if (!time && data && data.length) {
+      setTime(dayjs(data[data.length - 1].time).format('MMM D, YYYY'))
     }
-  }, [amount])
+  }, [time, data])
+
+  useEffect(() => {
+    if (!amount && data && data.length) {
+      setAmount(data[data.length - 1].volume)
+    }
+  }, [amount, data])
 
   return (
     <>
@@ -32,20 +34,25 @@ const OverviewChart = () => {
         <Trans>Volume 24H</Trans>
       </TYPE.subHeader>
       <TYPE.mediumHeader>
-        {amount && !isNaN(amount) && <BaseCurrencyView numeralFormat={'0.[00]a'} type="symbol" value={amount} />}
+        {(amount && !isNaN(amount) && <BaseCurrencyView numeralFormat={'0.[00]a'} type="symbol" value={amount} />) ||
+          '-'}
       </TYPE.mediumHeader>
       <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
         {time || '-'}
       </TYPE.body>
-      <BarChart
-        data={dummyData}
-        color={theme.green2}
-        value={amount}
-        setValue={setAmount}
-        label={time}
-        setLabel={setTime}
-        style={{ padding: 0, marginTop: '30px' }}
-      />
+      {loader ||
+        (data && (
+          <BarChart
+            data={data}
+            color={theme.green2}
+            value={amount}
+            setValue={setAmount}
+            valueName={'volume'}
+            label={time}
+            setLabel={setTime}
+            style={{ padding: 0, marginTop: '30px' }}
+          />
+        ))}
     </>
   )
 }

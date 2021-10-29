@@ -15,7 +15,6 @@ import { ArrowDownIcon, ArrowUpIcon } from '../Icons'
 import TableToolBar from './TableToolbar'
 import { TableDataTypes } from './types'
 import SearchBar from 'components/Search'
-import { Disclaimer } from '../../theme'
 
 export type Order = 'asc' | 'desc'
 
@@ -250,20 +249,12 @@ export default function SearchableTable(props: EnhancedTableProps) {
                     setPage(currentPage - 2)
                   }
                 }}
-                showDisclaimer={false}
               />
             )
           }
           onChangePage={handleChangePage}
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
-      </div>
-      <div className={classes.paddingsWrap}>
-        <Disclaimer>
-          <span>Disclaimer:</span>
-          {` `}
-          {t`This is Dummy Data`}
-        </Disclaimer>
       </div>
       <TableContainer>
         <Table className={classes.table} size={'medium'} style={{ width: '100%', tableLayout: 'auto' }}>

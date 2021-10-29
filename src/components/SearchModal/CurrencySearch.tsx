@@ -1,6 +1,7 @@
 import { Currency, Token } from '@uniswap/sdk-core'
 import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ReactGA from 'react-ga'
+import styled from 'styled-components/macro'
 import { t, Trans } from '@lingui/macro'
 import { FixedSizeList } from 'react-window'
 import { Text } from 'rebass'
@@ -17,7 +18,6 @@ import { filterTokens, useSortedTokensByQuery } from './filtering'
 import { useTokenComparator } from './sorting'
 import { PaddedColumn, SearchInput, Separator } from './styleds'
 import AutoSizer from 'react-virtualized-auto-sizer'
-import styled from 'styled-components/macro'
 import useToggle from 'hooks/useToggle'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import useTheme from 'hooks/useTheme'
@@ -106,12 +106,14 @@ export function CurrencySearch({
   const ether = useMemo(() => chainId && ExtendedEther.onChain(chainId), [chainId])
 
   const filteredSortedTokensWithETH: Currency[] = useMemo(() => {
-    const s = debouncedQuery.toLowerCase().trim()
-    if (s === '' || s === 'e' || s === 'et' || s === 'eth') {
-      return ether ? [ether, ...filteredSortedTokens] : filteredSortedTokens
-    }
+    // TODO: fix this, ExtendedEther is not used because of addLiquidityETH problem on Nahmii router
+    // const s = debouncedQuery.toLowerCase().trim()
+    // if (s === '' || s === 'e' || s === 'et' || s === 'eth') {
+    //   return ether ? [ether, ...filteredSortedTokens] : filteredSortedTokens
+    // }
     return filteredSortedTokens
-  }, [debouncedQuery, ether, filteredSortedTokens])
+    // }, [debouncedQuery, ether, filteredSortedTokens])
+  }, [filteredSortedTokens])
 
   const handleCurrencySelect = useCallback(
     (currency: Currency) => {

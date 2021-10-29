@@ -2,7 +2,6 @@ import React from 'react'
 import { Trans } from '@lingui/macro'
 
 import { TextItemWrapper, TextValue, TextLabel } from 'components/pools/styled'
-import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
 
 import { BaseCurrencyView } from 'theme'
 
@@ -20,9 +19,6 @@ export default function TokenDetail(props: TokenDetailProps) {
    * TODO: Once we Implement the API we need to make the symbol and address required in interface.
    */
   const { token } = props
-  const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
-
-  const tokenUSD = token?.derivedETH ? token.derivedETH * rates?.['USD'] : 0
 
   return (
     <>
@@ -31,27 +27,35 @@ export default function TokenDetail(props: TokenDetailProps) {
           <Trans>Price</Trans>
         </TextLabel>
         <TextValue fontSize={'1rem'}>
-          <BaseCurrencyView type="id" value={tokenUSD} numeralFormat={'0,0'} />
+          <BaseCurrencyView type="id" value={token?.price} numeralFormat={'0.[00]a'} />
         </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
         <TextLabel>
           <Trans>Market Cap</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}> - </TextValue>
+        <TextValue fontSize={'1rem'}>
+          <BaseCurrencyView type="id" value={token?.mcap} numeralFormat={'0.[00]a'} />
+        </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
         <TextLabel>
           <Trans>Trading Volume</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}> - </TextValue>
+        <TextValue fontSize={'1rem'}>
+          <BaseCurrencyView type="id" value={token?.trading} numeralFormat={'0.[00]a'} />
+        </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
         <TextLabel>
           <Trans>24h Low / 24h High</Trans>
         </TextLabel>
-        <TextValue fontSize={'1rem'}> - </TextValue>
-        <TextValue fontSize={'1rem'}> - </TextValue>
+        <TextValue fontSize={'1rem'}>
+          <BaseCurrencyView type="id" value={token?.low_24h} numeralFormat={'0.[00]a'} />
+        </TextValue>
+        <TextValue fontSize={'1rem'}>
+          <BaseCurrencyView type="id" value={token?.high_24h} numeralFormat={'0.[00]a'} />
+        </TextValue>
       </TextItemWrapper>
     </>
   )
