@@ -3,10 +3,9 @@ import { SupportedChainId } from 'constants/chains'
 
 export const OVERLAY_READY = 'OVERLAY_READY'
 
-type FormaticSupportedChains = SupportedChainId.ROPSTEN | SupportedChainId.ROPSTEN_NAHMII
+type FormaticSupportedChains = SupportedChainId.ROPSTEN_NAHMII // | SupportedChainId.NAHMII_MAINNET
 
 const CHAIN_ID_NETWORK_ARGUMENT: { readonly [chainId in FormaticSupportedChains]: string | undefined } = {
-  [SupportedChainId.ROPSTEN]: 'ropsten',
   [SupportedChainId.ROPSTEN_NAHMII]: 'ropsten-nahmii',
 }
 

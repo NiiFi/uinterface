@@ -3,13 +3,6 @@ import { NIIFI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
 import { t } from '@lingui/macro'
 export const NII: { [chainId: number]: Token } = {
-  [SupportedChainId.ROPSTEN]: new Token(
-    SupportedChainId.ROPSTEN,
-    NIIFI_ADDRESS[SupportedChainId.ROPSTEN],
-    18,
-    'NII',
-    'NIIFI'
-  ),
   [SupportedChainId.ROPSTEN_NAHMII]: new Token(
     SupportedChainId.ROPSTEN_NAHMII,
     NIIFI_ADDRESS[SupportedChainId.ROPSTEN_NAHMII],

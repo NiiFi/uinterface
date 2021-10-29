@@ -16,11 +16,10 @@ if (typeof INFURA_KEY === 'undefined') {
 const NETWORK_URLS: {
   [chainId in SupportedChainId]: string
 } = {
-  [SupportedChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
   [SupportedChainId.ROPSTEN_NAHMII]: process.env.REACT_APP_ROPSTEN_NAHMII_RPC || 'https://l2.testnet.nahmii.io/',
 }
 
-const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.ROPSTEN, SupportedChainId.ROPSTEN_NAHMII]
+const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.ROPSTEN_NAHMII]
 
 export const network = new NetworkConnector({
   urls: NETWORK_URLS,

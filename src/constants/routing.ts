@@ -52,7 +52,6 @@ export const CUSTOM_BASES: { [chainId: number]: { [tokenAddress: string]: Token[
  * Shows up in the currency select for swap and add liquidity
  */
 export const COMMON_BASES: ChainCurrencyList = {
-  [SupportedChainId.ROPSTEN]: [ExtendedEther.onChain(3), WETH9_EXTENDED[SupportedChainId.ROPSTEN]],
   [SupportedChainId.ROPSTEN_NAHMII]: [ExtendedEther.onChain(3), WETH9_EXTENDED[SupportedChainId.ROPSTEN_NAHMII]],
 }
 
