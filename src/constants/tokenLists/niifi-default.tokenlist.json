@@ -8,12 +8,7 @@
   },
   "tags": {},
   "logoURI": "ipfs://QmcexwZrYwq4vFcP7SVDokeJsrybpQjQwNFUXq1YSA9Lot",
-  "keywords": [
-    "niifi",
-    "nahmii",
-    "tokens",
-    "trusted"
-  ],
+  "keywords": ["niifi", "nahmii", "tokens", "trusted"],
   "tokens": [
     {
       "chainId": 5553,
@@ -23,7 +18,7 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/hubiinetwork/marketing-external/master/img/nahmii/nahmii-token-2020-transparent-384x384.png",
       "extensions": {
-          "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
       }
     },
     {
@@ -34,7 +29,7 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/hubiinetwork/marketing-external/master/img/nahmii/nahmii-token-2020-transparent-384x384.png",
       "extensions": {
-          "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
       }
     },
     {
@@ -45,7 +40,7 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/hubiinetwork/marketing-external/master/img/nahmii/nahmii-token-2020-transparent-384x384.png",
       "extensions": {
-          "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
       }
     },
     {

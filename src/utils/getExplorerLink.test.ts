@@ -8,9 +8,13 @@ describe('#getExplorerLink', () => {
     expect(getExplorerLink(3, 'abc', ExplorerDataType.TOKEN)).toEqual('https://explorer.testnet.nahmii.io/token/abc')
   })
   it('corrent for address ropsten', () => {
-    expect(getExplorerLink(3, 'abc', ExplorerDataType.ADDRESS)).toEqual('https://explorer.testnet.nahmii.io/address/abc')
+    expect(getExplorerLink(3, 'abc', ExplorerDataType.ADDRESS)).toEqual(
+      'https://explorer.testnet.nahmii.io/address/abc'
+    )
   })
   it('unrecognized chain id defaults to ropsten', () => {
-    expect(getExplorerLink(2, 'abc', ExplorerDataType.ADDRESS)).toEqual('https://explorer.testnet.nahmii.io/address/abc')
+    expect(getExplorerLink(2, 'abc', ExplorerDataType.ADDRESS)).toEqual(
+      'https://explorer.testnet.nahmii.io/address/abc'
+    )
   })
 })
