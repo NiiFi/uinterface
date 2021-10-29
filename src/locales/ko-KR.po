@@ -1257,7 +1257,7 @@ msgid "These tokens are commonly paired with other tokens."
 msgstr ""
 
 #: src/theme/index.tsx
-msgid "This feature is under development and will be"
+msgid "This feature is under testing and will be"
 msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
