@@ -139,7 +139,7 @@ const StyledNavLink = styled(NavLink).attrs({
   word-break: break-word;
   display: flex;
   align-items: center;
-  pointer-event: ${({ disable }) => (disable ? 'none' : 'auto')};
+  pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
 
   > i,
   svg {
