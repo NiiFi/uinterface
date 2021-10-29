@@ -54,9 +54,9 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
     [3]: { ...map1[3], ...map2[3] },
     [42]: { ...map1[42], ...map2[42] },
     [5]: { ...map1[5], ...map2[5] },
-    [SupportedChainId.ROPSTEN_NAHMII]: {
-      ...map1[SupportedChainId.ROPSTEN_NAHMII],
-      ...map2[SupportedChainId.ROPSTEN_NAHMII],
+    [SupportedChainId.NAHMII_TESTNET]: {
+      ...map1[SupportedChainId.NAHMII_TESTNET],
+      ...map2[SupportedChainId.NAHMII_TESTNET],
     },
   }
 }
