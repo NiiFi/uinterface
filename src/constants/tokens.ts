@@ -3,16 +3,9 @@ import { NIIFI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
 import { t } from '@lingui/macro'
 export const NII: { [chainId: number]: Token } = {
-  [SupportedChainId.ROPSTEN]: new Token(
-    SupportedChainId.ROPSTEN,
-    NIIFI_ADDRESS[SupportedChainId.ROPSTEN],
-    18,
-    'NII',
-    'NIIFI'
-  ),
-  [SupportedChainId.ROPSTEN_NAHMII]: new Token(
-    SupportedChainId.ROPSTEN_NAHMII,
-    NIIFI_ADDRESS[SupportedChainId.ROPSTEN_NAHMII],
+  [SupportedChainId.NAHMII_TESTNET]: new Token(
+    SupportedChainId.NAHMII_TESTNET,
+    NIIFI_ADDRESS[SupportedChainId.NAHMII_TESTNET],
     18,
     'NII',
     'NIIFI'
@@ -21,8 +14,8 @@ export const NII: { [chainId: number]: Token } = {
 
 export const WETH9_EXTENDED: { [chainId: number]: Token } = {
   ...WETH9,
-  [SupportedChainId.ROPSTEN_NAHMII]: new Token(
-    SupportedChainId.ROPSTEN_NAHMII,
+  [SupportedChainId.NAHMII_TESTNET]: new Token(
+    SupportedChainId.NAHMII_TESTNET,
     '0x4200000000000000000000000000000000000006', // TODO: move to .env
     18,
     'ETH',

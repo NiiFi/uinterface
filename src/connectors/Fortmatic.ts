@@ -3,11 +3,10 @@ import { SupportedChainId } from 'constants/chains'
 
 export const OVERLAY_READY = 'OVERLAY_READY'
 
-type FormaticSupportedChains = SupportedChainId.ROPSTEN | SupportedChainId.ROPSTEN_NAHMII
+type FormaticSupportedChains = SupportedChainId.NAHMII_TESTNET // | SupportedChainId.NAHMII_MAINNET
 
 const CHAIN_ID_NETWORK_ARGUMENT: { readonly [chainId in FormaticSupportedChains]: string | undefined } = {
-  [SupportedChainId.ROPSTEN]: 'ropsten',
-  [SupportedChainId.ROPSTEN_NAHMII]: 'ropsten-nahmii',
+  [SupportedChainId.NAHMII_TESTNET]: 'nahmii-testnet',
 }
 
 export class FortmaticConnector extends FortmaticConnectorCore {
