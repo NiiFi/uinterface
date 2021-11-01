@@ -305,7 +305,15 @@ export default function WalletModal({
           <ContentWrapper>
             {error instanceof UnsupportedChainIdError ? (
               <h5>
-                <Trans>Please connect to the appropriate Ethereum network.</Trans>
+                <Trans>Please connect to the appropriate Nahmii network.</Trans>
+                <br />
+                <Trans>
+                  To use NiiFi you need to deposit funds into Nahmii. Please visit the{' '}
+                  <a href="https://bridge.nahmii.io/" target="_blank" rel="noreferrer">
+                    Nahmii Bridge
+                  </a>{' '}
+                  and deposit funds into Nahmii
+                </Trans>
               </h5>
             ) : (
               <Trans>Error connecting. Try refreshing the page.</Trans>

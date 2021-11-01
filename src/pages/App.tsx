@@ -18,6 +18,7 @@ import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import { useToggleDrawer } from 'state/application/hooks'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
 import InitialConfirmationModal from 'components/InitialConfirmationModal'
+import { Trans } from '@lingui/macro'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -72,6 +73,16 @@ const HeaderWrapperBackDrop = styled.div`
     }
   `}
 `
+const TopBar = styled.div`
+  color: ${({ theme }) => theme.text3};
+  background-color: ${({ theme }) => theme.bg5};
+  width: 100%;
+  text-align: center;
+  > a {
+    color: ${({ theme }) => theme.text1};
+    text-decoration: none;
+  }
+`
 
 export default function App() {
   const { showDrawer, setDrawerToggle } = useToggleDrawer()
@@ -80,6 +91,15 @@ export default function App() {
       <Route component={GoogleAnalyticsReporter} />
       <Route component={DarkModeQueryParamReader} />
       <Route component={ApeModeQueryParamReader} />
+      <TopBar>
+        <Trans>
+          To use NiiFi you need to deposit funds into Nahmii. Please visit the{' '}
+          <a href="https://bridge.nahmii.io/" target="_blank" rel="noreferrer">
+            Nahmii Bridge
+          </a>{' '}
+          and deposit funds into Nahmii
+        </Trans>
+      </TopBar>
       <AppWrapper>
         <HeaderWrapperBackDrop className={showDrawer ? 'active' : ''} onClick={() => setDrawerToggle(false)}>
           <HeaderWrapper className={showDrawer ? 'active' : ''}>

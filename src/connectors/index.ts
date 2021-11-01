@@ -16,14 +16,15 @@ if (typeof INFURA_KEY === 'undefined') {
 const NETWORK_URLS: {
   [chainId in SupportedChainId]: string
 } = {
+  [SupportedChainId.NAHMII_MAINNET]: process.env.REACT_APP_NAHMII_MAINNET_RPC || 'https://l2.nahmii.io/',
   [SupportedChainId.NAHMII_TESTNET]: process.env.REACT_APP_NAHMII_TESTNET_RPC || 'https://l2.testnet.nahmii.io/',
 }
 
-const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.NAHMII_TESTNET]
+const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.NAHMII_MAINNET, SupportedChainId.NAHMII_TESTNET]
 
 export const network = new NetworkConnector({
   urls: NETWORK_URLS,
-  defaultChainId: SupportedChainId.NAHMII_TESTNET,
+  defaultChainId: SupportedChainId.NAHMII_MAINNET,
 })
 
 let networkLibrary: Web3Provider | undefined

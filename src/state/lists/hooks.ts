@@ -58,6 +58,10 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
       ...map1[SupportedChainId.NAHMII_TESTNET],
       ...map2[SupportedChainId.NAHMII_TESTNET],
     },
+    [SupportedChainId.NAHMII_MAINNET]: {
+      ...map1[SupportedChainId.NAHMII_MAINNET],
+      ...map2[SupportedChainId.NAHMII_MAINNET],
+    },
   }
 }
 
