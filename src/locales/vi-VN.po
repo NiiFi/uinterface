@@ -137,12 +137,12 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/components/Settings/index.tsx
-msgid "Allow high price impact trades and skip the confirm screen. Use at your own risk."
+#: src/pages/Swap/index.tsx
+msgid "Allow NiiFi to use your {0}"
 msgstr ""
 
-#: src/pages/Swap/index.tsx
-msgid "Allow the NiiFi to use your {0}"
+#: src/components/Settings/index.tsx
+msgid "Allow high price impact trades and skip the confirm screen. Use at your own risk."
 msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
@@ -902,7 +902,6 @@ msgstr ""
 msgid "Output will be sent to <0>{0}</0>"
 msgstr ""
 
-#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Overview"
 msgstr ""
@@ -934,7 +933,7 @@ msgid "Please confirm your location"
 msgstr ""
 
 #: src/components/WalletModal/index.tsx
-msgid "Please connect to the appropriate Ethereum network."
+msgid "Please connect to the appropriate Nahmii network."
 msgstr ""
 
 #: src/components/Settings/index.tsx
@@ -1285,6 +1284,11 @@ msgstr ""
 
 #: src/pages/Swap/index.tsx
 msgid "To (at least)"
+msgstr ""
+
+#: src/components/WalletModal/index.tsx
+#: src/pages/App.tsx
+msgid "To use NiiFi you need to deposit funds into Nahmii. Please visit the <0>Nahmii Bridge</0> and deposit funds into Nahmii"
 msgstr ""
 
 #: src/components/Settings/index.tsx
