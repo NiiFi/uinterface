@@ -3,9 +3,10 @@ import { SupportedChainId } from 'constants/chains'
 
 export const OVERLAY_READY = 'OVERLAY_READY'
 
-type FormaticSupportedChains = SupportedChainId.NAHMII_TESTNET // | SupportedChainId.NAHMII_MAINNET
+type FormaticSupportedChains = SupportedChainId.NAHMII_MAINNET | SupportedChainId.NAHMII_TESTNET
 
 const CHAIN_ID_NETWORK_ARGUMENT: { readonly [chainId in FormaticSupportedChains]: string | undefined } = {
+  [SupportedChainId.NAHMII_MAINNET]: 'nahmii',
   [SupportedChainId.NAHMII_TESTNET]: 'nahmii-testnet',
 }
 

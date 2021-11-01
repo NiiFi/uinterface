@@ -152,8 +152,8 @@ export default function PoolsTable() {
       setOrderBy(state.type === 'new' ? 'roiY' : 'trendingPercentY')
       setOrder(state.type === 'losers' ? 'asc' : 'desc')
     } else {
-      setOrderBy('poolName')
-      setOrder('asc')
+      setOrderBy('roiY')
+      setOrder('desc')
     }
   }, [state])
 

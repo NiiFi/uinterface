@@ -88,6 +88,8 @@ export function tryParseAmount<T extends Currency>(value?: string, currency?: T)
 }
 
 const BAD_RECIPIENT_ADDRESSES: { [address: string]: true } = {
+  [FACTORY_ADDRESSES[SupportedChainId.NAHMII_MAINNET]]: true, // v2 factory
+  [ROUTER_ADDRESS[SupportedChainId.NAHMII_MAINNET]]: true, // v2 router 02
   [FACTORY_ADDRESSES[SupportedChainId.NAHMII_TESTNET]]: true, // v2 factory
   [ROUTER_ADDRESS[SupportedChainId.NAHMII_TESTNET]]: true, // v2 router 02
 }

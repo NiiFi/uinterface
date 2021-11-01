@@ -31,6 +31,10 @@ const PERMITTABLE_TOKENS: {
     [checksummedTokenAddress: string]: PermitInfo
   }
 } = {
+  [SupportedChainId.NAHMII_MAINNET]: {
+    [NII[SupportedChainId.NAHMII_MAINNET].address]: { type: PermitType.AMOUNT, name: 'NiiFi' },
+    ['0x07865c6E87B9F70255377e024ace6630C1Eaa37F']: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' }, // TODO: check if this token is still actual in Nahmii
+  },
   [SupportedChainId.NAHMII_TESTNET]: {
     [NII[SupportedChainId.NAHMII_TESTNET].address]: { type: PermitType.AMOUNT, name: 'NiiFi' },
     ['0x07865c6E87B9F70255377e024ace6630C1Eaa37F']: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' }, // TODO: check if this token is still actual in Nahmii
