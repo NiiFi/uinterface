@@ -5,6 +5,7 @@ import { TYPE } from 'theme'
 import { ButtonPrimary, ButtonSecondary } from 'components/Button'
 import Modal from 'components/Modal'
 import Row, { RowFixed } from 'components/Row'
+import useTheme from 'hooks/useTheme'
 
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
@@ -101,6 +102,7 @@ const RESTRICTED_COUNTRIES: { [key: string]: string } = {
 }
 
 export default function InitialConfirmationModal() {
+  const theme = useTheme()
   const [selected, setSelected] = useState(false)
   const [approved, setApproved] = useState(false)
   const [error, setError] = useState(false)
@@ -155,7 +157,7 @@ export default function InitialConfirmationModal() {
               <RowFixed>
                 <Input onChange={(ev) => checkboxHandler(ev.target.checked)} />
               </RowFixed>
-              <RowFixed style={{ paddingLeft: '6px', color: error ? 'red' : 'black' }}>
+              <RowFixed style={{ paddingLeft: '6px', color: error ? theme.error : theme.text3 }}>
                 <Trans>I confirm that I am not a current resident of any of the listed countries.</Trans>
               </RowFixed>
             </label>

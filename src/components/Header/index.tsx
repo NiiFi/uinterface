@@ -147,6 +147,7 @@ const StyledNavLink = styled(NavLink).attrs({
   display: flex;
   align-items: center;
   pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
+  opacity: ${({ disable }) => (disable ? '0.4' : '1')};
 
   > i,
   svg {
