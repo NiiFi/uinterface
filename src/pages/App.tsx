@@ -17,7 +17,8 @@ import PoolDetail from './PoolDetail'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import { useToggleDrawer } from 'state/application/hooks'
 import ApeModeQueryParamReader from 'hooks/useApeModeQueryParamReader'
-import InitialConfirmationModal from 'components/InitialConfirmationModal'
+// TODO: remove country confirmation popup if it is not needed anymore
+// import InitialConfirmationModal from 'components/InitialConfirmationModal'
 import { Trans } from '@lingui/macro'
 
 const AppWrapper = styled.div`
@@ -122,7 +123,7 @@ export default function App() {
               <Redirect to="/discover" />
             </Switch>
           </Web3ReactManager>
-          <InitialConfirmationModal />
+          {/* <InitialConfirmationModal /> */}
         </BodyWrapper>
       </AppWrapper>
     </ErrorBoundary>
