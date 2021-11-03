@@ -3,7 +3,7 @@ FROM node:14 as build-stage
 ENV NODE_ENV=production
 WORKDIR /var/uinterface
 COPY . .
-RUN yarn global add typechain && yarn install --silent
+RUN yarn install
 RUN yarn build:production
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
