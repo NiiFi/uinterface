@@ -1,7 +1,8 @@
 import { SupportedChainId } from '../constants/chains'
 
 const ETHERSCAN_PREFIXES: { [chainId: number]: string } = {
-  [SupportedChainId.ROPSTEN_NAHMII]: 'explorer.testnet.',
+  [SupportedChainId.NAHMII_MAINNET]: 'explorer.testnet.',
+  [SupportedChainId.NAHMII_TESTNET]: 'explorer.testnet.',
 }
 
 export enum ExplorerDataType {

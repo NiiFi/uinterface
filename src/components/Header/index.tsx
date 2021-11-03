@@ -110,16 +110,23 @@ const Title = styled.a`
   :hover {
     cursor: pointer;
   }
+  text-decoration: none;
 `
 
-const UniIcon = styled.div`
+const NiiIcon = styled.div`
   > div {
     width: 35%;
     height: auto;
+    display: flex;
   }
   > div > img {
     width: 100%;
+    min-width: 100%;
     height: auto;
+  }
+  > div > span {
+    color: ${({ theme }) => theme.text4};
+    padding-left: 5px;
   }
 `
 const activeClassName = 'ACTIVE'
@@ -139,7 +146,8 @@ const StyledNavLink = styled(NavLink).attrs({
   word-break: break-word;
   display: flex;
   align-items: center;
-  pointer-event: ${({ disable }) => (disable ? 'none' : 'auto')};
+  pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
+  opacity: ${({ disable }) => (disable ? '0.4' : '1')};
 
   > i,
   svg {
@@ -245,11 +253,11 @@ export default function Header() {
         <HeaderContent>
           <HeaderRow>
             <Title href=".">
-              <UniIcon>
+              <NiiIcon>
                 <div>
-                  <img src={Logo} alt="logo" />
+                  <img src={Logo} alt="logo" /> <span>beta</span>
                 </div>
-              </UniIcon>
+              </NiiIcon>
             </Title>
           </HeaderRow>
           <WalletPopover />

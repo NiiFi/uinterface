@@ -14,6 +14,7 @@ import { useActiveWeb3React } from 'hooks/web3'
 import useTheme from 'hooks/useTheme'
 import { useWalletModalToggle } from 'state/application/hooks'
 import { StyledTableRow, LogoWrapper } from './styleds'
+import { shortenDecimalValues } from 'utils'
 
 const CustomTableRow = (
   row: any,
@@ -67,7 +68,8 @@ const CustomTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {row.amount0} {row.symbol0} / {row.amount1} {row.symbol1}
+        {shortenDecimalValues(row.amount0, '0.[000]a')} {row.symbol0} / {shortenDecimalValues(row.amount1, '0.[000]a')}{' '}
+        {row.symbol1}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.amountUSD} />

@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { TYPE, BaseCurrencyView } from '../../theme'
 import LineChart from './index'
-import { useApiStatsLocalTvl } from 'hooks/useApi'
+// import { useApiStatsLocalTvl } from 'hooks/useApi'
 
 dayjs.extend(utc)
 
@@ -14,7 +14,9 @@ const OverviewChart = () => {
   const [amount, setAmount] = useState<number | undefined>()
   const [time, setTime] = useState<string | undefined>()
 
-  const { data: lineChartData, loader: lineChartLoader } = useApiStatsLocalTvl()
+  // const { data: lineChartData, loader: lineChartLoader } = useApiStatsLocalTvl()
+  const lineChartData: any = []
+  const lineChartLoader = false
 
   useEffect(() => {
     if (!time && lineChartData && lineChartData.length) {
