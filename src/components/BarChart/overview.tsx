@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { TYPE, BaseCurrencyView } from '../../theme'
 import BarChart from './index'
-import { useApiStatsLocalVolume } from 'hooks/useApi'
+// import { useApiStatsLocalVolume } from 'hooks/useApi'
 
 dayjs.extend(utc)
 
@@ -14,7 +14,10 @@ const OverviewChart = () => {
   const [amount, setAmount] = useState<number | undefined>()
   const [time, setTime] = useState<string | undefined>()
 
-  const { data, loader } = useApiStatsLocalVolume()
+  // const { data, loader } = useApiStatsLocalVolume()
+
+  const data: any = []
+  const loader = false
 
   useEffect(() => {
     if (!time && data && data.length) {
