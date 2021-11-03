@@ -27,7 +27,7 @@ export default function TokenDetail(props: TokenDetailProps) {
           <Trans>Price</Trans>
         </TextLabel>
         <TextValue fontSize={'1rem'}>
-          <BaseCurrencyView type="id" value={token?.price} numeralFormat={'0.[00]a'} />
+          <BaseCurrencyView type="symbol" value={token?.price} numeralFormat={'0.[00]a'} />
         </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
@@ -35,7 +35,7 @@ export default function TokenDetail(props: TokenDetailProps) {
           <Trans>Market Cap</Trans>
         </TextLabel>
         <TextValue fontSize={'1rem'}>
-          <BaseCurrencyView type="id" value={token?.mcap} numeralFormat={'0.[00]a'} />
+          <BaseCurrencyView type="symbol" value={token?.mcap} numeralFormat={'0.[00]a'} />
         </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
@@ -43,7 +43,7 @@ export default function TokenDetail(props: TokenDetailProps) {
           <Trans>Trading Volume</Trans>
         </TextLabel>
         <TextValue fontSize={'1rem'}>
-          <BaseCurrencyView type="id" value={token?.trading} numeralFormat={'0.[00]a'} />
+          <BaseCurrencyView type="symbol" value={token?.trading} numeralFormat={'0.[00]a'} />
         </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
@@ -51,10 +51,10 @@ export default function TokenDetail(props: TokenDetailProps) {
           <Trans>24h Low / 24h High</Trans>
         </TextLabel>
         <TextValue fontSize={'1rem'}>
-          <BaseCurrencyView type="id" value={token?.low_24h} numeralFormat={'0.[00]a'} />
+          <BaseCurrencyView type="symbol" value={token?.low_24h} numeralFormat={'0.[00]a'} />
         </TextValue>
         <TextValue fontSize={'1rem'}>
-          <BaseCurrencyView type="id" value={token?.high_24h} numeralFormat={'0.[00]a'} />
+          <BaseCurrencyView type="symbol" value={token?.high_24h} numeralFormat={'0.[00]a'} />
         </TextValue>
       </TextItemWrapper>
     </>

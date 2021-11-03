@@ -21,12 +21,13 @@ const CustomTableRow = (
   return (
     <TableRow
       hover
-      onClick={(event) => handleClick(event, row.id)}
+      onClick={(event) => (row?.url ? window.open(row.url, '_blank') : handleClick(event, row.id))}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
       key={index}
       selected={false}
+      style={{ cursor: 'pointer' }}
     >
       <TableCell style={rowCellStyles} align="center">
         {index + 1}
