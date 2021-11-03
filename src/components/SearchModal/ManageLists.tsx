@@ -183,9 +183,9 @@ const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
               <PopoverContainer show={true} ref={setPopperElement as any} style={styles.popper} {...attributes.popper}>
                 <div>{list && listVersionLabel(list.version)}</div>
                 <SeparatorDark />
-                <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>
+                {/* <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>
                   <Trans>View list</Trans>
-                </ExternalLink>
+                </ExternalLink> */}
                 <UnpaddedLinkStyledButton onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>
                   <Trans>Remove list</Trans>
                 </UnpaddedLinkStyledButton>

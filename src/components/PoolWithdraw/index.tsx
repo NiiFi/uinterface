@@ -180,6 +180,8 @@ export default function PoolWithdraw({
     const withdrawValue = parseInt(percentToRemove.toFixed())
     setSliderValue(withdrawValue)
     setWithdrawValue(withdrawValue)
+    setToken0Amount('0')
+    setToken1Amount('0')
   }, [percentToRemove])
 
   useEffect(() => {
