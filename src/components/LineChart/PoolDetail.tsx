@@ -1,11 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect, useMemo } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import LineChart from './index'
 import { TYPE, BaseCurrencyView } from '../../theme'
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
-import { useApiPoolStats } from 'hooks/useApi'
+// import { useApiPoolStats } from 'hooks/useApi'
 
 const StyleButtonOutlined = styled(ButtonOutlined)`
   margin: 12px;
@@ -80,7 +80,46 @@ const PoolDetailChart = ({ address, token0, token1 }: { address: string; token0:
   const [currentChartValue, setCurrentChartValue] = useState<string>('liquidity')
   const [currentChartPeriod, setCurrentChartPeriod] = useState<string>('week')
 
-  const { data: lineChartData, loader: lineChartLoader } = useApiPoolStats(address, currentChartPeriod)
+  // const { data: lineChartData, loader: lineChartLoader } = useApiPoolStats(address, currentChartPeriod)
+
+  const lineChartData = useMemo(() => {
+    return (
+      address && [
+        {
+          time: '2020-01-01',
+          liquidity: 0,
+          volume: 2.6,
+          fees: 3,
+        },
+        {
+          time: '2021-01-01',
+          liquidity: 2,
+          volume: 2,
+          fees: 6,
+        },
+        {
+          time: '2020-01-01',
+          liquidity: 0.5,
+          volume: 3,
+          fees: 4,
+        },
+        {
+          time: '2021-01-01',
+          liquidity: 1,
+          volume: 7,
+          fees: 5,
+        },
+        {
+          time: '2021-01-01',
+          liquidity: 3,
+          volume: 4,
+          fees: 7,
+        },
+      ]
+    )
+  }, [address])
+
+  const lineChartLoader = false
 
   const handleChartType = (e: string): void => {
     setCurrentChartValue(e)
