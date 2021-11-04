@@ -124,10 +124,10 @@ function CurrencyRow({
       style={style}
       className={`token-item-${key}`}
       onClick={() => (isSelected ? null : onSelect())}
-      disabled={isSelected}
+      disabled={isSelected || otherSelected}
       selected={otherSelected}
     >
-      <CurrencyLogo currency={currency} size={'24px'} />
+      <CurrencyLogo currency={currency} size={'32px'} />
       <Column>
         <Text title={currency.name} fontWeight={500}>
           {currency.symbol}

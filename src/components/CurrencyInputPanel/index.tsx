@@ -254,10 +254,10 @@ export default function CurrencyInputPanel({
               <RowFixed>
                 {pair ? (
                   <span style={{ marginRight: '0.5rem' }}>
-                    <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={24} margin={true} />
+                    <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={32} margin={true} />
                   </span>
                 ) : currency ? (
-                  <CurrencyLogo style={{ marginRight: '0.5rem' }} currency={currency} size={'24px'} />
+                  <CurrencyLogo style={{ marginRight: '0.5rem' }} currency={currency} size={'32px'} />
                 ) : null}
                 {pair ? (
                   <StyledTokenName className="pair-name-container">
