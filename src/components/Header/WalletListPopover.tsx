@@ -38,11 +38,15 @@ const MenuFooter = styled.div`
 const MenuFooterButton = styled.div`
   width: 100%;
   display: flex;
-  margin: 0.625rem 0px;
+  padding: 0.625rem 0px;
   cursor: pointer;
   color: ${({ theme }) => theme.text1};
   > svg {
     margin-right: 1rem;
+  }
+  :hover {
+    background-color: ${({ theme }) => theme.bg5};
+    border-radius: 8px;
   }
 `
 
