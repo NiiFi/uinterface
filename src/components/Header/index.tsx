@@ -138,7 +138,7 @@ const StyledNavLink = styled(NavLink).attrs({
   outline: none;
   cursor: ${({ disable }) => (disable ? 'not-allowed' : 'pointer')};
   text-decoration: none;
-  color: ${({ theme }) => theme.text4};
+  color: ${({ theme, disable }) => (disable ? theme.text3 : theme.text4)};
   font-size: 1rem;
   width: 100%;
   font-weight: 400;
@@ -147,7 +147,6 @@ const StyledNavLink = styled(NavLink).attrs({
   display: flex;
   align-items: center;
   pointer-events: ${({ disable }) => (disable ? 'none' : 'auto')};
-  opacity: ${({ disable }) => (disable ? '0.4' : '1')};
 
   > i,
   svg {

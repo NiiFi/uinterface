@@ -12,7 +12,7 @@ import { t, Trans } from '@lingui/macro'
 import useToggle from '../../hooks/useToggle'
 import { acceptListUpdate, removeList, disableList, enableList } from '../../state/lists/actions'
 import { useIsListActive, useAllLists, useActiveListUrls } from '../../state/lists/hooks'
-import { ExternalLink, LinkStyledButton, TYPE, IconWrapper } from '../../theme'
+import { /*ExternalLink,*/ LinkStyledButton, TYPE, IconWrapper } from '../../theme'
 import listVersionLabel from '../../utils/listVersionLabel'
 import { parseENSAddress } from '../../utils/parseENSAddress'
 import uriToHttp from '../../utils/uriToHttp'
@@ -28,6 +28,7 @@ import ListToggle from '../Toggle/ListToggle'
 import Card from 'components/Card'
 import { CurrencyModalView } from './CurrencySearchModal'
 import { UNSUPPORTED_LIST_URLS } from 'constants/lists'
+import { useActiveWeb3React } from 'hooks/web3'
 
 const Wrapper = styled(Column)`
   width: 100%;
@@ -93,6 +94,7 @@ function listUrlRowHTMLId(listUrl: string) {
 }
 
 const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
+  const { chainId } = useActiveWeb3React()
   const listsByUrl = useAppSelector((state) => state.lists.byUrl)
   const dispatch = useAppDispatch()
   const { current: list, pendingUpdate: pending } = listsByUrl[listUrl]
@@ -158,6 +160,11 @@ const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
     dispatch(disableList(listUrl))
   }, [dispatch, listUrl])
 
+  const tokensCount: number = useMemo(() => {
+    if (!list || !list.tokens || !chainId) return 0
+    return list.tokens.filter((item) => item.chainId === chainId).length
+  }, [list, chainId])
+
   if (!list) return null
 
   return (
@@ -173,7 +180,7 @@ const ListRow = memo(function ListRow({ listUrl }: { listUrl: string }) {
         </Row>
         <RowFixed mt="4px">
           <StyledListUrlText active={isActive} mr="6px">
-            <Trans>{list.tokens.length} tokens</Trans>
+            <Trans>{tokensCount} tokens</Trans>
           </StyledListUrlText>
           <StyledMenu ref={node as any}>
             <ButtonEmpty onClick={toggle} ref={setReferenceElement} padding="0">

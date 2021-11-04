@@ -1,7 +1,7 @@
 // a list of tokens by chain
 import { Currency, Token } from '@uniswap/sdk-core'
 import { SupportedChainId } from './chains'
-import { ExtendedEther, WETH9_EXTENDED } from './tokens'
+import { /*ExtendedEther,*/ WETH9_EXTENDED } from './tokens'
 
 type ChainTokenList = {
   readonly [chainId: number]: Token[]
