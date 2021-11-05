@@ -1,5 +1,5 @@
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
-import { Pair, Trade } from '@uniswap/v2-sdk'
+import { Pair, Trade } from '@niifi/godzilla2-sdk'
 import { useMemo } from 'react'
 import { isTradeBetter } from 'utils/isTradeBetter'
 import { BETTER_TRADE_LESS_HOPS_THRESHOLD } from '../constants/misc'
@@ -8,7 +8,6 @@ import { PairState, usePairs } from './usePairs'
 
 function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
   const allCurrencyCombinations = useAllCurrencyCombinations(currencyA, currencyB)
-
   const allPairs = usePairs(allCurrencyCombinations)
 
   // only pass along valid pairs, non-duplicated pairs

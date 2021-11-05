@@ -1,7 +1,7 @@
 import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
 import { CurrencyAmount, Percent, Currency, TradeType } from '@uniswap/sdk-core'
-import { Trade } from '@uniswap/v2-sdk'
+import { Trade } from '@niifi/godzilla2-sdk'
 import { useCallback, useMemo } from 'react'
 import { ROUTER_ADDRESS } from '../constants/addresses'
 import { useTransactionAdder, useHasPendingApproval } from '../state/transactions/hooks'

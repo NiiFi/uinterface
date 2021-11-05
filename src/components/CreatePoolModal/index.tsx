@@ -11,7 +11,6 @@ import { ApplicationModal } from 'state/application/actions'
 import { ReactComponent as Close } from 'assets/images/x.svg'
 import { useCurrency } from 'hooks/Tokens'
 import { useCreatePoolModalToggle, useModalOpen, useWalletModalToggle } from 'state/application/hooks'
-import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
 import Slippage from 'components/swap/Slippage'
 import Row from 'components/Row'
 import { ButtonPrimary } from 'components/Button'
@@ -19,6 +18,7 @@ import Modal from '../Modal'
 import { Field } from 'state/mint/actions'
 import useAddLiquidity from 'hooks/useAddLiquidity'
 import { useInvestmentCalculator } from 'state/pool/hooks'
+import { useApiToken } from 'hooks/useApi'
 
 const HeaderRow = styled.div`
   font-weight: 500;
@@ -67,7 +67,6 @@ export default function CreatePoolModal() {
    * Integration of API and Actual Business logic in place.
    */
   const { account } = useActiveWeb3React()
-  const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const poolInvestModalOpen = useModalOpen(ApplicationModal.CREATE_POOL)
   const toggleCreatePoolModal = useCreatePoolModalToggle()
   const toggleWalletModal = useWalletModalToggle()
@@ -76,22 +75,23 @@ export default function CreatePoolModal() {
   const [currencyTokenTwo, setCurrencyTokenTwo] = useState<Currency | null | undefined>(null)
   const { calculateTotalInvestment } = useInvestmentCalculator()
 
-  const { addLiquidity, currencies, formattedAmounts, onFieldAInput, onFieldBInput, error } = useAddLiquidity(
-    currencyTokenOne,
-    currencyTokenTwo
-  )
+  const { addLiquidity, currencies, formattedAmounts, onFieldAInput, onFieldBInput, error, approveA, approveB } =
+    useAddLiquidity(currencyTokenOne, currencyTokenTwo)
+
+  // TODO: move all token prices to redux after fetching tokens from BE
+  const { data: token0Data } = useApiToken(currencies[Field.CURRENCY_A]?.address || '')
+  const { data: token1Data } = useApiToken(currencies[Field.CURRENCY_B]?.address || '')
 
   useEffect(() => {
     setInvestmentValue(
       calculateTotalInvestment(
-        currencies[Field.CURRENCY_A],
-        currencies[Field.CURRENCY_B],
         formattedAmounts[Field.CURRENCY_A],
         formattedAmounts[Field.CURRENCY_B],
-        rates?.['USD']
+        token0Data?.priceUSD,
+        token1Data?.priceUSD
       )
     )
-  }, [currencies, formattedAmounts, rates, calculateTotalInvestment])
+  }, [formattedAmounts, token0Data, token1Data, calculateTotalInvestment])
 
   return (
     <Modal isOpen={poolInvestModalOpen} onDismiss={toggleCreatePoolModal} minHeight={false} maxHeight={90}>
@@ -141,6 +141,16 @@ export default function CreatePoolModal() {
                 {error}
               </TYPE.error>
             )}
+          {error && error === 'A_NOT_APPROVED' && (
+            <ButtonPrimary onClick={approveA.approveACallback}>
+              <Trans>Approve {currencies[Field.CURRENCY_A].symbol}</Trans>
+            </ButtonPrimary>
+          )}
+          {error && error === 'B_NOT_APPROVED' && (
+            <ButtonPrimary onClick={approveB.approveBCallback}>
+              <Trans>Approve {currencies[Field.CURRENCY_B].symbol}</Trans>
+            </ButtonPrimary>
+          )}
           <Row marginTop="1rem">
             {account ? (
               <ButtonPrimary style={{ textTransform: 'uppercase' }} onClick={addLiquidity} disabled={error}>

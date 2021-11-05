@@ -1,9 +1,9 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components/macro'
+import { Trans, t } from '@lingui/macro'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
-import { TYPE, BaseCurrencyView } from 'theme'
+import { TYPE, BaseCurrencyView, ComingSoonOverlay } from 'theme'
 import CircleSvgSrc from '../../../assets/svg/circle.svg'
 import ArrowSvgSrc from '../../../assets/svg/arrow.svg'
 import MaterialUiTable from '@material-ui/core/Table'
@@ -77,9 +77,10 @@ type CustomCardProps = {
   svgIconSrc: any
   data: Array<any>
   type: string
+  maintenance?: boolean
 }
 
-export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps) => {
+export const CustomCard = ({ balance, svgIconSrc, data, type, maintenance }: CustomCardProps) => {
   const theme = useTheme()
   const history = useHistory()
   const types: { [type: string]: string } = {
@@ -91,7 +92,7 @@ export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps)
 
   const handleClick = (e: React.MouseEvent<unknown>) => {
     e.preventDefault()
-    history.push(`/dashboard/${type}`)
+    maintenance ? console.log('Coming Soon') : history.push(`/dashboard/${type}`)
   }
 
   const handleRowClick = (e: React.MouseEvent<unknown>, rowId: string) => {
@@ -122,22 +123,37 @@ export const CustomCard = ({ balance, svgIconSrc, data, type }: CustomCardProps)
 
   return (
     <Card>
+      {maintenance && <ComingSoonOverlay />}
       <CardHeader style={{ padding: '32px', justifyContent: 'start' }}>
         <SvgIconWrapper src={svgIconSrc} />
         <CardHeaderTitle>
           <TYPE.subHeader>
             <Trans>{types[type]}</Trans>
           </TYPE.subHeader>
-          <TYPE.mediumHeader fontSize="16px">
+          <TYPE.mediumHeader
+            fontSize="16px"
+            style={{
+              filter: maintenance ? 'blur(3px)' : '',
+            }}
+          >
             <BaseCurrencyView value={balance} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
           </TYPE.mediumHeader>
         </CardHeaderTitle>
-        <ArrowWrapper onClick={(event) => handleClick(event)}>
+        <ArrowWrapper
+          onClick={(event) => handleClick(event)}
+          style={{
+            filter: maintenance ? 'blur(3px)' : '',
+          }}
+        >
           <CircleSvgWrapper src={CircleSvgSrc} />
           <ArrowSvgWrapper src={ArrowSvgSrc} />
         </ArrowWrapper>
       </CardHeader>
-      <MaterialUiTableContainer>
+      <MaterialUiTableContainer
+        style={{
+          filter: maintenance ? 'blur(3px)' : '',
+        }}
+      >
         <MaterialUiTable>
           <MaterialUiBody>{renderedTable}</MaterialUiBody>
         </MaterialUiTable>

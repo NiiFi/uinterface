@@ -1,6 +1,5 @@
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { AutoRow } from 'components/Row'
 import React, { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
@@ -178,10 +177,6 @@ export default function WalletModal({
     setPendingWallet(connector) // set wallet for pending view
     setWalletView(WALLET_VIEWS.PENDING)
 
-    // if the connector is walletconnect and the user has already tried to connect, manually reset the connector
-    if (connector instanceof WalletConnectConnector && connector.walletConnectProvider?.wc?.uri) {
-      connector.walletConnectProvider = undefined
-    }
     connector &&
       activate(connector, undefined, true).catch((error) => {
         if (error instanceof UnsupportedChainIdError) {
@@ -310,7 +305,15 @@ export default function WalletModal({
           <ContentWrapper>
             {error instanceof UnsupportedChainIdError ? (
               <h5>
-                <Trans>Please connect to the appropriate Ethereum network.</Trans>
+                <Trans>Please connect to the appropriate Nahmii network.</Trans>
+                <br />
+                <Trans>
+                  To use NiiFi you need to deposit funds into Nahmii. Please visit the{' '}
+                  <a href="https://bridge.nahmii.io/" target="_blank" rel="noreferrer">
+                    Nahmii Bridge
+                  </a>{' '}
+                  and deposit funds into Nahmii
+                </Trans>
               </h5>
             ) : (
               <Trans>Error connecting. Try refreshing the page.</Trans>
@@ -346,7 +349,7 @@ export default function WalletModal({
             <AutoRow style={{ flexWrap: 'nowrap' }}>
               <TYPE.main fontSize={14}>
                 <Trans>
-                  By connecting a wallet, you agree to Niifi{` `}
+                  By connecting a wallet, you agree to NiiFi{` `}
                   <ExternalLink href="http://example.com">Terms of Service(coming soon)</ExternalLink>
                 </Trans>
               </TYPE.main>

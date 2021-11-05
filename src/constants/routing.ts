@@ -1,7 +1,7 @@
 // a list of tokens by chain
 import { Currency, Token } from '@uniswap/sdk-core'
 import { SupportedChainId } from './chains'
-import { ExtendedEther, WETH9_EXTENDED } from './tokens'
+import { /*ExtendedEther,*/ WETH9_EXTENDED } from './tokens'
 
 type ChainTokenList = {
   readonly [chainId: number]: Token[]
@@ -21,7 +21,8 @@ type ChainCurrencyList = {
 //   '0x59A921Db27Dd6d4d974745B7FfC5c33932653442': [MIR, UST], // mGOOGL
 // }
 const WETH_ONLY: ChainTokenList = {
-  [SupportedChainId.ROPSTEN]: [WETH9_EXTENDED[SupportedChainId.ROPSTEN]],
+  [SupportedChainId.NAHMII_MAINNET]: [WETH9_EXTENDED[SupportedChainId.NAHMII_MAINNET]],
+  [SupportedChainId.NAHMII_TESTNET]: [WETH9_EXTENDED[SupportedChainId.NAHMII_TESTNET]],
 }
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
@@ -52,7 +53,8 @@ export const CUSTOM_BASES: { [chainId: number]: { [tokenAddress: string]: Token[
  * Shows up in the currency select for swap and add liquidity
  */
 export const COMMON_BASES: ChainCurrencyList = {
-  [3]: [ExtendedEther.onChain(3), WETH9_EXTENDED[3]],
+  [SupportedChainId.NAHMII_MAINNET]: [WETH9_EXTENDED[SupportedChainId.NAHMII_MAINNET]],
+  [SupportedChainId.NAHMII_TESTNET]: [WETH9_EXTENDED[SupportedChainId.NAHMII_TESTNET]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend

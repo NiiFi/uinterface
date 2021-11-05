@@ -6,9 +6,12 @@ import CurrencyAvatar from 'components/CurrencyAvatar'
 import { WalletIcon } from 'components/Icons'
 import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, RowWrapper, ColumnWrapper, BaseCurrencyView } from 'theme'
-import { SampleResponse } from 'components/Table/sample-tokens'
 import Table from 'components/Table'
+import { useApiUserAssets } from 'hooks/useApi'
+import { ButtonPrimary } from 'components/Button'
+import { useActiveWeb3React } from 'hooks/web3'
 import useTheme from 'hooks/useTheme'
+import { useWalletModalToggle } from 'state/application/hooks'
 import { StyledTableRow, LogoWrapper } from './styleds'
 
 const CustomTableRow = (
@@ -62,35 +65,48 @@ const CustomTableRow = (
 
 export default function Wallet() {
   const theme = useTheme()
-  const balance = 5265.62
+  const toggleWalletModal = useWalletModalToggle()
+  const { account } = useActiveWeb3React()
+  const { data: userData, loader } = useApiUserAssets(account)
   return (
-    <Table
-      headCells={[
-        { id: 'assets', numeric: false, align: 'left', disablePadding: false, label: t`Assets` },
-        { id: 'balance', numeric: true, disablePadding: false, label: t`Balance` },
-        { id: 'priceUSD', numeric: true, disablePadding: false, label: t`Price` },
-        { id: 'txCount', numeric: true, disablePadding: false, label: t`Value` },
-      ]}
-      rowsPerPage={8}
-      title={
-        <>
-          <RowWrapper style={{ padding: '16px' }}>
-            <LogoWrapper style={{ backgroundColor: theme.primary1 }}>
-              <WalletIcon color="#fff" />
-            </LogoWrapper>
-            <ColumnWrapper style={{ padding: '0 0 0 15px' }}>
-              <TYPE.body>
-                <Trans>Balance</Trans>
-              </TYPE.body>
-              <TYPE.mediumHeader>
-                <BaseCurrencyView type="symbol" value={balance} />
-              </TYPE.mediumHeader>
-            </ColumnWrapper>
-          </RowWrapper>
-        </>
-      }
-      data={SampleResponse.data.tokens}
-      row={CustomTableRow}
-    />
+    <>
+      {account ? (
+        loader ||
+        (userData && (
+          <Table
+            headCells={[
+              { id: 'assets', numeric: false, align: 'left', disablePadding: false, label: t`Assets` },
+              { id: 'balance', numeric: true, disablePadding: false, label: t`Balance` },
+              { id: 'priceUSD', numeric: true, disablePadding: false, label: t`Price` },
+              { id: 'txCount', numeric: true, disablePadding: false, label: t`Value` },
+            ]}
+            rowsPerPage={8}
+            title={
+              <>
+                <RowWrapper style={{ padding: '16px' }}>
+                  <LogoWrapper style={{ backgroundColor: theme.primary1 }}>
+                    <WalletIcon color="#fff" />
+                  </LogoWrapper>
+                  <ColumnWrapper style={{ padding: '0 0 0 15px' }}>
+                    <TYPE.body>
+                      <Trans>Balance</Trans>
+                    </TYPE.body>
+                    <TYPE.mediumHeader>
+                      <BaseCurrencyView type="symbol" value={userData.balanceUSD} />
+                    </TYPE.mediumHeader>
+                  </ColumnWrapper>
+                </RowWrapper>
+              </>
+            }
+            data={userData.data}
+            row={CustomTableRow}
+          />
+        ))
+      ) : (
+        <ButtonPrimary onClick={toggleWalletModal}>
+          <Trans>Connect Wallet</Trans>
+        </ButtonPrimary>
+      )}
+    </>
   )
 }

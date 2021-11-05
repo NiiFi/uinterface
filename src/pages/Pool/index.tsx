@@ -10,13 +10,13 @@ import AppBody from '../AppBody'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import CurrencyDropdown from '../../components/Dropdowns/CurrencyDropdown'
 import PoolsTable from '../../components/Table/pools'
-import PoolsOverview, { getTitle } from '../../components/pools/PoolsOverview'
-import { BodyScroller, Disclaimer, BarTitle, CurrencySelectWrapper } from '../../theme'
+import { /*PoolsOverview,*/ getTitle } from '../../components/pools/PoolsOverview'
+import { BodyScroller, BarTitle, CurrencySelectWrapper } from '../../theme'
 import CreatePoolButton from 'components/pools/CreatePoolButton'
 import { PoolAppBar } from './styleds'
 const tabNameToIndex: any = {
-  0: 'overview',
-  1: 'search',
+  // 0: 'overview',
+  0: 'search',
 }
 
 type PoolsParams = {
@@ -83,8 +83,8 @@ export default function Pool() {
           <>
             <ToggleDrawer />
             <Tabs value={activeTab} onChange={TabChangeHandler}>
-              <Tab key={`tab-0`} label={t`Overview`} />
-              <Tab key={`tab-1`} label={t`Search`} />
+              {/* <Tab key={`tab-0`} label={t`Overview`} /> */}
+              <Tab key={`tab-0`} label={t`Search`} />
             </Tabs>
           </>
         )}
@@ -96,17 +96,12 @@ export default function Pool() {
         </div>
       </PoolAppBar>
       <BodyScroller>
-        <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
-          <Disclaimer>
-            <span>Disclaimer:</span>
-            {` `}
-            {t`This is Dummy Data`}
-          </Disclaimer>
-          <PoolsOverview type="gainer" />
-          <PoolsOverview type="looser" style={{ paddingTop: '50px' }} />
+        {/* <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
+          <PoolsOverview type="gainers" />
+          <PoolsOverview type="losers" style={{ paddingTop: '50px' }} />
           <PoolsOverview id="new-pools" type="new" style={{ paddingTop: '50px' }} />
-        </TabPanel>
-        <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
+        </TabPanel> */}
+        <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
           <AppBody size="lg">
             <PoolsTable />
           </AppBody>

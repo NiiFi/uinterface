@@ -416,3 +416,19 @@ export const BaseCurrencyView = ({
 
   return <span title={baseCurrencyDetail.label}>{`${numeralFormattedValue} ${baseCurrencyDetail.id}`}</span>
 }
+
+const LoaderWrapper = styled.div`
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(20vh - 10rem);
+  width: 100%;
+`
+export const LoaderWrapped = () => {
+  return (
+    <LoaderWrapper>
+      <Loader size="2rem" />
+    </LoaderWrapper>
+  )
+}

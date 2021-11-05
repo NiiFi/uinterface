@@ -1,30 +1,173 @@
 {
   "name": "NiiFi Default List",
-  "timestamp": "2021-07-13T16:05:37.105Z",
+  "timestamp": "2021-11-01T10:57:37.105Z",
   "version": {
-    "major": 0,
-    "minor": 2,
-    "patch": 0
+    "major": 1,
+    "minor": 3,
+    "patch": 1
   },
   "tags": {},
-  "logoURI": "ipfs://QmcexwZrYwq4vFcP7SVDokeJsrybpQjQwNFUXq1YSA9Lot",
+  "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x604efD2Ec4aFC77Ba9827685eCad54C8EdcA041B/logo.png",
   "keywords": ["niifi", "nahmii", "tokens", "trusted"],
   "tokens": [
     {
-      "name": "NiiFi EURO",
-      "chainId": 3,
-      "symbol": "NEURO",
-      "decimals": 18,
-      "address": "0x01D8755f8ea44d90F8f2d6458153853c84abbf32",
-      "logoURI": ""
+      "chainId": 5553,
+      "address": "0xab151cD390C6b0eB41A4a45E1E372972C3067b1a",
+      "name": "Nahmii USD",
+      "symbol": "NUSD",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
     },
     {
-      "name": "NiiFi USD",
-      "chainId": 3,
-      "symbol": "NUSD",
+      "chainId": 5553,
+      "address": "0xB59C984a529490fde6698702342b292840743bb8",
+      "name": "Nahmii EURO",
+      "symbol": "NEURO",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xB59C984a529490fde6698702342b292840743bb8/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5553,
+      "address": "0xB68553758df8c253746d3cED96aA1De896F09470",
+      "name": "KniightCoin",
+      "symbol": "KNII",
       "decimals": 18,
-      "address": "0x11CA3411F42A7F6c8ca3a1ef5f8045893FF0BBa5",
-      "logoURI": ""
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xB68553758df8c253746d3cED96aA1De896F09470/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "name": "Ether",
+      "chainId": 5553,
+      "symbol": "ETH",
+      "decimals": 18,
+      "address": "0x4200000000000000000000000000000000000006",
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0x4200000000000000000000000000000000000006/logo.png"
+    },
+    {
+      "chainId": 5551,
+      "address": "0x595DBA438a1bf109953F945437c1584319515d88",
+      "name": "Nahmii",
+      "symbol": "NII",
+      "decimals": 15,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x595DBA438a1bf109953F945437c1584319515d88/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5551,
+      "address": "0x604efD2Ec4aFC77Ba9827685eCad54C8EdcA041B",
+      "name": "NiiFi",
+      "symbol": "NIIFI",
+      "decimals": 15,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x604efD2Ec4aFC77Ba9827685eCad54C8EdcA041B/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5551,
+      "address": "0xBe5c622cBbF7F9c326D70f795890661FeB5BF2e6",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0xBe5c622cBbF7F9c326D70f795890661FeB5BF2e6/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5551,
+      "address": "0x07137d8BDA2923Dfc1fF5b08a2e81E8715056ad3",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x07137d8BDA2923Dfc1fF5b08a2e81E8715056ad3/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5551,
+      "address": "0x72dDa4F7d131035F523728F11FAe0D7ccbA67128",
+      "name": "Pax Dollar",
+      "symbol": "USDP",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x72dDa4F7d131035F523728F11FAe0D7ccbA67128/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5551,
+      "address": "0x366C4bcbbcA84fb8F64D33978c4b85313f8dd7d7",
+      "name": "Euro Tether",
+      "symbol": "EURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x366C4bcbbcA84fb8F64D33978c4b85313f8dd7d7/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5551,
+      "address": "0xAC92b09965B6AAc33Dd43f3Ce752aD79b74Ddb94",
+      "name": "STASIS EURO",
+      "symbol": "EURS",
+      "decimals": 2,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0xAC92b09965B6AAc33Dd43f3Ce752aD79b74Ddb94/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5551,
+      "address": "0x4F0Ea1334c97f0556d8A6e839e19770452494fDC",
+      "name": "Wrapped Bitcoin",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x4F0Ea1334c97f0556d8A6e839e19770452494fDC/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5551,
+      "address": "0x0e14f07BCdCacEC46677DFf02685f049A7c3928C",
+      "name": "renBTC",
+      "symbol": "RENBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x0e14f07BCdCacEC46677DFf02685f049A7c3928C/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5551,
+      "address": "0xd031a1682399FaD6683FF3c60De8AB5DD3B3D0A3",
+      "name": "Dai",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0xd031a1682399FaD6683FF3c60De8AB5DD3B3D0A3/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "name": "Ether",
+      "chainId": 5551,
+      "symbol": "ETH",
+      "decimals": 18,
+      "address": "0x4200000000000000000000000000000000000006",
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x4200000000000000000000000000000000000006/logo.png"
     }
   ]
 }

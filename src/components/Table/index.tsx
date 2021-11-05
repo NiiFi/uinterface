@@ -46,7 +46,6 @@ interface EnhancedTableProps {
   ) => unknown
   headCellsBefore?: (props: any) => unknown
   renderToolbar?: (props: RenderToolBarProps) => any
-  showDisclaimer?: boolean
   defaultOrder?: Order
   defaultOrderBy?: string
 }
@@ -82,7 +81,7 @@ function EnhancedTableHead(props: EnhancedTableHeadProps) {
         >
           <TableSortLabel
             active={orderBy === headCell.id}
-            style={{ color: orderBy === headCell.id ? theme.primary1 : '' }}
+            style={{ color: orderBy === headCell.id ? theme.primary1 : theme.text4 }}
             direction={orderBy === headCell.id ? order : 'asc'}
             onClick={createSortHandler(headCell.id)}
             IconComponent={() =>
@@ -228,7 +227,6 @@ export default function EnhancedTable({ hideHeader = false, ...props }: Enhanced
                     setPage(currentPage - 2)
                   }
                 }}
-                showDisclaimer={props.showDisclaimer}
               />
             )
           }
@@ -262,7 +260,9 @@ export default function EnhancedTable({ hideHeader = false, ...props }: Enhanced
                 },
                 [order]
               )
-                .filter((row) => (transactionType === 'All' ? true : transactionType === row.__typename))
+                .filter((row) =>
+                  transactionType === 'All' ? true : 'type' in row ? transactionType === row.type : true
+                )
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => props.row(row, index, theme, handleClick))}
           </TableBody>

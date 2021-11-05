@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-08-17 15:38+0000\n"
+"POT-Creation-Date: 2021-09-28 17:40+0000\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File-ID: 77\n"
 "Project-Id-Version: niifi\n"
 "Language-Team: Ukrainian\n"
-"PO-Revision-Date: 2021-08-17 16:33\n"
+"PO-Revision-Date: 2021-09-28 18:25\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 
@@ -42,11 +42,7 @@ msgid "1 Year"
 msgstr ""
 
 #: src/components/Table/pools.tsx
-msgid "1W"
-msgstr ""
-
-#: src/components/Table/pools.tsx
-msgid "1Y"
+msgid "1D"
 msgstr ""
 
 #: src/components/swap/Slippage.tsx
@@ -75,6 +71,14 @@ msgstr "<0>Порада:</0> При додаванні рідини, ви отр
 
 #: src/components/PoolWithdraw/index.tsx
 msgid "APPROVE"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "APY"
+msgstr ""
+
+#: src/components/pools/PoolsOverview.tsx
+msgid "APY (1D)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -138,13 +142,13 @@ msgstr ""
 msgid "All"
 msgstr ""
 
+#: src/pages/Swap/index.tsx
+msgid "Allow NiiFi to use your {0}"
+msgstr ""
+
 #: src/components/Settings/index.tsx
 msgid "Allow high price impact trades and skip the confirm screen. Use at your own risk."
 msgstr "Дозвольте високі ціни угоди і пропустити екран підтвердження. Використовуйте на свій страх і ризик."
-
-#: src/pages/Swap/index.tsx
-msgid "Allow the Niifi to use your {0}"
-msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
@@ -165,6 +169,9 @@ msgstr ""
 msgid "Approve"
 msgstr "Схвалити"
 
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/CreatePoolModal/index.tsx
+#: src/components/PoolInvest/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Approve {0}"
@@ -228,6 +235,10 @@ msgstr ""
 msgid "Balance: {0}"
 msgstr ""
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Belarus"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "Bitcoin"
 msgstr ""
@@ -262,7 +273,7 @@ msgid "By adding this list you are implicitly trusting that the data is correct.
 msgstr "Додаючи цей список, ви неявно довіряєте, що дані правильні. Будь-хто може створити список, включаючи створення підроблених версій існуючих списків і списків, які претендують на представлення проектів, яких ще немає."
 
 #: src/components/WalletModal/index.tsx
-msgid "By connecting a wallet, you agree to Niifi <0>Terms of Service(coming soon)</0>"
+msgid "By connecting a wallet, you agree to NiiFi <0>Terms of Service(coming soon)</0>"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -285,6 +296,10 @@ msgstr ""
 msgid "Canadian Dollar"
 msgstr ""
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Cancel"
+msgstr ""
+
 #: src/pages/Pool/CTACards.tsx
 msgid "Check out our v3 LP walkthrough and migration guides."
 msgstr "Ознайомтеся з нашими v3 LP покроковими та міграційними інструкціями."
@@ -304,6 +319,14 @@ msgstr "Закрити"
 #: src/components/Badge/RangeBadge.tsx
 msgid "Closed"
 msgstr "Закрити"
+
+#: src/theme/index.tsx
+msgid "Coming Soon"
+msgstr ""
+
+#: src/pages/Discover/index.tsx
+msgid "Coming soon"
+msgstr ""
 
 #: src/components/SearchModal/CommonBases.tsx
 msgid "Common bases"
@@ -336,19 +359,20 @@ msgstr "Підтвердіть цю транзакцію у своєму гам�
 #: src/components/PoolWithdraw/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
+#: src/pages/Dashboard/index.tsx
+#: src/pages/Dashboard/subpages/Farm.tsx
+#: src/pages/Dashboard/subpages/Pools.tsx
+#: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Connect Wallet"
 msgstr "Підключити Гаманець"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Connect to a wallet"
 msgstr "Підключення до гаманця"
 
@@ -361,6 +385,10 @@ msgstr "Під'єднати гаманець для пошуку пулів"
 msgid "Connected"
 msgstr ""
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Continue"
+msgstr ""
+
 #: src/components/AccountDetails/Copy.tsx
 msgid "Copied"
 msgstr "Скопійовано"
@@ -368,6 +396,10 @@ msgstr "Скопійовано"
 #: src/components/AccountDetails/index.tsx
 msgid "Copy Address"
 msgstr "Копіювати адресу"
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Cote D’Ivoire (Ivory Coast)"
+msgstr ""
 
 #: src/components/CreatePoolModal/index.tsx
 msgid "Create New Pool"
@@ -394,8 +426,16 @@ msgstr ""
 msgid "Create pool."
 msgstr "Створити пул."
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Cuba"
+msgstr ""
+
 #: src/components/Header/index.tsx
 msgid "Dashboard"
+msgstr ""
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Democratic Republic of Congo"
 msgstr ""
 
 #: src/pages/Dashboard/components/BuyCryptoButton.tsx
@@ -432,10 +472,6 @@ msgstr "Відхилити"
 msgid "ETH"
 msgstr "ETH"
 
-#: src/components/LineChart/swap.tsx
-msgid "ETH-ANY Pair Stats (Dummy data)"
-msgstr "ETH-ANY Статистика пари (тестові дані)"
-
 #: src/constants/tokens.ts
 msgid "EUR"
 msgstr "EUR"
@@ -451,8 +487,6 @@ msgstr "Введіть дійсний відсоток диспуту"
 #: src/components/PoolInvest/index.tsx
 #: src/state/burn/hooks.ts
 #: src/state/mint/hooks.ts
-#: src/state/stake/hooks.ts
-#: src/state/stake/hooks.ts
 #: src/state/swap/hooks.ts
 msgid "Enter an amount"
 msgstr "Введіть суму"
@@ -467,7 +501,6 @@ msgstr "Введіть коректну адресу маркера"
 
 #: src/components/TransactionConfirmationModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Error"
 msgstr "Помилка"
 
@@ -549,6 +582,10 @@ msgstr ""
 msgid "Get support on Discord"
 msgstr ""
 
+#: src/components/LineChart/swap.tsx
+msgid "Graph"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "HKD"
 msgstr ""
@@ -563,6 +600,10 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Hong Kong Dollar"
+msgstr ""
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "I confirm that I am not a current resident of any of the listed countries."
 msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
@@ -654,6 +695,14 @@ msgstr "Недійсна пара."
 msgid "Invalid recipient"
 msgstr "Недійсний одержувач"
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Iran"
+msgstr ""
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Iraq"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "JPY"
 msgstr "JPY"
@@ -668,6 +717,10 @@ msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "Lend"
+msgstr ""
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Liberia"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -701,7 +754,6 @@ msgstr "Завантажено"
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
-#: src/pages/PoolDetail/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Завантаження"
@@ -759,6 +811,10 @@ msgstr "Міграція"
 msgid "Minimum received"
 msgstr ""
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Myanmar (Burma)"
+msgstr ""
+
 #: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
@@ -783,7 +839,11 @@ msgid "New Pools"
 msgstr ""
 
 #: src/components/SwitchLocaleLink/index.tsx
-msgid "Niifi available in: <0>{0}</0>"
+msgid "NiiFi available in: <0>{0}</0>"
+msgstr ""
+
+#: src/components/PoolWithdraw/index.tsx
+msgid "No liquidity provided"
 msgstr ""
 
 #: src/pages/PoolFinder/index.tsx
@@ -792,6 +852,10 @@ msgstr "Пул не знайдено."
 
 #: src/components/SearchModal/CurrencySearch.tsx
 msgid "No results found."
+msgstr ""
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "North Korea"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -843,7 +907,6 @@ msgstr "Вивід оцінено. Ви отримаєте не менше <0>{0
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "Вивід буде надіслано на <0>{0}</0>"
 
-#: src/pages/Pool/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Overview"
 msgstr ""
@@ -855,7 +918,7 @@ msgid "Page {0} of {totalPages}"
 msgstr ""
 
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats (Dummy data)"
+msgid "Pair Stats"
 msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
@@ -866,9 +929,17 @@ msgstr ""
 msgid "Period"
 msgstr ""
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Please confirm that you are not located in one of the following restricted countries"
+msgstr ""
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Please confirm your location"
+msgstr ""
+
 #: src/components/WalletModal/index.tsx
-msgid "Please connect to the appropriate Ethereum network."
-msgstr "Будь ласка, під'єднайтеся до відповідної мережі Ethereum."
+msgid "Please connect to the appropriate Nahmii network."
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Please type the word \"{confirmWord}\" to enable expert mode."
@@ -936,14 +1007,6 @@ msgstr "Ціни і акції пулу"
 
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
-msgstr ""
-
-#: src/components/Table/pools.tsx
-msgid "ROI"
-msgstr ""
-
-#: src/components/pools/PoolsOverview.tsx
-msgid "ROI (1Y)"
 msgstr ""
 
 #: src/pages/PoolDetail/index.tsx
@@ -1105,6 +1168,10 @@ msgstr ""
 msgid "South Korean Won"
 msgstr ""
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Sudan"
+msgstr ""
+
 #: src/pages/AddLiquidity/index.tsx
 msgid "Supply"
 msgstr "Пропозиція"
@@ -1141,6 +1208,10 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Swiss Franc"
+msgstr ""
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Syria"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -1189,13 +1260,8 @@ msgstr "Транзакцію надіслати не вдалося, оскіл�
 msgid "These tokens are commonly paired with other tokens."
 msgstr ""
 
-#: src/components/Table/SearchableTable.tsx
-#: src/components/Table/TableToolbar.tsx
-#: src/pages/Dashboard/index.tsx
-#: src/pages/Discover/index.tsx
-#: src/pages/Pool/index.tsx
-#: src/pages/Swap/index.tsx
-msgid "This is Dummy Data"
+#: src/theme/index.tsx
+msgid "This feature is under testing and will be"
 msgstr ""
 
 #: src/components/SearchModal/ImportToken.tsx
@@ -1224,6 +1290,11 @@ msgstr "На"
 #: src/pages/Swap/index.tsx
 msgid "To (at least)"
 msgstr "До (не менше)"
+
+#: src/components/WalletModal/index.tsx
+#: src/pages/App.tsx
+msgid "To use NiiFi you need to deposit funds into Nahmii. Please visit the <0>Nahmii Bridge</0> and deposit funds into Nahmii"
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Toggle Expert Mode"
@@ -1340,6 +1411,10 @@ msgstr ""
 msgid "United State Dollar"
 msgstr ""
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "United States of America"
+msgstr ""
+
 #: src/components/SearchModal/ImportToken.tsx
 msgid "Unknown Source"
 msgstr "Невідоме джерело"
@@ -1373,6 +1448,10 @@ msgstr ""
 #: src/pages/Dashboard/subpages/Pools.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
 msgid "Value"
+msgstr ""
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Venezuela"
 msgstr ""
 
 #: src/components/PositionCard/index.tsx
@@ -1439,9 +1518,12 @@ msgstr "Перенесення"
 
 #: src/components/WalletModal/index.tsx
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "Wrong Network"
 msgstr "Некоректна мережа"
+
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Yemen"
+msgstr ""
 
 #: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Dashboard/components/Card.tsx
@@ -1509,6 +1591,10 @@ msgstr "Ваші операції будуть відмінені, якщо це
 msgid "Your transaction will revert if the price changes unfavorably by more than this percentage."
 msgstr "Вашу транзакцію буде повернуто, якщо ця ціна зміниться більш ніж на цей відсоток."
 
+#: src/components/InitialConfirmationModal/index.tsx
+msgid "Zimbabwe"
+msgstr ""
+
 #: src/components/Settings/index.tsx
 msgid "confirm"
 msgstr "підтвердити"
@@ -1518,14 +1604,9 @@ msgstr "підтвердити"
 msgid "fee"
 msgstr ""
 
-#: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
-msgid "has socks emoji"
-msgstr "має емодзі"
-
 #: src/components/SearchModal/ManageLists.tsx
-msgid "https:// or ipfs:// or ENS name"
-msgstr "https: // або ipfs: // або ім’я ENS"
+msgid "https:// or ipfs://"
+msgstr ""
 
 #: src/components/TransactionSettings/index.tsx
 msgid "minutes"
@@ -1572,7 +1653,6 @@ msgid "{0} ETHs"
 msgstr ""
 
 #: src/components/Web3Status/index.tsx
-#: src/components/Web3Status/indexOld.tsx
 msgid "{0} Pending"
 msgstr ""
 

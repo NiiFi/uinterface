@@ -36,6 +36,9 @@ export type LineChartProps = {
   value1?: number
   value2?: number
   value3?: number
+  value1Name?: string
+  value2Name?: string
+  value3Name?: string
   currentValue: DataKey<any>
   label?: string
   dateFormat?: string
@@ -56,6 +59,9 @@ const LineChart = ({
   setValue1,
   setValue2,
   setValue3,
+  value1Name,
+  value2Name,
+  value3Name,
   currentValue,
   dateFormat,
   label,
@@ -79,7 +85,7 @@ const LineChart = ({
   if (YAxisTick) {
     yAxis = (
       <YAxis
-        dataKey="value1"
+        dataKey={currentValue}
         orientation="right"
         axisLine={false}
         tickLine={false}
@@ -129,19 +135,15 @@ const LineChart = ({
           <Tooltip
             cursor={{ stroke: theme.bg2 }}
             contentStyle={{ display: 'none' }}
-            formatter={(
-              value: number,
-              name: string,
-              props: { payload: { time: string; value1: number; value2?: number; value3?: number } }
-            ) => {
-              if (setValue1 && parsedValue1 !== props.payload.value1) {
-                setValue1(props.payload.value1)
+            formatter={(value: number, name: string, props: { payload: any }) => {
+              if (setValue1 && parsedValue1 !== props.payload[value1Name || 'value1']) {
+                setValue1(props.payload[value1Name || 'value1'])
               }
-              if (setValue2 && parsedValue2 !== props.payload.value2) {
-                setValue2(props.payload.value2)
+              if (setValue2 && parsedValue2 !== props.payload[value2Name || 'value2']) {
+                setValue2(props.payload[value2Name || 'value2'])
               }
-              if (setValue3 && parsedValue3 !== props.payload.value3) {
-                setValue3(props.payload.value3)
+              if (setValue3 && parsedValue3 !== props.payload[value3Name || 'value3']) {
+                setValue3(props.payload[value3Name || 'value3'])
               }
               const formattedTime = dayjs(props.payload.time).format('MMM D, YYYY')
               if (setLabel && label !== formattedTime) setLabel(formattedTime)

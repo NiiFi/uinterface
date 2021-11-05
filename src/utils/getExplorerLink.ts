@@ -1,7 +1,8 @@
 import { SupportedChainId } from '../constants/chains'
 
 const ETHERSCAN_PREFIXES: { [chainId: number]: string } = {
-  [SupportedChainId.ROPSTEN]: 'ropsten.',
+  [SupportedChainId.NAHMII_MAINNET]: 'explorer.testnet.',
+  [SupportedChainId.NAHMII_TESTNET]: 'explorer.testnet.',
 }
 
 export enum ExplorerDataType {
@@ -31,7 +32,7 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
   //   }
   // }
 
-  const prefix = `https://${ETHERSCAN_PREFIXES[chainId] ?? 'ropsten.'}etherscan.io`
+  const prefix = `https://${ETHERSCAN_PREFIXES[chainId] ?? 'explorer.testnet.'}nahmii.io`
 
   switch (type) {
     case ExplorerDataType.TRANSACTION:

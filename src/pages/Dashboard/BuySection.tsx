@@ -57,7 +57,7 @@ const CirclePairWrapper = styled.div`
 `
 
 // TODO: Add type to BuySectionProps
-export default function BuySection({ account, balanceValue }: any) {
+export default function BuySection({ account, balanceValue, data }: any) {
   const toggleWalletModal = useWalletModalToggle()
   const { userWallets, userRecentWallet } = useUserWallets()
 
@@ -114,55 +114,60 @@ export default function BuySection({ account, balanceValue }: any) {
             <Trans>Net Worth</Trans>
           </TYPE.body>
           <TYPE.mediumHeader>
-            <BaseCurrencyView value={balanceValue * 2} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
+            {/* TODO: decide which balance we will use web3 or from Web API */}
+            <BaseCurrencyView
+              value={data.balanceUSD || balanceValue}
+              type="symbol"
+              numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
+            />
           </TYPE.mediumHeader>
         </BuySectionAmountFigures>
         <MediaResponsiveRow style={{ width: 'auto' }}>
           <CirclePairWrapper>
             <div style={{ display: 'flex' }}>
               <CircleWrapper>
-                <ProgressCircle percentage={45} color={'#9871F9'} />
+                <ProgressCircle percentage={data.wallet} color={'#9871F9'} />
               </CircleWrapper>
               <BuySectionCircleDescription>
                 <TYPE.subHeader>
                   <Trans>Wallet</Trans>
                 </TYPE.subHeader>
-                <TYPE.mediumHeader fontSize="14px">45%</TYPE.mediumHeader>
+                <TYPE.mediumHeader fontSize="14px">{data.wallet}%</TYPE.mediumHeader>
               </BuySectionCircleDescription>
             </div>
             <div style={{ display: 'flex' }}>
               <CircleWrapper>
-                <ProgressCircle percentage={15} color={'#EF462F'} />
+                <ProgressCircle percentage={data.pools} color={'#EF462F'} />
               </CircleWrapper>
               <BuySectionCircleDescription>
                 <TYPE.subHeader>
                   <Trans>Liquidity Pools</Trans>
                 </TYPE.subHeader>
-                <TYPE.mediumHeader fontSize="14px">15%</TYPE.mediumHeader>
+                <TYPE.mediumHeader fontSize="14px">{data.pools}%</TYPE.mediumHeader>
               </BuySectionCircleDescription>
             </div>
           </CirclePairWrapper>
           <CirclePairWrapper>
             <div style={{ display: 'flex' }}>
               <CircleWrapper>
-                <ProgressCircle percentage={10} color={'#09CF7C'} />
+                <ProgressCircle percentage={data.farming} color={'#09CF7C'} />
               </CircleWrapper>
               <BuySectionCircleDescription>
                 <TYPE.subHeader>
                   <Trans>Yield Farming</Trans>
                 </TYPE.subHeader>
-                <TYPE.mediumHeader fontSize="14px">10%</TYPE.mediumHeader>
+                <TYPE.mediumHeader fontSize="14px">{data.farming}%</TYPE.mediumHeader>
               </BuySectionCircleDescription>
             </div>
             <div style={{ display: 'flex' }}>
               <CircleWrapper>
-                <ProgressCircle percentage={20} color={'#F79942'} />
+                <ProgressCircle percentage={data.nfts} color={'#F79942'} />
               </CircleWrapper>
               <BuySectionCircleDescription>
                 <TYPE.subHeader>
                   <Trans>NFTs</Trans>
                 </TYPE.subHeader>
-                <TYPE.mediumHeader fontSize="14px">20%</TYPE.mediumHeader>
+                <TYPE.mediumHeader fontSize="14px">{data.nfts}%</TYPE.mediumHeader>
               </BuySectionCircleDescription>
             </div>
           </CirclePairWrapper>

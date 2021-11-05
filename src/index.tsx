@@ -4,7 +4,6 @@ import React, { StrictMode } from 'react'
 import { hotjar } from 'react-hotjar'
 import { isMobile } from 'react-device-detect'
 import ReactDOM from 'react-dom'
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import ReactGA from 'react-ga'
 import { Provider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
@@ -16,17 +15,12 @@ import store from './state'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import ApplicationUpdater from './state/application/updater'
 import ListsUpdater from './state/lists/updater'
-import MulticallUpdater from './state/multicall/updater'
 import TransactionUpdater from './state/transactions/updater'
 import UserUpdater, { BaseCurrencyRatesUpdater } from './state/user/updater'
 import PoolsUpdater from './state/pools/updater'
+import WalletUpdater from './state/wallet/updater'
 import ThemeProvider, { ThemedGlobalStyle } from './theme'
 import getLibrary from './utils/getLibrary'
-
-const client = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/ianlapham/uniswapv2',
-  cache: new InMemoryCache(),
-})
 
 const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName)
 
@@ -71,8 +65,8 @@ function Updaters() {
       <BaseCurrencyRatesUpdater />
       <ApplicationUpdater />
       <TransactionUpdater />
-      <MulticallUpdater />
       <PoolsUpdater />
+      <WalletUpdater />
     </>
   )
 }
@@ -85,13 +79,11 @@ ReactDOM.render(
           <Web3ReactProvider getLibrary={getLibrary}>
             <Web3ProviderNetwork getLibrary={getLibrary}>
               <Blocklist>
-                <ApolloProvider client={client}>
-                  <Updaters />
-                  <ThemeProvider>
-                    <ThemedGlobalStyle />
-                    <App />
-                  </ThemeProvider>
-                </ApolloProvider>
+                <Updaters />
+                <ThemeProvider>
+                  <ThemedGlobalStyle />
+                  <App />
+                </ThemeProvider>
               </Blocklist>
             </Web3ProviderNetwork>
           </Web3ReactProvider>

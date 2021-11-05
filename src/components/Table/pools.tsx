@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
@@ -11,22 +11,13 @@ import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { shortenDecimalValues } from '../../utils'
 import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, BaseCurrencyView } from '../../theme'
-import { getPoolsData } from './sample-pools'
+import { useApiPools } from 'hooks/useApi'
 import SearchableTable, { Order } from './SearchableTable'
-import Loader from 'components/Loader'
 import { PoolTableData } from '../Table/types'
 import { ButtonOutlined } from 'components/Button'
 import { ArrowLeft, ArrowRight } from 'react-feather'
 import { Wrapper as DefaultToolBarWrapper, PagerWrapper as DefaultToolBarPagerWrapper } from './TableToolbar'
 import { History, LocationState } from 'history'
-
-const LoaderWrapper = styled.div`
-  padding: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 10rem);
-`
 
 const CustomTableRow = (row: any, index: number, history: History<LocationState>, theme: DefaultTheme) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
@@ -43,21 +34,21 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
       tabIndex={-1}
       key={index}
       selected={false}
-      onClick={() => handleCellOnClick(row.id)}
+      onClick={() => handleCellOnClick(row.address)}
     >
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper>
           <div style={{ position: 'relative' }}>
             <CurrencyAvatar
-              symbol={row.token0.symbol}
-              address={row.token0.id}
+              symbol=""
+              address={row.token1.address}
               iconProps={{ width: '32', height: '32' }}
               containerStyle={{ zIndex: 1 }}
               hideSymbol={true}
             />
             <CurrencyAvatar
-              symbol={row.token1.symbol}
-              address={row.token1.id}
+              symbol=""
+              address={row.token2.address}
               iconProps={{ width: '32', height: '32' }}
               containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
               hideSymbol={true}
@@ -68,7 +59,7 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
           </div>
           <ColumnWrapper style={{ marginLeft: '42px' }}>
             <div>
-              {row.token0.symbol} / {row.token1.symbol}
+              {row.token1.symbol} / {row.token2.symbol}
             </div>
             <TYPE.small color={'text2'}>NiiFi</TYPE.small>
           </ColumnWrapper>
@@ -80,23 +71,23 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
       <TableCell style={rowCellStyles} align="center">
         <ColumnWrapper>
           <div>
-            {shortenDecimalValues(row.roiY, '0.[00]a')} (<Trans>1Y</Trans>)
+            {shortenDecimalValues(row.roiY, '0.[00]a')} (<Trans>1D</Trans>)
           </div>
-          <TYPE.small color={'text2'}>
+          {/* <TYPE.small color={'text2'}>
             {shortenDecimalValues(row.roiW, '0.[00]a')} (<Trans>1W</Trans>)
-          </TYPE.small>
+          </TYPE.small> */}
         </ColumnWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <ColumnWrapper>
           <div>
-            {row.trendingPercent > 0 && '+ '}
-            {shortenDecimalValues(row.trendingPercent, '0.[00]')}%
+            {row.trendingPercentY > 0 && '+ '}
+            {shortenDecimalValues(row.trendingPercentY, '0.[00]')}%
           </div>
-          <TYPE.small color={'text2'}>
-            {row.trendingSum > 0 && '+ '}
-            <BaseCurrencyView type="symbol" value={row.trendingSum} numeralFormat={'0.[000]a'} />
-          </TYPE.small>
+          {/* <TYPE.small color={'text2'}>
+            {row.trendingPercentW > 0 && '+ '}
+            <BaseCurrencyView type="symbol" value={row.trendingPercentW} numeralFormat={'0.[000]a'} />
+          </TYPE.small> */}
         </ColumnWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
@@ -146,71 +137,65 @@ export default function PoolsTable() {
   const history = useHistory()
   const theme = useTheme()
   const { state } = useLocation<any>() // FIXME: any
-  const poolsData = useMemo(() => {
-    return getPoolsData('new', 100)
-  }, [])
+  const { data, loader } = useApiPools()
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<string>()
-  const [pools, setPools] = useState<PoolTableData[]>(poolsData)
+  const [pools, setPools] = useState<PoolTableData[]>()
+
+  useEffect(() => {
+    setPools(data)
+  }, [data])
 
   useEffect(() => {
     // TODO: implement sorting
     if (state?.type !== undefined) {
-      setOrderBy('roiY')
-      setOrder(state.type === 'looser' ? 'asc' : 'desc')
+      setOrderBy(state.type === 'new' ? 'roiY' : 'trendingPercentY')
+      setOrder(state.type === 'losers' ? 'asc' : 'desc')
     } else {
-      setOrderBy('token0.symbol')
-      setOrder('asc')
+      setOrderBy('roiY')
+      setOrder('desc')
     }
   }, [state])
 
-  if (!pools) {
-    return (
-      <LoaderWrapper>
-        <Loader size="2rem" />
-      </LoaderWrapper>
-    )
-  }
-
   return (
     <>
-      <SearchableTable
-        title={''}
-        data={pools}
-        searchLabel={t`Filter by token, protocol, ...`}
-        debouncedSearchChange={(value: string) => {
-          setPools(
-            poolsData.filter((pool: any) => {
-              const regex = new RegExp(`^${value}`, 'ig')
-              const { name: token0Name, symbol: token0Symbol, id: token0Id } = pool.token0
-              const { name: token1Name, symbol: token1Symbol, id: token1Id } = pool.token1
-              return (
-                regex.test(token0Name) ||
-                regex.test(token0Symbol) ||
-                regex.test(token0Id) ||
-                regex.test(token1Name) ||
-                regex.test(token1Symbol) ||
-                regex.test(token1Id)
+      {loader ||
+        (data && pools && (
+          <SearchableTable
+            title={''}
+            data={pools}
+            searchLabel={t`Filter by token, protocol, ...`}
+            debouncedSearchChange={(value: string) => {
+              setPools(
+                data.filter((pool: any) => {
+                  const regex = new RegExp(`^${value}`, 'ig')
+                  return (
+                    regex.test(pool.address) ||
+                    regex.test(pool.token1.symbol) ||
+                    regex.test(pool.token2.symbol) ||
+                    regex.test(pool.token1.address) ||
+                    regex.test(pool.token2.address)
+                  )
+                })
               )
-            })
-          )
-        }}
-        headCells={[
-          { id: 'token0.symbol', numeric: false, disablePadding: false, label: t`Available Pools` },
-          { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
-          { id: 'roiY', numeric: false, disablePadding: false, label: t`ROI` },
-          { id: 'trendingSum', numeric: false, disablePadding: false, label: t`Trending` },
-          { id: '', numeric: false, disablePadding: false, label: '' },
-        ]}
-        renderToolbar={(props) =>
-          PoolTableToolbar({
-            ...props,
-          })
-        }
-        row={(row: any, index: number) => CustomTableRow(row, index, history, theme)}
-        defaultOrder={order}
-        defaultOrderBy={orderBy}
-      />
+            }}
+            headCells={[
+              { id: 'token0Address', numeric: false, disablePadding: false, label: t`Available Pools` },
+              { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
+              { id: 'roiY', numeric: false, disablePadding: false, label: t`APY` },
+              { id: 'trendingPercentY', numeric: false, disablePadding: false, label: t`Trending` },
+              { id: '', numeric: false, disablePadding: false, label: '' },
+            ]}
+            renderToolbar={(props) =>
+              PoolTableToolbar({
+                ...props,
+              })
+            }
+            row={(row: any, index: number) => CustomTableRow(row, index, history, theme)}
+            defaultOrder={order}
+            defaultOrderBy={orderBy}
+          />
+        ))}
     </>
   )
 }

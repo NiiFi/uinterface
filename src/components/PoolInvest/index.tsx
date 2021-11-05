@@ -16,8 +16,9 @@ import { tryParseAmount } from 'state/swap/hooks'
 import { ButtonPrimary } from 'components/Button'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { useUserSlippageToleranceWithDefault, useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
+import { useUserSlippageToleranceWithDefault } from 'state/user/hooks'
 import { addLiquidityAsync, DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE } from 'hooks/useAddLiquidity'
+import { useApproveCallback } from 'hooks/useApproveCallback'
 import { useTransactionAdder } from 'state/transactions/hooks'
 import useTransactionDeadline from 'hooks/useTransactionDeadline'
 import { PairState, usePair } from 'hooks/usePairs'
@@ -48,11 +49,21 @@ const UpperSection = styled.div`
 const ZERO = JSBI.BigInt(0)
 
 // TODO: extract calculations to shared folder (hooks?)
-export default function PoolInvest({ currency0, currency1 }: { currency0: Currency; currency1: Currency }) {
+export default function PoolInvest({
+  currency0,
+  currency1,
+  currency0Price,
+  currency1Price,
+}: {
+  currency0: Currency
+  currency1: Currency
+  currency0Price: string
+  currency1Price: string
+}) {
   const { account, chainId, library } = useActiveWeb3React()
-  const { ethereumToBaseCurrencyRates: rates } = useEthereumToBaseCurrencyRatesAndApiState()
   const [token0Amount, setToken0Amount] = useState('')
   const [token1Amount, setToken1Amount] = useState('')
+  const [reset, setReset] = useState(false)
   const [investmentValue, setInvestmentValue] = useState(0)
   const { calculateTotalInvestment } = useInvestmentCalculator()
   const toggleWalletModal = useWalletModalToggle()
@@ -60,9 +71,9 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
     ({ token0, token1 }) => {
       setToken0Amount(token0.value)
       setToken1Amount(token1.value)
-      setInvestmentValue(calculateTotalInvestment(currency0, currency1, +token0.value, +token1.value, rates?.['USD']))
+      setInvestmentValue(calculateTotalInvestment(token0.value, token1.value, currency0Price, currency1Price))
     },
-    [setToken0Amount, setToken1Amount, calculateTotalInvestment, setInvestmentValue, currency0, currency1, rates]
+    [setToken0Amount, setToken1Amount, setInvestmentValue, currency0Price, currency1Price, calculateTotalInvestment]
   )
 
   const allowedSlippage = useUserSlippageToleranceWithDefault(DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE)
@@ -115,6 +126,9 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
     [Field.CURRENCY_B]: balances[1],
   }
 
+  const [approvalA, approveACallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_A], router?.address)
+  const [approvalB, approveBCallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_B], router?.address)
+
   let error: string | undefined
   if (!account) {
     error = t`Connect Wallet`
@@ -152,7 +166,13 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
       router,
       chainId,
       library,
-      parsedAmounts
+      parsedAmounts,
+      () => {
+        setReset(true)
+        setToken0Amount('0')
+        setToken1Amount('0')
+        setInvestmentValue(0)
+      }
     )
   }
 
@@ -167,7 +187,8 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
             {currencyBalances[Field.CURRENCY_A] ? (
               <>
                 <Trans>Balance</Trans>
-                {` ${formatCurrencyAmount(currencyBalances[Field.CURRENCY_A], 4)}`}
+                {` ${formatCurrencyAmount(currencyBalances[Field.CURRENCY_A], 4)}`} |
+                {` ${formatCurrencyAmount(currencyBalances[Field.CURRENCY_B], 4)}`}
               </>
             ) : (
               ''
@@ -175,7 +196,13 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
           </TYPE.subHeader>
         </RowBetween>
         <AutoColumn style={{ paddingTop: '2rem' }}>
-          <TokenPairInputPanel onChange={handlePairValueChange} currency0={currency0} currency1={currency1} />
+          <TokenPairInputPanel
+            onChange={handlePairValueChange}
+            currency0={currency0}
+            currency1={currency1}
+            reset={reset}
+            setReset={setReset}
+          />
         </AutoColumn>
         <RowBetween marginTop="0.5rem">
           <TYPE.error fontSize="0.875rem" fontWeight="normal" error={true} textAlign="left">
@@ -195,14 +222,24 @@ export default function PoolInvest({ currency0, currency1 }: { currency0: Curren
           <Slippage placement={'left'} />
         </RowBetween>
         {account ? (
-          <ButtonPrimary
-            style={{ textTransform: 'uppercase' }}
-            disabled={!!error}
-            marginTop="2rem"
-            onClick={addLiquidity}
-          >
-            <Trans>Add Liquidity</Trans>
-          </ButtonPrimary>
+          <>
+            {!error && currencies && (approvalA === 'NOT_APPROVED' || approvalB === 'NOT_APPROVED') && (
+              <ButtonPrimary onClick={approvalA === 'NOT_APPROVED' ? approveACallback : approveBCallback}>
+                <Trans>
+                  Approve {currencies[approvalA === 'NOT_APPROVED' ? Field.CURRENCY_A : Field.CURRENCY_B]?.symbol}
+                </Trans>
+              </ButtonPrimary>
+            )}
+
+            <ButtonPrimary
+              style={{ textTransform: 'uppercase' }}
+              disabled={!!error}
+              marginTop="2rem"
+              onClick={addLiquidity}
+            >
+              <Trans>Add Liquidity</Trans>
+            </ButtonPrimary>
+          </>
         ) : (
           <ButtonPrimary marginTop="2rem" onClick={toggleWalletModal}>
             <Trans>Connect Wallet</Trans>
