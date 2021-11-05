@@ -76,7 +76,7 @@ function EnhancedTableHead(props: EnhancedTableHeadProps) {
         >
           <TableSortLabel
             active={orderBy === headCell.id}
-            style={{ color: orderBy === headCell.id ? theme.primary1 : '' }}
+            style={{ color: orderBy === headCell.id ? theme.primary1 : theme.text4 }}
             direction={orderBy === headCell.id ? order : 'asc'}
             onClick={createSortHandler(headCell.id)}
             IconComponent={() =>

@@ -3,7 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom'
 import ReactDOMServer from 'react-dom/server'
 import styled from 'styled-components'
 import { Grid } from '@material-ui/core'
-import { Trans, t } from '@lingui/macro'
+import { Trans } from '@lingui/macro'
 import ToggleDrawer from '../../components/Header/ToggleDrawer'
 import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
 import AppBar from 'components/AppBar'
@@ -18,7 +18,6 @@ import {
   CurrencySelectWrapper,
   TYPE,
   MEDIA_WIDTHS,
-  Disclaimer,
   BaseCurrencyView,
   RowWrapper,
   ColumnWrapper,
@@ -434,8 +433,9 @@ export default function Discover() {
                 <LinkWrapper>
                   <Link
                     to={{
-                      pathname: '/pools/overview',
-                      state: { activeTab: 0, type: 'new' },
+                      // pathname: '/pools/overview',
+                      // state: { activeTab: 0, type: 'new' },
+                      pathname: '/pools/search',
                     }}
                   >
                     <Trans>See all</Trans>

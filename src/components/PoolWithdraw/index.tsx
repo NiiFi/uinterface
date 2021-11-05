@@ -180,6 +180,8 @@ export default function PoolWithdraw({
     const withdrawValue = parseInt(percentToRemove.toFixed())
     setSliderValue(withdrawValue)
     setWithdrawValue(withdrawValue)
+    setToken0Amount('0')
+    setToken1Amount('0')
   }, [percentToRemove])
 
   useEffect(() => {
@@ -197,6 +199,11 @@ export default function PoolWithdraw({
         ).toSignificant()
       : '0'
 
+    if (!token0Amount || !token1Amount) {
+      setInvestmentValue(0)
+      return
+    }
+
     setToken0Amount(currencyA)
     setToken1Amount(currencyB)
 
@@ -210,6 +217,8 @@ export default function PoolWithdraw({
     currency0Price,
     currency1Price,
     percentToRemove,
+    token0Amount,
+    token1Amount,
   ])
 
   const deadline = useTransactionDeadline()
@@ -219,8 +228,6 @@ export default function PoolWithdraw({
 
   const parsedAmounts: { [field in Field]: any } = useMemo(() => {
     return {
-      // [Field.CURRENCY_A]: inputAmount0,
-      // [Field.CURRENCY_B]: inputAmount1,
       [Field.CURRENCY_A]:
         tokenA && percentToRemove && percentToRemove.greaterThan('0') && liquidityValueA
           ? CurrencyAmount.fromRawAmount(tokenA, percentToRemove.multiply(liquidityValueA.quotient).quotient)

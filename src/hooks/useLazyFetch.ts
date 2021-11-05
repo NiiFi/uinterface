@@ -11,7 +11,6 @@ export default function useLazyFetch<T = Dictionary>(
 
   const handler = useCallback(
     async (options?: any) => {
-      console.log('URL', url)
       const DefaultOption = {
         headers: {
           'Content-Type': 'application/json',

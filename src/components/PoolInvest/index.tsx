@@ -169,6 +169,8 @@ export default function PoolInvest({
       parsedAmounts,
       () => {
         setReset(true)
+        setToken0Amount('0')
+        setToken1Amount('0')
         setInvestmentValue(0)
       }
     )

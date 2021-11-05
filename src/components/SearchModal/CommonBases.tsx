@@ -31,9 +31,11 @@ export default function CommonBases({
   chainId,
   onSelect,
   selectedCurrency,
+  otherSelectedCurrency,
 }: {
   chainId?: number
   selectedCurrency?: Currency | null
+  otherSelectedCurrency?: Currency | null
   onSelect: (currency: Currency) => void
 }) {
   const bases = typeof chainId !== 'undefined' ? COMMON_BASES[chainId] ?? [] : []
@@ -48,7 +50,7 @@ export default function CommonBases({
       </AutoRow>
       <AutoRow gap="4px">
         {bases.map((currency: Currency) => {
-          const isSelected = selectedCurrency?.equals(currency)
+          const isSelected = selectedCurrency?.equals(currency) || otherSelectedCurrency?.equals(currency)
           return (
             <BaseWrapper
               onClick={() => !isSelected && onSelect(currency)}

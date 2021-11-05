@@ -1,10 +1,10 @@
 import { Percent, Token } from '@uniswap/sdk-core'
-import { computePairAddress, Pair } from '@niifi/godzilla2-sdk'
+import { /*computePairAddress,*/ Pair } from '@niifi/godzilla2-sdk'
 import JSBI from 'jsbi'
 import { flatMap } from 'lodash'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual } from 'react-redux'
-import { FACTORY_ADDRESSES } from '../../constants/addresses'
+// import { FACTORY_ADDRESSES } from '../../constants/addresses'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from '../../constants/routing'
 import {
   SupportedBaseCurrencies,
@@ -264,25 +264,6 @@ export function useURLWarningVisible(): boolean {
 export function useURLWarningToggle(): () => void {
   const dispatch = useAppDispatch()
   return useCallback(() => dispatch(toggleURLWarning()), [dispatch])
-}
-
-/**
- * Given two tokens return the liquidity token that represents its liquidity shares
- * @param tokenA one of the two tokens
- * @param tokenB the other token
- */
-export function toLiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
-  if (tokenA.chainId !== tokenB.chainId) throw new Error('Not matching chain IDs')
-  if (tokenA.equals(tokenB)) throw new Error('Tokens cannot be equal')
-  if (!FACTORY_ADDRESSES[tokenA.chainId]) throw new Error('No V2 factory address on this chain')
-
-  return new Token(
-    tokenA.chainId,
-    computePairAddress({ factoryAddress: FACTORY_ADDRESSES[tokenA.chainId], tokenA, tokenB }),
-    18,
-    'UNI-V2',
-    'Uniswap V2'
-  )
 }
 
 /**

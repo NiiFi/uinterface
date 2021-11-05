@@ -1,4 +1,4 @@
 export enum SupportedChainId {
-  ROPSTEN = 3,
-  ROPSTEN_NAHMII = 5553,
+  NAHMII_MAINNET = 5551,
+  NAHMII_TESTNET = 5553,
 }

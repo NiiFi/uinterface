@@ -25,4 +25,4 @@ echo "Installing dependencies ..."
 yarn install
 
 echo "build is running ..."
-yarn build:staging
+yarn build:$envv
