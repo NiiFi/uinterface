@@ -1,7 +1,7 @@
 import { SupportedChainId } from '../constants/chains'
 
 const ETHERSCAN_PREFIXES: { [chainId: number]: string } = {
-  [SupportedChainId.NAHMII_MAINNET]: 'explorer.testnet.',
+  [SupportedChainId.NAHMII_MAINNET]: 'explorer.',
   [SupportedChainId.NAHMII_TESTNET]: 'explorer.testnet.',
 }
 
