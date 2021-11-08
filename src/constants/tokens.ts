@@ -48,7 +48,8 @@ export class ExtendedEther extends Ether {
   }
 }
 
-export const TOKEN_VALUE_CURRENCY_FORMAT = '0,0.00'
+// export const TOKEN_VALUE_CURRENCY_FORMAT = '0.[00000]a'
+export const TOKEN_VALUE_CURRENCY_FORMAT = '0,0.[00000]a'
 
 export const SUPPORTED_BASE_CURRENCIES = [
   'USD',

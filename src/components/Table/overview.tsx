@@ -46,16 +46,16 @@ const CustomTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="symbol" numeralFormat={'0.[000]a'} value={row.priceUSD} />
+        <BaseCurrencyView type="symbol" value={row.priceUSD} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <Percent value={row.priceUSDChange} fontWeight={400} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="symbol" numeralFormat={'0.[000]a'} value={row.volumeUSD} />
+        <BaseCurrencyView type="symbol" value={row.volumeUSD} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="symbol" numeralFormat={'0.[000]a'} value={row.tvlUSD} />
+        <BaseCurrencyView type="symbol" value={row.tvlUSD} />
       </TableCell>
     </TableRow>
   )

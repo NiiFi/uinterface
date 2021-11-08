@@ -29,8 +29,23 @@ export function shortenAddress(address: string, chars = 4): string {
   return `${parsed.substring(0, chars + 2)}...${parsed.substring(42 - chars)}`
 }
 
-export function shortenDecimalValues(value: string, formatType = '0.[000]a'): string {
-  const valueFormatted = numeral(Number(value)).format(formatType)
+export function shortenDecimalValues(value: string, formatType?: string): string {
+  const valueNumber = Number(value)
+  if (valueNumber === 0) return '0'
+
+  let format = formatType
+  if (!format) {
+    if (valueNumber >= 1000) {
+      format = '0,0.00'
+    } else if (valueNumber >= 1) {
+      format = '0,0.0000'
+    } else {
+      const repeatCount = Math.abs(Math.floor(Math.log(valueNumber) / Math.log(10) + 1))
+      format = '0,0.' + '0'.repeat(Number.isFinite(repeatCount) ? repeatCount : 0) + '0000'
+    }
+  }
+
+  const valueFormatted = numeral(valueNumber).format(format)
   // workaround for small numbers and NaN https://github.com/adamwdraper/Numeral-js/issues/596
   return valueFormatted !== 'NaN' ? valueFormatted : '0'
 }

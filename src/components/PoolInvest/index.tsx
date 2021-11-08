@@ -3,7 +3,6 @@ import styled from 'styled-components/macro'
 import { useWalletModalToggle } from 'state/application/hooks'
 import { t, Trans } from '@lingui/macro'
 
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { RowBetween } from 'components/Row'
 import { AutoColumn } from 'components/Column'
 import { Field } from 'state/mint/actions'
@@ -215,7 +214,7 @@ export default function PoolInvest({
           </TYPE.error>
           <TYPE.subHeader color="text6" textAlign="right" width="50%">
             {`≈ `}
-            <BaseCurrencyView type="id" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={investmentValue} />
+            <BaseCurrencyView type="id" value={investmentValue} />
           </TYPE.subHeader>
         </RowBetween>
         <RowBetween marginTop="1.5rem">

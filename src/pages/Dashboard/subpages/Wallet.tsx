@@ -4,7 +4,6 @@ import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { WalletIcon } from 'components/Icons'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, RowWrapper, ColumnWrapper, BaseCurrencyView } from 'theme'
 import Table from 'components/Table'
 import { useApiUserAssets } from 'hooks/useApi'
@@ -54,10 +53,10 @@ const CustomTableRow = (
         {(index + 1) * 0.25}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={(index + 1) * 98.36} />
+        <BaseCurrencyView type="symbol" value={(index + 1) * 98.36} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.txCount} />
+        <BaseCurrencyView type="symbol" value={row.txCount} />
       </TableCell>
     </StyledTableRow>
   )

@@ -5,7 +5,6 @@ import TableRow from '@material-ui/core/TableRow'
 import styled from 'styled-components/macro'
 import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, BaseCurrencyView } from 'theme'
 import { SampleHistoryResponse } from '../sample-history'
 import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
@@ -56,7 +55,7 @@ const CustomTableRow = (
         <br />
         <TYPE.subHeader color="text6" textAlign="right">
           {'≈ '}
-          <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={value} />
+          <BaseCurrencyView type="symbol" value={value} />
         </TYPE.subHeader>
       </TableCell>
     </StyledTableRow>

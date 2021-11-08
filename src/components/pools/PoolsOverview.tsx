@@ -138,7 +138,7 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                           <Trans>Liquidity</Trans>
                         </TYPE.subHeader>
                         <TYPE.mediumHeader fontSize="16" paddingTop="5px">
-                          <BaseCurrencyView type="symbol" value={Number(item.liquidity)} numeralFormat={'0.[00]a'} />
+                          <BaseCurrencyView type="symbol" value={Number(item.liquidity)} />
                         </TYPE.mediumHeader>
                       </div>
                       <div>
@@ -146,7 +146,7 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                           <Trans>APY (1D)</Trans>
                         </TYPE.subHeader>
                         <TYPE.mediumHeader fontSize="16" paddingTop="5px">
-                          {shortenDecimalValues(item.roiY, '0.[00]a')}
+                          {shortenDecimalValues(item.roiY)}
                         </TYPE.mediumHeader>
                       </div>{' '}
                       <div>

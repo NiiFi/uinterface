@@ -15,7 +15,6 @@ import { useWalletModalToggle } from 'state/application/hooks'
 
 import BuyTokenModal from 'components/BuyTokenModal'
 import DepositTokenModal from 'components/DepositTokenModal'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { BuyCryptoDropdown } from './components/BuyCryptoDropdown'
 import { BuyCryptoButton } from './components/BuyCryptoButton'
 
@@ -115,11 +114,7 @@ export default function BuySection({ account, balanceValue, data }: any) {
           </TYPE.body>
           <TYPE.mediumHeader>
             {/* TODO: decide which balance we will use web3 or from Web API */}
-            <BaseCurrencyView
-              value={data.balanceUSD || balanceValue}
-              type="symbol"
-              numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
-            />
+            <BaseCurrencyView value={data.balanceUSD || balanceValue} type="symbol" />
           </TYPE.mediumHeader>
         </BuySectionAmountFigures>
         <MediaResponsiveRow style={{ width: 'auto' }}>
