@@ -5,7 +5,6 @@ import styled from 'styled-components/macro'
 import { useWalletModalToggle } from 'state/application/hooks'
 import { TransactionResponse } from '@ethersproject/providers'
 import { t, Trans } from '@lingui/macro'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { RowBetween } from 'components/Row'
 import { AutoColumn } from 'components/Column'
 import { useCurrencyBalance } from 'state/wallet/hooks'
@@ -33,7 +32,7 @@ import { useApproveCallback, ApprovalState } from 'hooks/useApproveCallback'
 import { usePairContract, useV2RouterContract } from 'hooks/useContract'
 import { useLiquidityTokenPermit } from 'hooks/useERC20Permit'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import JSBI from 'jsbi'
 import { getContract } from 'utils'
 import ERC20_ABI from 'abis/erc20.json'
@@ -451,11 +450,7 @@ export default function PoolWithdraw({
             <TYPE.error fontSize="0.875rem" fontWeight="normal" error={true} textAlign="left"></TYPE.error>
             <TYPE.subHeader color="text6" textAlign="right" width="50%">
               {`≈ `}
-              <BaseCurrencyView
-                type="id"
-                numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
-                value={investmentValue ? Number(investmentValue) : 0}
-              />
+              <BaseCurrencyView type="id" value={investmentValue ? Number(investmentValue) : 0} />
             </TYPE.subHeader>
           </RowBetween>
           <RowBetween

@@ -1,11 +1,11 @@
 import React, { HTMLProps } from 'react'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
 import { darken } from 'polished'
 import { ArrowLeft, X, ExternalLink as LinkIconFeather, Trash } from 'react-feather'
 import { useBaseCurrency, useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
-import { BaseCurrencyDetail, TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
+import { BaseCurrencyDetail } from 'constants/tokens'
 import Loader from 'components/Loader'
 import { shortenDecimalValues } from 'utils'
 
@@ -340,12 +340,7 @@ type BaseCurrencyViewProps = {
   format?: (detail: BaseCurrencyDetail, value: number) => string
   numeralFormat?: string
 }
-export const BaseCurrencyView = ({
-  type = 'symbol',
-  format,
-  value,
-  numeralFormat = TOKEN_VALUE_CURRENCY_FORMAT,
-}: BaseCurrencyViewProps) => {
+export const BaseCurrencyView = ({ type = 'symbol', format, value, numeralFormat }: BaseCurrencyViewProps) => {
   /**
    * @description
    * This Component is responsible for "Conversion" and  "Displaying" the FIAT values data

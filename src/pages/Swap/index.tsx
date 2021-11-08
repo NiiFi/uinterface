@@ -10,7 +10,7 @@ import { MouseoverTooltip, MouseoverTooltipContent } from 'components/Tooltip'
 import JSBI from 'jsbi'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { ChevronDown, ChevronUp, CheckCircle, HelpCircle, Info } from 'react-feather'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { RouteComponentProps, useLocation } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled from 'styled-components'
@@ -691,7 +691,7 @@ export default function Swap({ history }: RouteComponentProps) {
                       </TYPE.subHeader>
                       <FlexColumn style={{ padding: '5px 0' }}>
                         <TYPE.mediumHeader color="text1">
-                          <BaseCurrencyView type="symbol" value={statsData.volume_24} numeralFormat={'0.[00]a'} />
+                          <BaseCurrencyView type="symbol" value={statsData.volume_24} />
                         </TYPE.mediumHeader>
                         {/* TODO: add percentage when it'll be available in API */}
                         {/* <Percent value={7.258268337244848} fontWeight={400} /> */}
@@ -703,7 +703,7 @@ export default function Swap({ history }: RouteComponentProps) {
                       </TYPE.subHeader>
                       <FlexColumn style={{ padding: '5px 0' }}>
                         <TYPE.mediumHeader color="text1">
-                          <BaseCurrencyView type="symbol" value={statsData.fees_24} numeralFormat={'0.[00]a'} />
+                          <BaseCurrencyView type="symbol" value={statsData.fees_24} />
                         </TYPE.mediumHeader>
                         {/* <Percent value={7.858268337244848} fontWeight={400} /> */}
                       </FlexColumn>
@@ -714,7 +714,7 @@ export default function Swap({ history }: RouteComponentProps) {
                       </TYPE.subHeader>
                       <FlexColumn style={{ padding: '5px 0' }}>
                         <TYPE.mediumHeader color="text1">
-                          <BaseCurrencyView type="symbol" value={statsData.tvl} numeralFormat={'0.[00]a'} />
+                          <BaseCurrencyView type="symbol" value={statsData.tvl} />
                         </TYPE.mediumHeader>
                         {/* <Percent value={-0.508268337244848} fontWeight={400} /> */}
                       </FlexColumn>

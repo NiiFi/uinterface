@@ -2,7 +2,6 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { Trans, t } from '@lingui/macro'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, BaseCurrencyView, ComingSoonOverlay } from 'theme'
 import CircleSvgSrc from '../../../assets/svg/circle.svg'
 import ArrowSvgSrc from '../../../assets/svg/arrow.svg'
@@ -136,7 +135,7 @@ export const CustomCard = ({ balance, svgIconSrc, data, type, maintenance }: Cus
               filter: maintenance ? 'blur(3px)' : '',
             }}
           >
-            <BaseCurrencyView value={balance} type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} />
+            <BaseCurrencyView value={balance} type="symbol" />
           </TYPE.mediumHeader>
         </CardHeaderTitle>
         <ArrowWrapper

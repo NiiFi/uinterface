@@ -2,7 +2,6 @@ import React from 'react'
 import { DefaultTheme } from 'styled-components'
 import TableCell from '@material-ui/core/TableCell'
 import { RowWrapper, BaseCurrencyView, CircleWrapper, ColumnWrapper, TYPE } from 'theme'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { NIILogo } from 'components/Icons'
 import { shortenDecimalValues } from 'utils'
@@ -60,11 +59,10 @@ export const CustomPoolsTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="right">
-        {shortenDecimalValues(row.amount0, '0.[000]a')} {row.symbol0} / {shortenDecimalValues(row.amount1, '0.[000]a')}{' '}
-        {row.symbol1}
+        {shortenDecimalValues(row.amount0)} {row.symbol0} / {shortenDecimalValues(row.amount1)} {row.symbol1}
         <br />
         <TYPE.subHeader color={'text2'} textAlign={'right'}>
-          <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.amountUSD} />
+          <BaseCurrencyView type="symbol" value={row.amountUSD} />
         </TYPE.subHeader>
       </TableCell>
     </StyledTableRow>

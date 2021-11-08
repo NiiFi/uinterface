@@ -2,7 +2,6 @@ import React from 'react'
 import { DefaultTheme } from 'styled-components'
 import TableCell from '@material-ui/core/TableCell'
 import { RowWrapper, BaseCurrencyView, TYPE } from 'theme'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { StyledTableRow } from './StyledTableRow'
 
@@ -46,7 +45,7 @@ export const CustomWalletTableRow = (
         {index + 1} {row.symbol}
         <br />
         <TYPE.subHeader color="text6" textAlign="right">
-          <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={(index + 1) * 100} />
+          <BaseCurrencyView type="symbol" value={(index + 1) * 100} />
         </TYPE.subHeader>
       </TableCell>
     </StyledTableRow>
