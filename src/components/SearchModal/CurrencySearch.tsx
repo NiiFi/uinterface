@@ -1,6 +1,6 @@
 import { Currency, Token } from '@uniswap/sdk-core'
 import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import styled from 'styled-components/macro'
 import { t, Trans } from '@lingui/macro'
 import { FixedSizeList } from 'react-window'
