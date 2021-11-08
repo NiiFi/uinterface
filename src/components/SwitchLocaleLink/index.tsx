@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import { Trans } from '@lingui/macro'
 import React, { useMemo } from 'react'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { useLocation } from 'react-router'
 import { DEFAULT_LOCALE, LOCALE_LABEL, SupportedLocale } from '../../constants/locales'
 import { navigatorLocale, useActiveLocale } from '../../hooks/useActiveLocale'

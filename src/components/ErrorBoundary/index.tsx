@@ -1,10 +1,10 @@
 import styled from 'styled-components/macro'
 import { Trans } from '@lingui/macro'
-import React, { ErrorInfo } from 'react'
+import React /*, { ErrorInfo }*/ from 'react'
 import store, { AppState } from '../../state'
 import { ExternalLink, TYPE } from '../../theme'
 import { AutoColumn } from '../Column'
-import ReactGA from 'react-ga'
+// import ReactGA from 'react-ga4'
 import { getUserAgent } from '../../utils/getUserAgent'
 import { AutoRow } from '../Row'
 
@@ -56,13 +56,13 @@ export default class ErrorBoundary extends React.Component<unknown, ErrorBoundar
     return { error }
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    ReactGA.exception({
-      ...error,
-      ...errorInfo,
-      fatal: true,
-    })
-  }
+  // componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  // ReactGA.exception({
+  //   ...error,
+  //   ...errorInfo,
+  //   fatal: true,
+  // })
+  // }
 
   render() {
     const { error } = this.state

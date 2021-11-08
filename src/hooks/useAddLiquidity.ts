@@ -15,7 +15,7 @@ import { calculateGasMargin } from 'utils/calculateGasMargin'
 import { ZERO_PERCENT } from 'constants/misc'
 import useTransactionDeadline from 'hooks/useTransactionDeadline'
 import { useV2RouterContract } from 'hooks/useContract'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 export const DEFAULT_ADD_V2_SLIPPAGE_TOLERANCE = new Percent(200, 10_000)
 

@@ -4,7 +4,7 @@ import React, { StrictMode } from 'react'
 import { hotjar } from 'react-hotjar'
 import { isMobile } from 'react-device-detect'
 import ReactDOM from 'react-dom'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import { Provider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
 import Blocklist from './components/Blocklist'
@@ -45,7 +45,8 @@ if (typeof GOOGLE_ANALYTICS_ID === 'string') {
       : 'mobileRegular',
   })
 } else {
-  ReactGA.initialize('test', { testMode: true, debug: true })
+  // ReactGA.initialize('test', { testMode: true, debug: true })
+  ReactGA.initialize('test', { testMode: true })
 }
 const hotJarId = Number(process.env.REACT_APP_HOTJAR_KEY)
 const hotJarVersion = Number(process.env.REACT_APP_HOTJAR_VERSION)
