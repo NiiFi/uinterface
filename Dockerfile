@@ -3,7 +3,7 @@ FROM node:14 as build-stage
 ENV NODE_ENV=production
 WORKDIR /var/uinterface
 COPY . .
-RUN yarn install
+RUN yarn install --production=false
 RUN yarn build:production
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
