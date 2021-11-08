@@ -54,7 +54,7 @@ export default function CurrencyLogo({
       <CurrencyAvatar
         symbol={currency.symbol}
         hideSymbol={true}
-        rootStyle={{ marginRight: '0.5rem', width: '32px', height: '32px' }}
+        rootStyle={{ width: '32px', height: '32px' }}
         iconProps={{ width: '32px', height: '32px' }}
       />
     )
