@@ -4,7 +4,6 @@ import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { FarmIcon, NIILogo } from 'components/Icons'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, RowWrapper, ColumnWrapper, BaseCurrencyView, CircleWrapper } from 'theme'
 import { useApiUserFarming } from 'hooks/useApi'
 import Table from 'components/Table'
@@ -69,7 +68,7 @@ const CustomTableRow = (
         {row.amount0} {row.symbol0} / {row.amount1} {row.symbol1}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.amountUSD} />
+        <BaseCurrencyView type="symbol" value={row.amountUSD} />
       </TableCell>
     </StyledTableRow>
   )

@@ -4,7 +4,6 @@ import { Currency } from '@uniswap/sdk-core'
 import { t, Trans } from '@lingui/macro'
 
 import { useActiveWeb3React } from 'hooks/web3'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { TYPE, BaseCurrencyView } from 'theme'
 import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import { ApplicationModal } from 'state/application/actions'
@@ -127,7 +126,7 @@ export default function CreatePoolModal() {
           </div>
           <TYPE.body color={`text2`} fontWeight={400} fontSize={14} textAlign={'right'}>
             {`≈ `}
-            <BaseCurrencyView type="id" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={Number(investmentValue)} />
+            <BaseCurrencyView type="id" value={Number(investmentValue)} />
           </TYPE.body>
           <Row marginTop="1rem">
             <Slippage placement="left" />

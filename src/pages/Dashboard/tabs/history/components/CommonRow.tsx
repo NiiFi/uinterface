@@ -5,7 +5,6 @@ import { DefaultTheme } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import { format } from 'date-fns'
 import { TYPE, RowWrapper, BaseCurrencyView, ColumnWrapper } from 'theme'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TableCell from '@material-ui/core/TableCell'
 import styled from 'styled-components'
@@ -159,7 +158,7 @@ export function CommonRow({
               <Trans>fee</Trans>
             </TYPE.subHeader>
             <TYPE.body fontWeight={500} style={{ display: 'flex' }}>
-              <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.fee} />
+              <BaseCurrencyView type="symbol" value={row.fee} />
             </TYPE.body>
           </ColumnWrapper>
         </TableCell>

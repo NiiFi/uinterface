@@ -3,7 +3,6 @@ import { DefaultTheme } from 'styled-components'
 import styled from 'styled-components/macro'
 import TableCell from '@material-ui/core/TableCell'
 import { RowWrapper, BaseCurrencyView } from 'theme'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import { StyledTableRow } from './StyledTableRow'
 
 const StyledNFTIcon = styled.img`
@@ -46,7 +45,7 @@ export const CustomNFTsTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="right">
-        <BaseCurrencyView type="symbol" numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT} value={row.value} />
+        <BaseCurrencyView type="symbol" value={row.value} />
         <br />
       </TableCell>
     </StyledTableRow>

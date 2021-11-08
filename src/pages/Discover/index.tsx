@@ -185,7 +185,6 @@ export default function Discover() {
                       data={gainersData.slice(0, 3)}
                       row={(row, index) => {
                         const amount = row.priceUSD
-                        const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
                         return (
                           <TableRow
                             hover
@@ -226,7 +225,7 @@ export default function Discover() {
                                 {amount && !isNaN(amount) && (
                                   <>
                                     {'≈'}
-                                    <BaseCurrencyView type="symbol" value={amount} numeralFormat={currencyFormat} />
+                                    <BaseCurrencyView type="symbol" value={amount} />
                                   </>
                                 )}
                               </TYPE.mediumHeader>
@@ -276,7 +275,6 @@ export default function Discover() {
                       data={losersData.slice(0, 3)}
                       row={(row, index) => {
                         const amount = row.priceUSD
-                        const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
                         return (
                           <TableRow
                             hover
@@ -317,7 +315,7 @@ export default function Discover() {
                                 {amount && !isNaN(amount) && (
                                   <>
                                     {'≈'}
-                                    <BaseCurrencyView type="symbol" value={amount} numeralFormat={currencyFormat} />
+                                    <BaseCurrencyView type="symbol" value={amount} />
                                   </>
                                 )}
                               </TYPE.mediumHeader>
@@ -362,7 +360,6 @@ export default function Discover() {
                       data={newPoolsData.slice(0, 3)}
                       row={(row, index) => {
                         const amount = row.liquidity
-                        const currencyFormat = amount > 9999 ? '0.[00]a' : '0,0'
                         return (
                           <TableRow
                             hover
@@ -416,9 +413,7 @@ export default function Discover() {
                                 <Trans>Liquidity</Trans>
                               </TYPE.body>
                               <TYPE.mediumHeader>
-                                {amount && !isNaN(amount) && (
-                                  <BaseCurrencyView type="symbol" value={amount} numeralFormat={currencyFormat} />
-                                )}
+                                {amount && !isNaN(amount) && <BaseCurrencyView type="symbol" value={amount} />}
                               </TYPE.mediumHeader>
                             </TableCell>
                             <TableCell style={rowCellStyles} align="right">

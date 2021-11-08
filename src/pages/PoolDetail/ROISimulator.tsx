@@ -7,7 +7,6 @@ import { RowBetween } from 'components/Row'
 import { TYPE, BaseCurrencyView } from 'theme'
 import { useFakePoolValuesCalculator } from 'state/pool/hooks'
 import { PoolInvestPairValues } from 'state/pool/actions'
-import { TOKEN_VALUE_CURRENCY_FORMAT } from 'constants/tokens'
 import ROIPeriodDropdown from 'components/Dropdowns/ROIPeriodDropdown'
 import TokenPairInputPanel from 'components/pools/TokenPairInputPanel'
 
@@ -65,11 +64,7 @@ export default function ROISimulator({ currency0, currency1 }: { currency0: Curr
       <TokenPairInputPanel onChange={handlePairOnChange} currency0={currency0} currency1={currency1} />
       <TYPE.subHeader color="text6" textAlign="right" marginBottom="1rem">
         {'≈ '}
-        <BaseCurrencyView
-          type="id"
-          numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
-          value={investmentValue ? Number(investmentValue) : 0}
-        />
+        <BaseCurrencyView type="id" value={investmentValue ? Number(investmentValue) : 0} />
       </TYPE.subHeader>
       <PeriodWrapper>
         <TYPE.body>
@@ -89,11 +84,7 @@ export default function ROISimulator({ currency0, currency1 }: { currency0: Curr
       </RowBetween>
       <TYPE.subHeader color="text6" textAlign="right">
         {'≈ '}
-        <BaseCurrencyView
-          type="id"
-          numeralFormat={TOKEN_VALUE_CURRENCY_FORMAT}
-          value={roiValues.roiInUSD ? Number(roiValues.roiInUSD) : 0}
-        />
+        <BaseCurrencyView type="id" value={roiValues.roiInUSD ? Number(roiValues.roiInUSD) : 0} />
       </TYPE.subHeader>
     </div>
   )
