@@ -90,7 +90,7 @@ const LineChart = ({
         axisLine={false}
         tickLine={false}
         tickFormatter={(value1) => shortenDecimalValues(value1, '0,0a')}
-        width={36}
+        width={38}
         minTickGap={30}
         tick={YAxisTick}
         stroke={theme.text6}

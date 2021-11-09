@@ -229,7 +229,6 @@ export default function PoolDetails({
                       </TabPanel>
                     </AppBody>
                     <AppBody size="md">
-                      <ComingSoonOverlay />
                       <PoolDetailChartWrapper>
                         <PoolDetailChart
                           address={poolData.address}
