@@ -37,6 +37,13 @@ interface FetchInterface<T> {
   data?: T[] | undefined
 }
 
+interface IPoolGraph {
+  time: string
+  liquidity: number
+  volume: number
+  fees: number
+}
+
 export type PoolTypes = 'gainers' | 'losers' | 'new'
 
 export default function useApi({ route, limit, rootData }: ApiParams): FetchInterface<any> {
@@ -93,8 +100,12 @@ export function useApiPoolsDetail(address: string): any {
   return useApi({ route: `pools/${address}` as Routes })
 }
 
-export function useApiPoolStats(address: string, period: string): any {
+export function useApiPoolStats(address: string, period: string): FetchInterface<IPoolGraph> {
   return useApi({ route: `pools/stats/${address}/${period}` as Routes })
+}
+
+export function useApiPoolStatsGeneral(period: string): FetchInterface<IPoolGraph> {
+  return useApi({ route: `pools/stats/${period}` as Routes })
 }
 
 export function useApiUserWallet(address: string | null | undefined): any {
