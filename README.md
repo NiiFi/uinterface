@@ -47,7 +47,25 @@ yarn start
 
 Note: This step might take a couple of minutes.
 
-## Deploy to Netlify
+## Containerization
+
+### Docker
+
+#### Building image
+
+```bash
+docker build -t {image_name} .
+```
+
+#### Running image
+
+```bash
+docker run --name nginx -d -p 80:8080 {image_name}
+```
+
+## Deprecated
+
+### Deploy to Netlify
 
 At this point we are using netlify for managing deployment. You should have account on [Netlify](https://app.netlify.com/login/email) and make sure you are part of our company team (Contact support for this). Following are the pre-requisite that needs to be fulfilled once.
 
@@ -71,7 +89,7 @@ For Release Process refer to [this document](https://vodworks.atlassian.net/wiki
 
   NOTE: Site name is **dev-niifi-interface**
 
-### Draft Deployment
+#### Draft Deployment
 
 To deploy project to draft link you should run this command
 
@@ -79,7 +97,7 @@ To deploy project to draft link you should run this command
 yarn deploy
 ```
 
-### Live Deployment
+#### Live Deployment
 
 To deploy project to Live URL run these commands
 

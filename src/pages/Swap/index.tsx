@@ -650,7 +650,6 @@ export default function Swap({ history }: RouteComponentProps) {
                 }}
               >
                 <Wrapper>
-                  <ComingSoonOverlay />
                   <SwapChart />
                 </Wrapper>
               </AppBody>

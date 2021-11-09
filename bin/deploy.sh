@@ -21,7 +21,6 @@ fi
 echo environment: $envv
 
 echo "Installing dependencies ..."
-# sudo rm -rf node_modules package-lock.json
 yarn install
 
 echo "build is running ..."
