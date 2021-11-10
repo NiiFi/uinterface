@@ -57,8 +57,8 @@ export default function CommonBases({
               disable={isSelected}
               key={currencyId(currency)}
             >
-              <CurrencyLogo currency={currency} style={{ marginRight: 8 }} />
-              <Text fontWeight={500} fontSize={16}>
+              <CurrencyLogo currency={currency} />
+              <Text fontWeight={500} fontSize={16} style={{ marginLeft: '8px' }}>
                 {currency.symbol}
               </Text>
             </BaseWrapper>
