@@ -3,7 +3,6 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsReporter'
 import Header from '../components/Header'
-import Polling from '../components/Header/Polling'
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
 import ErrorBoundary from '../components/ErrorBoundary'
@@ -32,8 +31,8 @@ const BodyWrapper = styled.div`
   flex-direction: column;
   width: calc(100vw - 360px);
   align-items: flex-start;
-  height: 100vh;
-  overflow: scroll;
+  height: calc(100vh - 19px);
+  overflow: hidden;
   flex: 1;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
@@ -109,7 +108,6 @@ export default function App() {
         </HeaderWrapperBackDrop>
         <BodyWrapper>
           <Popups />
-          <Polling />
           <Web3ReactManager>
             <Switch>
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />

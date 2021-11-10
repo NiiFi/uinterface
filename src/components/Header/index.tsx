@@ -20,7 +20,7 @@ const HeaderFrame = styled.div<{ showBackground: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: calc(100vh - 19px);
   width: 370px;
   top: 0;
   position: relative;
