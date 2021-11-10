@@ -1,8 +1,8 @@
 {
   "name": "niifi_uinterface",
   "description": "NiiFi Uinterface",
-  "homepage": ".",
-  "private": true,
+  "homepage": "https://app.niifi.com/",
+  "private": false,
   "devDependencies": {
     "@ethersproject/experimental": "^5.2.0",
     "@lingui/cli": "^3.9.0",
