@@ -39,8 +39,6 @@
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "@uniswap/token-lists": "^1.0.0-beta.19",
-    "@uniswap/v2-core": "1.0.0",
-    "@uniswap/v2-periphery": "^1.1.0-beta.0",
     "@web3-react/core": "^6.0.9",
     "@web3-react/fortmatic-connector": "^6.0.9",
     "@web3-react/injected-connector": "^6.0.7",
@@ -56,12 +54,10 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "ethers": "^5.2.0",
-    "graphql": "^15.5.1",
     "lodash": "^4.17.21",
     "luxon": "^1.25.0",
     "multicodec": "^3.0.1",
     "multihashes": "^4.0.2",
-    "netlify-cli": "^6.2.3",
     "node-vibrant": "^3.1.5",
     "numeral": "^2.0.6",
     "polished": "^3.3.2",
@@ -99,7 +95,14 @@
     "workbox-strategies": "^6.1.0"
   },
   "resolutions": {
-    "@walletconnect/web3-provider": "1.4.2-rc.2"
+    "@walletconnect/web3-provider": "1.4.2-rc.2",
+    "immer": "9.0.6",
+    "set-value": "4.0.1",
+    "axios": "0.21.2",
+    "tar": "6.1.9",
+    "glob-parent": "5.1.2",
+    "trim": "0.0.3",
+    "merge": "2.1.1"
   },
   "scripts": {
     "compile-contract-types": "yarn compile-external-abi-types && yarn compile-v2-contract-types",
@@ -116,10 +119,7 @@
     "start": "yarn compile-contract-types && react-scripts start",
     "i18n:gen": "yarn lingui extract --clean && yarn i18n:compile",
     "lingui": "lingui",
-    "test": "react-scripts test --env=jsdom",
-    "netlify": "netlify",
-    "deploy": "yarn build:production && yarn netlify deploy --dir=build",
-    "deploy:prod": "yarn build:production && yarn deploy --prod"
+    "test": "react-scripts test --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app",
