@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { TYPE, BaseCurrencyView } from '../../theme'
 import LineChart from './index'
-// import { useApiStatsLocalTvl } from 'hooks/useApi'
+import { useApiStatsLocalTvl } from 'hooks/useApi'
 
 dayjs.extend(utc)
 
@@ -14,9 +14,15 @@ const OverviewChart = () => {
   const [amount, setAmount] = useState<number | undefined>()
   const [time, setTime] = useState<string | undefined>()
 
-  // const { data: lineChartData, loader: lineChartLoader } = useApiStatsLocalTvl()
-  const lineChartData: any = []
-  const lineChartLoader = false
+  const { data: lineChartData, loader: lineChartLoader } = useApiStatsLocalTvl()
+
+  useEffect(() => {
+    if (!lineChartData || !lineChartData.length) return
+    lineChartData.map((item: any) => {
+      item.tvl = Number(item.tvl)
+      return item
+    })
+  }, [lineChartData])
 
   useEffect(() => {
     if (!time && lineChartData && lineChartData.length) {
@@ -26,7 +32,7 @@ const OverviewChart = () => {
 
   useEffect(() => {
     if (!amount && lineChartData && lineChartData.length) {
-      setAmount(lineChartData[lineChartData.length - 1].liquidity)
+      setAmount(lineChartData[lineChartData.length - 1].tvl)
     }
   }, [amount, lineChartData])
 
@@ -36,8 +42,7 @@ const OverviewChart = () => {
         <Trans>TVL</Trans>
       </TYPE.subHeader>
       <TYPE.mediumHeader>
-        {(amount && !isNaN(amount) && <BaseCurrencyView type="symbol" value={amount} numeralFormat={'0.[00]a'} />) ||
-          '-'}
+        {(amount && !isNaN(amount) && <BaseCurrencyView type="symbol" value={amount} />) || '-'}
       </TYPE.mediumHeader>
       <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
         {time || '-'}
@@ -50,8 +55,8 @@ const OverviewChart = () => {
             color={theme.orange1}
             value1={amount}
             setValue1={setAmount}
-            currentValue="liquidity"
-            value1Name={'liquidity'}
+            currentValue="tvl"
+            value1Name={'tvl'}
             dateFormat="DD"
             label={time}
             setLabel={setTime}

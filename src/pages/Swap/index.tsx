@@ -66,8 +66,8 @@ import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
 import SwapChart from 'components/LineChart/swap'
-// import OverviewChart from 'components/LineChart/overview'
-// import BarChart from 'components/BarChart/overview'
+import OverviewChart from 'components/LineChart/overview'
+import BarChart from 'components/BarChart/overview'
 import AppBar from 'components/AppBar'
 // import Percent from 'components/Percent'
 import { useApiStatsLocal } from 'hooks/useApi'
@@ -668,7 +668,7 @@ export default function Swap({ history }: RouteComponentProps) {
         </TabPanel>
         <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
           <AutoColumn gap="lg">
-            {/* <ResponsiveRow gap="2rem">
+            <ResponsiveRow gap="2rem">
               <AppBody size="md">
                 <Wrapper>
                   <OverviewChart />
@@ -679,7 +679,7 @@ export default function Swap({ history }: RouteComponentProps) {
                   <BarChart />
                 </Wrapper>
               </AppBody>
-            </ResponsiveRow> */}
+            </ResponsiveRow>
             <ResponsiveRow gap="2rem">
               {statsDataLoader ||
                 (statsData && (
