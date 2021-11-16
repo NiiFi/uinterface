@@ -218,7 +218,7 @@ a {
 
 export const BodyScroller = styled.div`
   height: calc(100vh - 53px);
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100%;
 `
 

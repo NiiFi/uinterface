@@ -64,7 +64,7 @@ const Spinner = styled.div`
   left: -3px;
   top: -3px;
 `
-
+// TODO: remove?
 export default function Polling() {
   const { chainId } = useActiveWeb3React()
 
