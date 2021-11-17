@@ -79,18 +79,6 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
         </ColumnWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <ColumnWrapper>
-          <div>
-            {row.trendingPercentY > 0 && '+ '}
-            {shortenDecimalValues(row.trendingPercentY, '0.[00]')}%
-          </div>
-          {/* <TYPE.small color={'text2'}>
-            {row.trendingPercentW > 0 && '+ '}
-            <BaseCurrencyView type="symbol" value={row.trendingPercentW} numeralFormat={'0.[000]a'} />
-          </TYPE.small> */}
-        </ColumnWrapper>
-      </TableCell>
-      <TableCell style={rowCellStyles} align="center">
         <ButtonOutlined style={{ fontSize: '14px' }} padding={'10px 14px'}>
           <Trans>Add Liquidity</Trans>
         </ButtonOutlined>
@@ -183,7 +171,6 @@ export default function PoolsTable() {
               { id: 'token0Address', numeric: false, disablePadding: false, label: t`Available Pools` },
               { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
               { id: 'roiY', numeric: false, disablePadding: false, label: t`APY` },
-              { id: 'trendingPercentY', numeric: false, disablePadding: false, label: t`Trending` },
               { id: '', numeric: false, disablePadding: false, label: '' },
             ]}
             renderToolbar={(props) =>
