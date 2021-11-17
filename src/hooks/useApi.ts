@@ -9,6 +9,7 @@ type Routes =
   | 'tokens/gainers'
   | 'tokens/losers'
   | 'tokens/new'
+  | 'tokens/stats'
   | 'pools'
   | 'pools/new'
   | 'pools/gainers'
@@ -18,7 +19,6 @@ type Routes =
   | 'wallets/farms'
   | 'tokens/general-stats'
   | 'pools/stats-local-volume'
-  | 'pools/stats-local-tvl'
 
 type ApiParams = {
   route: Routes
@@ -33,7 +33,7 @@ const typeToSort: any = {
 }
 
 interface FetchInterface<T> {
-  loader: any // TODO: add proper type
+  loader: JSX.Element | boolean
   data?: T[] | undefined
 }
 
@@ -42,11 +42,17 @@ interface FetchInterfaceDetail<T> {
   data?: T | undefined
 }
 
-interface IPoolGraph {
+interface IGraph {
   time: string
-  liquidity: number
   volume: number
   fees: number
+}
+interface IPoolGraph extends IGraph {
+  liquidity: number
+}
+
+interface ITokenGraph extends IGraph {
+  tvl: number
 }
 
 export interface ITokenDetail {
@@ -164,14 +170,8 @@ export function useApiStatsLocal(): any {
   return useApi({ route: 'tokens/general-stats' })
 }
 
-export function useApiStatsLocalVolume(): any {
-  return useApi({ route: 'pools/stats-local-volume' })
-}
-
-export function useApiStatsLocalTvl(): any {
-  // TODO: replace with 'pools/stats-local-tvl' after BE implementation
-  return useApiPoolStats('0x9928e4046d7c6513326ccea028cd3e7a91c7590a', 'week')
-  // return useApi({ route: 'pools/stats-local-tvl' })
+export function useApiStatsLocalTvl(): FetchInterface<ITokenGraph> {
+  return useApi({ route: 'tokens/stats' })
 }
 
 export function useApiTransactions(): any {
