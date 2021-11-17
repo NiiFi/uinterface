@@ -37,7 +37,7 @@ interface FetchInterface<T> {
   data?: T[] | undefined
 }
 
-interface IPoolGraph {
+export interface IPoolGraph {
   time: string
   liquidity: number
   volume: number
