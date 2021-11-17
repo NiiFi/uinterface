@@ -410,7 +410,7 @@ export default function Discover() {
                             </TableCell>
                             <TableCell style={{ ...rowCellStyles, width: '36%' }} align="right">
                               <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
-                                <Trans>Liquidity</Trans>
+                                <Trans>TVL</Trans>
                               </TYPE.body>
                               <TYPE.mediumHeader>
                                 {amount && !isNaN(amount) && <BaseCurrencyView type="symbol" value={amount} />}

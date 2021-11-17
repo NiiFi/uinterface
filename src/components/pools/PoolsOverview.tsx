@@ -135,7 +135,7 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                     <FlexColumn style={{ padding: '18px 0 0 0' }}>
                       <div>
                         <TYPE.subHeader color={'text1'}>
-                          <Trans>Liquidity</Trans>
+                          <Trans>TVL</Trans>
                         </TYPE.subHeader>
                         <TYPE.mediumHeader fontSize="16" paddingTop="5px">
                           <BaseCurrencyView type="symbol" value={Number(item.liquidity)} />

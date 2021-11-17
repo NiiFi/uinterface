@@ -70,9 +70,7 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <ColumnWrapper>
-          <div>
-            {shortenDecimalValues(row.roiY)} (<Trans>1D</Trans>)
-          </div>
+          <div>{shortenDecimalValues(row.roiY)}</div>
           {/* <TYPE.small color={'text2'}>
             {shortenDecimalValues(row.roiW, '0.[00]a')} (<Trans>1W</Trans>)
           </TYPE.small> */}
@@ -169,8 +167,8 @@ export default function PoolsTable() {
             }}
             headCells={[
               { id: 'token0Address', numeric: false, disablePadding: false, label: t`Available Pools` },
-              { id: 'liquidity', numeric: true, disablePadding: false, label: t`Liquidity` },
-              { id: 'roiY', numeric: false, disablePadding: false, label: t`APY` },
+              { id: 'liquidity', numeric: true, disablePadding: false, label: t`TVL` },
+              { id: 'roiY', numeric: false, disablePadding: false, label: t`APY (24h)` },
               { id: '', numeric: false, disablePadding: false, label: '' },
             ]}
             renderToolbar={(props) =>
