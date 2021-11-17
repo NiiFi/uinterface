@@ -132,7 +132,7 @@ const PoolDetailChart = ({ address, token0, token1 }: { address: string; token0:
       </TYPE.mediumHeaderEllipsis>
       <Wrapper>
         <TYPE.black fontWeight={400}>
-          <Trans>Liquidity</Trans>
+          <Trans>TVL</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
           <BaseCurrencyView type="id" numeralFormat={'0,0'} value={liquidityHover || 0} />
