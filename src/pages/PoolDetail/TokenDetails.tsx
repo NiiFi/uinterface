@@ -1,24 +1,18 @@
 import React from 'react'
 import { Trans } from '@lingui/macro'
-
+import { shortenDecimalValues } from 'utils'
+import { ITokenDetail } from 'hooks/useApi'
 import { TextItemWrapper, TextValue, TextLabel } from 'components/pools/styled'
 
 import { BaseCurrencyView } from 'theme'
 
 export type TokenDetailProps = {
-  token: any // FIXME
+  token: ITokenDetail
+  oppositeSymbol: string
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 export default function TokenDetail(props: TokenDetailProps) {
-  /**
-   * NOTE: We need to implement the API that fetches the detail
-   * about the Token. Then we also need to integrate API
-   * Which convert the overall value to User Selected Currency.
-   * That Is why Passing the props of address and symbol.
-   *
-   * TODO: Once we Implement the API we need to make the symbol and address required in interface.
-   */
-  const { token } = props
+  const { token, oppositeSymbol } = props
 
   return (
     <>
@@ -27,7 +21,7 @@ export default function TokenDetail(props: TokenDetailProps) {
           <Trans>Price</Trans>
         </TextLabel>
         <TextValue fontSize={'1rem'}>
-          <BaseCurrencyView type="symbol" value={token?.price} />
+          {shortenDecimalValues(token?.price)} {oppositeSymbol}
         </TextValue>
       </TextItemWrapper>
       <TextItemWrapper>
@@ -51,10 +45,10 @@ export default function TokenDetail(props: TokenDetailProps) {
           <Trans>24h Low / 24h High</Trans>
         </TextLabel>
         <TextValue fontSize={'1rem'}>
-          <BaseCurrencyView type="symbol" value={token?.low_24h} />
+          {shortenDecimalValues(token?.low_24h)} {oppositeSymbol}
         </TextValue>
         <TextValue fontSize={'1rem'}>
-          <BaseCurrencyView type="symbol" value={token?.high_24h} />
+          {shortenDecimalValues(token?.high_24h)} {oppositeSymbol}
         </TextValue>
       </TextItemWrapper>
     </>

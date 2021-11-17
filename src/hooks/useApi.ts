@@ -37,6 +37,11 @@ interface FetchInterface<T> {
   data?: T[] | undefined
 }
 
+interface FetchInterfaceDetail<T> {
+  loader: JSX.Element
+  data?: T | undefined
+}
+
 interface IGraph {
   time: string
   volume: number
@@ -51,9 +56,32 @@ interface ITokenGraph extends IGraph {
   tvl: number
 }
 
+export interface ITokenDetail {
+  address: string
+  decimals: number
+  high_24h: string
+  low_24h: string
+  mcap: number
+  price: string
+  trading: number
+  symbol: string
+}
+
+interface IPoolDetail {
+  address: string
+  liquidity: number
+  roiW: number
+  roiY: number
+  trendingPercentW: number
+  trendingPercentY: number
+  timestamp: number
+  token1: ITokenDetail
+  token2: ITokenDetail
+}
+
 export type PoolTypes = 'gainers' | 'losers' | 'new'
 
-export default function useApi({ route, limit, rootData }: ApiParams): FetchInterface<any> {
+export default function useApi({ route, limit, rootData }: ApiParams): any {
   // TODO: re-check limit usage with real API
   // const apiUrl = `${WEB_API_BASE}${route}` + (limit ? '?' + new URLSearchParams({ _limit: limit.toString() }) : '')
   const apiUrl = `${WEB_API_BASE}${route}`
@@ -103,7 +131,7 @@ export function useApiPoolsNew(): FetchInterface<any> {
   return useApiPools('new')
 }
 
-export function useApiPoolsDetail(address: string): any {
+export function useApiPoolsDetail(address: string): FetchInterfaceDetail<IPoolDetail> {
   return useApi({ route: `pools/${address}` as Routes })
 }
 
