@@ -47,7 +47,8 @@ interface IGraph {
   volume: number
   fees: number
 }
-interface IPoolGraph extends IGraph {
+
+export interface IPoolGraph extends IGraph {
   liquidity: number
 }
 

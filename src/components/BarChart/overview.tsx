@@ -18,10 +18,14 @@ const OverviewChart = () => {
 
   useEffect(() => {
     if (!data || !data.length) return
-    data.map((item: any) => {
-      item.volume = Number(item.volume)
-      return item
-    })
+    data
+      .sort((a: any, b: any) => {
+        return new Date(a.time).getTime() - new Date(b.time).getTime()
+      })
+      .map((item: any) => {
+        item.volume = Number(item.volume)
+        return item
+      })
   }, [data])
 
   useEffect(() => {

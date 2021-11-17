@@ -18,10 +18,14 @@ const OverviewChart = () => {
 
   useEffect(() => {
     if (!lineChartData || !lineChartData.length) return
-    lineChartData.map((item: any) => {
-      item.tvl = Number(item.tvl)
-      return item
-    })
+    lineChartData
+      .sort((a: any, b: any) => {
+        return new Date(a.time).getTime() - new Date(b.time).getTime()
+      })
+      .map((item: any) => {
+        item.tvl = Number(item.tvl)
+        return item
+      })
   }, [lineChartData])
 
   useEffect(() => {
