@@ -70,7 +70,7 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <ColumnWrapper>
-          <div>{shortenDecimalValues(row.roiY)}</div>
+          <div>{row.roiY} %</div>
           {/* <TYPE.small color={'text2'}>
             {shortenDecimalValues(row.roiW, '0.[00]a')} (<Trans>1W</Trans>)
           </TYPE.small> */}
