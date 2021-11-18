@@ -14,12 +14,22 @@ const StyledAppBar = styled(AppBar)`
   `}
 `
 
-export default function TopBar({ title, showBack = true }: { title?: string; showBack?: boolean }) {
+export default function TopBar({ title, showBack = true }: { title?: string; showBack?: boolean | string }) {
   const history = useHistory()
   return (
     <StyledAppBar>
       <BarTitle>
-        {showBack ? <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} /> : <ToggleDrawer />}
+        {showBack ? (
+          <ArrowLeft
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              console.log(showBack)
+              typeof showBack === 'boolean' ? history.goBack() : history.push(showBack)
+            }}
+          />
+        ) : (
+          <ToggleDrawer />
+        )}
         {title}
       </BarTitle>
       <CurrencySelectWrapper>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useLocation, useHistory, useParams } from 'react-router-dom'
-import { t } from '@lingui/macro'
+// import { t } from '@lingui/macro'
 import qs from 'qs'
 import { ArrowLeft } from 'react-feather'
-import Tab from '../../components/tab/Tab'
+// import Tab from '../../components/tab/Tab'
 import Tabs from '../../components/tab/Tabs'
 import TabPanel from '../../components/tab/TabPanel'
 import AppBody from '../AppBody'
@@ -84,7 +84,7 @@ export default function Pool() {
             <ToggleDrawer />
             <Tabs value={activeTab} onChange={TabChangeHandler}>
               {/* <Tab key={`tab-0`} label={t`Overview`} /> */}
-              <Tab key={`tab-0`} label={t`Search`} />
+              {/* <Tab key={`tab-0`} label={t`Search`} /> */}
             </Tabs>
           </>
         )}

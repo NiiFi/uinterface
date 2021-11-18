@@ -5,6 +5,7 @@ import TopBar from 'components/TopBar'
 import { BodyScroller } from 'theme'
 import { BodyPanel } from 'pages/styled'
 import AppBody from 'pages/AppBody'
+import { LoaderWrapped } from 'theme/components'
 
 const allowedTypes: { [type: string]: string } = {
   wallet: t`Wallet`,
@@ -26,11 +27,11 @@ export default function DashboardSubpages({
 
   return (
     <>
-      <TopBar title={allowedTypes[type]} />
+      <TopBar title={allowedTypes[type]} showBack={'/dashboard?tab=1'} />
       <BodyScroller>
         <BodyPanel>
           <AppBody size="lg">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<LoaderWrapped />}>
               <Component />
             </Suspense>
           </AppBody>
