@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { TYPE, BaseCurrencyView } from '../../theme'
 import BarChart from './index'
-// import { useApiStatsLocalVolume } from 'hooks/useApi'
+import { useApiStatsLocalTvl } from 'hooks/useApi'
 
 dayjs.extend(utc)
 
@@ -14,10 +14,19 @@ const OverviewChart = () => {
   const [amount, setAmount] = useState<number | undefined>()
   const [time, setTime] = useState<string | undefined>()
 
-  // const { data, loader } = useApiStatsLocalVolume()
+  const { data, loader } = useApiStatsLocalTvl()
 
-  const data: any = []
-  const loader = false
+  useEffect(() => {
+    if (!data || !data.length) return
+    data
+      .sort((a: any, b: any) => {
+        return new Date(a.time).getTime() - new Date(b.time).getTime()
+      })
+      .map((item: any) => {
+        item.volume = Number(item.volume)
+        return item
+      })
+  }, [data])
 
   useEffect(() => {
     if (!time && data && data.length) {
@@ -37,8 +46,7 @@ const OverviewChart = () => {
         <Trans>Volume 24H</Trans>
       </TYPE.subHeader>
       <TYPE.mediumHeader>
-        {(amount && !isNaN(amount) && <BaseCurrencyView numeralFormat={'0.[00]a'} type="symbol" value={amount} />) ||
-          '-'}
+        {(amount && !isNaN(amount) && <BaseCurrencyView type="symbol" value={amount} />) || '-'}
       </TYPE.mediumHeader>
       <TYPE.body color={theme.text6} fontWeight={400} fontSize={14} lineHeight={1.4}>
         {time || '-'}

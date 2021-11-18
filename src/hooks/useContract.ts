@@ -1,6 +1,6 @@
 import { Contract } from '@ethersproject/contracts'
-import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
-import { abi as IUniswapV2Router02ABI } from '@uniswap/v2-periphery/build/IUniswapV2Router02.json'
+import { abi as IUniswapV2PairABI } from 'abis/v2-pair.json'
+import { abi as IUniswapV2Router02ABI } from 'abis/v2-router02.json'
 
 import ARGENT_WALLET_DETECTOR_ABI from 'abis/argent-wallet-detector.json'
 import ENS_PUBLIC_RESOLVER_ABI from 'abis/ens-public-resolver.json'

@@ -6,7 +6,7 @@ import { BaseCurrencyView, TYPE } from '../../theme'
 
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
-import { useApiPoolStatsGeneral } from 'hooks/useApi'
+import { useApiPoolStatsGeneral, IPoolGraph } from 'hooks/useApi'
 
 const CustomButton = ({
   value,
@@ -89,12 +89,16 @@ const SwapChart = () => {
 
   useEffect(() => {
     if (!lineChartData || !lineChartData.length) return
-    lineChartData.map((item) => {
-      item.liquidity = Number(item.liquidity)
-      item.volume = Number(item.volume)
-      item.fees = Number(item.fees)
-      return item
-    })
+    lineChartData
+      .sort((a: IPoolGraph, b: IPoolGraph) => {
+        return new Date(a.time).getTime() - new Date(b.time).getTime()
+      })
+      .map((item: IPoolGraph) => {
+        item.liquidity = Number(item.liquidity)
+        item.volume = Number(item.volume)
+        item.fees = Number(item.fees)
+        return item
+      })
   }, [lineChartData])
 
   useEffect(() => {
@@ -122,7 +126,7 @@ const SwapChart = () => {
       </TYPE.mediumHeaderEllipsis>
       <Wrapper>
         <TYPE.black fontWeight={400}>
-          <Trans>Liquidity</Trans>
+          <Trans>TVL</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
           <BaseCurrencyView type="id" numeralFormat={'0,0'} value={liquidityHover || 0} />

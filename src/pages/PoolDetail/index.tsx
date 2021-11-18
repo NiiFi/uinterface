@@ -136,8 +136,8 @@ export default function PoolDetails({
   },
 }: RouteComponentProps<{ address: string }>) {
   const [activeTab, setActiveTab] = useState<number>(0)
-  const [token0, setToken0] = useState()
-  const [token1, setToken1] = useState()
+  const [token0, setToken0] = useState('')
+  const [token1, setToken1] = useState('')
   const history = useHistory()
   const theme = useTheme()
   wrapperStyle.root.borderBottomColor = theme.bg3
@@ -251,7 +251,7 @@ export default function PoolDetails({
                             rootStyle={{ marginBottom: '1rem' }}
                             iconProps={{ width: '30', height: '30' }}
                           />
-                          <TokenDetails token={poolData.token1} />
+                          <TokenDetails token={poolData.token1} oppositeSymbol={poolData.token2.symbol} />
                         </PoolCardItem>
                         <PoolCardItem style={{ width: '100%' }}>
                           <CurrencyAvatar
@@ -260,7 +260,7 @@ export default function PoolDetails({
                             rootStyle={{ marginBottom: '1rem' }}
                             iconProps={{ width: '30', height: '30' }}
                           />
-                          <TokenDetails token={poolData.token2} />
+                          <TokenDetails token={poolData.token2} oppositeSymbol={poolData.token1.symbol} />
                         </PoolCardItem>
                       </PoolCardRowColumn>
                     </TokenStatsWrapper>

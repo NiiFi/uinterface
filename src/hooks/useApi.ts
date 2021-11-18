@@ -9,6 +9,7 @@ type Routes =
   | 'tokens/gainers'
   | 'tokens/losers'
   | 'tokens/new'
+  | 'tokens/stats'
   | 'pools'
   | 'pools/new'
   | 'pools/gainers'
@@ -18,7 +19,6 @@ type Routes =
   | 'wallets/farms'
   | 'tokens/general-stats'
   | 'pools/stats-local-volume'
-  | 'pools/stats-local-tvl'
 
 type ApiParams = {
   route: Routes
@@ -33,20 +33,55 @@ const typeToSort: any = {
 }
 
 interface FetchInterface<T> {
-  loader: any // TODO: add proper type
+  loader: JSX.Element | boolean
   data?: T[] | undefined
 }
 
-interface IPoolGraph {
+interface FetchInterfaceDetail<T> {
+  loader: JSX.Element
+  data?: T | undefined
+}
+
+interface IGraph {
   time: string
-  liquidity: number
   volume: number
   fees: number
 }
 
+export interface IPoolGraph extends IGraph {
+  liquidity: number
+}
+
+interface ITokenGraph extends IGraph {
+  tvl: number
+}
+
+export interface ITokenDetail {
+  address: string
+  decimals: number
+  high_24h: string
+  low_24h: string
+  mcap: number
+  price: string
+  trading: number
+  symbol: string
+}
+
+interface IPoolDetail {
+  address: string
+  liquidity: number
+  roiW: number
+  roiY: number
+  trendingPercentW: number
+  trendingPercentY: number
+  timestamp: number
+  token1: ITokenDetail
+  token2: ITokenDetail
+}
+
 export type PoolTypes = 'gainers' | 'losers' | 'new'
 
-export default function useApi({ route, limit, rootData }: ApiParams): FetchInterface<any> {
+export default function useApi({ route, limit, rootData }: ApiParams): any {
   // TODO: re-check limit usage with real API
   // const apiUrl = `${WEB_API_BASE}${route}` + (limit ? '?' + new URLSearchParams({ _limit: limit.toString() }) : '')
   const apiUrl = `${WEB_API_BASE}${route}`
@@ -96,7 +131,7 @@ export function useApiPoolsNew(): FetchInterface<any> {
   return useApiPools('new')
 }
 
-export function useApiPoolsDetail(address: string): any {
+export function useApiPoolsDetail(address: string): FetchInterfaceDetail<IPoolDetail> {
   return useApi({ route: `pools/${address}` as Routes })
 }
 
@@ -136,14 +171,8 @@ export function useApiStatsLocal(): any {
   return useApi({ route: 'tokens/general-stats' })
 }
 
-export function useApiStatsLocalVolume(): any {
-  return useApi({ route: 'pools/stats-local-volume' })
-}
-
-export function useApiStatsLocalTvl(): any {
-  // TODO: replace with 'pools/stats-local-tvl' after BE implementation
-  return useApiPoolStats('0x9928e4046d7c6513326ccea028cd3e7a91c7590a', 'week')
-  // return useApi({ route: 'pools/stats-local-tvl' })
+export function useApiStatsLocalTvl(): FetchInterface<ITokenGraph> {
+  return useApi({ route: 'tokens/stats' })
 }
 
 export function useApiTransactions(): any {
