@@ -1,8 +1,7 @@
-import { Trans, t } from '@lingui/macro'
+import { Trans } from '@lingui/macro'
 
 import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 import SwapTable from '../../components/Table/swap'
-import OverviewTable from '../../components/Table/overview'
 import { Trade } from '@niifi/godzilla2-sdk'
 import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
@@ -11,16 +10,13 @@ import JSBI from 'jsbi'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { ChevronDown, ChevronUp, CheckCircle, HelpCircle, Info } from 'react-feather'
 import ReactGA from 'react-ga4'
-import { RouteComponentProps, useLocation } from 'react-router-dom'
+import { RouteComponentProps } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled from 'styled-components'
 import AddressInputPanel from '../../components/AddressInputPanel'
 import { ButtonConfirmed, ButtonError, ButtonPrimary } from '../../components/Button'
-import { DefaultCard, GreyCard } from '../../components/Card'
-import Tab from '../../components/tab/Tab'
-import Tabs from '../../components/tab/Tabs'
-import TabPanel from '../../components/tab/TabPanel'
-import { AutoColumn, FlexColumn } from '../../components/Column'
+import { GreyCard } from '../../components/Card'
+import { AutoColumn } from '../../components/Column'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import Loader from '../../components/Loader'
@@ -52,25 +48,16 @@ import {
   useSwapState,
 } from '../../state/swap/hooks'
 import { useExpertModeManager, useUserSingleHopOnly } from '../../state/user/hooks'
-import {
-  BodyScroller,
-  LinkStyledButton,
-  TYPE,
-  BaseCurrencyView,
-  CurrencySelectWrapper,
-  ComingSoonOverlay,
-} from '../../theme'
+import { BodyScroller, LinkStyledButton, TYPE, CurrencySelectWrapper, ComingSoonOverlay } from '../../theme'
 import { computeFiatValuePriceImpact } from '../../utils/computeFiatValuePriceImpact'
 import { getTradeVersion } from '../../utils/getTradeVersion'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
 import SwapChart from 'components/LineChart/swap'
-import OverviewChart from 'components/LineChart/overview'
-import BarChart from 'components/BarChart/overview'
 import AppBar from 'components/AppBar'
 // import Percent from 'components/Percent'
-import { useApiStatsLocal } from 'hooks/useApi'
+import { BodyPanel } from '../styled'
 
 const StyledAppBar = styled(AppBar)`
   padding: 0px 2rem;
@@ -96,27 +83,7 @@ const ArrowContainer = styled.div`
   background-color: ${({ theme }) => theme.bg5};
 `
 export default function Swap({ history }: RouteComponentProps) {
-  const [activeTab, setActiveTab] = useState<number>(0)
   const loadedUrlParams = useDefaultsFromURLSearch()
-  const { state } = useLocation<any>()
-
-  const { data: statsData, loader: statsDataLoader } = useApiStatsLocal()
-
-  // TODO: implement more flexible solution
-  useEffect(() => {
-    if (!state?.activeTab) {
-      return
-    }
-
-    setActiveTab(state.activeTab)
-
-    const scrollTo = setTimeout(() =>
-      document.querySelector('#top-tokens-table')?.scrollIntoView({ behavior: 'smooth' })
-    )
-    return () => {
-      clearTimeout(scrollTo)
-    }
-  }, [state])
 
   // token warning stuff
   const [loadedInputCurrency, loadedOutputCurrency] = [
@@ -363,7 +330,7 @@ export default function Swap({ history }: RouteComponentProps) {
   const swapIsUnsupported = useIsSwapUnsupported(currencies?.INPUT, currencies?.OUTPUT)
 
   const priceImpactTooHigh = priceImpactSeverity > 3 && !isExpertMode
-  const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
+
   return (
     <>
       <TokenWarningModal
@@ -374,16 +341,13 @@ export default function Swap({ history }: RouteComponentProps) {
       />
       <StyledAppBar>
         <ToggleDrawer />
-        <Tabs value={activeTab} onChange={TabChangeHandler}>
-          <Tab key={`tab-0`} label={t`Swap`} />
-          <Tab key={`tab-1`} label={t`Overview`} />
-        </Tabs>
+        <div></div>
         <CurrencySelectWrapper>
           <CurrencyDropdown />
         </CurrencySelectWrapper>
       </StyledAppBar>
       <BodyScroller>
-        <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
+        <BodyPanel>
           <AutoColumn gap="lg">
             <ResponsiveRow gap="2rem">
               <AppBody size="md" style={{ minHeight: '440px' }}>
@@ -665,69 +629,7 @@ export default function Swap({ history }: RouteComponentProps) {
           {!swapIsUnsupported ? null : (
             <UnsupportedCurrencyFooter show={swapIsUnsupported} currencies={[currencies.INPUT, currencies.OUTPUT]} />
           )}
-        </TabPanel>
-        <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
-          <AutoColumn gap="lg">
-            <ResponsiveRow gap="2rem">
-              <AppBody size="md">
-                <Wrapper>
-                  <OverviewChart />
-                </Wrapper>
-              </AppBody>
-              <AppBody size="md">
-                <Wrapper>
-                  <BarChart />
-                </Wrapper>
-              </AppBody>
-            </ResponsiveRow>
-            <ResponsiveRow gap="2rem">
-              {statsDataLoader ||
-                (statsData && (
-                  <>
-                    <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
-                      <TYPE.subHeader fontSize="16px">
-                        <Trans>Volume 24H</Trans>
-                      </TYPE.subHeader>
-                      <FlexColumn style={{ padding: '5px 0' }}>
-                        <TYPE.mediumHeader color="text1">
-                          <BaseCurrencyView type="symbol" value={statsData.volume_24} />
-                        </TYPE.mediumHeader>
-                        {/* TODO: add percentage when it'll be available in API */}
-                        {/* <Percent value={7.258268337244848} fontWeight={400} /> */}
-                      </FlexColumn>
-                    </DefaultCard>
-                    <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
-                      <TYPE.subHeader fontSize="16px">
-                        <Trans>Fees 24H</Trans>
-                      </TYPE.subHeader>
-                      <FlexColumn style={{ padding: '5px 0' }}>
-                        <TYPE.mediumHeader color="text1">
-                          <BaseCurrencyView type="symbol" value={statsData.fees_24} />
-                        </TYPE.mediumHeader>
-                        {/* <Percent value={7.858268337244848} fontWeight={400} /> */}
-                      </FlexColumn>
-                    </DefaultCard>
-                    <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
-                      <TYPE.subHeader fontSize="16px">
-                        <Trans>TVL</Trans>
-                      </TYPE.subHeader>
-                      <FlexColumn style={{ padding: '5px 0' }}>
-                        <TYPE.mediumHeader color="text1">
-                          <BaseCurrencyView type="symbol" value={statsData.tvl} />
-                        </TYPE.mediumHeader>
-                        {/* <Percent value={-0.508268337244848} fontWeight={400} /> */}
-                      </FlexColumn>
-                    </DefaultCard>
-                  </>
-                ))}
-            </ResponsiveRow>
-            <ResponsiveRow id="top-tokens-table">
-              <AppBody size="lg">
-                <OverviewTable />
-              </AppBody>
-            </ResponsiveRow>
-          </AutoColumn>
-        </TabPanel>
+        </BodyPanel>
       </BodyScroller>
     </>
   )
