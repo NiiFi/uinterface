@@ -48,7 +48,7 @@ import {
   useSwapState,
 } from '../../state/swap/hooks'
 import { useExpertModeManager, useUserSingleHopOnly } from '../../state/user/hooks'
-import { BodyScroller, LinkStyledButton, TYPE, CurrencySelectWrapper, ComingSoonOverlay } from '../../theme'
+import { BodyScroller, LinkStyledButton, TYPE, CurrencySelectWrapper } from '../../theme'
 import { computeFiatValuePriceImpact } from '../../utils/computeFiatValuePriceImpact'
 import { getTradeVersion } from '../../utils/getTradeVersion'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
@@ -620,7 +620,6 @@ export default function Swap({ history }: RouteComponentProps) {
             </ResponsiveRow>
             <ResponsiveRow>
               <AppBody size="lg">
-                <ComingSoonOverlay />
                 <SwapTable />
               </AppBody>
             </ResponsiveRow>
