@@ -15,9 +15,9 @@ import AppBody from '../AppBody'
 import TabPanel from 'components/tab/TabPanel'
 import { ButtonPrimary } from 'components/Button'
 import { CustomCard } from './components/Card'
-import { AutoColumn } from 'components/Column'
+import { AutoColumn, FlexColumn } from 'components/Column'
 import { ResponsiveRow } from 'components/Row'
-import { BodyScroller, CurrencySelectWrapper } from 'theme'
+import { BodyScroller, CurrencySelectWrapper, TYPE, BaseCurrencyView } from 'theme'
 // import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 // SVGs
 import WalletSvgSrc from '../../assets/svg/wallet.svg'
@@ -30,8 +30,19 @@ import { useActiveWeb3React } from 'hooks/web3'
 import { useWalletModalToggle } from 'state/application/hooks'
 // import { useCurrency } from 'hooks/Tokens'
 // import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
-import { /*useApiUserWallet,*/ useApiUserAssets, useApiUserPools /*, useApiUserFarming*/ } from 'hooks/useApi'
+import {
+  /*useApiUserWallet,*/
+  useApiUserAssets,
+  useApiUserPools,
+  /*useApiUserFarming,*/
+  useApiStatsLocal,
+} from 'hooks/useApi'
 // import BuySection from './BuySection'
+import OverviewChart from 'components/LineChart/overview'
+import BarChart from 'components/BarChart/overview'
+import { DefaultCard } from 'components/Card'
+import { Wrapper } from 'components/swap/styleds'
+import OverviewTable from 'components/Table/overview'
 
 const StyledAppBar = styled(AppBar)`
   padding: 0px 2rem;
@@ -80,16 +91,25 @@ export default function Dashboard() {
   const { data: userPools, loader: userPoolsLoader } = useApiUserPools(account, 3)
   const { data: userAssets, loader: userAssetsLoader } = useApiUserAssets(account, 3)
   // const { data: userFarming, loader: userFarmingLoader } = useApiUserFarming(account, 3)
+  const { data: statsData, loader: statsDataLoader } = useApiStatsLocal()
 
-  // TODO: implement more flexible solution
   useEffect(() => {
-    if (!state?.activeTab) {
+    const url = new URL(location.href.replace('/#', ''))
+    const tab = url.searchParams.get('tab')
+    if (!tab) return
+
+    setActiveTab(parseInt(tab))
+  }, [])
+
+  useEffect(() => {
+    if (!state?.type) {
       return
     }
 
-    setActiveTab(state.activeTab)
-
-    const scrollTo = setTimeout(() => document.querySelector('#history')?.scrollIntoView({ behavior: 'smooth' }))
+    const scrollTo = setTimeout(
+      () => document.querySelector('#top-tokens-table')?.scrollIntoView({ behavior: 'smooth' }),
+      800
+    )
     return () => {
       clearTimeout(scrollTo)
     }
@@ -103,7 +123,8 @@ export default function Dashboard() {
         <ToggleDrawer />
         <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={`Overview`} />
-          {/* {account && <Tab key={`tab-1`} label={`History`} />} */}
+          <Tab key={`tab-1`} label={`My Positions`} />
+          {/* {account && <Tab key={`tab-2`} label={`History`} />} */}
         </Tabs>
         <CurrencySelectWrapper>
           <CurrencyDropdown />
@@ -111,6 +132,68 @@ export default function Dashboard() {
       </StyledAppBar>
       <BodyScroller>
         <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
+          <AutoColumn gap="lg">
+            <ResponsiveRow gap="2rem">
+              <AppBody size="md">
+                <Wrapper>
+                  <OverviewChart />
+                </Wrapper>
+              </AppBody>
+              <AppBody size="md">
+                <Wrapper>
+                  <BarChart />
+                </Wrapper>
+              </AppBody>
+            </ResponsiveRow>
+            <ResponsiveRow gap="2rem">
+              {statsDataLoader ||
+                (statsData && (
+                  <>
+                    <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                      <TYPE.subHeader fontSize="16px">
+                        <Trans>Volume 24H</Trans>
+                      </TYPE.subHeader>
+                      <FlexColumn style={{ padding: '5px 0' }}>
+                        <TYPE.mediumHeader color="text1">
+                          <BaseCurrencyView type="symbol" value={statsData.volume_24} />
+                        </TYPE.mediumHeader>
+                        {/* TODO: add percentage when it'll be available in API */}
+                        {/* <Percent value={7.258268337244848} fontWeight={400} /> */}
+                      </FlexColumn>
+                    </DefaultCard>
+                    <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                      <TYPE.subHeader fontSize="16px">
+                        <Trans>Fees 24H</Trans>
+                      </TYPE.subHeader>
+                      <FlexColumn style={{ padding: '5px 0' }}>
+                        <TYPE.mediumHeader color="text1">
+                          <BaseCurrencyView type="symbol" value={statsData.fees_24} />
+                        </TYPE.mediumHeader>
+                        {/* <Percent value={7.858268337244848} fontWeight={400} /> */}
+                      </FlexColumn>
+                    </DefaultCard>
+                    <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
+                      <TYPE.subHeader fontSize="16px">
+                        <Trans>TVL</Trans>
+                      </TYPE.subHeader>
+                      <FlexColumn style={{ padding: '5px 0' }}>
+                        <TYPE.mediumHeader color="text1">
+                          <BaseCurrencyView type="symbol" value={statsData.tvl} />
+                        </TYPE.mediumHeader>
+                        {/* <Percent value={-0.508268337244848} fontWeight={400} /> */}
+                      </FlexColumn>
+                    </DefaultCard>
+                  </>
+                ))}
+            </ResponsiveRow>
+            <ResponsiveRow id="top-tokens-table">
+              <AppBody size="lg">
+                <OverviewTable />
+              </AppBody>
+            </ResponsiveRow>
+          </AutoColumn>
+        </TabPanel>
+        <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
           <AutoColumn gap="lg">
             {account ? (
               <>
@@ -172,9 +255,9 @@ export default function Dashboard() {
           </AutoColumn>
         </TabPanel>
         {account && (
-          <TabPanel key={'tab-panel-1'} activeIndex={activeTab} index={1}>
+          <TabPanel key={'tab-panel-2'} activeIndex={activeTab} index={2}>
             <AutoColumn gap="lg">
-              <ResponsiveRow id="history">
+              <ResponsiveRow>
                 <DashboardHistoryTab />
               </ResponsiveRow>
             </AutoColumn>

@@ -242,8 +242,8 @@ export default function Discover() {
                 <LinkWrapper>
                   <Link
                     to={{
-                      pathname: '/swap',
-                      state: { activeTab: 1, type: 'gainer' },
+                      pathname: '/dashboard',
+                      state: { activeTab: 0, type: 'gainer' },
                     }}
                   >
                     <Trans>See all</Trans>
@@ -332,8 +332,8 @@ export default function Discover() {
                 <LinkWrapper>
                   <Link
                     to={{
-                      pathname: '/swap',
-                      state: { activeTab: 1, type: 'looser' },
+                      pathname: '/dashboard',
+                      state: { activeTab: 0, type: 'looser' },
                     }}
                   >
                     <Trans>See all</Trans>
