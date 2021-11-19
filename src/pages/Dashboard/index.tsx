@@ -123,7 +123,7 @@ export default function Dashboard() {
         <ToggleDrawer />
         <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={`Overview`} />
-          <Tab key={`tab-1`} label={`My Position`} />
+          <Tab key={`tab-1`} label={`My Positions`} />
           {/* {account && <Tab key={`tab-2`} label={`History`} />} */}
         </Tabs>
         <CurrencySelectWrapper>
