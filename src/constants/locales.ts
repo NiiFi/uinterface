@@ -22,14 +22,12 @@ export const SUPPORTED_LOCALES = [
   'pt-BR',
   'pt-PT',
   'ro-RO',
-  'ru-RU',
   'sr-SP',
   'sv-SE',
   'tr-TR',
   'uk-UA',
-  'vi-VN',
-  'zh-CN',
-  'zh-TW',
+  // 'vi-VN',
+  // 'zh-CN',
 ] as const
 export type SupportedLocale = typeof SUPPORTED_LOCALES[number]
 
@@ -59,12 +57,10 @@ export const LOCALE_LABEL: { [locale in SupportedLocale]: string } = {
   'pt-BR': 'português',
   'pt-PT': 'português',
   'ro-RO': 'Română',
-  'ru-RU': 'русский',
   'sr-SP': 'Српски',
   'sv-SE': 'svenska',
   'tr-TR': 'Türkçe',
-  'uk-UA': 'Український',
-  'vi-VN': 'Tiếng Việt',
-  'zh-CN': '中文 ( 中国 )',
-  'zh-TW': '中文 ( 台灣 )',
+  'uk-UA': 'Українська',
+  // 'vi-VN': 'Tiếng Việt',
+  // 'zh-CN': '中文 ( 中国 )',
 }

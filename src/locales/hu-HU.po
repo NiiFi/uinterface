@@ -15,6 +15,8 @@ msgstr ""
 "Project-Id-Version: niifi\n"
 "Language-Team: Hungarian\n"
 "PO-Revision-Date: 2021-11-18 15:23\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
@@ -98,8 +100,8 @@ msgstr "Hozzáadás"
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/PoolInvest/index.tsx
-#: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/components/Table/pools.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Add Liquidity"
@@ -498,8 +500,8 @@ msgstr "Adjon meg érvényes token címet"
 msgid "Error"
 msgstr "Hiba"
 
-#: src/components/WalletModal/PendingView.tsx
 #: src/components/WalletModal/index.tsx
+#: src/components/WalletModal/PendingView.tsx
 msgid "Error connecting"
 msgstr "Hiba történt a csatlakozáskor"
 
@@ -739,8 +741,8 @@ msgstr ""
 msgid "Loaded"
 msgstr "Töltött"
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Betöltés"
@@ -749,10 +751,10 @@ msgstr "Betöltés"
 msgid "MXN"
 msgstr ""
 
-#: src/components/PositionCard/V2.tsx
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/V2.tsx
 #: src/components/SearchModal/Manage.tsx
 msgid "Manage"
 msgstr "Kezelés"
@@ -789,8 +791,8 @@ msgstr "Maximálisan elküldve"
 msgid "Mexican Peso"
 msgstr ""
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 msgid "Migrate"
 msgstr "Vándorol"
 
@@ -894,8 +896,8 @@ msgstr "A teljesítmény becsült. Legalább <0>{0} {1}</0> vagy a tranzakció v
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "A kimenet a következőre lesz elküldve: <0>{0}</0>"
 
-#: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
+#: src/components/Table/TableToolbar.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
@@ -937,15 +939,15 @@ msgstr "Medence"
 msgid "Pool Found!"
 msgstr "Medence megtalálva!"
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 msgid "Pool tokens in rewards pool:"
 msgstr "Pool tokenek a jutalomban:"
 
-#: src/components/PositionCard/V2.tsx
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/V2.tsx
 msgid "Pooled {0}:"
 msgstr "Összevont {0}:"
 
@@ -953,8 +955,8 @@ msgstr "Összevont {0}:"
 msgid "Pools"
 msgstr ""
 
-#: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/components/Table/overview.tsx
 #: src/pages/Dashboard/subpages/Nfts.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/Discover/index.tsx
@@ -1016,8 +1018,8 @@ msgstr ""
 msgid "Recent Transactions"
 msgstr "Legutóbbi tranzakciók"
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr "Eltávolítás"
@@ -1133,8 +1135,8 @@ msgstr ""
 msgid "Slippage Tolerance"
 msgstr ""
 
-#: src/components/TransactionSettings/index.tsx
 #: src/components/swap/AdvancedSwapDetails.tsx
+#: src/components/TransactionSettings/index.tsx
 msgid "Slippage tolerance"
 msgstr "Csúszási tolerancia"
 
@@ -1201,12 +1203,12 @@ msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/overview.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/components/Table/overview.tsx
 #: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
 #: src/pages/Dashboard/index.tsx
 #: src/pages/Discover/index.tsx
 msgid "TVL"
@@ -1539,9 +1541,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Kapni fogsz"
 
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 msgid "Your pool share:"
 msgstr "A medence részesedése:"
 
@@ -1553,8 +1555,8 @@ msgstr "A te helyzeted"
 msgid "Your position has 0 liquidity, and is not earning fees."
 msgstr "Pozíciója 0 likviditással rendelkezik, és nem keres díjat."
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 msgid "Your total pool tokens:"
 msgstr "Az összes pool tokenje:"
 
@@ -1677,4 +1679,3 @@ msgstr ""
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr "~ $ <0 />"
-
