@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-09-28 17:40+0000\n"
+"POT-Creation-Date: 2021-11-18 15:13+0000\n"
 "Mime-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,9 +14,7 @@ msgstr ""
 "X-Crowdin-File-ID: 77\n"
 "Project-Id-Version: niifi\n"
 "Language-Team: Czech\n"
-"PO-Revision-Date: 2021-09-28 18:25\n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-11-18 15:23\n"
 
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
@@ -39,10 +37,6 @@ msgstr ""
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 msgid "1 Year"
-msgstr ""
-
-#: src/components/Table/pools.tsx
-msgid "1D"
 msgstr ""
 
 #: src/components/swap/Slippage.tsx
@@ -73,12 +67,12 @@ msgstr "<0>Tip:</0> Když přidáte likviditu, obdržíte tokeny bazénu repreze
 msgid "APPROVE"
 msgstr ""
 
-#: src/components/Table/pools.tsx
-msgid "APY"
-msgstr ""
-
 #: src/components/pools/PoolsOverview.tsx
 msgid "APY (1D)"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "APY (24h)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -552,7 +546,7 @@ msgstr ""
 msgid "Fees"
 msgstr ""
 
-#: src/pages/Swap/index.tsx
+#: src/pages/Dashboard/index.tsx
 msgid "Fees 24H"
 msgstr ""
 
@@ -723,13 +717,6 @@ msgstr ""
 msgid "Liberia"
 msgstr ""
 
-#: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/LineChart/PoolDetail.tsx
-#: src/components/LineChart/swap.tsx
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
-#: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr "Likvidita"
@@ -906,10 +893,6 @@ msgstr "Produkce se odhaduje. Budete dostávat alespoň <0>{0} {1}</0> jinak se 
 #: src/components/swap/SwapModalHeader.tsx
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "Výstup bude odeslán na <0>{0}</0>"
-
-#: src/pages/Swap/index.tsx
-msgid "Overview"
-msgstr ""
 
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
@@ -1095,7 +1078,6 @@ msgid "SGD"
 msgstr ""
 
 #: src/components/Table/SearchableTable.tsx
-#: src/pages/Pool/index.tsx
 msgid "Search"
 msgstr ""
 
@@ -1185,7 +1167,6 @@ msgstr "Dodávání {0} {1} a {2} {3}"
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Swap"
 msgstr "Prohodit"
 
@@ -1218,9 +1199,16 @@ msgstr ""
 msgid "TRY"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/overview.tsx
+#: src/components/LineChart/swap.tsx
 #: src/components/Table/overview.tsx
-#: src/pages/Swap/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
+#: src/pages/Dashboard/index.tsx
+#: src/pages/Discover/index.tsx
 msgid "TVL"
 msgstr ""
 
@@ -1373,7 +1361,6 @@ msgstr "Transakce odeslána"
 msgid "Transaction deadline"
 msgstr "Termín transakce"
 
-#: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
 msgstr ""
@@ -1458,10 +1445,6 @@ msgstr ""
 msgid "View accrued fees and analytics<0>↗</0>"
 msgstr "Zobrazit naběhlé poplatky a analýzy<0>↗</0>"
 
-#: src/components/SearchModal/ManageLists.tsx
-msgid "View list"
-msgstr "Zobrazit seznam"
-
 #: src/components/AccountDetails/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "View on Explorer"
@@ -1480,7 +1463,7 @@ msgstr ""
 
 #: src/components/BarChart/overview.tsx
 #: src/components/Table/overview.tsx
-#: src/pages/Swap/index.tsx
+#: src/pages/Dashboard/index.tsx
 msgid "Volume 24H"
 msgstr ""
 
@@ -1658,7 +1641,6 @@ msgstr "{0} čeká"
 
 #: src/components/SearchModal/ImportList.tsx
 #: src/components/SearchModal/ManageLists.tsx
-#: src/components/SearchModal/ManageLists.tsx
 msgid "{0} tokens"
 msgstr "{0} tokeny"
 
@@ -1688,6 +1670,11 @@ msgstr ""
 msgid "{title}"
 msgstr ""
 
+#: src/components/SearchModal/ManageLists.tsx
+msgid "{tokensCount} tokens"
+msgstr ""
+
 #: src/components/CurrencyInputPanel/FiatValue.tsx
 msgid "~$ <0/>"
 msgstr ""
+
