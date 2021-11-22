@@ -36,10 +36,6 @@ msgstr ""
 msgid "1 Year"
 msgstr ""
 
-#: src/components/Table/pools.tsx
-msgid "1D"
-msgstr ""
-
 #: src/components/swap/Slippage.tsx
 msgid "2%"
 msgstr ""
@@ -68,12 +64,12 @@ msgstr ""
 msgid "APPROVE"
 msgstr ""
 
-#: src/components/Table/pools.tsx
-msgid "APY"
-msgstr ""
-
 #: src/components/pools/PoolsOverview.tsx
 msgid "APY (1D)"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "APY (24h)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -99,8 +95,8 @@ msgstr ""
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/PoolInvest/index.tsx
-#: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/components/Table/pools.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Add Liquidity"
@@ -499,8 +495,8 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: src/components/WalletModal/PendingView.tsx
 #: src/components/WalletModal/index.tsx
+#: src/components/WalletModal/PendingView.tsx
 msgid "Error connecting"
 msgstr ""
 
@@ -547,7 +543,7 @@ msgstr ""
 msgid "Fees"
 msgstr ""
 
-#: src/pages/Swap/index.tsx
+#: src/pages/Dashboard/index.tsx
 msgid "Fees 24H"
 msgstr ""
 
@@ -718,13 +714,6 @@ msgstr ""
 msgid "Liberia"
 msgstr ""
 
-#: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/LineChart/PoolDetail.tsx
-#: src/components/LineChart/swap.tsx
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
-#: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr ""
@@ -747,8 +736,8 @@ msgstr ""
 msgid "Loaded"
 msgstr ""
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr ""
@@ -757,10 +746,10 @@ msgstr ""
 msgid "MXN"
 msgstr ""
 
-#: src/components/PositionCard/V2.tsx
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/V2.tsx
 #: src/components/SearchModal/Manage.tsx
 msgid "Manage"
 msgstr ""
@@ -797,8 +786,8 @@ msgstr ""
 msgid "Mexican Peso"
 msgstr ""
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 msgid "Migrate"
 msgstr ""
 
@@ -902,12 +891,8 @@ msgstr ""
 msgid "Output will be sent to <0>{0}</0>"
 msgstr ""
 
-#: src/pages/Swap/index.tsx
-msgid "Overview"
-msgstr ""
-
-#: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
+#: src/components/Table/TableToolbar.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
@@ -949,15 +934,15 @@ msgstr ""
 msgid "Pool Found!"
 msgstr ""
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 msgid "Pool tokens in rewards pool:"
 msgstr ""
 
-#: src/components/PositionCard/V2.tsx
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/V2.tsx
 msgid "Pooled {0}:"
 msgstr ""
 
@@ -965,8 +950,8 @@ msgstr ""
 msgid "Pools"
 msgstr ""
 
-#: src/components/Table/overview.tsx
 #: src/components/swap/SwapModalHeader.tsx
+#: src/components/Table/overview.tsx
 #: src/pages/Dashboard/subpages/Nfts.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/Discover/index.tsx
@@ -1028,8 +1013,8 @@ msgstr ""
 msgid "Recent Transactions"
 msgstr ""
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr ""
@@ -1090,7 +1075,6 @@ msgid "SGD"
 msgstr ""
 
 #: src/components/Table/SearchableTable.tsx
-#: src/pages/Pool/index.tsx
 msgid "Search"
 msgstr ""
 
@@ -1146,8 +1130,8 @@ msgstr ""
 msgid "Slippage Tolerance"
 msgstr ""
 
-#: src/components/TransactionSettings/index.tsx
 #: src/components/swap/AdvancedSwapDetails.tsx
+#: src/components/TransactionSettings/index.tsx
 msgid "Slippage tolerance"
 msgstr ""
 
@@ -1178,7 +1162,6 @@ msgstr ""
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
-#: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Swap"
@@ -1213,9 +1196,16 @@ msgstr ""
 msgid "TRY"
 msgstr ""
 
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/overview.tsx
+#: src/components/LineChart/PoolDetail.tsx
+#: src/components/LineChart/swap.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/components/Table/overview.tsx
-#: src/pages/Swap/index.tsx
+#: src/components/Table/pools.tsx
+#: src/pages/Dashboard/index.tsx
+#: src/pages/Discover/index.tsx
 msgid "TVL"
 msgstr ""
 
@@ -1368,7 +1358,6 @@ msgstr ""
 msgid "Transaction deadline"
 msgstr ""
 
-#: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
 msgstr ""
@@ -1453,10 +1442,6 @@ msgstr ""
 msgid "View accrued fees and analytics<0>↗</0>"
 msgstr ""
 
-#: src/components/SearchModal/ManageLists.tsx
-msgid "View list"
-msgstr ""
-
 #: src/components/AccountDetails/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "View on Explorer"
@@ -1475,7 +1460,7 @@ msgstr ""
 
 #: src/components/BarChart/overview.tsx
 #: src/components/Table/overview.tsx
-#: src/pages/Swap/index.tsx
+#: src/pages/Dashboard/index.tsx
 msgid "Volume 24H"
 msgstr ""
 
@@ -1551,9 +1536,9 @@ msgstr ""
 msgid "You will receive"
 msgstr ""
 
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 msgid "Your pool share:"
 msgstr ""
 
@@ -1565,8 +1550,8 @@ msgstr ""
 msgid "Your position has 0 liquidity, and is not earning fees."
 msgstr ""
 
-#: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/V2.tsx
 msgid "Your total pool tokens:"
 msgstr ""
 
@@ -1653,7 +1638,6 @@ msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
 #: src/components/SearchModal/ManageLists.tsx
-#: src/components/SearchModal/ManageLists.tsx
 msgid "{0} tokens"
 msgstr ""
 
@@ -1681,6 +1665,10 @@ msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "{title}"
+msgstr ""
+
+#: src/components/SearchModal/ManageLists.tsx
+msgid "{tokensCount} tokens"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx
