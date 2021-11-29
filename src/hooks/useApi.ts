@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import useLazyFetch from 'hooks/useLazyFetch'
 import { WEB_API_BASE } from 'constants/general'
-import { TopTokensTableData } from 'components/Table/types'
+import { TopTokensTableData, TransactionTableData } from 'components/Table/types'
 import { LoaderWrapped } from 'theme/components'
 
 type Routes =
@@ -19,6 +19,7 @@ type Routes =
   | 'wallets/farms'
   | 'tokens/general-stats'
   | 'pools/stats-local-volume'
+  | 'pools/transactions'
 
 type ApiParams = {
   route: Routes
@@ -175,6 +176,6 @@ export function useApiStatsLocalTvl(): FetchInterface<ITokenGraph> {
   return useApi({ route: 'tokens/stats' })
 }
 
-export function useApiTransactions(): any {
-  return useApi({ route: 'wallets/0x0000000000000000000000000000000000000001/transactions' as Routes }) // TODO: replace with correct route after implementation
+export function useApiTransactions(): FetchInterface<TransactionTableData> {
+  return useApi({ route: 'pools/transactions' })
 }
