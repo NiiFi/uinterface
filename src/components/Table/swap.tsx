@@ -104,8 +104,8 @@ export default function SwapTable() {
             data={data}
             headCells={[
               { id: 'amountUSD', numeric: true, disablePadding: false, label: t`Total Value` },
-              { id: 'amount0', numeric: true, disablePadding: false, label: t`Token Amount` }, // FIXME
-              { id: 'amount1', numeric: true, disablePadding: false, label: t`Token Amount` }, // FIXME
+              { id: 'amount0', numeric: true, disablePadding: false, label: t`Token Amount` },
+              { id: 'amount1', numeric: true, disablePadding: false, label: t`Token Amount` },
               { id: 'wallet', numeric: false, disablePadding: false, label: t`Account` },
               { id: 'timestamp', numeric: false, disablePadding: false, label: t`Time` },
             ]}
