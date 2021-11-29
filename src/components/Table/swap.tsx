@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import useTheme from 'hooks/useTheme'
 import { t, Trans } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
@@ -44,8 +44,6 @@ const CustomTableRow = (
 ) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}` }
 
-  const [from, to, fromValue, toValue] = getFromTo(row.type, row.token0, row.token1)
-
   return (
     <TableRow
       hover
@@ -58,17 +56,17 @@ const CustomTableRow = (
     >
       <TableCell style={rowCellStyles} align="left">
         <ExternalLink href={`${BASE_URL}/tx/${row.hash}`}>
-          <Trans>{mapTransactionTypeToWords(row.type, from, to)}</Trans>
+          <Trans>{mapTransactionTypeToWords(row.type, row.currency0, row.currency1)}</Trans>
         </ExternalLink>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <BaseCurrencyView type="id" value={row.amountUSD} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(fromValue)} {from}
+        {shortenDecimalValues(row.amount0)} {row.currency0}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(toValue)} {to}
+        {shortenDecimalValues(row.amount1)} {row.currency1}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <ExternalLink href={`${BASE_URL}/address/${row.wallet}`}>{shortenAddress(row.wallet)}</ExternalLink>
@@ -85,6 +83,18 @@ export default function SwapTable() {
 
   const { data, loader } = useApiTransactions()
 
+  useEffect(() => {
+    if (!data || data.length === 0) return
+    data.map((item: any) => {
+      const [from, to, fromValue, toValue] = getFromTo(item.type, item.token0, item.token1)
+      item.currency0 = from
+      item.currency1 = to
+      item.amount0 = fromValue
+      item.amount1 = toValue
+      return item
+    })
+  }, [data])
+
   return (
     <>
       {loader ||
@@ -94,10 +104,10 @@ export default function SwapTable() {
             data={data}
             headCells={[
               { id: 'amountUSD', numeric: true, disablePadding: false, label: t`Total Value` },
-              { id: 'amount0', numeric: true, disablePadding: false, label: t`Token Amount` },
-              { id: 'amount1', numeric: true, disablePadding: false, label: t`Token Amount` },
-              { id: 'address', numeric: false, disablePadding: false, label: t`Account` },
-              { id: 'transaction.timestamp', numeric: false, disablePadding: false, label: t`Time` },
+              { id: 'amount0', numeric: true, disablePadding: false, label: t`Token Amount` }, // FIXME
+              { id: 'amount1', numeric: true, disablePadding: false, label: t`Token Amount` }, // FIXME
+              { id: 'wallet', numeric: false, disablePadding: false, label: t`Account` },
+              { id: 'timestamp', numeric: false, disablePadding: false, label: t`Time` },
             ]}
             row={CustomTableRow}
             headCellsBefore={({ transactionType, onTransactionTypeChange }) => (
@@ -116,6 +126,8 @@ export default function SwapTable() {
                 />
               </TableCell>
             )}
+            defaultOrder={'desc'}
+            defaultOrderBy={'timestamp'}
           />
         ))}
     </>
