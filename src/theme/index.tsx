@@ -197,6 +197,9 @@ export const TYPE = {
   gray(props: TextProps) {
     return <TextWrapper fontWeight={500} color={'bg3'} {...props} />
   },
+  bold(props: TextProps) {
+    return <TextWrapper fontWeight={'bold'} color={'text6'} {...props} />
+  },
   italic(props: TextProps) {
     return <TextWrapper fontWeight={500} fontSize={12} fontStyle={'italic'} color={'text2'} {...props} />
   },

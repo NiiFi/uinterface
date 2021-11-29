@@ -9,7 +9,7 @@ import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
 import { NIILogo } from 'components/Icons'
 import CurrencyAvatar from 'components/CurrencyAvatar'
-// import { shortenDecimalValues } from '../../utils'
+import { shortenDecimalValues } from '../../utils'
 import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper, BaseCurrencyView } from '../../theme'
 import { useApiPools } from 'hooks/useApi'
 import SearchableTable, { Order } from './SearchableTable'
@@ -18,6 +18,8 @@ import { ButtonOutlined } from 'components/Button'
 import { ArrowLeft, ArrowRight } from 'react-feather'
 import { Wrapper as DefaultToolBarWrapper, PagerWrapper as DefaultToolBarPagerWrapper } from './TableToolbar'
 import { History, LocationState } from 'history'
+import QuestionHelper from 'components/QuestionHelper'
+import { AutoRow } from 'components/Row'
 
 const CustomTableRow = (row: any, index: number, history: History<LocationState>, theme: DefaultTheme) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
@@ -25,6 +27,10 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
   const handleCellOnClick = (id: string) => {
     history.push(`/pool/${id}`)
   }
+
+  row.apyTrading = parseFloat(row.apyTrading)
+  row.apyNii = parseFloat(row.apyNii)
+  row.apyNiifi = parseFloat(row.apyNiifi)
 
   return (
     <TableRow
@@ -70,10 +76,33 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <ColumnWrapper>
-          <div>{row.roiY} %</div>
-          {/* <TYPE.small color={'text2'}>
-            {shortenDecimalValues(row.roiW, '0.[00]a')} (<Trans>1W</Trans>)
-          </TYPE.small> */}
+          <AutoRow>
+            <div>{shortenDecimalValues(row.apy)} %</div>
+            {(!!row.apyNii || !!row.apyNiifi) && (
+              <QuestionHelper
+                text={
+                  <>
+                    <AutoRow>
+                      <Trans>Trading APY</Trans>:&nbsp;<TYPE.bold>{shortenDecimalValues(row.apyTrading)} %</TYPE.bold>
+                    </AutoRow>
+                    {!!row.apyNii && (
+                      <AutoRow>
+                        <Trans>NII Liquidity Mining APY</Trans>:&nbsp;
+                        <TYPE.bold>{shortenDecimalValues(row.apyNii)} %</TYPE.bold>
+                      </AutoRow>
+                    )}
+                    {!!row.apyNiifi && (
+                      <AutoRow>
+                        <Trans>NIIFI Liquidity Mining APY</Trans>:&nbsp;
+                        <TYPE.bold>{shortenDecimalValues(row.apyNiifi)} %</TYPE.bold>
+                      </AutoRow>
+                    )}
+                  </>
+                }
+                size={320}
+              />
+            )}
+          </AutoRow>
         </ColumnWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
@@ -129,18 +158,13 @@ export default function PoolsTable() {
   const [pools, setPools] = useState<PoolTableData[]>()
 
   useEffect(() => {
+    if (!data || data.length === 0) return
     setPools(data)
   }, [data])
 
   useEffect(() => {
-    // TODO: implement sorting
-    if (state?.type !== undefined) {
-      setOrderBy(state.type === 'new' ? 'roiY' : 'trendingPercentY')
-      setOrder(state.type === 'losers' ? 'asc' : 'desc')
-    } else {
-      setOrderBy('roiY')
-      setOrder('desc')
-    }
+    setOrderBy('apy')
+    setOrder(state?.type === 'losers' ? 'asc' : 'desc')
   }, [state])
 
   return (
@@ -168,7 +192,7 @@ export default function PoolsTable() {
             headCells={[
               { id: 'token0Address', numeric: false, disablePadding: false, label: t`Available Pools` },
               { id: 'liquidity', numeric: true, disablePadding: false, label: t`TVL` },
-              { id: 'roiY', numeric: false, disablePadding: false, label: t`APY (24h)` },
+              { id: 'apy', numeric: false, disablePadding: false, label: t`APY` },
               { id: '', numeric: false, disablePadding: false, label: '' },
             ]}
             renderToolbar={(props) =>
