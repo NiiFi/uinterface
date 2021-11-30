@@ -21,6 +21,11 @@ import { History, LocationState } from 'history'
 import QuestionHelper from 'components/QuestionHelper'
 import { AutoRow } from 'components/Row'
 
+const TooltipRow = styled(AutoRow)`
+  line-height: 1.75rem;
+  color: ${({ theme }) => theme.text1};
+`
+
 const CustomTableRow = (row: any, index: number, history: History<LocationState>, theme: DefaultTheme) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, cursor: 'pointer' }
 
@@ -83,22 +88,22 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
                 text={
                   <>
                     {!!row.apyTrading && (
-                      <AutoRow>
+                      <TooltipRow>
                         <Trans>Trading APY</Trans>:&nbsp;
-                        <TYPE.bold>{shortenDecimalValues(row.apyTrading)} %</TYPE.bold>
-                      </AutoRow>
+                        <>{shortenDecimalValues(row.apyTrading)} %</>
+                      </TooltipRow>
                     )}
                     {!!row.apyNii && (
-                      <AutoRow>
+                      <TooltipRow>
                         <Trans>NII Liquidity Mining APY</Trans>:&nbsp;
-                        <TYPE.bold>{shortenDecimalValues(row.apyNii)} %</TYPE.bold>
-                      </AutoRow>
+                        <>{shortenDecimalValues(row.apyNii)} %</>
+                      </TooltipRow>
                     )}
                     {!!row.apyNiifi && (
-                      <AutoRow>
+                      <TooltipRow>
                         <Trans>NIIFI Liquidity Mining APY</Trans>:&nbsp;
-                        <TYPE.bold>{shortenDecimalValues(row.apyNiifi)} %</TYPE.bold>
-                      </AutoRow>
+                        <>{shortenDecimalValues(row.apyNiifi)} %</>
+                      </TooltipRow>
                     )}
                   </>
                 }
