@@ -26,6 +26,8 @@ import { useCurrency } from 'hooks/Tokens'
 // TODO: remove usePoolDatas and all thegraph usage
 // import { usePoolDatas } from 'state/pools/hooks'
 import { useApiPoolsDetail, useApiToken } from 'hooks/useApi'
+import { BaseCurrencyView } from 'theme'
+import { shortenDecimalValues } from 'utils'
 
 const TokenStatsWrapper = styled(BodyWrapper)`
   flex: 2;
@@ -181,6 +183,18 @@ export default function PoolDetails({
             <BodyScroller>
               <BodyPanel>
                 <Wrapper>
+                  <ResponsiveRow>
+                    <AppBody size="md" padding={'1rem'}>
+                      <TYPE.mediumHeader>
+                        Total Value Locked: <BaseCurrencyView type="symbol" value={poolData.liquidity} />
+                      </TYPE.mediumHeader>
+                    </AppBody>
+                    <AppBody size="md" padding={'1rem'}>
+                      <TYPE.mediumHeader>
+                        {shortenDecimalValues(poolData.apy as unknown as string)}% APY
+                      </TYPE.mediumHeader>
+                    </AppBody>
+                  </ResponsiveRow>
                   <ResponsiveRow>
                     <AppBody size="md" style={{ minHeight: '440px' }}>
                       <Tabs value={activeTab} onChange={TabChangeHandler}>

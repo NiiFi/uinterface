@@ -71,6 +71,10 @@ export interface ITokenDetail {
 interface IPoolDetail {
   address: string
   liquidity: number
+  apy: string
+  apyTrading: string
+  apyNii: string
+  apyNiifi: string
   roiW: number
   roiY: number
   trendingPercentW: number
