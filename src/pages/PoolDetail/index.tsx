@@ -184,15 +184,15 @@ export default function PoolDetails({
               <BodyPanel>
                 <Wrapper>
                   <ResponsiveRow>
-                    <AppBody size="md" padding={'1rem'}>
-                      <TYPE.mediumHeader>
+                    <AppBody size="md" padding={'1rem'} style={{ textAlign: 'center' }}>
+                      <TYPE.body fontSize={22}>
                         <BaseCurrencyView type="symbol" value={poolData.liquidity} /> <Trans>TVL</Trans>
-                      </TYPE.mediumHeader>
+                      </TYPE.body>
                     </AppBody>
-                    <AppBody size="md" padding={'1rem'}>
-                      <TYPE.mediumHeader>
+                    <AppBody size="md" padding={'1rem'} style={{ textAlign: 'center' }}>
+                      <TYPE.body fontSize={22}>
                         {shortenDecimalValues(poolData.apy as unknown as string)}% <Trans>APY</Trans>
-                      </TYPE.mediumHeader>
+                      </TYPE.body>
                     </AppBody>
                   </ResponsiveRow>
                   <ResponsiveRow>
