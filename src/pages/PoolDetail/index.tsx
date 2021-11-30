@@ -186,12 +186,12 @@ export default function PoolDetails({
                   <ResponsiveRow>
                     <AppBody size="md" padding={'1rem'}>
                       <TYPE.mediumHeader>
-                        Total Value Locked: <BaseCurrencyView type="symbol" value={poolData.liquidity} />
+                        <BaseCurrencyView type="symbol" value={poolData.liquidity} /> <Trans>TVL</Trans>
                       </TYPE.mediumHeader>
                     </AppBody>
                     <AppBody size="md" padding={'1rem'}>
                       <TYPE.mediumHeader>
-                        {shortenDecimalValues(poolData.apy as unknown as string)}% APY
+                        {shortenDecimalValues(poolData.apy as unknown as string)}% <Trans>APY</Trans>
                       </TYPE.mediumHeader>
                     </AppBody>
                   </ResponsiveRow>

@@ -69,12 +69,13 @@ msgstr "<0>Conseil:</0> Lorsque vous ajoutez de la liquidité, vous recevrez des
 msgid "APPROVE"
 msgstr ""
 
-#: src/components/pools/PoolsOverview.tsx
-msgid "APY (1D)"
+#: src/components/Table/pools.tsx
+#: src/pages/PoolDetail/index.tsx
+msgid "APY"
 msgstr ""
 
-#: src/components/Table/pools.tsx
-msgid "APY (24h)"
+#: src/components/pools/PoolsOverview.tsx
+msgid "APY (1D)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -100,8 +101,8 @@ msgstr "Ajouter"
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/PoolInvest/index.tsx
-#: src/components/pools/PoolsOverview.tsx
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Add Liquidity"
@@ -500,8 +501,8 @@ msgstr "Entrez une adresse de jeton valide"
 msgid "Error"
 msgstr "Erreur"
 
-#: src/components/WalletModal/index.tsx
 #: src/components/WalletModal/PendingView.tsx
+#: src/components/WalletModal/index.tsx
 msgid "Error connecting"
 msgstr "Erreur de connexion"
 
@@ -741,8 +742,8 @@ msgstr ""
 msgid "Loaded"
 msgstr "Chargé"
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "En cours de chargement"
@@ -751,10 +752,10 @@ msgstr "En cours de chargement"
 msgid "MXN"
 msgstr ""
 
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 #: src/components/SearchModal/Manage.tsx
 msgid "Manage"
 msgstr "Gérer"
@@ -791,8 +792,8 @@ msgstr "Maximum envoyé"
 msgid "Mexican Peso"
 msgstr ""
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Migrate"
 msgstr "Migrer"
 
@@ -808,6 +809,14 @@ msgstr ""
 #: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "NFTs"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "NII Liquidity Mining APY"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "NIIFI Liquidity Mining APY"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -896,14 +905,14 @@ msgstr "La sortie est estimée. Vous recevrez au moins <0>{0} {1}</0> ou la tran
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "La sortie sera envoyée à <0>{0}</0>"
 
-#: src/components/Table/pools.tsx
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair History"
 msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
@@ -939,15 +948,15 @@ msgstr "Liquidité"
 msgid "Pool Found!"
 msgstr "Pool trouvée !"
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Pool tokens in rewards pool:"
 msgstr "Jetons de pool dans le pool de récompenses :"
 
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Pooled {0}:"
 msgstr "Récupéré {0}:"
 
@@ -955,8 +964,8 @@ msgstr "Récupéré {0}:"
 msgid "Pools"
 msgstr ""
 
-#: src/components/swap/SwapModalHeader.tsx
 #: src/components/Table/overview.tsx
+#: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Dashboard/subpages/Nfts.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/Discover/index.tsx
@@ -1018,8 +1027,8 @@ msgstr ""
 msgid "Recent Transactions"
 msgstr "Transactions récentes"
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr "Retirer"
@@ -1135,8 +1144,8 @@ msgstr ""
 msgid "Slippage Tolerance"
 msgstr ""
 
-#: src/components/swap/AdvancedSwapDetails.tsx
 #: src/components/TransactionSettings/index.tsx
+#: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Slippage tolerance"
 msgstr "Tolérance du slippage"
 
@@ -1203,15 +1212,19 @@ msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/LineChart/overview.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
-#: src/components/pools/PoolsOverview.tsx
 #: src/components/Table/overview.tsx
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/pages/Dashboard/index.tsx
 #: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "TVL"
+msgstr ""
+
+#: src/components/LineChart/overview.tsx
+msgid "TVL History"
 msgstr ""
 
 #: src/hooks/useSwapCallback.ts
@@ -1347,6 +1360,10 @@ msgstr "Pools du haut"
 msgid "Total Value"
 msgstr ""
 
+#: src/components/Table/pools.tsx
+msgid "Trading APY"
+msgstr ""
+
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
 msgstr ""
@@ -1463,10 +1480,13 @@ msgstr "Voir la transaction sur Explorer"
 msgid "Volume"
 msgstr ""
 
-#: src/components/BarChart/overview.tsx
 #: src/components/Table/overview.tsx
 #: src/pages/Dashboard/index.tsx
 msgid "Volume 24H"
+msgstr ""
+
+#: src/components/BarChart/overview.tsx
+msgid "Volume History 24H"
 msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
@@ -1541,9 +1561,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Vous allez recevoir"
 
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Your pool share:"
 msgstr "Partage de votre pool :"
 
@@ -1555,8 +1575,8 @@ msgstr "Votre position"
 msgid "Your position has 0 liquidity, and is not earning fees."
 msgstr "Votre position a 0 liquidité, et ne gagne pas de frais."
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Your total pool tokens:"
 msgstr "Total des jetons de votre pool :"
 
@@ -1616,6 +1636,7 @@ msgstr "{0, plural, one {Jeton d'importation } other {Importez des jetons}}"
 #: src/components/Dropdowns/LanguageDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/Table/swap.tsx
 #: src/pages/Dashboard/components/Card.tsx
 msgid "{0}"
 msgstr ""
@@ -1645,10 +1666,6 @@ msgstr "{0} en attente"
 #: src/components/SearchModal/ManageLists.tsx
 msgid "{0} tokens"
 msgstr "{0} jetons"
-
-#: src/components/Table/swap.tsx
-msgid "{0} {1} for {2}"
-msgstr ""
 
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "{0} • Added by user"
