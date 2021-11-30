@@ -69,12 +69,13 @@ msgstr "<0> İpucu:</0> Likidite eklediğinizde, pozisyonunuzu temsil eden havuz
 msgid "APPROVE"
 msgstr ""
 
-#: src/components/pools/PoolsOverview.tsx
-msgid "APY (1D)"
+#: src/components/Table/pools.tsx
+#: src/pages/PoolDetail/index.tsx
+msgid "APY"
 msgstr ""
 
-#: src/components/Table/pools.tsx
-msgid "APY (24h)"
+#: src/components/pools/PoolsOverview.tsx
+msgid "APY (1D)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -100,8 +101,8 @@ msgstr "Ekle"
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/PoolInvest/index.tsx
-#: src/components/pools/PoolsOverview.tsx
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Add Liquidity"
@@ -500,8 +501,8 @@ msgstr "Geçerli jeton adresini girin"
 msgid "Error"
 msgstr "Hata"
 
-#: src/components/WalletModal/index.tsx
 #: src/components/WalletModal/PendingView.tsx
+#: src/components/WalletModal/index.tsx
 msgid "Error connecting"
 msgstr "Bağlantı hatası"
 
@@ -741,8 +742,8 @@ msgstr ""
 msgid "Loaded"
 msgstr "Yüklendi"
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Yükleniyor"
@@ -751,10 +752,10 @@ msgstr "Yükleniyor"
 msgid "MXN"
 msgstr ""
 
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 #: src/components/SearchModal/Manage.tsx
 msgid "Manage"
 msgstr "Yönetin"
@@ -791,8 +792,8 @@ msgstr "Maksimum gönderme"
 msgid "Mexican Peso"
 msgstr ""
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Migrate"
 msgstr "Göç"
 
@@ -808,6 +809,14 @@ msgstr ""
 #: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "NFTs"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "NII Liquidity Mining APY"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "NIIFI Liquidity Mining APY"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -896,14 +905,14 @@ msgstr "Çıktı tahmin edilmektedir. En az <0>{0} {1}</0> veya işlem geri dön
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "Çıktı <0>{0}</0>"
 
-#: src/components/Table/pools.tsx
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair History"
 msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
@@ -939,15 +948,15 @@ msgstr "Havuz"
 msgid "Pool Found!"
 msgstr "Havuz Bulundu!"
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Pool tokens in rewards pool:"
 msgstr "Ödül havuzundaki havuz jetonları:"
 
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Pooled {0}:"
 msgstr "Havuza alınmış {0}:"
 
@@ -955,8 +964,8 @@ msgstr "Havuza alınmış {0}:"
 msgid "Pools"
 msgstr ""
 
-#: src/components/swap/SwapModalHeader.tsx
 #: src/components/Table/overview.tsx
+#: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Dashboard/subpages/Nfts.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/Discover/index.tsx
@@ -1018,8 +1027,8 @@ msgstr ""
 msgid "Recent Transactions"
 msgstr "Son İşlemler"
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr "Kaldırmak"
@@ -1135,8 +1144,8 @@ msgstr ""
 msgid "Slippage Tolerance"
 msgstr ""
 
-#: src/components/swap/AdvancedSwapDetails.tsx
 #: src/components/TransactionSettings/index.tsx
+#: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Slippage tolerance"
 msgstr "Kayma toleransı"
 
@@ -1203,15 +1212,19 @@ msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/LineChart/overview.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
-#: src/components/pools/PoolsOverview.tsx
 #: src/components/Table/overview.tsx
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/pages/Dashboard/index.tsx
 #: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "TVL"
+msgstr ""
+
+#: src/components/LineChart/overview.tsx
+msgid "TVL History"
 msgstr ""
 
 #: src/hooks/useSwapCallback.ts
@@ -1347,6 +1360,10 @@ msgstr "En iyi havuzlar"
 msgid "Total Value"
 msgstr ""
 
+#: src/components/Table/pools.tsx
+msgid "Trading APY"
+msgstr ""
+
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
 msgstr ""
@@ -1463,10 +1480,13 @@ msgstr "İşlemi Explorer'da görüntüle"
 msgid "Volume"
 msgstr ""
 
-#: src/components/BarChart/overview.tsx
 #: src/components/Table/overview.tsx
 #: src/pages/Dashboard/index.tsx
 msgid "Volume 24H"
+msgstr ""
+
+#: src/components/BarChart/overview.tsx
+msgid "Volume History 24H"
 msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
@@ -1541,9 +1561,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Alacaksın"
 
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Your pool share:"
 msgstr "Havuz payınız:"
 
@@ -1555,8 +1575,8 @@ msgstr "Senin pozisyonun"
 msgid "Your position has 0 liquidity, and is not earning fees."
 msgstr "Pozisyonunuz 0 likiditeye sahip ve ücret almıyor."
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Your total pool tokens:"
 msgstr "Toplam havuz jetonlarınız:"
 
@@ -1616,6 +1636,7 @@ msgstr "{0, plural, one {Simgeyi içe aktar} other {Jetonları içe aktarın}}"
 #: src/components/Dropdowns/LanguageDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/Table/swap.tsx
 #: src/pages/Dashboard/components/Card.tsx
 msgid "{0}"
 msgstr ""
@@ -1645,10 +1666,6 @@ msgstr "{0} Beklemede"
 #: src/components/SearchModal/ManageLists.tsx
 msgid "{0} tokens"
 msgstr "{0} jeton"
-
-#: src/components/Table/swap.tsx
-msgid "{0} {1} for {2}"
-msgstr ""
 
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "{0} • Added by user"

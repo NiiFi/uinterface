@@ -69,12 +69,13 @@ msgstr "<0>Порада:</0> При додаванні рідини, ви отр
 msgid "APPROVE"
 msgstr ""
 
-#: src/components/pools/PoolsOverview.tsx
-msgid "APY (1D)"
+#: src/components/Table/pools.tsx
+#: src/pages/PoolDetail/index.tsx
+msgid "APY"
 msgstr ""
 
-#: src/components/Table/pools.tsx
-msgid "APY (24h)"
+#: src/components/pools/PoolsOverview.tsx
+msgid "APY (1D)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -100,8 +101,8 @@ msgstr "Додати"
 #: src/components/CreatePoolModal/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/components/PoolInvest/index.tsx
-#: src/components/pools/PoolsOverview.tsx
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Add Liquidity"
@@ -500,8 +501,8 @@ msgstr "Введіть коректну адресу маркера"
 msgid "Error"
 msgstr "Помилка"
 
-#: src/components/WalletModal/index.tsx
 #: src/components/WalletModal/PendingView.tsx
+#: src/components/WalletModal/index.tsx
 msgid "Error connecting"
 msgstr "Помилка підключення"
 
@@ -741,8 +742,8 @@ msgstr ""
 msgid "Loaded"
 msgstr "Завантажено"
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 #: src/pages/PoolFinder/index.tsx
 msgid "Loading"
 msgstr "Завантаження"
@@ -751,10 +752,10 @@ msgstr "Завантаження"
 msgid "MXN"
 msgstr ""
 
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 #: src/components/SearchModal/Manage.tsx
 msgid "Manage"
 msgstr "Керування"
@@ -791,8 +792,8 @@ msgstr "Максимум відправлених"
 msgid "Mexican Peso"
 msgstr ""
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Migrate"
 msgstr "Міграція"
 
@@ -808,6 +809,14 @@ msgstr ""
 #: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "NFTs"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "NII Liquidity Mining APY"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "NIIFI Liquidity Mining APY"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -896,14 +905,14 @@ msgstr "Вивід оцінено. Ви отримаєте не менше <0>{0
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "Вивід буде надіслано на <0>{0}</0>"
 
-#: src/components/Table/pools.tsx
 #: src/components/Table/TableToolbar.tsx
+#: src/components/Table/pools.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair History"
 msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
@@ -939,15 +948,15 @@ msgstr "Пул"
 msgid "Pool Found!"
 msgstr "Знайдено пул!"
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Pool tokens in rewards pool:"
 msgstr "Токени басейну у пулі:"
 
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Pooled {0}:"
 msgstr "Завантажено {0}:"
 
@@ -955,8 +964,8 @@ msgstr "Завантажено {0}:"
 msgid "Pools"
 msgstr ""
 
-#: src/components/swap/SwapModalHeader.tsx
 #: src/components/Table/overview.tsx
+#: src/components/swap/SwapModalHeader.tsx
 #: src/pages/Dashboard/subpages/Nfts.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
 #: src/pages/Discover/index.tsx
@@ -1018,8 +1027,8 @@ msgstr ""
 msgid "Recent Transactions"
 msgstr "Останні Транзакції"
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove"
 msgstr "Видалити"
@@ -1135,8 +1144,8 @@ msgstr ""
 msgid "Slippage Tolerance"
 msgstr ""
 
-#: src/components/swap/AdvancedSwapDetails.tsx
 #: src/components/TransactionSettings/index.tsx
+#: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Slippage tolerance"
 msgstr "Насиченість слизу"
 
@@ -1203,16 +1212,20 @@ msgstr "TRY"
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/LineChart/overview.tsx
 #: src/components/LineChart/PoolDetail.tsx
 #: src/components/LineChart/swap.tsx
-#: src/components/pools/PoolsOverview.tsx
 #: src/components/Table/overview.tsx
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/pages/Dashboard/index.tsx
 #: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "TVL"
 msgstr "TVL"
+
+#: src/components/LineChart/overview.tsx
+msgid "TVL History"
+msgstr ""
 
 #: src/hooks/useSwapCallback.ts
 msgid "The input token cannot be transferred. There may be an issue with the input token."
@@ -1347,6 +1360,10 @@ msgstr "Топ-басейни"
 msgid "Total Value"
 msgstr ""
 
+#: src/components/Table/pools.tsx
+msgid "Trading APY"
+msgstr ""
+
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
 msgstr ""
@@ -1463,10 +1480,13 @@ msgstr "Переглянути транзакцію в Провіднику"
 msgid "Volume"
 msgstr ""
 
-#: src/components/BarChart/overview.tsx
 #: src/components/Table/overview.tsx
 #: src/pages/Dashboard/index.tsx
 msgid "Volume 24H"
+msgstr ""
+
+#: src/components/BarChart/overview.tsx
+msgid "Volume History 24H"
 msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
@@ -1541,9 +1561,9 @@ msgstr ""
 msgid "You will receive"
 msgstr "Ви отримаєте"
 
-#: src/components/PositionCard/index.tsx
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Your pool share:"
 msgstr "Ваш спільний доступ до басейну:"
 
@@ -1555,8 +1575,8 @@ msgstr "Ваша позиція"
 msgid "Your position has 0 liquidity, and is not earning fees."
 msgstr "Ваша позиція має 0 ліквідності і не заробляє платежі."
 
-#: src/components/PositionCard/index.tsx
 #: src/components/PositionCard/V2.tsx
+#: src/components/PositionCard/index.tsx
 msgid "Your total pool tokens:"
 msgstr "Ваш токени басейну:"
 
@@ -1616,6 +1636,7 @@ msgstr "{0, plural, one {Імпортувати маркер} other {Імпор�
 #: src/components/Dropdowns/LanguageDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/Table/swap.tsx
 #: src/pages/Dashboard/components/Card.tsx
 msgid "{0}"
 msgstr ""
@@ -1645,10 +1666,6 @@ msgstr ""
 #: src/components/SearchModal/ManageLists.tsx
 msgid "{0} tokens"
 msgstr "{0} токени"
-
-#: src/components/Table/swap.tsx
-msgid "{0} {1} for {2}"
-msgstr ""
 
 #: src/components/SearchModal/CurrencyList.tsx
 msgid "{0} • Added by user"
