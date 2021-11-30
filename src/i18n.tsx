@@ -4,6 +4,7 @@ import { I18nProvider } from '@lingui/react'
 import { ReactNode } from 'react'
 import { useActiveLocale, useSetLocaleFromUrl } from 'hooks/useActiveLocale'
 import { SupportedLocale } from 'constants/locales'
+
 import {
   af,
   ar,
@@ -27,13 +28,12 @@ import {
   pl,
   pt,
   ro,
-  ru,
   sr,
   sv,
   tr,
   uk,
-  vi,
-  zh,
+  // vi,
+  // zh,
   PluralCategory,
 } from 'make-plural/plurals'
 
@@ -65,14 +65,13 @@ const plurals: LocalePlural = {
   'pt-BR': pt,
   'pt-PT': pt,
   'ro-RO': ro,
-  'ru-RU': ru,
   'sr-SP': sr,
   'sv-SE': sv,
   'tr-TR': tr,
   'uk-UA': uk,
-  'vi-VN': vi,
-  'zh-CN': zh,
-  'zh-TW': zh,
+  // 'vi-VN': vi,
+  // 'zh-CN': zh,
+  // 'zh-TW': zh,
 }
 
 export async function dynamicActivate(locale: SupportedLocale) {

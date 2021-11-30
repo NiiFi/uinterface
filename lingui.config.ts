@@ -41,7 +41,7 @@ export default {
     'sv-SE',
     'tr-TR',
     'uk-UA',
-    'vi-VN',
+    // 'vi-VN',
   ],
   orderBy: 'messageId',
   rootDir: '.',

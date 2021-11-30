@@ -128,7 +128,7 @@ const PoolDetailChart = ({ address, token0, token1 }: { address: string; token0:
     <>
       <TYPE.mediumHeaderEllipsis padding="18px 0">
         {`${token0}-${token1} `}
-        <Trans>Pair Stats</Trans>
+        <Trans>Pair History</Trans>
       </TYPE.mediumHeaderEllipsis>
       <Wrapper>
         <TYPE.black fontWeight={400}>

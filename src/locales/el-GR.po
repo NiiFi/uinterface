@@ -36,10 +36,6 @@ msgstr ""
 msgid "1 Year"
 msgstr ""
 
-#: src/components/Table/pools.tsx
-msgid "1D"
-msgstr ""
-
 #: src/components/swap/Slippage.tsx
 msgid "2%"
 msgstr ""
@@ -69,6 +65,7 @@ msgid "APPROVE"
 msgstr ""
 
 #: src/components/Table/pools.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "APY"
 msgstr ""
 
@@ -547,7 +544,7 @@ msgstr ""
 msgid "Fees"
 msgstr ""
 
-#: src/pages/Swap/index.tsx
+#: src/pages/Dashboard/index.tsx
 msgid "Fees 24H"
 msgstr ""
 
@@ -718,13 +715,6 @@ msgstr ""
 msgid "Liberia"
 msgstr ""
 
-#: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/Dropdowns/SwapLineChartDropdown.tsx
-#: src/components/LineChart/PoolDetail.tsx
-#: src/components/LineChart/swap.tsx
-#: src/components/Table/pools.tsx
-#: src/components/pools/PoolsOverview.tsx
-#: src/pages/Discover/index.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr ""
@@ -816,6 +806,14 @@ msgstr ""
 msgid "NFTs"
 msgstr ""
 
+#: src/components/Table/pools.tsx
+msgid "NII Liquidity Mining APY"
+msgstr ""
+
+#: src/components/Table/pools.tsx
+msgid "NIIFI Liquidity Mining APY"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "NOK"
 msgstr ""
@@ -902,10 +900,6 @@ msgstr ""
 msgid "Output will be sent to <0>{0}</0>"
 msgstr ""
 
-#: src/pages/Swap/index.tsx
-msgid "Overview"
-msgstr ""
-
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
@@ -913,7 +907,7 @@ msgid "Page {0} of {totalPages}"
 msgstr ""
 
 #: src/components/LineChart/PoolDetail.tsx
-msgid "Pair Stats"
+msgid "Pair History"
 msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
@@ -1090,7 +1084,6 @@ msgid "SGD"
 msgstr ""
 
 #: src/components/Table/SearchableTable.tsx
-#: src/pages/Pool/index.tsx
 msgid "Search"
 msgstr ""
 
@@ -1180,7 +1173,6 @@ msgstr ""
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
-#: src/pages/Swap/index.tsx
 msgid "Swap"
 msgstr ""
 
@@ -1213,10 +1205,21 @@ msgstr ""
 msgid "TRY"
 msgstr ""
 
-#: src/components/LineChart/overview.tsx
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/LineChart/PoolDetail.tsx
+#: src/components/LineChart/swap.tsx
 #: src/components/Table/overview.tsx
-#: src/pages/Swap/index.tsx
+#: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
+#: src/pages/Dashboard/index.tsx
+#: src/pages/Discover/index.tsx
+#: src/pages/PoolDetail/index.tsx
 msgid "TVL"
+msgstr ""
+
+#: src/components/LineChart/overview.tsx
+msgid "TVL History"
 msgstr ""
 
 #: src/hooks/useSwapCallback.ts
@@ -1352,6 +1355,10 @@ msgstr ""
 msgid "Total Value"
 msgstr ""
 
+#: src/components/Table/pools.tsx
+msgid "Trading APY"
+msgstr ""
+
 #: src/pages/PoolDetail/TokenDetails.tsx
 msgid "Trading Volume"
 msgstr ""
@@ -1368,7 +1375,6 @@ msgstr ""
 msgid "Transaction deadline"
 msgstr ""
 
-#: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
 msgid "Trending"
 msgstr ""
@@ -1453,10 +1459,6 @@ msgstr ""
 msgid "View accrued fees and analytics<0>↗</0>"
 msgstr ""
 
-#: src/components/SearchModal/ManageLists.tsx
-msgid "View list"
-msgstr ""
-
 #: src/components/AccountDetails/index.tsx
 #: src/components/TransactionConfirmationModal/index.tsx
 msgid "View on Explorer"
@@ -1473,10 +1475,13 @@ msgstr ""
 msgid "Volume"
 msgstr ""
 
-#: src/components/BarChart/overview.tsx
 #: src/components/Table/overview.tsx
-#: src/pages/Swap/index.tsx
+#: src/pages/Dashboard/index.tsx
 msgid "Volume 24H"
+msgstr ""
+
+#: src/components/BarChart/overview.tsx
+msgid "Volume History 24H"
 msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
@@ -1626,6 +1631,7 @@ msgstr ""
 #: src/components/Dropdowns/LanguageDropdown.tsx
 #: src/components/Dropdowns/ROIPeriodDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
+#: src/components/Table/swap.tsx
 #: src/pages/Dashboard/components/Card.tsx
 msgid "{0}"
 msgstr ""
@@ -1653,12 +1659,7 @@ msgstr ""
 
 #: src/components/SearchModal/ImportList.tsx
 #: src/components/SearchModal/ManageLists.tsx
-#: src/components/SearchModal/ManageLists.tsx
 msgid "{0} tokens"
-msgstr ""
-
-#: src/components/Table/swap.tsx
-msgid "{0} {1} for {2}"
 msgstr ""
 
 #: src/components/SearchModal/CurrencyList.tsx
@@ -1681,6 +1682,10 @@ msgstr ""
 
 #: src/components/Header/index.tsx
 msgid "{title}"
+msgstr ""
+
+#: src/components/SearchModal/ManageLists.tsx
+msgid "{tokensCount} tokens"
 msgstr ""
 
 #: src/components/CurrencyInputPanel/FiatValue.tsx

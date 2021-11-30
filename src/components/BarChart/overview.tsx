@@ -43,7 +43,7 @@ const OverviewChart = () => {
   return (
     <>
       <TYPE.subHeader fontSize="16px" style={{ margin: '12px 0 6px 0' }}>
-        <Trans>Volume 24H</Trans>
+        <Trans>Volume History 24H</Trans>
       </TYPE.subHeader>
       <TYPE.mediumHeader>
         {(amount && !isNaN(amount) && <BaseCurrencyView type="symbol" value={amount} />) || '-'}
