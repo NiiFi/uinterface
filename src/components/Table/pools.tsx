@@ -83,7 +83,7 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
         <ColumnWrapper>
           <AutoRow>
             <div>{shortenDecimalValues(row.apy)} %</div>
-            {(!!row.apyTrading || !!row.apyNii || !!row.apyNiifi) && (
+            {(!!row.apyNii || !!row.apyNiifi) && (
               <QuestionHelper
                 text={
                   <>
