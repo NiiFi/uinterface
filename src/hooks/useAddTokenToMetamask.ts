@@ -1,4 +1,4 @@
-import { getTokenLogoURL } from './../components/CurrencyLogo/index'
+import { GetTokenLogoURL } from './../components/CurrencyLogo/index'
 import { Currency, Token } from '@uniswap/sdk-core'
 import { useCallback, useState } from 'react'
 import { useActiveWeb3React } from 'hooks/web3'
@@ -25,7 +25,7 @@ export default function useAddTokenToMetamask(currencyToAdd: Currency | undefine
               address: token.address,
               symbol: token.symbol,
               decimals: token.decimals,
-              image: getTokenLogoURL(token.address),
+              image: GetTokenLogoURL(token.address),
             },
           },
         })
