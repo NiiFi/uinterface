@@ -46,11 +46,8 @@ export type TokenListQuery = {
 
 export type PoolTableData = {
   pair: Pair
-  roiW: string
-  roiY: string
-  trendingPercent: string
-  trendingSum: string
-  __typename: 'Pool'
+  apy: string
+  liquidity: string
 }
 
 export type TopTokensTableData = {

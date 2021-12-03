@@ -143,13 +143,13 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                       </div>
                       <div>
                         <TYPE.subHeader color={'text1'}>
-                          <Trans>APY (1D)</Trans>
+                          <Trans>APY</Trans>
                         </TYPE.subHeader>
                         <TYPE.mediumHeader fontSize="16" paddingTop="5px">
-                          {shortenDecimalValues(item.roiY)}
+                          {shortenDecimalValues(item.apy)}
                         </TYPE.mediumHeader>
                       </div>{' '}
-                      <div>
+                      {/* <div>
                         <TYPE.subHeader color={'text1'}>
                           <Trans>Trending</Trans>
                         </TYPE.subHeader>
@@ -157,7 +157,7 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
                           {parseInt(item.trendingPercentY) > 0 && '+'}
                           {shortenDecimalValues(item.trendingPercentY, '0.[00]')}%
                         </TYPE.mediumHeader>
-                      </div>
+                      </div> */}
                     </FlexColumn>
                   </Card>
                 </Grid>
