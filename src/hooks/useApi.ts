@@ -28,8 +28,8 @@ type ApiParams = {
 }
 
 const typeToSort: any = {
-  gainers: '-trendingPercentY',
-  losers: 'trendingPercentY',
+  gainers: '', // TODO: set -apy/apy for gainers/losers after BE implementation
+  losers: '',
   new: '-timestamp',
 }
 
@@ -75,10 +75,6 @@ interface IPoolDetail {
   apyTrading: string
   apyNii: string
   apyNiifi: string
-  roiW: number
-  roiY: number
-  trendingPercentW: number
-  trendingPercentY: number
   timestamp: number
   token1: ITokenDetail
   token2: ITokenDetail
