@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { DefaultTheme } from 'styled-components'
 import useTheme from 'hooks/useTheme'
-import { SampleHistoryResponse } from '../sample-history-response'
 import SearchableTable from 'components/Table/SearchableTable'
 import styled from 'styled-components'
 import TableRow from '@material-ui/core/TableRow'
@@ -38,10 +37,7 @@ export const allowedTypes: { [type: string]: string } = {
   Burn: t`Remove Liquidity`,
   Swap: t`Swap`,
 }
-// TODO: sort
-// SampleHistoryResponse.data.history.sort((a: any, b: any): any => {
-//   return new Date(b.date.split('T')[0]).valueOf() - new Date(a.date.split('T')[0]).valueOf()
-// })
+
 let currentDate: string
 
 const CustomTableRow = (
@@ -127,30 +123,36 @@ const HistoryTableToolbar = ({
 
 export default function HistoryTable() {
   const theme = useTheme()
-  const [historyData, setHistoryData] = useState<any[]>(SampleHistoryResponse.data.history)
-
   const { account } = useActiveWeb3React()
   const { data, loader } = useApiUserHistory(account)
+  const [historyData, setHistoryData] = useState<any[]>()
 
   function handleClick(e: React.MouseEvent<unknown>, rowId: string) {
     e.preventDefault()
     window.open(`${EXPLORER_BASE}tx/${rowId}`, '_blank')
   }
 
+  useEffect(() => {
+    if (!data || !data.length) return
+    setHistoryData(data)
+  }, [data])
+
   return (
     <>
       {loader ||
-        (data && (
+        (data && historyData && (
           <SearchableTable
             headCells={[]}
             searchLabel={t`Filter by Token, Protocol, Event ...`}
             perPage={10}
             debouncedSearchChange={(value: string) => {
               setHistoryData(
-                SampleHistoryResponse.data.history.filter((row: any) => {
+                data.filter((row: any) => {
                   const regex = new RegExp(`^${value}`, 'ig')
                   return (
                     regex.test(row.type) ||
+                    (regex.test('add') && row.type === 'Mint') ||
+                    (regex.test('remove') && row.type === 'Burn') ||
                     regex.test(row.to?.symbol) ||
                     regex.test(row.amount?.symbol) ||
                     regex.test(row.from?.symbol)

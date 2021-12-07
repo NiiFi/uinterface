@@ -2,7 +2,7 @@ import React from 'react'
 import { DefaultTheme } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import { format } from 'date-fns'
-import { TYPE, RowWrapper, BaseCurrencyView, ColumnWrapper, CircleWrapper } from 'theme'
+import { TYPE, RowWrapper, ColumnWrapper, CircleWrapper } from 'theme'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TableCell from '@material-ui/core/TableCell'
 import styled from 'styled-components'
@@ -87,7 +87,7 @@ export function LiquidityRow({
       >
         <TableCell style={rowCellStyles} align="left">
           <RowWrapper style={{ width: 'fit-content', alignItems: 'center' }}>
-            <SvgIconWrapper src={LiquiditySvgSrc} />
+            <SvgIconWrapper src={LiquiditySvgSrc} title={row.type} />
             <ColumnWrapper style={{ marginLeft: '5px' }}>
               <TYPE.subHeader color={'text2'}>{format(new Date(row.date), 'HH:mmaaa')}</TYPE.subHeader>
               <TYPE.body fontWeight={500}>
@@ -140,14 +140,7 @@ export function LiquidityRow({
           </div>
         </TableCell>
         <TableCell style={rowCellStyles}>
-          <ColumnWrapper style={{ marginLeft: '5px', alignItems: 'flex-end' }}>
-            {/* <TYPE.subHeader color={'text2'} style={{ display: 'flex' }}>
-              <Trans>fee</Trans>
-            </TYPE.subHeader>
-            <TYPE.body fontWeight={500} style={{ display: 'flex' }}>
-              <BaseCurrencyView type="symbol" value={row.fee} />
-            </TYPE.body> */}
-          </ColumnWrapper>
+          <ColumnWrapper></ColumnWrapper>
         </TableCell>
       </StyledTableRow>
     </>

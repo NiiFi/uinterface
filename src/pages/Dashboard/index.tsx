@@ -124,7 +124,7 @@ export default function Dashboard() {
         <Tabs value={activeTab} onChange={TabChangeHandler}>
           <Tab key={`tab-0`} label={`Overview`} />
           <Tab key={`tab-1`} label={`My Positions`} />
-          {account && <Tab key={`tab-2`} label={`History`} />}
+          <Tab key={`tab-2`} label={`History`} />
         </Tabs>
         <CurrencySelectWrapper>
           <CurrencyDropdown />
@@ -254,15 +254,19 @@ export default function Dashboard() {
             )}
           </AutoColumn>
         </TabPanel>
-        {account && (
-          <TabPanel key={'tab-panel-2'} activeIndex={activeTab} index={2}>
-            <AutoColumn gap="lg">
+        <TabPanel key={'tab-panel-2'} activeIndex={activeTab} index={2}>
+          <AutoColumn gap="lg">
+            {account ? (
               <ResponsiveRow>
                 <DashboardHistoryTab />
               </ResponsiveRow>
-            </AutoColumn>
-          </TabPanel>
-        )}
+            ) : (
+              <ButtonPrimary onClick={toggleWalletModal}>
+                <Trans>Connect Wallet</Trans>
+              </ButtonPrimary>
+            )}
+          </AutoColumn>
+        </TabPanel>
       </BodyScroller>
     </>
   )
