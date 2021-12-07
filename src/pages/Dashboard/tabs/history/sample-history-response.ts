@@ -2,241 +2,70 @@ export const SampleHistoryResponse: any = {
   data: {
     history: [
       {
-        type: 'send',
-        address: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
-        to: {
-          symbol: 'WBTC',
+        type: 'Swap',
+        wallet: '0x7979e6a762ae1294442bcfc8e9b0807602f08cbb',
+        pool: '0x5F88C641C34469fB8375591D08739882e21eED0E',
+        hash: '0x47cd9080afdb5fedc61347a022d9c2de0cc12ca4681a45cd4701376e87170eff',
+        amountUSD: '993.4497706470029167837876603413372',
+        feesUSD: '2131',
+        token0: {
+          address: '0xab151cD390C6b0eB41A4a45E1E372972C3067b1a',
+          symbol: 'NUSD',
+          amountIn: '0.5',
+          amountOut: '0.0',
         },
-        amount: {
+        token1: {
+          address: '0x4200000000000000000000000000000000000006',
           symbol: 'ETH',
-          value: '-3.2',
+          amount: '7224.139537130400137485',
+          amountIn: '0.0',
+          amountOut: '0.1234567890123456789',
         },
-        date: '2021-08-04T15:20:41+00:00',
-        fee: 0.31,
+        timestamp: 1623158855,
       },
       {
-        type: 'send',
-        address: '0xfe2e637202056d30016725477c5da089ab0a043a',
-        to: {
+        type: 'Mint',
+        wallet: '0x7979e6a762ae1294442bcfc8e9b0807602f08cbb',
+        pool: '0x5F88C641C34469fB8375591D08739882e21eED0E',
+        hash: '0x47cd9080afdb5fedc61347a022d9c2de0cc12ca4681a45cd4701376e87170eff',
+        amountUSD: '993.4497706470029167837876603413372',
+        feesUSD: '2131243',
+        token0: {
+          address: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+          symbol: 'WETH',
+          amountIn: '0.5',
+          amountOut: '0.0',
+        },
+        token1: {
+          address: '0xd85ad783cc94bd04196a13dc042a3054a9b52210',
+          symbol: 'HAKA',
+          amount: '7224.139537130400137485',
+          amountIn: '0.2212',
+          amountOut: '0.0',
+        },
+        timestamp: 1623118855,
+      },
+      {
+        type: 'Burn',
+        wallet: '0x7979e6a762ae1294442bcfc8e9b0807602f08cbb',
+        pool: '0x5F88C641C34469fB8375591D08739882e21eED0E',
+        hash: '0x47cd9080afdb5fedc61347a022d9c2de0cc12ca4681a45cd4701376e87170eff',
+        amountUSD: '993.4497706470029167837876603413372',
+        feesUSD: '2131243',
+        token0: {
+          address: '0xab151cD390C6b0eB41A4a45E1E372972C3067b1a',
+          symbol: 'NUSD',
+          amountIn: '0.0',
+          amountOut: '0.5',
+        },
+        token1: {
+          address: '0x4200000000000000000000000000000000000006',
           symbol: 'ETH',
+          amount: '7224.139537130400137485',
+          amountIn: '0.0',
+          amountOut: '0.6',
         },
-        amount: {
-          symbol: 'WBTC',
-          value: '-1.2',
-        },
-        date: '2021-08-04T15:20:41+00:00',
-        fee: 0.16,
-      },
-      {
-        type: 'send',
-        address: '0x35a532d376ffd9a705d0bb319532837337a398e7',
-        to: {
-          symbol: 'WDOGE',
-        },
-        amount: {
-          symbol: 'SHIB',
-          value: '-11.56',
-        },
-        date: '2021-08-04T15:20:41+00:00',
-        fee: 0.45,
-      },
-      {
-        type: 'receive',
-        address: '0x419d0d8bdd9af5e606ae2232ed285aff190e711b',
-        from: {
-          symbol: 'FUN',
-        },
-        amount: {
-          symbol: 'WDOGE',
-          value: '+3.55',
-        },
-        date: '2021-09-04T15:14:41+00:00',
-        fee: 0.28,
-      },
-      {
-        type: 'swap',
-        address: '0xf65b5c5104c4fafd4b709d9d60a185eae063276c',
-        to: {
-          symbol: 'TRU',
-          value: '-22.3',
-        },
-        from: {
-          symbol: 'ETH',
-          value: '-32.223',
-        },
-        date: '2021-08-04T15:12:41+00:00',
-        fee: 0.15,
-      },
-      {
-        type: 'liquidity',
-        to: {
-          symbol: 'QAO',
-          value: '-312.2',
-        },
-        from: {
-          symbol: 'AGRS',
-          value: '-1000.23',
-        },
-        date: '2021-09-04T15:12:41+00:00',
-        fee: 0.65,
-      },
-      {
-        type: 'send',
-        address: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
-        to: {
-          symbol: 'WBTC',
-        },
-        amount: {
-          symbol: 'ETH',
-          value: '-3.2',
-        },
-        date: '2021-08-04T15:20:41+00:00',
-        fee: 0.31,
-      },
-      {
-        type: 'send',
-        address: '0xfe2e637202056d30016725477c5da089ab0a043a',
-        to: {
-          symbol: 'ETH',
-        },
-        amount: {
-          symbol: 'WBTC',
-          value: '-1.2',
-        },
-        date: '2021-08-04T15:20:41+00:00',
-        fee: 0.16,
-      },
-      {
-        type: 'send',
-        address: '0x35a532d376ffd9a705d0bb319532837337a398e7',
-        to: {
-          symbol: 'WDOGE',
-        },
-        amount: {
-          symbol: 'SHIB',
-          value: '-11.56',
-        },
-        date: '2021-08-04T15:20:41+00:00',
-        fee: 0.45,
-      },
-      {
-        type: 'receive',
-        address: '0x419d0d8bdd9af5e606ae2232ed285aff190e711b',
-        from: {
-          symbol: 'FUN',
-        },
-        amount: {
-          symbol: 'WDOGE',
-          value: '+3.55',
-        },
-        date: '2021-09-04T15:14:41+00:00',
-        fee: 0.28,
-      },
-      {
-        type: 'swap',
-        address: '0xf65b5c5104c4fafd4b709d9d60a185eae063276c',
-        to: {
-          symbol: 'TRU',
-          value: '-22.3',
-        },
-        from: {
-          symbol: 'ETH',
-          value: '-32.223',
-        },
-        date: '2021-08-04T15:12:41+00:00',
-        fee: 0.15,
-      },
-      {
-        type: 'liquidity',
-        to: {
-          symbol: 'QAO',
-          value: '-312.2',
-        },
-        from: {
-          symbol: 'AGRS',
-          value: '-1000.23',
-        },
-        date: '2021-09-04T15:12:41+00:00',
-        fee: 0.65,
-      },
-      {
-        type: 'send',
-        address: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
-        to: {
-          symbol: 'WBTC',
-        },
-        amount: {
-          symbol: 'ETH',
-          value: '-3.2',
-        },
-        date: '2021-08-04T15:20:41+00:00',
-        fee: 0.31,
-      },
-      {
-        type: 'send',
-        address: '0xfe2e637202056d30016725477c5da089ab0a043a',
-        to: {
-          symbol: 'ETH',
-        },
-        amount: {
-          symbol: 'WBTC',
-          value: '-1.2',
-        },
-        date: '2021-08-04T15:20:41+00:00',
-        fee: 0.16,
-      },
-      {
-        type: 'send',
-        address: '0x35a532d376ffd9a705d0bb319532837337a398e7',
-        to: {
-          symbol: 'WDOGE',
-        },
-        amount: {
-          symbol: 'SHIB',
-          value: '-11.56',
-        },
-        date: '2021-08-04T15:20:41+00:00',
-        fee: 0.45,
-      },
-      {
-        type: 'receive',
-        address: '0x419d0d8bdd9af5e606ae2232ed285aff190e711b',
-        from: {
-          symbol: 'FUN',
-        },
-        amount: {
-          symbol: 'WDOGE',
-          value: '+3.55',
-        },
-        date: '2021-09-05T15:14:41+00:00',
-        fee: 0.28,
-      },
-      {
-        type: 'swap',
-        address: '0xf65b5c5104c4fafd4b709d9d60a185eae063276c',
-        to: {
-          symbol: 'TRU',
-          value: '-22.3',
-        },
-        from: {
-          symbol: 'ETH',
-          value: '-32.223',
-        },
-        date: '2021-08-04T15:12:41+00:00',
-        fee: 0.15,
-      },
-      {
-        type: 'liquidity',
-        to: {
-          symbol: 'QAO',
-          value: '-312.2',
-        },
-        from: {
-          symbol: 'AGRS',
-          value: '-1000.23',
-        },
-        date: '2021-09-04T15:12:41+00:00',
-        fee: 0.65,
+        timestamp: 1621158855,
       },
     ],
   },

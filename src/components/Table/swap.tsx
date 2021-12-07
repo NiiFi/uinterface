@@ -6,11 +6,11 @@ import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
 import SwapTableDropdown from '../Dropdowns/SwapTableDropdown'
 import { shortenAddress, shortenDecimalValues, formatTimeStamp } from '../../utils'
+import { getFromTo } from '../../utils/transaction'
 import { ExternalLink, BaseCurrencyView } from 'theme'
 import { useApiTransactions } from 'hooks/useApi'
 import Table from './index'
-
-const BASE_URL = process.env.REACT_APP_EXPLORER || 'https://explorer.testnet.nahmii.io/'
+import { EXPLORER_BASE } from 'constants/general'
 
 function mapTransactionTypeToWords(type: string, symbol1: string, symbol2: string) {
   return {
@@ -18,22 +18,6 @@ function mapTransactionTypeToWords(type: string, symbol1: string, symbol2: strin
     Mint: `Add ${symbol1} and ${symbol2}`,
     Burn: `Remove ${symbol1} and ${symbol2}`,
   }[type]
-}
-
-function getFromTo(type: string, token0: any, token1: any) {
-  switch (type) {
-    case 'Swap':
-      if (!parseFloat(token0.amountIn)) {
-        return [token1.symbol, token0.symbol, token1.amountIn, token0.amountOut]
-      }
-      break
-    case 'Mint':
-      return [token0.symbol, token1.symbol, token0.amountIn, token1.amountIn]
-    case 'Burn':
-      return [token0.symbol, token1.symbol, token0.amountOut, token1.amountOut]
-  }
-
-  return [token0.symbol, token1.symbol, token0.amountIn, token1.amountOut]
 }
 
 const CustomTableRow = (
@@ -55,7 +39,7 @@ const CustomTableRow = (
       selected={false}
     >
       <TableCell style={rowCellStyles} align="left">
-        <ExternalLink href={`${BASE_URL}/tx/${row.hash}`}>
+        <ExternalLink href={`${EXPLORER_BASE}tx/${row.hash}`}>
           <Trans>{mapTransactionTypeToWords(row.type, row.currency0, row.currency1)}</Trans>
         </ExternalLink>
       </TableCell>
@@ -69,7 +53,7 @@ const CustomTableRow = (
         {shortenDecimalValues(row.amount1)} {row.currency1}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <ExternalLink href={`${BASE_URL}/address/${row.wallet}`}>{shortenAddress(row.wallet)}</ExternalLink>
+        <ExternalLink href={`${EXPLORER_BASE}address/${row.wallet}`}>{shortenAddress(row.wallet)}</ExternalLink>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         {formatTimeStamp(`${Number(row.timestamp) * 1000}`)}
