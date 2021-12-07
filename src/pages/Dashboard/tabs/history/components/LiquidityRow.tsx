@@ -59,6 +59,7 @@ export function LiquidityRow({
   }
 
   const dateRowValue = format(new Date(row.date), 'MMMM d, yyyy')
+  const sign = row.type === 'Mint' ? '-' : '+'
 
   return (
     <>
@@ -130,10 +131,10 @@ export function LiquidityRow({
           <div style={{ marginLeft: '5px', display: 'flex' }}>
             <ColumnWrapper style={{ marginLeft: '5px' }}>
               <TYPE.body fontWeight={500} style={{ display: 'flex' }}>
-                {shortenDecimalValues(row.from.value)} {row.from.symbol}
+                {`${sign} ${shortenDecimalValues(row.from.value)}`} {row.from.symbol}
               </TYPE.body>
               <TYPE.body fontWeight={500} style={{ display: 'flex' }}>
-                {shortenDecimalValues(row.to.value)} {row.to.symbol}
+                {`${sign} ${shortenDecimalValues(row.to.value)}`} {row.to.symbol}
               </TYPE.body>
             </ColumnWrapper>
           </div>
