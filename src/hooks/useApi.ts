@@ -149,11 +149,6 @@ export function useApiUserWallet(address: string | null | undefined): any {
   return useApi({ route, rootData: true })
 }
 
-export function useApiUserAssets(address: string | null | undefined, limit?: number): any {
-  const route = `wallets/${address}/assets` as Routes
-  return useApi({ route, limit, rootData: true })
-}
-
 export function useApiUserPools(address: string | null | undefined, limit?: number): any {
   const route = `wallets/${address}/pools` as Routes
   return useApi({ route, limit, rootData: true })
