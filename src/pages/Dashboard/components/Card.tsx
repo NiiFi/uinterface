@@ -11,6 +11,7 @@ import MaterialUiTableContainer from '@material-ui/core/TableContainer'
 import { CustomNFTsTableRow } from './CustomNFTsTableRow'
 import { CustomPoolsTableRow } from './CustomPoolsTableRow'
 import { CustomWalletTableRow } from './CustomWalletTableRow'
+import { EXPLORER_BASE } from 'constants/general'
 
 import useTheme from 'hooks/useTheme'
 
@@ -103,7 +104,10 @@ export const CustomCard = ({ balance, svgIconSrc, data, type, maintenance }: Cus
   switch (type) {
     case 'wallet':
       renderedTable =
-        data && data.map((row: any, index: number) => CustomWalletTableRow(row, index, theme, handleClick))
+        data &&
+        data.map((row: any, index: number) =>
+          CustomWalletTableRow(row, index, theme, () => window.open(`${EXPLORER_BASE}address/${row.address}`, '_blank'))
+        )
       break
     case 'nfts':
       renderedTable = data && data.map((row: any, index: number) => CustomNFTsTableRow(row, index, theme, handleClick))

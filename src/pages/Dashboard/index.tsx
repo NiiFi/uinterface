@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Trans } from '@lingui/macro'
 import styled from 'styled-components'
@@ -30,9 +30,11 @@ import { useActiveWeb3React } from 'hooks/web3'
 import { useWalletModalToggle } from 'state/application/hooks'
 // import { useCurrency } from 'hooks/Tokens'
 // import { useEthereumToBaseCurrencyRatesAndApiState } from 'state/user/hooks'
+import { useAllTokenBalances } from 'state/wallet/hooks'
+import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
+import { useApiTokens } from 'hooks/useApi'
 import {
   /*useApiUserWallet,*/
-  useApiUserAssets,
   useApiUserPools,
   /*useApiUserFarming,*/
   useApiStatsLocal,
@@ -43,6 +45,8 @@ import BarChart from 'components/BarChart/overview'
 import { DefaultCard } from 'components/Card'
 import { Wrapper } from 'components/swap/styleds'
 import OverviewTable from 'components/Table/overview'
+import { AssetsTableData } from 'components/Table/types'
+import { LoaderWrapped } from 'theme/components'
 
 const StyledAppBar = styled(AppBar)`
   padding: 0px 2rem;
@@ -76,6 +80,45 @@ const StyledAppBar = styled(AppBar)`
 //   },
 // ]
 
+type WalletProps =
+  | {
+      balanceUSD: number
+      data: AssetsTableData[]
+      loader?: JSX.Element | boolean
+    }
+  | undefined
+
+export function useWalletData(): WalletProps {
+  const { data } = useApiTokens()
+  const balances = useAllTokenBalances()
+
+  return useMemo((): WalletProps => {
+    if (!balances || !data || !data.length) return { balanceUSD: 0, data: [], loader: <LoaderWrapped /> }
+
+    const balancesFormated: AssetsTableData[] = []
+    let totalWalletBalance = 0
+
+    Object.keys(balances).map(async (address) => {
+      const symbol = balances[address]?.currency.symbol || ''
+      const balance = parseFloat(formatCurrencyAmount(balances[address], 8))
+      const price = parseFloat(data.find((x) => x.address === address)?.priceUSD || '')
+      const total = balance * price
+      totalWalletBalance += total
+      balancesFormated.push({
+        address,
+        symbol,
+        balance,
+        price,
+        total,
+      })
+    })
+
+    balancesFormated.sort((a, b) => (a.symbol > b.symbol ? 1 : -1))
+
+    return { balanceUSD: totalWalletBalance, data: balancesFormated }
+  }, [balances, data])
+}
+
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<number>(0)
   const { state } = useLocation<any>()
@@ -89,9 +132,9 @@ export default function Dashboard() {
   // TODO: create API request only with active account
   // const { data: userWallet, loader: userWalletLoader } = useApiUserWallet(account)
   const { data: userPools, loader: userPoolsLoader } = useApiUserPools(account, 3)
-  const { data: userAssets, loader: userAssetsLoader } = useApiUserAssets(account, 3)
   // const { data: userFarming, loader: userFarmingLoader } = useApiUserFarming(account, 3)
   const { data: statsData, loader: statsDataLoader } = useApiStatsLocal()
+  const userAssets = useWalletData()
 
   useEffect(() => {
     const url = new URL(location.href.replace('/#', ''))
@@ -207,6 +250,17 @@ export default function Dashboard() {
                 </ResponsiveRow> */}
                 <ResponsiveRow gap="2rem">
                   <AppBody size="md">
+                    {userAssets?.loader ||
+                      (userAssets?.data && (
+                        <CustomCard
+                          balance={userAssets.balanceUSD}
+                          svgIconSrc={WalletSvgSrc}
+                          data={userAssets.data.slice(0, 3)}
+                          type={'wallet'}
+                        />
+                      ))}
+                  </AppBody>
+                  <AppBody size="md">
                     {userPoolsLoader ||
                       (userPools?.data && (
                         <CustomCard
@@ -214,18 +268,6 @@ export default function Dashboard() {
                           svgIconSrc={PoolsSvgSrc}
                           data={userPools.data.slice(0, 3)}
                           type={'pools'}
-                        />
-                      ))}
-                  </AppBody>
-                  <AppBody size="md">
-                    {userAssetsLoader ||
-                      (userAssets?.data && (
-                        <CustomCard
-                          balance={userAssets.balanceUSD}
-                          svgIconSrc={WalletSvgSrc}
-                          data={userAssets.data.slice(0, 3)}
-                          type={'wallet'}
-                          maintenance={true}
                         />
                       ))}
                   </AppBody>

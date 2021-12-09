@@ -60,4 +60,12 @@ export type TopTokensTableData = {
   url: string
 }
 
-export type TableDataTypes = TransactionTableData | PoolTableData | TopTokensTableData
+export type AssetsTableData = {
+  address: string
+  symbol: string
+  balance: number
+  price: number
+  total: number
+}
+
+export type TableDataTypes = TransactionTableData | PoolTableData | TopTokensTableData | AssetsTableData

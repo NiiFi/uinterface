@@ -6,12 +6,14 @@ import CurrencyAvatar from 'components/CurrencyAvatar'
 import { WalletIcon } from 'components/Icons'
 import { TYPE, RowWrapper, ColumnWrapper, BaseCurrencyView } from 'theme'
 import Table from 'components/Table'
-import { useApiUserAssets } from 'hooks/useApi'
 import { ButtonPrimary } from 'components/Button'
 import { useActiveWeb3React } from 'hooks/web3'
 import useTheme from 'hooks/useTheme'
 import { useWalletModalToggle } from 'state/application/hooks'
 import { StyledTableRow, LogoWrapper } from './styleds'
+import { shortenDecimalValues } from 'utils'
+import { EXPLORER_BASE } from 'constants/general'
+import { useWalletData } from '../'
 
 const CustomTableRow = (
   row: any,
@@ -28,7 +30,7 @@ const CustomTableRow = (
   return (
     <StyledTableRow
       hover
-      onClick={(event) => handleClick(event, row.id)}
+      onClick={(event) => handleClick(event, row.address)}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
@@ -38,7 +40,7 @@ const CustomTableRow = (
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper style={{ width: 'fit-content' }}>
           <CurrencyAvatar
-            symbol={row.symbol}
+            symbol=""
             address={row.address}
             iconProps={{ width: '30', height: '30' }}
             rootStyle={{ width: 'auto' }}
@@ -50,13 +52,13 @@ const CustomTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {(index + 1) * 0.25}
+        {shortenDecimalValues(row.balance)}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="symbol" value={(index + 1) * 98.36} />
+        <BaseCurrencyView type="symbol" value={row.price} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        <BaseCurrencyView type="symbol" value={row.txCount} />
+        <BaseCurrencyView type="symbol" value={row.total} />
       </TableCell>
     </StyledTableRow>
   )
@@ -66,18 +68,24 @@ export default function Wallet() {
   const theme = useTheme()
   const toggleWalletModal = useWalletModalToggle()
   const { account } = useActiveWeb3React()
-  const { data: userData, loader } = useApiUserAssets(account)
+  const userAssets = useWalletData()
+
+  const handleClick = (e: React.MouseEvent<unknown>, address: string) => {
+    e.preventDefault()
+    window.open(`${EXPLORER_BASE}address/${address}`, '_blank')
+  }
+
   return (
     <>
       {account ? (
-        loader ||
-        (userData && (
+        userAssets?.loader ||
+        (userAssets?.data && (
           <Table
             headCells={[
-              { id: 'assets', numeric: false, align: 'left', disablePadding: false, label: t`Assets` },
+              { id: 'symbol', numeric: false, align: 'left', disablePadding: false, label: t`Assets` },
               { id: 'balance', numeric: true, disablePadding: false, label: t`Balance` },
-              { id: 'priceUSD', numeric: true, disablePadding: false, label: t`Price` },
-              { id: 'txCount', numeric: true, disablePadding: false, label: t`Value` },
+              { id: 'price', numeric: true, disablePadding: false, label: t`Price` },
+              { id: 'total', numeric: true, disablePadding: false, label: t`Value` },
             ]}
             rowsPerPage={8}
             title={
@@ -91,14 +99,14 @@ export default function Wallet() {
                       <Trans>Balance</Trans>
                     </TYPE.body>
                     <TYPE.mediumHeader>
-                      <BaseCurrencyView type="symbol" value={userData.balanceUSD} />
+                      <BaseCurrencyView type="symbol" value={userAssets.balanceUSD} />
                     </TYPE.mediumHeader>
                   </ColumnWrapper>
                 </RowWrapper>
               </>
             }
-            data={userData.data}
-            row={CustomTableRow}
+            data={userAssets.data}
+            row={(row: any, index: number) => CustomTableRow(row, index, theme, handleClick)}
           />
         ))
       ) : (
