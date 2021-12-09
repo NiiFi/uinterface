@@ -418,7 +418,7 @@ export default function Discover() {
                             </TableCell>
                             <TableCell style={rowCellStyles} align="right">
                               <>{'\u00A0'}</>
-                              <Percent value={row.trendingPercentY} decimals={0} fontWeight={500} />
+                              <Percent value={row.apy} decimals={0} fontWeight={500} />
                             </TableCell>
                           </TableRow>
                         )

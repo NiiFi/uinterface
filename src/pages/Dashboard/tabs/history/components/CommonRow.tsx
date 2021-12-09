@@ -8,11 +8,13 @@ import { TYPE, RowWrapper, BaseCurrencyView, ColumnWrapper } from 'theme'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import TableCell from '@material-ui/core/TableCell'
 import styled from 'styled-components'
+import { shortenDecimalValues } from 'utils'
 
 // SVGs
 import SentSvgSrc from 'assets/svg/sent.svg'
 import ReceiveSvgSrc from 'assets/svg/receive.svg'
 import SwapSvgSrc from 'assets/svg/swap.svg'
+import LiquiditySvgSrc from 'assets/svg/liquidity.svg'
 
 const SvgIconWrapper = styled.img`
   height: 32px;
@@ -62,28 +64,17 @@ export function CommonRow({
   const shortAdress = row.address && row.address.slice(0, 6).concat('...', row.address.slice(-4))
   const dateRowValue = format(new Date(row.date), 'MMMM d, yyyy')
 
-  let tokenOneSymbol
-  let tokenTwoSymbol
-  let typeIconSrc
+  let typeIconSrc = LiquiditySvgSrc
 
   switch (row.type) {
-    case 'send':
+    case 'Send':
       typeIconSrc = SentSvgSrc
-      tokenOneSymbol = row.to.symbol
-      tokenTwoSymbol = row.amount.symbol
       break
-    case 'receive':
+    case 'Receive':
       typeIconSrc = ReceiveSvgSrc
-      tokenOneSymbol = row.from.symbol
-      tokenTwoSymbol = row.amount.symbol
       break
-    case 'swap':
+    case 'Swap':
       typeIconSrc = SwapSvgSrc
-      tokenOneSymbol = row.from.symbol
-      tokenTwoSymbol = row.to.symbol
-      break
-    default:
-      typeIconSrc = SentSvgSrc
       break
   }
   return (
@@ -102,16 +93,17 @@ export function CommonRow({
       </DateStyledTableRow>
       <StyledTableRow
         hover
-        onClick={(event) => handleClick(event, row.id)}
+        onClick={(event) => handleClick(event, row.hash)}
         role="checkbox"
         aria-checked={false}
         tabIndex={-1}
         key={index}
         selected={false}
+        style={{ cursor: 'pointer' }}
       >
         <TableCell style={rowCellStyles} align="left">
           <RowWrapper style={{ width: 'fit-content', alignItems: 'center' }}>
-            <SvgIconWrapper src={typeIconSrc} />
+            <SvgIconWrapper src={typeIconSrc} title={row.type} />
             <ColumnWrapper style={{ marginLeft: '5px' }}>
               <TYPE.subHeader color={'text2'}>{format(new Date(row.date), 'HH:mmaaa')}</TYPE.subHeader>
               <TYPE.body fontWeight={500}>{allowedTypes[row.type]}</TYPE.body>
@@ -121,7 +113,8 @@ export function CommonRow({
         <TableCell style={rowCellStyles} align="center">
           <div style={{ marginLeft: '5px', display: 'flex' }}>
             <CurrencyAvatar
-              symbol={tokenOneSymbol}
+              symbol=""
+              address={row.from.address}
               iconProps={{ width: '30', height: '30' }}
               rootStyle={{ width: 'auto' }}
               hideSymbol={true}
@@ -130,24 +123,28 @@ export function CommonRow({
               <TYPE.subHeader color={'text2'} style={{ display: 'flex' }}>
                 {row.type === 'send' ? <Trans>To</Trans> : <Trans>From</Trans>}
               </TYPE.subHeader>
-              <TYPE.body fontWeight={500}>{row.type === 'swap' ? row.from.value : shortAdress}</TYPE.body>
+              <TYPE.body fontWeight={500}>
+                {row.type === 'Swap' ? `-${shortenDecimalValues(row.from.value)} ${row.from.symbol}` : shortAdress}
+              </TYPE.body>
             </ColumnWrapper>
           </div>
         </TableCell>
         <TableCell style={rowCellStyles} align="center">
           <div style={{ marginLeft: '5px', display: 'flex' }}>
             <CurrencyAvatar
-              symbol={tokenTwoSymbol}
+              symbol=""
+              address={row.to.address}
               iconProps={{ width: '30', height: '30' }}
               rootStyle={{ width: 'auto' }}
               hideSymbol={true}
             />
             <ColumnWrapper style={{ marginLeft: '5px' }}>
               <TYPE.subHeader color={'text2'} style={{ display: 'flex' }}>
-                {row.type === 'swap' ? <Trans>To</Trans> : <Trans>Amount</Trans>}
+                {row.type === 'Swap' ? <Trans>To</Trans> : <Trans>Amount</Trans>}
               </TYPE.subHeader>
               <TYPE.body fontWeight={500} style={{ display: 'flex' }}>
-                {row.type === 'swap' ? row.from.value : row.amount.value} {tokenTwoSymbol}
+                {/* {row.type === 'Swap' ? row.from.value : row.amount.value} {tokenTwoSymbol} */}
+                {`+${shortenDecimalValues(row.to.value)}`} {row.to.symbol}
               </TYPE.body>
             </ColumnWrapper>
           </div>
@@ -155,10 +152,10 @@ export function CommonRow({
         <TableCell style={rowCellStyles}>
           <ColumnWrapper style={{ marginLeft: '5px', alignItems: 'flex-end' }}>
             <TYPE.subHeader color={'text2'} style={{ display: 'flex' }}>
-              <Trans>fee</Trans>
+              <Trans>Fee</Trans>
             </TYPE.subHeader>
             <TYPE.body fontWeight={500} style={{ display: 'flex' }}>
-              <BaseCurrencyView type="symbol" value={row.fee} />
+              <BaseCurrencyView type="symbol" value={row.feesUSD} />
             </TYPE.body>
           </ColumnWrapper>
         </TableCell>

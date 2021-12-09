@@ -5,7 +5,7 @@ import {
   PoolInvestPair,
   setInvestTokenPair,
   removeTokenPair,
-  PoolToken,
+  // PoolToken,
   PoolTokenValue,
   PoolInvestPairValues,
 } from './actions'
@@ -74,13 +74,14 @@ export function useFakePoolValuesCalculator() {
     [getUSDValue]
   )
 
-  const getValueEquivalentTo = (compareTo: PoolToken, compareToValue: string, compare: PoolToken) => {
-    const Million = 100_000
-    if (compareTo.symbol === 'NII' && compare.symbol === 'ETH') {
-      return `${Number(compareToValue) / Million}`
-    }
-    return `${Number(compareToValue) * Million}`
-  }
+  // TODO: remove?
+  // const getValueEquivalentTo = (compareTo: PoolToken, compareToValue: string, compare: PoolToken) => {
+  //   const Million = 100_000
+  //   if (compareTo.symbol === 'NII' && compare.symbol === 'ETH') {
+  //     return `${Number(compareToValue) / Million}`
+  //   }
+  //   return `${Number(compareToValue) * Million}`
+  // }
 
   const calculateEstimatedROI = ({ token0, token1 }: PoolInvestPairValues, period: string) => {
     const token0ROI = getROIValueByPeriod(period, token0)
@@ -93,7 +94,7 @@ export function useFakePoolValuesCalculator() {
       roiInUSD: `${token0ROIInUSD + token1ROIInUSD}`,
     }
   }
-  return { calculateTotalInvestmentInUSD, getValueEquivalentTo, calculateEstimatedROI }
+  return { calculateTotalInvestmentInUSD /*, getValueEquivalentTo */, calculateEstimatedROI }
 }
 
 export function useInvestmentCalculator() {

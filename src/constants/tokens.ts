@@ -2,6 +2,8 @@ import { WETH9, Token, Ether } from '@uniswap/sdk-core'
 import { NIIFI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
 import { t } from '@lingui/macro'
+import { WEB_API_BASE } from 'constants/general'
+import { ETH_ADDRESS } from 'constants/addresses'
 export const NII: { [chainId: number]: Token } = {
   [SupportedChainId.NAHMII_MAINNET]: new Token(
     SupportedChainId.NAHMII_MAINNET,
@@ -184,11 +186,9 @@ export const SUPPORTED_BASE_CURRENCIES_MAP: { [currency in SupportedBaseCurrenci
   },
 }
 
-export const BASE_CURRENCY_RATES_URL = `https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=${SUPPORTED_BASE_CURRENCIES.join(
-  ','
-)}`
+export const BASE_CURRENCY_RATES_URL = `${WEB_API_BASE}tokens/${ETH_ADDRESS[SupportedChainId.NAHMII_MAINNET]}/prices`
 export type BASE_CURRENCY_RATES_RESPONSE = {
-  ethereum: {
+  prices: {
     [key: string]: number
   }
 }

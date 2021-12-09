@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { DefaultTheme } from 'styled-components'
 import useTheme from 'hooks/useTheme'
-import { SampleHistoryResponse } from '../sample-history-response'
 import SearchableTable from 'components/Table/SearchableTable'
 import styled from 'styled-components'
 import TableRow from '@material-ui/core/TableRow'
@@ -13,6 +12,10 @@ import {
   PagerWrapper as DefaultToolBarPagerWrapper,
 } from 'components/Table/TableToolbar'
 import { ArrowLeft, ArrowRight } from 'react-feather'
+import { getFromTo } from 'utils/transaction'
+import { useApiUserHistory } from 'hooks/useApi'
+import { useActiveWeb3React } from 'hooks/web3'
+import { EXPLORER_BASE } from 'constants/general'
 
 export const StyledTableRow = styled(TableRow)`
   border-bottom: 1px solid ${({ theme }) => theme.bg3};
@@ -28,15 +31,13 @@ export const StyledTableRow = styled(TableRow)`
 `
 
 export const allowedTypes: { [type: string]: string } = {
-  send: t`Send`,
-  receive: t`Receive`,
-  'add-liquidity': t`Add Liquidity`,
-  swap: t`Swap`,
+  Send: t`Send`,
+  Receive: t`Receive`,
+  Mint: t`Add Liquidity`,
+  Burn: t`Remove Liquidity`,
+  Swap: t`Swap`,
 }
 
-SampleHistoryResponse.data.history.sort((a: any, b: any): any => {
-  return new Date(b.date.split('T')[0]).valueOf() - new Date(a.date.split('T')[0]).valueOf()
-})
 let currentDate: string
 
 const CustomTableRow = (
@@ -46,6 +47,19 @@ const CustomTableRow = (
   handleClick: (event: React.MouseEvent<unknown>, name: string) => void
 ) => {
   let showDate
+  const [from, to, fromValue, toValue] = getFromTo(row.type, row.token0, row.token1)
+  const inverted = row.token1.symbol !== from
+  row.from = {
+    value: fromValue,
+    symbol: from,
+    address: inverted ? row.token0.address : row.token1.address,
+  }
+  row.to = {
+    value: toValue,
+    symbol: to,
+    address: inverted ? row.token1.address : row.token0.address,
+  }
+  row.date = new Date(parseInt((row.timestamp + '').padEnd(13, '0'))).toISOString()
 
   if (index === 0) {
     showDate = true
@@ -60,13 +74,8 @@ const CustomTableRow = (
   }
 
   switch (row.type) {
-    case 'send':
-    case 'receive':
-    case 'swap':
-      return (
-        <CommonRow key={index} row={row} index={index} theme={theme} handleClick={handleClick} showDate={showDate} />
-      )
-    case 'liquidity':
+    case 'Mint':
+    case 'Burn':
       return (
         <LiquidityRow key={index} row={row} index={index} theme={theme} handleClick={handleClick} showDate={showDate} />
       )
@@ -114,38 +123,52 @@ const HistoryTableToolbar = ({
 
 export default function HistoryTable() {
   const theme = useTheme()
-  const [historyData, setHistoryData] = useState<any[]>(SampleHistoryResponse.data.history)
+  const { account } = useActiveWeb3React()
+  const { data, loader } = useApiUserHistory(account)
+  const [historyData, setHistoryData] = useState<any[]>()
 
   function handleClick(e: React.MouseEvent<unknown>, rowId: string) {
     e.preventDefault()
-    console.log('ROW_ID:', rowId)
+    window.open(`${EXPLORER_BASE}tx/${rowId}`, '_blank')
   }
 
+  useEffect(() => {
+    if (!data || !data.length) return
+    setHistoryData(data)
+  }, [data])
+
   return (
-    <SearchableTable
-      headCells={[]}
-      searchLabel={t`Filter by Token, Protocol, Event ...`}
-      perPage={10}
-      debouncedSearchChange={(value: string) => {
-        setHistoryData(
-          SampleHistoryResponse.data.history.filter((row: any) => {
-            const regex = new RegExp(`^${value}`, 'ig')
-            return (
-              regex.test(row.type) ||
-              regex.test(row.to?.symbol) ||
-              regex.test(row.amount?.symbol) ||
-              regex.test(row.from?.symbol)
-            )
-          })
-        )
-      }}
-      renderToolbar={(props) =>
-        HistoryTableToolbar({
-          ...props,
-        })
-      }
-      data={historyData}
-      row={(row: any, index: number) => CustomTableRow(row, index, theme, handleClick)}
-    />
+    <>
+      {loader ||
+        (data && historyData && (
+          <SearchableTable
+            headCells={[]}
+            searchLabel={t`Filter by Token, Protocol, Event ...`}
+            perPage={10}
+            debouncedSearchChange={(value: string) => {
+              setHistoryData(
+                data.filter((row: any) => {
+                  const regex = new RegExp(`^${value}`, 'ig')
+                  return (
+                    regex.test(row.type) ||
+                    (regex.test('add') && row.type === 'Mint') ||
+                    (regex.test('remove') && row.type === 'Burn') ||
+                    regex.test(row.to?.symbol) ||
+                    regex.test(row.amount?.symbol) ||
+                    regex.test(row.from?.symbol)
+                  )
+                })
+              )
+            }}
+            renderToolbar={(props) =>
+              HistoryTableToolbar({
+                ...props,
+              })
+            }
+            data={historyData}
+            row={(row: any, index: number) => CustomTableRow(row, index, theme, handleClick)}
+          />
+        ))}
+    </>
   )
 }

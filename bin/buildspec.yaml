@@ -34,7 +34,7 @@ phases:
       yarn install
   build:
     commands:
-      yarn build:staging
+      yarn build:production
       # - command
   #post_build:
     #commands:

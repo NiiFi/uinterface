@@ -94,9 +94,9 @@ export function BaseCurrencyRatesUpdater() {
   }, RefetchIntervalDelay)
 
   useEffect(() => {
-    if (data && data.ethereum) {
+    if (data && data.prices) {
       const newData = Object.fromEntries(
-        Object.entries(data.ethereum).map(([symbol, value]) => [symbol.toUpperCase(), value])
+        Object.entries(data.prices).map(([symbol, value]) => [symbol.toUpperCase(), value])
       )
       dispatch(setEthereumToBaseCurrencyRates(newData))
     }

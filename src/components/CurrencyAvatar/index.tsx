@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { IconProps } from 'components/Icons/types'
 import { TokenName } from 'state/pool/actions'
-import { getTokenLogoURL } from 'components/CurrencyLogo'
+import { GetTokenLogoURL } from 'components/CurrencyLogo'
 import ReactDOMServer from 'react-dom/server'
 import {
   USD,
@@ -25,7 +25,6 @@ import {
   AUD,
   NOK,
   SGD,
-  NIIIcon,
   GenericLogo,
 } from 'components/Icons'
 type Props = {
@@ -74,7 +73,6 @@ const CurrencyIconMap: { [currency in TokenName]: (props: IconProps) => JSX.Elem
   AUD,
   NOK,
   SGD,
-  NII: NIIIcon,
 }
 
 const renderImage = (src: string, props: IconProps | undefined) => {
@@ -100,14 +98,12 @@ const renderImage = (src: string, props: IconProps | undefined) => {
 }
 
 export const CurrencyAvatar = ({ symbol, address, iconProps, containerStyle, rootStyle, hideSymbol }: Props) => {
-  const backgroundColor = symbol === 'NII' ? 'white' : 'transparent'
-
   return (
     <CurrencyAvatarWrapper style={rootStyle}>
-      <CurrencyLogoWrapper style={{ backgroundColor, ...containerStyle }}>
+      <CurrencyLogoWrapper style={{ ...containerStyle }}>
         {symbol in CurrencyIconMap
           ? CurrencyIconMap[symbol as TokenName]({ width: '28px', height: '28px', ...iconProps })
-          : renderImage(getTokenLogoURL(address || ''), iconProps)}
+          : renderImage(GetTokenLogoURL(address || ''), iconProps)}
       </CurrencyLogoWrapper>
       {!hideSymbol && <span>{symbol}</span>}
     </CurrencyAvatarWrapper>

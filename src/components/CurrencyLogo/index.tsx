@@ -6,8 +6,14 @@ import useHttpLocations from '../../hooks/useHttpLocations'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import Logo from '../Logo'
+import { useAllTokens } from '../../hooks/Tokens'
 
-export const getTokenLogoURL = (address: string) => `${process.env.REACT_APP_TOKEN_LOGO_BASE}${address}/logo.png`
+export const GetTokenLogoURL = (address: string) => {
+  const allTokens = useAllTokens()
+  return (
+    (allTokens[address] as WrappedTokenInfo)?.logoURI || `${process.env.REACT_APP_TOKEN_LOGO_BASE}${address}/logo.png`
+  )
+}
 
 const StyledEthereumLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};
@@ -40,7 +46,7 @@ export default function CurrencyLogo({
     if (!currency || currency.isNative) return []
 
     if (currency.isToken) {
-      const defaultUrls = currency.chainId === 1 ? [getTokenLogoURL(currency.address)] : []
+      const defaultUrls = currency.chainId === 1 ? [GetTokenLogoURL(currency.address)] : []
       if (currency instanceof WrappedTokenInfo) {
         return [...uriLocations, ...defaultUrls]
       }
@@ -49,7 +55,7 @@ export default function CurrencyLogo({
     return []
   }, [currency, uriLocations])
 
-  if (currency?.symbol === 'ETH' || currency?.symbol === 'NII') {
+  if (currency?.symbol === 'ETH') {
     return (
       <CurrencyAvatar
         symbol={currency.symbol}

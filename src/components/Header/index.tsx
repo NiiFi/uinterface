@@ -122,7 +122,7 @@ const NiiIcon = styled.div`
   > div > img {
     width: 100%;
     min-width: 100%;
-    height: auto;
+    height: 100%;
   }
   > div > span {
     color: ${({ theme }) => theme.text4};
