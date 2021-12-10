@@ -1,5 +1,5 @@
 import { nanoid } from '@reduxjs/toolkit'
-import { TokenList } from '@uniswap/token-lists'
+import { TokenList } from 'types/general.d'
 import { useCallback } from 'react'
 
 import { getNetworkLibrary } from '../connectors'

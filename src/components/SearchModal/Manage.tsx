@@ -9,7 +9,7 @@ import { CloseIcon } from 'theme'
 import { Token } from '@uniswap/sdk-core'
 import { ManageLists } from './ManageLists'
 import ManageTokens from './ManageTokens'
-import { TokenList } from '@uniswap/token-lists'
+import { TokenList } from 'types/general.d'
 import { CurrencyModalView } from './CurrencySearchModal'
 
 const Wrapper = styled.div`

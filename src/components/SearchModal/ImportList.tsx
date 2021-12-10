@@ -13,7 +13,7 @@ import { SectionBreak } from 'components/swap/styleds'
 import { ExternalLink } from '../../theme/components'
 import ListLogo from 'components/ListLogo'
 import { PaddedColumn, Checkbox, TextDot } from './styleds'
-import { TokenList } from '@uniswap/token-lists'
+import { TokenList } from 'types/general.d'
 
 import { useAppDispatch } from 'state/hooks'
 import { useFetchListCallback } from 'hooks/useFetchListCallback'

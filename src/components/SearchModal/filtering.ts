@@ -1,4 +1,4 @@
-import { TokenInfo } from '@uniswap/token-lists'
+import { TokenInfo } from 'types/general.d'
 import { useMemo } from 'react'
 import { isAddress } from '../../utils'
 import { Token } from '@uniswap/sdk-core'

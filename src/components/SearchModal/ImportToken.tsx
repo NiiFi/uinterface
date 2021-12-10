@@ -1,4 +1,4 @@
-import { TokenList } from '@uniswap/token-lists/dist/types'
+import { TokenList } from 'types/general.d'
 import React from 'react'
 import { Token, Currency } from '@uniswap/sdk-core'
 import styled from 'styled-components/macro'
