@@ -7,14 +7,14 @@ on:
 
 jobs:
   deploy:
-    name: Production Deploy
+    name: Production CDN Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
+      - name: Trigger AWS CodePipeline
+        uses: zulhfreelancer/aws-codepipeline-action@vX.X.X
         with:
-          host: ${{ secrets.AWS_HOST_PRODUCTION }}
-          username: ${{ secrets.AWS_USER }}
-          key: ${{ secrets.AWS_KEY_PRODUCTION }}
-          script: bash /var/uinterface/bin/deploy.sh --production
+          aws-region: "eu-west-1"
+          aws-access-key: ${{ secrets.AWS_PIPELINE_ACCESS_KEY }}
+          aws-secret-key: ${{ secrets.AWS_PIPELINE_SECRET_KEY }}
+          pipeline-name: "niifi-uinterface"
