@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Production CDN Deploy
+    name: Production Deploy (CDN)
     runs-on: ubuntu-latest
 
     steps:
