@@ -6,7 +6,7 @@ import { usePopper } from 'react-popper'
 import styled from 'styled-components/macro'
 import { useFetchListCallback } from '../../hooks/useFetchListCallback'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
-import { TokenList } from '@uniswap/token-lists'
+import { TokenList } from 'types/general.d'
 import { t, Trans } from '@lingui/macro'
 
 import useToggle from '../../hooks/useToggle'

@@ -7,7 +7,7 @@ import { CurrencySearch } from './CurrencySearch'
 import { ImportToken } from './ImportToken'
 import usePrevious from 'hooks/usePrevious'
 import Manage from './Manage'
-import { TokenList } from '@uniswap/token-lists'
+import { TokenList } from 'types/general.d'
 import { ImportList } from './ImportList'
 
 interface CurrencySearchModalProps {
