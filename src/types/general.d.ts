@@ -41,6 +41,18 @@ export declare enum VersionUpgrade {
   MAJOR = 3,
 }
 
-export declare function getVersionUpgrade(base: Version, update: Version): VersionUpgrade
+export type TokenInfoChangeKey = Exclude<keyof TokenInfo, 'address' | 'chainId'>
 
-export declare function minVersionBump(baseList: TokenInfo[], updatedList: TokenInfo[]): VersionUpgrade
+export type TokenInfoChanges = Array<TokenInfoChangeKey>
+
+export interface TokenListDiff {
+  readonly added: TokenInfo[]
+
+  readonly removed: TokenInfo[]
+
+  readonly changed: {
+    [chainId: number]: {
+      [address: string]: TokenInfoChanges
+    }
+  }
+}

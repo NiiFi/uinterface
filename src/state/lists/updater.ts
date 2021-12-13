@@ -1,5 +1,7 @@
 import { useAllLists } from 'state/lists/hooks'
-import { getVersionUpgrade, minVersionBump, VersionUpgrade } from 'types/general.d'
+import { VersionUpgrade } from 'types/general.d'
+import { minVersionBump } from 'utils/minVersionBump'
+import { getVersionUpgrade } from 'utils/getVersionUpgrade'
 import { useCallback, useEffect } from 'react'
 
 import { useActiveWeb3React } from '../../hooks/web3'
