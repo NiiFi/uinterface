@@ -34,7 +34,7 @@ export interface TokenList {
   readonly logoURI?: string
 }
 
-export declare enum VersionUpgrade {
+export enum VersionUpgrade {
   NONE = 0,
   PATCH = 1,
   MINOR = 2,
