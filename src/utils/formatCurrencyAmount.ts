@@ -1,4 +1,4 @@
-import { Price, CurrencyAmount, Currency, Fraction } from '@uniswap/sdk-core'
+import { Price, CurrencyAmount, Currency, Fraction } from '@niifi/godzilla2-sdk'
 import JSBI from 'jsbi'
 
 export function formatCurrencyAmount(amount: CurrencyAmount<Currency> | undefined, sigFigs: number) {

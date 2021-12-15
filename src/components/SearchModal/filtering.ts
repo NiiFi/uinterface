@@ -1,7 +1,7 @@
 import { TokenInfo } from 'types/general.d'
 import { useMemo } from 'react'
 import { isAddress } from '../../utils'
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@niifi/godzilla2-sdk'
 
 const alwaysTrue = () => true
 

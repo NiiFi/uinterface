@@ -70,12 +70,9 @@ msgid "APPROVE"
 msgstr ""
 
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "APY"
-msgstr ""
-
-#: src/components/pools/PoolsOverview.tsx
-msgid "APY (1D)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -357,6 +354,7 @@ msgstr "Підтвердіть цю транзакцію у своєму гам�
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Dashboard/index.tsx
+#: src/pages/Dashboard/index.tsx
 #: src/pages/Dashboard/subpages/Farm.tsx
 #: src/pages/Dashboard/subpages/Pools.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
@@ -540,6 +538,10 @@ msgstr "Переглянути популярні пули."
 
 #: src/components/Header/index.tsx
 msgid "Farm"
+msgstr ""
+
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+msgid "Fee"
 msgstr ""
 
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
@@ -1038,6 +1040,8 @@ msgid "Remove Amount"
 msgstr "Видалити суму"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Remove Liquidity"
 msgstr "Видалити ліквідність"
 
@@ -1380,10 +1384,6 @@ msgstr "Угода підтверджена"
 msgid "Transaction deadline"
 msgstr "Кінцевий термін транзакцій"
 
-#: src/components/pools/PoolsOverview.tsx
-msgid "Trending"
-msgstr ""
-
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 msgid "Trending tokens"
@@ -1603,11 +1603,6 @@ msgstr ""
 #: src/components/Settings/index.tsx
 msgid "confirm"
 msgstr "підтвердити"
-
-#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
-#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
-msgid "fee"
-msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx
 msgid "https:// or ipfs://"

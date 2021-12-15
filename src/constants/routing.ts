@@ -1,5 +1,5 @@
 // a list of tokens by chain
-import { Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@niifi/godzilla2-sdk'
 import { SupportedChainId } from './chains'
 import { /*ExtendedEther,*/ WETH9_EXTENDED } from './tokens'
 

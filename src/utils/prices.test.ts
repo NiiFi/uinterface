@@ -1,5 +1,5 @@
 import JSBI from 'jsbi'
-import { Percent, Token, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
+import { Percent, Token, CurrencyAmount, TradeType } from '@niifi/godzilla2-sdk'
 import { Trade, Pair, Route } from '@niifi/godzilla2-sdk'
 import { computeRealizedLPFeeAmount, warningSeverity } from './prices'
 

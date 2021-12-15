@@ -1,4 +1,4 @@
-import { WETH9, Token, Ether } from '@uniswap/sdk-core'
+import { WETH9, Token, Ether } from '@niifi/godzilla2-sdk'
 import { NIIFI_ADDRESS } from './addresses'
 import { SupportedChainId } from './chains'
 import { t } from '@lingui/macro'

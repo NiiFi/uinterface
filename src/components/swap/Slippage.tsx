@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { Trans } from '@lingui/macro'
 
 import { ChevronDown, X } from 'react-feather'
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@niifi/godzilla2-sdk'
 import { PopperPlacementType } from '@material-ui/core/Popper'
 import styled from 'styled-components'
 import { useSetUserSlippageTolerance, useUserSlippageTolerance } from 'state/user/hooks'

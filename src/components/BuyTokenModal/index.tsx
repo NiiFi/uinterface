@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import { Trans } from '@lingui/macro'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@niifi/godzilla2-sdk'
 import { ChevronDown } from 'react-feather'
 
 import { useCurrency } from 'hooks/Tokens'

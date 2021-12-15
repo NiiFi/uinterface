@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 import JSBI from 'jsbi'
-import { Token, Currency, Percent, CurrencyAmount } from '@uniswap/sdk-core'
+import { Token, Currency, Percent, CurrencyAmount } from '@niifi/godzilla2-sdk'
 import { Pair } from '@niifi/godzilla2-sdk'
 import { useCallback } from 'react'
 import { usePair } from '../../hooks/usePairs'

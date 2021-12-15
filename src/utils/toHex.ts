@@ -1,4 +1,4 @@
-import { BigintIsh } from '@uniswap/sdk-core'
+import { BigintIsh } from '@niifi/godzilla2-sdk'
 /**
  * Generated method parameters for executing a call.
  */

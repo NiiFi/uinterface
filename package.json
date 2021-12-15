@@ -140,7 +140,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@niifi/godzilla2-sdk": "0.0.14",
+    "@niifi/godzilla2-sdk": "0.0.15",
     "@typechain/ethers-v5": "^7.0.0",
     "env-cmd": "^10.1.0",
     "react-circular-progressbar": "^2.0.4",

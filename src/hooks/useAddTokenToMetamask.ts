@@ -1,5 +1,5 @@
 import { GetTokenLogoURL } from './../components/CurrencyLogo/index'
-import { Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@niifi/godzilla2-sdk'
 import { useCallback, useState } from 'react'
 import { useActiveWeb3React } from 'hooks/web3'
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@niifi/godzilla2-sdk'
 import { t, Trans } from '@lingui/macro'
 
 import { useActiveWeb3React } from 'hooks/web3'

@@ -1,4 +1,4 @@
-import { Currency, Token, CurrencyAmount, Ether } from '@uniswap/sdk-core'
+import { Currency, Token, CurrencyAmount, Ether } from '@niifi/godzilla2-sdk'
 import JSBI from 'jsbi'
 import { useEffect, useMemo } from 'react'
 import { useDispatch } from 'react-redux'

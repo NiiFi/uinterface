@@ -16,7 +16,7 @@ import QuestionHelper from '../QuestionHelper'
 import { RowBetween, RowFixed } from '../Row'
 import Toggle from '../Toggle'
 import TransactionSettings from '../TransactionSettings'
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@niifi/godzilla2-sdk'
 
 const StyledMenuIcon = styled(Settings)`
   height: 20px;

@@ -1,7 +1,7 @@
 import { t } from '@lingui/macro'
 import JSBI from 'jsbi'
 import { parseUnits } from '@ethersproject/units'
-import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Percent, TradeType } from '@niifi/godzilla2-sdk'
 import { Trade } from '@niifi/godzilla2-sdk'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useState } from 'react'
