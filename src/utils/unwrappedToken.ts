@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@niifi/godzilla2-sdk'
 import { ExtendedEther, WETH9_EXTENDED } from '../constants/tokens'
 import { supportedChainId } from './supportedChainId'
 

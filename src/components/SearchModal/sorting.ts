@@ -1,4 +1,4 @@
-import { Token, CurrencyAmount, Currency } from '@uniswap/sdk-core'
+import { Token, CurrencyAmount, Currency } from '@niifi/godzilla2-sdk'
 import { useMemo } from 'react'
 import { useAllTokenBalances } from '../../state/wallet/hooks'
 

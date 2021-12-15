@@ -1,4 +1,4 @@
-import { Currency, Percent } from '@uniswap/sdk-core'
+import { Currency, Percent } from '@niifi/godzilla2-sdk'
 import { TransactionResponse } from '@ethersproject/providers'
 // import { BigNumber } from '@ethersproject/bignumber'
 import { t } from '@lingui/macro'

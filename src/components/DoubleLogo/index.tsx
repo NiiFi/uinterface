@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@niifi/godzilla2-sdk'
 import React from 'react'
 import styled from 'styled-components/macro'
 import CurrencyLogo from '../CurrencyLogo'

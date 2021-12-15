@@ -1,4 +1,4 @@
-import { Percent, Token } from '@uniswap/sdk-core'
+import { Percent, Token } from '@niifi/godzilla2-sdk'
 import { /*computePairAddress,*/ Pair } from '@niifi/godzilla2-sdk'
 import JSBI from 'jsbi'
 import { flatMap } from 'lodash'

@@ -1,4 +1,4 @@
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@niifi/godzilla2-sdk'
 
 export function currencyId(currency: Currency): string {
   if (currency.isNative) return 'ETH'

@@ -2302,7 +2302,7 @@
     "@ethersproject/logger" "^5.2.0"
     "@ethersproject/rlp" "^5.2.0"
 
-"@ethersproject/address@^5.0.0", "@ethersproject/address@^5.0.2":
+"@ethersproject/address@^5.0.0":
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/address/-/address-5.5.0.tgz#bcc6f576a553f21f3dd7ba17248f81b473c9c78f"
   integrity sha512-l4Nj0eWlTUh6ro5IbPTgbpT4wRbdH5l8CQf7icF7sb/SI3Nhd9Y9HzhonTSTi6CefI0necIw7LJqQPopPLZyWw==
@@ -3384,19 +3384,21 @@
   resolved "https://registry.npmjs.org/@multiformats/base-x/-/base-x-4.0.1.tgz"
   integrity sha512-eMk0b9ReBbV23xXU693TAIrLyeO5iTgBZGSJfpqriG8UkYvr/hC9u9pyMlAakDNHWmbhMZCDs6KQO0jzKD8OTw==
 
-"@niifi/godzilla2-sdk@0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@niifi/godzilla2-sdk/-/godzilla2-sdk-0.0.14.tgz#a0333ea4891ec0a6ba1878617320f9ee452ec611"
-  integrity sha512-EY2Gx8DtkdCbAHR0MKR5Bdx8zydEI2sjoxgf1+ECPszo2vujmhCK2VlR2iUwJJ8TJuIpr9bLDrsp6Ee/4X5AtA==
+"@niifi/godzilla2-sdk@0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@niifi/godzilla2-sdk/-/godzilla2-sdk-0.0.15.tgz#744865533a549affd9767be92f897010171089ba"
+  integrity sha512-QckRKi4NdCZOFHdC2JrerwpUQ4JJyYxqhrdWoYTRYMAEadctuxZAxSibiNNa2G6eiSE/Kj9R4zsULM4ZewfLUg==
   dependencies:
     "@ethersproject/address" "^5.0.0"
     "@ethersproject/solidity" "^5.0.0"
     "@types/big.js" "^4.0.5"
     "@types/jest" "^24.0.25"
-    "@uniswap/sdk-core" "^3.0.0-alpha.3"
-    "@uniswap/v2-core" "^1.0.1"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.4"
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
+    toformat "^2.0.0"
     tsdx "^0.14.1"
 
 "@nodelib/fs.scandir@2.1.4":
@@ -4549,23 +4551,6 @@
   dependencies:
     "@typescript-eslint/types" "4.24.0"
     eslint-visitor-keys "^2.0.0"
-
-"@uniswap/sdk-core@^3.0.0-alpha.3":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@uniswap/sdk-core/-/sdk-core-3.0.1.tgz#d08dd68257983af64b9a5f4d6b9cf26124b4138f"
-  integrity sha512-WbeDkhZ9myVR0VnHOdTrb8nHKKkqTFa5uE9RvUbG3eyDt2NWWDwhhqGHwAWJEHG405l30Fa1u3PogHDFsIOQlA==
-  dependencies:
-    "@ethersproject/address" "^5.0.2"
-    big.js "^5.2.2"
-    decimal.js-light "^2.5.0"
-    jsbi "^3.1.4"
-    tiny-invariant "^1.1.0"
-    toformat "^2.0.0"
-
-"@uniswap/v2-core@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@uniswap/v2-core/-/v2-core-1.0.1.tgz#af8f508bf183204779938969e2e54043e147d425"
-  integrity sha512-MtybtkUPSyysqLY2U210NBDeCHX+ltHt3oADGdjqoThZaFRDKwM6k1Nb3F0A3hk5hwuQvytFWhrWHOEq6nVJ8Q==
 
 "@walletconnect/browser-utils@^1.4.2-rc.2":
   version "1.4.2-rc.2"

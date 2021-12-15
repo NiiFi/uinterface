@@ -1,4 +1,4 @@
-import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
+import { Currency, Percent, TradeType } from '@niifi/godzilla2-sdk'
 import { Trade } from '@niifi/godzilla2-sdk'
 import React, { useContext, useState } from 'react'
 import { ArrowDown, AlertTriangle } from 'react-feather'

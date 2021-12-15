@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
 
-import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Token, TradeType } from '@niifi/godzilla2-sdk'
 import SwapTable from '../../components/Table/swap'
 import { Trade } from '@niifi/godzilla2-sdk'
 import { AdvancedSwapDetails } from 'components/swap/AdvancedSwapDetails'

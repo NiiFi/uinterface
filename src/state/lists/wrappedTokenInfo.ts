@@ -1,4 +1,4 @@
-import { Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@niifi/godzilla2-sdk'
 import { Tags, TokenInfo, TokenList } from 'types/general.d'
 import { isAddress } from '../../utils'
 
