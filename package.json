@@ -101,7 +101,15 @@
     "tar": "6.1.9",
     "glob-parent": "5.1.2",
     "trim": "0.0.3",
-    "merge": "2.1.1"
+    "merge": "2.1.1",
+    "browserslist": "4.16.5",
+    "url-parse": "1.5.2",
+    "path-parse": "1.0.7",
+    "tmpl": "1.0.5",
+    "nth-check": "2.0.1",
+    "ansi-regex": "5.0.1",
+    "node-notifier": "8.0.1",
+    "ws": "7.4.6"
   },
   "scripts": {
     "compile-contract-types": "yarn compile-external-abi-types && yarn compile-v2-contract-types",
@@ -128,14 +136,19 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
+      ">0.3%",
+      "not ie 11",
+      "not dead", 
       "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      ">0.3%",
+      "not ie 11",
+      "not dead", 
+      "not op_mini all"
     ]
   },
   "license": "GPL-3.0-or-later",

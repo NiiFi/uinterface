@@ -114,8 +114,6 @@ msgid "Add {0} to Metamask <0/>"
 msgstr "Adaugă {0} la Metamask <0/>"
 
 #: src/hooks/useAddLiquidity.ts
-#: src/hooks/useAddLiquidity.ts
-#: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Add {0} {1} and {2} {3} (Automatic Copy)"
@@ -1054,8 +1052,6 @@ msgid "Remove list"
 msgstr "Elimină lista"
 
 #: src/components/PoolWithdraw/index.tsx
-#: src/components/PoolWithdraw/index.tsx
-#: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove {0} {1} and {2} {3}"
 msgstr "Elimină {0} {1} și {2} {3}"
