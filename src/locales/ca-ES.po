@@ -114,8 +114,6 @@ msgid "Add {0} to Metamask <0/>"
 msgstr "Afegiu {0} a Metamask <0/>"
 
 #: src/hooks/useAddLiquidity.ts
-#: src/hooks/useAddLiquidity.ts
-#: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Afegiu {0} {1} i {2} {3}"
@@ -1054,8 +1052,6 @@ msgid "Remove list"
 msgstr "Elimina la llista"
 
 #: src/components/PoolWithdraw/index.tsx
-#: src/components/PoolWithdraw/index.tsx
-#: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove {0} {1} and {2} {3}"
 msgstr "Traieu {0} {1} i {2} {3}"
