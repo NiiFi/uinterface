@@ -262,7 +262,16 @@ export default function Header() {
           <WalletPopover />
           <HeaderLinks>
             {SidebarLinks.map(({ Icon, link, id, title, disable }, index) => (
-              <StyledNavLink id={`${id}-nav-link`} disable={+disable} to={link} key={index}>
+              <StyledNavLink
+                id={`${id}-nav-link`}
+                disable={+disable}
+                to={link}
+                key={index}
+                isActive={(match, location) => {
+                  const isPoolDetails = link === '/pools' && location.pathname.indexOf('/pool/0x') !== -1
+                  return match !== null || isPoolDetails
+                }}
+              >
                 <Icon />
                 <Trans>{title}</Trans>
               </StyledNavLink>
