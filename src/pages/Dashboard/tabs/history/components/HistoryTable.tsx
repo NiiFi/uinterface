@@ -124,7 +124,7 @@ const HistoryTableToolbar = ({
 export default function HistoryTable() {
   const theme = useTheme()
   const { account } = useActiveWeb3React()
-  const { data, loader } = useApiUserHistory(account)
+  const { data, loader, abortController } = useApiUserHistory(account)
   const [historyData, setHistoryData] = useState<any[]>()
 
   function handleClick(e: React.MouseEvent<unknown>, rowId: string) {
@@ -136,6 +136,13 @@ export default function HistoryTable() {
     if (!data || !data.length) return
     setHistoryData(data)
   }, [data])
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

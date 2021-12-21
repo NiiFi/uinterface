@@ -66,7 +66,7 @@ export default function OverviewTable() {
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<string>()
 
-  const { data, loader } = useApiTokens()
+  const { data, loader, abortController } = useApiTokens()
 
   useEffect(() => {
     if (state?.type !== undefined) {
@@ -77,6 +77,13 @@ export default function OverviewTable() {
       setOrder('asc')
     }
   }, [state])
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

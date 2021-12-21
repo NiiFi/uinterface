@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useEffect } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 import { t, Trans } from '@lingui/macro'
 import { Grid } from '@material-ui/core'
@@ -71,12 +71,19 @@ export default function PoolsOverview({ type, id, limit, style }: PoolsOverviewP
   const isSmallScreen = useBreakpoint(MEDIA_WIDTHS.upToSmall)
   const history = useHistory()
 
-  const { data, loader } = useApiPools(type, limit)
+  const { data, loader, abortController } = useApiPools(type, limit)
 
   const handleCardOnClick = (e: any, id: string) => {
     e.preventDefault()
     history.push(`/pool/${id}`)
   }
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

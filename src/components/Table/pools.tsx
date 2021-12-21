@@ -160,7 +160,7 @@ export default function PoolsTable() {
   const history = useHistory()
   const theme = useTheme()
   const { state } = useLocation<any>() // FIXME: any
-  const { data, loader } = useApiPools()
+  const { data, loader, abortController } = useApiPools()
   const [order, setOrder] = React.useState<Order>('asc')
   const [orderBy, setOrderBy] = React.useState<string>()
   const [pools, setPools] = useState<PoolTableData[]>()
@@ -174,6 +174,13 @@ export default function PoolsTable() {
     setOrderBy('apy')
     setOrder(state?.type === 'losers' ? 'asc' : 'desc')
   }, [state])
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

@@ -65,7 +65,7 @@ const CustomTableRow = (
 export default function SwapTable() {
   const theme = useTheme()
 
-  const { data, loader } = useApiTransactions()
+  const { data, loader, abortController } = useApiTransactions()
 
   useEffect(() => {
     if (!data || data.length === 0) return
@@ -78,6 +78,13 @@ export default function SwapTable() {
       return item
     })
   }, [data])
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
