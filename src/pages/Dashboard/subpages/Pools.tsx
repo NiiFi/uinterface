@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { t, Trans } from '@lingui/macro'
 import TableCell from '@material-ui/core/TableCell'
@@ -81,11 +81,18 @@ export default function Pools() {
   const history = useHistory()
   const toggleWalletModal = useWalletModalToggle()
   const { account } = useActiveWeb3React()
-  const { data: userData, loader } = useApiUserPools(account)
+  const { data: userData, loader, abortController } = useApiUserPools(account)
   const handleClick = (e: React.MouseEvent<unknown>, rowId: string) => {
     e.preventDefault()
     history.push(`/pool/${rowId}`)
   }
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

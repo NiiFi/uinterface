@@ -72,7 +72,11 @@ const SwapChart = () => {
   const [currentChartValue, setCurrentChartValue] = useState<string>('liquidity')
   const [currentChartPeriod, setCurrentChartPeriod] = useState<string>('week')
 
-  const { data: lineChartData, loader: lineChartLoader } = useApiPoolStatsGeneral(currentChartPeriod)
+  const {
+    data: lineChartData,
+    loader: lineChartLoader,
+    abortController: lineChartAbortController,
+  } = useApiPoolStatsGeneral(currentChartPeriod)
 
   const handleChartType = (e: string): void => {
     setCurrentChartValue(e)
@@ -118,6 +122,13 @@ const SwapChart = () => {
       setFeesHover(lineChartData[lineChartData.length - 1].fees)
     }
   }, [feesHover, lineChartData, currentChartPeriod])
+
+  useEffect(() => {
+    return () => {
+      lineChartAbortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

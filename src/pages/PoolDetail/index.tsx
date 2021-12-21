@@ -146,7 +146,7 @@ export default function PoolDetails({
   wrapperStyle.hover.borderBottomColor = theme.primary1
   wrapperStyle.selected.borderBottomColor = theme.primary1
 
-  const { data: poolData, loader } = useApiPoolsDetail(address)
+  const { data: poolData, loader, abortController } = useApiPoolsDetail(address)
 
   useEffect(() => {
     if (!poolData) return
@@ -162,6 +162,13 @@ export default function PoolDetails({
   const currency1 = useCurrency(token1, poolData?.token2)
 
   const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

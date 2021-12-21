@@ -78,8 +78,12 @@ export default function CreatePoolModal() {
     useAddLiquidity(currencyTokenOne, currencyTokenTwo)
 
   // TODO: move all token prices to redux after fetching tokens from BE
-  const { data: token0Data } = useApiToken(currencies[Field.CURRENCY_A]?.address || '')
-  const { data: token1Data } = useApiToken(currencies[Field.CURRENCY_B]?.address || '')
+  const { data: token0Data, abortController: token0AbortController } = useApiToken(
+    currencies[Field.CURRENCY_A]?.address || ''
+  )
+  const { data: token1Data, abortController: token1AbortController } = useApiToken(
+    currencies[Field.CURRENCY_B]?.address || ''
+  )
 
   useEffect(() => {
     setInvestmentValue(
@@ -91,6 +95,14 @@ export default function CreatePoolModal() {
       )
     )
   }, [formattedAmounts, token0Data, token1Data, calculateTotalInvestment])
+
+  useEffect(() => {
+    return () => {
+      token0AbortController.abort()
+      token1AbortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <Modal isOpen={poolInvestModalOpen} onDismiss={toggleCreatePoolModal} minHeight={false} maxHeight={90}>

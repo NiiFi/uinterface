@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { t, Trans } from '@lingui/macro'
 import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
@@ -78,7 +78,15 @@ export default function Farm() {
   const theme = useTheme()
   const toggleWalletModal = useWalletModalToggle()
   const { account } = useActiveWeb3React()
-  const { data: userData, loader } = useApiUserFarming(account, 3)
+  const { data: userData, loader, abortController } = useApiUserFarming(account, 3)
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       {account ? (
