@@ -41,15 +41,15 @@ const CustomTableRow = (
         <RowWrapper>
           <div style={{ position: 'relative' }}>
             <CurrencyAvatar
-              symbol={row.symbol0}
-              address={row.token1Address}
+              symbol={row.token0.symbol}
+              address={row.token0.address}
               iconProps={{ width: '32', height: '32' }}
               containerStyle={{ zIndex: 1 }}
               hideSymbol={true}
             />
             <CurrencyAvatar
-              symbol={row.symbol1}
-              address={row.token2Address}
+              symbol={row.token1.symbol}
+              address={row.token1.address}
               iconProps={{ width: '32', height: '32' }}
               containerStyle={{ left: '22px', position: 'absolute', marginTop: '-34px' }}
               hideSymbol={true}
@@ -60,14 +60,15 @@ const CustomTableRow = (
           </div>
           <ColumnWrapper style={{ marginLeft: '40px' }}>
             <TYPE.body>
-              {row.symbol0} / {row.symbol1}
+              {row.token0.symbol} / {row.token1.symbol}
             </TYPE.body>
             <TYPE.subHeader color={'text2'}>NiiFi</TYPE.subHeader>
           </ColumnWrapper>
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(row.amount0)} {row.symbol0} / {shortenDecimalValues(row.amount1)} {row.symbol1}
+        {shortenDecimalValues(row.token0.amount)} {row.token0.symbol} / {shortenDecimalValues(row.token1.amount)}{' '}
+        {row.token1.symbol}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         <BaseCurrencyView type="symbol" value={row.amountUSD} />
@@ -102,8 +103,8 @@ export default function Pools() {
           <Table
             headCells={[
               { id: 'token0.symbol', numeric: false, align: 'left', disablePadding: false, label: t`Assets` },
-              { id: 'balance', numeric: true, disablePadding: false, label: t`Balance` },
-              { id: 'token0Price', numeric: true, disablePadding: false, label: t`Value` },
+              { id: 'token0.amount', numeric: true, disablePadding: false, label: t`Balance` },
+              { id: 'amountUSD', numeric: true, disablePadding: false, label: t`Value` },
             ]}
             onClick={handleClick}
             rowsPerPage={8}
@@ -126,6 +127,8 @@ export default function Pools() {
             }
             data={userData.data}
             row={CustomTableRow}
+            defaultOrderBy={'amountUSD'}
+            defaultOrder={'desc'}
           />
         ))
       ) : (
