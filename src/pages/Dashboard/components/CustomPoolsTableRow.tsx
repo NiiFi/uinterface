@@ -1,4 +1,5 @@
 import React from 'react'
+import { Trans } from '@lingui/macro'
 import { DefaultTheme } from 'styled-components'
 import TableCell from '@material-ui/core/TableCell'
 import { RowWrapper, BaseCurrencyView, CircleWrapper, ColumnWrapper, TYPE } from 'theme'
@@ -64,6 +65,11 @@ export const CustomPoolsTableRow = (
         <br />
         <TYPE.subHeader color={'text2'} textAlign={'right'}>
           <BaseCurrencyView type="symbol" value={row.amountUSD} />
+          {row?.feeUSD && (
+            <>
+              <span> |</span> <Trans>fees:</Trans> <BaseCurrencyView type="symbol" value={row.feeUSD} />
+            </>
+          )}
         </TYPE.subHeader>
       </TableCell>
     </StyledTableRow>
