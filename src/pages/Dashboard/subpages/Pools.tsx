@@ -73,6 +73,13 @@ const CustomTableRow = (
       <TableCell style={rowCellStyles} align="center">
         <BaseCurrencyView type="symbol" value={row.amountUSD} />
       </TableCell>
+      {row?.feeUSD && row?.token0.fee && row?.token1.fee && (
+        <TableCell style={rowCellStyles} align="center">
+          {shortenDecimalValues(row.token0.fee)} {row.token0.symbol} / {shortenDecimalValues(row.token1.fee)}{' '}
+          {row.token1.symbol}
+          <strong> |</strong> <BaseCurrencyView type="symbol" value={row.feeUSD} />
+        </TableCell>
+      )}
     </StyledTableRow>
   )
 }
@@ -105,6 +112,9 @@ export default function Pools() {
               { id: 'token0.symbol', numeric: false, align: 'left', disablePadding: false, label: t`Assets` },
               { id: 'token0.amount', numeric: true, disablePadding: false, label: t`Balance` },
               { id: 'amountUSD', numeric: true, disablePadding: false, label: t`Value` },
+              ...(userData.data[0]?.feeUSD
+                ? [{ id: 'feeUSD', numeric: true, disablePadding: false, label: t`Fees earned` }]
+                : []),
             ]}
             onClick={handleClick}
             rowsPerPage={8}
