@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import useLazyFetch from 'hooks/useLazyFetch'
-import { WEB_API_BASE } from 'constants/general'
+import { WEB_API_BASE, ONDEMAND_API_BASE } from 'constants/general'
 import { TopTokensTableData, TransactionTableData } from 'components/Table/types'
 import { LoaderWrapped } from 'theme/components'
 
@@ -25,6 +25,7 @@ type ApiParams = {
   route: Routes
   limit?: number
   rootData?: boolean
+  service?: string
 }
 
 const typeToSort: any = {
@@ -84,12 +85,12 @@ interface IPoolDetail {
 
 export type PoolTypes = 'gainers' | 'losers' | 'new'
 
-export default function useApi({ route, limit, rootData }: ApiParams): any {
+export default function useApi({ route, limit, rootData, service }: ApiParams): any {
   // TODO: re-check limit usage with real API
   // const apiUrl = `${WEB_API_BASE}${route}` + (limit ? '?' + new URLSearchParams({ _limit: limit.toString() }) : '')
   const abortController = new AbortController()
   const signal = abortController.signal
-  const apiUrl = `${WEB_API_BASE}${route}`
+  const apiUrl = (service || WEB_API_BASE) + route
   const [fetch, { data, error, loading }] = useLazyFetch<any[]>(apiUrl, rootData)
 
   useEffect(() => {
@@ -156,7 +157,7 @@ export function useApiUserWallet(address: string | null | undefined): any {
 
 export function useApiUserPools(address: string | null | undefined, limit?: number): any {
   const route = `wallets/${address}/pools` as unknown as Routes
-  return useApi({ route, limit, rootData: true })
+  return useApi({ route, limit, rootData: true, service: ONDEMAND_API_BASE })
 }
 
 export function useApiUserFarming(address: string | null | undefined, limit?: number): any {
@@ -165,7 +166,7 @@ export function useApiUserFarming(address: string | null | undefined, limit?: nu
 }
 
 export function useApiUserHistory(address: string | null | undefined): any {
-  return useApi({ route: `wallets/${address}/transactions` as unknown as Routes })
+  return useApi({ route: `wallets/${address}/transactions` as unknown as Routes, service: ONDEMAND_API_BASE })
 }
 
 export function useApiStatsLocal(): any {
