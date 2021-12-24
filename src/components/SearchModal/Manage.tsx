@@ -6,10 +6,10 @@ import { RowBetween } from 'components/Row'
 import { ArrowLeft } from 'react-feather'
 import { Text } from 'rebass'
 import { CloseIcon } from 'theme'
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@niifi/godzilla2-sdk'
 import { ManageLists } from './ManageLists'
 import ManageTokens from './ManageTokens'
-import { TokenList } from '@uniswap/token-lists'
+import { TokenList } from 'types/general.d'
 import { CurrencyModalView } from './CurrencySearchModal'
 
 const Wrapper = styled.div`

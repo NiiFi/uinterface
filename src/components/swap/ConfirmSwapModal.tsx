@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro'
-import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
+import { Currency, Percent, TradeType } from '@niifi/godzilla2-sdk'
 import { Trade } from '@niifi/godzilla2-sdk'
 import React, { ReactNode, useCallback, useMemo } from 'react'
 import TransactionConfirmationModal, {

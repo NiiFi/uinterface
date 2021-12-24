@@ -1,5 +1,5 @@
 import JSBI from 'jsbi'
-import { Percent, CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { Percent, CurrencyAmount, Token } from '@niifi/godzilla2-sdk'
 import { Pair } from '@niifi/godzilla2-sdk'
 import noise from '../../assets/images/noise.png'
 import { darken } from 'polished'

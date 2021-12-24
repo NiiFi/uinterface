@@ -1,5 +1,5 @@
 import DEFAULT_TOKEN_LIST from '../../constants/tokenLists/niifi-default.tokenlist.json'
-import { TokenList } from '@uniswap/token-lists'
+import { TokenList } from 'types/general.d'
 import { useMemo } from 'react'
 import { useAppSelector } from 'state/hooks'
 import sortByListPriority from 'utils/listSort'

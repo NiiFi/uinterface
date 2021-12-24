@@ -89,8 +89,15 @@ type WalletProps =
   | undefined
 
 export function useWalletData(): WalletProps {
-  const { data } = useApiTokens()
+  const { data, abortController } = useApiTokens()
   const balances = useAllTokenBalances()
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return useMemo((): WalletProps => {
     if (!balances || !data || !data.length) return { balanceUSD: 0, data: [], loader: <LoaderWrapped /> }
@@ -130,10 +137,14 @@ export default function Dashboard() {
   const toggleWalletModal = useWalletModalToggle()
 
   // TODO: create API request only with active account
-  // const { data: userWallet, loader: userWalletLoader } = useApiUserWallet(account)
-  const { data: userPools, loader: userPoolsLoader } = useApiUserPools(account, 3)
+  // const { data: userWallet, loader: userWalletLoader, abortController: userWalletAbortController } = useApiUserWallet(account)
+  const {
+    data: userPools,
+    loader: userPoolsLoader,
+    abortController: userPoolsAbortController,
+  } = useApiUserPools(account, 3)
   // const { data: userFarming, loader: userFarmingLoader } = useApiUserFarming(account, 3)
-  const { data: statsData, loader: statsDataLoader } = useApiStatsLocal()
+  const { data: statsData, loader: statsDataLoader, abortController: statsDataAbortController } = useApiStatsLocal()
   const userAssets = useWalletData()
 
   useEffect(() => {
@@ -157,6 +168,14 @@ export default function Dashboard() {
       clearTimeout(scrollTo)
     }
   }, [state])
+
+  useEffect(() => {
+    return () => {
+      userPoolsAbortController.abort()
+      statsDataAbortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const TabChangeHandler: any = (e: any, newValue: any) => setActiveTab(newValue)
 

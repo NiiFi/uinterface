@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Token } from '@niifi/godzilla2-sdk'
 import JSBI from 'jsbi'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'

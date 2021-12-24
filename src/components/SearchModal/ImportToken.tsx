@@ -1,6 +1,6 @@
-import { TokenList } from '@uniswap/token-lists/dist/types'
+import { TokenList } from 'types/general.d'
 import React from 'react'
-import { Token, Currency } from '@uniswap/sdk-core'
+import { Token, Currency } from '@niifi/godzilla2-sdk'
 import styled from 'styled-components/macro'
 import { TYPE, CloseIcon } from 'theme'
 import Card from 'components/Card'

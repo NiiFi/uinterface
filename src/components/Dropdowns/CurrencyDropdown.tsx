@@ -19,9 +19,9 @@ const MenuWrapper = styled.div`
   flex-direction: row;
   padding: 0px 0.5rem;
   max-width: 450px;
-  max-height: 300px;
+  max-height: 360px;
   gap: 1rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   flex-wrap: wrap;
 `
 const MenuItem = styled.div<{ active?: boolean }>`

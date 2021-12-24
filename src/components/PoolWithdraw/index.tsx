@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useMemo, useEffect } from 'react'
-import { Token, Currency, Percent, CurrencyAmount } from '@uniswap/sdk-core'
+import { Token, Currency, Percent, CurrencyAmount } from '@niifi/godzilla2-sdk'
 import { Contract } from '@ethersproject/contracts'
 import styled from 'styled-components/macro'
 import { useWalletModalToggle } from 'state/application/hooks'

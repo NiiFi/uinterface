@@ -1,6 +1,6 @@
 import JSBI from 'jsbi'
 import React, { useState } from 'react'
-import { Percent, CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { Percent, CurrencyAmount, Token } from '@niifi/godzilla2-sdk'
 import { Pair } from '@niifi/godzilla2-sdk'
 import noise from '../../assets/images/noise.png'
 import { ChevronDown, ChevronUp } from 'react-feather'

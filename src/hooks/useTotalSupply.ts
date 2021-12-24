@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
-import { Token, CurrencyAmount, Currency } from '@uniswap/sdk-core'
+import { Token, CurrencyAmount, Currency } from '@niifi/godzilla2-sdk'
 import { useTokenContract } from './useContract'
 import { useBlockNumber } from '../state/application/hooks'
 

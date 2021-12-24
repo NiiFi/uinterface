@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@niifi/godzilla2-sdk'
 import { PoolInvestPairValues } from 'state/pool/actions'
 import NumericalInput from 'components/NumericalInput'
 import CurrencyAvatar from 'components/CurrencyAvatar'

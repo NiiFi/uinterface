@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import useLazyFetch from 'hooks/useLazyFetch'
-import { WEB_API_BASE } from 'constants/general'
+import { WEB_API_BASE, ONDEMAND_API_BASE } from 'constants/general'
 import { TopTokensTableData, TransactionTableData } from 'components/Table/types'
 import { LoaderWrapped } from 'theme/components'
 
@@ -25,6 +25,7 @@ type ApiParams = {
   route: Routes
   limit?: number
   rootData?: boolean
+  service?: string
 }
 
 const typeToSort: any = {
@@ -35,11 +36,13 @@ const typeToSort: any = {
 
 interface FetchInterface<T> {
   loader: JSX.Element | boolean
+  abortController: { abort: () => void }
   data?: T[] | undefined
 }
 
 interface FetchInterfaceDetail<T> {
   loader: JSX.Element
+  abortController: { abort: () => void }
   data?: T | undefined
 }
 
@@ -82,14 +85,17 @@ interface IPoolDetail {
 
 export type PoolTypes = 'gainers' | 'losers' | 'new'
 
-export default function useApi({ route, limit, rootData }: ApiParams): any {
+export default function useApi({ route, limit, rootData, service }: ApiParams): any {
   // TODO: re-check limit usage with real API
   // const apiUrl = `${WEB_API_BASE}${route}` + (limit ? '?' + new URLSearchParams({ _limit: limit.toString() }) : '')
-  const apiUrl = `${WEB_API_BASE}${route}`
+  const abortController = new AbortController()
+  const signal = abortController.signal
+  const apiUrl = (service || WEB_API_BASE) + route
   const [fetch, { data, error, loading }] = useLazyFetch<any[]>(apiUrl, rootData)
 
   useEffect(() => {
-    route && fetch()
+    route && fetch({ signal })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [route, fetch, limit])
 
   // TODO: add error handling
@@ -104,7 +110,7 @@ export default function useApi({ route, limit, rootData }: ApiParams): any {
     return { loader: LoaderWrapped(), data: [] }
   }
 
-  return { loader: false, data }
+  return { loader: false, data, abortController }
 }
 // TODO: add correct return types instead of 'any' bellow
 export function useApiToken(address: string): any {
@@ -137,11 +143,11 @@ export function useApiPoolsDetail(address: string): FetchInterfaceDetail<IPoolDe
 }
 
 export function useApiPoolStats(address: string, period: string): FetchInterface<IPoolGraph> {
-  return useApi({ route: `pools/stats/${address}/${period}` as Routes })
+  return useApi({ route: `pools/stats/${address}/${period}` as unknown as Routes })
 }
 
 export function useApiPoolStatsGeneral(period: string): FetchInterface<IPoolGraph> {
-  return useApi({ route: `pools/stats/${period}` as Routes })
+  return useApi({ route: `pools/stats/${period}` as unknown as Routes })
 }
 
 export function useApiUserWallet(address: string | null | undefined): any {
@@ -150,17 +156,17 @@ export function useApiUserWallet(address: string | null | undefined): any {
 }
 
 export function useApiUserPools(address: string | null | undefined, limit?: number): any {
-  const route = `wallets/${address}/pools` as Routes
-  return useApi({ route, limit, rootData: true })
+  const route = `wallets/${address}/pools` as unknown as Routes
+  return useApi({ route, limit, rootData: true, service: ONDEMAND_API_BASE })
 }
 
 export function useApiUserFarming(address: string | null | undefined, limit?: number): any {
-  const route = `wallets/${address}/farms` as Routes
+  const route = `wallets/${address}/farms` as unknown as Routes
   return useApi({ route, limit, rootData: true })
 }
 
 export function useApiUserHistory(address: string | null | undefined): any {
-  return useApi({ route: `wallets/${address}/transactions` as Routes })
+  return useApi({ route: `wallets/${address}/transactions` as unknown as Routes, service: ONDEMAND_API_BASE })
 }
 
 export function useApiStatsLocal(): any {

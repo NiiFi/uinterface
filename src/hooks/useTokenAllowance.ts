@@ -1,4 +1,4 @@
-import { Token, CurrencyAmount } from '@uniswap/sdk-core'
+import { Token, CurrencyAmount } from '@niifi/godzilla2-sdk'
 import { useMemo, useState } from 'react'
 import { useTokenContract } from './useContract'
 

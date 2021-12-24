@@ -70,12 +70,9 @@ msgid "APPROVE"
 msgstr ""
 
 #: src/components/Table/pools.tsx
+#: src/components/pools/PoolsOverview.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "APY"
-msgstr ""
-
-#: src/components/pools/PoolsOverview.tsx
-msgid "APY (1D)"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -117,8 +114,6 @@ msgid "Add {0} to Metamask <0/>"
 msgstr "Adicione {0} ao Metamask <0/>"
 
 #: src/hooks/useAddLiquidity.ts
-#: src/hooks/useAddLiquidity.ts
-#: src/pages/AddLiquidity/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 msgid "Add {0} {1} and {2} {3}"
 msgstr "Adicionar {0} {1} e {2} {3}"
@@ -357,6 +352,7 @@ msgstr "Confirme esta transação em sua carteira"
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Dashboard/index.tsx
+#: src/pages/Dashboard/index.tsx
 #: src/pages/Dashboard/subpages/Farm.tsx
 #: src/pages/Dashboard/subpages/Pools.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
@@ -542,6 +538,10 @@ msgstr ""
 msgid "Farm"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
+msgid "Fee"
+msgstr ""
+
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/Dropdowns/SwapLineChartDropdown.tsx
 #: src/components/LineChart/PoolDetail.tsx
@@ -551,6 +551,14 @@ msgstr ""
 
 #: src/pages/Dashboard/index.tsx
 msgid "Fees 24H"
+msgstr ""
+
+#: src/pages/Dashboard/subpages/Pools.tsx
+msgid "Fees earned"
+msgstr ""
+
+#: src/pages/Dashboard/subpages/Pools.tsx
+msgid "Fees total"
 msgstr ""
 
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
@@ -1038,6 +1046,8 @@ msgid "Remove Amount"
 msgstr "Remover Quantidade"
 
 #: src/components/NavigationTabs/index.tsx
+#: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
 msgid "Remove Liquidity"
 msgstr "Remover Liquidez"
 
@@ -1050,8 +1060,6 @@ msgid "Remove list"
 msgstr "Remover lista"
 
 #: src/components/PoolWithdraw/index.tsx
-#: src/components/PoolWithdraw/index.tsx
-#: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Remove {0} {1} and {2} {3}"
 msgstr "Remover {0} {1} e {2} {3}"
@@ -1380,10 +1388,6 @@ msgstr "Transação Enviada"
 msgid "Transaction deadline"
 msgstr "Prazo de transação"
 
-#: src/components/pools/PoolsOverview.tsx
-msgid "Trending"
-msgstr ""
-
 #: src/pages/Discover/index.tsx
 #: src/pages/Discover/index.tsx
 msgid "Trending tokens"
@@ -1604,9 +1608,8 @@ msgstr ""
 msgid "confirm"
 msgstr "Confirmar"
 
-#: src/pages/Dashboard/tabs/history/components/CommonRow.tsx
-#: src/pages/Dashboard/tabs/history/components/LiquidityRow.tsx
-msgid "fee"
+#: src/pages/Dashboard/components/CustomPoolsTableRow.tsx
+msgid "fees"
 msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx

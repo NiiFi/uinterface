@@ -1,5 +1,5 @@
 import { parseBytes32String } from '@ethersproject/strings'
-import { Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@niifi/godzilla2-sdk'
 import { arrayify } from 'ethers/lib/utils'
 import { useMemo, useEffect, useState } from 'react'
 import { createTokenFilterFunction } from '../components/SearchModal/filtering'

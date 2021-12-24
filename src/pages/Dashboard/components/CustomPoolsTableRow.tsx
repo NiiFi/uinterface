@@ -1,4 +1,5 @@
 import React from 'react'
+import { Trans } from '@lingui/macro'
 import { DefaultTheme } from 'styled-components'
 import TableCell from '@material-ui/core/TableCell'
 import { RowWrapper, BaseCurrencyView, CircleWrapper, ColumnWrapper, TYPE } from 'theme'
@@ -33,15 +34,15 @@ export const CustomPoolsTableRow = (
         <RowWrapper style={{ width: 'fit-content' }}>
           <div style={{ position: 'relative' }}>
             <CurrencyAvatar
-              symbol={row.symbol0}
-              address={row.token1Address}
+              symbol={row.token0.symbol}
+              address={row.token0.address}
               iconProps={{ width: '32', height: '32' }}
               containerStyle={{ zIndex: 1 }}
               hideSymbol={true}
             />
             <CurrencyAvatar
-              symbol={row.symbol1}
-              address={row.token2Address}
+              symbol={row.token1.symbol}
+              address={row.token1.address}
               iconProps={{ width: '34', height: '34' }}
               containerStyle={{ left: '18px', position: 'absolute', marginTop: '-34px' }}
               hideSymbol={true}
@@ -52,17 +53,23 @@ export const CustomPoolsTableRow = (
           </div>
           <ColumnWrapper style={{ marginLeft: '42px' }}>
             <TYPE.body fontWeight={500}>
-              {row.symbol0} / {row.symbol1}
+              {row.token0.symbol} / {row.token1.symbol}
             </TYPE.body>
             <TYPE.subHeader color={'text2'}>NiiFi</TYPE.subHeader>
           </ColumnWrapper>
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="right">
-        {shortenDecimalValues(row.amount0)} {row.symbol0} / {shortenDecimalValues(row.amount1)} {row.symbol1}
+        {shortenDecimalValues(row.token0.amount)} {row.token0.symbol} / {shortenDecimalValues(row.token1.amount)}{' '}
+        {row.token1.symbol}
         <br />
         <TYPE.subHeader color={'text2'} textAlign={'right'}>
           <BaseCurrencyView type="symbol" value={row.amountUSD} />
+          {row?.feeUSD && (
+            <>
+              <span> |</span> <Trans>fees</Trans>: <BaseCurrencyView type="symbol" value={row.feeUSD} />
+            </>
+          )}
         </TYPE.subHeader>
       </TableCell>
     </StyledTableRow>

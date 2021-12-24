@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 import ReactDOMServer from 'react-dom/server'
 import styled from 'styled-components'
@@ -135,9 +135,9 @@ export default function Discover() {
   const history = useHistory()
   const isSmallScreen = useBreakpoint(MEDIA_WIDTHS.upToSmall)
 
-  const { data: gainersData, loader: gainersLoader } = useApiTokensGainers()
-  const { data: losersData, loader: losersLoader } = useApiTokensLosers()
-  const { data: newPoolsData, loader: newPoolsLoader } = useApiPoolsNew()
+  const { data: gainersData, loader: gainersLoader, abortController: gainersAbortController } = useApiTokensGainers()
+  const { data: losersData, loader: losersLoader, abortController: losersAbortController } = useApiTokensLosers()
+  const { data: newPoolsData, loader: newPoolsLoader, abortController: newPoolsAbortController } = useApiPoolsNew()
 
   const rowCellStyles = {
     color: theme.black,
@@ -145,6 +145,15 @@ export default function Discover() {
     fontSize: '16px',
     padding: '6px 16px',
   }
+
+  useEffect(() => {
+    return () => {
+      gainersAbortController.abort()
+      losersAbortController.abort()
+      newPoolsAbortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

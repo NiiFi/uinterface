@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 import { Trans } from '@lingui/macro'
 import React from 'react'
 import { Text } from 'rebass'
-import { Currency } from '@uniswap/sdk-core'
+import { Currency } from '@niifi/godzilla2-sdk'
 
 import { COMMON_BASES } from '../../constants/routing'
 import { currencyId } from '../../utils/currencyId'

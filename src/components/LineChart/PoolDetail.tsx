@@ -80,7 +80,7 @@ const PoolDetailChart = ({ address, token0, token1 }: { address: string; token0:
   const [currentChartValue, setCurrentChartValue] = useState<string>('liquidity')
   const [currentChartPeriod, setCurrentChartPeriod] = useState<string>('week')
 
-  const { data: lineChartData, loader: lineChartLoader } = useApiPoolStats(address, currentChartPeriod)
+  const { data: lineChartData, loader: lineChartLoader, abortController } = useApiPoolStats(address, currentChartPeriod)
 
   const handleChartType = (e: string): void => {
     setCurrentChartValue(e)
@@ -123,6 +123,13 @@ const PoolDetailChart = ({ address, token0, token1 }: { address: string; token0:
       setFeesHover(lineChartData[lineChartData.length - 1].fees)
     }
   }, [feesHover, lineChartData, currentChartPeriod])
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>

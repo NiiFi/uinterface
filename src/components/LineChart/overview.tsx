@@ -14,7 +14,11 @@ const OverviewChart = () => {
   const [amount, setAmount] = useState<number | undefined>()
   const [time, setTime] = useState<string | undefined>()
 
-  const { data: lineChartData, loader: lineChartLoader } = useApiStatsLocalTvl()
+  const {
+    data: lineChartData,
+    loader: lineChartLoader,
+    abortController: lineChartAbortController,
+  } = useApiStatsLocalTvl()
 
   useEffect(() => {
     if (!lineChartData || !lineChartData.length) return
@@ -39,6 +43,13 @@ const OverviewChart = () => {
       setAmount(lineChartData[lineChartData.length - 1].tvl)
     }
   }, [amount, lineChartData])
+
+  useEffect(() => {
+    return () => {
+      lineChartAbortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
