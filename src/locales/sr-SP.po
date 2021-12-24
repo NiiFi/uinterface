@@ -548,6 +548,14 @@ msgstr ""
 msgid "Fees 24H"
 msgstr ""
 
+#: src/pages/Dashboard/subpages/Pools.tsx
+msgid "Fees earned"
+msgstr ""
+
+#: src/pages/Dashboard/subpages/Pools.tsx
+msgid "Fees total"
+msgstr ""
+
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Filter by Token, Protocol, Event ..."
 msgstr ""
@@ -1593,6 +1601,10 @@ msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "confirm"
+msgstr ""
+
+#: src/pages/Dashboard/components/CustomPoolsTableRow.tsx
+msgid "fees"
 msgstr ""
 
 #: src/components/SearchModal/ManageLists.tsx

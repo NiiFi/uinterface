@@ -67,7 +67,7 @@ export const CustomPoolsTableRow = (
           <BaseCurrencyView type="symbol" value={row.amountUSD} />
           {row?.feeUSD && (
             <>
-              <span> |</span> <Trans>fees:</Trans> <BaseCurrencyView type="symbol" value={row.feeUSD} />
+              <span> |</span> <Trans>fees</Trans>: <BaseCurrencyView type="symbol" value={row.feeUSD} />
             </>
           )}
         </TYPE.subHeader>
