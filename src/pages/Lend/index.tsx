@@ -20,8 +20,9 @@ const getComponentName = (uri: string) => {
 }
 
 import { ButtonPrimary, ButtonProps } from 'components/Button'
-
-const CreatePoolButton = ({ onClick, ...rest }: ButtonProps) => {
+// TODO: remove as useless
+// eslint-disable-next-line
+const CreateDepositButton = ({ onClick, ...rest }: ButtonProps) => {
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       onClick && onClick(e)
@@ -77,7 +78,7 @@ export default function Lend(props: RouteComponentProps<{ page: string }>) {
           <Tab key={`tab-2`} label={`Markets`} />
         </Tabs>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          {/* {SUBPAGES[activeTab] === 'deposit' && <CreatePoolButton onClick={() => alert('not implemented yet')} />} */}
+          {/* {SUBPAGES[activeTab] === 'deposit' && <CreateDepositButton onClick={() => alert('not implemented yet')} />} */}
           <CurrencySelectWrapper>
             <CurrencyDropdown />
           </CurrencySelectWrapper>
