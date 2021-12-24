@@ -5,7 +5,7 @@ import { ArrowLeft } from 'react-feather'
 import { Trans, t } from '@lingui/macro'
 import { RouteComponentProps } from 'react-router-dom'
 import CreatePoolButton from 'components/pools/CreatePoolButton'
-import { PoolAppBar } from 'pages/Pool/styleds'
+import { CustomAppBar } from 'pages/styled'
 import AppBody, { BodyWrapper } from '../AppBody'
 import { AutoColumn } from 'components/Column'
 import { ResponsiveRow } from 'components/Row'
@@ -175,7 +175,7 @@ export default function PoolDetails({
       {loader ||
         (poolData && (
           <>
-            <PoolAppBar>
+            <CustomAppBar>
               <BarTitle>
                 <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
                 {poolData.token1.symbol} / {poolData.token2.symbol} {t`Pool`}
@@ -186,7 +186,7 @@ export default function PoolDetails({
                   <CurrencyDropdown />
                 </CurrencySelectWrapper>
               </div>
-            </PoolAppBar>
+            </CustomAppBar>
             <BodyScroller>
               <BodyPanel>
                 <Wrapper>
