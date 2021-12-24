@@ -10,6 +10,7 @@ import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import Discover from './Discover'
 import Swap from './Swap'
 import Pools from './Pool'
+import Lend from './Lend'
 import Dashboard from './Dashboard'
 import DashboardSubpages from './Dashboard/subpages/index'
 import PoolDetail from './PoolDetail'
@@ -118,6 +119,7 @@ export default function App() {
               <Route exact strict path="/pools/:page?" component={Pools} />
               <Route exact strict path="/pool/:address" component={PoolDetail} />
               <Route exact strict path="/discover" component={Discover} />
+              <Route exact strict path="/lend/:page?" component={Lend} />
               <Redirect to="/discover" />
             </Switch>
           </Web3ReactManager>

@@ -13,7 +13,7 @@ import PoolsTable from '../../components/Table/pools'
 import { /*PoolsOverview,*/ getTitle } from '../../components/pools/PoolsOverview'
 import { BodyScroller, BarTitle, CurrencySelectWrapper } from '../../theme'
 import CreatePoolButton from 'components/pools/CreatePoolButton'
-import { PoolAppBar } from './styleds'
+import { CustomAppBar } from 'pages/styled'
 const tabNameToIndex: any = {
   // 0: 'overview',
   0: 'search',
@@ -73,7 +73,7 @@ export default function Pool() {
 
   return (
     <>
-      <PoolAppBar>
+      <CustomAppBar>
         {activeTab === 1 && state?.type ? (
           <BarTitle>
             <ArrowLeft style={{ cursor: 'pointer' }} onClick={history.goBack} />
@@ -94,7 +94,7 @@ export default function Pool() {
             <CurrencyDropdown />
           </CurrencySelectWrapper>
         </div>
-      </PoolAppBar>
+      </CustomAppBar>
       <BodyScroller>
         {/* <TabPanel key={'tab-panel-0'} activeIndex={activeTab} index={0}>
           <PoolsOverview type="gainers" />
