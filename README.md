@@ -62,30 +62,3 @@ docker build -t {image_name} .
 ```bash
 docker run --name nginx -d -p 80:8080 {image_name}
 ```
-
-## Deprecated
-
-### Deploy to Netlify (not supported anymore)
-
-At this point we are using netlify for managing deployment. You should have account on [Netlify](https://app.netlify.com/login/email) and make sure you are part of our company team (Contact support for this). Following are the pre-requisite that needs to be fulfilled once.
-
-For Release Process refer to [this document](https://vodworks.atlassian.net/wiki/spaces/OM/pages/1708556289/UInterface)
-
-- **1. Login to Netlify via CLI**
-
-  Run this command to login to your netlify account via cli
-
-  ```bash
-    yarn netlify login
-  ```
-
-- **2. Link Netlify site**
-
-  Run this command to link to netlify site
-
-  ```bash
-  yarn netlify link
-  ```
-
-  NOTE: Site name is **dev-niifi-interface**
-
