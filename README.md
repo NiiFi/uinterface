@@ -89,22 +89,3 @@ For Release Process refer to [this document](https://vodworks.atlassian.net/wiki
 
   NOTE: Site name is **dev-niifi-interface**
 
-#### Draft Deployment
-
-To deploy project to draft link you should run this command
-
-```bash
-yarn deploy
-```
-
-#### Live Deployment
-
-To deploy project to Live URL run these commands
-
-```bash
-git checkout main
-```
-
-```bash
-yarn deploy:prod
-```
