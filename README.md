@@ -65,7 +65,7 @@ docker run --name nginx -d -p 80:8080 {image_name}
 
 ## Deprecated
 
-### Deploy to Netlify
+### Deploy to Netlify (not supported anymore)
 
 At this point we are using netlify for managing deployment. You should have account on [Netlify](https://app.netlify.com/login/email) and make sure you are part of our company team (Contact support for this). Following are the pre-requisite that needs to be fulfilled once.
 
