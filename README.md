@@ -93,6 +93,3 @@ For Release Process refer to [this document](https://vodworks.atlassian.net/wiki
 
 To deploy project to draft link you should run this command
 
-```bash
-yarn deploy
-```
