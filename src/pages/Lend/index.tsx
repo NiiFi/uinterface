@@ -1,6 +1,6 @@
-import React, { useEffect, useState, lazy, Suspense, useCallback } from 'react'
+import React, { useState, lazy, Suspense, useCallback } from 'react'
 import { useHistory, RouteComponentProps } from 'react-router-dom'
-import { Trans } from '@lingui/macro'
+import { Trans, t } from '@lingui/macro'
 import { Plus } from 'react-feather'
 import Tab from 'components/tab/Tab'
 import Tabs from 'components/tab/Tabs'
@@ -11,12 +11,12 @@ import { BodyScroller, CurrencySelectWrapper } from 'theme'
 import TabPanel from 'components/tab/TabPanel'
 import CurrencyDropdown from 'components/Dropdowns/CurrencyDropdown'
 import { LoaderWrapped } from 'theme/components'
+import Header from './Header'
 
 const SUBPAGES = ['deposit', 'borrow', 'markets']
 
-const getComponentName = (uri: string) => {
-  const page: string = uri.split('/').reverse()[0]
-  return `${page[0].toUpperCase() + page.slice(1)}`
+const getComponentName = (page: string, address: string) => {
+  return `${page[0].toUpperCase() + page.slice(1) + (address ? 'Detail' : '')}`
 }
 
 import { ButtonPrimary, ButtonProps } from 'components/Button'
@@ -42,18 +42,22 @@ const CreateDepositButton = ({ onClick, ...rest }: ButtonProps) => {
   )
 }
 
-export default function Lend(props: RouteComponentProps<{ page: string }>) {
-  const [activeTab, setActiveTab] = useState<number>(0)
+export default function Lend(props: RouteComponentProps<{ page: string; address: string }>) {
+  const pageName = location.hash.split('/')[2]
+  const defaultTab = SUBPAGES.indexOf(pageName) === -1 ? 0 : SUBPAGES.indexOf(pageName)
+  const [activeTab, setActiveTab] = useState<number>(defaultTab)
   const history = useHistory()
 
   const {
     match: {
-      params: { page },
+      params: { page, address },
     },
   } = props
 
-  const componentName = getComponentName(page || SUBPAGES[activeTab])
+  const componentName = getComponentName(page || SUBPAGES[activeTab], address)
   const Component = lazy(() => import(`pages/Lend/${componentName}`))
+
+  // console.log(`pages/Lend/${componentName}`)
 
   const TabChangeHandler: any = (e: any, newValue: number) => {
     const page: string = newValue ? `/${SUBPAGES[newValue]}` : ''
@@ -61,22 +65,19 @@ export default function Lend(props: RouteComponentProps<{ page: string }>) {
     setActiveTab(newValue)
   }
 
-  useEffect(() => {
-    const page = location.hash.split('/').reverse()[0]
-    if (SUBPAGES.indexOf(page) === -1) return
-
-    setActiveTab(SUBPAGES.indexOf(page))
-  }, [])
-
   return (
     <>
       <CustomAppBar>
         <ToggleDrawer />
-        <Tabs value={activeTab} onChange={TabChangeHandler}>
-          <Tab key={`tab-0`} label={`Deposit`} />
-          <Tab key={`tab-1`} label={`Borrow`} />
-          <Tab key={`tab-2`} label={`Markets`} />
-        </Tabs>
+        {address ? (
+          <Header address={address} />
+        ) : (
+          <Tabs value={activeTab} onChange={TabChangeHandler}>
+            <Tab key={`tab-0`} label={t`Deposit`} />
+            <Tab key={`tab-1`} label={t`Borrow`} />
+            <Tab key={`tab-2`} label={t`Markets`} />
+          </Tabs>
+        )}
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {/* {SUBPAGES[activeTab] === 'deposit' && <CreateDepositButton onClick={() => alert('not implemented yet')} />} */}
           <CurrencySelectWrapper>
@@ -88,7 +89,7 @@ export default function Lend(props: RouteComponentProps<{ page: string }>) {
         <TabPanel key={`tab-panel-${activeTab}`} activeIndex={activeTab} index={activeTab}>
           <AutoColumn gap="lg">
             <Suspense fallback={<LoaderWrapped />}>
-              <Component />
+              <Component address={address} />
             </Suspense>
           </AutoColumn>
         </TabPanel>

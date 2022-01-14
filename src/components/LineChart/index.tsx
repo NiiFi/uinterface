@@ -12,7 +12,7 @@ dayjs.extend(utc)
 
 const DEFAULT_HEIGHT = 100
 
-const Wrapper = styled(Card)`
+export const Wrapper = styled(Card)`
   width: 100%;
   height: ${DEFAULT_HEIGHT}px;
   padding: 0;

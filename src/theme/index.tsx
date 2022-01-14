@@ -188,14 +188,17 @@ export const TYPE = {
   blue(props: TextProps) {
     return <TextWrapper fontWeight={500} color={'blue1'} {...props} />
   },
-  yellow(props: TextProps) {
-    return <TextWrapper fontWeight={500} color={'yellow3'} {...props} />
+  green(props: TextProps) {
+    return <TextWrapper color={'green2'} {...props} />
   },
   darkGray(props: TextProps) {
     return <TextWrapper fontWeight={500} color={'text3'} {...props} />
   },
-  gray(props: TextProps) {
-    return <TextWrapper fontWeight={500} color={'bg3'} {...props} />
+  orange(props: TextProps) {
+    return <TextWrapper color={'orange'} {...props} />
+  },
+  common(props: TextProps) {
+    return <TextWrapper fontWeight={400} fontSize={14} color={'text1'} {...props} />
   },
   bold(props: TextProps) {
     return <TextWrapper fontWeight={'bold'} color={'text6'} {...props} />
@@ -267,7 +270,7 @@ export const BarWrapper = styled.div`
 export const BarTitle = styled.div`
   display: flex;
   gap: 2rem;
-  align-item: center;
+  align-items: center;
   font-size: 1.25rem;
   font-weight: 500;
   justify-content: flex-start;
@@ -327,3 +330,12 @@ export function ComingSoonOverlay() {
     </ComingSoonWrapper>
   )
 }
+
+export const FlexRowWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0px;
+  color: ${({ theme }) => theme.text5};
+`

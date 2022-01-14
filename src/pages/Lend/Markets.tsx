@@ -3,6 +3,8 @@ import { t, Trans } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
+import { useHistory } from 'react-router-dom'
+import useTheme from 'hooks/useTheme'
 import Percent from 'components/Percent'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { useApiTokens, useApiStatsLocal } from 'hooks/useApi'
@@ -10,21 +12,21 @@ import { DefaultCard } from 'components/Card'
 import { FlexColumn } from 'components/Column'
 import Table from 'components/Table'
 import AppBody from 'pages/AppBody'
+import { History, LocationState } from 'history'
 import { TYPE, RowWrapper, BaseCurrencyView } from 'theme'
 import { shortenDecimalValues } from 'utils'
 
-const CustomTableRow = (
-  row: any,
-  index: number,
-  theme: DefaultTheme,
-  handleClick: (event: React.MouseEvent<unknown>, name: string) => void
-) => {
+const CustomTableRow = (row: any, index: number, history: History<LocationState>, theme: DefaultTheme) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, fontSize: '16px' }
+
+  const handleCellOnClick = (address: string) => {
+    history.push(`/lend/markets/${address}`)
+  }
 
   return (
     <TableRow
       hover
-      onClick={(event) => (row?.url ? window.open(row.url, '_blank') : handleClick(event, row.id))}
+      onClick={() => handleCellOnClick(row.address)}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
@@ -66,6 +68,8 @@ const CustomTableRow = (
 }
 
 export default function Markets() {
+  const history = useHistory()
+  const theme = useTheme()
   const { data: marketData, loader: marketLoader, abortController: marketAbortController } = useApiTokens()
   const { data: statsData, loader: statsLoader, abortController: statsAbortController } = useApiStatsLocal()
 
@@ -108,7 +112,7 @@ export default function Markets() {
                 { id: 'volumeUSD1', numeric: true, disablePadding: false, label: t`Variable APY` },
                 { id: 'volumeUSD', numeric: true, disablePadding: false, label: t`Stable APY` },
               ]}
-              row={CustomTableRow}
+              row={(row: any, index: number) => CustomTableRow(row, index, history, theme)}
               defaultOrder={'asc'}
               defaultOrderBy={'symbol'}
             />
