@@ -119,7 +119,7 @@ export default function App() {
               <Route exact strict path="/pools/:page?" component={Pools} />
               <Route exact strict path="/pool/:address" component={PoolDetail} />
               <Route exact strict path="/discover" component={Discover} />
-              <Route exact strict path="/lend/:page?" component={Lend} />
+              <Route exact strict path="/lend/:page?/:address?" component={Lend} />
               <Redirect to="/discover" />
             </Switch>
           </Web3ReactManager>

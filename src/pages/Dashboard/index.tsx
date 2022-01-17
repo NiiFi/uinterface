@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Trans } from '@lingui/macro'
+import { Trans, t } from '@lingui/macro'
 import styled from 'styled-components'
 import Tab from 'components/tab/Tab'
 import Tabs from 'components/tab/Tabs'
@@ -184,9 +184,9 @@ export default function Dashboard() {
       <StyledAppBar>
         <ToggleDrawer />
         <Tabs value={activeTab} onChange={TabChangeHandler}>
-          <Tab key={`tab-0`} label={`Overview`} />
-          <Tab key={`tab-1`} label={`My Positions`} />
-          <Tab key={`tab-2`} label={`History`} />
+          <Tab key={`tab-0`} label={t`Overview`} />
+          <Tab key={`tab-1`} label={t`My Positions`} />
+          <Tab key={`tab-2`} label={t`History`} />
         </Tabs>
         <CurrencySelectWrapper>
           <CurrencyDropdown />

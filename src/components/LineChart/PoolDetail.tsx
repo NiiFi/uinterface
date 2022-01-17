@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Trans } from '@lingui/macro'
 import LineChart from './index'
-import { TYPE, BaseCurrencyView } from '../../theme'
+import { TYPE, BaseCurrencyView, FlexRowWrapper } from '../../theme'
 import { ButtonOutlined } from '../Button'
 import SwapLineChartDropdown from '../Dropdowns/SwapLineChartDropdown'
 import { useApiPoolStats, IPoolGraph } from 'hooks/useApi'
@@ -43,16 +43,8 @@ const CustomButton = ({
     </StyleButtonOutlined>
   )
 }
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 0px;
-  color: ${({ theme }) => theme.text5};
-`
 
-const ControlWrapper = styled(Wrapper)`
+const ControlWrapper = styled(FlexRowWrapper)`
   box-sizing: border-box;
   margin: 0;
   display: flex;
@@ -137,30 +129,30 @@ const PoolDetailChart = ({ address, token0, token1 }: { address: string; token0:
         {`${token0}-${token1} `}
         <Trans>Pair History</Trans>
       </TYPE.mediumHeaderEllipsis>
-      <Wrapper>
+      <FlexRowWrapper>
         <TYPE.black fontWeight={400}>
           <Trans>TVL</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
           <BaseCurrencyView type="id" numeralFormat={'0,0'} value={liquidityHover || 0} />
         </TYPE.black>
-      </Wrapper>
-      <Wrapper>
+      </FlexRowWrapper>
+      <FlexRowWrapper>
         <TYPE.black fontWeight={400}>
           <Trans>Volume</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
           <BaseCurrencyView type="id" numeralFormat={'0,0'} value={volumeHover || 0} />
         </TYPE.black>
-      </Wrapper>
-      <Wrapper>
+      </FlexRowWrapper>
+      <FlexRowWrapper>
         <TYPE.black fontWeight={400}>
           <Trans>Fees</Trans>
         </TYPE.black>
         <TYPE.black style={{ paddingRight: '20px' }}>
           <BaseCurrencyView type="id" numeralFormat={'0,0'} value={feesHover || 0} />
         </TYPE.black>
-      </Wrapper>
+      </FlexRowWrapper>
       <ControlWrapper>
         <SwapLineChartDropdown onItemSelect={handleChartType} selectedItem={currentChartValue} />
         <ButtonControlWrapper>

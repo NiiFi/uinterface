@@ -82,7 +82,7 @@ export function useTokenBalancesWithLoadingIndicator(
   const { chainId } = useActiveWeb3React()
 
   const balances = useAppSelector((state: any) => state.wallet.balances)
-  // console.log('BALANCES', balances)
+
   return [
     useMemo(
       () =>
