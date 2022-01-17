@@ -84,6 +84,13 @@ interface IPoolDetail {
   token2: ITokenDetail
 }
 
+interface IMarketDetail extends MarketTableData {
+  utilizationRate: string
+  depositAPR: string
+  stableBorrowAPR: string
+  variableBorrowAPR: string
+}
+
 export type PoolTypes = 'gainers' | 'losers' | 'new'
 
 export default function useApi({ route, limit, rootData, service }: ApiParams): any {
@@ -184,4 +191,8 @@ export function useApiTransactions(): FetchInterface<TransactionTableData> {
 
 export function useApiMarkets(): FetchInterface<MarketTableData> {
   return useApi({ route: 'markets' })
+}
+
+export function useApiMarket(address: string | null | undefined): FetchInterfaceDetail<IMarketDetail> {
+  return useApi({ route: `markets/${address}` as unknown as Routes })
 }
