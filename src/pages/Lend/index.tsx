@@ -57,8 +57,6 @@ export default function Lend(props: RouteComponentProps<{ page: string; address:
   const componentName = getComponentName(page || SUBPAGES[activeTab], address)
   const Component = lazy(() => import(`pages/Lend/${componentName}`))
 
-  // console.log(`pages/Lend/${componentName}`)
-
   const TabChangeHandler: any = (e: any, newValue: number) => {
     const page: string = newValue ? `/${SUBPAGES[newValue]}` : ''
     history.push(`/lend${page}`)

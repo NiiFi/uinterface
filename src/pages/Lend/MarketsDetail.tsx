@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ThemeContext } from 'styled-components'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
 import { Trans } from '@lingui/macro'
@@ -9,41 +9,14 @@ import LendHistory from 'components/LineChart/LendHistory'
 import DepositApr from 'components/LineChart/DepositApr'
 import UtilisationRate from 'components/LineChart/UtilisationRate'
 import { ResponsiveRow, RowFixed } from 'components/Row'
-import { useApiToken } from 'hooks/useApi'
+import { useApiMarket } from 'hooks/useApi'
 import { BaseCurrencyView, FlexRowWrapper, TYPE } from 'theme'
 import { shortenDecimalValues } from 'utils'
 import { FixedNumber } from '@ethersproject/bignumber'
 
-const defaultData = {
-  symbol: 'DAI',
-  address: '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD',
-  priceUSD: '1.001603425808509555',
-  marketSize: '100095130904866960226.138433105519090996',
-  totalBorrowed: '41189645552983082000.427387662875399452',
-  availableLiquidity: '99683234449337129405.711045442643691544',
-  utilizationRate: '0.4115049871120184',
-  depositAPY: '0.0000763261745362',
-  depositAPR: '0.00007620149907',
-  variableBorrowAPY: '0.020577264814059',
-  variableBorrowAPR: '0.02057524935132',
-  stableBorrowAPY: '3.9877459291593809',
-  stableBorrowAPR: '3.91028762467566',
-  ltv: '75.0',
-  liquidationThreshold: '80.0',
-  liquidationPenalty: '5.0',
-  usedAsCollateral: true,
-  stableBorrowing: true,
-  timestamp: 1641979416,
-  aTokenAddress: '0xdCf0aF9e59C002FA3AA091a46196b37530FD48a8',
-  variableDebtTokenAddress: '0xEAbBDBe7aaD7d5A278da40967E62C8c8Fe5fAec8',
-  stableDebtTokenAddress: '0x3B91257Fe5CA63b4114ac41A0d467D25E2F747F3',
-}
-
 export default function MarketsDetail({ address }: { address: string }) {
   const theme = useContext(ThemeContext)
-  const [data, setData] = useState(defaultData)
-  const borrowedPercents = useRef(0)
-  const { data: tmpData, loader, abortController } = useApiToken(address)
+  const { data, loader, abortController } = useApiMarket(address)
 
   useEffect(() => {
     return () => {
@@ -52,17 +25,10 @@ export default function MarketsDetail({ address }: { address: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useEffect(() => {
-    if (!tmpData) return
-    setData({ ...defaultData, ...tmpData })
-  }, [tmpData, setData])
-
-  useEffect(() => {
-    if (!data || !data.totalBorrowed) return
-    const borrowed = parseFloat(data.totalBorrowed)
-    const available = parseFloat(data.availableLiquidity)
-    borrowedPercents.current = (borrowed * 100) / (borrowed + available)
-  }, [data])
+  data &&
+    console.log(
+      (parseFloat(data.totalBorrowed) * 100) / (parseFloat(data.totalBorrowed) + parseFloat(data.availableLiquidity))
+    )
 
   return (
     <>
@@ -91,7 +57,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                       <TYPE.body>
                         <div style={{ width: 132, height: 132 }}>
                           <CircularProgressbarWithChildren
-                            value={borrowedPercents.current}
+                            value={parseFloat(data.utilizationRate)}
                             styles={buildStyles({
                               strokeLinecap: 'butt',
                               pathColor: theme.orange1,
@@ -125,7 +91,6 @@ export default function MarketsDetail({ address }: { address: string }) {
                                 .toString() as unknown as number
                             }
                           />
-                          {/* TODO: fix BaseCurrencyView to work with bignumber ^ */}
                         </TYPE.darkGray>
                         <TYPE.green marginTop="10px">
                           <Trans>Available Liquidity</Trans>
@@ -134,8 +99,14 @@ export default function MarketsDetail({ address }: { address: string }) {
                           {shortenDecimalValues(data.availableLiquidity)}
                         </TYPE.black>
                         <TYPE.darkGray fontSize={12} margin="10px 0">
-                          <BaseCurrencyView type="symbol" value={data.availableLiquidity as unknown as number} />
-                          {/* TODO: convert to USD ^ */}
+                          <BaseCurrencyView
+                            type="symbol"
+                            value={
+                              FixedNumber.from(data.availableLiquidity)
+                                .mulUnsafe(FixedNumber.from(data.priceUSD))
+                                .toString() as unknown as number
+                            }
+                          />
                         </TYPE.darkGray>
                       </TYPE.body>
                     </RowFixed>
@@ -145,8 +116,14 @@ export default function MarketsDetail({ address }: { address: string }) {
                       <Trans>Reserve Size</Trans>
                     </TYPE.black>
                     <TYPE.black fontSize={16}>
-                      <BaseCurrencyView type="symbol" value={data.marketSize as unknown as number} />
-                      {/* TODO: convert to USD ^ */}
+                      <BaseCurrencyView
+                        type="symbol"
+                        value={
+                          FixedNumber.from(data.marketSize)
+                            .mulUnsafe(FixedNumber.from(data.priceUSD))
+                            .toString() as unknown as number
+                        }
+                      />
                     </TYPE.black>
                     <div style={{ width: '100%', borderTop: `1px solid ${theme.bg3}`, margin: '15px 0' }} />
                     <TYPE.black fontSize={16} fontWeight={400}>

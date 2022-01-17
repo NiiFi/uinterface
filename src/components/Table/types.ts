@@ -72,6 +72,7 @@ export type MarketTableData = {
   address: string
   symbol: string
   priceUSD: string
+  priceETH: string
   marketSize: string
   totalBorrowed: string
   availableLiquidity: string
