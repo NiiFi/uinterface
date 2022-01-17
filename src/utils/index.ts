@@ -35,7 +35,9 @@ export function shortenDecimalValues(value: string, formatType?: string): string
 
   let format = formatType
   if (!format) {
-    if (valueNumber >= 1000) {
+    if (valueNumber >= 1.0e9) {
+      return (valueNumber / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B'
+    } else if (valueNumber >= 1000) {
       format = '0,0.00'
     } else if (valueNumber >= 1) {
       format = '0,0.0000'
