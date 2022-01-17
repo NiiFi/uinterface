@@ -68,4 +68,27 @@ export type AssetsTableData = {
   total: number
 }
 
-export type TableDataTypes = TransactionTableData | PoolTableData | TopTokensTableData | AssetsTableData
+export type MarketTableData = {
+  address: string
+  symbol: string
+  priceUSD: string
+  marketSize: string
+  totalBorrowed: string
+  availableLiquidity: string
+  depositAPY: string
+  variableBorrowAPY: string
+  stableBorrowAPY: string
+  usedAsCollateral: boolean
+  stableBorrowing: boolean
+  timestamp: number
+  aTokenAddress: string
+  variableDebtTokenAddress: string
+  stableDebtTokenAddress: string
+}
+
+export type TableDataTypes =
+  | TransactionTableData
+  | PoolTableData
+  | TopTokensTableData
+  | AssetsTableData
+  | MarketTableData
