@@ -18,9 +18,15 @@ const NETWORK_URLS: {
 } = {
   [SupportedChainId.NAHMII_MAINNET]: process.env.REACT_APP_NAHMII_MAINNET_RPC || 'https://l2.nahmii.io/',
   [SupportedChainId.NAHMII_TESTNET]: process.env.REACT_APP_NAHMII_TESTNET_RPC || 'https://l2.testnet.nahmii.io/',
+  [SupportedChainId.NAHMII_LENDING]:
+    process.env.REACT_APP_NAHMII_LENDING_RPC || 'https://kovan.infura.io/v3/aed817feec724469b63cc270f0352b68',
 }
 
-const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.NAHMII_MAINNET, SupportedChainId.NAHMII_TESTNET]
+const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
+  SupportedChainId.NAHMII_MAINNET,
+  SupportedChainId.NAHMII_TESTNET,
+  SupportedChainId.NAHMII_LENDING,
+]
 
 export const network = new NetworkConnector({
   urls: NETWORK_URLS,
