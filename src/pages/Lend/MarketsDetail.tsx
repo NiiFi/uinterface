@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
-import { Trans, t } from '@lingui/macro'
+import { Trans } from '@lingui/macro'
 import { ButtonGray, ButtonEmpty } from 'components/Button'
 import Card, { DefaultCard } from 'components/Card'
 import CurrencyAvatar from 'components/CurrencyAvatar'
@@ -10,6 +10,7 @@ import DepositApr from 'components/LineChart/DepositApr'
 import UtilisationRate from 'components/LineChart/UtilisationRate'
 import { ResponsiveRow, RowFixed } from 'components/Row'
 import { WalletConnect } from 'components/Wallet'
+import Toggle from 'components/Toggle'
 import { useApiMarket } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
 import { BaseCurrencyView, FlexRowWrapper, TYPE, translatedYesNo, HorizontalSeparator } from 'theme'
@@ -251,7 +252,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                   </DefaultCard>
                 </ResponsiveRow>
                 <DefaultCard style={{ marginTop: '20px' }}>
-                  <ResponsiveRow gap="2rem">
+                  <ResponsiveRow>
                     <TYPE.common>
                       <Trans>Maximum LTV</Trans>
                       <TYPE.darkGray>{shortenDecimalValues(data.ltv)} %</TYPE.darkGray>
@@ -310,7 +311,22 @@ export default function MarketsDetail({ address }: { address: string }) {
                         <TYPE.common>
                           <Trans>Use as collateral</Trans>
                         </TYPE.common>
-                        <TYPE.common>{useAsCollateralltv.toString()}</TYPE.common>
+                        <TYPE.common>
+                          {' '}
+                          <Toggle
+                            id="toggle-expert-mode-button"
+                            isActive={useAsCollateralltv}
+                            toggle={
+                              useAsCollateralltv
+                                ? () => {
+                                    console.log(false)
+                                  }
+                                : () => {
+                                    console.log(true)
+                                  }
+                            }
+                          />
+                        </TYPE.common>
                       </FlexRowWrapper>
                     ) : (
                       ''
@@ -338,7 +354,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                       </TYPE.common>
                       <TYPE.common>{ltv} %</TYPE.common>
                     </FlexRowWrapper>
-                    {data.borrowingEnabled && !!parseInt(deposited) && (
+                    {data.borrowingEnabled && (
                       <FlexRowWrapper>
                         <TYPE.common>
                           <Trans>Available to you</Trans>
