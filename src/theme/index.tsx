@@ -8,7 +8,7 @@ import styled, {
 } from 'styled-components'
 import { useIsDarkMode } from 'state/user/hooks'
 import { Colors } from './styled'
-import { Trans } from '@lingui/macro'
+import { Trans, t } from '@lingui/macro'
 import { BodyWrapper } from 'pages/AppBody'
 import { ClockIcon } from 'components/Icons'
 
@@ -339,3 +339,13 @@ export const FlexRowWrapper = styled.div`
   padding: 0.5rem 0px;
   color: ${({ theme }) => theme.text5};
 `
+
+export const HorizontalSeparator = styled.div<{ margin?: string }>`
+  width: 100%;
+  border-top: 1px solid ${({ theme }) => theme.bg3};
+  margin: ${({ margin }) => margin || '15'}px 0;
+`
+
+export function translatedYesNo(state: boolean) {
+  return state ? <TYPE.green>{t`Yes`}</TYPE.green> : <TYPE.orange>{t`No`}</TYPE.orange>
+}
