@@ -89,6 +89,9 @@ interface IMarketDetail extends MarketTableData {
   depositAPR: string
   stableBorrowAPR: string
   variableBorrowAPR: string
+  ltv: string
+  liquidationThreshold: string
+  liquidationPenalty: string
 }
 
 export type PoolTypes = 'gainers' | 'losers' | 'new'

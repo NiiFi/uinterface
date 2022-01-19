@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
-import { Trans } from '@lingui/macro'
+import { Trans, t } from '@lingui/macro'
 import { ButtonGray, ButtonEmpty } from 'components/Button'
 import Card, { DefaultCard } from 'components/Card'
 import CurrencyAvatar from 'components/CurrencyAvatar'
@@ -12,70 +12,24 @@ import { ResponsiveRow, RowFixed } from 'components/Row'
 import { WalletConnect } from 'components/Wallet'
 import { useApiMarket } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
-import { BaseCurrencyView, FlexRowWrapper, TYPE } from 'theme'
+import { BaseCurrencyView, FlexRowWrapper, TYPE, translatedYesNo, HorizontalSeparator } from 'theme'
 import { shortenDecimalValues, getContract } from 'utils'
 import { FixedNumber, formatFixed } from '@ethersproject/bignumber'
 import ERC20_ABI from 'abis/erc20.json'
 import DATA_PROVIDER_ABI from 'abis/lending-protocol-data-provider.json'
 import LENDING_POOL_ABI from 'abis/lending-pool.json'
-import LENDING_PRICE_PROVIDER_ABI from 'abis/lending-price-provider.json'
-import {
-  PROTOCOL_DATA_PROVIDER_ADDRESS,
-  LENDING_POOL_CONTRACT_ADDRESS,
-  LENDING_PRICE_PROVIDER_ADDRESS,
-} from 'constants/general'
-
-export interface FormatReserveResponse {
-  reserveFactor: string
-  baseLTVasCollateral: string
-  liquidityIndex: string
-  reserveLiquidationThreshold: string
-  reserveLiquidationBonus: string
-  variableBorrowIndex: string
-  availableLiquidity: string
-  supplyAPY: string
-  supplyAPR: string
-  variableBorrowAPY: string
-  variableBorrowAPR: string
-  stableBorrowAPY: string
-  stableBorrowAPR: string
-  totalPrincipalStableDebt: string
-  totalScaledVariableDebt: string
-  utilizationRate: string
-  totalStableDebt: string
-  totalVariableDebt: string
-  totalDebt: string
-  totalLiquidity: string
-}
-
-export interface ComputedReserveData extends FormatReserveResponse {
-  id: string
-  underlyingAsset: string
-  name: string
-  symbol: string
-  decimals: number
-  usageAsCollateralEnabled: boolean
-  borrowingEnabled: boolean
-  stableBorrowRateEnabled: boolean
-  isActive: boolean
-  isFrozen: boolean
-  aTokenAddress: string
-  stableDebtTokenAddress: string
-  variableDebtTokenAddress: string
-  priceInMarketReferenceCurrency: string
-  avg30DaysLiquidityRate?: string
-  avg30DaysVariableBorrowRate?: string
-}
+import { PROTOCOL_DATA_PROVIDER_ADDRESS, LENDING_POOL_CONTRACT_ADDRESS } from 'constants/general'
 
 export default function MarketsDetail({ address }: { address: string }) {
   const theme = useContext(ThemeContext)
   const [walletBalance, setWalletBalance] = useState('0')
   const [deposited, setDeposited] = useState('0')
   const [borrowed, setBorrowed] = useState('0')
+  const [variableDebt, setVariableDebt] = useState('')
+  const [stableDebt, setStableDebt] = useState('')
   const [healthFactor, setHealthFactor] = useState('0')
   const [ltv, setLtv] = useState('0')
   const [availableToBorrow, setAvailableToBorrow] = useState('0')
-  const [reserveConfig, setReserveConfig] = useState<ComputedReserveData>()
   const [useAsCollateralltv, setUseAsCollateral] = useState(false)
   const { data, loader, abortController } = useApiMarket(address)
 
@@ -89,7 +43,7 @@ export default function MarketsDetail({ address }: { address: string }) {
   const { account, library, chainId } = useActiveWeb3React()
 
   useEffect(() => {
-    if (!account || !library || !chainId) return
+    if (!data || !account || !library || !chainId) return
     const tokenContract = getContract(address, ERC20_ABI, library, account)
     const protocolDataProviderContract = getContract(
       PROTOCOL_DATA_PROVIDER_ADDRESS,
@@ -98,44 +52,36 @@ export default function MarketsDetail({ address }: { address: string }) {
       account
     )
     const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
-    const lendingPriceProviderContract = getContract(
-      LENDING_PRICE_PROVIDER_ADDRESS,
-      LENDING_PRICE_PROVIDER_ABI,
-      library,
-      account
-    )
 
     Promise.all([
       tokenContract.balanceOf(account),
       tokenContract.decimals(),
       protocolDataProviderContract.getUserReserveData(address, account),
-      protocolDataProviderContract.getReserveConfigurationData(address),
       lendingPoolContract.getUserAccountData(account),
-      lendingPriceProviderContract.getAssetPrice(address),
     ])
-      .then((data) => {
-        const [token, decimals, reserve, reserveConfig, pool, assetPrice] = data
+      .then((res) => {
+        const [token, decimals, reserve, pool] = res
         const currentVariableDebt = formatFixed(reserve.currentVariableDebt, decimals)
         const currentStableDebt = formatFixed(reserve.currentStableDebt, decimals)
         const availableBorrowsETH = formatFixed(pool.availableBorrowsETH, decimals)
-        const assetPriceFormated = formatFixed(assetPrice, decimals)
 
+        setVariableDebt(currentVariableDebt)
+        setStableDebt(currentStableDebt)
         setWalletBalance(formatFixed(token, decimals))
         setDeposited(formatFixed(reserve.currentATokenBalance, decimals))
         setBorrowed(FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt)).toString())
         setHealthFactor(formatFixed(pool.healthFactor, decimals))
         setLtv(formatFixed(pool.ltv, 2))
         setUseAsCollateral(reserve.usageAsCollateralEnabled)
-        setReserveConfig(reserveConfig)
         setAvailableToBorrow(
           FixedNumber.from(availableBorrowsETH)
-            .divUnsafe(FixedNumber.from(assetPriceFormated))
+            .divUnsafe(FixedNumber.from(data?.priceETH))
             .mulUnsafe(FixedNumber.from('0.99'))
             .toString()
         )
       })
       .catch((e) => console.log(e))
-  }, [account, library, chainId, address])
+  }, [account, library, chainId, address, data])
 
   return (
     <>
@@ -232,11 +178,11 @@ export default function MarketsDetail({ address }: { address: string }) {
                         }
                       />
                     </TYPE.black>
-                    <div style={{ width: '100%', borderTop: `1px solid ${theme.bg3}`, margin: '15px 0' }} />
+                    <HorizontalSeparator />
                     <TYPE.black fontSize={16} fontWeight={400}>
                       <Trans>Utilisation Rate</Trans>
                     </TYPE.black>
-                    <TYPE.black fontSize={16}>{shortenDecimalValues(data.utilizationRate)}%</TYPE.black>
+                    <TYPE.black fontSize={16}>{shortenDecimalValues(data.utilizationRate)} %</TYPE.black>
                   </DefaultCard>
                 </ResponsiveRow>
                 <ResponsiveRow gap="2rem" style={{ marginTop: '20px' }}>
@@ -248,13 +194,13 @@ export default function MarketsDetail({ address }: { address: string }) {
                       <TYPE.common>
                         <Trans>Deposit APY</Trans>
                       </TYPE.common>
-                      <TYPE.common>{shortenDecimalValues(data.depositAPY)}%</TYPE.common>
+                      <TYPE.common>{shortenDecimalValues(data.depositAPY)} %</TYPE.common>
                     </FlexRowWrapper>
                     <FlexRowWrapper>
                       <TYPE.common>
                         <Trans>Deposit APR</Trans>
                       </TYPE.common>
-                      <TYPE.common>{shortenDecimalValues(data.depositAPR)}%</TYPE.common>
+                      <TYPE.common>{shortenDecimalValues(data.depositAPR)} %</TYPE.common>
                     </FlexRowWrapper>
                   </DefaultCard>
                   <DefaultCard>
@@ -265,13 +211,13 @@ export default function MarketsDetail({ address }: { address: string }) {
                       <TYPE.common>
                         <Trans>Borrow APY</Trans>
                       </TYPE.common>
-                      <TYPE.common>{shortenDecimalValues(data.stableBorrowAPY)}%</TYPE.common>
+                      <TYPE.common>{shortenDecimalValues(data.stableBorrowAPY)} %</TYPE.common>
                     </FlexRowWrapper>
                     <FlexRowWrapper>
                       <TYPE.common>
                         <Trans>Borrow APR</Trans>
                       </TYPE.common>
-                      <TYPE.common>{shortenDecimalValues(data.stableBorrowAPR)}%</TYPE.common>
+                      <TYPE.common>{shortenDecimalValues(data.stableBorrowAPR)} %</TYPE.common>
                     </FlexRowWrapper>
                     <FlexRowWrapper>
                       <TYPE.common>
@@ -288,13 +234,13 @@ export default function MarketsDetail({ address }: { address: string }) {
                       <TYPE.common>
                         <Trans>Borrow APY</Trans>
                       </TYPE.common>
-                      <TYPE.common>{shortenDecimalValues(data.variableBorrowAPY)}%</TYPE.common>
+                      <TYPE.common>{shortenDecimalValues(data.variableBorrowAPY)} %</TYPE.common>
                     </FlexRowWrapper>
                     <FlexRowWrapper>
                       <TYPE.common>
                         <Trans>Borrow APR</Trans>
                       </TYPE.common>
-                      <TYPE.common>{shortenDecimalValues(data.variableBorrowAPR)}%</TYPE.common>
+                      <TYPE.common>{shortenDecimalValues(data.variableBorrowAPR)} %</TYPE.common>
                     </FlexRowWrapper>
                     <FlexRowWrapper>
                       <TYPE.common>
@@ -304,6 +250,30 @@ export default function MarketsDetail({ address }: { address: string }) {
                     </FlexRowWrapper>
                   </DefaultCard>
                 </ResponsiveRow>
+                <DefaultCard style={{ marginTop: '20px' }}>
+                  <ResponsiveRow gap="2rem">
+                    <TYPE.common>
+                      <Trans>Maximum LTV</Trans>
+                      <TYPE.darkGray>{shortenDecimalValues(data.ltv)} %</TYPE.darkGray>
+                    </TYPE.common>
+                    <TYPE.common>
+                      <Trans>Liquidation threshold</Trans>
+                      <TYPE.darkGray>{shortenDecimalValues(data.liquidationThreshold)} %</TYPE.darkGray>
+                    </TYPE.common>
+                    <TYPE.common>
+                      <Trans>Liquidation penalty</Trans>
+                      <TYPE.darkGray>{shortenDecimalValues(data.liquidationPenalty)} %</TYPE.darkGray>
+                    </TYPE.common>
+                    <TYPE.common>
+                      <Trans>Used as collateral</Trans>
+                      <TYPE.darkGray>{translatedYesNo(data.usedAsCollateral)}</TYPE.darkGray>
+                    </TYPE.common>
+                    <TYPE.common>
+                      <Trans>Stable borrowing</Trans>
+                      <TYPE.darkGray>{translatedYesNo(data.stableBorrowing)}</TYPE.darkGray>
+                    </TYPE.common>
+                  </ResponsiveRow>
+                </DefaultCard>
               </DefaultCard>
               <DefaultCard width="32%">
                 <TYPE.body style={{ marginBottom: '16px' }}>
@@ -313,7 +283,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                   <>
                     <FlexRowWrapper>
                       <ButtonGray style={{ fontSize: '14px' }} padding={'10px 14px'}>
-                        <Trans>Deposits</Trans>
+                        <Trans>Deposit</Trans>
                       </ButtonGray>
                       <ButtonEmpty style={{ fontSize: '14px' }} padding={'10px 14px'}>
                         <Trans>Withdraw</Trans>
@@ -335,14 +305,18 @@ export default function MarketsDetail({ address }: { address: string }) {
                         {shortenDecimalValues(deposited)} {data.symbol}
                       </TYPE.common>
                     </FlexRowWrapper>
-                    <FlexRowWrapper>
-                      <TYPE.common>
-                        <Trans>Use as collateral</Trans>
-                      </TYPE.common>
-                      <TYPE.common>{useAsCollateralltv.toString()}</TYPE.common>
-                    </FlexRowWrapper>
+                    {parseInt(deposited) ? (
+                      <FlexRowWrapper>
+                        <TYPE.common>
+                          <Trans>Use as collateral</Trans>
+                        </TYPE.common>
+                        <TYPE.common>{useAsCollateralltv.toString()}</TYPE.common>
+                      </FlexRowWrapper>
+                    ) : (
+                      ''
+                    )}
                     <ButtonGray style={{ fontSize: '14px' }} padding={'10px 14px'} margin={'16px 0'} width={'50%'}>
-                      <Trans>Borrows</Trans>
+                      <Trans>Borrow</Trans>
                     </ButtonGray>{' '}
                     <FlexRowWrapper>
                       <TYPE.common>
@@ -362,17 +336,83 @@ export default function MarketsDetail({ address }: { address: string }) {
                       <TYPE.common>
                         <Trans>Loan to value</Trans>
                       </TYPE.common>
-                      <TYPE.common>{ltv}%</TYPE.common>
+                      <TYPE.common>{ltv} %</TYPE.common>
                     </FlexRowWrapper>
-                    {reserveConfig?.borrowingEnabled && (
+                    {data.borrowingEnabled && !!parseInt(deposited) && (
                       <FlexRowWrapper>
                         <TYPE.common>
                           <Trans>Available to you</Trans>
                         </TYPE.common>
                         <TYPE.common>
-                          {shortenDecimalValues(availableToBorrow)} {data.symbol}
+                          {shortenDecimalValues(
+                            FixedNumber.from(availableToBorrow)
+                              .subUnsafe(FixedNumber.from(data.availableLiquidity))
+                              .isNegative()
+                              ? availableToBorrow
+                              : data.availableLiquidity
+                          )}{' '}
+                          {data.symbol}
                         </TYPE.common>
                       </FlexRowWrapper>
+                    )}
+                    {(!!parseInt(stableDebt) || !!parseInt(variableDebt)) && (
+                      <>
+                        <HorizontalSeparator />
+                        {!!parseInt(stableDebt) && (
+                          <FlexRowWrapper>
+                            <TYPE.common>
+                              <Trans>Stable</Trans>
+                            </TYPE.common>
+                            <TYPE.common>
+                              <TYPE.darkGray>{shortenDecimalValues(stableDebt)}</TYPE.darkGray>
+                            </TYPE.common>
+                            <TYPE.common>
+                              <TYPE.darkGray>
+                                <BaseCurrencyView
+                                  type="symbol"
+                                  value={
+                                    FixedNumber.from(stableDebt)
+                                      .mulUnsafe(FixedNumber.from(data.priceUSD))
+                                      .toString() as unknown as number
+                                  }
+                                />
+                              </TYPE.darkGray>
+                            </TYPE.common>
+                            <TYPE.common>
+                              <ButtonGray style={{ fontSize: '14px' }} padding={'0 14px'}>
+                                <Trans>Repay</Trans>
+                              </ButtonGray>
+                            </TYPE.common>
+                          </FlexRowWrapper>
+                        )}
+                        {!!parseInt(variableDebt) && (
+                          <FlexRowWrapper>
+                            <TYPE.common>
+                              <Trans>Variable</Trans>
+                            </TYPE.common>
+                            <TYPE.common>
+                              <TYPE.darkGray>{shortenDecimalValues(variableDebt)}</TYPE.darkGray>
+                            </TYPE.common>
+                            <TYPE.common>
+                              <TYPE.darkGray>
+                                <BaseCurrencyView
+                                  type="symbol"
+                                  value={
+                                    FixedNumber.from(variableDebt)
+                                      .mulUnsafe(FixedNumber.from(data.priceUSD))
+                                      .toString() as unknown as number
+                                  }
+                                />
+                              </TYPE.darkGray>
+                            </TYPE.common>
+                            <TYPE.common>
+                              <ButtonGray style={{ fontSize: '14px' }} padding={'0 14px'}>
+                                <Trans>Repay</Trans>
+                              </ButtonGray>
+                            </TYPE.common>
+                          </FlexRowWrapper>
+                        )}
+                      </>
                     )}
                   </>
                 ) : (

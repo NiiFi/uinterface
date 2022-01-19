@@ -81,6 +81,7 @@ export type MarketTableData = {
   stableBorrowAPY: string
   usedAsCollateral: boolean
   stableBorrowing: boolean
+  borrowingEnabled: boolean
   timestamp: number
   aTokenAddress: string
   variableDebtTokenAddress: string
