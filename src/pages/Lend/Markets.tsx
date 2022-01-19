@@ -92,7 +92,7 @@ export default function Markets() {
 
   return (
     <>
-      {marketTotal && (
+      {!!marketTotal && (
         <DefaultCard width="100%" style={{ minHeight: '100px', paddingTop: '25px' }}>
           <TYPE.subHeader fontSize="16px">
             <Trans>Total Market Size</Trans>
