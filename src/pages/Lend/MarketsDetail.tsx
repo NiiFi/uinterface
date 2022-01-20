@@ -26,8 +26,8 @@ export default function MarketsDetail({ address }: { address: string }) {
   const [walletBalance, setWalletBalance] = useState('0')
   const [deposited, setDeposited] = useState('0')
   const [borrowed, setBorrowed] = useState('0')
-  const [variableDebt, setVariableDebt] = useState('')
-  const [stableDebt, setStableDebt] = useState('')
+  const [variableDebt, setVariableDebt] = useState('0')
+  const [stableDebt, setStableDebt] = useState('0')
   const [healthFactor, setHealthFactor] = useState('0')
   const [ltv, setLtv] = useState('0')
   const [availableToBorrow, setAvailableToBorrow] = useState('0')
@@ -64,14 +64,14 @@ export default function MarketsDetail({ address }: { address: string }) {
         const [token, decimals, reserve, pool] = res
         const currentVariableDebt = formatFixed(reserve.currentVariableDebt, decimals)
         const currentStableDebt = formatFixed(reserve.currentStableDebt, decimals)
-        const availableBorrowsETH = formatFixed(pool.availableBorrowsETH, decimals)
+        const availableBorrowsETH = formatFixed(pool.availableBorrowsETH, 18)
 
         setVariableDebt(currentVariableDebt)
         setStableDebt(currentStableDebt)
         setWalletBalance(formatFixed(token, decimals))
         setDeposited(formatFixed(reserve.currentATokenBalance, decimals))
         setBorrowed(FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt)).toString())
-        setHealthFactor(formatFixed(pool.healthFactor, decimals))
+        setHealthFactor(formatFixed(pool.healthFactor, 18))
         setLtv(formatFixed(pool.ltv, 2))
         setUseAsCollateral(reserve.usageAsCollateralEnabled)
         setAvailableToBorrow(
@@ -371,10 +371,10 @@ export default function MarketsDetail({ address }: { address: string }) {
                         </TYPE.common>
                       </FlexRowWrapper>
                     )}
-                    {(!!parseInt(stableDebt) || !!parseInt(variableDebt)) && (
+                    {(!FixedNumber.from(stableDebt).isZero() || !FixedNumber.from(variableDebt).isZero()) && (
                       <>
                         <HorizontalSeparator />
-                        {!!parseInt(stableDebt) && (
+                        {!FixedNumber.from(stableDebt).isZero() && (
                           <FlexRowWrapper>
                             <TYPE.common>
                               <Trans>Stable</Trans>
@@ -401,7 +401,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                             </TYPE.common>
                           </FlexRowWrapper>
                         )}
-                        {!!parseInt(variableDebt) && (
+                        {!FixedNumber.from(variableDebt).isZero() && (
                           <FlexRowWrapper>
                             <TYPE.common>
                               <Trans>Variable</Trans>
