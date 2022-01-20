@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react'
 import { t } from '@lingui/macro'
+import { FixedNumber } from '@ethersproject/bignumber'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { useApiMarkets } from 'hooks/useApi'
+import useTheme from 'hooks/useTheme'
+import { useAllTokenBalances } from 'state/wallet/hooks'
 import { TYPE, RowWrapper, BaseCurrencyView } from 'theme'
 import Table from 'components/Table'
 import AppBody from 'pages/AppBody'
 import { shortenDecimalValues } from 'utils'
+import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 
 const CustomTableRow = (
   row: any,
@@ -21,7 +25,7 @@ const CustomTableRow = (
   return (
     <TableRow
       hover
-      onClick={(event) => (row?.url ? window.open(row.url, '_blank') : handleClick(event, row.id))}
+      onClick={(event) => (row?.url ? window.open(row.url, '_blank') : handleClick(event, row.address))}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
@@ -44,7 +48,16 @@ const CustomTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="left">
-        <BaseCurrencyView type="symbol" value={row.priceUSD} />
+        {!FixedNumber.from(row.balance).isZero() ? (
+          <>
+            {shortenDecimalValues(row.balance)} <br />
+            <TYPE.subHeader color="text6">
+              <BaseCurrencyView type="symbol" value={row.balanceUSD} />
+            </TYPE.subHeader>
+          </>
+        ) : (
+          '-'
+        )}
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
         {shortenDecimalValues(row.depositAPY)} %
@@ -54,7 +67,14 @@ const CustomTableRow = (
 }
 
 export default function Deposit() {
+  const theme = useTheme()
   const { data, loader, abortController } = useApiMarkets()
+  const relevantTokenBalances = useAllTokenBalances()
+
+  const handleClick = (e: React.MouseEvent<unknown>, address: string) => {
+    e.preventDefault()
+    console.log(address)
+  }
 
   useEffect(() => {
     return () => {
@@ -74,12 +94,23 @@ export default function Deposit() {
               headCells={[
                 { id: 'number', numeric: true, align: 'left', disablePadding: true, label: '#' },
                 { id: 'symbol', numeric: false, align: 'left', disablePadding: true, label: t`Asset` },
-                { id: '', numeric: false, align: 'left', disablePadding: true, label: t`Wallet balance` },
+                { id: 'balance', numeric: false, align: 'left', disablePadding: true, label: t`Wallet balance` },
                 { id: 'depositAPY', numeric: true, disablePadding: false, label: t`APY` },
               ]}
-              row={CustomTableRow}
-              defaultOrder={'asc'}
-              defaultOrderBy={'symbol'}
+              row={(row: any, index: number) => {
+                row.balance = relevantTokenBalances[row.address]
+                  ? formatCurrencyAmount(
+                      relevantTokenBalances[row.address],
+                      relevantTokenBalances[row.address]?.currency?.decimals || 18
+                    )
+                  : 0
+                row.balanceUSD = row.balance
+                  ? FixedNumber.from(row.balance).mulUnsafe(FixedNumber.from(row.priceUSD)).toString()
+                  : 0
+                return CustomTableRow(row, index, theme, handleClick)
+              }}
+              defaultOrder={'desc'}
+              defaultOrderBy={'balance'}
             />
           </AppBody>
         ))}

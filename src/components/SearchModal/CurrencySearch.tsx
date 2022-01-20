@@ -8,10 +8,10 @@ import { Text } from 'rebass'
 import { ExtendedEther } from '../../constants/tokens'
 import { useActiveWeb3React } from '../../hooks/web3'
 import { useAllTokens, useToken, useIsUserAddedToken, useSearchInactiveTokenLists } from '../../hooks/Tokens'
-import { CloseIcon, TYPE, ButtonText, IconWrapper } from '../../theme'
+import { CloseIcon, TYPE /*, ButtonText, IconWrapper*/ } from '../../theme'
 import { isAddress } from '../../utils'
 import Column from '../Column'
-import Row, { RowBetween, RowFixed } from '../Row'
+import Row, { RowBetween /*, RowFixed*/ } from '../Row'
 import CommonBases from './CommonBases'
 import CurrencyList from './CurrencyList'
 import { filterTokens, useSortedTokensByQuery } from './filtering'
@@ -22,7 +22,7 @@ import useToggle from 'hooks/useToggle'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import useTheme from 'hooks/useTheme'
 import ImportRow from './ImportRow'
-import { Edit } from 'react-feather'
+// import { Edit } from 'react-feather'
 import useDebounce from 'hooks/useDebounce'
 
 const ContentWrapper = styled(Column)`
@@ -31,12 +31,12 @@ const ContentWrapper = styled(Column)`
   position: relative;
 `
 
-const Footer = styled.div`
-  width: 100%;
-  padding: 20px;
-  background-color: ${({ theme }) => theme.bg0};
-  border-top: 1px solid ${({ theme }) => theme.bg3};
-`
+// const Footer = styled.div`
+//   width: 100%;
+//   padding: 20px;
+//   background-color: ${({ theme }) => theme.bg0};
+//   border-top: 1px solid ${({ theme }) => theme.bg3};
+// `
 
 interface CurrencySearchProps {
   isOpen: boolean
@@ -57,7 +57,7 @@ export function CurrencySearch({
   showCommonBases,
   onDismiss,
   isOpen,
-  showManageView,
+  // showManageView,
   showImportView,
   setImportToken,
 }: CurrencySearchProps) {

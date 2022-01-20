@@ -81,7 +81,7 @@ export default function MarketsDetail({ address }: { address: string }) {
             .toString()
         )
       })
-      .catch((e) => console.log(e))
+      .catch((e) => console.log(e)) // TODO: implement proper error handling
   }, [account, library, chainId, address, data])
 
   return (
