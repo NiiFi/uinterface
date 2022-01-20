@@ -1,10 +1,10 @@
 {
   "name": "NiiFi Default List",
-  "timestamp": "2021-11-01T10:57:37.105Z",
+  "timestamp": "2022-01-20T10:57:37.105Z",
   "version": {
-    "major": 1,
-    "minor": 3,
-    "patch": 1
+    "major": 2,
+    "minor": 0,
+    "patch": 0
   },
   "tags": {},
   "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x604efD2Ec4aFC77Ba9827685eCad54C8EdcA041B/logo.png",
@@ -168,6 +168,174 @@
       "decimals": 18,
       "address": "0x4200000000000000000000000000000000000006",
       "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x4200000000000000000000000000000000000006/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD",
+      "name": "DAI",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0xd031a1682399FaD6683FF3c60De8AB5DD3B3D0A3/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0xAD5ce863aE3E4E9394Ab43d4ba0D80f419F61789",
+      "name": "LINK",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x4c6E1EFC12FDfD568186b7BAEc0A43fFfb4bCcCf",
+      "name": "BUSD",
+      "symbol": "BUSD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x016750AC630F711882812f24Dba6c95b9D35856d",
+      "name": "TUSD",
+      "symbol": "TUSD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x07137d8BDA2923Dfc1fF5b08a2e81E8715056ad3/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0xe22da380ee6B445bb8273C81944ADEB6E8450422",
+      "name": "USDC",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x738Dc6380157429e957d223e6333Dc385c85Fec7",
+      "name": "MANA",
+      "symbol": "MANA",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x61e4CAE3DA7FD189e52a4879C7B8067D7C2Cc0FA",
+      "name": "MKR",
+      "symbol": "MKR",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x5eebf65A6746eed38042353Ba84c8e37eD58Ac6f",
+      "name": "REN",
+      "symbol": "REN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x7FDb81B0b8a010dd4FFc57C3fecbf145BA8Bd947",
+      "name": "SNX",
+      "symbol": "SNX",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x99b267b9D96616f906D53c26dECf3C5672401282",
+      "name": "sUSD",
+      "symbol": "SUSD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0xB597cd8D3217ea6477232F9217fa70837ff667Af",
+      "name": "AAVE",
+      "symbol": "AAVE",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x2d12186Fbb9f9a8C28B3FfdD4c42920f8539D738",
+      "name": "BAT",
+      "symbol": "BAT",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0xC64f90Cd7B564D3ab580eb20a102A8238E218be2",
+      "name": "ENJ",
+      "symbol": "ENJ",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x3F80c39c0b96A0945f9F0E9f55d8A8891c5671A8",
+      "name": "KNC",
+      "symbol": "KNC",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x13512979ADE267AB5100878E2e0f485B568328a4",
+      "name": "USDT",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0xD1B98B6607330172f1D991521145A22BCe793277",
+      "name": "WBTC",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/main/0x4F0Ea1334c97f0556d8A6e839e19770452494fDC/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0xd0A1E359811322d97991E03f863a0C30C2cF029C",
+      "name": "WETH",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0x4200000000000000000000000000000000000006/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0xb7c325266ec274fEb1354021D27FA3E3379D840d",
+      "name": "YFI",
+      "symbol": "YFI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0xD0d76886cF8D952ca26177EB7CfDf83bad08C00C",
+      "name": "ZRX",
+      "symbol": "ZRX",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x075A36BA8846C6B6F53644fDd3bf17E5151789DC",
+      "name": "UNI",
+      "symbol": "UNI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
+    },
+    {
+      "chainId": 42,
+      "address": "0x3E0437898a5667a4769B1Ca5A34aAB1ae7E81377",
+      "name": "AMPL",
+      "symbol": "AMPL",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xab151cD390C6b0eB41A4a45E1E372972C3067b1a/logo.png"
     }
   ]
 }
