@@ -4,7 +4,7 @@ import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
 import CurrencyAvatar from 'components/CurrencyAvatar'
-import { useApiTokens } from 'hooks/useApi'
+import { useApiMarkets } from 'hooks/useApi'
 import { TYPE, RowWrapper, BaseCurrencyView } from 'theme'
 import Table from 'components/Table'
 import AppBody from 'pages/AppBody'
@@ -47,14 +47,14 @@ const CustomTableRow = (
         <BaseCurrencyView type="symbol" value={row.priceUSD} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(row.priceUSDChange)} %
+        {shortenDecimalValues(row.depositAPY)} %
       </TableCell>
     </TableRow>
   )
 }
 
 export default function Deposit() {
-  const { data, loader, abortController } = useApiTokens()
+  const { data, loader, abortController } = useApiMarkets()
 
   useEffect(() => {
     return () => {
@@ -74,8 +74,8 @@ export default function Deposit() {
               headCells={[
                 { id: 'number', numeric: true, align: 'left', disablePadding: true, label: '#' },
                 { id: 'symbol', numeric: false, align: 'left', disablePadding: true, label: t`Asset` },
-                { id: 'symbol1', numeric: false, align: 'left', disablePadding: true, label: t`Wallet balance` },
-                { id: 'priceUSDChange', numeric: true, disablePadding: false, label: t`APY` },
+                { id: '', numeric: false, align: 'left', disablePadding: true, label: t`Wallet balance` },
+                { id: 'depositAPY', numeric: true, disablePadding: false, label: t`APY` },
               ]}
               row={CustomTableRow}
               defaultOrder={'asc'}
