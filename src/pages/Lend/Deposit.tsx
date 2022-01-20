@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { t } from '@lingui/macro'
 import { FixedNumber } from '@ethersproject/bignumber'
 import TableRow from '@material-ui/core/TableRow'
@@ -48,7 +48,7 @@ const CustomTableRow = (
         </RowWrapper>
       </TableCell>
       <TableCell style={rowCellStyles} align="left">
-        {!FixedNumber.from(row.balance).isZero() ? (
+        {row.balance && !FixedNumber.from(row.balance).isZero() ? (
           <>
             {shortenDecimalValues(row.balance)} <br />
             <TYPE.subHeader color="text6">
@@ -83,32 +83,39 @@ export default function Deposit() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const tableData = useMemo(() => {
+    if (!data || !data.length) return
+
+    return data.map((row) => {
+      const balance = relevantTokenBalances[row.address]
+        ? formatCurrencyAmount(
+            relevantTokenBalances[row.address],
+            relevantTokenBalances[row.address]?.currency?.decimals || 18
+          )
+        : 0
+      return {
+        ...row,
+        balance,
+        balanceUSD: balance ? FixedNumber.from(balance).mulUnsafe(FixedNumber.from(row.priceUSD)).toString() : 0,
+      }
+    })
+  }, [data, relevantTokenBalances])
+
   return (
     <>
       {loader ||
-        (data && (
+        (tableData && (
           <AppBody size="lg">
             <Table
               title={t`All Tokens`}
-              data={data}
+              data={tableData}
               headCells={[
                 { id: 'number', numeric: true, align: 'left', disablePadding: true, label: '#' },
                 { id: 'symbol', numeric: false, align: 'left', disablePadding: true, label: t`Asset` },
                 { id: 'balance', numeric: false, align: 'left', disablePadding: true, label: t`Wallet balance` },
                 { id: 'depositAPY', numeric: true, disablePadding: false, label: t`APY` },
               ]}
-              row={(row: any, index: number) => {
-                row.balance = relevantTokenBalances[row.address]
-                  ? formatCurrencyAmount(
-                      relevantTokenBalances[row.address],
-                      relevantTokenBalances[row.address]?.currency?.decimals || 18
-                    )
-                  : 0
-                row.balanceUSD = row.balance
-                  ? FixedNumber.from(row.balance).mulUnsafe(FixedNumber.from(row.priceUSD)).toString()
-                  : 0
-                return CustomTableRow(row, index, theme, handleClick)
-              }}
+              row={(row: any, index: number) => CustomTableRow(row, index, theme, handleClick)}
               defaultOrder={'desc'}
               defaultOrderBy={'balance'}
             />
