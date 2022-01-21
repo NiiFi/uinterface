@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
 import { Trans } from '@lingui/macro'
@@ -20,6 +20,7 @@ import ERC20_ABI from 'abis/erc20.json'
 import DATA_PROVIDER_ABI from 'abis/lending-protocol-data-provider.json'
 import LENDING_POOL_ABI from 'abis/lending-pool.json'
 import { PROTOCOL_DATA_PROVIDER_ADDRESS, LENDING_POOL_CONTRACT_ADDRESS } from 'constants/general'
+import { calculateGasMargin } from '../../utils/calculateGasMargin'
 
 export default function MarketsDetail({ address }: { address: string }) {
   const theme = useContext(ThemeContext)
@@ -31,7 +32,7 @@ export default function MarketsDetail({ address }: { address: string }) {
   const [healthFactor, setHealthFactor] = useState('0')
   const [ltv, setLtv] = useState('0')
   const [availableToBorrow, setAvailableToBorrow] = useState('0')
-  const [useAsCollateralltv, setUseAsCollateral] = useState(false)
+  const [useAsCollateral, setUseAsCollateral] = useState(false)
   const { data, loader, abortController } = useApiMarket(address)
 
   useEffect(() => {
@@ -42,6 +43,34 @@ export default function MarketsDetail({ address }: { address: string }) {
   }, [])
 
   const { account, library, chainId } = useActiveWeb3React()
+
+  const handleSetUserUseReserveAsCollateral = useCallback(
+    async (newStatus: boolean) => {
+      if (!account || !library || !chainId) return
+      const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
+
+      await lendingPoolContract.setUserUseReserveAsCollateral(address, newStatus, {
+        gasPrice: await lendingPoolContract.provider.getGasPrice(),
+        gasLimit: calculateGasMargin(
+          await lendingPoolContract.estimateGas.setUserUseReserveAsCollateral(address, newStatus)
+        ),
+      })
+    },
+    [account, library, chainId, address]
+  )
+
+  const handleSwapBorrowRateMode = useCallback(
+    async (mode: 1 | 2) => {
+      if (!account || !library || !chainId) return
+      const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
+
+      await lendingPoolContract.swapBorrowRateMode(address, mode, {
+        gasPrice: await lendingPoolContract.provider.getGasPrice(),
+        gasLimit: calculateGasMargin(await lendingPoolContract.estimateGas.swapBorrowRateMode(address, mode)),
+      })
+    },
+    [account, library, chainId, address]
+  )
 
   useEffect(() => {
     if (!data || !account || !library || !chainId) return
@@ -315,16 +344,8 @@ export default function MarketsDetail({ address }: { address: string }) {
                           {' '}
                           <Toggle
                             id="toggle-expert-mode-button"
-                            isActive={useAsCollateralltv}
-                            toggle={
-                              useAsCollateralltv
-                                ? () => {
-                                    console.log(false)
-                                  }
-                                : () => {
-                                    console.log(true)
-                                  }
-                            }
+                            isActive={useAsCollateral}
+                            toggle={() => handleSetUserUseReserveAsCollateral(!useAsCollateral)}
                           />
                         </TYPE.common>
                       </FlexRowWrapper>
@@ -380,6 +401,15 @@ export default function MarketsDetail({ address }: { address: string }) {
                               <Trans>Stable</Trans>
                             </TYPE.common>
                             <TYPE.common>
+                              <Toggle
+                                id="stable-mode-button"
+                                isActive={true}
+                                toggle={() => {
+                                  handleSwapBorrowRateMode(1)
+                                }}
+                              />
+                            </TYPE.common>
+                            <TYPE.common>
                               <TYPE.darkGray>{shortenDecimalValues(stableDebt)}</TYPE.darkGray>
                             </TYPE.common>
                             <TYPE.common>
@@ -405,6 +435,15 @@ export default function MarketsDetail({ address }: { address: string }) {
                           <FlexRowWrapper>
                             <TYPE.common>
                               <Trans>Variable</Trans>
+                            </TYPE.common>
+                            <TYPE.common>
+                              <Toggle
+                                id="variable-mode-button"
+                                isActive={true}
+                                toggle={() => {
+                                  handleSwapBorrowRateMode(2)
+                                }}
+                              />
                             </TYPE.common>
                             <TYPE.common>
                               <TYPE.darkGray>{shortenDecimalValues(variableDebt)}</TYPE.darkGray>
