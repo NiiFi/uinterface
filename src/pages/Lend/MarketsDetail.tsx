@@ -33,6 +33,7 @@ export default function MarketsDetail({ address }: { address: string }) {
   const [availableToBorrow, setAvailableToBorrow] = useState('0')
   const [useAsCollateralltv, setUseAsCollateral] = useState(false)
   const { data, loader, abortController } = useApiMarket(address)
+  const { account, library, chainId } = useActiveWeb3React()
 
   useEffect(() => {
     return () => {
@@ -40,8 +41,6 @@ export default function MarketsDetail({ address }: { address: string }) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-  const { account, library, chainId } = useActiveWeb3React()
 
   useEffect(() => {
     if (!data || !account || !library || !chainId) return
@@ -81,7 +80,7 @@ export default function MarketsDetail({ address }: { address: string }) {
             .toString()
         )
       })
-      .catch((e) => console.log(e)) // TODO: implement proper error handling
+      .catch((e: any) => console.log(e)) // TODO: implement proper error handling
   }, [account, library, chainId, address, data])
 
   return (
