@@ -4,7 +4,7 @@ import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import { DefaultTheme } from 'styled-components'
 import CurrencyAvatar from 'components/CurrencyAvatar'
-import { useApiTokens } from 'hooks/useApi'
+import { useApiMarkets } from 'hooks/useApi'
 import { TYPE, RowWrapper, BaseCurrencyView } from 'theme'
 import Table from 'components/Table'
 import AppBody from 'pages/AppBody'
@@ -47,17 +47,17 @@ const CustomTableRow = (
         <BaseCurrencyView type="symbol" value={row.priceUSD} />
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(row.priceUSDChange)} %
+        {shortenDecimalValues(row.variableBorrowAPY)} %
       </TableCell>
       <TableCell style={rowCellStyles} align="center">
-        {shortenDecimalValues(row.volumeUSD)} %
+        {shortenDecimalValues(row.stableBorrowAPY)} %
       </TableCell>
     </TableRow>
   )
 }
 
 export default function Borrow() {
-  const { data, loader, abortController } = useApiTokens()
+  const { data, loader, abortController } = useApiMarkets()
 
   useEffect(() => {
     return () => {
@@ -77,9 +77,9 @@ export default function Borrow() {
               headCells={[
                 { id: 'number', numeric: true, align: 'left', disablePadding: true, label: '#' },
                 { id: 'symbol', numeric: false, align: 'left', disablePadding: true, label: t`Asset` },
-                { id: 'priceUSD', numeric: true, disablePadding: true, label: t`Available to borrow` },
-                { id: 'priceUSDChange', numeric: true, disablePadding: false, label: t`Variable APY` },
-                { id: 'volumeUSD', numeric: true, disablePadding: false, label: t`Stable APY` },
+                { id: '', numeric: true, disablePadding: true, label: t`Available to borrow` },
+                { id: 'variableBorrowAPY', numeric: true, disablePadding: false, label: t`Variable APY` },
+                { id: 'stableBorrowAPY', numeric: true, disablePadding: false, label: t`Stable APY` },
               ]}
               row={CustomTableRow}
               defaultOrder={'asc'}
