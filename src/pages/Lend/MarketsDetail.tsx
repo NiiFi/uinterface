@@ -11,7 +11,7 @@ import UtilisationRate from 'components/LineChart/UtilisationRate'
 import { ResponsiveRow, RowFixed } from 'components/Row'
 import { WalletConnect } from 'components/Wallet'
 import Toggle from 'components/Toggle'
-import { useApiMarket } from 'hooks/useApi'
+import { useApiMarket, IMarketDetail } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
 import { BaseCurrencyView, FlexRowWrapper, TYPE, translatedYesNo, HorizontalSeparator } from 'theme'
 import { shortenDecimalValues, getContract } from 'utils'
@@ -21,6 +21,9 @@ import DATA_PROVIDER_ABI from 'abis/lending-protocol-data-provider.json'
 import LENDING_POOL_ABI from 'abis/lending-pool.json'
 import { PROTOCOL_DATA_PROVIDER_ADDRESS, LENDING_POOL_CONTRACT_ADDRESS } from 'constants/general'
 import { calculateGasMargin } from '../../utils/calculateGasMargin'
+import Loader from '../../components/Loader'
+import { Web3Provider } from '@ethersproject/providers'
+import { BorrowMode } from '../../constants/lend'
 
 export default function MarketsDetail({ address }: { address: string }) {
   const theme = useContext(ThemeContext)
@@ -34,46 +37,16 @@ export default function MarketsDetail({ address }: { address: string }) {
   const [availableToBorrow, setAvailableToBorrow] = useState('0')
   const [useAsCollateral, setUseAsCollateral] = useState(false)
   const { data, loader, abortController } = useApiMarket(address)
+  const [showCollateralLoader, setShowCollateralLoader] = useState(false)
+  const [showBorrowRateLoader, setShowBorrowRateLoader] = useState(false)
 
-  useEffect(() => {
-    return () => {
-      abortController.abort()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  const { account, library, chainId } = useActiveWeb3React()
-
-  const handleSetUserUseReserveAsCollateral = useCallback(
-    async (newStatus: boolean) => {
-      if (!account || !library || !chainId) return
-      const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
-
-      await lendingPoolContract.setUserUseReserveAsCollateral(address, newStatus, {
-        gasPrice: await lendingPoolContract.provider.getGasPrice(),
-        gasLimit: calculateGasMargin(
-          await lendingPoolContract.estimateGas.setUserUseReserveAsCollateral(address, newStatus)
-        ),
-      })
-    },
-    [account, library, chainId, address]
-  )
-
-  const handleSwapBorrowRateMode = useCallback(
-    async (mode: 1 | 2) => {
-      if (!account || !library || !chainId) return
-      const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
-
-      await lendingPoolContract.swapBorrowRateMode(address, mode, {
-        gasPrice: await lendingPoolContract.provider.getGasPrice(),
-        gasLimit: calculateGasMargin(await lendingPoolContract.estimateGas.swapBorrowRateMode(address, mode)),
-      })
-    },
-    [account, library, chainId, address]
-  )
-
-  useEffect(() => {
-    if (!data || !account || !library || !chainId) return
+  const updateDataFromContracts = async (
+    account: string,
+    library: Web3Provider,
+    chainId: number,
+    address: string,
+    data?: IMarketDetail
+  ) => {
     const tokenContract = getContract(address, ERC20_ABI, library, account)
     const protocolDataProviderContract = getContract(
       PROTOCOL_DATA_PROVIDER_ADDRESS,
@@ -83,7 +56,7 @@ export default function MarketsDetail({ address }: { address: string }) {
     )
     const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
 
-    Promise.all([
+    return Promise.all([
       tokenContract.balanceOf(account),
       tokenContract.decimals(),
       protocolDataProviderContract.getUserReserveData(address, account),
@@ -111,6 +84,59 @@ export default function MarketsDetail({ address }: { address: string }) {
         )
       })
       .catch((e) => console.log(e)) // TODO: implement proper error handling
+  }
+
+  useEffect(() => {
+    return () => {
+      abortController.abort()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const { account, library, chainId } = useActiveWeb3React()
+
+  const handleSetUserUseReserveAsCollateral = useCallback(
+    async (newStatus: boolean) => {
+      if (!data || !account || !library || !chainId) return
+      const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
+      setShowCollateralLoader(true)
+      try {
+        const tx = await lendingPoolContract.setUserUseReserveAsCollateral(address, newStatus, {
+          gasPrice: await lendingPoolContract.provider.getGasPrice(),
+          gasLimit: calculateGasMargin(
+            await lendingPoolContract.estimateGas.setUserUseReserveAsCollateral(address, newStatus)
+          ),
+        })
+        await tx.wait()
+        await updateDataFromContracts(account, library, chainId, address, data)
+      } catch (e) {}
+      setShowCollateralLoader(false)
+    },
+    [account, library, chainId, address, data]
+  )
+
+  const handleSwapBorrowRateMode = useCallback(
+    async (mode: BorrowMode) => {
+      if (!account || !library || !chainId) return
+      const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
+
+      setShowBorrowRateLoader(true)
+      try {
+        const tx = await lendingPoolContract.swapBorrowRateMode(address, mode, {
+          gasPrice: await lendingPoolContract.provider.getGasPrice(),
+          gasLimit: calculateGasMargin(await lendingPoolContract.estimateGas.swapBorrowRateMode(address, mode)),
+        })
+        await tx.wait()
+        await updateDataFromContracts(account, library, chainId, address, data)
+      } catch (e) {}
+      setShowBorrowRateLoader(false)
+    },
+    [account, library, chainId, address]
+  )
+
+  useEffect(() => {
+    if (!data || !account || !library || !chainId) return
+    updateDataFromContracts(account, library, chainId, address, data)
   }, [account, library, chainId, address, data])
 
   return (
@@ -335,18 +361,22 @@ export default function MarketsDetail({ address }: { address: string }) {
                         {shortenDecimalValues(deposited)} {data.symbol}
                       </TYPE.common>
                     </FlexRowWrapper>
-                    {parseInt(deposited) ? (
+                    {FixedNumber.from(deposited).isZero() ? (
                       <FlexRowWrapper>
                         <TYPE.common>
                           <Trans>Use as collateral</Trans>
                         </TYPE.common>
                         <TYPE.common>
                           {' '}
-                          <Toggle
-                            id="toggle-expert-mode-button"
-                            isActive={useAsCollateral}
-                            toggle={() => handleSetUserUseReserveAsCollateral(!useAsCollateral)}
-                          />
+                          {showCollateralLoader ? (
+                            <Loader />
+                          ) : (
+                            <Toggle
+                              id="toggle-expert-mode-button"
+                              isActive={useAsCollateral}
+                              toggle={() => handleSetUserUseReserveAsCollateral(!useAsCollateral)}
+                            />
+                          )}
                         </TYPE.common>
                       </FlexRowWrapper>
                     ) : (
@@ -395,7 +425,12 @@ export default function MarketsDetail({ address }: { address: string }) {
                     {(!FixedNumber.from(stableDebt).isZero() || !FixedNumber.from(variableDebt).isZero()) && (
                       <>
                         <HorizontalSeparator />
-                        {!FixedNumber.from(stableDebt).isZero() && (
+                        {showBorrowRateLoader && (
+                          <FlexRowWrapper style={{ justifyContent: 'center' }}>
+                            <Loader />
+                          </FlexRowWrapper>
+                        )}
+                        {!FixedNumber.from(stableDebt).isZero() && !showBorrowRateLoader && (
                           <FlexRowWrapper>
                             <TYPE.common>
                               <Trans>Stable</Trans>
@@ -405,7 +440,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                                 id="stable-mode-button"
                                 isActive={true}
                                 toggle={() => {
-                                  handleSwapBorrowRateMode(1)
+                                  handleSwapBorrowRateMode(BorrowMode.STABLE)
                                 }}
                               />
                             </TYPE.common>
@@ -431,7 +466,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                             </TYPE.common>
                           </FlexRowWrapper>
                         )}
-                        {!FixedNumber.from(variableDebt).isZero() && (
+                        {!FixedNumber.from(variableDebt).isZero() && !showBorrowRateLoader && (
                           <FlexRowWrapper>
                             <TYPE.common>
                               <Trans>Variable</Trans>
@@ -441,7 +476,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                                 id="variable-mode-button"
                                 isActive={true}
                                 toggle={() => {
-                                  handleSwapBorrowRateMode(2)
+                                  handleSwapBorrowRateMode(BorrowMode.VARIABLE)
                                 }}
                               />
                             </TYPE.common>
