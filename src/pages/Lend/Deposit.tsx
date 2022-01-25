@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo } from 'react'
+import { useHistory } from 'react-router-dom'
 import { t } from '@lingui/macro'
 import { FixedNumber } from '@ethersproject/bignumber'
 import TableRow from '@material-ui/core/TableRow'
@@ -68,12 +69,13 @@ const CustomTableRow = (
 
 export default function Deposit() {
   const theme = useTheme()
+  const history = useHistory()
   const { data, loader, abortController } = useApiMarkets()
   const relevantTokenBalances = useAllTokenBalances()
 
   const handleClick = (e: React.MouseEvent<unknown>, address: string) => {
     e.preventDefault()
-    console.log(address)
+    history.push(`/lend/deposit/${address}`)
   }
 
   useEffect(() => {

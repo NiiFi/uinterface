@@ -28,6 +28,7 @@ const HeaderFrame = styled.div<{ showBackground: boolean }>`
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
     grid-template-columns: auto 1fr;
+    height: calc(100vh - 38px);
   `};
 `
 
