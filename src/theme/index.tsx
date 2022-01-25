@@ -340,6 +340,20 @@ export const FlexRowWrapper = styled.div`
   color: ${({ theme }) => theme.text5};
 `
 
+export const FlexColumn = styled(ColumnWrapper)<{ width?: string }>`
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: ${({ theme }) => theme.text4};
+  width: ${({ width }) => width};
+
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    width: 100%;
+    row-gap: 1rem;
+    gap: 1rem;
+  `};
+`
+
 export const HorizontalSeparator = styled.div<{ margin?: string }>`
   width: 100%;
   border-top: 1px solid ${({ theme }) => theme.bg3};

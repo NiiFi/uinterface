@@ -38,6 +38,7 @@ const BodyWrapper = styled.div`
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
     width: 100vw;
+    height: calc(100vh - 38px);
   `};
 `
 
