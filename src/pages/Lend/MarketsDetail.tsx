@@ -20,10 +20,11 @@ import ERC20_ABI from 'abis/erc20.json'
 import DATA_PROVIDER_ABI from 'abis/lending-protocol-data-provider.json'
 import LENDING_POOL_ABI from 'abis/lending-pool.json'
 import { PROTOCOL_DATA_PROVIDER_ADDRESS, LENDING_POOL_CONTRACT_ADDRESS } from 'constants/general'
-import { calculateGasMargin } from '../../utils/calculateGasMargin'
-import Loader from '../../components/Loader'
+import { calculateGasMargin } from 'utils/calculateGasMargin'
+import Loader from 'components/Loader'
 import { Web3Provider } from '@ethersproject/providers'
-import { BorrowMode } from '../../constants/lend'
+import { BorrowMode } from 'constants/lend'
+import { useAddPopup } from 'state/application/hooks'
 
 export default function MarketsDetail({ address }: { address: string }) {
   const theme = useContext(ThemeContext)
@@ -39,6 +40,7 @@ export default function MarketsDetail({ address }: { address: string }) {
   const { data, loader, abortController } = useApiMarket(address)
   const [showCollateralLoader, setShowCollateralLoader] = useState(false)
   const [showBorrowRateLoader, setShowBorrowRateLoader] = useState(false)
+  const addPopup = useAddPopup()
 
   const updateDataFromContracts = async (
     account: string,
@@ -100,38 +102,54 @@ export default function MarketsDetail({ address }: { address: string }) {
       if (!data || !account || !library || !chainId) return
       const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
       setShowCollateralLoader(true)
+      let tx = null
       try {
-        const tx = await lendingPoolContract.setUserUseReserveAsCollateral(address, newStatus, {
+        tx = await lendingPoolContract.setUserUseReserveAsCollateral(address, newStatus, {
           gasPrice: await lendingPoolContract.provider.getGasPrice(),
           gasLimit: calculateGasMargin(
             await lendingPoolContract.estimateGas.setUserUseReserveAsCollateral(address, newStatus)
           ),
         })
         await tx.wait()
+        addPopup({ txn: { hash: tx.hash, success: true } }, tx.hash)
         await updateDataFromContracts(account, library, chainId, address, data)
-      } catch (e) {}
+      } catch (e) {
+        if (tx) {
+          addPopup({ txn: { hash: tx.hash, success: false } }, tx.hash)
+        } else {
+          addPopup({ txn: { hash: '', success: false, summary: e.message } })
+        }
+      }
       setShowCollateralLoader(false)
     },
-    [account, library, chainId, address, data]
+    [account, library, chainId, address, data, addPopup]
   )
 
   const handleSwapBorrowRateMode = useCallback(
     async (mode: BorrowMode) => {
-      if (!account || !library || !chainId) return
+      if (!data || !account || !library || !chainId) return
       const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
 
       setShowBorrowRateLoader(true)
+      let tx = null
       try {
-        const tx = await lendingPoolContract.swapBorrowRateMode(address, mode, {
+        tx = await lendingPoolContract.swapBorrowRateMode(address, mode, {
           gasPrice: await lendingPoolContract.provider.getGasPrice(),
           gasLimit: calculateGasMargin(await lendingPoolContract.estimateGas.swapBorrowRateMode(address, mode)),
         })
         await tx.wait()
+        addPopup({ txn: { hash: tx.hash, success: true } }, tx.hash)
         await updateDataFromContracts(account, library, chainId, address, data)
-      } catch (e) {}
+      } catch (e) {
+        if (tx) {
+          addPopup({ txn: { hash: tx.hash, success: false } }, tx.hash)
+        } else {
+          addPopup({ txn: { hash: '', success: false, summary: e.message } })
+        }
+      }
       setShowBorrowRateLoader(false)
     },
-    [account, library, chainId, address]
+    [account, library, chainId, address, data, addPopup]
   )
 
   useEffect(() => {
@@ -361,7 +379,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                         {shortenDecimalValues(deposited)} {data.symbol}
                       </TYPE.common>
                     </FlexRowWrapper>
-                    {FixedNumber.from(deposited).isZero() ? (
+                    {!FixedNumber.from(deposited).isZero() ? (
                       <FlexRowWrapper>
                         <TYPE.common>
                           <Trans>Use as collateral</Trans>
