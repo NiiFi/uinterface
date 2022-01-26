@@ -22,9 +22,9 @@ import LENDING_POOL_ABI from 'abis/lending-pool.json'
 import { PROTOCOL_DATA_PROVIDER_ADDRESS, LENDING_POOL_CONTRACT_ADDRESS } from 'constants/general'
 import { calculateGasMargin } from 'utils/calculateGasMargin'
 import Loader from 'components/Loader'
-import { Web3Provider } from '@ethersproject/providers'
 import { BorrowMode } from 'constants/lend'
 import { useAddPopup } from 'state/application/hooks'
+import { Contract } from 'ethers'
 
 export default function MarketsDetail({ address }: { address: string }) {
   const theme = useContext(ThemeContext)
@@ -40,53 +40,50 @@ export default function MarketsDetail({ address }: { address: string }) {
   const { data, loader, abortController } = useApiMarket(address)
   const [showCollateralLoader, setShowCollateralLoader] = useState(false)
   const [showBorrowRateLoader, setShowBorrowRateLoader] = useState(false)
+  const [lendingPoolContract, setLendingPoolContract] = useState<Contract | null>(null)
+  const [tokenContract, setTokenContract] = useState<Contract | null>(null)
+  const [protocolDataProviderContract, setProtocolDataProviderContract] = useState<Contract | null>(null)
   const addPopup = useAddPopup()
 
-  const updateDataFromContracts = async (
-    account: string,
-    library: Web3Provider,
-    chainId: number,
-    address: string,
-    data?: IMarketDetail
-  ) => {
-    const tokenContract = getContract(address, ERC20_ABI, library, account)
-    const protocolDataProviderContract = getContract(
-      PROTOCOL_DATA_PROVIDER_ADDRESS,
-      DATA_PROVIDER_ABI,
-      library,
-      account
-    )
-    const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
+  const updateDataFromContracts = useCallback(
+    async (
+      tokenContract: Contract,
+      protocolDataProviderContract: Contract,
+      lendingPoolContract: Contract,
+      account: string,
+      data?: IMarketDetail
+    ): Promise<void> => {
+      Promise.all([
+        tokenContract.balanceOf(account),
+        tokenContract.decimals(),
+        protocolDataProviderContract.getUserReserveData(address, account),
+        lendingPoolContract.getUserAccountData(account),
+      ])
+        .then((res) => {
+          const [token, decimals, reserve, pool] = res
+          const currentVariableDebt = formatFixed(reserve.currentVariableDebt, decimals)
+          const currentStableDebt = formatFixed(reserve.currentStableDebt, decimals)
+          const availableBorrowsETH = formatFixed(pool.availableBorrowsETH, 18)
 
-    return Promise.all([
-      tokenContract.balanceOf(account),
-      tokenContract.decimals(),
-      protocolDataProviderContract.getUserReserveData(address, account),
-      lendingPoolContract.getUserAccountData(account),
-    ])
-      .then((res) => {
-        const [token, decimals, reserve, pool] = res
-        const currentVariableDebt = formatFixed(reserve.currentVariableDebt, decimals)
-        const currentStableDebt = formatFixed(reserve.currentStableDebt, decimals)
-        const availableBorrowsETH = formatFixed(pool.availableBorrowsETH, 18)
-
-        setVariableDebt(currentVariableDebt)
-        setStableDebt(currentStableDebt)
-        setWalletBalance(formatFixed(token, decimals))
-        setDeposited(formatFixed(reserve.currentATokenBalance, decimals))
-        setBorrowed(FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt)).toString())
-        setHealthFactor(formatFixed(pool.healthFactor, 18))
-        setLtv(formatFixed(pool.ltv, 2))
-        setUseAsCollateral(reserve.usageAsCollateralEnabled)
-        setAvailableToBorrow(
-          FixedNumber.from(availableBorrowsETH)
-            .divUnsafe(FixedNumber.from(data?.priceETH))
-            .mulUnsafe(FixedNumber.from('0.99'))
-            .toString()
-        )
-      })
-      .catch((e) => console.log(e)) // TODO: implement proper error handling
-  }
+          setVariableDebt(currentVariableDebt)
+          setStableDebt(currentStableDebt)
+          setWalletBalance(formatFixed(token, decimals))
+          setDeposited(formatFixed(reserve.currentATokenBalance, decimals))
+          setBorrowed(FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt)).toString())
+          setHealthFactor(formatFixed(pool.healthFactor, 18))
+          setLtv(formatFixed(pool.ltv, 2))
+          setUseAsCollateral(reserve.usageAsCollateralEnabled)
+          setAvailableToBorrow(
+            FixedNumber.from(availableBorrowsETH)
+              .divUnsafe(FixedNumber.from(data?.priceETH))
+              .mulUnsafe(FixedNumber.from('0.99'))
+              .toString()
+          )
+        })
+        .catch((e) => console.log(e)) // TODO: implement proper error handling
+    },
+    [address]
+  )
 
   useEffect(() => {
     return () => {
@@ -97,10 +94,16 @@ export default function MarketsDetail({ address }: { address: string }) {
 
   const { account, library, chainId } = useActiveWeb3React()
 
+  useEffect(() => {
+    if (!account || !library || !chainId) return
+    setLendingPoolContract(getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account))
+    setTokenContract(getContract(address, ERC20_ABI, library, account))
+    setProtocolDataProviderContract(getContract(PROTOCOL_DATA_PROVIDER_ADDRESS, DATA_PROVIDER_ABI, library, account))
+  }, [account, library, chainId, address])
+
   const handleSetUserUseReserveAsCollateral = useCallback(
     async (newStatus: boolean) => {
-      if (!data || !account || !library || !chainId) return
-      const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
+      if (!data || !lendingPoolContract || !protocolDataProviderContract || !tokenContract || !account) return
       setShowCollateralLoader(true)
       let tx = null
       try {
@@ -112,7 +115,7 @@ export default function MarketsDetail({ address }: { address: string }) {
         })
         await tx.wait()
         addPopup({ txn: { hash: tx.hash, success: true } }, tx.hash)
-        await updateDataFromContracts(account, library, chainId, address, data)
+        await updateDataFromContracts(tokenContract, protocolDataProviderContract, lendingPoolContract, account, data)
       } catch (e) {
         if (tx) {
           addPopup({ txn: { hash: tx.hash, success: false } }, tx.hash)
@@ -122,14 +125,21 @@ export default function MarketsDetail({ address }: { address: string }) {
       }
       setShowCollateralLoader(false)
     },
-    [account, library, chainId, address, data, addPopup]
+    [
+      lendingPoolContract,
+      protocolDataProviderContract,
+      tokenContract,
+      data,
+      addPopup,
+      address,
+      account,
+      updateDataFromContracts,
+    ]
   )
 
   const handleSwapBorrowRateMode = useCallback(
     async (mode: BorrowMode) => {
-      if (!data || !account || !library || !chainId) return
-      const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
-
+      if (!data || !account || !lendingPoolContract || !protocolDataProviderContract || !tokenContract) return
       setShowBorrowRateLoader(true)
       let tx = null
       try {
@@ -139,7 +149,7 @@ export default function MarketsDetail({ address }: { address: string }) {
         })
         await tx.wait()
         addPopup({ txn: { hash: tx.hash, success: true } }, tx.hash)
-        await updateDataFromContracts(account, library, chainId, address, data)
+        await updateDataFromContracts(tokenContract, protocolDataProviderContract, lendingPoolContract, account, data)
       } catch (e) {
         if (tx) {
           addPopup({ txn: { hash: tx.hash, success: false } }, tx.hash)
@@ -149,13 +159,22 @@ export default function MarketsDetail({ address }: { address: string }) {
       }
       setShowBorrowRateLoader(false)
     },
-    [account, library, chainId, address, data, addPopup]
+    [
+      lendingPoolContract,
+      protocolDataProviderContract,
+      tokenContract,
+      data,
+      addPopup,
+      address,
+      account,
+      updateDataFromContracts,
+    ]
   )
 
   useEffect(() => {
-    if (!data || !account || !library || !chainId) return
-    updateDataFromContracts(account, library, chainId, address, data)
-  }, [account, library, chainId, address, data])
+    if (!data || !lendingPoolContract || !protocolDataProviderContract || !tokenContract || !account) return
+    updateDataFromContracts(tokenContract, protocolDataProviderContract, lendingPoolContract, account, data)
+  }, [lendingPoolContract, protocolDataProviderContract, tokenContract, data, account, updateDataFromContracts])
 
   return (
     <>
