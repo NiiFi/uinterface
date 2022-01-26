@@ -15,6 +15,9 @@ import { getContract } from 'utils'
 import { Erc20, ArgentWalletDetector, EnsPublicResolver, Weth } from '../abis/types'
 import { WETH9_EXTENDED } from '../constants/tokens'
 import { useActiveWeb3React } from './web3'
+import { PROTOCOL_DATA_PROVIDER_ADDRESS, LENDING_POOL_CONTRACT_ADDRESS } from 'constants/general'
+import DATA_PROVIDER_ABI from 'abis/lending-protocol-data-provider.json'
+import LENDING_POOL_ABI from 'abis/lending-pool.json'
 
 // returns null on errors
 export function useContract<T extends Contract = Contract>(
@@ -70,4 +73,12 @@ export function usePairContract(pairAddress?: string, withSignerIfPossible?: boo
 
 export function useV2RouterContract(): Contract | null {
   return useContract(ROUTER_ADDRESS, IUniswapV2Router02ABI, true)
+}
+
+export function useProtocolDataProviderContract(): Contract | null {
+  return useContract(PROTOCOL_DATA_PROVIDER_ADDRESS, DATA_PROVIDER_ABI, true)
+}
+
+export function useLendingPoolContract(): Contract | null {
+  return useContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, true)
 }

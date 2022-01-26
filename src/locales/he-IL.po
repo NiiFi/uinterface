@@ -18,6 +18,11 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 
+#: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "% over total"
+msgstr ""
+
 #: src/components/CurrencyInputPanel/index.tsx
 msgid "(Max)"
 msgstr "(מקסימום)"
@@ -71,6 +76,7 @@ msgstr ""
 
 #: src/components/Table/pools.tsx
 #: src/components/pools/PoolsOverview.tsx
+#: src/pages/Lend/Deposit.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "APY"
 msgstr ""
@@ -134,6 +140,12 @@ msgstr ""
 msgid "All"
 msgstr ""
 
+#: src/pages/Lend/Borrow.tsx
+#: src/pages/Lend/Deposit.tsx
+#: src/pages/Lend/Markets.tsx
+msgid "All Tokens"
+msgstr ""
+
 #: src/pages/Swap/index.tsx
 msgid "Allow NiiFi to use your {0}"
 msgstr ""
@@ -186,6 +198,16 @@ msgstr "מאשר {0}"
 msgid "Are you sure?"
 msgstr "האם אתה בטוח?"
 
+#: src/pages/Lend/Borrow.tsx
+#: src/pages/Lend/Deposit.tsx
+#: src/pages/Lend/Markets.tsx
+msgid "Asset"
+msgstr ""
+
+#: src/pages/Lend/DepositDetail.tsx
+msgid "Asset price"
+msgstr ""
+
 #: src/pages/Dashboard/subpages/Farm.tsx
 #: src/pages/Dashboard/subpages/Pools.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
@@ -200,8 +222,37 @@ msgstr ""
 msgid "Auto"
 msgstr "אוטומטי"
 
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Available Liquidity"
+msgstr ""
+
 #: src/components/Table/pools.tsx
 msgid "Available Pools"
+msgstr ""
+
+#: src/pages/Lend/DepositDetail.tsx
+msgid "Available liquidity"
+msgstr ""
+
+#: src/pages/Lend/Borrow.tsx
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Available to borrow"
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Available to deposit"
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Available to repay"
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Available to withdraw"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Available to you"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -238,6 +289,26 @@ msgstr ""
 #: src/components/Blocklist/index.tsx
 msgid "Blocked address"
 msgstr "כתובת חסומה"
+
+#: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/components/LendForm.tsx
+#: src/pages/Lend/index.tsx
+msgid "Borrow"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Borrow APR"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Borrow APY"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Borrowed"
+msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Brazilian Real"
@@ -282,6 +353,10 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "CNY"
+msgstr ""
+
+#: src/pages/Lend/DepositDetail.tsx
+msgid "Can be used as collateral"
 msgstr ""
 
 #: src/constants/tokens.ts
@@ -349,6 +424,7 @@ msgstr "אשר את העסקה בארנק שלך"
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolInvest/index.tsx
 #: src/components/PoolWithdraw/index.tsx
+#: src/components/Wallet/index.tsx
 #: src/pages/AddLiquidity/index.tsx
 #: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Dashboard/index.tsx
@@ -379,6 +455,7 @@ msgid "Connected"
 msgstr ""
 
 #: src/components/InitialConfirmationModal/index.tsx
+#: src/pages/Lend/components/LendForm.tsx
 msgid "Continue"
 msgstr ""
 
@@ -392,6 +469,10 @@ msgstr "העתק כתובת"
 
 #: src/components/InitialConfirmationModal/index.tsx
 msgid "Cote D’Ivoire (Ivory Coast)"
+msgstr ""
+
+#: src/pages/Lend/index.tsx
+msgid "Create Deposit"
 msgstr ""
 
 #: src/components/CreatePoolModal/index.tsx
@@ -433,8 +514,23 @@ msgstr ""
 
 #: src/pages/Dashboard/components/BuyCryptoButton.tsx
 #: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/components/LendForm.tsx
+#: src/pages/Lend/index.tsx
 msgid "Deposit"
 msgstr "לְהַפְקִיד"
+
+#: src/components/LineChart/DepositApr.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Deposit APR"
+msgstr ""
+
+#: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/Markets.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Deposit APY"
+msgstr ""
 
 #: src/components/DepositTokenModal/index.tsx
 #: src/components/DepositTokenModal/index.tsx
@@ -595,16 +691,37 @@ msgstr ""
 msgid "HKD"
 msgstr ""
 
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Health factor"
+msgstr ""
+
 #: src/pages/Swap/index.tsx
 msgid "High Price Impact"
 msgstr "השפעה על מחיר גבוה"
 
 #: src/components/Table/Dashboard/History.tsx
+#: src/pages/Dashboard/index.tsx
 msgid "History"
 msgstr ""
 
 #: src/constants/tokens.ts
 msgid "Hong Kong Dollar"
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "How much do you want to repay?"
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "How much would you like to borrow?"
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "How much would you like to deposit?"
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "How much would you like to withdraw?"
 msgstr ""
 
 #: src/components/InitialConfirmationModal/index.tsx
@@ -728,6 +845,16 @@ msgstr ""
 msgid "Liberia"
 msgstr ""
 
+#: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Liquidation penalty"
+msgstr ""
+
+#: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Liquidation threshold"
+msgstr ""
+
 #: src/pages/PoolDetail/index.tsx
 msgid "Liquidity"
 msgstr "נְזִילוּת"
@@ -756,6 +883,10 @@ msgstr "עמוס"
 msgid "Loading"
 msgstr "טוען"
 
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Loan to value"
+msgstr ""
+
 #: src/constants/tokens.ts
 msgid "MXN"
 msgstr ""
@@ -771,10 +902,6 @@ msgstr "לנהל"
 #: src/components/PositionCard/index.tsx
 msgid "Manage Liquidity in Rewards Pool"
 msgstr "נהל נזילות במאגר תגמולים"
-
-#: src/components/SearchModal/CurrencySearch.tsx
-msgid "Manage Token Lists"
-msgstr ""
 
 #: src/components/Header/WalletListPopover.tsx
 msgid "Manage Wallet"
@@ -792,6 +919,23 @@ msgstr "נהל את הבריכה הזו."
 msgid "Market Cap"
 msgstr ""
 
+#: src/pages/Lend/Markets.tsx
+msgid "Market Size"
+msgstr ""
+
+#: src/pages/Lend/index.tsx
+msgid "Markets"
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Max"
+msgstr ""
+
+#: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Maximum LTV"
+msgstr ""
+
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Maximum sent"
 msgstr "מקסימום נשלח"
@@ -807,6 +951,10 @@ msgstr "להגר"
 
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Minimum received"
+msgstr ""
+
+#: src/pages/Dashboard/index.tsx
+msgid "My Positions"
 msgstr ""
 
 #: src/components/InitialConfirmationModal/index.tsx
@@ -846,6 +994,10 @@ msgstr ""
 
 #: src/components/SwitchLocaleLink/index.tsx
 msgid "NiiFi available in: <0>{0}</0>"
+msgstr ""
+
+#: src/theme/index.tsx
+msgid "No"
 msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
@@ -913,6 +1065,10 @@ msgstr "התפוקה מוערכת. תקבל <0>{0} {1}</0> או שהעסקה ת�
 msgid "Output will be sent to <0>{0}</0>"
 msgstr "הפלט יישלח אל <0>{0}</0>"
 
+#: src/pages/Dashboard/index.tsx
+msgid "Overview"
+msgstr ""
+
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
@@ -941,6 +1097,18 @@ msgstr ""
 
 #: src/components/WalletModal/index.tsx
 msgid "Please connect to the appropriate Nahmii network."
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Please enter an amount you would like to borrow. The maximum amount you can borrow is shown below."
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Please enter an amount you would like to deposit. The maximum amount you can deposit is shown below."
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Please enter an amount you would like to withdraw. The maximum amount you can withdraw is shown below."
 msgstr ""
 
 #: src/components/Settings/index.tsx
@@ -1007,6 +1175,10 @@ msgstr "מחיר:"
 msgid "Prices and pool share"
 msgstr "מחירים ונתח בריכה"
 
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Processing"
+msgstr ""
+
 #: src/components/AccountDetails/index.tsx
 msgid "RENAME"
 msgstr ""
@@ -1071,6 +1243,26 @@ msgstr ""
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Removing {0} {1} and {2} {3}"
 msgstr "הסרת {0} {1} ו {2} {3}"
+
+#: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/components/LendForm.tsx
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Repay"
+msgstr ""
+
+#: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/DepositDetail.tsx
+msgid "Reserve Overview"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Reserve Size"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Reserve Status & Configuration"
+msgstr ""
 
 #: src/components/Settings/index.tsx
 msgid "Restricts swaps to direct pairs only."
@@ -1167,6 +1359,28 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "South Korean Won"
+msgstr ""
+
+#: src/components/LineChart/LendHistory.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Stable"
+msgstr ""
+
+#: src/pages/Lend/Borrow.tsx
+#: src/pages/Lend/Markets.tsx
+msgid "Stable APY"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Stable Borrowing"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Stable borrowing"
+msgstr ""
+
+#: src/components/LineChart/LendHistory.tsx
+msgid "Stable vs Variable APR"
 msgstr ""
 
 #: src/components/InitialConfirmationModal/index.tsx
@@ -1364,6 +1578,19 @@ msgstr ""
 msgid "Top pools"
 msgstr "בריכות מובילות"
 
+#: src/pages/Lend/DepositDetail.tsx
+msgid "Total Balance"
+msgstr ""
+
+#: src/pages/Lend/Markets.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Total Borrowed"
+msgstr ""
+
+#: src/pages/Lend/Markets.tsx
+msgid "Total Market Size"
+msgstr ""
+
 #: src/components/Table/swap.tsx
 msgid "Total Value"
 msgstr ""
@@ -1450,6 +1677,26 @@ msgstr "לְגוֹלֵל"
 msgid "Update list"
 msgstr "רשימת עדכונים"
 
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Use as collateral"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Used as collateral"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Utilisation Rate"
+msgstr ""
+
+#: src/components/LineChart/UtilisationRate.tsx
+msgid "Utilisation rate"
+msgstr ""
+
+#: src/pages/Lend/DepositDetail.tsx
+msgid "Utilization rate"
+msgstr ""
+
 #: src/components/BuyTokenModal/index.tsx
 msgid "VISA *5546"
 msgstr ""
@@ -1458,6 +1705,20 @@ msgstr ""
 #: src/pages/Dashboard/subpages/Pools.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
 msgid "Value"
+msgstr ""
+
+#: src/components/LineChart/LendHistory.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Variable"
+msgstr ""
+
+#: src/pages/Lend/Borrow.tsx
+#: src/pages/Lend/Markets.tsx
+msgid "Variable APY"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Variable Borrowing"
 msgstr ""
 
 #: src/components/InitialConfirmationModal/index.tsx
@@ -1517,6 +1778,12 @@ msgstr ""
 msgid "Wallet Name"
 msgstr ""
 
+#: src/pages/Lend/Deposit.tsx
+msgid "Wallet balance"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/components/LendForm.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr "לָסֶגֶת"
@@ -1534,10 +1801,18 @@ msgstr "רשת לא נכונה"
 msgid "Yemen"
 msgstr ""
 
+#: src/theme/index.tsx
+msgid "Yes"
+msgstr ""
+
 #: src/pages/Dashboard/BuySection.tsx
 #: src/pages/Dashboard/components/Card.tsx
 #: src/pages/Dashboard/subpages/index.tsx
 msgid "Yield Farming"
+msgstr ""
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "You already deposited"
 msgstr ""
 
 #: src/pages/AddLiquidity/index.tsx
@@ -1564,6 +1839,10 @@ msgstr ""
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "You will receive"
 msgstr "אתה תקבל"
+
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Your Information"
+msgstr ""
 
 #: src/components/PositionCard/V2.tsx
 #: src/components/PositionCard/index.tsx
@@ -1599,6 +1878,11 @@ msgstr "העסקה שלך תחזור אם היא ממתינה למשך יותר 
 #: src/components/TransactionSettings/index.tsx
 msgid "Your transaction will revert if the price changes unfavorably by more than this percentage."
 msgstr "העסקה שלך תחזור אם המחיר ישתנה בצורה לא טובה ביותר מאחוז זה."
+
+#: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/MarketsDetail.tsx
+msgid "Your wallet balance"
+msgstr ""
 
 #: src/components/InitialConfirmationModal/index.tsx
 msgid "Zimbabwe"

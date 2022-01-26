@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { Trans } from '@lingui/macro'
+import { formatFixed } from '@ethersproject/bignumber'
 import { DefaultCard } from 'components/Card'
 import { ResponsiveRow } from 'components/Row'
 import LendForm, { FormType } from './components/LendForm'
 import { useApiMarket } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
+import { useProtocolDataProviderContract } from 'hooks/useContract'
+import { useAllTokenBalances } from 'state/wallet/hooks'
 import { TYPE, FlexColumn, FlexRowWrapper, BaseCurrencyView, translatedYesNo } from 'theme'
 import { shortenDecimalValues } from 'utils'
+import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 
 export default function DepositDetail({ address }: { address: string }) {
   const { account } = useActiveWeb3React()
   const { data, loader, abortController } = useApiMarket(address)
-  const [totalBalance] = useState('2.75')
-  const [walletBalance] = useState('1.75')
+  const [totalBalance, setTotalBalance] = useState('0')
+  const [walletBalance, setWalletBalance] = useState('0')
   const [symbol, setSymbol] = useState('')
+  const relevantTokenBalances = useAllTokenBalances()
+  const protocolDataProviderContract = useProtocolDataProviderContract()
 
   useEffect(() => {
     return () => {
@@ -23,15 +29,26 @@ export default function DepositDetail({ address }: { address: string }) {
   }, [])
 
   useEffect(() => {
-    if (!data) return
+    if (!data || !relevantTokenBalances || !protocolDataProviderContract) return
+
+    const decimals = relevantTokenBalances[address]?.currency?.decimals || 18
+
     setSymbol(data.symbol)
-  }, [data])
+    setWalletBalance(formatCurrencyAmount(relevantTokenBalances[address], decimals))
+
+    protocolDataProviderContract
+      .getUserReserveData(address, account)
+      .then((res: any) => {
+        setTotalBalance(formatFixed(res.currentATokenBalance, decimals))
+      })
+      .catch((e: any) => console.log(e)) // TODO: implement proper error handling
+  }, [data, relevantTokenBalances, address, protocolDataProviderContract, account])
 
   return (
     <>
       <ResponsiveRow gap="2rem">
         <DefaultCard width="66%">
-          <LendForm type={FormType.DEPOSIT} symbol={symbol} address={address} />
+          <LendForm type={FormType.DEPOSIT} symbol={symbol} address={address} totalAvailable={totalBalance} />
         </DefaultCard>
         <FlexColumn width="32%">
           {account ? (
