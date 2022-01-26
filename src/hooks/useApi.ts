@@ -84,7 +84,7 @@ interface IPoolDetail {
   token2: ITokenDetail
 }
 
-interface IMarketDetail extends MarketTableData {
+export interface IMarketDetail extends MarketTableData {
   utilizationRate: string
   depositAPR: string
   stableBorrowAPR: string

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
 import { Trans } from '@lingui/macro'
@@ -11,7 +11,7 @@ import UtilisationRate from 'components/LineChart/UtilisationRate'
 import { ResponsiveRow, RowFixed } from 'components/Row'
 import { WalletConnect } from 'components/Wallet'
 import Toggle from 'components/Toggle'
-import { useApiMarket } from 'hooks/useApi'
+import { useApiMarket, IMarketDetail } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
 import { BaseCurrencyView, FlexRowWrapper, TYPE, translatedYesNo, HorizontalSeparator } from 'theme'
 import { shortenDecimalValues, getContract } from 'utils'
@@ -20,6 +20,11 @@ import ERC20_ABI from 'abis/erc20.json'
 import DATA_PROVIDER_ABI from 'abis/lending-protocol-data-provider.json'
 import LENDING_POOL_ABI from 'abis/lending-pool.json'
 import { PROTOCOL_DATA_PROVIDER_ADDRESS, LENDING_POOL_CONTRACT_ADDRESS } from 'constants/general'
+import { calculateGasMargin } from 'utils/calculateGasMargin'
+import Loader from 'components/Loader'
+import { BorrowMode } from 'constants/lend'
+import { useAddPopup } from 'state/application/hooks'
+import { Contract } from 'ethers'
 
 export default function MarketsDetail({ address }: { address: string }) {
   const theme = useContext(ThemeContext)
@@ -31,9 +36,54 @@ export default function MarketsDetail({ address }: { address: string }) {
   const [healthFactor, setHealthFactor] = useState('0')
   const [ltv, setLtv] = useState('0')
   const [availableToBorrow, setAvailableToBorrow] = useState('0')
-  const [useAsCollateralltv, setUseAsCollateral] = useState(false)
+  const [useAsCollateral, setUseAsCollateral] = useState(false)
   const { data, loader, abortController } = useApiMarket(address)
-  const { account, library, chainId } = useActiveWeb3React()
+  const [showCollateralLoader, setShowCollateralLoader] = useState(false)
+  const [showBorrowRateLoader, setShowBorrowRateLoader] = useState(false)
+  const [lendingPoolContract, setLendingPoolContract] = useState<Contract | null>(null)
+  const [tokenContract, setTokenContract] = useState<Contract | null>(null)
+  const [protocolDataProviderContract, setProtocolDataProviderContract] = useState<Contract | null>(null)
+  const addPopup = useAddPopup()
+
+  const updateDataFromContracts = useCallback(
+    async (
+      tokenContract: Contract,
+      protocolDataProviderContract: Contract,
+      lendingPoolContract: Contract,
+      account: string,
+      data?: IMarketDetail
+    ): Promise<void> => {
+      Promise.all([
+        tokenContract.balanceOf(account),
+        tokenContract.decimals(),
+        protocolDataProviderContract.getUserReserveData(address, account),
+        lendingPoolContract.getUserAccountData(account),
+      ])
+        .then((res) => {
+          const [token, decimals, reserve, pool] = res
+          const currentVariableDebt = formatFixed(reserve.currentVariableDebt, decimals)
+          const currentStableDebt = formatFixed(reserve.currentStableDebt, decimals)
+          const availableBorrowsETH = formatFixed(pool.availableBorrowsETH, 18)
+
+          setVariableDebt(currentVariableDebt)
+          setStableDebt(currentStableDebt)
+          setWalletBalance(formatFixed(token, decimals))
+          setDeposited(formatFixed(reserve.currentATokenBalance, decimals))
+          setBorrowed(FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt)).toString())
+          setHealthFactor(formatFixed(pool.healthFactor, 18))
+          setLtv(formatFixed(pool.ltv, 2))
+          setUseAsCollateral(reserve.usageAsCollateralEnabled)
+          setAvailableToBorrow(
+            FixedNumber.from(availableBorrowsETH)
+              .divUnsafe(FixedNumber.from(data?.priceETH))
+              .mulUnsafe(FixedNumber.from('0.99'))
+              .toString()
+          )
+        })
+        .catch((e) => console.log(e)) // TODO: implement proper error handling
+    },
+    [address]
+  )
 
   useEffect(() => {
     return () => {
@@ -42,46 +92,89 @@ export default function MarketsDetail({ address }: { address: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const { account, library, chainId } = useActiveWeb3React()
+
   useEffect(() => {
-    if (!data || !account || !library || !chainId) return
-    const tokenContract = getContract(address, ERC20_ABI, library, account)
-    const protocolDataProviderContract = getContract(
-      PROTOCOL_DATA_PROVIDER_ADDRESS,
-      DATA_PROVIDER_ABI,
-      library,
-      account
-    )
-    const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
+    if (!account || !library || !chainId) return
+    setLendingPoolContract(getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account))
+    setTokenContract(getContract(address, ERC20_ABI, library, account))
+    setProtocolDataProviderContract(getContract(PROTOCOL_DATA_PROVIDER_ADDRESS, DATA_PROVIDER_ABI, library, account))
+  }, [account, library, chainId, address])
 
-    Promise.all([
-      tokenContract.balanceOf(account),
-      tokenContract.decimals(),
-      protocolDataProviderContract.getUserReserveData(address, account),
-      lendingPoolContract.getUserAccountData(account),
-    ])
-      .then((res) => {
-        const [token, decimals, reserve, pool] = res
-        const currentVariableDebt = formatFixed(reserve.currentVariableDebt, decimals)
-        const currentStableDebt = formatFixed(reserve.currentStableDebt, decimals)
-        const availableBorrowsETH = formatFixed(pool.availableBorrowsETH, 18)
+  const handleSetUserUseReserveAsCollateral = useCallback(
+    async (newStatus: boolean) => {
+      if (!data || !lendingPoolContract || !protocolDataProviderContract || !tokenContract || !account) return
+      setShowCollateralLoader(true)
+      let tx = null
+      try {
+        tx = await lendingPoolContract.setUserUseReserveAsCollateral(address, newStatus, {
+          gasPrice: await lendingPoolContract.provider.getGasPrice(),
+          gasLimit: calculateGasMargin(
+            await lendingPoolContract.estimateGas.setUserUseReserveAsCollateral(address, newStatus)
+          ),
+        })
+        await tx.wait()
+        addPopup({ txn: { hash: tx.hash, success: true } }, tx.hash)
+        await updateDataFromContracts(tokenContract, protocolDataProviderContract, lendingPoolContract, account, data)
+      } catch (e) {
+        if (tx) {
+          addPopup({ txn: { hash: tx.hash, success: false } }, tx.hash)
+        } else {
+          addPopup({ txn: { hash: '', success: false, summary: e.message } })
+        }
+      }
+      setShowCollateralLoader(false)
+    },
+    [
+      lendingPoolContract,
+      protocolDataProviderContract,
+      tokenContract,
+      data,
+      addPopup,
+      address,
+      account,
+      updateDataFromContracts,
+    ]
+  )
 
-        setVariableDebt(currentVariableDebt)
-        setStableDebt(currentStableDebt)
-        setWalletBalance(formatFixed(token, decimals))
-        setDeposited(formatFixed(reserve.currentATokenBalance, decimals))
-        setBorrowed(FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt)).toString())
-        setHealthFactor(formatFixed(pool.healthFactor, 18))
-        setLtv(formatFixed(pool.ltv, 2))
-        setUseAsCollateral(reserve.usageAsCollateralEnabled)
-        setAvailableToBorrow(
-          FixedNumber.from(availableBorrowsETH)
-            .divUnsafe(FixedNumber.from(data?.priceETH))
-            .mulUnsafe(FixedNumber.from('0.99'))
-            .toString()
-        )
-      })
-      .catch((e: any) => console.log(e)) // TODO: implement proper error handling
-  }, [account, library, chainId, address, data])
+  const handleSwapBorrowRateMode = useCallback(
+    async (mode: BorrowMode) => {
+      if (!data || !account || !lendingPoolContract || !protocolDataProviderContract || !tokenContract) return
+      setShowBorrowRateLoader(true)
+      let tx = null
+      try {
+        tx = await lendingPoolContract.swapBorrowRateMode(address, mode, {
+          gasPrice: await lendingPoolContract.provider.getGasPrice(),
+          gasLimit: calculateGasMargin(await lendingPoolContract.estimateGas.swapBorrowRateMode(address, mode)),
+        })
+        await tx.wait()
+        addPopup({ txn: { hash: tx.hash, success: true } }, tx.hash)
+        await updateDataFromContracts(tokenContract, protocolDataProviderContract, lendingPoolContract, account, data)
+      } catch (e) {
+        if (tx) {
+          addPopup({ txn: { hash: tx.hash, success: false } }, tx.hash)
+        } else {
+          addPopup({ txn: { hash: '', success: false, summary: e.message } })
+        }
+      }
+      setShowBorrowRateLoader(false)
+    },
+    [
+      lendingPoolContract,
+      protocolDataProviderContract,
+      tokenContract,
+      data,
+      addPopup,
+      address,
+      account,
+      updateDataFromContracts,
+    ]
+  )
+
+  useEffect(() => {
+    if (!data || !lendingPoolContract || !protocolDataProviderContract || !tokenContract || !account) return
+    updateDataFromContracts(tokenContract, protocolDataProviderContract, lendingPoolContract, account, data)
+  }, [lendingPoolContract, protocolDataProviderContract, tokenContract, data, account, updateDataFromContracts])
 
   return (
     <>
@@ -305,26 +398,22 @@ export default function MarketsDetail({ address }: { address: string }) {
                         {shortenDecimalValues(deposited)} {data.symbol}
                       </TYPE.common>
                     </FlexRowWrapper>
-                    {parseInt(deposited) ? (
+                    {!FixedNumber.from(deposited).isZero() ? (
                       <FlexRowWrapper>
                         <TYPE.common>
                           <Trans>Use as collateral</Trans>
                         </TYPE.common>
                         <TYPE.common>
                           {' '}
-                          <Toggle
-                            id="toggle-expert-mode-button"
-                            isActive={useAsCollateralltv}
-                            toggle={
-                              useAsCollateralltv
-                                ? () => {
-                                    console.log(false)
-                                  }
-                                : () => {
-                                    console.log(true)
-                                  }
-                            }
-                          />
+                          {showCollateralLoader ? (
+                            <Loader />
+                          ) : (
+                            <Toggle
+                              id="toggle-expert-mode-button"
+                              isActive={useAsCollateral}
+                              toggle={() => handleSetUserUseReserveAsCollateral(!useAsCollateral)}
+                            />
+                          )}
                         </TYPE.common>
                       </FlexRowWrapper>
                     ) : (
@@ -373,10 +462,24 @@ export default function MarketsDetail({ address }: { address: string }) {
                     {(!FixedNumber.from(stableDebt).isZero() || !FixedNumber.from(variableDebt).isZero()) && (
                       <>
                         <HorizontalSeparator />
-                        {!FixedNumber.from(stableDebt).isZero() && (
+                        {showBorrowRateLoader && (
+                          <FlexRowWrapper style={{ justifyContent: 'center' }}>
+                            <Loader />
+                          </FlexRowWrapper>
+                        )}
+                        {!FixedNumber.from(stableDebt).isZero() && !showBorrowRateLoader && (
                           <FlexRowWrapper>
                             <TYPE.common>
                               <Trans>Stable</Trans>
+                            </TYPE.common>
+                            <TYPE.common>
+                              <Toggle
+                                id="stable-mode-button"
+                                isActive={true}
+                                toggle={() => {
+                                  handleSwapBorrowRateMode(BorrowMode.STABLE)
+                                }}
+                              />
                             </TYPE.common>
                             <TYPE.common>
                               <TYPE.darkGray>{shortenDecimalValues(stableDebt)}</TYPE.darkGray>
@@ -400,10 +503,19 @@ export default function MarketsDetail({ address }: { address: string }) {
                             </TYPE.common>
                           </FlexRowWrapper>
                         )}
-                        {!FixedNumber.from(variableDebt).isZero() && (
+                        {!FixedNumber.from(variableDebt).isZero() && !showBorrowRateLoader && (
                           <FlexRowWrapper>
                             <TYPE.common>
                               <Trans>Variable</Trans>
+                            </TYPE.common>
+                            <TYPE.common>
+                              <Toggle
+                                id="variable-mode-button"
+                                isActive={true}
+                                toggle={() => {
+                                  handleSwapBorrowRateMode(BorrowMode.VARIABLE)
+                                }}
+                              />
                             </TYPE.common>
                             <TYPE.common>
                               <TYPE.darkGray>{shortenDecimalValues(variableDebt)}</TYPE.darkGray>
