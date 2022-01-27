@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { Trans, t } from '@lingui/macro'
 import { ButtonPrimary } from 'components/Button'
 import { GetTokenLogoURL } from 'components/CurrencyLogo'
@@ -7,6 +7,7 @@ import { WalletConnect } from 'components/Wallet'
 import { useActiveWeb3React } from 'hooks/web3'
 import { FlexColumn, FlexRowWrapper, TYPE, Dots } from 'theme'
 import { InputWrapper, Input, OverlapButton } from './styled'
+import { shortenDecimalValues } from 'utils'
 
 // TODO: move enum and labels to src/constants/lend.ts after merging OM-548
 export enum FormType {
@@ -44,11 +45,20 @@ const subheaderLabels: { [type: string]: string } = {
   [FormType.REPAY]: t`How much do you want to repay?`,
 }
 
-export default function LendForm({ type, symbol, address }: { type: FormType; symbol: string; address: string }) {
+export default function LendForm({
+  type,
+  symbol,
+  address,
+  totalAvailable,
+}: {
+  type: FormType
+  symbol: string
+  address: string
+  totalAvailable: string
+}) {
   const { account } = useActiveWeb3React()
   const [loading, setLoading] = useState(false)
   const [currentValue, setCurrentValue] = useState('')
-  const [maxValue, setMaxValue] = useState('0')
 
   const handleValueChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,10 +73,6 @@ export default function LendForm({ type, symbol, address }: { type: FormType; sy
     setLoading(true)
     console.log(`Submit ${currentValue}`)
   }, [currentValue])
-
-  useEffect(() => {
-    setMaxValue('1.75')
-  }, [])
 
   return (
     <>
@@ -83,13 +89,13 @@ export default function LendForm({ type, symbol, address }: { type: FormType; sy
                 <RowBetween style={{ marginBottom: '10px' }}>
                   <TYPE.subHeader color="text6">{availableLabels[type]}</TYPE.subHeader>
                   <TYPE.subHeader color="text6">
-                    {maxValue} {symbol}
+                    {shortenDecimalValues(totalAvailable)} {symbol}
                   </TYPE.subHeader>
                 </RowBetween>
                 <Input value={currentValue} onChange={handleValueChange} imageUrl={GetTokenLogoURL(address)} />
                 <OverlapButton
                   onClick={() => {
-                    setCurrentValue(maxValue)
+                    setCurrentValue(totalAvailable)
                   }}
                 >
                   <Trans>Max</Trans>

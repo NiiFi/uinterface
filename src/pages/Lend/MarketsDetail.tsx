@@ -14,16 +14,13 @@ import Toggle from 'components/Toggle'
 import { useApiMarket, IMarketDetail } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
 import { BaseCurrencyView, FlexRowWrapper, TYPE, translatedYesNo, HorizontalSeparator } from 'theme'
-import { shortenDecimalValues, getContract } from 'utils'
+import { shortenDecimalValues } from 'utils'
 import { FixedNumber, formatFixed } from '@ethersproject/bignumber'
-import ERC20_ABI from 'abis/erc20.json'
-import DATA_PROVIDER_ABI from 'abis/lending-protocol-data-provider.json'
-import LENDING_POOL_ABI from 'abis/lending-pool.json'
-import { PROTOCOL_DATA_PROVIDER_ADDRESS, LENDING_POOL_CONTRACT_ADDRESS } from 'constants/general'
 import { calculateGasMargin } from 'utils/calculateGasMargin'
 import Loader from 'components/Loader'
 import { BorrowMode } from 'constants/lend'
 import { useAddPopup } from 'state/application/hooks'
+import { useTokenContract, useLendingPoolContract, useProtocolDataProviderContract } from 'hooks/useContract'
 import { Contract } from 'ethers'
 
 export default function MarketsDetail({ address }: { address: string }) {
@@ -40,9 +37,9 @@ export default function MarketsDetail({ address }: { address: string }) {
   const { data, loader, abortController } = useApiMarket(address)
   const [showCollateralLoader, setShowCollateralLoader] = useState(false)
   const [showBorrowRateLoader, setShowBorrowRateLoader] = useState(false)
-  const [lendingPoolContract, setLendingPoolContract] = useState<Contract | null>(null)
-  const [tokenContract, setTokenContract] = useState<Contract | null>(null)
-  const [protocolDataProviderContract, setProtocolDataProviderContract] = useState<Contract | null>(null)
+  const lendingPoolContract = useLendingPoolContract()
+  const tokenContract = useTokenContract(address, true)
+  const protocolDataProviderContract = useProtocolDataProviderContract()
   const addPopup = useAddPopup()
 
   const updateDataFromContracts = useCallback(
@@ -92,14 +89,7 @@ export default function MarketsDetail({ address }: { address: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const { account, library, chainId } = useActiveWeb3React()
-
-  useEffect(() => {
-    if (!account || !library || !chainId) return
-    setLendingPoolContract(getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account))
-    setTokenContract(getContract(address, ERC20_ABI, library, account))
-    setProtocolDataProviderContract(getContract(PROTOCOL_DATA_PROVIDER_ADDRESS, DATA_PROVIDER_ABI, library, account))
-  }, [account, library, chainId, address])
+  const { account } = useActiveWeb3React()
 
   const handleSetUserUseReserveAsCollateral = useCallback(
     async (newStatus: boolean) => {
