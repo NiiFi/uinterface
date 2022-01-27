@@ -3,7 +3,8 @@ import { Trans } from '@lingui/macro'
 import { formatFixed } from '@ethersproject/bignumber'
 import { DefaultCard } from 'components/Card'
 import { ResponsiveRow } from 'components/Row'
-import LendForm, { FormType } from './components/LendForm'
+import LendForm from './components/LendForm'
+import { FormType } from 'constants/lend'
 import { useApiMarket } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useProtocolDataProviderContract } from 'hooks/useContract'
@@ -17,6 +18,7 @@ export default function DepositDetail({ address }: { address: string }) {
   const { data, loader, abortController } = useApiMarket(address)
   const [totalBalance, setTotalBalance] = useState('0')
   const [walletBalance, setWalletBalance] = useState('0')
+  const [decimals, setDecimals] = useState(18)
   const [symbol, setSymbol] = useState('')
   const relevantTokenBalances = useAllTokenBalances()
   const protocolDataProviderContract = useProtocolDataProviderContract()
@@ -35,6 +37,7 @@ export default function DepositDetail({ address }: { address: string }) {
 
     setSymbol(data.symbol)
     setWalletBalance(formatCurrencyAmount(relevantTokenBalances[address], decimals))
+    setDecimals(decimals)
 
     protocolDataProviderContract
       .getUserReserveData(address, account)
@@ -48,7 +51,17 @@ export default function DepositDetail({ address }: { address: string }) {
     <>
       <ResponsiveRow gap="2rem">
         <DefaultCard width="66%">
-          <LendForm type={FormType.DEPOSIT} symbol={symbol} address={address} totalAvailable={totalBalance} />
+          {loader ||
+            (data && (
+              <LendForm
+                type={FormType.DEPOSIT}
+                symbol={symbol}
+                address={address}
+                totalAvailable={walletBalance}
+                currencyPrice={data.priceETH}
+                decimals={decimals}
+              />
+            ))}
         </DefaultCard>
         <FlexColumn width="32%">
           {account ? (
