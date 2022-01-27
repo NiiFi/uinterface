@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
-import { Trans, t } from '@lingui/macro'
+import { FixedNumber, formatFixed, parseFixed } from '@ethersproject/bignumber'
+import { Trans } from '@lingui/macro'
 import { ButtonPrimary } from 'components/Button'
 import { GetTokenLogoURL } from 'components/CurrencyLogo'
 import { RowBetween } from 'components/Row'
@@ -7,72 +8,101 @@ import { WalletConnect } from 'components/Wallet'
 import { useActiveWeb3React } from 'hooks/web3'
 import { FlexColumn, FlexRowWrapper, TYPE, Dots } from 'theme'
 import { InputWrapper, Input, OverlapButton } from './styled'
-import { shortenDecimalValues } from 'utils'
-
-// TODO: move enum and labels to src/constants/lend.ts after merging OM-548
-export enum FormType {
-  DEPOSIT = 1,
-  BORROW = 2,
-  WITHDRAW = 3,
-  REPAY = 4,
-}
-
-const typeLabels: { [type: string]: string } = {
-  [FormType.DEPOSIT]: t`Deposit`,
-  [FormType.BORROW]: t`Borrow`,
-  [FormType.WITHDRAW]: t`Withdraw`,
-  [FormType.REPAY]: t`Repay`,
-}
-
-const availableLabels: { [type: string]: string } = {
-  [FormType.DEPOSIT]: t`Available to deposit`,
-  [FormType.BORROW]: t`Available to borrow`,
-  [FormType.WITHDRAW]: t`Available to withdraw`,
-  [FormType.REPAY]: t`Available to repay`,
-}
-
-const headerLabels: { [type: string]: string } = {
-  [FormType.DEPOSIT]: t`How much would you like to deposit?`,
-  [FormType.BORROW]: t`How much would you like to borrow?`,
-  [FormType.WITHDRAW]: t`How much would you like to withdraw?`,
-  [FormType.REPAY]: t`Repay`,
-}
-
-const subheaderLabels: { [type: string]: string } = {
-  [FormType.DEPOSIT]: t`Please enter an amount you would like to deposit. The maximum amount you can deposit is shown below.`,
-  [FormType.BORROW]: t`Please enter an amount you would like to borrow. The maximum amount you can borrow is shown below.`,
-  [FormType.WITHDRAW]: t`Please enter an amount you would like to withdraw. The maximum amount you can withdraw is shown below.`,
-  [FormType.REPAY]: t`How much do you want to repay?`,
-}
+import { useLendingPoolContract } from 'hooks/useContract'
+import { useAddPopup } from 'state/application/hooks'
+import { escapeRegExp, shortenDecimalValues } from 'utils'
+import { calculateGasMargin } from 'utils/calculateGasMargin'
+import { inputRegex } from 'components/NumericalInput'
+import { FormType, typeLabels, availableLabels, headerLabels, subheaderLabels } from 'constants/lend'
 
 export default function LendForm({
   type,
   symbol,
   address,
   totalAvailable,
+  currencyPrice,
+  decimals,
 }: {
   type: FormType
   symbol: string
   address: string
   totalAvailable: string
+  currencyPrice: string
+  decimals: number
 }) {
   const { account } = useActiveWeb3React()
   const [loading, setLoading] = useState(false)
+  const lendingPoolContract = useLendingPoolContract()
   const [currentValue, setCurrentValue] = useState('')
+  const [newhealthFactor, setNewhealthFactor] = useState('')
+  const addPopup = useAddPopup()
+
+  const calculateNewHealthFactor = useCallback(
+    async (inputValue: string) => {
+      if (!inputValue || !lendingPoolContract) {
+        setNewhealthFactor('')
+        return
+      }
+
+      const pool = await lendingPoolContract.getUserAccountData(account)
+      const currentLiquidationThreshold = formatFixed(pool.currentLiquidationThreshold, 4)
+      const totalCollateralETH = formatFixed(pool.totalCollateralETH, 18)
+      const totalDebtETH = formatFixed(pool.totalDebtETH, 18)
+
+      const currentValueETH = FixedNumber.from(inputValue).mulUnsafe(FixedNumber.from(currencyPrice)).toString()
+
+      setNewhealthFactor(
+        FixedNumber.from(totalCollateralETH)
+          .addUnsafe(FixedNumber.from(currentValueETH))
+          .mulUnsafe(FixedNumber.from(currentLiquidationThreshold))
+          .divUnsafe(FixedNumber.from(totalDebtETH))
+          .toString()
+      )
+    },
+    [lendingPoolContract, currencyPrice, account]
+  )
 
   const handleValueChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      e.stopPropagation()
-      console.log(`TOKEN ${address} {e.target.value}`)
-      setCurrentValue(e.target.value)
+      const prevValue = e.target.value.replace(/,/g, '.')
+      if (
+        !inputRegex.test(escapeRegExp(prevValue)) ||
+        FixedNumber.from(totalAvailable)
+          .subUnsafe(FixedNumber.from(prevValue || '0'))
+          .isNegative()
+      ) {
+        return
+      }
+      setCurrentValue(prevValue)
+      calculateNewHealthFactor(prevValue)
     },
-    [address]
+    [totalAvailable, calculateNewHealthFactor]
   )
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
+    if (!lendingPoolContract || !account) return
+
     setLoading(true)
-    console.log(`Submit ${currentValue}`)
-  }, [currentValue])
+
+    try {
+      const weiValue = parseFixed(currentValue, decimals).toString()
+      const gasPrice = await lendingPoolContract.provider.getGasPrice()
+      const estimatedGas = await lendingPoolContract.estimateGas.deposit(address, weiValue, account, 0)
+
+      const tx = await lendingPoolContract.deposit(address, weiValue, account, 0, {
+        gasPrice,
+        gasLimit: calculateGasMargin(estimatedGas),
+      })
+
+      addPopup({ txn: { hash: tx.hash, success: true } }, tx.hash)
+    } catch (e) {
+      addPopup({ txn: { hash: '', success: false, summary: e.message } })
+    }
+
+    setCurrentValue('')
+    calculateNewHealthFactor('')
+    setLoading(false)
+  }, [currentValue, lendingPoolContract, calculateNewHealthFactor, addPopup, account, address, decimals])
 
   return (
     <>
@@ -96,12 +126,21 @@ export default function LendForm({
                 <OverlapButton
                   onClick={() => {
                     setCurrentValue(totalAvailable)
+                    calculateNewHealthFactor(totalAvailable)
                   }}
                 >
                   <Trans>Max</Trans>
                 </OverlapButton>
+                {newhealthFactor && (
+                  <RowBetween style={{ marginTop: '10px' }}>
+                    <TYPE.subHeader color="text6">
+                      <Trans>New health factor</Trans>
+                    </TYPE.subHeader>
+                    <TYPE.subHeader color="text6">{shortenDecimalValues(newhealthFactor)}</TYPE.subHeader>
+                  </RowBetween>
+                )}
               </InputWrapper>
-              <ButtonPrimary onClick={handleSubmit} disabled={loading}>
+              <ButtonPrimary onClick={handleSubmit} disabled={loading || !currentValue}>
                 {loading ? (
                   <>
                     <Trans>Processing</Trans>

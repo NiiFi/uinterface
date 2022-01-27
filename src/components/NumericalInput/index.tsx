@@ -38,7 +38,7 @@ const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: s
   }
 `
 
-const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
+export const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
 
 export const Input = React.memo(function InnerInput({
   value,
@@ -73,7 +73,7 @@ export const Input = React.memo(function InnerInput({
             ? value.toString().slice(1, value.toString().length + 1)
             : value
 
-          // replace commas with periods, because uniswap exclusively uses period as the decimal separator
+          // replace commas with periods
           enforcer(formattedValue.replace(/,/g, '.'))
         } else {
           enforcer(event.target.value.replace(/,/g, '.'))

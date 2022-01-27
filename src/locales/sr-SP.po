@@ -229,20 +229,20 @@ msgstr ""
 msgid "Available liquidity"
 msgstr ""
 
+#: src/constants/lend.ts
 #: src/pages/Lend/Borrow.tsx
-#: src/pages/Lend/components/LendForm.tsx
 msgid "Available to borrow"
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "Available to deposit"
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "Available to repay"
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "Available to withdraw"
 msgstr ""
 
@@ -285,8 +285,8 @@ msgstr ""
 msgid "Blocked address"
 msgstr ""
 
+#: src/constants/lend.ts
 #: src/pages/Lend/MarketsDetail.tsx
-#: src/pages/Lend/components/LendForm.tsx
 #: src/pages/Lend/index.tsx
 msgid "Borrow"
 msgstr ""
@@ -507,11 +507,11 @@ msgstr ""
 msgid "Democratic Republic of Congo"
 msgstr ""
 
+#: src/constants/lend.ts
 #: src/pages/Dashboard/components/BuyCryptoButton.tsx
 #: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 #: src/pages/Lend/MarketsDetail.tsx
-#: src/pages/Lend/components/LendForm.tsx
 #: src/pages/Lend/index.tsx
 msgid "Deposit"
 msgstr ""
@@ -703,19 +703,19 @@ msgstr ""
 msgid "Hong Kong Dollar"
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "How much do you want to repay?"
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "How much would you like to borrow?"
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "How much would you like to deposit?"
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "How much would you like to withdraw?"
 msgstr ""
 
@@ -987,6 +987,10 @@ msgstr ""
 msgid "New Pools"
 msgstr ""
 
+#: src/pages/Lend/components/LendForm.tsx
+msgid "New health factor"
+msgstr ""
+
 #: src/components/SwitchLocaleLink/index.tsx
 msgid "NiiFi available in: <0>{0}</0>"
 msgstr ""
@@ -1094,15 +1098,15 @@ msgstr ""
 msgid "Please connect to the appropriate Nahmii network."
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "Please enter an amount you would like to borrow. The maximum amount you can borrow is shown below."
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "Please enter an amount you would like to deposit. The maximum amount you can deposit is shown below."
 msgstr ""
 
-#: src/pages/Lend/components/LendForm.tsx
+#: src/constants/lend.ts
 msgid "Please enter an amount you would like to withdraw. The maximum amount you can withdraw is shown below."
 msgstr ""
 
@@ -1239,10 +1243,10 @@ msgstr ""
 msgid "Removing {0} {1} and {2} {3}"
 msgstr ""
 
+#: src/constants/lend.ts
+#: src/constants/lend.ts
 #: src/pages/Lend/MarketsDetail.tsx
 #: src/pages/Lend/MarketsDetail.tsx
-#: src/pages/Lend/components/LendForm.tsx
-#: src/pages/Lend/components/LendForm.tsx
 msgid "Repay"
 msgstr ""
 
@@ -1777,8 +1781,8 @@ msgstr ""
 msgid "Wallet balance"
 msgstr ""
 
+#: src/constants/lend.ts
 #: src/pages/Lend/MarketsDetail.tsx
-#: src/pages/Lend/components/LendForm.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"
 msgstr ""
