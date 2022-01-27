@@ -10,14 +10,12 @@ import { useActiveWeb3React } from 'hooks/web3'
 import { TYPE, RowWrapper, BaseCurrencyView, MEDIA_WIDTHS } from 'theme'
 import Table from 'components/Table'
 import { shortenDecimalValues, getContract } from 'utils'
-import LENDING_POOL_ABI from 'abis/lending-pool.json'
-import { LENDING_POOL_CONTRACT_ADDRESS, PROTOCOL_DATA_PROVIDER_ADDRESS } from 'constants/general'
-import DATA_PROVIDER_ABI from 'abis/lending-protocol-data-provider.json'
 import ERC20_ABI from 'abis/erc20.json'
 import { Grid } from '@material-ui/core'
 import { DefaultCard } from 'components/Card'
-import { BodyPanel } from '../styled'
+import { BodyPanel } from 'pages/styled'
 import useBreakpoint from 'hooks/useBreakpoint'
+import { useLendingPoolContract, useProtocolDataProviderContract } from 'hooks/useContract'
 
 const Card = styled(DefaultCard)`
   padding: 0;
@@ -118,10 +116,12 @@ const BorrowTableRow = (
 
 export default function Borrow() {
   const { data, loader, abortController } = useApiMarkets()
-  const { account, library, chainId } = useActiveWeb3React()
+  const { account, library } = useActiveWeb3React()
   const [availableBorrowsETH, setAvailableBorrowsETH] = useState('0')
-  const [myBorrows, setMyBorrows] = useState<any[]>([])
+  const [myBorrows, setMyBorrows] = useState<any[] | null>(null)
   const isSmallScreen = useBreakpoint(MEDIA_WIDTHS.upToSmall)
+  const lendingPoolContract = useLendingPoolContract()
+  const protocolDataProviderContract = useProtocolDataProviderContract()
 
   useEffect(() => {
     return () => {
@@ -131,48 +131,35 @@ export default function Borrow() {
   }, [])
 
   useEffect(() => {
-    if (!account || !library) return
-    const lendingPoolContract = getContract(LENDING_POOL_CONTRACT_ADDRESS, LENDING_POOL_ABI, library, account)
+    if (!account || !lendingPoolContract) return
     lendingPoolContract
       .getUserAccountData(account)
       .then((pool: any) => {
         setAvailableBorrowsETH(formatFixed(pool.availableBorrowsETH, 18))
       })
       .catch((e: any) => console.log(e)) // TODO: implement proper error handling
-  }, [account, library, chainId])
+  }, [account, lendingPoolContract])
 
   useEffect(() => {
-    if (!account || !library || !data || !data.length) return
-    const contractProtocolDataProvider = getContract(
-      PROTOCOL_DATA_PROVIDER_ADDRESS,
-      DATA_PROVIDER_ABI,
-      library,
-      account
-    )
+    if (!protocolDataProviderContract || !account || !library || !data || !data.length) return
 
     const borrows: any[] = []
-    data.forEach((item, index) => {
+    data.forEach((item) => {
       const tokenContract = getContract(item.address, ERC20_ABI, library, account)
-      Promise.all([tokenContract.decimals(), contractProtocolDataProvider.getUserReserveData(item.address, account)])
+      Promise.all([tokenContract.decimals(), protocolDataProviderContract.getUserReserveData(item.address, account)])
         .then((res) => {
           const [decimals, contractData] = res
-          const currentVariableDebt = contractData.currentVariableDebt.isZero()
-            ? '0'
-            : formatFixed(contractData.currentVariableDebt, decimals)
-          const currentStableDebt = contractData.currentStableDebt.isZero()
-            ? '0'
-            : formatFixed(contractData.currentStableDebt, decimals)
+          const currentVariableDebt = formatFixed(contractData.currentVariableDebt, decimals)
+          const currentStableDebt = formatFixed(contractData.currentStableDebt, decimals)
           const borrowed = FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt))
           if (!borrowed.isZero()) {
             borrows.push({ address: item.address, borrowed })
           }
-          if (index === data.length - 1) {
-            setMyBorrows(borrows)
-          }
+          setMyBorrows([...borrows])
         })
         .catch((e) => console.log(e)) // TODO: implement proper error handling
     })
-  }, [account, library, chainId, data])
+  }, [protocolDataProviderContract, account, library, data])
 
   const tableData = useMemo(() => {
     if (!data || !data.length || (account && !availableBorrowsETH)) return
@@ -202,7 +189,7 @@ export default function Borrow() {
   }, [data, account, availableBorrowsETH])
 
   const borrowsData = useMemo(() => {
-    if (!data || !data.length) return
+    if (!data || !data.length || !myBorrows) return
     const res = []
     for (const borrow of myBorrows) {
       const item = data.find((item) => item.address === borrow.address)
@@ -220,7 +207,7 @@ export default function Borrow() {
         (tableData && borrowsData && (
           <BodyPanel>
             <Grid container direction="row" alignItems="flex-start" spacing={6}>
-              <Grid item xs={isSmallScreen ? 12 : 8}>
+              <Grid item xs={isSmallScreen || !borrowsData.length ? 12 : 8}>
                 <Card>
                   <Table
                     title={t`All Tokens`}
@@ -237,21 +224,23 @@ export default function Borrow() {
                   />
                 </Card>
               </Grid>
-              <Grid item xs={isSmallScreen ? 12 : 4}>
-                <Card>
-                  <Table
-                    title={t`My borrows`}
-                    data={borrowsData}
-                    headCells={[
-                      { id: 'symbol', numeric: false, align: 'left', disablePadding: true, label: t`Asset` },
-                      { id: 'borrowed', numeric: true, disablePadding: false, label: t`Borrowed` },
-                    ]}
-                    row={BorrowTableRow}
-                    defaultOrder={'desc'}
-                    defaultOrderBy={'symbol'}
-                  />
-                </Card>
-              </Grid>
+              {!!borrowsData.length && (
+                <Grid item xs={isSmallScreen ? 12 : 4}>
+                  <Card>
+                    <Table
+                      title={t`My borrows`}
+                      data={borrowsData}
+                      headCells={[
+                        { id: 'symbol', numeric: false, align: 'left', disablePadding: true, label: t`Asset` },
+                        { id: 'borrowed', numeric: true, disablePadding: false, label: t`Borrowed` },
+                      ]}
+                      row={BorrowTableRow}
+                      defaultOrder={'desc'}
+                      defaultOrderBy={'symbol'}
+                    />
+                  </Card>
+                </Grid>
+              )}
             </Grid>
           </BodyPanel>
         ))}
