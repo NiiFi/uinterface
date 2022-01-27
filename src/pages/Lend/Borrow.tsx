@@ -143,22 +143,28 @@ export default function Borrow() {
   useEffect(() => {
     if (!protocolDataProviderContract || !account || !library || !data || !data.length) return
 
-    const borrows: any[] = []
-    data.forEach((item) => {
+    const promises = []
+    for (const item of data) {
       const tokenContract = getContract(item.address, ERC20_ABI, library, account)
-      Promise.all([tokenContract.decimals(), protocolDataProviderContract.getUserReserveData(item.address, account)])
-        .then((res) => {
-          const [decimals, contractData] = res
+      promises.push(
+        Promise.all([tokenContract.decimals(), protocolDataProviderContract.getUserReserveData(item.address, account)])
+      )
+    }
+    Promise.all(promises)
+      .then((res) => {
+        const borrows: any[] = []
+        for (let i = 0; i < res.length; i++) {
+          const [decimals, contractData] = res[i]
           const currentVariableDebt = formatFixed(contractData.currentVariableDebt, decimals)
           const currentStableDebt = formatFixed(contractData.currentStableDebt, decimals)
           const borrowed = FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt))
           if (!borrowed.isZero()) {
-            borrows.push({ address: item.address, borrowed })
+            borrows.push({ address: data[i].address, borrowed })
           }
-          setMyBorrows([...borrows])
-        })
-        .catch((e) => console.log(e)) // TODO: implement proper error handling
-    })
+        }
+        setMyBorrows(borrows)
+      })
+      .catch((e) => console.log(e)) // TODO: implement proper error handling
   }, [protocolDataProviderContract, account, library, data])
 
   const tableData = useMemo(() => {
