@@ -222,7 +222,7 @@ export default function Borrow() {
       {loader ||
         (tableData && borrowsData && (
           <ResponsiveRow gap="2rem">
-            <Card width="66%">
+            <Card width={borrowsData.length ? '66%' : '100%'}>
               <Table
                 title={t`All Tokens`}
                 data={tableData}
