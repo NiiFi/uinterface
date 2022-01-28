@@ -34,7 +34,6 @@ const CustomTableRow = (row: any, index: number, history: History<LocationState>
       selected={false}
       style={{ cursor: 'pointer' }}
     >
-      <TableCell style={{ ...rowCellStyles, paddingLeft: '30px', width: '100px' }}>{index + 1}</TableCell>
       <TableCell style={rowCellStyles} align="left">
         <RowWrapper>
           <CurrencyAvatar
@@ -111,7 +110,6 @@ export default function Markets() {
               title={t`All Tokens`}
               data={marketData}
               headCells={[
-                { id: 'number', numeric: true, align: 'left', disablePadding: true, label: '#' },
                 { id: 'symbol', numeric: false, align: 'left', disablePadding: false, label: t`Asset` },
                 { id: 'marketSize', numeric: true, disablePadding: false, label: t`Market Size` },
                 { id: 'totalBorrowed', numeric: true, disablePadding: false, label: t`Total Borrowed` },
