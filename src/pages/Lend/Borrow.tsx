@@ -143,7 +143,12 @@ export default function Borrow() {
   }, [account, lendingPoolContract])
 
   useEffect(() => {
-    if (!protocolDataProviderContract || !account || !library || !data || !data.length) return
+    if (!protocolDataProviderContract || !library || !data || !data.length) return
+
+    if (!account) {
+      setMyBorrows([])
+      return
+    }
 
     const promises = []
     for (const item of data) {
