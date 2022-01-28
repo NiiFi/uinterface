@@ -1,19 +1,20 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import { t } from '@lingui/macro'
+import React, { useEffect, useMemo, useState, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
+import { Trans, t } from '@lingui/macro'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { DefaultTheme, ThemeContext } from 'styled-components'
 import { FixedNumber, formatFixed } from '@ethersproject/bignumber'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import { useApiMarkets } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
-import { TYPE, RowWrapper, BaseCurrencyView, MEDIA_WIDTHS } from 'theme'
+import { TYPE, RowWrapper, BaseCurrencyView, MEDIA_WIDTHS, FlexRowWrapper, FlexColumn } from 'theme'
 import Table from 'components/Table'
+import SimpleTable from 'components/Table/Simple'
 import { shortenDecimalValues, getContract } from 'utils'
 import ERC20_ABI from 'abis/erc20.json'
-import { Grid } from '@material-ui/core'
 import { DefaultCard } from 'components/Card'
-import { BodyPanel } from 'pages/styled'
+import { ResponsiveRow } from 'components/Row'
 import useBreakpoint from 'hooks/useBreakpoint'
 import { useLendingPoolContract, useProtocolDataProviderContract } from 'hooks/useContract'
 
@@ -78,15 +79,13 @@ const CustomTableRow = (
 const BorrowTableRow = (
   row: any,
   index: number,
-  theme: DefaultTheme,
-  handleClick: (event: React.MouseEvent<unknown>, name: string) => void
+  rowCellStyles: { [key: string]: string },
+  handleClick: (name: string) => void
 ) => {
-  const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, fontSize: '16px' }
-
   return (
     <TableRow
       hover
-      onClick={(event) => (row?.url ? window.open(row.url, '_blank') : handleClick(event, row.id))}
+      onClick={() => handleClick(row.address)}
       role="checkbox"
       aria-checked={false}
       tabIndex={-1}
@@ -107,7 +106,7 @@ const BorrowTableRow = (
           </TYPE.black>
         </RowWrapper>
       </TableCell>
-      <TableCell style={rowCellStyles} align="center">
+      <TableCell style={rowCellStyles} align="right">
         {shortenDecimalValues(row.borrowed)}
       </TableCell>
     </TableRow>
@@ -119,9 +118,12 @@ export default function Borrow() {
   const { account, library } = useActiveWeb3React()
   const [availableBorrowsETH, setAvailableBorrowsETH] = useState('0')
   const [myBorrows, setMyBorrows] = useState<any[] | null>(null)
+  const [totalBorrowedUSD, setTotalBorrowedUSD] = useState(0)
   const isSmallScreen = useBreakpoint(MEDIA_WIDTHS.upToSmall)
   const lendingPoolContract = useLendingPoolContract()
   const protocolDataProviderContract = useProtocolDataProviderContract()
+  const theme = useContext(ThemeContext)
+  const history = useHistory()
 
   useEffect(() => {
     return () => {
@@ -197,58 +199,81 @@ export default function Borrow() {
   const borrowsData = useMemo(() => {
     if (!data || !data.length || !myBorrows) return
     const res = []
+    let totalBorrowedUSD = '0'
     for (const borrow of myBorrows) {
       const item = data.find((item) => item.address === borrow.address)
       if (!item) {
         continue
       }
+      totalBorrowedUSD = FixedNumber.from(totalBorrowedUSD)
+        .addUnsafe(borrow.borrowed.mulUnsafe(FixedNumber.from(item.priceUSD)))
+        .toString()
+
       res.push({ ...item, borrowed: borrow.borrowed })
     }
-    return res
+
+    setTotalBorrowedUSD(totalBorrowedUSD as unknown as number)
+
+    return res.sort((a, b) => (a.borrowed < b.borrowed && 1) || -1)
   }, [data, myBorrows])
 
   return (
     <>
       {loader ||
         (tableData && borrowsData && (
-          <BodyPanel>
-            <Grid container direction="row" alignItems="flex-start" spacing={6}>
-              <Grid item xs={isSmallScreen || !borrowsData.length ? 12 : 8}>
-                <Card>
-                  <Table
-                    title={t`All Tokens`}
-                    data={tableData}
-                    headCells={[
-                      { id: 'symbol', numeric: false, align: 'left', disablePadding: true, label: t`Asset` },
-                      { id: 'availableToBorrow', numeric: true, disablePadding: true, label: t`Available to borrow` },
-                      { id: 'variableBorrowAPY', numeric: true, disablePadding: false, label: t`Variable APY` },
-                      { id: 'stableBorrowAPY', numeric: true, disablePadding: false, label: t`Stable APY` },
-                    ]}
-                    row={CustomTableRow}
-                    defaultOrder={'desc'}
-                    defaultOrderBy={'availableToBorrow'}
+          <ResponsiveRow gap="2rem">
+            <Card width="66%">
+              <Table
+                title={t`All Tokens`}
+                data={tableData}
+                headCells={[
+                  { id: 'symbol', numeric: false, align: 'left', disablePadding: true, label: t`Asset` },
+                  { id: 'availableToBorrow', numeric: true, disablePadding: true, label: t`Available to borrow` },
+                  { id: 'variableBorrowAPY', numeric: true, disablePadding: false, label: t`Variable APY` },
+                  { id: 'stableBorrowAPY', numeric: true, disablePadding: false, label: t`Stable APY` },
+                ]}
+                row={CustomTableRow}
+                defaultOrder={'desc'}
+                defaultOrderBy={'availableToBorrow'}
+              />
+            </Card>
+            {!!borrowsData.length && (
+              <FlexColumn style={{ width: isSmallScreen ? '100%' : '32%' }}>
+                <DefaultCard>
+                  <TYPE.body style={{ marginBottom: '16px' }}>
+                    <Trans>My borrows</Trans>
+                  </TYPE.body>
+                  <SimpleTable
+                    data={borrowsData}
+                    row={(row, index) =>
+                      BorrowTableRow(
+                        row,
+                        index,
+                        {
+                          color: theme.black,
+                          borderBottom: 'none',
+                          fontSize: '16px',
+                          padding: '10px 0',
+                        },
+                        (address: string) => {
+                          // history.push(`/lend/borrow/${address}`)
+                          alert(`${address} - Development in progress...`)
+                        }
+                      )
+                    }
                   />
-                </Card>
-              </Grid>
-              {!!borrowsData.length && (
-                <Grid item xs={isSmallScreen ? 12 : 4}>
-                  <Card>
-                    <Table
-                      title={t`My borrows`}
-                      data={borrowsData}
-                      headCells={[
-                        { id: 'symbol', numeric: false, align: 'left', disablePadding: true, label: t`Asset` },
-                        { id: 'borrowed', numeric: true, disablePadding: false, label: t`Borrowed` },
-                      ]}
-                      row={BorrowTableRow}
-                      defaultOrder={'desc'}
-                      defaultOrderBy={'symbol'}
-                    />
-                  </Card>
-                </Grid>
-              )}
-            </Grid>
-          </BodyPanel>
+                  <FlexRowWrapper style={{ borderTop: `1px solid ${theme.bg3}`, padding: '16px 0' }}>
+                    <TYPE.body>
+                      <Trans>Total</Trans>
+                    </TYPE.body>
+                    <TYPE.body>
+                      <BaseCurrencyView type="symbol" value={totalBorrowedUSD} />
+                    </TYPE.body>
+                  </FlexRowWrapper>
+                </DefaultCard>
+              </FlexColumn>
+            )}
+          </ResponsiveRow>
         ))}
     </>
   )
