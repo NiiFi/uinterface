@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Trans } from '@lingui/macro'
-import { formatFixed } from '@ethersproject/bignumber'
 import { DefaultCard } from 'components/Card'
 import { ResponsiveRow } from 'components/Row'
 import LendForm from './components/LendForm'
@@ -8,22 +7,20 @@ import HealthFactor from './components/HealthFactor'
 import { FormType } from 'constants/lend'
 import { useApiMarket } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
-import { useProtocolDataProviderContract } from 'hooks/useContract'
 import useLending from 'hooks/useLending'
 import { useAllTokenBalances } from 'state/wallet/hooks'
-import { TYPE, FlexColumn, FlexRowWrapper, BaseCurrencyView, translatedYesNo } from 'theme'
+import { TYPE, FlexColumn, FlexRowWrapper, BaseCurrencyView } from 'theme'
 import { shortenDecimalValues } from 'utils'
-import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 
-export default function DepositDetail({ address }: { address: string }) {
+export default function BorrowDetail({ address }: { address: string }) {
   const { account } = useActiveWeb3React()
   const { data, loader, abortController } = useApiMarket(address)
-  const [totalBalance, setTotalBalance] = useState('0')
   const [walletBalance, setWalletBalance] = useState('0')
+  const [borrowed, setBorrowed] = useState('0')
   const [decimals, setDecimals] = useState(18)
   const [symbol, setSymbol] = useState('')
+  const [totalCollateral, setTotalCollateral] = useState(0)
   const relevantTokenBalances = useAllTokenBalances()
-  const protocolDataProviderContract = useProtocolDataProviderContract()
   const lendingData = useLending(address, data)
 
   useEffect(() => {
@@ -34,21 +31,16 @@ export default function DepositDetail({ address }: { address: string }) {
   }, [])
 
   useEffect(() => {
-    if (!data || !relevantTokenBalances || !protocolDataProviderContract) return
+    if (!data || !lendingData) return
 
     const decimals = relevantTokenBalances[address]?.currency?.decimals || 18
 
     setSymbol(data.symbol)
-    setWalletBalance(formatCurrencyAmount(relevantTokenBalances[address], decimals))
+    setWalletBalance(lendingData.availableToBorrow)
     setDecimals(decimals)
-
-    protocolDataProviderContract
-      .getUserReserveData(address, account)
-      .then((res: any) => {
-        setTotalBalance(formatFixed(res.currentATokenBalance, decimals))
-      })
-      .catch((e: any) => console.log(e)) // TODO: implement proper error handling
-  }, [data, relevantTokenBalances, address, protocolDataProviderContract, account])
+    setBorrowed(lendingData.borrowed)
+    setTotalCollateral(Number(lendingData?.totalCollateralETH))
+  }, [data, relevantTokenBalances, address, account, lendingData])
 
   return (
     <>
@@ -57,7 +49,7 @@ export default function DepositDetail({ address }: { address: string }) {
           {loader ||
             (data && (
               <LendForm
-                type={FormType.DEPOSIT}
+                type={FormType.BORROW}
                 symbol={symbol}
                 address={address}
                 totalAvailable={walletBalance}
@@ -74,19 +66,25 @@ export default function DepositDetail({ address }: { address: string }) {
               </TYPE.body>
               <FlexRowWrapper>
                 <TYPE.common>
-                  <Trans>Total Balance</Trans>
+                  <Trans>You borrowed</Trans>
                 </TYPE.common>
                 <TYPE.common>
-                  {shortenDecimalValues(totalBalance)} {symbol}
+                  {shortenDecimalValues(borrowed)} {symbol}
                 </TYPE.common>
               </FlexRowWrapper>
               <FlexRowWrapper>
                 <TYPE.common>
-                  <Trans>Your wallet balance</Trans>
+                  <Trans>Total collateral</Trans>
                 </TYPE.common>
                 <TYPE.common>
-                  {shortenDecimalValues(walletBalance)} {symbol}
+                  <BaseCurrencyView type="symbol" value={totalCollateral} currency="ETH" />
                 </TYPE.common>
+              </FlexRowWrapper>
+              <FlexRowWrapper>
+                <TYPE.common>
+                  <Trans>Loan to value</Trans>
+                </TYPE.common>
+                <TYPE.common>{shortenDecimalValues(lendingData?.ltv || '')}</TYPE.common>
               </FlexRowWrapper>
               <FlexRowWrapper>
                 <TYPE.common>
@@ -126,33 +124,15 @@ export default function DepositDetail({ address }: { address: string }) {
                 </FlexRowWrapper>
                 <FlexRowWrapper>
                   <TYPE.common>
-                    <Trans>Maximum LTV</Trans>
+                    <Trans>Stable borrow APY</Trans>
                   </TYPE.common>
-                  <TYPE.common>{shortenDecimalValues(data.ltv)} %</TYPE.common>
+                  <TYPE.common>{shortenDecimalValues(data.stableBorrowAPY)} %</TYPE.common>
                 </FlexRowWrapper>
                 <FlexRowWrapper>
                   <TYPE.common>
-                    <Trans>Deposit APY</Trans>
+                    <Trans>Vairable borrow APY</Trans>
                   </TYPE.common>
-                  <TYPE.common>{shortenDecimalValues(data.depositAPY)} %</TYPE.common>
-                </FlexRowWrapper>
-                <FlexRowWrapper>
-                  <TYPE.common>
-                    <Trans>Liquidation threshold</Trans>
-                  </TYPE.common>
-                  <TYPE.common>{shortenDecimalValues(data.liquidationThreshold)} %</TYPE.common>
-                </FlexRowWrapper>
-                <FlexRowWrapper>
-                  <TYPE.common>
-                    <Trans>Liquidation penalty</Trans>
-                  </TYPE.common>
-                  <TYPE.common>{shortenDecimalValues(data.liquidationPenalty)} %</TYPE.common>
-                </FlexRowWrapper>
-                <FlexRowWrapper>
-                  <TYPE.common>
-                    <Trans>Can be used as collateral</Trans>
-                  </TYPE.common>
-                  <TYPE.common>{translatedYesNo(data.usedAsCollateral)}</TYPE.common>
+                  <TYPE.common>{shortenDecimalValues(data.variableBorrowAPY)} %</TYPE.common>
                 </FlexRowWrapper>
               </DefaultCard>
             ))}

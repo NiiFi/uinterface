@@ -1,4 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
 import { Trans } from '@lingui/macro'
@@ -41,6 +42,7 @@ export default function MarketsDetail({ address }: { address: string }) {
   const tokenContract = useTokenContract(address, true)
   const protocolDataProviderContract = useProtocolDataProviderContract()
   const addPopup = useAddPopup()
+  const history = useHistory()
 
   const updateDataFromContracts = useCallback(
     async (
@@ -53,7 +55,7 @@ export default function MarketsDetail({ address }: { address: string }) {
       Promise.all([
         tokenContract.balanceOf(account),
         tokenContract.decimals(),
-        protocolDataProviderContract.getUserReserveData(address, account),
+        protocolDataProviderContract.getUserReserveData(address, account), // TODO: change to useLending instead
         lendingPoolContract.getUserAccountData(account),
       ])
         .then((res) => {
@@ -365,7 +367,11 @@ export default function MarketsDetail({ address }: { address: string }) {
                 {account ? (
                   <>
                     <FlexRowWrapper>
-                      <ButtonGray style={{ fontSize: '14px' }} padding={'10px 14px'}>
+                      <ButtonGray
+                        style={{ fontSize: '14px' }}
+                        padding={'10px 14px'}
+                        onClick={() => history.push(`/lend/deposit/${address}`)}
+                      >
                         <Trans>Deposit</Trans>
                       </ButtonGray>
                       <ButtonEmpty style={{ fontSize: '14px' }} padding={'10px 14px'}>
@@ -409,7 +415,13 @@ export default function MarketsDetail({ address }: { address: string }) {
                     ) : (
                       ''
                     )}
-                    <ButtonGray style={{ fontSize: '14px' }} padding={'10px 14px'} margin={'16px 0'} width={'50%'}>
+                    <ButtonGray
+                      style={{ fontSize: '14px' }}
+                      padding={'10px 14px'}
+                      margin={'16px 0'}
+                      width={'50%'}
+                      onClick={() => history.push(`/lend/borrow/${address}`)}
+                    >
                       <Trans>Borrow</Trans>
                     </ButtonGray>{' '}
                     <FlexRowWrapper>

@@ -26,7 +26,7 @@ const CustomTableRow = (
   row: any,
   index: number,
   theme: DefaultTheme,
-  handleClick: (event: React.MouseEvent<unknown>, name: string) => void
+  handleClick: (event: React.MouseEvent<unknown>, address: string) => void
 ) => {
   const rowCellStyles = { color: theme.black, borderBottom: `1px solid ${theme.bg3}`, fontSize: '16px' }
 
@@ -237,7 +237,11 @@ export default function Borrow() {
                   { id: 'variableBorrowAPY', numeric: true, disablePadding: false, label: t`Variable APY` },
                   { id: 'stableBorrowAPY', numeric: true, disablePadding: false, label: t`Stable APY` },
                 ]}
-                row={CustomTableRow}
+                row={(row, index) =>
+                  CustomTableRow(row, index, theme, () => {
+                    history.push(`/lend/borrow/${row.address}`)
+                  })
+                }
                 defaultOrder={'desc'}
                 defaultOrderBy={'availableToBorrow'}
               />
@@ -261,8 +265,7 @@ export default function Borrow() {
                           padding: '10px 0',
                         },
                         (address: string) => {
-                          // history.push(`/lend/borrow/${address}`)
-                          alert(`${address} - Development in progress...`)
+                          history.push(`/lend/borrow/${address}`)
                         }
                       )
                     }

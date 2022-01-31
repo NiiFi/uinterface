@@ -3,11 +3,13 @@ import { FixedNumber, formatFixed, parseFixed } from '@ethersproject/bignumber'
 import { Trans } from '@lingui/macro'
 import { ButtonPrimary } from 'components/Button'
 import { GetTokenLogoURL } from 'components/CurrencyLogo'
+import Slider from 'components/Slider'
 import { RowBetween } from 'components/Row'
 import { WalletConnect } from 'components/Wallet'
 import { useActiveWeb3React } from 'hooks/web3'
 import { FlexColumn, FlexRowWrapper, TYPE, Dots } from 'theme'
 import { InputWrapper, Input, OverlapButton } from './styled'
+import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
 import { useLendingPoolContract, useTokenContract } from 'hooks/useContract'
 import { useAddPopup } from 'state/application/hooks'
 import { escapeRegExp, shortenDecimalValues } from 'utils'
@@ -36,6 +38,7 @@ export default function LendForm({
   const lendingPoolContract = useLendingPoolContract()
   const [currentValue, setCurrentValue] = useState('')
   const [newhealthFactor, setNewhealthFactor] = useState('')
+  const [sliderValue, setSliderValue] = useState(0)
   const [tokenAllowance, setTokenAllowance] = useState('0')
   const [hasToBeApproved, setHasToBeApproved] = useState(false)
   const addPopup = useAddPopup()
@@ -49,6 +52,12 @@ export default function LendForm({
     })
   }, [tokenContract, account, decimals])
 
+  const SliderChangeHandler: any = (e: any) => {
+    const calcValue = (parseFloat(totalAvailable) * e - 0.01) / 100
+    handleValueChange(calcValue > 0 ? calcValue.toString() : '0.000001')
+    setSliderValue(e)
+  }
+  const [innerSliderValue, setDebouncedSliderValue] = useDebouncedChangeHandler(sliderValue, SliderChangeHandler)
   const calculateNewHealthFactor = useCallback(
     async (inputValue: string) => {
       if (!inputValue || !lendingPoolContract) {
@@ -63,28 +72,47 @@ export default function LendForm({
 
       const currentValueETH = FixedNumber.from(inputValue).mulUnsafe(FixedNumber.from(currencyPrice)).toString()
 
-      setNewhealthFactor(
-        FixedNumber.from(totalCollateralETH)
-          .addUnsafe(FixedNumber.from(currentValueETH))
-          .mulUnsafe(FixedNumber.from(currentLiquidationThreshold))
-          .divUnsafe(FixedNumber.from(totalDebtETH))
-          .toString()
-      )
+      let healthFactor
+
+      switch (type) {
+        case FormType.BORROW:
+          healthFactor = FixedNumber.from(totalCollateralETH)
+            .mulUnsafe(FixedNumber.from(currentLiquidationThreshold))
+            .divUnsafe(FixedNumber.from(totalDebtETH).addUnsafe(FixedNumber.from(currentValueETH)))
+            .toString()
+
+          break
+        default:
+          healthFactor = FixedNumber.from(totalCollateralETH)
+            .addUnsafe(FixedNumber.from(currentValueETH))
+            .mulUnsafe(FixedNumber.from(currentLiquidationThreshold))
+            .divUnsafe(FixedNumber.from(totalDebtETH))
+            .toString()
+      }
+
+      setNewhealthFactor(healthFactor)
+      setSliderValue((parseFloat(inputValue) * 100) / parseFloat(totalAvailable))
     },
-    [lendingPoolContract, currencyPrice, account]
+    [lendingPoolContract, currencyPrice, account, totalAvailable, type]
   )
 
   const handleValueChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const prevValue = e.target.value.replace(/,/g, '.')
-      if (
-        !inputRegex.test(escapeRegExp(prevValue)) ||
-        FixedNumber.from(totalAvailable)
+    (value: string) => {
+      const prevValue = value.replace(/,/g, '.')
+      let exceedMaxValue = false
+
+      try {
+        exceedMaxValue = FixedNumber.from(totalAvailable)
           .subUnsafe(FixedNumber.from(prevValue || '0'))
           .isNegative()
-      ) {
+      } catch {
         return
       }
+
+      if (exceedMaxValue || !inputRegex.test(escapeRegExp(prevValue))) {
+        return
+      }
+
       setCurrentValue(prevValue)
       calculateNewHealthFactor(prevValue)
     },
@@ -153,6 +181,7 @@ export default function LendForm({
 
     setCurrentValue('')
     calculateNewHealthFactor('')
+    setSliderValue(0)
     setLoading(false)
   }, [
     currentValue,
@@ -184,7 +213,11 @@ export default function LendForm({
                     {shortenDecimalValues(totalAvailable)} {symbol}
                   </TYPE.subHeader>
                 </RowBetween>
-                <Input value={currentValue} onChange={handleValueChange} imageUrl={GetTokenLogoURL(address)} />
+                <Input
+                  value={currentValue}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleValueChange(e.target.value)}
+                  imageUrl={GetTokenLogoURL(address)}
+                />
                 <OverlapButton
                   onClick={() => {
                     setCurrentValue(totalAvailable)
@@ -193,14 +226,26 @@ export default function LendForm({
                 >
                   <Trans>Max</Trans>
                 </OverlapButton>
-                {newhealthFactor && (
-                  <RowBetween style={{ marginTop: '10px' }}>
-                    <TYPE.subHeader color="text6">
-                      <Trans>New health factor</Trans>
-                    </TYPE.subHeader>
-                    <TYPE.subHeader color="text6">{shortenDecimalValues(newhealthFactor)}</TYPE.subHeader>
-                  </RowBetween>
-                )}
+              </InputWrapper>
+              <InputWrapper>
+                <RowBetween style={{ marginBottom: '10px' }}>
+                  <TYPE.subHeader color="green2">{type === FormType.BORROW && <Trans>Safer</Trans>}</TYPE.subHeader>
+                  <TYPE.subHeader color="text6">
+                    <Trans>New health factor</Trans>{' '}
+                    <strong>{newhealthFactor ? shortenDecimalValues(newhealthFactor) : '-'}</strong>
+                  </TYPE.subHeader>
+                  <TYPE.subHeader color="red3">{type === FormType.BORROW && <Trans>Riskier</Trans>}</TYPE.subHeader>
+                </RowBetween>
+
+                <InputWrapper
+                  style={{
+                    backgroundImage:
+                      type === FormType.BORROW ? 'linear-gradient(to right, #1BC300, #FFB800, #FF0000)' : 'none',
+                    borderRadius: '20px',
+                  }}
+                >
+                  <Slider size={20} value={innerSliderValue} onChange={setDebouncedSliderValue} />
+                </InputWrapper>
               </InputWrapper>
               <ButtonPrimary
                 onClick={handleSubmit}
