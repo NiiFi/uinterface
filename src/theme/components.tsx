@@ -339,8 +339,15 @@ type BaseCurrencyViewProps = {
   type?: Exclude<keyof BaseCurrencyDetail, 'label'>
   format?: (detail: BaseCurrencyDetail, value: number) => string
   numeralFormat?: string
+  currency?: string
 }
-export const BaseCurrencyView = ({ type = 'symbol', format, value, numeralFormat }: BaseCurrencyViewProps) => {
+export const BaseCurrencyView = ({
+  type = 'symbol',
+  format,
+  value,
+  numeralFormat,
+  currency = 'USD',
+}: BaseCurrencyViewProps) => {
   /**
    * @description
    * This Component is responsible for "Conversion" and  "Displaying" the FIAT values data
@@ -399,7 +406,7 @@ export const BaseCurrencyView = ({ type = 'symbol', format, value, numeralFormat
   if (!rates && loading) {
     return <Loader />
   }
-  const valueEquivalent = (value / rates['USD']) * rates[baseCurrencyDetail.id]
+  const valueEquivalent = (value / rates[currency]) * rates[baseCurrencyDetail.id]
   const numeralFormattedValue = shortenDecimalValues(`${valueEquivalent}`, numeralFormat)
   if (format) {
     return <span title={baseCurrencyDetail.label}>{format(baseCurrencyDetail, valueEquivalent)}</span>

@@ -197,6 +197,9 @@ export const TYPE = {
   orange(props: TextProps) {
     return <TextWrapper color={'orange'} {...props} />
   },
+  red(props: TextProps) {
+    return <TextWrapper color={'red1'} {...props} />
+  },
   common(props: TextProps) {
     return <TextWrapper fontWeight={400} fontSize={14} color={'text1'} {...props} />
   },
