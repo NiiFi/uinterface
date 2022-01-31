@@ -166,7 +166,7 @@ export default function Borrow() {
           const currentStableDebt = formatFixed(contractData.currentStableDebt, decimals)
           const borrowed = FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt))
           if (!borrowed.isZero()) {
-            borrows.push({ address: data[i].address, borrowed })
+            borrows.push({ address: data[i].address, borrowed: borrowed.toString() })
           }
         }
         setMyBorrows(borrows)
@@ -211,7 +211,7 @@ export default function Borrow() {
         continue
       }
       totalBorrowedUSD = FixedNumber.from(totalBorrowedUSD)
-        .addUnsafe(borrow.borrowed.mulUnsafe(FixedNumber.from(item.priceUSD)))
+        .addUnsafe(FixedNumber.from(borrow.borrowed).mulUnsafe(FixedNumber.from(item.priceUSD)))
         .toString()
 
       res.push({ ...item, borrowed: borrow.borrowed })
