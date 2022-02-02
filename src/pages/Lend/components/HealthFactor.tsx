@@ -14,5 +14,5 @@ export default function HealthFactor({ value }: { value: string }) {
     renderComponent = <TYPE.orange fontSize={14}>{shortenDecimalValues(value)}</TYPE.orange>
   }
 
-  return <>{renderComponent}</>
+  return renderComponent
 }

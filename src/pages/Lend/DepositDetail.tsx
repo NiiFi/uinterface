@@ -56,14 +56,7 @@ export default function DepositDetail({ address }: { address: string }) {
         <DefaultCard width="66%">
           {loader ||
             (data && (
-              <LendForm
-                type={FormType.DEPOSIT}
-                symbol={symbol}
-                address={address}
-                totalAvailable={walletBalance}
-                currencyPrice={data.priceETH}
-                decimals={decimals}
-              />
+              <LendForm type={FormType.DEPOSIT} totalAvailable={walletBalance} data={data} decimals={decimals} />
             ))}
         </DefaultCard>
         <FlexColumn width="32%">

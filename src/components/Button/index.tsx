@@ -1,9 +1,10 @@
 import React from 'react'
+import ReactDOMServer from 'react-dom/server'
 import styled from 'styled-components/macro'
 import { darken } from 'polished'
 
 import { RowBetween } from '../Row'
-import { ChevronDown, Check } from 'react-feather'
+import { Icon, ChevronDown, Check, TrendingUp } from 'react-feather'
 import { Button as RebassButton, ButtonProps as ButtonPropsOriginal } from 'rebass/styled-components'
 import useTheme from 'hooks/useTheme'
 
@@ -264,10 +265,12 @@ export const ButtonUNIGradient = styled(ButtonPrimary)`
   }
 `
 
-export const ButtonOutlined = styled(Base)`
-  border: 1px solid ${({ theme }) => theme.text6};
+export const ButtonOutlined = styled(Base)<{ borderColor?: string; direction?: string; justifyContent?: string }>`
+  border: 1px solid ${({ theme, borderColor }) => (borderColor ? borderColor : theme.text6)};
   background-color: transparent;
   color: ${({ theme }) => theme.text6};
+  flex-direction: ${({ direction }) => direction || 'row'};
+  justify-content: ${({ justifyContent }) => justifyContent || 'center'};
 
   &:focus {
     box-shadow: 0 0 0 1px ${({ theme }) => theme.text6};
@@ -499,4 +502,43 @@ export function ButtonRadioChecked({ active = false, children, ...rest }: { acti
       </ActiveOutlined>
     )
   }
+}
+
+const CircleWithImage = styled.div<{ color: string; bgImage: string; height?: string; width?: string }>`
+  background-image: ${({ bgImage }) => bgImage};
+  background-color: ${({ color }) => color};
+  background-repeat: no-repeat;
+  background-position: 7% 50%;
+  background-size: 75%;
+  border-radius: 50%;
+  width: ${({ width }) => width || '52px'};
+  height: ${({ height }) => height || '52px'};
+`
+export function ButtonWithImage({
+  image,
+  active,
+  children,
+  ...rest
+}: { image: React.ReactElement; active?: boolean } & ButtonProps) {
+  const theme = useTheme()
+  const BgImage = () => image
+
+  return (
+    <ButtonOutlined
+      {...rest}
+      borderColor={active ? theme.primary1 : theme.bg2}
+      direction={'column'}
+      width={'212px'}
+      height={'160px'}
+      justifyContent={'space-around'}
+    >
+      <CircleWithImage
+        color={theme.primary1}
+        bgImage={`url('data:image/svg+xml;utf8,${encodeURIComponent(
+          ReactDOMServer.renderToStaticMarkup(<BgImage />)
+        )}')`}
+      />
+      {children}
+    </ButtonOutlined>
+  )
 }

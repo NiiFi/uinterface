@@ -50,10 +50,8 @@ export default function BorrowDetail({ address }: { address: string }) {
             (data && (
               <LendForm
                 type={FormType.BORROW}
-                symbol={symbol}
-                address={address}
-                totalAvailable={walletBalance}
-                currencyPrice={data.priceETH}
+                totalAvailable={shortenDecimalValues(walletBalance)}
+                data={data}
                 decimals={decimals}
               />
             ))}
