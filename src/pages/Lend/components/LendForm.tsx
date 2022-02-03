@@ -24,6 +24,7 @@ import {
   subheaderLabels,
   maxApprovalValue,
   formSteps,
+  NumeralFormatType,
 } from 'constants/lend'
 import AlternativeForm from './AlternativeForm'
 import { LENDING_POOL_CONTRACT_ADDRESS } from '../../../constants/general'
@@ -79,7 +80,7 @@ export default function LendForm({
 
   const SliderChangeHandler: any = (e: any) => {
     const calcValue = (parseFloat(totalAvailable) * e - 0.01) / 100
-    handleValueChange(calcValue > 0 ? shortenDecimalValues(calcValue.toString()) : '0.000001')
+    handleValueChange(calcValue > 0 ? shortenDecimalValues(calcValue.toString(), NumeralFormatType) : '0.000001')
     setSliderValue(e)
   }
   const [innerSliderValue, setDebouncedSliderValue] = useDebouncedChangeHandler(sliderValue, SliderChangeHandler)

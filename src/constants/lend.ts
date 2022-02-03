@@ -55,3 +55,5 @@ export const subheaderLabels: { [type: string]: string[] } = {
 }
 
 export const maxApprovalValue = '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'
+
+export const NumeralFormatType = '0.000000000000000000'
