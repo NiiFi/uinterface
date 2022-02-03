@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 import { darken } from 'polished'
 
 import { RowBetween } from '../Row'
-import { Icon, ChevronDown, Check, TrendingUp } from 'react-feather'
+import { ChevronDown, Check } from 'react-feather'
 import { Button as RebassButton, ButtonProps as ButtonPropsOriginal } from 'rebass/styled-components'
 import useTheme from 'hooks/useTheme'
 

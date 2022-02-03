@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useMemo } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { FixedNumber, formatFixed, parseFixed } from '@ethersproject/bignumber'
 import { Trans } from '@lingui/macro'
 import { ButtonPrimary, ButtonWithImage } from 'components/Button'
