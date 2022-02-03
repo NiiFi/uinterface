@@ -5,7 +5,7 @@ import { DefaultCard } from 'components/Card'
 import { ResponsiveRow } from 'components/Row'
 import LendForm from './components/LendForm'
 import HealthFactor from './components/HealthFactor'
-import { FormType } from 'constants/lend'
+import { FormType, NumeralFormatType } from 'constants/lend'
 import { useApiMarket } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useProtocolDataProviderContract } from 'hooks/useContract'
@@ -56,7 +56,12 @@ export default function DepositDetail({ address }: { address: string }) {
         <DefaultCard width="66%">
           {loader ||
             (data && (
-              <LendForm type={FormType.DEPOSIT} totalAvailable={walletBalance} data={data} decimals={decimals} />
+              <LendForm
+                type={FormType.DEPOSIT}
+                totalAvailable={shortenDecimalValues(walletBalance, NumeralFormatType)}
+                data={data}
+                decimals={decimals}
+              />
             ))}
         </DefaultCard>
         <FlexColumn width="32%">

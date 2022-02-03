@@ -4,7 +4,7 @@ import { DefaultCard } from 'components/Card'
 import { ResponsiveRow } from 'components/Row'
 import LendForm from './components/LendForm'
 import HealthFactor from './components/HealthFactor'
-import { FormType } from 'constants/lend'
+import { FormType, NumeralFormatType } from 'constants/lend'
 import { useApiMarket } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
 import useLending from 'hooks/useLending'
@@ -50,7 +50,7 @@ export default function BorrowDetail({ address }: { address: string }) {
             (data && (
               <LendForm
                 type={FormType.BORROW}
-                totalAvailable={shortenDecimalValues(walletBalance)}
+                totalAvailable={shortenDecimalValues(walletBalance, NumeralFormatType)}
                 data={data}
                 decimals={decimals}
               />
