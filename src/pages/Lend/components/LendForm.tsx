@@ -34,11 +34,13 @@ export default function LendForm({
   totalAvailable,
   data,
   decimals,
+  lendingData,
 }: {
   type: FormType
   totalAvailable: string
   data: any
   decimals: number
+  lendingData?: any
 }) {
   const { account } = useActiveWeb3React()
   const [loading, setLoading] = useState(false)
@@ -68,15 +70,16 @@ export default function LendForm({
 
     switch (type) {
       case FormType.BORROW:
-        alternativeView = !FixedNumber.from(data.availableLiquidity).isZero() ? 0 : 2
+        alternativeView = FixedNumber.from(lendingData.availableToBorrow).isZero() ? 3 : 0
+        alternativeView = alternativeView || FixedNumber.from(data.availableLiquidity).isZero() ? 2 : 0
         break
       default:
-        alternativeView = !FixedNumber.from(totalAvailable).isZero() ? 0 : 1
+        alternativeView = FixedNumber.from(totalAvailable).isZero() ? 1 : 0
         break
     }
 
     return alternativeView
-  }, [type, data.availableLiquidity, totalAvailable])
+  }, [type, data, lendingData, totalAvailable])
 
   const SliderChangeHandler: any = (e: any) => {
     const calcValue = (parseFloat(totalAvailable) * e - 0.01) / 100
@@ -95,7 +98,6 @@ export default function LendForm({
       const currentLiquidationThreshold = formatFixed(pool.currentLiquidationThreshold, 4)
       const totalCollateralETH = formatFixed(pool.totalCollateralETH, 18)
       const totalDebtETH = formatFixed(pool.totalDebtETH, 18)
-
       const currentValueETH = FixedNumber.from(inputValue).mulUnsafe(FixedNumber.from(currencyPrice)).toString()
 
       let healthFactor
@@ -279,8 +281,7 @@ export default function LendForm({
                   />
                   <OverlapButton
                     onClick={() => {
-                      setCurrentValue(totalAvailable)
-                      calculateNewHealthFactor(totalAvailable)
+                      handleValueChange(totalAvailable)
                     }}
                   >
                     <Trans>Max</Trans>
@@ -312,6 +313,7 @@ export default function LendForm({
                   {!FixedNumber.from(data.stableBorrowAPY).isZero() && (
                     <ButtonWithImage
                       active={borrowApy === 'stable'}
+                      disabled={loading}
                       onClick={() => setBorrowApy('stable')}
                       image={<ArrowRight color="#FFF" />}
                     >
@@ -325,6 +327,7 @@ export default function LendForm({
                     FixedNumber.from(data.stableBorrowAPY).isZero()) && (
                     <ButtonWithImage
                       active={borrowApy === 'variable'}
+                      disabled={loading}
                       onClick={() => setBorrowApy('variable')}
                       image={<TrendingUp color="#FFF" />}
                     >

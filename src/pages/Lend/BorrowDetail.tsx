@@ -47,12 +47,13 @@ export default function BorrowDetail({ address }: { address: string }) {
       <ResponsiveRow gap="2rem">
         <DefaultCard width="66%">
           {loader ||
-            (data && (
+            (data && lendingData.availableToBorrow && (
               <LendForm
                 type={FormType.BORROW}
                 totalAvailable={shortenDecimalValues(walletBalance, NumeralFormatType)}
                 data={data}
                 decimals={decimals}
+                lendingData={lendingData}
               />
             ))}
         </DefaultCard>
