@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Trans } from '@lingui/macro'
-import { formatFixed } from '@ethersproject/bignumber'
 import { DefaultCard } from 'components/Card'
 import { ResponsiveRow } from 'components/Row'
 import LendForm from './components/LendForm'
@@ -18,7 +17,6 @@ import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 export default function DepositDetail({ address }: { address: string }) {
   const { account } = useActiveWeb3React()
   const { data, loader, abortController } = useApiMarket(address)
-  const [totalBalance, setTotalBalance] = useState('0')
   const [walletBalance, setWalletBalance] = useState('0')
   const [decimals, setDecimals] = useState(18)
   const [symbol, setSymbol] = useState('')
@@ -41,13 +39,6 @@ export default function DepositDetail({ address }: { address: string }) {
     setSymbol(data.symbol)
     setWalletBalance(formatCurrencyAmount(relevantTokenBalances[address], decimals))
     setDecimals(decimals)
-
-    protocolDataProviderContract
-      .getUserReserveData(address, account)
-      .then((res: any) => {
-        setTotalBalance(formatFixed(res.currentATokenBalance, decimals))
-      })
-      .catch((e: any) => console.log(e)) // TODO: implement proper error handling
   }, [data, relevantTokenBalances, address, protocolDataProviderContract, account])
 
   return (
@@ -75,7 +66,7 @@ export default function DepositDetail({ address }: { address: string }) {
                   <Trans>Total Balance</Trans>
                 </TYPE.common>
                 <TYPE.common>
-                  {shortenDecimalValues(totalBalance)} {symbol}
+                  {shortenDecimalValues(lendingData?.deposited)} {symbol}
                 </TYPE.common>
               </FlexRowWrapper>
               <FlexRowWrapper>

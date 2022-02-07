@@ -407,6 +407,7 @@ export const BaseCurrencyView = ({
     return <Loader />
   }
   const valueEquivalent = (value / rates[currency]) * rates[baseCurrencyDetail.id]
+  currency === 'ETH' && console.log(valueEquivalent)
   const numeralFormattedValue = shortenDecimalValues(`${valueEquivalent}`, numeralFormat)
   if (format) {
     return <span title={baseCurrencyDetail.label}>{format(baseCurrencyDetail, valueEquivalent)}</span>

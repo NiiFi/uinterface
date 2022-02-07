@@ -374,7 +374,12 @@ export default function MarketsDetail({ address }: { address: string }) {
                       >
                         <Trans>Deposit</Trans>
                       </ButtonGray>
-                      <ButtonEmpty style={{ fontSize: '14px' }} padding={'10px 14px'}>
+                      <ButtonEmpty
+                        style={{ fontSize: '14px' }}
+                        padding={'10px 14px'}
+                        disabled={FixedNumber.from(deposited).isZero()}
+                        onClick={() => history.push(`/lend/withdraw/${address}`)}
+                      >
                         <Trans>Withdraw</Trans>
                       </ButtonEmpty>
                     </FlexRowWrapper>
