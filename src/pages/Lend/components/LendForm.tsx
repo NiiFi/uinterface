@@ -70,7 +70,7 @@ export default function LendForm({
 
     switch (type) {
       case FormType.BORROW:
-        alternativeView = FixedNumber.from(lendingData.availableToBorrow).isZero() ? 3 : 0
+        alternativeView = FixedNumber.from(lendingData?.availableToBorrow || '0').isZero() ? 3 : 0
         alternativeView = alternativeView || FixedNumber.from(data.availableLiquidity).isZero() ? 2 : 0
         break
       default:
@@ -203,9 +203,18 @@ export default function LendForm({
 
       switch (type) {
         case FormType.BORROW:
-          estimatedGas = await lendingPoolContract.estimateGas.borrow(data.address, weiValue, 1, 0, account)
+          const borrowType = borrowApy === 'stable' ? 1 : 2
+          estimatedGas = await lendingPoolContract.estimateGas.borrow(data.address, weiValue, borrowType, 0, account)
 
-          tx = await lendingPoolContract.borrow(data.address, weiValue, 1, 0, account, {
+          tx = await lendingPoolContract.borrow(data.address, weiValue, borrowType, 0, account, {
+            gasPrice,
+            gasLimit: calculateGasMargin(estimatedGas),
+          })
+          break
+        case FormType.WITHDRAW:
+          estimatedGas = await lendingPoolContract.estimateGas.withdraw(data.address, weiValue, account)
+          console.log(estimatedGas)
+          tx = await lendingPoolContract.withdraw(data.address, weiValue, account, {
             gasPrice,
             gasLimit: calculateGasMargin(estimatedGas),
           })
@@ -247,6 +256,7 @@ export default function LendForm({
     hasToBeApproved,
     type,
     handleSteps,
+    borrowApy,
   ])
 
   return (
@@ -287,26 +297,28 @@ export default function LendForm({
                     <Trans>Max</Trans>
                   </OverlapButton>
                 </InputWrapper>
-                <InputWrapper>
-                  <RowBetween style={{ marginBottom: '10px' }}>
-                    <TYPE.subHeader color="green2">{type === FormType.BORROW && <Trans>Safer</Trans>}</TYPE.subHeader>
-                    <TYPE.subHeader color="text6">
-                      <Trans>New health factor</Trans>{' '}
-                      <strong>{newhealthFactor ? shortenDecimalValues(newhealthFactor) : '-'}</strong>
-                    </TYPE.subHeader>
-                    <TYPE.subHeader color="red3">{type === FormType.BORROW && <Trans>Riskier</Trans>}</TYPE.subHeader>
-                  </RowBetween>
+                {type !== FormType.WITHDRAW && (
+                  <InputWrapper>
+                    <RowBetween style={{ marginBottom: '10px' }}>
+                      <TYPE.subHeader color="green2">{type === FormType.BORROW && <Trans>Safer</Trans>}</TYPE.subHeader>
+                      <TYPE.subHeader color="text6">
+                        <Trans>New health factor</Trans>{' '}
+                        <strong>{newhealthFactor ? shortenDecimalValues(newhealthFactor) : '-'}</strong>
+                      </TYPE.subHeader>
+                      <TYPE.subHeader color="red3">{type === FormType.BORROW && <Trans>Riskier</Trans>}</TYPE.subHeader>
+                    </RowBetween>
 
-                  <InputWrapper
-                    style={{
-                      backgroundImage:
-                        type === FormType.BORROW ? 'linear-gradient(to right, #1BC300, #FFB800, #FF0000)' : 'none',
-                      borderRadius: '20px',
-                    }}
-                  >
-                    <Slider size={20} value={innerSliderValue} onChange={setDebouncedSliderValue} />
+                    <InputWrapper
+                      style={{
+                        backgroundImage:
+                          type === FormType.BORROW ? 'linear-gradient(to right, #1BC300, #FFB800, #FF0000)' : 'none',
+                        borderRadius: '20px',
+                      }}
+                    >
+                      <Slider size={20} value={innerSliderValue} onChange={setDebouncedSliderValue} />
+                    </InputWrapper>
                   </InputWrapper>
-                </InputWrapper>
+                )}
               </FlexColumn>
               <div style={{ display: step === 1 ? 'block' : 'none' }}>
                 <ResponsiveRow gap="2rem">

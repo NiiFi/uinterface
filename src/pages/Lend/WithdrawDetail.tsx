@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Trans } from '@lingui/macro'
+import { FixedNumber } from '@ethersproject/bignumber'
 import { DefaultCard } from 'components/Card'
 import { ResponsiveRow } from 'components/Row'
 import LendForm from './components/LendForm'
@@ -12,14 +13,10 @@ import { useAllTokenBalances } from 'state/wallet/hooks'
 import { TYPE, FlexColumn, FlexRowWrapper, BaseCurrencyView } from 'theme'
 import { shortenDecimalValues } from 'utils'
 
-export default function BorrowDetail({ address }: { address: string }) {
+export default function WithdrawDetail({ address }: { address: string }) {
   const { account } = useActiveWeb3React()
   const { data, loader, abortController } = useApiMarket(address)
-  const [walletBalance, setWalletBalance] = useState('0')
-  const [borrowed, setBorrowed] = useState('0')
-  const [decimals, setDecimals] = useState(18)
-  const [symbol, setSymbol] = useState('')
-  const [totalCollateral, setTotalCollateral] = useState(0)
+  const [availableToWithdraw, setAvailableToWithdraw] = useState('0')
   const relevantTokenBalances = useAllTokenBalances()
   const lendingData = useLending(address, data)
 
@@ -31,16 +28,28 @@ export default function BorrowDetail({ address }: { address: string }) {
   }, [])
 
   useEffect(() => {
-    if (!data || !lendingData) return
+    if (!lendingData || !data?.priceETH) return
 
-    const decimals = relevantTokenBalances[address]?.currency?.decimals || 18
+    // TODO: review next calculation, it was taken from https://community.tokenscript.org/t/how-did-aave-dapp-calculate-the-maximum-available-withdraw-value/408
+    const calculatedWithdraw = FixedNumber.from(lendingData.totalCollateralETH)
+      .subUnsafe(FixedNumber.from(lendingData.totalDebtETH || '1').divUnsafe(FixedNumber.from('0.747')))
+      .divUnsafe(FixedNumber.from(data.priceETH))
+      .toString()
 
-    setSymbol(data.symbol)
-    setWalletBalance(lendingData.availableToBorrow)
-    setDecimals(decimals)
-    setBorrowed(lendingData.borrowed)
-    setTotalCollateral(Number(lendingData?.totalCollateralETH))
-  }, [data, relevantTokenBalances, address, account, lendingData])
+    const available = FixedNumber.from(calculatedWithdraw)
+      .subUnsafe(FixedNumber.from(lendingData?.deposited))
+      .isNegative()
+      ? FixedNumber.from(lendingData?.borrowed).isZero()
+        ? lendingData?.deposited
+        : calculatedWithdraw
+      : lendingData?.deposited
+
+    setAvailableToWithdraw(
+      FixedNumber.from(available).subUnsafe(FixedNumber.from(data.availableLiquidity)).isNegative()
+        ? available
+        : data.availableLiquidity
+    )
+  }, [lendingData, data])
 
   return (
     <>
@@ -49,11 +58,10 @@ export default function BorrowDetail({ address }: { address: string }) {
           {loader ||
             (data && (
               <LendForm
-                type={FormType.BORROW}
-                totalAvailable={shortenDecimalValues(walletBalance, NumeralFormatType)}
+                type={FormType.WITHDRAW}
+                totalAvailable={shortenDecimalValues(availableToWithdraw, NumeralFormatType)}
                 data={data}
-                decimals={decimals}
-                lendingData={lendingData}
+                decimals={relevantTokenBalances[address]?.currency?.decimals || 18}
               />
             ))}
         </DefaultCard>
@@ -65,18 +73,10 @@ export default function BorrowDetail({ address }: { address: string }) {
               </TYPE.body>
               <FlexRowWrapper>
                 <TYPE.common>
-                  <Trans>You borrowed</Trans>
+                  <Trans>Total Balance</Trans>
                 </TYPE.common>
                 <TYPE.common>
-                  {shortenDecimalValues(borrowed)} {symbol}
-                </TYPE.common>
-              </FlexRowWrapper>
-              <FlexRowWrapper>
-                <TYPE.common>
-                  <Trans>Total collateral</Trans>
-                </TYPE.common>
-                <TYPE.common>
-                  <BaseCurrencyView type="symbol" value={totalCollateral} currency="ETH" />
+                  {shortenDecimalValues(lendingData?.deposited)} {data?.symbol}
                 </TYPE.common>
               </FlexRowWrapper>
               <FlexRowWrapper>
@@ -99,7 +99,7 @@ export default function BorrowDetail({ address }: { address: string }) {
             (data && (
               <DefaultCard>
                 <TYPE.body style={{ marginBottom: '16px' }}>
-                  {symbol} <Trans>Reserve Overview</Trans>
+                  {data?.symbol} <Trans>Reserve Overview</Trans>
                 </TYPE.body>
                 <FlexRowWrapper>
                   <TYPE.common>
