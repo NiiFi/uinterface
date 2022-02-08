@@ -79,7 +79,7 @@ export default function LendForm({
         setShowHealthFactor(true)
       }
     })
-  }, [protocolDataProviderContract, account, data])
+  }, [protocolDataProviderContract, account, data, type])
 
   const isLastStep = useCallback(() => formSteps[type] === step + 1, [type, step])
 
