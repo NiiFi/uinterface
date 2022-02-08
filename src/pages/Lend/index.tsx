@@ -42,7 +42,7 @@ const CreateDepositButton = ({ onClick, ...rest }: ButtonProps) => {
   )
 }
 
-export default function Lend(props: RouteComponentProps<{ page: string; address: string }>) {
+export default function Lend(props: RouteComponentProps<{ page: string; address: string; type: string }>) {
   const pageName = location.hash.split('/')[2]
   const defaultTab = SUBPAGES.indexOf(pageName) === -1 ? 0 : SUBPAGES.indexOf(pageName)
   const [activeTab, setActiveTab] = useState<number>(defaultTab)
@@ -50,7 +50,7 @@ export default function Lend(props: RouteComponentProps<{ page: string; address:
 
   const {
     match: {
-      params: { page, address },
+      params: { page, address, type },
     },
   } = props
 
@@ -87,7 +87,7 @@ export default function Lend(props: RouteComponentProps<{ page: string; address:
         <TabPanel key={`tab-panel-${activeTab}`} activeIndex={activeTab} index={activeTab}>
           <AutoColumn gap="lg">
             <Suspense fallback={<LoaderWrapped />}>
-              <Component address={address} />
+              <Component address={address} type={type} />
             </Suspense>
           </AutoColumn>
         </TabPanel>

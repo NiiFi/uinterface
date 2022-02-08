@@ -12,6 +12,8 @@ export default function useLending(address: string, data: any) {
   const [availableBorrowsETH, setAvailableBorrowsETH] = useState('')
   const [availableToBorrow, setAvailableToBorrow] = useState('')
   const [borrowed, setBorrowed] = useState('0')
+  const [variableDebt, setVariableDebt] = useState('0')
+  const [stableDebt, setStableDebt] = useState('0')
   const [deposited, setDeposited] = useState('0')
   const [healthFactor, setHealthFactor] = useState('0')
   const [totalCollateralETH, setTotalCollateralETH] = useState('0')
@@ -53,6 +55,8 @@ export default function useLending(address: string, data: any) {
       .then((res: any) => {
         const currentVariableDebt = formatFixed(res.currentVariableDebt, decimals)
         const currentStableDebt = formatFixed(res.currentStableDebt, decimals)
+        setVariableDebt(currentVariableDebt.toString())
+        setStableDebt(currentStableDebt.toString())
         setBorrowed(FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt)).toString())
         setDeposited(formatFixed(res.currentATokenBalance, decimals))
       })
@@ -65,6 +69,8 @@ export default function useLending(address: string, data: any) {
     healthFactor,
     totalCollateralETH,
     borrowed,
+    variableDebt,
+    stableDebt,
     deposited,
     ltv,
     liquidationThreshold,
