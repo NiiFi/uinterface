@@ -258,13 +258,22 @@ export default function LendForm({
             gasLimit: calculateGasMargin(estimatedGas),
           })
           break
-        default:
+        case FormType.DEPOSIT:
           estimatedGas = await lendingPoolContract.estimateGas.deposit(data.address, weiValue, account, 0)
 
           tx = await lendingPoolContract.deposit(data.address, weiValue, account, 0, {
             gasPrice,
             gasLimit: calculateGasMargin(estimatedGas),
           })
+          break
+        case FormType.REPAY:
+          estimatedGas = await lendingPoolContract.estimateGas.repay(data.address, weiValue, 1, account)
+
+          tx = await lendingPoolContract.repay(data.address, weiValue, 1, account, {
+            gasPrice,
+            gasLimit: calculateGasMargin(estimatedGas),
+          })
+          break
       }
 
       await tx.wait()
