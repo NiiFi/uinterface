@@ -29,19 +29,21 @@ export default function WithdrawDetail({ address }: { address: string }) {
 
   useEffect(() => {
     if (!lendingData || !data?.priceETH) return
-
-    // TODO: review next calculation, it was taken from https://community.tokenscript.org/t/how-did-aave-dapp-calculate-the-maximum-available-withdraw-value/408
-    const calculatedWithdraw = FixedNumber.from(lendingData.totalCollateralETH)
-      .subUnsafe(FixedNumber.from(lendingData.totalDebtETH || '1').divUnsafe(FixedNumber.from('0.747')))
-      .divUnsafe(FixedNumber.from(data.priceETH))
-      .toString()
+    let calculatedWithdraw = '0'
+    const estimatedHealthFactor = FixedNumber.from(lendingData.healthFactor).subUnsafe(FixedNumber.from('1'))
+    if (!estimatedHealthFactor.isZero() && !estimatedHealthFactor.isNegative()) {
+      calculatedWithdraw = estimatedHealthFactor
+        .mulUnsafe(FixedNumber.from(lendingData.totalDebtETH))
+        .divUnsafe(FixedNumber.from(lendingData.liquidationThreshold).addUnsafe(FixedNumber.from('0.01')))
+        .mulUnsafe(FixedNumber.from('0.99'))
+        .divUnsafe(FixedNumber.from(data.priceETH))
+        .toString()
+    }
 
     const available = FixedNumber.from(calculatedWithdraw)
       .subUnsafe(FixedNumber.from(lendingData?.deposited))
       .isNegative()
-      ? FixedNumber.from(lendingData?.borrowed).isZero()
-        ? lendingData?.deposited
-        : calculatedWithdraw
+      ? calculatedWithdraw
       : lendingData?.deposited
 
     setAvailableToWithdraw(

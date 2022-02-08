@@ -10,7 +10,7 @@ import { useActiveWeb3React } from 'hooks/web3'
 import { FlexColumn, FlexRowWrapper, TYPE, Dots } from 'theme'
 import { InputWrapper, Input, OverlapButton } from './styled'
 import useDebouncedChangeHandler from 'hooks/useDebouncedChangeHandler'
-import { useLendingPoolContract, useTokenContract } from 'hooks/useContract'
+import { useLendingPoolContract, useProtocolDataProviderContract, useTokenContract } from 'hooks/useContract'
 import { useAddPopup } from 'state/application/hooks'
 import { escapeRegExp, shortenDecimalValues } from 'utils'
 import { calculateGasMargin } from 'utils/calculateGasMargin'
@@ -51,9 +51,11 @@ export default function LendForm({
   const [tokenAllowance, setTokenAllowance] = useState('0')
   const [borrowApy, setBorrowApy] = useState('')
   const [hasToBeApproved, setHasToBeApproved] = useState(false)
+  const [showHealthFactor, setShowHealthFactor] = useState(false)
   const [step, setStep] = useState(0)
   const addPopup = useAddPopup()
   const tokenContract = useTokenContract(data.address)
+  const protocolDataProviderContract = useProtocolDataProviderContract()
   const currencyPrice = data.priceETH
 
   useEffect(() => {
@@ -63,6 +65,22 @@ export default function LendForm({
     })
   }, [tokenContract, account, decimals])
 
+  useEffect(() => {
+    if (!protocolDataProviderContract || !account || !data) return
+    protocolDataProviderContract.getUserReserveData(data.address, account).then((res: any) => {
+      if (type === FormType.BORROW || type === FormType.REPAY) {
+        setShowHealthFactor(true)
+        return
+      }
+
+      if (!res.usageAsCollateralEnabled || !data.usedAsCollateral) {
+        setShowHealthFactor(false)
+      } else {
+        setShowHealthFactor(true)
+      }
+    })
+  }, [protocolDataProviderContract, account, data])
+
   const isLastStep = useCallback(() => formSteps[type] === step + 1, [type, step])
 
   const showAlternativeForm = useCallback(() => {
@@ -71,7 +89,11 @@ export default function LendForm({
     switch (type) {
       case FormType.BORROW:
         alternativeView = FixedNumber.from(lendingData?.availableToBorrow || '0').isZero() ? 3 : 0
-        alternativeView = alternativeView || FixedNumber.from(data.availableLiquidity).isZero() ? 2 : 0
+        alternativeView = alternativeView || (FixedNumber.from(data.availableLiquidity).isZero() ? 2 : 0)
+        break
+      case FormType.WITHDRAW:
+        alternativeView = FixedNumber.from(totalAvailable).isZero() ? 3 : 0
+        alternativeView = alternativeView || (FixedNumber.from(data.availableLiquidity).isZero() ? 2 : 0)
         break
       default:
         alternativeView = FixedNumber.from(totalAvailable).isZero() ? 1 : 0
@@ -110,12 +132,29 @@ export default function LendForm({
             .toString()
 
           break
-        default:
+        case FormType.DEPOSIT:
           healthFactor = FixedNumber.from(totalCollateralETH)
             .addUnsafe(FixedNumber.from(currentValueETH))
             .mulUnsafe(FixedNumber.from(currentLiquidationThreshold))
             .divUnsafe(FixedNumber.from(totalDebtETH))
             .toString()
+
+          break
+        case FormType.WITHDRAW:
+          healthFactor = FixedNumber.from(totalCollateralETH)
+            .subUnsafe(FixedNumber.from(currentValueETH))
+            .mulUnsafe(FixedNumber.from(currentLiquidationThreshold))
+            .divUnsafe(FixedNumber.from(totalDebtETH))
+            .toString()
+
+          break
+        case FormType.REPAY:
+          healthFactor = FixedNumber.from(totalCollateralETH)
+            .mulUnsafe(FixedNumber.from(currentLiquidationThreshold))
+            .divUnsafe(FixedNumber.from(totalDebtETH).subUnsafe(FixedNumber.from(currentValueETH)))
+            .toString()
+
+          break
       }
 
       setNewhealthFactor(healthFactor)
@@ -149,7 +188,7 @@ export default function LendForm({
   )
 
   useEffect(() => {
-    if (type === FormType.BORROW || FormType.WITHDRAW) {
+    if (type === FormType.BORROW || type === FormType.WITHDRAW) {
       setHasToBeApproved(false)
     }
     setHasToBeApproved(
@@ -297,7 +336,7 @@ export default function LendForm({
                     <Trans>Max</Trans>
                   </OverlapButton>
                 </InputWrapper>
-                {type !== FormType.WITHDRAW && (
+                {showHealthFactor && (
                   <InputWrapper>
                     <RowBetween style={{ marginBottom: '10px' }}>
                       <TYPE.subHeader color="green2">{type === FormType.BORROW && <Trans>Safer</Trans>}</TYPE.subHeader>
