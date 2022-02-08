@@ -8,15 +8,15 @@
 
 An open source interface for niFii -- a protocol for decentralized exchange of Ethereum tokens.
 
-- Website: 
-- Interface: 
-- Docs: 
-- Twitter: 
+- Website:
+- Interface:
+- Docs:
+- Twitter:
 - Reddit:
-- Email: 
-- Discord: 
+- Email:
+- Discord:
 - Whitepapers:
-  - 
+  -
 
 ## How to run the project locally
 
@@ -60,5 +60,5 @@ docker build -t {image_name} .
 #### Running image
 
 ```bash
-docker run --name nginx -d -p 80:8080 {image_name}
+docker run --rm -p 8080:80 {image_name}
 ```
