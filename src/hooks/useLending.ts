@@ -44,7 +44,7 @@ export default function useLending(address: string, data: any) {
         setHealthFactor(formatFixed(pool.healthFactor, 18))
         setTotalCollateralETH(formatFixed(pool.totalCollateralETH, 18))
         setLtv(formatFixed(pool.ltv, 2))
-        setLiquidationThreshold(formatFixed(pool.currentLiquidationThreshold, 18))
+        setLiquidationThreshold(formatFixed(pool.currentLiquidationThreshold, 4))
       })
       .catch((e: any) => console.log(e)) // TODO: implement proper error handling
 
