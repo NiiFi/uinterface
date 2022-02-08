@@ -504,7 +504,11 @@ export default function MarketsDetail({ address }: { address: string }) {
                               </TYPE.darkGray>
                             </TYPE.common>
                             <TYPE.common>
-                              <ButtonGray style={{ fontSize: '14px' }} padding={'0 14px'}>
+                              <ButtonGray
+                                style={{ fontSize: '14px' }}
+                                padding={'0 14px'}
+                                onClick={() => history.push(`/lend/repay/${address}/stable`)}
+                              >
                                 <Trans>Repay</Trans>
                               </ButtonGray>
                             </TYPE.common>
@@ -540,7 +544,11 @@ export default function MarketsDetail({ address }: { address: string }) {
                               </TYPE.darkGray>
                             </TYPE.common>
                             <TYPE.common>
-                              <ButtonGray style={{ fontSize: '14px' }} padding={'0 14px'}>
+                              <ButtonGray
+                                style={{ fontSize: '14px' }}
+                                padding={'0 14px'}
+                                onClick={() => history.push(`/lend/repay/${address}/variable`)}
+                              >
                                 <Trans>Repay</Trans>
                               </ButtonGray>
                             </TYPE.common>
