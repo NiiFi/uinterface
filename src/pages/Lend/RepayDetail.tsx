@@ -39,6 +39,7 @@ export default function RepayDetail({ address, type }: { address: string; type: 
                 )}
                 data={data}
                 decimals={relevantTokenBalances[address]?.currency?.decimals || 18}
+                lendingData={lendingData}
               />
             ))}
         </DefaultCard>

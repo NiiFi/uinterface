@@ -52,6 +52,7 @@ export default function DepositDetail({ address }: { address: string }) {
                 totalAvailable={shortenDecimalValues(walletBalance, NumeralFormatType)}
                 data={data}
                 decimals={decimals}
+                lendingData={lendingData}
               />
             ))}
         </DefaultCard>

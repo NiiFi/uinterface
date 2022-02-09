@@ -73,13 +73,17 @@ export default function LendForm({
         return
       }
 
-      if (!res.usageAsCollateralEnabled || !data.usedAsCollateral) {
+      if (
+        !res.usageAsCollateralEnabled ||
+        !data.usedAsCollateral ||
+        FixedNumber.from(lendingData.totalDebtETH).isZero()
+      ) {
         setShowHealthFactor(false)
       } else {
         setShowHealthFactor(true)
       }
     })
-  }, [protocolDataProviderContract, account, data, type])
+  }, [protocolDataProviderContract, account, data, type, lendingData])
 
   const isLastStep = useCallback(() => formSteps[type] === step + 1, [type, step])
 
@@ -88,15 +92,16 @@ export default function LendForm({
 
     switch (type) {
       case FormType.BORROW:
-        alternativeView = FixedNumber.from(lendingData?.availableToBorrow || '0').isZero() ? 3 : 0
+        alternativeView =
+          lendingData?.availableToBorrow && FixedNumber.from(lendingData?.availableToBorrow).isZero() ? 3 : 0
         alternativeView = alternativeView || (FixedNumber.from(data.availableLiquidity).isZero() ? 2 : 0)
         break
       case FormType.WITHDRAW:
-        alternativeView = FixedNumber.from(totalAvailable).isZero() ? 3 : 0
+        alternativeView = FixedNumber.from(totalAvailable).isZero() ? 1 : 0
         alternativeView = alternativeView || (FixedNumber.from(data.availableLiquidity).isZero() ? 2 : 0)
         break
       default:
-        alternativeView = FixedNumber.from(totalAvailable).isZero() ? 1 : 0
+        alternativeView = totalAvailable && FixedNumber.from(totalAvailable).isZero() ? 1 : 0
         break
     }
 
@@ -121,6 +126,11 @@ export default function LendForm({
       const totalCollateralETH = formatFixed(pool.totalCollateralETH, 18)
       const totalDebtETH = formatFixed(pool.totalDebtETH, 18)
       const currentValueETH = FixedNumber.from(inputValue).mulUnsafe(FixedNumber.from(currencyPrice)).toString()
+
+      if (FixedNumber.from(totalDebtETH).isZero()) {
+        setNewhealthFactor('')
+        return
+      }
 
       let healthFactor
 

@@ -15,7 +15,7 @@ import { shortenDecimalValues } from 'utils'
 export default function BorrowDetail({ address }: { address: string }) {
   const { account } = useActiveWeb3React()
   const { data, loader, abortController } = useApiMarket(address)
-  const [walletBalance, setWalletBalance] = useState('0')
+  const [walletBalance, setWalletBalance] = useState('')
   const [borrowed, setBorrowed] = useState('0')
   const [decimals, setDecimals] = useState(18)
   const [symbol, setSymbol] = useState('')

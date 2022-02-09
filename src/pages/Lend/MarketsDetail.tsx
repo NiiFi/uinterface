@@ -12,6 +12,7 @@ import UtilisationRate from 'components/LineChart/UtilisationRate'
 import { ResponsiveRow, RowFixed } from 'components/Row'
 import { WalletConnect } from 'components/Wallet'
 import Toggle from 'components/Toggle'
+import HealthFactor from './components/HealthFactor'
 import { useApiMarket, IMarketDetail } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
 import { BaseCurrencyView, FlexRowWrapper, TYPE, translatedYesNo, HorizontalSeparator } from 'theme'
@@ -19,7 +20,7 @@ import { shortenDecimalValues } from 'utils'
 import { FixedNumber, formatFixed } from '@ethersproject/bignumber'
 import { calculateGasMargin } from 'utils/calculateGasMargin'
 import Loader from 'components/Loader'
-import { BorrowMode } from 'constants/lend'
+import { BorrowMode, maxApprovalValue } from 'constants/lend'
 import { useAddPopup } from 'state/application/hooks'
 import { useTokenContract, useLendingPoolContract, useProtocolDataProviderContract } from 'hooks/useContract'
 import { Contract } from 'ethers'
@@ -69,7 +70,7 @@ export default function MarketsDetail({ address }: { address: string }) {
           setWalletBalance(formatFixed(token, decimals))
           setDeposited(formatFixed(reserve.currentATokenBalance, decimals))
           setBorrowed(FixedNumber.from(currentVariableDebt).addUnsafe(FixedNumber.from(currentStableDebt)).toString())
-          setHealthFactor(formatFixed(pool.healthFactor, 18))
+          setHealthFactor(pool.healthFactor._hex === maxApprovalValue ? '0' : formatFixed(pool.healthFactor, 18))
           setLtv(formatFixed(pool.ltv, 2))
           setUseAsCollateral(reserve.usageAsCollateralEnabled)
           setAvailableToBorrow(
@@ -399,7 +400,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                         {shortenDecimalValues(deposited)} {data.symbol}
                       </TYPE.common>
                     </FlexRowWrapper>
-                    {!FixedNumber.from(deposited).isZero() ? (
+                    {!FixedNumber.from(deposited).isZero() && data.usedAsCollateral ? (
                       <FlexRowWrapper>
                         <TYPE.common>
                           <Trans>Use as collateral</Trans>
@@ -441,7 +442,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                       <TYPE.common>
                         <Trans>Health factor</Trans>
                       </TYPE.common>
-                      <TYPE.common>{shortenDecimalValues(healthFactor)}</TYPE.common>
+                      <HealthFactor value={healthFactor} />
                     </FlexRowWrapper>
                     <FlexRowWrapper>
                       <TYPE.common>
@@ -520,13 +521,15 @@ export default function MarketsDetail({ address }: { address: string }) {
                               <Trans>Variable</Trans>
                             </TYPE.common>
                             <TYPE.common>
-                              <Toggle
-                                id="variable-mode-button"
-                                isActive={true}
-                                toggle={() => {
-                                  handleSwapBorrowRateMode(BorrowMode.VARIABLE)
-                                }}
-                              />
+                              {data.stableBorrowing && (
+                                <Toggle
+                                  id="variable-mode-button"
+                                  isActive={true}
+                                  toggle={() => {
+                                    handleSwapBorrowRateMode(BorrowMode.VARIABLE)
+                                  }}
+                                />
+                              )}
                             </TYPE.common>
                             <TYPE.common>
                               <TYPE.darkGray>{shortenDecimalValues(variableDebt)}</TYPE.darkGray>

@@ -12,7 +12,7 @@ function ZeroBalance({ symbol, history }: { symbol: string; history: any }) {
       </TYPE.body>
       <TYPE.body>
         <Trans>
-          Your balance of {symbol} is 0. Transfer {symbol} to your wallet to be able to deposit
+          Your balance of {symbol} is 0. Transfer {symbol} to your wallet or swap it for further actions
         </Trans>
       </TYPE.body>
       <ButtonPrimary onClick={() => history.push(`/swap/${symbol.toUpperCase()}`)}>
@@ -29,7 +29,7 @@ function NoLiquidity({ symbol, address, history }: { symbol: string; address: st
         <Trans>No liquidity</Trans>
       </TYPE.body>
       <TYPE.body>
-        <Trans>There is no {symbol} available liquidity to borrow.</Trans>
+        <Trans>There is no {symbol} available liquidity.</Trans>
       </TYPE.body>
       <ButtonPrimary onClick={() => history.push(`/lend/deposit/${address}`)}>
         <Trans>Deposit now</Trans>

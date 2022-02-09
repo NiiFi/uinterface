@@ -3,6 +3,7 @@ import { FixedNumber, formatFixed } from '@ethersproject/bignumber'
 import { useActiveWeb3React } from 'hooks/web3'
 import { useLendingPoolContract, useProtocolDataProviderContract } from 'hooks/useContract'
 import { useAllTokenBalances } from 'state/wallet/hooks'
+import { maxApprovalValue } from 'constants/lend'
 
 export default function useLending(address: string, data: any) {
   const { account } = useActiveWeb3React()
@@ -11,7 +12,7 @@ export default function useLending(address: string, data: any) {
   const protocolDataProviderContract = useProtocolDataProviderContract()
   const [availableBorrowsETH, setAvailableBorrowsETH] = useState('')
   const [availableToBorrow, setAvailableToBorrow] = useState('')
-  const [borrowed, setBorrowed] = useState('0')
+  const [borrowed, setBorrowed] = useState('')
   const [variableDebt, setVariableDebt] = useState('0')
   const [stableDebt, setStableDebt] = useState('0')
   const [deposited, setDeposited] = useState('0')
@@ -43,7 +44,7 @@ export default function useLending(address: string, data: any) {
             ? availableToBorrowGeneral
             : data.availableLiquidity
         )
-        setHealthFactor(formatFixed(pool.healthFactor, 18))
+        setHealthFactor(pool.healthFactor._hex === maxApprovalValue ? '0' : formatFixed(pool.healthFactor, 18))
         setTotalCollateralETH(formatFixed(pool.totalCollateralETH, 18))
         setLtv(formatFixed(pool.ltv, 2))
         setLiquidationThreshold(formatFixed(pool.currentLiquidationThreshold, 4))
