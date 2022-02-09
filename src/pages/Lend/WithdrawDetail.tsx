@@ -64,6 +64,7 @@ export default function WithdrawDetail({ address }: { address: string }) {
                 totalAvailable={shortenDecimalValues(availableToWithdraw, NumeralFormatType)}
                 data={data}
                 decimals={relevantTokenBalances[address]?.currency?.decimals || 18}
+                lendingData={lendingData}
               />
             ))}
         </DefaultCard>
