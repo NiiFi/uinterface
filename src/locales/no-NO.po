@@ -169,6 +169,7 @@ msgstr ""
 msgid "Amount to add"
 msgstr ""
 
+#: src/pages/Lend/components/LendForm.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Approve"
 msgstr "Godkjenn"
@@ -204,7 +205,10 @@ msgstr "Er du sikker?"
 msgid "Asset"
 msgstr ""
 
+#: src/pages/Lend/BorrowDetail.tsx
 #: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
 msgid "Asset price"
 msgstr ""
 
@@ -230,7 +234,10 @@ msgstr ""
 msgid "Available Pools"
 msgstr ""
 
+#: src/pages/Lend/BorrowDetail.tsx
 #: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
 msgid "Available liquidity"
 msgstr ""
 
@@ -373,6 +380,10 @@ msgstr "Sjekk ut våre v3 LP gang- og migrasjonsguider."
 
 #: src/constants/tokens.ts
 msgid "Chinese Yuan"
+msgstr ""
+
+#: src/constants/lend.ts
+msgid "Choose either stable or variable APY for your loan. Please click on the desired rate type and read the info box for more information on each option."
 msgstr ""
 
 #: src/components/SearchModal/ManageTokens.tsx
@@ -537,6 +548,15 @@ msgstr ""
 msgid "Deposit Token To Nahmii"
 msgstr ""
 
+#: src/pages/Lend/components/AlternativeForm.tsx
+msgid "Deposit more collateral or repay part of your borrowings to increase your health factor and be able to borrow."
+msgstr ""
+
+#: src/pages/Lend/components/AlternativeForm.tsx
+#: src/pages/Lend/components/AlternativeForm.tsx
+msgid "Deposit now"
+msgstr ""
+
 #: src/pages/RemoveLiquidity/index.tsx
 msgid "Detailed"
 msgstr "Detaljert"
@@ -691,8 +711,16 @@ msgstr ""
 msgid "HKD"
 msgstr ""
 
+#: src/pages/Lend/BorrowDetail.tsx
+#: src/pages/Lend/DepositDetail.tsx
 #: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
 msgid "Health factor"
+msgstr ""
+
+#: src/pages/Lend/components/AlternativeForm.tsx
+msgid "Health factor too low"
 msgstr ""
 
 #: src/pages/Swap/index.tsx
@@ -883,7 +911,10 @@ msgstr "Lastet"
 msgid "Loading"
 msgstr "Laster"
 
+#: src/pages/Lend/BorrowDetail.tsx
 #: src/pages/Lend/MarketsDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
 msgid "Loan to value"
 msgstr ""
 
@@ -957,6 +988,14 @@ msgstr ""
 msgid "My Positions"
 msgstr ""
 
+#: src/pages/Lend/Borrow.tsx
+msgid "My borrows"
+msgstr ""
+
+#: src/pages/Lend/Deposit.tsx
+msgid "My deposits"
+msgstr ""
+
 #: src/components/InitialConfirmationModal/index.tsx
 msgid "Myanmar (Burma)"
 msgstr ""
@@ -1002,6 +1041,10 @@ msgstr ""
 
 #: src/theme/index.tsx
 msgid "No"
+msgstr ""
+
+#: src/pages/Lend/components/AlternativeForm.tsx
+msgid "No liquidity"
 msgstr ""
 
 #: src/components/PoolWithdraw/index.tsx
@@ -1113,6 +1156,10 @@ msgstr ""
 
 #: src/constants/lend.ts
 msgid "Please enter an amount you would like to withdraw. The maximum amount you can withdraw is shown below."
+msgstr ""
+
+#: src/constants/lend.ts
+msgid "Please select your interest rate"
 msgstr ""
 
 #: src/components/Settings/index.tsx
@@ -1255,8 +1302,14 @@ msgstr "Fjerner {0} {1} og {2} {3}"
 msgid "Repay"
 msgstr ""
 
+#: src/pages/Lend/BorrowDetail.tsx
+#: src/pages/Lend/BorrowDetail.tsx
 #: src/pages/Lend/DepositDetail.tsx
 #: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
 msgid "Reserve Overview"
 msgstr ""
 
@@ -1276,6 +1329,10 @@ msgstr "Begrenset byttebytte til bare direkte par par."
 msgid "Return"
 msgstr "Retur"
 
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Riskier"
+msgstr ""
+
 #: src/components/swap/AdvancedSwapDetails.tsx
 msgid "Route"
 msgstr "Rute"
@@ -1290,6 +1347,10 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "SGD"
+msgstr ""
+
+#: src/pages/Lend/components/LendForm.tsx
+msgid "Safer"
 msgstr ""
 
 #: src/components/Table/SearchableTable.tsx
@@ -1357,6 +1418,10 @@ msgstr "Toleranse for sammenføyning"
 msgid "Some assets are not available through this interface because they may not work well with the smart contracts or we are unable to allow trading for legal reasons."
 msgstr "Noen eiendeler er ikke tilgjengelige gjennom dette grensesnittet fordi de kanskje ikke fungerer bra med de smarte kontraktene, eller vi kan ikke tillate handel av juridiske årsaker."
 
+#: src/pages/Lend/components/AlternativeForm.tsx
+msgid "Something is wrong"
+msgstr ""
+
 #: src/components/ErrorBoundary/index.tsx
 msgid "Something went wrong"
 msgstr ""
@@ -1372,11 +1437,18 @@ msgstr ""
 
 #: src/pages/Lend/Borrow.tsx
 #: src/pages/Lend/Markets.tsx
+#: src/pages/Lend/components/LendForm.tsx
 msgid "Stable APY"
 msgstr ""
 
 #: src/pages/Lend/MarketsDetail.tsx
 msgid "Stable Borrowing"
+msgstr ""
+
+#: src/pages/Lend/BorrowDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
+msgid "Stable borrow APY"
 msgstr ""
 
 #: src/pages/Lend/MarketsDetail.tsx
@@ -1402,6 +1474,7 @@ msgstr "Leverer {0} {1} og {2} {3}"
 #: src/components/Header/index.tsx
 #: src/components/NavigationTabs/index.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+#: src/pages/Lend/components/AlternativeForm.tsx
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Swap"
@@ -1484,6 +1557,10 @@ msgstr "Forholdet mellom symboler du legger til vil angi prisen på denne reserv
 #: src/hooks/useSwapCallback.ts
 msgid "The transaction could not be sent because the deadline has passed. Please check that your transaction deadline is not too low."
 msgstr "Transaksjonen kunne ikke sendes fordi fristen har gått. Kontroller at transaksjonsfristen ikke er for lav."
+
+#: src/pages/Lend/components/AlternativeForm.tsx
+msgid "There is no {symbol} available liquidity."
+msgstr ""
 
 #: src/components/SearchModal/CommonBases.tsx
 msgid "These tokens are commonly paired with other tokens."
@@ -1582,7 +1659,14 @@ msgstr ""
 msgid "Top pools"
 msgstr "Høyeste basseng"
 
+#: src/pages/Lend/Borrow.tsx
+#: src/pages/Lend/Deposit.tsx
+msgid "Total"
+msgstr ""
+
 #: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
 msgid "Total Balance"
 msgstr ""
 
@@ -1597,6 +1681,10 @@ msgstr ""
 
 #: src/components/Table/swap.tsx
 msgid "Total Value"
+msgstr ""
+
+#: src/pages/Lend/BorrowDetail.tsx
+msgid "Total collateral"
 msgstr ""
 
 #: src/components/Table/pools.tsx
@@ -1697,12 +1785,21 @@ msgstr ""
 msgid "Utilisation rate"
 msgstr ""
 
+#: src/pages/Lend/BorrowDetail.tsx
 #: src/pages/Lend/DepositDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
 msgid "Utilization rate"
 msgstr ""
 
 #: src/components/BuyTokenModal/index.tsx
 msgid "VISA *5546"
+msgstr ""
+
+#: src/pages/Lend/BorrowDetail.tsx
+#: src/pages/Lend/RepayDetail.tsx
+#: src/pages/Lend/WithdrawDetail.tsx
+msgid "Vairable borrow APY"
 msgstr ""
 
 #: src/pages/Dashboard/subpages/Farm.tsx
@@ -1718,6 +1815,7 @@ msgstr ""
 
 #: src/pages/Lend/Borrow.tsx
 #: src/pages/Lend/Markets.tsx
+#: src/pages/Lend/components/LendForm.tsx
 msgid "Variable APY"
 msgstr ""
 
@@ -1815,6 +1913,10 @@ msgstr ""
 msgid "Yield Farming"
 msgstr ""
 
+#: src/pages/Lend/RepayDetail.tsx
+msgid "You Borrowed"
+msgstr ""
+
 #: src/pages/Lend/MarketsDetail.tsx
 msgid "You already deposited"
 msgstr ""
@@ -1826,6 +1928,10 @@ msgstr "Du lager et basseng"
 #: src/pages/AddLiquidity/index.tsx
 msgid "You are the first liquidity provider."
 msgstr "Du er den første likviditetsleverandøren."
+
+#: src/pages/Lend/BorrowDetail.tsx
+msgid "You borrowed"
+msgstr ""
 
 #: src/pages/Swap/index.tsx
 msgid "You can now trade {0}"
@@ -1846,6 +1952,14 @@ msgstr "Du vil motta"
 
 #: src/pages/Lend/MarketsDetail.tsx
 msgid "Your Information"
+msgstr ""
+
+#: src/pages/Lend/components/AlternativeForm.tsx
+msgid "Your balance is zero"
+msgstr ""
+
+#: src/pages/Lend/components/AlternativeForm.tsx
+msgid "Your balance of {symbol} is 0. Transfer {symbol} to your wallet or swap it for further actions"
 msgstr ""
 
 #: src/components/PositionCard/V2.tsx
