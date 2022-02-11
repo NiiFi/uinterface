@@ -175,8 +175,9 @@ export default function LendForm({
 
   const handleValueChange = useCallback(
     (value: string) => {
-      const prevValue = value.replace(/,/g, '.')
       let exceedMaxValue = false
+      let prevValue = value.replace(/,/g, '.')
+      prevValue = prevValue.split('.')[1]?.length > decimals ? Number(prevValue).toFixed(decimals) : prevValue
 
       try {
         exceedMaxValue = FixedNumber.from(totalAvailable)
@@ -194,7 +195,7 @@ export default function LendForm({
       setCurrentValue(prevValue)
       calculateNewHealthFactor(prevValue)
     },
-    [totalAvailable, calculateNewHealthFactor]
+    [totalAvailable, calculateNewHealthFactor, decimals]
   )
 
   useEffect(() => {
