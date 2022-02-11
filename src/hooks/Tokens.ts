@@ -154,8 +154,6 @@ export function useToken(tokenAddress?: string, tokenAlt?: any): Token | undefin
     }
   }, [address, library, account])
 
-  // console.log('TOKEN', tokenAddress, address, tokenName, symbol)
-
   return useMemo(() => {
     if (token) return token
     if (tokenAlt) {
