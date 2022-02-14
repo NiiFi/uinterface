@@ -4,7 +4,6 @@ import { Line } from 'recharts'
 import { ThemeContext } from 'styled-components'
 import { Trans, t } from '@lingui/macro'
 import SimpleChart from './SimpleChart'
-import { useApiPoolStatsGeneral } from 'hooks/useApi'
 
 const Dot = styled.div<{ color: string }>`
   color: ${({ theme }) => theme.text3};
@@ -22,46 +21,50 @@ const DotsWrapper = styled.div`
   padding-bottom: 20px;
 `
 
-const LendHistory = ({ address }: { address: string }) => {
+const LendHistory = ({ data, stableEnabled }: { data: any; stableEnabled: boolean }) => {
   const theme = useContext(ThemeContext)
-  const { data, loader } = useApiPoolStatsGeneral('all')
-
-  console.log(address)
 
   return (
     <SimpleChart
-      title={t`Stable vs Variable APR`}
+      title={stableEnabled ? t`Stable vs Variable APR` : t`Variable APR`}
       data={data}
-      loader={loader}
+      loader={false}
+      timeFormat={'MMM D'}
       prepend={
-        <DotsWrapper>
-          <Dot color={theme.green2}>
-            <Trans>Stable</Trans>
-          </Dot>
-          <Dot color={theme.orange1}>
-            <Trans>Variable</Trans>
-          </Dot>
-        </DotsWrapper>
+        <>
+          {stableEnabled && (
+            <DotsWrapper>
+              <Dot color={theme.green2}>
+                <Trans>Stable</Trans>
+              </Dot>
+              <Dot color={theme.orange1}>
+                <Trans>Variable</Trans>
+              </Dot>
+            </DotsWrapper>
+          )}
+        </>
       }
     >
       <Line
         type="monotone"
-        dataKey="liquidity"
+        dataKey="variableBorrowAPR"
         stroke={theme.orange1}
         fill="#ffffff"
         fillOpacity={0}
         strokeWidth={2}
         dot={false}
       />
-      <Line
-        type="monotone"
-        dataKey="volume"
-        stroke={theme.green2}
-        fill="#ffffff"
-        fillOpacity={0}
-        strokeWidth={2}
-        dot={false}
-      />
+      {stableEnabled && (
+        <Line
+          type="monotone"
+          dataKey="stableBorrowAPR"
+          stroke={theme.green2}
+          fill="#ffffff"
+          fillOpacity={0}
+          strokeWidth={2}
+          dot={false}
+        />
+      )}
     </SimpleChart>
   )
 }

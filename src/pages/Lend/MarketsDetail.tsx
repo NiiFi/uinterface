@@ -8,12 +8,12 @@ import Card, { DefaultCard } from 'components/Card'
 import CurrencyAvatar from 'components/CurrencyAvatar'
 import LendHistory from 'components/LineChart/LendHistory'
 import DepositApr from 'components/LineChart/DepositApr'
-import UtilisationRate from 'components/LineChart/UtilisationRate'
+// import UtilisationRate from 'components/LineChart/UtilisationRate'
 import { ResponsiveRow, RowFixed } from 'components/Row'
 import { WalletConnect } from 'components/Wallet'
 import Toggle from 'components/Toggle'
 import HealthFactor from './components/HealthFactor'
-import { useApiMarket, IMarketDetail } from 'hooks/useApi'
+import { useApiMarket, IMarketDetail, useApiMarketStats } from 'hooks/useApi'
 import { useActiveWeb3React } from 'hooks/web3'
 import { BaseCurrencyView, FlexRowWrapper, TYPE, translatedYesNo, HorizontalSeparator } from 'theme'
 import { shortenDecimalValues } from 'utils'
@@ -37,6 +37,7 @@ export default function MarketsDetail({ address }: { address: string }) {
   const [availableToBorrow, setAvailableToBorrow] = useState('0')
   const [useAsCollateral, setUseAsCollateral] = useState(false)
   const { data, loader, abortController } = useApiMarket(address)
+  const { data: chartData, loader: chartLoader, abortController: chartAbortController } = useApiMarketStats(address)
   const [showCollateralLoader, setShowCollateralLoader] = useState(false)
   const [showBorrowRateLoader, setShowBorrowRateLoader] = useState(false)
   const lendingPoolContract = useLendingPoolContract()
@@ -88,6 +89,7 @@ export default function MarketsDetail({ address }: { address: string }) {
   useEffect(() => {
     return () => {
       abortController.abort()
+      chartAbortController.abort()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -169,22 +171,35 @@ export default function MarketsDetail({ address }: { address: string }) {
     updateDataFromContracts(tokenContract, protocolDataProviderContract, lendingPoolContract, account, data)
   }, [lendingPoolContract, protocolDataProviderContract, tokenContract, data, account, updateDataFromContracts])
 
+  useEffect(() => {
+    if (!chartData || !chartData.length) return
+    chartData.map((item: any) => {
+      item.stableBorrowAPR = Number(item.stableBorrowAPR)
+      item.variableBorrowAPR = Number(item.variableBorrowAPR)
+      item.depositAPR = Number(item.depositAPR)
+      return item
+    })
+  }, [chartData])
+
   return (
     <>
       {loader ||
         (data && (
           <>
-            <ResponsiveRow gap="2rem">
-              <DefaultCard>
-                <LendHistory address={data.address} />
-              </DefaultCard>
-              <DefaultCard>
-                <DepositApr address={data.address} />
-              </DefaultCard>
-              <DefaultCard>
-                <UtilisationRate address={data.address} />
-              </DefaultCard>
-            </ResponsiveRow>
+            {chartLoader ||
+              (chartData && !!chartData.length && (
+                <ResponsiveRow gap="2rem">
+                  <DefaultCard>
+                    <LendHistory data={chartData} stableEnabled={data.stableBorrowing} />
+                  </DefaultCard>
+                  <DefaultCard>
+                    <DepositApr data={chartData} />
+                  </DefaultCard>
+                  {/* <DefaultCard>
+                    <UtilisationRate address={address} />
+                  </DefaultCard> */}
+                </ResponsiveRow>
+              ))}
             <ResponsiveRow gap="2rem">
               <DefaultCard width="66%">
                 <TYPE.body>
@@ -489,11 +504,9 @@ export default function MarketsDetail({ address }: { address: string }) {
                                 }}
                               />
                             </TYPE.common>
-                            <TYPE.common>
-                              <TYPE.darkGray>{shortenDecimalValues(stableDebt)}</TYPE.darkGray>
-                            </TYPE.common>
-                            <TYPE.common>
-                              <TYPE.darkGray>
+                            <TYPE.common textAlign="center">
+                              {shortenDecimalValues(stableDebt)} <br />
+                              <TYPE.subHeader color="text6" textAlign="right">
                                 <BaseCurrencyView
                                   type="symbol"
                                   value={
@@ -502,7 +515,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                                       .toString() as unknown as number
                                   }
                                 />
-                              </TYPE.darkGray>
+                              </TYPE.subHeader>
                             </TYPE.common>
                             <TYPE.common>
                               <ButtonGray
@@ -531,11 +544,9 @@ export default function MarketsDetail({ address }: { address: string }) {
                                 />
                               )}
                             </TYPE.common>
-                            <TYPE.common>
-                              <TYPE.darkGray>{shortenDecimalValues(variableDebt)}</TYPE.darkGray>
-                            </TYPE.common>
-                            <TYPE.common>
-                              <TYPE.darkGray>
+                            <TYPE.common textAlign="center">
+                              {shortenDecimalValues(variableDebt)} <br />
+                              <TYPE.subHeader color="text6" textAlign="right">
                                 <BaseCurrencyView
                                   type="symbol"
                                   value={
@@ -544,7 +555,7 @@ export default function MarketsDetail({ address }: { address: string }) {
                                       .toString() as unknown as number
                                   }
                                 />
-                              </TYPE.darkGray>
+                              </TYPE.subHeader>
                             </TYPE.common>
                             <TYPE.common>
                               <ButtonGray

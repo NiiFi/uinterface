@@ -199,3 +199,7 @@ export function useApiMarkets(): FetchInterface<MarketTableData> {
 export function useApiMarket(address: string | null | undefined): FetchInterfaceDetail<IMarketDetail> {
   return useApi({ route: `markets/${address}` as unknown as Routes })
 }
+
+export function useApiMarketStats(address: string | null | undefined): FetchInterface<ITokenGraph> {
+  return useApi({ route: `markets/stats/${address}` as unknown as Routes })
+}

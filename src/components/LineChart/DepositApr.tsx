@@ -2,20 +2,17 @@ import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { t } from '@lingui/macro'
 import SimpleChart from './SimpleChart'
-import { useApiPoolStatsGeneral } from 'hooks/useApi'
 
-const DepositApr = ({ address }: { address: string }) => {
+const DepositApr = ({ data }: { data: any }) => {
   const theme = useContext(ThemeContext)
-  const { data, loader } = useApiPoolStatsGeneral('all')
-
-  console.log(address)
 
   return (
     <SimpleChart
       title={t`Deposit APR`}
       data={data}
-      loader={loader}
-      dataKey="liquidity"
+      loader={false}
+      timeFormat={'MMM D'}
+      dataKey="depositAPR"
       color={theme.green2}
       height={250}
     />
