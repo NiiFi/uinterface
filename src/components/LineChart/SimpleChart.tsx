@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { ResponsiveContainer, XAxis, YAxis, Line, LineChart } from 'recharts'
+import { ResponsiveContainer, XAxis, YAxis, Line, LineChart, Tooltip } from 'recharts'
 import { ThemeContext } from 'styled-components'
 import { Wrapper } from './index'
 import { TYPE } from '../../theme'
@@ -16,6 +16,7 @@ const SimpleChart = ({
   children,
   prepend,
   height,
+  timeFormat,
 }: {
   title: string
   data: any
@@ -25,6 +26,7 @@ const SimpleChart = ({
   children?: React.ReactNode
   prepend?: React.ReactNode
   height?: number
+  timeFormat?: string
 }) => {
   const theme = useContext(ThemeContext)
 
@@ -65,7 +67,7 @@ const SimpleChart = ({
                   dataKey="time"
                   axisLine={false}
                   tickLine={false}
-                  tickFormatter={(time) => dayjs(time).format('MMM')}
+                  tickFormatter={(time) => dayjs(time).format(timeFormat || 'MMM')}
                   minTickGap={100}
                   tick={{ fontSize: 14 }}
                   stroke={theme.text6}
@@ -84,6 +86,7 @@ const SimpleChart = ({
                     dot={false}
                   />
                 )}
+                <Tooltip contentStyle={{ display: 'none' }} />
               </LineChart>
             </ResponsiveContainer>
           </Wrapper>
