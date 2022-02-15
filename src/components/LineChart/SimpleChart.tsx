@@ -1,11 +1,41 @@
 import React, { useContext, useEffect } from 'react'
+import { t } from '@lingui/macro'
 import { ResponsiveContainer, XAxis, YAxis, Line, LineChart, Tooltip } from 'recharts'
 import { ThemeContext } from 'styled-components'
+import { shortenDecimalValues } from 'utils'
 import { Wrapper } from './index'
 import { TYPE } from '../../theme'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 dayjs.extend(utc)
+
+const labels: any = {
+  variableBorrowAPR: t`Variable`,
+  stableBorrowAPR: t`Stable`,
+}
+
+const getLabel = (label: string) => {
+  return labels[label] ? `${labels[label]}: ` : ''
+}
+
+const CustomTooltip = (props: any) => {
+  const { active, payload, label } = props
+
+  if (active) {
+    return (
+      <div className="custom-tooltip">
+        {label}
+        <br />
+        {getLabel(payload[0].name)}
+        {shortenDecimalValues(payload[0].value)}
+        <br />
+        {payload[1] ? `${getLabel(payload[1].name)}${shortenDecimalValues(payload[1].value)}` : ''}
+      </div>
+    )
+  }
+
+  return null
+}
 
 const SimpleChart = ({
   title,
@@ -86,7 +116,7 @@ const SimpleChart = ({
                     dot={false}
                   />
                 )}
-                <Tooltip contentStyle={{ display: 'none' }} />
+                <Tooltip content={<CustomTooltip />} />
               </LineChart>
             </ResponsiveContainer>
           </Wrapper>
