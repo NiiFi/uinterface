@@ -105,7 +105,7 @@ export function CommonRow({
           <RowWrapper style={{ width: 'fit-content', alignItems: 'center' }}>
             <SvgIconWrapper src={typeIconSrc} title={row.type} />
             <ColumnWrapper style={{ marginLeft: '5px' }}>
-              <TYPE.subHeader color={'text2'}>{format(new Date(row.date), 'HH:mmaaa')}</TYPE.subHeader>
+              <TYPE.subHeader color={'text2'}>{format(new Date(row.date), 'HH:mm')}</TYPE.subHeader>
               <TYPE.body fontWeight={500}>{allowedTypes[row.type]}</TYPE.body>
             </ColumnWrapper>
           </RowWrapper>
