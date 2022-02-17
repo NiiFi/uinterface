@@ -203,3 +203,7 @@ export function useApiMarket(address: string | null | undefined): FetchInterface
 export function useApiMarketStats(address: string | null | undefined): FetchInterface<ITokenGraph> {
   return useApi({ route: `markets/stats/${address}` as unknown as Routes })
 }
+
+export function useApiLendingTransactions(address: string | null | undefined): FetchInterface<any> {
+  return useApi({ route: `wallets/${address}/lending-transactions` as unknown as Routes, service: ONDEMAND_API_BASE })
+}

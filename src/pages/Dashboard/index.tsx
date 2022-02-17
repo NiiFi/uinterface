@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Tab from 'components/tab/Tab'
 import Tabs from 'components/tab/Tabs'
 import DashboardHistoryTab from './tabs/history/DashboardHistoryTab'
+import DashboardLendHistoryTab from './tabs/lendHistory/DashboardLendHistoryTab'
 import ToggleDrawer from 'components/Header/ToggleDrawer'
 // import CollectionImage2 from 'assets/images/nft-collection-2.png'
 // import CollectionImage3 from 'assets/images/nft-collection-3.png'
@@ -187,6 +188,7 @@ export default function Dashboard() {
           <Tab key={`tab-0`} label={t`Overview`} />
           <Tab key={`tab-1`} label={t`My Positions`} />
           <Tab key={`tab-2`} label={t`History`} />
+          <Tab key={`tab-3`} label={t`Lend History`} />
         </Tabs>
         <CurrencySelectWrapper>
           <CurrencyDropdown />
@@ -326,6 +328,11 @@ export default function Dashboard() {
                 <Trans>Connect Wallet</Trans>
               </ButtonPrimary>
             )}
+          </AutoColumn>
+        </TabPanel>
+        <TabPanel key={'tab-panel-3'} activeIndex={activeTab} index={3}>
+          <AutoColumn gap="lg">
+            <DashboardLendHistoryTab />
           </AutoColumn>
         </TabPanel>
       </BodyScroller>
