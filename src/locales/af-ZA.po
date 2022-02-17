@@ -293,6 +293,7 @@ msgid "Blocked address"
 msgstr ""
 
 #: src/constants/lend.ts
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 #: src/pages/Lend/index.tsx
 msgid "Borrow"
@@ -438,6 +439,7 @@ msgstr ""
 #: src/pages/Dashboard/subpages/Farm.tsx
 #: src/pages/Dashboard/subpages/Pools.tsx
 #: src/pages/Dashboard/subpages/Wallet.tsx
+#: src/pages/Dashboard/tabs/lendHistory/DashboardLendHistoryTab.tsx
 #: src/pages/RemoveLiquidity/index.tsx
 #: src/pages/Swap/index.tsx
 #: src/state/burn/hooks.ts
@@ -521,6 +523,7 @@ msgstr ""
 #: src/constants/lend.ts
 #: src/pages/Dashboard/components/BuyCryptoButton.tsx
 #: src/pages/Dashboard/components/BuyCryptoDropdown.tsx
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 #: src/pages/Lend/index.tsx
@@ -560,6 +563,10 @@ msgstr ""
 msgid "Disable Multihops"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+msgid "Disabled"
+msgstr ""
+
 #: src/components/AccountDetails/index.tsx
 msgid "Disconnect Wallet"
 msgstr ""
@@ -578,6 +585,10 @@ msgstr ""
 
 #: src/constants/tokens.ts
 msgid "EUR"
+msgstr ""
+
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+msgid "Enabled"
 msgstr ""
 
 #: src/state/swap/hooks.ts
@@ -674,6 +685,10 @@ msgstr ""
 
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
 msgid "Filter by Token, Protocol, Event ..."
+msgstr ""
+
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+msgid "Filter by Token, Type ..."
 msgstr ""
 
 #: src/components/Table/pools.tsx
@@ -864,6 +879,10 @@ msgstr ""
 msgid "Lend"
 msgstr ""
 
+#: src/pages/Dashboard/index.tsx
+msgid "Lend History"
+msgstr ""
+
 #: src/components/InitialConfirmationModal/index.tsx
 msgid "Liberia"
 msgstr ""
@@ -1038,6 +1057,10 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+msgid "No lending history at the moment"
+msgstr ""
+
 #: src/pages/Lend/components/AlternativeForm.tsx
 msgid "No liquidity"
 msgstr ""
@@ -1114,6 +1137,7 @@ msgstr ""
 #: src/components/Table/TableToolbar.tsx
 #: src/components/Table/pools.tsx
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
 msgid "Page {0} of {totalPages}"
 msgstr ""
 
@@ -1237,12 +1261,20 @@ msgstr ""
 msgid "RUB"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+msgid "Rate"
+msgstr ""
+
 #: src/pages/AddLiquidity/ConfirmAddModalBottom.tsx
 msgid "Rates"
 msgstr ""
 
 #: src/components/swap/UnsupportedCurrencyFooter.tsx
 msgid "Read more about unsupported assets"
+msgstr ""
+
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+msgid "Rebalance stable borrow rate"
 msgstr ""
 
 #: src/pages/Dashboard/tabs/history/components/HistoryTable.tsx
@@ -1292,6 +1324,7 @@ msgstr ""
 
 #: src/constants/lend.ts
 #: src/constants/lend.ts
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 msgid "Repay"
@@ -1426,6 +1459,10 @@ msgid "South Korean Won"
 msgstr ""
 
 #: src/components/LineChart/LendHistory.tsx
+#: src/components/LineChart/SimpleChart.tsx
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 msgid "Stable"
 msgstr ""
@@ -1478,6 +1515,10 @@ msgstr ""
 #: src/pages/Swap/index.tsx
 #: src/pages/Swap/index.tsx
 msgid "Swap Anyway"
+msgstr ""
+
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+msgid "Swap borrow rate"
 msgstr ""
 
 #: src/components/swap/ConfirmSwapModal.tsx
@@ -1764,6 +1805,8 @@ msgstr ""
 msgid "Update list"
 msgstr ""
 
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 msgid "Use as collateral"
 msgstr ""
@@ -1804,8 +1847,16 @@ msgid "Value"
 msgstr ""
 
 #: src/components/LineChart/LendHistory.tsx
+#: src/components/LineChart/SimpleChart.tsx
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 msgid "Variable"
+msgstr ""
+
+#: src/components/LineChart/LendHistory.tsx
+msgid "Variable APR"
 msgstr ""
 
 #: src/pages/Lend/Borrow.tsx
@@ -1880,6 +1931,7 @@ msgid "Wallet balance"
 msgstr ""
 
 #: src/constants/lend.ts
+#: src/pages/Dashboard/tabs/lendHistory/components/LendHistoryTable.tsx
 #: src/pages/Lend/MarketsDetail.tsx
 #: src/pages/PoolDetail/index.tsx
 msgid "Withdraw"

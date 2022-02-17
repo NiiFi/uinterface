@@ -229,31 +229,38 @@ export default function LendHistoryTable() {
     <>
       {loader ||
         (data && historyData && (
-          <SearchableTable
-            headCells={[]}
-            searchLabel={t`Filter by Token, Type ...`}
-            perPage={10}
-            debouncedSearchChange={(value: string) => {
-              setHistoryData(
-                data.filter((row: any) => {
-                  const regex = new RegExp(`^${value}`, 'ig')
-                  return (
-                    regex.test(row.type) ||
-                    regex.test(row.symbol) ||
-                    regex.test(row.amount) ||
-                    regex.test(row.amountUSD)
-                  )
+          <>
+            <SearchableTable
+              headCells={[]}
+              searchLabel={t`Filter by Token, Type ...`}
+              perPage={10}
+              debouncedSearchChange={(value: string) => {
+                setHistoryData(
+                  data.filter((row: any) => {
+                    const regex = new RegExp(`^${value}`, 'ig')
+                    return (
+                      regex.test(row.type) ||
+                      regex.test(row.symbol) ||
+                      regex.test(row.amount) ||
+                      regex.test(row.amountUSD)
+                    )
+                  })
+                )
+              }}
+              renderToolbar={(props) =>
+                HistoryTableToolbar({
+                  ...props,
                 })
-              )
-            }}
-            renderToolbar={(props) =>
-              HistoryTableToolbar({
-                ...props,
-              })
-            }
-            data={historyData}
-            row={(row: any, index: number) => CustomTableRow(row, index, theme, handleClick)}
-          />
+              }
+              data={historyData}
+              row={(row: any, index: number) => CustomTableRow(row, index, theme, handleClick)}
+            />
+          </>
+        )) ||
+        (!loader && (
+          <TYPE.mediumHeader padding={20}>
+            <Trans>No lending history at the moment</Trans>
+          </TYPE.mediumHeader>
         ))}
     </>
   )
