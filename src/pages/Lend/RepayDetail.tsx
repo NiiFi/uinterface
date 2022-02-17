@@ -19,7 +19,7 @@ export default function RepayDetail({ address, type }: { address: string; type: 
   const { data, loader, abortController } = useApiMarket(address)
   const relevantTokenBalances = useAllTokenBalances()
   const lendingData = useLending(address, data)
-  const [totalValue, setTotalValue] = useState('')
+  const [totalValue, setTotalValue] = useState('0')
 
   useEffect(() => {
     return () => {
@@ -36,9 +36,11 @@ export default function RepayDetail({ address, type }: { address: string; type: 
       relevantTokenBalances[address]?.currency?.decimals || 18
     )
 
-    setTotalValue(
-      FixedNumber.from(currentBallance).subUnsafe(FixedNumber.from(total)).isNegative() ? currentBallance : total
-    )
+    if (currentBallance[0] !== '<') {
+      setTotalValue(
+        FixedNumber.from(currentBallance).subUnsafe(FixedNumber.from(total)).isNegative() ? currentBallance : total
+      )
+    }
   }, [lendingData, relevantTokenBalances, address, type])
 
   return (
