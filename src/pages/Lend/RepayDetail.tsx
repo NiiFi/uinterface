@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Trans } from '@lingui/macro'
+import { FixedNumber } from '@ethersproject/bignumber'
 import { DefaultCard } from 'components/Card'
 import { ResponsiveRow } from 'components/Row'
 import LendForm from './components/LendForm'
@@ -11,12 +12,14 @@ import useLending from 'hooks/useLending'
 import { useAllTokenBalances } from 'state/wallet/hooks'
 import { TYPE, FlexColumn, FlexRowWrapper, BaseCurrencyView } from 'theme'
 import { shortenDecimalValues } from 'utils'
+import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 
 export default function RepayDetail({ address, type }: { address: string; type: string }) {
   const { account } = useActiveWeb3React()
   const { data, loader, abortController } = useApiMarket(address)
   const relevantTokenBalances = useAllTokenBalances()
   const lendingData = useLending(address, data)
+  const [totalValue, setTotalValue] = useState('')
 
   useEffect(() => {
     return () => {
@@ -24,6 +27,19 @@ export default function RepayDetail({ address, type }: { address: string; type: 
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    if (!lendingData || !lendingData.variableDebt || !relevantTokenBalances) return
+    const total = type === 'stable' ? lendingData.stableDebt : lendingData.variableDebt
+    const currentBallance = formatCurrencyAmount(
+      relevantTokenBalances[address],
+      relevantTokenBalances[address]?.currency?.decimals || 18
+    )
+
+    setTotalValue(
+      FixedNumber.from(currentBallance).subUnsafe(FixedNumber.from(total)).isNegative() ? currentBallance : total
+    )
+  }, [lendingData, relevantTokenBalances, address, type])
 
   return (
     <>
@@ -33,10 +49,7 @@ export default function RepayDetail({ address, type }: { address: string; type: 
             (data && (
               <LendForm
                 type={FormType.REPAY}
-                totalAvailable={shortenDecimalValues(
-                  type === 'stable' ? lendingData.stableDebt : lendingData.variableDebt,
-                  NumeralFormatType
-                )}
+                totalAvailable={shortenDecimalValues(totalValue, NumeralFormatType)}
                 data={data}
                 decimals={relevantTokenBalances[address]?.currency?.decimals || 18}
                 lendingData={lendingData}
