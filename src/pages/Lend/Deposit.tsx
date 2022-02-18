@@ -170,16 +170,21 @@ export default function Deposit() {
     if (!data || !data.length) return
 
     return data.map((row) => {
-      const balance = relevantTokenBalances[row.address]
+      let balance = relevantTokenBalances[row.address]
         ? formatCurrencyAmount(
             relevantTokenBalances[row.address],
             relevantTokenBalances[row.address]?.currency?.decimals || 18
           )
-        : 0
+        : '0'
+
+      if (typeof balance === 'string' && balance[0] === '<') {
+        balance = '0'
+      }
+
       return {
         ...row,
         balance,
-        balanceUSD: balance ? FixedNumber.from(balance).mulUnsafe(FixedNumber.from(row.priceUSD)).toString() : 0,
+        balanceUSD: balance ? FixedNumber.from(balance).mulUnsafe(FixedNumber.from(row.priceUSD)).toString() : '0',
       }
     })
   }, [data, relevantTokenBalances])

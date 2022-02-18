@@ -324,7 +324,9 @@ export default function MarketsDetail({ address }: { address: string }) {
                       <TYPE.common>
                         <Trans>% over total</Trans>
                       </TYPE.common>
-                      <TYPE.common>-</TYPE.common>
+                      <TYPE.common>
+                        {data?.stableBorrowOverTotal ? shortenDecimalValues(data.stableBorrowOverTotal) + ' %' : '-'}
+                      </TYPE.common>
                     </FlexRowWrapper>
                   </DefaultCard>
                   <DefaultCard>
@@ -347,7 +349,11 @@ export default function MarketsDetail({ address }: { address: string }) {
                       <TYPE.common>
                         <Trans>% over total</Trans>
                       </TYPE.common>
-                      <TYPE.common>-</TYPE.common>
+                      <TYPE.common>
+                        {data?.variableBorrowOverTotal
+                          ? shortenDecimalValues(data.variableBorrowOverTotal) + ' %'
+                          : '-'}
+                      </TYPE.common>
                     </FlexRowWrapper>
                   </DefaultCard>
                 </ResponsiveRow>
