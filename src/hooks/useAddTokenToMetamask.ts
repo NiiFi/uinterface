@@ -13,6 +13,8 @@ export default function useAddTokenToMetamask(currencyToAdd: Currency | undefine
 
   const [success, setSuccess] = useState<boolean | undefined>()
 
+  const tokenImage = GetTokenLogoURL(token?.address || '')
+
   const addToken = useCallback(() => {
     if (library && library.provider.isMetaMask && library.provider.request && token) {
       library.provider
@@ -25,7 +27,7 @@ export default function useAddTokenToMetamask(currencyToAdd: Currency | undefine
               address: token.address,
               symbol: token.symbol,
               decimals: token.decimals,
-              image: GetTokenLogoURL(token.address),
+              image: tokenImage,
             },
           },
         })
