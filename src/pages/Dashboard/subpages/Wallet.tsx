@@ -87,7 +87,7 @@ export default function Wallet() {
               { id: 'price', numeric: true, disablePadding: false, label: t`Price` },
               { id: 'total', numeric: true, disablePadding: false, label: t`Value` },
             ]}
-            rowsPerPage={8}
+            rowsPerPage={12}
             title={
               <>
                 <RowWrapper style={{ padding: '16px' }}>
