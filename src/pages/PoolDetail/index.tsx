@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Redirect } from 'react-router-dom'
 import { ArrowLeft } from 'react-feather'
 import { Trans, t } from '@lingui/macro'
 import { RouteComponentProps } from 'react-router-dom'
@@ -146,7 +146,7 @@ export default function PoolDetails({
   wrapperStyle.hover.borderBottomColor = theme.primary1
   wrapperStyle.selected.borderBottomColor = theme.primary1
 
-  const { data: poolData, loader, abortController } = useApiPoolsDetail(address)
+  const { data: poolData, loader, abortController, error } = useApiPoolsDetail(address)
 
   useEffect(() => {
     if (!poolData) return
@@ -169,6 +169,10 @@ export default function PoolDetails({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  if (error && error?.status === 404) {
+    return <Redirect to="/pools" />
+  }
 
   return (
     <>
