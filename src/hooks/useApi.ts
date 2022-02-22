@@ -45,6 +45,7 @@ interface FetchInterfaceDetail<T> {
   loader: JSX.Element
   abortController: { abort: () => void }
   data?: T | undefined
+  error?: any
 }
 
 interface IGraph {
@@ -123,7 +124,7 @@ export default function useApi({ route, limit, rootData, service }: ApiParams): 
     return { loader: LoaderWrapped(), data: [] }
   }
 
-  return { loader: false, data, abortController }
+  return { loader: false, data, abortController, error }
 }
 // TODO: add correct return types instead of 'any' bellow
 export function useApiToken(address: string): any {
