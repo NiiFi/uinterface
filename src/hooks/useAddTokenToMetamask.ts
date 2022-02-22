@@ -38,7 +38,7 @@ export default function useAddTokenToMetamask(currencyToAdd: Currency | undefine
     } else {
       setSuccess(false)
     }
-  }, [library, token])
+  }, [library, token, tokenImage])
 
   return { addToken, success }
 }

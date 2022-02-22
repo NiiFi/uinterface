@@ -23,7 +23,7 @@ export default function useLending(address: string, data: any) {
   const [ltv, setLtv] = useState('0')
 
   useEffect(() => {
-    if (!account || !data || !lendingPoolContract || !protocolDataProviderContract) return
+    if (!account || !data?.priceETH || !lendingPoolContract || !protocolDataProviderContract) return
 
     const decimals = relevantTokenBalances[address]?.currency?.decimals || 18
 
