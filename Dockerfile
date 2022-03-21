@@ -1,9 +1,10 @@
 # Build stage
 FROM node:16 as builder
+ARG ENV=production
 WORKDIR /app
 COPY . .
 RUN yarn install --frozen-lockfile
-RUN yarn build:production
+RUN yarn build:$ENV
 
 # Stage 1: serve by nginx
 FROM nginx:stable-alpine
