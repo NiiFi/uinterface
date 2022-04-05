@@ -31,5 +31,5 @@ jobs:
         ECR_REPOSITORY: niifi-uinterface
         IMAGE_TAG: ${{ github.ref_name }}-${{ github.sha }}
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest --build-arg=${{ github.ref_name }} .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest --build-arg ENV=${{ github.ref_name }} .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY -a
