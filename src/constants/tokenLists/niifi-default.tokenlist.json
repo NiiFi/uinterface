@@ -1,9 +1,9 @@
 {
   "name": "NiiFi Default List",
-  "timestamp": "2022-01-20T10:57:37.105Z",
+  "timestamp": "2022-05-12T10:57:37.105Z",
   "version": {
     "major": 2,
-    "minor": 0,
+    "minor": 1,
     "patch": 0
   },
   "tags": {},
@@ -37,6 +37,17 @@
       "address": "0xB68553758df8c253746d3cED96aA1De896F09470",
       "name": "KniightCoin",
       "symbol": "KNII",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xB68553758df8c253746d3cED96aA1De896F09470/logo.png",
+      "extensions": {
+        "nahmiiBridgeAddress": "0x4200000000000000000000000000000000000010"
+      }
+    },
+    {
+      "chainId": 5553,
+      "address": "0xF7De9F4f19315C014DDd5c33ACe38f7BA3C9F66f",
+      "name": "Troll",
+      "symbol": "TRL",
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/NiiFi/tokenIcons/dev/0xB68553758df8c253746d3cED96aA1De896F09470/logo.png",
       "extensions": {
